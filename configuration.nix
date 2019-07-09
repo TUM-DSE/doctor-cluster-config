@@ -21,12 +21,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
-  services.resolved.enable = false;
-  networking.nameservers = [ "8.8.8.8" ];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "19.09"; # Did you read the comment?
+
+  services.resolved.enable = false;
+  networking.nameservers = [ "8.8.8.8" ];
 }

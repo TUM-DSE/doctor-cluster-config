@@ -30,7 +30,7 @@
     dnsutils
     netcat
     mtr
-    neovim
+    (neovim.override { vimAlias = true; })
     ripgrep
  ];
 }
