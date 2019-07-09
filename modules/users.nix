@@ -4,6 +4,9 @@ let
   '';
 
   mauriceKeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH756wA1zmO+FWP1/WJTwezIxBmDQp5ocS5kyA8jqLRv";
+
+  dimitraKeys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUXap/inau3PgwfwwzA/xgjPFwMIDNlNlQ6FDPxUS1bFxvLUewLlP7tHEjlU4aCe5/KPqtbnEOuU3ZBRBPiGAXA1WxIofQH4GLD9kUoxQXk3n9budu7Ni0Mc7fk4B4yKA6hAxdy78FDbWyJe7UMYhFvDJs9+A7HnxishLKrea3LjDVxW/2dhpIDOj7jKDJKh56m8WQn7Msb1w02f7o0J46EA49y1hlJFuGjLHSYwx5O7flFh2tyKiARDuriqp64rSLONWXmOWDX8d+JcnIZJGrMXxTWIuuqxkdsw0tvi7g/msDQrn8DVGX2sRxoGYksKMrMhYAAAoLiwH0Zi2777DZ demy@ubuntu";
+
 in {
   users.extraUsers = {
     joerg = {
@@ -20,7 +23,7 @@ in {
       extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1001;
-      openssh.authorizedKeys.keys = [ ];
+      openssh.authorizedKeys.keys = [ dimitraKeys ];
     };
     maurice = {
       isNormalUser = true;
@@ -31,7 +34,7 @@ in {
       openssh.authorizedKeys.keys = [ mauriceKeys ];
     };
 
-    root.openssh.authorizedKeys.keys = [ joergsKey mauriceKeys ];
+    root.openssh.authorizedKeys.keys = [ joergsKey mauriceKeys dimitraKeys ];
   };
 
   boot.initrd.network.ssh.authorizedKeys = [ joergsKey ];
