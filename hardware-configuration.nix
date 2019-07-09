@@ -14,6 +14,12 @@
   boot.extraModulePackages = [ ];
 
   networking.hostId = "8425e348";
+
+  fileSystems."/boot" =
+    { device = "/dev/sda1";
+      fsType = "vfat";
+      options = ["nofail"];
+    };
   fileSystems."/" =
     { device = "zroot/root/nixos";
       fsType = "zfs";
