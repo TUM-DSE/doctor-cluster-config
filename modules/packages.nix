@@ -31,5 +31,6 @@
     netcat
     mtr
     neovim
+    ripgrep
  ];
 }
