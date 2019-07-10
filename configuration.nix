@@ -21,6 +21,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
+  services.openssh.extraConfig = ''
+    # unlink forwarded gnupg agent socket after disconnected
+    StreamLocalBindUnlink yes
+  '';
+
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
