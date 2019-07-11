@@ -35,4 +35,11 @@
 
   services.resolved.enable = false;
   networking.nameservers = [ "8.8.8.8" ];
+
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    storageDriver = "zfs";
+    extraOptions = "--userland-proxy=false --ip-masq=true --storage-opt=zfs.fsname=zroot/docker";
+  };
 }
