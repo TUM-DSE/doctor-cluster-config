@@ -7,7 +7,7 @@
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
-    /home/ 192.168.2.2(rw,fsid=root,nohide,insecure,no_subtree_check) 192.168.3.2(rw,fsid=root,nohide,insecure,no_subtree_check)
+    /home/ 192.168.2.2(rw,nohide,insecure,no_subtree_check) 192.168.3.2(rw,nohide,insecure,no_subtree_check)
   '';
 
   # for nfs
