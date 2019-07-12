@@ -15,28 +15,24 @@
 
   networking.hostId = "8425e348";
 
-  fileSystems."/boot" =
-    { device = "/dev/sda1";
-      fsType = "vfat";
-      options = ["nofail"];
-    };
-  fileSystems."/" =
-    { device = "zroot/root/nixos";
-      fsType = "zfs";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/sda1";
+    fsType = "vfat";
+    options = ["nofail"];
+  };
 
-  fileSystems."/tmp" =
-    { device = "zroot/root/tmp";
-      fsType = "zfs";
-    };
+  fileSystems."/" = {
+    device = "zroot/root/nixos";
+    fsType = "zfs";
+  };
 
-  fileSystems."/home" =
-    { device = "zroot/root/home";
-      fsType = "zfs";
-    };
+  fileSystems."/tmp" = {
+    device = "zroot/root/tmp";
+    fsType = "zfs";
+  };
 
   swapDevices = [ ];
 
   nix.maxJobs = lib.mkDefault 16;
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
 }
