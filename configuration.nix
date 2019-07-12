@@ -17,6 +17,7 @@
       ./modules/tor-ssh.nix
       ./modules/retiolum.nix
       ./modules/fck-spectr.nix
+      ./modules/sgx.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
