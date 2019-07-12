@@ -16,6 +16,7 @@
       ./modules/zfs.nix
       ./modules/tor-ssh.nix
       ./modules/retiolum.nix
+      ./modules/fck-spectr.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
