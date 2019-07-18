@@ -10,14 +10,15 @@
       ./hardware-configuration.nix
       ./host-configuration.nix
       ./modules/builder.nix
+      ./modules/dpdk.nix
+      ./modules/fck-spectr.nix
       ./modules/packages.nix
+      ./modules/retiolum.nix
+      ./modules/sgx.nix
       ./modules/tracing.nix
+      ./modules/tor-ssh.nix
       ./modules/users.nix
       ./modules/zfs.nix
-      ./modules/tor-ssh.nix
-      ./modules/retiolum.nix
-      ./modules/fck-spectr.nix
-      ./modules/sgx.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
