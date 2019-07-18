@@ -15,6 +15,7 @@
       ./modules/packages.nix
       ./modules/retiolum.nix
       ./modules/sgx.nix
+      ./modules/scratch-space.nix
       ./modules/tracing.nix
       ./modules/tor-ssh.nix
       ./modules/users.nix
