@@ -7,7 +7,7 @@
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
-    /home/ 129.215.165.53(rw,nohide,insecure,no_subtree_check) 129.215.165.54(rw,nohide,insecure,no_subtree_check)
+    /home/ 129.215.165.53(rw,nohide,insecure,no_subtree_check,no_root_squash) 129.215.165.54(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
   # for nfs
