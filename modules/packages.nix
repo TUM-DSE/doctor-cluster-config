@@ -4,7 +4,6 @@
     socat
     whois
 
-    # must have
     psmisc
     p7zip
     sipcalc
@@ -32,5 +31,6 @@
     mtr
     (neovim.override { vimAlias = true; })
     ripgrep
+    pciutils
  ];
 }
