@@ -11,7 +11,7 @@
       ./host-configuration.nix
       ./modules/builder.nix
       ./modules/dpdk.nix
-      ./modules/fck-spectr.nix
+      #./modules/fck-spectr.nix
       ./modules/scone.nix
       ./modules/packages.nix
       ./modules/retiolum.nix
