@@ -15,7 +15,7 @@
     ATTR{vendor}=="0x8086" ATTR{device}=="0x0a54", RUN+="${pkgs.coreutils}/bin/chmod 666 /sys/bus/pci/devices/$kernel/resource0"
 
     # Intel Corporation Ethernet Controller XL710 for 40GbE QSFP+
-     ATTR{vendor}=="0x8086" ATTR{device}=="0x1583", RUN+="${pkgs.coreutils}/bin/chmod 666 /sys/bus/pci/devices/$kernel/resource0"
-     ATTR{vendor}=="0x8086" ATTR{device}=="0x1583", RUN+="${pkgs.coreutils}/bin/chmod 666 /sys/bus/pci/devices/$kernel/resource3"
+    ATTR{vendor}=="0x8086" ATTR{device}=="0x1583", RUN+="${pkgs.coreutils}/bin/chmod 666 /sys/bus/pci/devices/$kernel/resource0"
+    ATTR{vendor}=="0x8086" ATTR{device}=="0x1583", RUN+="${pkgs.coreutils}/bin/chmod 666 /sys/bus/pci/devices/$kernel/resource3"
   '';
 }
