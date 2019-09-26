@@ -3,6 +3,10 @@
   programs.bcc.enable = true;
   programs.sysdig.enable = true;
 
+  # allow perf as user
+  boot.kernel.sysctl."kernel.perf_event_paranoid" = -1;
+  boot.kernel.sysctl."kernel.kptr_restrict" = lib.mkForce 0;
+
   environment.systemPackages = [
     pkgs.strace
 
