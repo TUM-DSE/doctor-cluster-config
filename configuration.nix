@@ -47,4 +47,6 @@
     storageDriver = "zfs";
     extraOptions = "--userland-proxy=false --ip-masq=true --storage-opt=zfs.fsname=zroot/docker";
   };
+
+  programs.mosh.enable = true;
 }
