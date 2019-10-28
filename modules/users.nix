@@ -40,6 +40,8 @@ in {
     root.openssh.authorizedKeys.keys = [ joergsKey mauriceKeys dimitraKeys ];
   };
 
+  nix.trustedUsers = [ "joerg" ];
+
   boot.initrd.network.ssh.authorizedKeys = [ joergsKey ];
 
   security.sudo.wheelNeedsPassword = false;
