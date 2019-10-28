@@ -7,6 +7,11 @@
   boot.kernel.sysctl."kernel.perf_event_paranoid" = -1;
   boot.kernel.sysctl."kernel.kptr_restrict" = lib.mkForce 0;
 
+  # so perf can find kernel modules
+  systemd.tmpfiles.rules = [
+    "L /lib - - - - /run/current/system/lib"
+  ];
+
   environment.systemPackages = [
     pkgs.strace
 
