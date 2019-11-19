@@ -1,3 +1,9 @@
+# Update all servers
+
+```
+./update-all.sh
+```
+
 # Add a new host
 
 ```console

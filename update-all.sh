@@ -3,8 +3,17 @@
 
 # Indented to be executed on rose
 
+set -eu -o pipefail
+
+
+if [[ ${1:-} = "--update-channel" ]]; then
+    update_channel="sudo nix-channel --update &&"
+else
+    update_channel=""
+fi
+
 echo Update $(hostname)
-(cd /etc/nixos/ && sudo -u joerg git pull && sudo nix-channel --update && sudo nixos-rebuild switch)
+(cd /etc/nixos/ && sudo -u joerg git pull && $update_channel sudo nixos-rebuild switch)
 pssh \
   -i -H amy.thalheim.io -H clara.thalheim.io -H donna.thalheim.io -H martha.thalheim.io \
-  'echo Update $(hostname) && cd /etc/nixos && sudo git pull && sudo nix-channel --update && sudo nixos-rebuild switch'
+  "echo Update \$(hostname) && cd /etc/nixos && sudo git pull && $update_channel sudo nixos-rebuild switch"
