@@ -6,8 +6,10 @@
   };
 
   services.nfs.server.enable = true;
-  services.nfs.server.exports = ''
-    /home/ 129.215.165.53(rw,nohide,insecure,no_subtree_check,no_root_squash) 129.215.165.54(rw,nohide,insecure,no_subtree_check,no_root_squash)
+  services.nfs.server.exports = let
+    opts = "rw,nohide,insecure,no_subtree_check,no_root_squash";
+  in ''
+    /home/ 129.215.165.53(${opts}) 129.215.165.54(${opts}) 129.215.165.57(${opts}) 129.215.165.58(${opts})
   '';
 
   # for nfs
