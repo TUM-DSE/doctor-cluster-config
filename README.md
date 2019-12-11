@@ -1,8 +1,8 @@
 # Update all servers
 
-```
-./update-all.sh
-```
+1. Log into rose
+2. Change to `/etc/nixos`, do the configuration changes & run `git push`
+3. Run `./update-all.sh` to deploy to all servers
 
 # Add a new host
 
