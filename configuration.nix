@@ -5,23 +5,23 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./host-configuration.nix
-      ./modules/builder.nix
-      ./modules/dpdk.nix
-      #./modules/fck-spectr.nix
-      ./modules/scone.nix
-      ./modules/packages.nix
-      ./modules/retiolum.nix
-      ./modules/sgx.nix
-      ./modules/scratch-space.nix
-      ./modules/tracing.nix
-      ./modules/tor-ssh.nix
-      ./modules/users.nix
-      ./modules/zfs.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./host-configuration.nix
+    ./modules/builder.nix
+    ./modules/dpdk.nix
+    #./modules/fck-spectr.nix
+    ./modules/scone.nix
+    ./modules/packages.nix
+    ./modules/retiolum.nix
+    ./modules/sgx.nix
+    ./modules/scratch-space.nix
+    ./modules/tracing.nix
+    ./modules/tor-ssh.nix
+    ./modules/users.nix
+    ./modules/zfs.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
@@ -31,6 +31,18 @@
     StreamLocalBindUnlink yes
   '';
 
+  networking.firewall.allowedTCPPorts = [
+    # iperf2
+    5001
+    # iperf3
+    5201
+  ];
+  networking.firewall.allowedUDPPorts = [
+    # iperf2
+    5001
+    # iperf3
+    5201
+  ];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
