@@ -66,7 +66,7 @@ in {
       home = "/home/dimitrios";
       extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
       shell = "/run/current-system/sw/bin/bash";
-      uid = 1003;
+      uid = 1004;
       openssh.authorizedKeys.keys = [ dimitriosKeys ];
     };
 
