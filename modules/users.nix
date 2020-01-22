@@ -61,7 +61,7 @@ in {
       openssh.authorizedKeys.keys = [ s1443541Keys ];
     };
 
-    dimitriosKeys = {
+    dimitrios = {
       isNormalUser = true;
       home = "/home/dimitrios";
       extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
