@@ -46,6 +46,8 @@
 
   # allow all traffic from internal 40GbE network
   networking.firewall.trustedInterfaces = [
+    "enp1s0f0"
+    "enp1s0f1"
     "enp2s0f0"
     "enp2s0f1"
   ];
