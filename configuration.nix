@@ -27,7 +27,7 @@
   # add an entry to /etc/hosts for each host
   networking.extraHosts = ''
    ${lib.concatStringsSep "\n" (lib.mapAttrsToList
-     (name: host: "${name} ${host.ipv4}")
+     (name: host: "${host.ipv4} ${name}")
      config.networking.doctorwho.hosts)}
   '';
 
