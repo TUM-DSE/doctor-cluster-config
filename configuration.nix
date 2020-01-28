@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -21,7 +21,15 @@
     ./modules/tor-ssh.nix
     ./modules/users.nix
     ./modules/zfs.nix
+    ./modules/hosts.nix
   ];
+
+  # add an entry to /etc/hosts for each host
+  networking.extraHosts = ''
+   ${lib.concatStringsSep "\n" (lib.mapAttrsToList
+     (name: host: "${name} ${host.ipv4}")
+     config.networking.doctorwho.hosts)}
+  '';
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
@@ -43,6 +51,11 @@
     # iperf3
     5201
   ];
+
+  # allow incomming traffic from all our hosts
+  networking.firewall.extraCommands = lib.concatMapStringsSep "\n" (host: ''
+    iptables -A INPUT -s ${host.ipv4} -j nixos-fw-accept
+  '') (lib.attrValues config.networking.doctorwho.hosts);
 
   # allow all traffic from internal 40GbE network
   networking.firewall.trustedInterfaces = [

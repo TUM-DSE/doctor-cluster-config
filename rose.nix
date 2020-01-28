@@ -1,4 +1,4 @@
-{
+{ lib, config, ...}: {
   networking.hostName = "rose";
   networking.retiolum = {
     ipv4 = "10.243.29.178";
@@ -6,14 +6,11 @@
   };
 
   services.nfs.server.enable = true;
-  services.nfs.server.exports = let
-    opts = "rw,nohide,insecure,no_subtree_check,no_root_squash";
-  in ''
-    /home/ 129.215.165.53(${opts}) 129.215.165.54(${opts}) 129.215.165.57(${opts}) 129.215.165.58(${opts})
+  services.nfs.server.exports = ''
+    /home/ ${lib.concatMapStringsSep " " (host:
+      ''${host.ipv4}(rw,nohide,insecure,no_subtree_check,no_root_squash)'')
+      (lib.attrValues config.networking.doctorwho.hosts)}
   '';
-
-  # for nfs
-  networking.firewall.enable = false;
 
   fileSystems."/home" = {
     device = "zroot/root/home";
