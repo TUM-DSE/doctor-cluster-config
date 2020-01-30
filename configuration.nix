@@ -9,7 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./host-configuration.nix
-    #./modules/builder.nix
+    ./modules/builder.nix
     ./modules/dpdk.nix
     #./modules/fck-spectr.nix
     ./modules/scone.nix
