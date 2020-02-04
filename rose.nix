@@ -12,6 +12,23 @@
       (lib.attrValues config.networking.doctorwho.hosts)}
   '';
 
+  services.borgbackup.jobs.joerg = {
+    paths = [
+      "/home/joerg"
+    ];
+    doInit = true;
+    repo = "borgbackup@eddie.thalheim.io:rose";
+    encryption.mode = "none";
+    compression = "auto,zstd";
+    startAt = "daily";
+    prune.keep = {
+      within = "1d"; # Keep all archives from the last day
+      daily = 7;
+      weekly = 4;
+      monthly = 0;
+    };
+  };
+
   fileSystems."/home" = {
     device = "zroot/root/home";
     fsType = "zfs";
