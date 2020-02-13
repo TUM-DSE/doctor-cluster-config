@@ -4,13 +4,14 @@ with pkgs;
 let
   kernel = config.boot.kernelPackages.kernel;
   kdir = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
-  sgx-driver = stdenv.mkDerivation {
-    name = "sgx-lkl";
+  sgx-driver = stdenv.mkDerivation rec {
+    pname = "linux-sgx-driver";
+    version = "2.6";
     src = fetchFromGitHub {
       owner = "intel";
       repo = "linux-sgx-driver";
-      rev = "5d6abcc3fed7bb7e6aff09814d9f692999abd4dc";
-      sha256 = "1mvkpng8fhwa5vsp40a4hsm4dhkl0nplwqrfd4fy8z3mji9786qq";
+      rev = "sgx_driver_${version}";
+      sha256 = "0y5i71p2vzjiq47hy5v3a11iyy5qp8s3v0jgbjjpaqx6hqrpb7bj";
     };
 
     makeFlags = [
