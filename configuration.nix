@@ -32,12 +32,8 @@
   '';
 
   boot.loader.systemd-boot.enable = true;
+  # Enable this when you install NixOS on a new machine!
   boot.loader.efi.canTouchEfiVariables = false;
-
-  services.openssh.extraConfig = ''
-    # unlink forwarded gnupg agent socket after disconnected
-    StreamLocalBindUnlink yes
-  '';
 
   networking.firewall.allowedTCPPorts = [
     # iperf2
@@ -45,6 +41,7 @@
     # iperf3
     5201
   ];
+
   networking.firewall.allowedUDPPorts = [
     # iperf2
     5001
