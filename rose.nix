@@ -1,4 +1,4 @@
-{ lib, config, ...}: {
+{ pkgs, lib, config, ...}: {
   networking.hostName = "rose";
   networking.retiolum = {
     ipv4 = "10.243.29.178";
@@ -18,6 +18,13 @@
     ];
     doInit = true;
     repo = "borgbackup@eddie.thalheim.io:rose";
+    postHook = ''
+      if [[ "$exitStatus" == "0" ]]; then
+        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/6b08af9e-aee6-4efc-a059-d009e244afbb
+      else
+        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/6b08af9e-aee6-4efc-a059-d009e244afbb/fail
+      fi
+    '';
     encryption.mode = "none";
     compression = "auto,zstd";
     startAt = "daily";
