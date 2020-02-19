@@ -16,3 +16,7 @@ $ ln -s $host host-configuration.nix
 ```console
 $ echo 1 > /proc/sys/kernel/sysrq; echo b > /proc/sysrq-trigger
 ```
+
+# Backups
+
+Lorenzo back ups with borgbackup to his [personal storage](https://www.ed.ac.uk/geosciences/intranet/it/data-storage/personal-storage)
