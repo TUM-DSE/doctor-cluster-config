@@ -27,10 +27,14 @@
     s -1 7 0
   '';
 
+  systemd.tmpfiles.rules = [
+    "C /root/.docker/config.json 400 root root - /etc/nixos/secrets/docker-config.json"
+  ];
+
   # Enable Local Attestation Service as a systemd service
   docker-containers.localAttestation = {
     image = "sconecuratedimages/helloworld:las";
-    ports = [ "18766:18766"];
+    ports = [ "18766:18766" ];
     extraDockerOptions = [
       "--device=/dev/isgx"
     ];
