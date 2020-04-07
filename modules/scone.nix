@@ -26,4 +26,20 @@
     s -1 7 0
     s -1 7 0
   '';
+
+  # Enable Local Attestation Service as a systemd service
+  docker-containers.localAttestation = {
+    image = "sconecuratedimages/helloworld:las";
+    ports = [ "18766:18766"];
+    extraDockerOptions = [
+      "--device=/dev/isgx"
+    ];
+  };
+
+  # Open ports for communicating with CAS
+  networking.firewall.allowedTCPPorts = [
+    8081
+    9081
+    18765
+  ];
 }
