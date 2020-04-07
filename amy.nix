@@ -3,6 +3,9 @@
     ./modules/nfs-home.nix
   ];
 
+  # sgx is not enabled right now in amy
+  docker-containers.localAttestation.autoStart = false;
+
   networking.hostName = "amy";
   networking.retiolum = {
     ipv4 = "10.243.29.181";
