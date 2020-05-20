@@ -8,4 +8,7 @@
     ipv4 = "10.243.29.181";
     ipv6 = "42:0:3c46:1551:1906:bc7c:801f:3c4";
   };
+
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 10;
 }
