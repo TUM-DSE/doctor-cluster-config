@@ -1,6 +1,5 @@
 {...}: {
   nix = {
-    buildCores = 0;
     gc.automatic = true;
     gc.dates = "03:15";
 
@@ -10,9 +9,8 @@
     # https://github.com/NixOS/nix/issues/719
     extraOptions = ''
       builders-use-substitutes = true
-      max-jobs = auto
-      gc-keep-outputs = true
-      gc-keep-derivations = true
+      keep-outputs = true
+      keep-derivations = true
     '';
   };
 
