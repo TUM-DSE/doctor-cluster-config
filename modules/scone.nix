@@ -32,10 +32,10 @@
   ];
 
   # Enable Local Attestation Service as a systemd service
-  docker-containers.localAttestation = {
+  virtualisation.oci-containers.containers.localAttestation = {
     image = "sconecuratedimages/helloworld:las";
     ports = [ "18766:18766" ];
-    extraDockerOptions = [
+    extraOptions = [
       "--device=/dev/isgx"
     ];
   };
