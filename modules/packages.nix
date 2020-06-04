@@ -5,7 +5,7 @@
     whois
 
     psmisc
-    bsdtar
+    libarchive
     sipcalc
     iperf
     openssl
