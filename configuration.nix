@@ -17,6 +17,7 @@
     ./modules/retiolum.nix
     ./modules/sgx.nix
     ./modules/scratch-space.nix
+    ./modules/secrets.nix
     ./modules/tracing.nix
     ./modules/tor-ssh.nix
     ./modules/users.nix
