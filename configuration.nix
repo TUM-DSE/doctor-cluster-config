@@ -22,6 +22,7 @@
     ./modules/users.nix
     ./modules/zfs.nix
     ./modules/hosts.nix
+    ./modules/nix-serve.nix
   ];
 
   # add an entry to /etc/hosts for each host
