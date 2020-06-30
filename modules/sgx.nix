@@ -10,8 +10,9 @@ let
     src = fetchFromGitHub {
       owner = "intel";
       repo = "linux-sgx-driver";
-      rev = "sgx_driver_${version}";
-      sha256 = "0y5i71p2vzjiq47hy5v3a11iyy5qp8s3v0jgbjjpaqx6hqrpb7bj";
+      #rev = "sgx_driver_${version}";
+      rev = "602374c738ca58f83a1c17574d08e5d5e6341953";
+      sha256 = "17zcx2p8m3m0b6w1r1sf11zznmlq8s4nqhxpc52crgvjaj946d0c";
     };
 
     makeFlags = [
@@ -27,6 +28,19 @@ let
 in {
   boot.extraModulePackages = [
     sgx-driver
+  ];
+  # required for ptrace patch
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPatches = [
+    # needed for graphene: https://github.com/oscarlab/graphene/blob/b72786e9ded042b238737f6eb0387becc250ea47/Documentation/building.rst#L72
+    {
+      name = "fsgsbase.patch";
+      patch = fetchpatch {
+        url = "https://github.com/torvalds/linux/compare/v5.7...Mic92:fsgsbase.patch";
+        name = "fsgsbase.patch";
+        sha256 = "1g293d2jvqm7q5awdxf9l0bgk2175qkw5jgbr0ma8pyr8jrxckch";
+      };
+    }
   ];
   environment.systemPackages = [
     (callPackage ../pkgs/sgx-enable {})
