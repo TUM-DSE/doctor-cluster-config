@@ -3,6 +3,8 @@
     ./modules/nfs-home.nix
   ];
 
+  options.boot.graphenePatches.enable = true;
+
   networking.hostName = "martha";
   networking.retiolum = {
     ipv4 = "10.243.29.179";
