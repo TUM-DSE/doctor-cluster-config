@@ -1,9 +1,8 @@
 {
   imports = [
     ./modules/nfs-home.nix
+    ./modules/graphene.nix
   ];
-
-  boot.graphenePatches.enable = true;
 
   networking.hostName = "martha";
   networking.retiolum = {
