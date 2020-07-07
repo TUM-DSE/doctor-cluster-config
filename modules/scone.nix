@@ -37,6 +37,8 @@
     ports = [ "18766:18766" ];
     extraOptions = [
       "--device=/dev/isgx"
+      # exposes /var/run/aesmd/aesm.socket
+      "--volume=/var/run/aesmd:/var/run/aesmd"
     ];
   };
 
