@@ -80,5 +80,8 @@
     extraOptions = "--userland-proxy=false --ip-masq=true --storage-opt=zfs.fsname=zroot/docker";
   };
 
+  # Since we can't manually respond to a panic, just reboot.
+  boot.kernelParams = [ "panic=1" "boot.panic_on_fail" ];
+
   programs.mosh.enable = true;
 }
