@@ -16,6 +16,7 @@ echo Update $(hostname)
 
 (cd /etc/nixos/ && sudo -u joerg git pull && $update_channel sudo nixos-rebuild switch)
 pssh \
+  -t 0 \
   -O "ForwardAgent yes" \
   -i -H amy.thalheim.io -H clara.thalheim.io -H donna.thalheim.io -H martha.thalheim.io \
   "echo Update \$(hostname) && cd /etc/nixos && sudo git pull --recurse-submodules && sudo git submodule update --init && $update_channel sudo nixos-rebuild switch"
