@@ -15,7 +15,7 @@
     ./modules/packages.nix
     ./modules/nix-daemon.nix
     ./modules/retiolum.nix
-    ./modules/sgx.nix
+    ./modules/sgx
     ./modules/scratch-space.nix
     ./modules/secrets.nix
     ./modules/tracing.nix
