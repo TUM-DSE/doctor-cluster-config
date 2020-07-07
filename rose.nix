@@ -36,6 +36,38 @@
     };
   };
 
+  services.borgbackup.jobs.all-homes = {
+    paths = [
+      "/home"
+    ];
+    doInit = true;
+    repo = "/mnt/backup/borgbackup";
+    preHook = ''
+      ${pkgs.sshfs}/bin/sshfs -oIdentityFile=/etc/nixos/secrets/borgbackup-ssh-key -oPort=22222 s1443541@csce.datastore.ed.ac.uk:/csce/datastore/inf/users/s1443541 /mnt/backup
+    '';
+    postHook = ''
+      if [[ "$exitStatus" == "0" ]]; then
+        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/8fdc97f7-1c32-4829-9dd2-f78e01086f41
+      else
+        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/8fdc97f7-1c32-4829-9dd2-f78e01086f41/fail
+      fi
+    '';
+    encryption = {
+      mode = "repokey";
+      passCommand = "cat /etc/nixos/secrets/borgbackup-password";
+    };
+    compression = "auto,zstd";
+    startAt = "daily";
+    prune.keep = {
+      within = "1d"; # Keep all archives from the last day
+      daily = 7;
+      weekly = 4;
+      monthly = 0;
+    };
+  };
+  # hide sshfs from the system
+  systemd.services.borgbackup-job-all-homes.serviceConfig.PrivateMounts = true;
+
   fileSystems."/home" = {
     device = "zroot/root/home";
     fsType = "zfs";
