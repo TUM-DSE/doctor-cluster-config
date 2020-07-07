@@ -3,7 +3,7 @@
     ./modules/nfs-home.nix
   ];
 
-  options.boot.graphenePatches.enable = true;
+  boot.graphenePatches.enable = true;
 
   networking.hostName = "martha";
   networking.retiolum = {
