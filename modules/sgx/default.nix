@@ -5,10 +5,9 @@ let
     inherit (config.boot.kernelPackages) kernel;
   };
 in {
-  config = {
-    boot.extraModulePackages = [ linux-sgx-driver ];
-    environment.systemPackages = [
-      (pkgs.callPackage ../../pkgs/sgx-enable {})
-    ];
-  };
+  boot.kernel.sysctl."vm.mmap_min_addr" = "0";
+  boot.extraModulePackages = [ linux-sgx-driver ];
+  environment.systemPackages = [
+    (pkgs.callPackage ../../pkgs/sgx-enable {})
+  ];
 }

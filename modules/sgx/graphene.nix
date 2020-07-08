@@ -9,7 +9,6 @@ let
   };
 in {
   imports = [ ./. ];
-  boot.kernel.sysctl."vm.mmap_min_addr" = "0";
   boot.extraModulePackages = [ graphene-sgx-driver ];
 
   # required for ptrace patch
