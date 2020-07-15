@@ -44,6 +44,7 @@
     5201
   ];
 
+
   networking.firewall.allowedUDPPorts = [
     # iperf2
     5001
@@ -72,6 +73,10 @@
 
   services.resolved.enable = false;
   networking.nameservers = [ "8.8.8.8" ];
+
+  # For docker
+  boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
+  boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1;
 
   virtualisation.docker = {
     enable = true;
