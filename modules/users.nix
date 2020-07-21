@@ -26,10 +26,12 @@ let
    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1VKEyjAXXdwAy/aMMYKf2F5HQ1888BwA+tVW5KvfqA
    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUqTN9nkNiZniNOzLPkLSwkmmxz7t6xmzBdr0UQm5cBmFzu5BXT2OAfAiaEzN9piygn1MEXCREjYDOvAYtoU9V70z0+QnwB0A2XlCkedHq/8HIxwTWLP+GWR3adNXaDkbh/++zdhOrJdzfaGvM1Fm/0Inzux1OJykWMxDOiNZ5Q3eNrN5bYolVYyTUwFZnbHDuB8dzxH38GM8fLrPDaNlPlR1E0JvAQ1oSpwMTa8LgZl3r40+INHr6en/rM4K7p9eYNSQEtrNbPyPEa+Gw9xeAMopOpRTUBgUwQTzM8pux6lypyUqaxzDC4ZZXRQlMEFvjHYaBMRSVoK/wD+F7xarJ2ZmOu0NBEKh+XJDitQqbm5HpwskhUBvplqgF7BBbJbxW3jDL+0SrOZKyAQHSvRWgYiMrAk4cJ1hZi6bgTgBxLdTSMf+LSqNKi5xv0oiyTGG5gfuBy8OiQXhNaf36xuzNW/fgPLmoB+Kp8h+PV70R8CP0hhwWCgdWtBacpxIqVrc= s1443541@rose
   '';
+
 in {
   users.extraUsers = {
     joerg = {
       isNormalUser = true;
+      #home = "/scratch/joerg";
       home = "/home/joerg";
       extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
       shell = "/run/current-system/sw/bin/zsh";
