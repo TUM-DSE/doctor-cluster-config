@@ -85,6 +85,9 @@
     extraOptions = "--userland-proxy=false --ip-masq=true --storage-opt=zfs.fsname=zroot/docker";
   };
 
+  systemd.watchdog.rebootTime = "10m";
+  systemd.watchdog.runtimeTime = "30s";
+
   # Since we can't manually respond to a panic, just reboot.
   boot.kernelParams = [ "panic=1" "boot.panic_on_fail" ];
 
