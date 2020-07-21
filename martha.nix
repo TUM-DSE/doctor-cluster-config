@@ -6,7 +6,7 @@
 
 
   # TODO migrate to actual /home
-  harshanavkis = let
+  users.users.harshanavkis = let
     harshanavkisKeys = ''
       ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFsPBOH3MrVwF8L9OdPbab6jj3dtGp8KORonKr/qnia6HTqZKLAi7p4xWz2iXFNJvzbjxXJpg58XLCptxMBEYhlFdBy9OgKfrFCwz5svwq3J9qy/zE/tij20UTK2kgGn+QeaTWRxgf9XpJjtjTDdxaLXi4JH38wXHrqDQe+w9ixyaqb+xIm4UcZMWlzOwsHP7Sn2AOeZdfL2n3VlVKPPFMfA69rv1v02JZI0PsKwE5J/qc/AF4Sq3oBCW0IVdZyVe7iOOB6P2BMdb3gd32Lj9w/o2M2PSxDUsGwqcj1A5aBw5xFbtPcRhtWswn2j2i5zFyMoX8sC/3SWu55KMh73Ix hvub@hack-haven
     '';
