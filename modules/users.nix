@@ -27,6 +27,9 @@ let
    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUqTN9nkNiZniNOzLPkLSwkmmxz7t6xmzBdr0UQm5cBmFzu5BXT2OAfAiaEzN9piygn1MEXCREjYDOvAYtoU9V70z0+QnwB0A2XlCkedHq/8HIxwTWLP+GWR3adNXaDkbh/++zdhOrJdzfaGvM1Fm/0Inzux1OJykWMxDOiNZ5Q3eNrN5bYolVYyTUwFZnbHDuB8dzxH38GM8fLrPDaNlPlR1E0JvAQ1oSpwMTa8LgZl3r40+INHr6en/rM4K7p9eYNSQEtrNbPyPEa+Gw9xeAMopOpRTUBgUwQTzM8pux6lypyUqaxzDC4ZZXRQlMEFvjHYaBMRSVoK/wD+F7xarJ2ZmOu0NBEKh+XJDitQqbm5HpwskhUBvplqgF7BBbJbxW3jDL+0SrOZKyAQHSvRWgYiMrAk4cJ1hZi6bgTgBxLdTSMf+LSqNKi5xv0oiyTGG5gfuBy8OiQXhNaf36xuzNW/fgPLmoB+Kp8h+PV70R8CP0hhwWCgdWtBacpxIqVrc= s1443541@rose
   '';
 
+  harshanavkisKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFsPBOH3MrVwF8L9OdPbab6jj3dtGp8KORonKr/qnia6HTqZKLAi7p4xWz2iXFNJvzbjxXJpg58XLCptxMBEYhlFdBy9OgKfrFCwz5svwq3J9qy/zE/tij20UTK2kgGn+QeaTWRxgf9XpJjtjTDdxaLXi4JH38wXHrqDQe+w9ixyaqb+xIm4UcZMWlzOwsHP7Sn2AOeZdfL2n3VlVKPPFMfA69rv1v02JZI0PsKwE5J/qc/AF4Sq3oBCW0IVdZyVe7iOOB6P2BMdb3gd32Lj9w/o2M2PSxDUsGwqcj1A5aBw5xFbtPcRhtWswn2j2i5zFyMoX8sC/3SWu55KMh73Ix hvub@hack-haven
+  '';
 in {
   users.extraUsers = {
     joerg = {
@@ -73,7 +76,16 @@ in {
       openssh.authorizedKeys.keys = [ dimitriosKeys ];
     };
 
-    root.openssh.authorizedKeys.keys = [ joergsKey mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
+    harshanavkis = {
+      isNormalUser = true;
+      home = "/home/harshanavkis";
+      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1005;
+      openssh.authorizedKeys.keys = [ harshanavkisKeys ];
+    };
+
+    root.openssh.authorizedKeys.keys = [ joergsKey harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
   };
 
   nix.trustedUsers = [ "joerg" ];
