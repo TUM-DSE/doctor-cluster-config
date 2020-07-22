@@ -30,7 +30,7 @@ in {
 
   nix.nixPath = [
     "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-    "home-manager=${toString ./nix/home-manager.nix}"
+    "home-manager=${sources.home-manager}"
     "nixos-config=/etc/nixos/configuration.nix"
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
