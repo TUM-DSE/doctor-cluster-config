@@ -4,7 +4,9 @@
 
 { config, pkgs, lib, ... }:
 
-{
+let
+  sources = import ./nix/sources.nix {};
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -24,6 +26,13 @@
     ./modules/zfs.nix
     ./modules/hosts.nix
     ./modules/nix-serve.nix
+  ];
+
+  nix.nixPath = [
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    "home-manager=${toString ./nix/home-manager.nix}"
+    "nixos-config=/etc/nixos/configuration.nix"
+    "/nix/var/nix/profiles/per-user/root/channels"
   ];
 
   # add an entry to /etc/hosts for each host
