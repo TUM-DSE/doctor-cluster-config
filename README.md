@@ -26,6 +26,12 @@ $ cd /etc/nixos
 $ nix-shell --run "niv update"
 ```
 
+To install home-manager for a user simply run:
+
+``` console
+$ nix-shell '<home-manager>' -A install
+```
+
 than commit the updated ./nix/sources.json
 
 # Backups
