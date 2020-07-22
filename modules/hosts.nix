@@ -51,7 +51,7 @@ in {
       };
       donna = {
         ipv4 = "129.215.165.54";
-        ipv6 = "2001:630:3c1:164:30a2:6e7b:c58b:cafd";
+        ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4ab8";
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhYAxcXK/Mpbr5/UVC4wr+KYHV4/g5E2A1DQwKZM+kC";
       };
       martha = {
