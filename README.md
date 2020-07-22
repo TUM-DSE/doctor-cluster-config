@@ -17,6 +17,17 @@ $ ln -s $host host-configuration.nix
 $ echo 1 > /proc/sys/kernel/sysrq; echo b > /proc/sysrq-trigger
 ```
 
+# Home-manager
+
+To update home-manager use:
+
+``` console
+$ cd /etc/nixos
+$ nix-shell --run "niv update"
+```
+
+than commit the updated ./nix/sources.json
+
 # Backups
 
 Lorenzo back ups with borgbackup to his [personal storage](https://www.ed.ac.uk/geosciences/intranet/it/data-storage/personal-storage)
