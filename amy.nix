@@ -1,4 +1,4 @@
-{
+{ lib, config, pkgs, ... }: {
   networking.hostName = "amy";
   networking.retiolum = {
     ipv4 = "10.243.29.181";
