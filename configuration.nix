@@ -36,11 +36,41 @@ in {
   ];
 
   # add an entry to /etc/hosts for each host
-  networking.extraHosts = ''
-   ${lib.concatStringsSep "\n" (lib.mapAttrsToList
-     (name: host: "${host.ipv4} ${name}")
-     config.networking.doctorwho.hosts)}
+  networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
+     (name: host: ''
+       ${host.ipv4} ${name}
+       ${host.ipv6} ${name}
+       ${host.linklocal} ${name}.u
+     '')
+    config.networking.doctorwho.hosts);
+
+  # does not play well with docker
+  services.resolved.enable = false;
+
+  systemd.network.networks."ethernet".extraConfig = ''
+    [Match]
+    Type = ether
+
+    [Network]
+    DHCP = both
+    LLMNR = true
+    IPv4LL = true
+    LLDP = true
+    IPv6AcceptRA = true
+    Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
+    IPForward = yes
+
+    [DHCP]
+    UseDNS = no
   '';
+
+  # use networkd
+  networking.dhcpcd.enable = false;
+  systemd.network.enable = true;
+
+  # often hangs
+  systemd.services.systemd-networkd-wait-online.enable = false;
+
 
   boot.loader.systemd-boot.enable = true;
   # Enable this when you install NixOS on a new machine!
@@ -80,7 +110,6 @@ in {
   # should.
   system.stateVersion = "19.09"; # Did you read the comment?
 
-  services.resolved.enable = false;
   networking.nameservers = [ "8.8.8.8" ];
 
   # For docker

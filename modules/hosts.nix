@@ -14,6 +14,13 @@
       '';
     };
 
+    linklocal = mkOption {
+      type = types.str;
+      description = ''
+        private ipv6 linklocal address (used as fallback)
+      '';
+    };
+
     publicKey = mkOption {
       type = types.str;
       description = ''
@@ -42,26 +49,33 @@ in {
       amy ={
         ipv4 = "129.215.165.57";
         ipv6 = "2001:630:3c1:164:b62e:99ff:fe3e:d369";
+        linklocal = "fe80:942d:18ab:a4c9::1";
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDL+tDNEzC3TEtdgj8wyzczfeYCp1Eyn6qCFXLtQ6l2j";
       };
+
+
       clara = {
         ipv4 = "129.215.165.58";
         ipv6 = "2001:630:3c1:164:b62e:99ff:fe3d:70f2";
+        linklocal = "fe80:942d:18ab:a4c9::2";
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj5G6JkEpkqkhSdsqc4bF7P6gdcFtBAhDPy7yfjzzEZ";
       };
       donna = {
         ipv4 = "129.215.165.54";
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4ab8";
+        linklocal = "fe80:942d:18ab:a4c9::3";
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhYAxcXK/Mpbr5/UVC4wr+KYHV4/g5E2A1DQwKZM+kC";
       };
       martha = {
         ipv4 = "129.215.165.53";
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4aba";
+        linklocal = "fe80:942d:18ab:a4c9::4";
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEsPUEQKDRKYzW598gBaGzI++7dkRncHJoXgHzvJ1BuA";
       };
       rose = {
         ipv4 = "129.215.165.52";
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
+        linklocal = "fe80:942d:18ab:a4c9::5";
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDoS3y5uq1BbsZjz88os6G+hPVYHLReqO8PKYXh/b0XT";
       };
     };
