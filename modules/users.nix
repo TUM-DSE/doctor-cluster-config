@@ -88,7 +88,7 @@ in {
     root.openssh.authorizedKeys.keys = [ joergsKey harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
   };
 
-  nix.trustedUsers = [ "joerg" ];
+  nix.trustedUsers = [ "joerg" "harshanavkis" ];
 
   boot.initrd.network.ssh.authorizedKeys = [ joergsKey ];
 
