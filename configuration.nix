@@ -16,7 +16,7 @@ in {
     ./modules/scone.nix
     ./modules/packages.nix
     ./modules/nix-daemon.nix
-    ./modules/retiolum.nix
+    ./retiolum/modules/retiolum
     ./modules/sgx
     ./modules/scratch-space.nix
     ./modules/secrets.nix
