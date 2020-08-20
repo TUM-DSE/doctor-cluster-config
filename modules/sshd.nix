@@ -21,7 +21,7 @@
       "*.i"
       "*.thalheim.io"
     ];
-    publicKeyFile = ./secrets/certs/ssh-ca.pub;
+    publicKeyFile = ../secrets/certs/ssh-ca.pub;
   };
 }
 
