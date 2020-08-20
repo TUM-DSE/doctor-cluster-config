@@ -4,6 +4,7 @@
     ipv4 = "10.243.29.181";
     ipv6 = "42:0:3c46:1551:1906:bc7c:801f:3c4";
   };
+  services.openssh.extraConfig = "HostCertificate ${./secrets/certs/amy-cert.pub}";
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''

@@ -9,4 +9,5 @@
     ipv6 = "42:0:3c46:a5a1:618d:663a:f0f1:ec88";
   };
 
+  services.openssh.extraConfig = "HostCertificate ${./secrets/certs/rose-cert.pub}";
 }
