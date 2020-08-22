@@ -19,6 +19,10 @@
     ];
     doInit = true;
     repo = "borgbackup@eddie.thalheim.io:rose";
+    preHook = ''
+      eval $(ssh-agent)
+      ssh-add /etc/nixos/secrets/borgbackup-ssh-key
+    '';
     postHook = ''
       if [[ "$exitStatus" == "0" ]]; then
         ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/6b08af9e-aee6-4efc-a059-d009e244afbb
