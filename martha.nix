@@ -1,7 +1,6 @@
 {
   imports = [
     ./modules/nfs-home.nix
-    ./modules/sgx/graphene.nix
   ];
 
   networking.hostName = "martha";
