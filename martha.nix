@@ -21,9 +21,9 @@
     '';
     postHook = ''
       if [[ "$exitStatus" == "0" ]]; then
-        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/8fdc97f7-1c32-4829-9dd2-f78e01086f41
+        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/2a4c8809-7adb-4ed4-b463-3bb46703a4dd
       else
-        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/8fdc97f7-1c32-4829-9dd2-f78e01086f41/fail
+        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/2a4c8809-7adb-4ed4-b463-3bb46703a4dd/fail
       fi
     '';
     encryption.mode = "none";
