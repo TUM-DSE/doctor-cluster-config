@@ -13,6 +13,7 @@ in {
     ./host-configuration.nix
     ./modules/dpdk.nix
     #./modules/fck-spectr.nix
+    ./modules/sgx/graphene.nix
     ./modules/scone.nix
     ./modules/packages.nix
     ./modules/nix-daemon.nix
