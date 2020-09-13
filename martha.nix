@@ -14,7 +14,7 @@
       "/scratch/joerg"
     ];
     doInit = true;
-    repo = "borg@eve.thalheim.io";
+    repo = "borg@eve.thalheim.io:.";
     preHook = ''
       eval $(ssh-agent)
       ssh-add /etc/nixos/secrets/borgbackup-ssh-key
