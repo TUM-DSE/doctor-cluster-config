@@ -50,3 +50,7 @@ drwxrwxrwt 20 root root 21 Jul  7 17:00 ..
 drwxr-xr-x  1 root root  0 Jul  7 15:23 rose-all-homes-2020-07-07T15:23:39.failed
 drwxr-xr-x  1 root root  0 Jul  7 16:49 rose-all-homes-2020-07-07T16:49:13
 ```
+
+# Monitoring
+
+Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?orgId=1
