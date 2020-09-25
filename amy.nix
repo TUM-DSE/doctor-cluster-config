@@ -41,6 +41,10 @@
     };
   };
 
+  systemd.timers.borgbackup-job-joerg = {
+    timerConfig.OnCalendar = lib.mkForce "04:00:00";
+  };
+
   services.borgbackup.jobs.all-homes = {
     paths = [
       "/home"
