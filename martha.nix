@@ -26,6 +26,7 @@
         ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/2a4c8809-7adb-4ed4-b463-3bb46703a4dd/fail
       fi
     '';
+    extraArgs = "--lock-wait 900";
     encryption.mode = "none";
     compression = "auto,zstd";
     startAt = "daily";
