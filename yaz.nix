@@ -10,5 +10,9 @@
     ./modules/network.nix
     ./modules/watchdog.nix
     ./modules/mosh.nix
+    ./modules/r_reset.nix
   ];
+
+  # port: 1/A/D14/1/14
+  # mac address:
 }
