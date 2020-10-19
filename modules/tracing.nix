@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 {
   programs.bcc.enable = true;
-  programs.sysdig.enable = true;
+  programs.sysdig.enable = !pkgs.stdenv.isAarch64;
 
   # allow perf as user
   boot.kernel.sysctl."kernel.perf_event_paranoid" = -1;

@@ -26,15 +26,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "r_reset": {
-        "branch": "nix",
+        "branch": "master",
         "description": null,
         "homepage": null,
-        "owner": "Mic92",
+        "owner": "mbailleu",
         "repo": "r_reset",
-        "rev": "f36ad693c2c6cc83bd2105ed4ef5d5db9f38f7e8",
-        "sha256": "0w0mzh93q3pj9133cmkxsyiqk75da4mb8dsnxnypdxg0cw81l539",
+        "rev": "ad5e9c9c6cd909a1c2c32361c0bd89491f51aba9",
+        "sha256": "1f3j5rnd9rhjbb6c05wykris6cks33mkcvqh10453dl3p99ni3n4",
         "type": "tarball",
-        "url": "https://github.com/Mic92/r_reset/archive/f36ad693c2c6cc83bd2105ed4ef5d5db9f38f7e8.tar.gz",
+        "url": "https://github.com/mbailleu/r_reset/archive/ad5e9c9c6cd909a1c2c32361c0bd89491f51aba9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

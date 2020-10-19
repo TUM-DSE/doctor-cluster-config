@@ -63,6 +63,11 @@ in {
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
         linklocal = "fe80:942d:18ab:a4c9::5";
       };
+      doctor = {
+        ipv4 = "";
+        ipv6 = "";
+        linklocal = "fe80:942d:18ab:a4c9::6";
+      };
     };
   };
 }
