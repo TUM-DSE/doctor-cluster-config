@@ -25,9 +25,9 @@
     Type = ether
 
     [Network]
-    DHCP = both
+    DHCP = yes
     LLMNR = true
-    IPv4LL = true
+    LinkLocalAddressing = yes
     LLDP = true
     IPv6AcceptRA = true
     Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64

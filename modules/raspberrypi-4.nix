@@ -24,6 +24,8 @@
     "console=tty1"
   ];
 
+  services.mingetty.serialSpeed = [ 115200 ];
+
   # Required for the Wireless firmware
   hardware.enableRedistributableFirmware = true;
 }
