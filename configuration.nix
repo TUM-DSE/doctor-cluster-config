@@ -26,109 +26,22 @@ in {
     ./modules/users.nix
     ./modules/zfs.nix
     ./modules/hosts.nix
+    ./modules/network.nix
+    ./modules/docker.nix
     ./modules/nix-serve.nix
+    ./modules/watchdog.nix
+    ./modules/mosh.nix
   ];
-
-  nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-    "home-manager=${sources.home-manager}"
-    "nixos-config=/etc/nixos/configuration.nix"
-    "/nix/var/nix/profiles/per-user/root/channels"
-  ];
-
-  # add an entry to /etc/hosts for each host
-  networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
-     (name: host: ''
-       ${host.ipv4} ${name}
-       ${host.ipv6} ${name}
-       ${host.linklocal} ${name}.u
-     '')
-    config.networking.doctorwho.hosts);
-
-  # does not play well with docker
-  services.resolved.enable = false;
-
-  systemd.network.networks."ethernet".extraConfig = ''
-    [Match]
-    Type = ether
-
-    [Network]
-    DHCP = both
-    LLMNR = true
-    IPv4LL = true
-    LLDP = true
-    IPv6AcceptRA = true
-    Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
-    IPForward = yes
-
-    [DHCP]
-    UseDNS = no
-  '';
-
-  # use networkd
-  networking.dhcpcd.enable = false;
-  systemd.network.enable = true;
-
-  # often hangs
-  systemd.services.systemd-networkd-wait-online.enable = false;
-
 
   boot.loader.systemd-boot.enable = true;
   # Enable this when you install NixOS on a new machine!
   boot.loader.efi.canTouchEfiVariables = false;
-
-  networking.firewall.allowedTCPPorts = [
-    # iperf2
-    5001
-    # iperf3
-    5201
-  ];
-
-
-  networking.firewall.allowedUDPPorts = [
-    # iperf2
-    5001
-    # iperf3
-    5201
-  ];
-
-  # allow incomming traffic from all our hosts
-  networking.firewall.extraCommands = lib.concatMapStringsSep "\n" (host: ''
-    iptables -A INPUT -s ${host.ipv4} -j nixos-fw-accept
-  '') (lib.attrValues config.networking.doctorwho.hosts);
-
-  # allow all traffic from internal 40GbE network
-  networking.firewall.trustedInterfaces = [
-    "enp1s0f0"
-    "enp1s0f1"
-    "enp2s0f0"
-    "enp2s0f1"
-  ];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "19.09"; # Did you read the comment?
-
-  networking.nameservers = [ "8.8.8.8" ];
-
-  # For docker
-  boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
-  boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1;
-
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
-    storageDriver = "zfs";
-    extraOptions = "--userland-proxy=false --ip-masq=true --storage-opt=zfs.fsname=zroot/docker";
-  };
-
-  systemd.watchdog.rebootTime = "10m";
-  systemd.watchdog.runtimeTime = "30s";
-
-  # Since we can't manually respond to a panic, just reboot.
-  boot.kernelParams = [ "panic=1" "boot.panic_on_fail" ];
 
   programs.mosh.enable = true;
 }
