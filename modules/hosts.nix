@@ -64,8 +64,8 @@ in {
         linklocal = "fe80:942d:18ab:a4c9::5";
       };
       doctor = {
-        ipv4 = "";
-        ipv6 = "";
+        ipv4 = "129.215.165.108";
+        ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
         linklocal = "fe80:942d:18ab:a4c9::6";
       };
     };
