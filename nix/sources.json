@@ -25,6 +25,18 @@
         "url": "https://github.com/nmattia/niv/archive/9d35b9e4837ab88517210b1701127612c260eccf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nur": {
+        "branch": "master",
+        "description": "Nix User Repository: User contributed nix packages [maintainer=@Mic92]",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "nur",
+        "rev": "706f1df12532edbcba1f7da4160b84df40fa29e0",
+        "sha256": "16w326p6jbaz0r726ppdbrdgn47cd0p7vr81968rl82ynwlfr2br",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/nur/archive/706f1df12532edbcba1f7da4160b84df40fa29e0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "r_reset": {
         "branch": "master",
         "description": null,
