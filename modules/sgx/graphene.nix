@@ -12,7 +12,7 @@ in {
   boot.extraModulePackages = [ graphene-sgx-driver ];
 
   # required for ptrace patch
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_5_7;
   boot.kernelPatches = [{
     # needed for graphene: https://github.com/oscarlab/graphene/blob/b72786e9ded042b238737f6eb0387becc250ea47/Documentation/building.rst#L72
     name = "fsgsbase.patch";
