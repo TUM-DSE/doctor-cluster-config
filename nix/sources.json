@@ -6,10 +6,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "c5e47e25a6cbb37feb3ff47fe83e5a1db097bf16",
-        "sha256": "0ldll0pf2ygb4vw7c5afpc2hf701zsk3kng65bzqi0s57clagqgm",
+        "rev": "a98ec6ec158686387d66654ea96153ec06be33d7",
+        "sha256": "05yvpywhpnnsr55asp6m1chrfd6yf0njy49j3wc9d6qm3dipgwmc",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/c5e47e25a6cbb37feb3ff47fe83e5a1db097bf16.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/a98ec6ec158686387d66654ea96153ec06be33d7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -25,16 +25,28 @@
         "url": "https://github.com/nmattia/niv/archive/9d35b9e4837ab88517210b1701127612c260eccf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nixpkgs": {
+        "branch": "master",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0d7a65bfa05c7b619980c4999fc8d296c228010d",
+        "sha256": "17d2lr735bxblwg0vfsy0y7x7sy04kgm6wfyrvg5rihv0ips9fy6",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/0d7a65bfa05c7b619980c4999fc8d296c228010d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nur": {
         "branch": "master",
         "description": "Nix User Repository: User contributed nix packages [maintainer=@Mic92]",
         "homepage": "",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "706f1df12532edbcba1f7da4160b84df40fa29e0",
-        "sha256": "16w326p6jbaz0r726ppdbrdgn47cd0p7vr81968rl82ynwlfr2br",
+        "rev": "951526a05e26780f1dc1419a6999e46a1344baf6",
+        "sha256": "160h54d4cr4wzv13lyy282a3x9x03vm1d2bcp0n2l3lmx4rj6skl",
         "type": "tarball",
-        "url": "https://github.com/nix-community/nur/archive/706f1df12532edbcba1f7da4160b84df40fa29e0.tar.gz",
+        "url": "https://github.com/nix-community/nur/archive/951526a05e26780f1dc1419a6999e46a1344baf6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "r_reset": {
@@ -43,10 +55,10 @@
         "homepage": null,
         "owner": "mbailleu",
         "repo": "r_reset",
-        "rev": "ad5e9c9c6cd909a1c2c32361c0bd89491f51aba9",
-        "sha256": "1f3j5rnd9rhjbb6c05wykris6cks33mkcvqh10453dl3p99ni3n4",
+        "rev": "9f040c3af36e73779647c8a2e6f68c32e92bcc06",
+        "sha256": "1fmh9m9x7n0bl54k814f049jhwbzgsrcahxjsqjxjjx80n08056p",
         "type": "tarball",
-        "url": "https://github.com/mbailleu/r_reset/archive/ad5e9c9c6cd909a1c2c32361c0bd89491f51aba9.tar.gz",
+        "url": "https://github.com/mbailleu/r_reset/archive/9f040c3af36e73779647c8a2e6f68c32e92bcc06.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
