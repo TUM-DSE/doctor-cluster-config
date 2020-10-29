@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   sources = import ../nix/sources.nix {};
 in {
@@ -15,10 +16,9 @@ in {
       keep-derivations = true
     '';
     nixPath = [
-      "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+      "nixpkgs=${pkgs.path}"
       "home-manager=${sources.home-manager}"
       "nixos-config=/etc/nixos/configuration.nix"
-      "/nix/var/nix/profiles/per-user/root/channels"
     ];
   };
 

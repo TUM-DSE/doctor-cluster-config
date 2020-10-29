@@ -6,17 +6,13 @@
 set -eu -o pipefail
 
 
-if [[ ${1:-} = "--update-channel" ]]; then
-    update_channel="sudo nix-channel --update &&"
-else
-    update_channel=""
-fi
+upgrade_cmd="cd /etc/nixos/ && git pull && sudo nixos-rebuild test -I nixpkgs=\$(nix-instantiate --eval --expr '(import (import /etc/nixos/nix/sources.nix).nixpkgs {}).path')"
 
 echo Update $(hostname)
-
-(cd /etc/nixos/ && sudo -u joerg git pull && $update_channel sudo nixos-rebuild switch)
+sudo chown -R $USER .
+eval $upgrade_cmd
 pssh \
   -t 0 \
   -O "ForwardAgent yes" \
   -i -H amy.thalheim.io -H clara.thalheim.io -H donna.thalheim.io -H martha.thalheim.io \
-  "echo Update \$(hostname) && cd /etc/nixos && sudo git pull --recurse-submodules origin master && sudo git submodule update --init && $update_channel sudo nixos-rebuild switch"
+  "$upgrade_cmd"
