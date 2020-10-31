@@ -19,6 +19,7 @@
     ./modules/sgx
     ./modules/scratch-space.nix
     ./modules/secrets.nix
+    ./modules/telegraf.nix
     ./modules/tracing.nix
     ./modules/tor-ssh.nix
     ./modules/users.nix
