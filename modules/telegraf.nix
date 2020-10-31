@@ -1,5 +1,4 @@
-{ pkgs, lib, config, ... }:
-{
+{ pkgs, lib, config, ... }:{
   networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ];
   services.telegraf = {
     enable = true;
@@ -33,7 +32,7 @@
     };
   };
 
-  security.sudo.extraRules = lib.mkIf (!isVM) [{
+  security.sudo.extraRules = [{
     users = [ "telegraf" ];
     commands = [ {
       command = "${pkgs.smartmontools}/bin/smartctl";
