@@ -3,11 +3,11 @@
     ./modules/raspberrypi-4.nix
     ./modules/packages.nix
     ./modules/secrets.nix
+    ./modules/telegraf.nix
     ./modules/tor-ssh.nix
     ./modules/users.nix
     ./modules/hosts.nix
     ./modules/network.nix
-    ./modules/watchdog.nix
     ./modules/mosh.nix
     ./modules/r_reset.nix
     ./retiolum/modules/retiolum
