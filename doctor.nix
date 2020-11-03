@@ -10,6 +10,8 @@
     ./modules/network.nix
     ./modules/mosh.nix
     ./modules/r_reset.nix
+    ./modules/nix-daemon.nix
+    ./modules/netboot
     ./retiolum/modules/retiolum
   ];
 
