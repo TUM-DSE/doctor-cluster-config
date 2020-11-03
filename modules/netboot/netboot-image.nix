@@ -16,6 +16,7 @@ let
         ../sshd.nix
         ../users.nix
         ../irc-announce.nix
+        ../tor-ssh.nix
         ../watchdog.nix
       ];
     };
@@ -34,7 +35,6 @@ let
   ipxeBootRescue = pkgs.writeText "boot-rescue.ipxe" ''
     #!ipxe
 
-    dhcp
     kernel http://${rpiAddress}/bzImage init=${build.toplevel}/init ${lib.concatStringsSep " " nixos.config.boot.kernelParams} initrd=initrd
     initrd http://${rpiAddress}/initrd
     boot
@@ -56,6 +56,9 @@ in pkgs.stdenv.mkDerivation {
     install -D "${toString build.netbootRamdisk}/initrd" $out/initrd
     # DHCP will set filename to load via TFP
     install -D "${customIpxe}/ipxe.efi" $out/nixos.img
+    install -D "${customIpxe}/ipxe-efi.usb" $out/nixos-usb.img
+    install -D "${customIpxe}/undionly.kpxe" $out/nixos-bios.img
+    install -D "${customIpxe}/ipxe.usb" $out/nixos-bios-usb.img
 
     # different boot configurations
     install -D ${ipxeBootRescue} $out/boot-rescue.ipxe
