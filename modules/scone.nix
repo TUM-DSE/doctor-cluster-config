@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   systemd.tmpfiles.rules = [
     "C /root/.docker/config.json 400 root root - /etc/nixos/secrets/docker-config.json"
   ];
@@ -12,6 +12,11 @@
       # exposes /var/run/aesmd/aesm.socket
       "--volume=/var/run/aesmd:/var/run/aesmd"
     ];
+  };
+
+  systemd.services.docker-localAttestation.serviceConfig = {
+    # does not stop on SIGTERM properly, dont' care since stateless anyway
+    TimeoutStopSec = lib.mkForce "1";
   };
 
   # Open ports for communicating with CAS
