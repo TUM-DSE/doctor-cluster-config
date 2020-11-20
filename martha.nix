@@ -22,11 +22,9 @@
       ssh-add /etc/nixos/secrets/borgbackup-ssh-key
     '';
     postHook = ''
-      if [[ "$exitStatus" == "0" ]]; then
-        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/2a4c8809-7adb-4ed4-b463-3bb46703a4dd
-      else
-        ${pkgs.curl}/bin/curl -XPOST -fsS --retry 3 https://hc-ping.com/2a4c8809-7adb-4ed4-b463-3bb46703a4dd/fail
-      fi
+      cat > /var/log/telegraf/borgbackup-martha <<EOF
+      task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+      EOF
     '';
     extraArgs = "--lock-wait 900";
     encryption.mode = "none";
