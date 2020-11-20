@@ -37,6 +37,10 @@
       monthly = 0;
     };
   };
+  systemd.services.borgbackup-job-joerg-martha.serviceConfig.ReadWritePaths = [
+    "/var/log/telegraf"
+  ];
+
 
   services.openssh.extraConfig = "HostCertificate ${./secrets/certs/martha-cert.pub}";
 }
