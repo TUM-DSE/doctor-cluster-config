@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
   sources = import ../nix/sources.nix {};
 in {
   nix = {
     gc.automatic = true;
     gc.dates = "03:15";
+    package = pkgs.nixFlakes;
 
     # should be enough?
     nrBuildUsers = 32;
@@ -14,11 +15,22 @@ in {
       builders-use-substitutes = true
       keep-outputs = true
       keep-derivations = true
+      # in zfs we trust
+      fsync-metadata = ${lib.boolToString (config.fileSystems."/".fsType != "zfs")}
+      experimental-features = nix-command flakes
     '';
     nixPath = [
       "nixpkgs=${pkgs.path}"
       "home-manager=${sources.home-manager}"
       "nixos-config=/etc/nixos/configuration.nix"
+    ];
+    binaryCaches = [
+      "https://nix-community.cachix.org"
+      "https://mic92.cachix.org"
+    ];
+    binaryCachePublicKeys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "mic92.cachix.org-1:gi8IhgiT3CYZnJsaW7fxznzTkMUOn1RY4GmXdT/nXYQ="
     ];
   };
 
