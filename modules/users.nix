@@ -30,6 +30,10 @@ let
   harshanavkisKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCo0G1tuRCyWyCUFI2qTmkASrYId71ARg5Kr7FAlXO2NEwIoonuRdKaF6a0XRfZRklNrf/do2wi4lKKsRRd64bm7JDX1gdHYeoXuOWqeUdk6cOGJ9GMsAgRuI7Jl7BrS9p+8i0zmWnnQu0TsVUgmBogKS4b40iNW1JSj6aM93iHDvnUxFjRByM8xiTMpNtmYhP9QqSSsfM96ioGP6+s1n9nkUtBZwVJ2Dx1JodsmJQIqtbpsbflDqaj7lVxaCW+z3yLdT6jH5IGvK+DFxdXLHVKlK7Pyju5B/++uKjFAyj1pdD7txPVNN39vPFJi/UweYeimTLakifU1L2KqFxIEPqd hvub@hack-haven
   '';
+
+  irisKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos
+  '';
 in {
   users.extraUsers = {
     joerg = {
@@ -83,6 +87,15 @@ in {
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1005;
       openssh.authorizedKeys.keys = [ harshanavkisKeys ];
+    };
+
+    # used as ssh jump host
+    iris = {
+      isNormalUser = true;
+      home = "/home/iris";
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1006;
+      openssh.authorizedKeys.keys = [ irisKeys ];
     };
 
     root.openssh.authorizedKeys.keys = [ joergsKey harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
