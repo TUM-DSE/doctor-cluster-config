@@ -7,6 +7,8 @@
 
   # often hangs
   systemd.services.systemd-networkd-wait-online.enable = false;
+  # sometimes cannot be restarted -> breaks system upgrade
+  systemd.services.systemd-networkd.restartIfChanged = false;
 
   # add an entry to /etc/hosts for each host
   networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
