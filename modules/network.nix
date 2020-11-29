@@ -10,7 +10,7 @@
   # sometimes cannot be restarted -> breaks system upgrade
   systemd.services.systemd-networkd.restartIfChanged = false;
   # fails to delete some chain on upgrade...
-  systemc.services.firewall.restartIfChanged = false
+  systemd.services.firewall.restartIfChanged = false;
 
   # add an entry to /etc/hosts for each host
   networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
