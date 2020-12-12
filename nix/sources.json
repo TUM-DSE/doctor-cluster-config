@@ -1,15 +1,15 @@
 {
     "home-manager": {
-        "branch": "master",
+        "branch": "release-20.09",
         "builtin": true,
         "description": "Manage a user environment using Nix",
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "a3a0f1289acac24ce2ffe0481bf8cabd3a6ccc64",
-        "sha256": "0vkimslwfgv0a71qj93ama71xk5dwp00sb8j67axz1j5nnp0k3nv",
+        "rev": "63f299b3347aea183fc5088e4d6c4a193b334a41",
+        "sha256": "0iksjch94wfvyq0cgwv5wq52j0dc9cavm68wka3pahhdvjlxd3js",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/a3a0f1289acac24ce2ffe0481bf8cabd3a6ccc64.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/63f299b3347aea183fc5088e4d6c4a193b334a41.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -31,10 +31,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ffb3aab257e8851b558cdc6079241a7eb0c7239e",
-        "sha256": "147d4nsq0334skyr9rghcfnizasvba1pr2rq72axwdldlma0qli1",
+        "rev": "65c9cc79f1d179713c227bf447fb0dac384cdcda",
+        "sha256": "0whxlm098vas4ngq6hm3xa4mdd2yblxcl5x5ny216zajp08yp1wf",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/ffb3aab257e8851b558cdc6079241a7eb0c7239e.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/65c9cc79f1d179713c227bf447fb0dac384cdcda.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nur": {
@@ -43,10 +43,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "8dd5adadb3f1ffedeb2f7828921bd01bf55a981a",
-        "sha256": "0cwmylj5npv8dsqwf1zzh0j5xvm37zdb5j76jb5clb1qv8fw4mzf",
+        "rev": "2ec669ad72a67cfc651ef27a31dc622e768ac84d",
+        "sha256": "10l7yqjv87rddlf3clg57pma0f2qhbsi8v842k4ys2nb2j5k5yz4",
         "type": "tarball",
-        "url": "https://github.com/nix-community/nur/archive/8dd5adadb3f1ffedeb2f7828921bd01bf55a981a.tar.gz",
+        "url": "https://github.com/nix-community/nur/archive/2ec669ad72a67cfc651ef27a31dc622e768ac84d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "r_reset": {
