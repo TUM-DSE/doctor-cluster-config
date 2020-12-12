@@ -1,5 +1,5 @@
 { ... }: {
-  imports = [ ./sshd.nix ];
+  imports = [ ./sshd ];
   services.tor = {
     enable = true;
     hiddenServices."ssh".map = [

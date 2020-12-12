@@ -1,11 +1,23 @@
-{ lib, config, ... }: {
+{ lib, config, ... }:
+let
+  cert = ./certs + "/${config.networking.hostName}-cert.pub";
+in {
   services.openssh = {
     enable = true;
     passwordAuthentication = false;
     useDns = false;
     # unbind gnupg sockets if they exists
-    extraConfig = "StreamLocalBindUnlink yes";
+    extraConfig = ''
+      HostCertificate ${cert}
+      StreamLocalBindUnlink yes
+    '';
   };
+  assertions = [{
+    assertion = builtins.pathExists cert;
+    message = ''
+      Add a ssh certificate to ${./cert}
+    '';
+  }];
 
   programs.ssh.knownHosts."github.com" = {
     hostNames = [ "github.com" ];
@@ -21,7 +33,6 @@
       "*.i"
       "*.thalheim.io"
     ];
-    publicKeyFile = ../secrets/certs/ssh-ca.pub;
+    publicKeyFile = ./certs/ssh-ca.pub;
   };
 }
-

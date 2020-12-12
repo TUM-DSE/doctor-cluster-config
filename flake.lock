@@ -1,0 +1,113 @@
+{
+  "nodes": {
+    "flake-registry": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606819374,
+        "narHash": "sha256-JGUmsbvPgK33mQxExZEThg0Q2b0dmlOjU/JYMmpCS+I=",
+        "owner": "NixOS",
+        "repo": "flake-registry",
+        "rev": "94269f4cd4cb50f937200585a9abd05c6faa4452",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "flake-registry",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1604441492,
+        "narHash": "sha256-Wo7WqdwNQnWHmhyZuhVLrAEpCuZl88cA9ttxkiCTekY=",
+        "owner": "rycee",
+        "repo": "home-manager",
+        "rev": "63f299b3347aea183fc5088e4d6c4a193b334a41",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rycee",
+        "ref": "release-20.09",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1607254103,
+        "narHash": "sha256-oU+aVtY3vIY0hGNUJM5RKdhx6ipuFDdn3farszfys/0=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "87522b29a276a4cab5718e5309aa7d74bc7de75a",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixos-hardware",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1607543509,
+        "narHash": "sha256-jofrEbhSfROEt6UXyjpdXrRWieqjQoOfJVptlEClHXI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "65c9cc79f1d179713c227bf447fb0dac384cdcda",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-20.09",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "locked": {
+        "lastModified": 1607758023,
+        "narHash": "sha256-F6mLTKdQQ0tzqJ9Xuo940oZ5VGhDV2RuaBIBdiL2i0w=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "c9701295dae660c27c9f9eda9588c691cdc3399b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "retiolum": {
+      "locked": {
+        "lastModified": 1607755502,
+        "narHash": "sha256-Xn2NrXONt9cPMfaXLDy5JtVay/tIs9x5/DaZZhPeZkE=",
+        "ref": "master",
+        "rev": "6562fb28a1eb3af186a65ccd3f9e83a607fc51b9",
+        "revCount": 51,
+        "type": "git",
+        "url": "https://git.thalheim.io/Mic92/retiolum"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.thalheim.io/Mic92/retiolum"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-registry": "flake-registry",
+        "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
+        "nixpkgs": "nixpkgs",
+        "nur": "nur",
+        "retiolum": "retiolum"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

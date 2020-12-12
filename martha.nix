@@ -41,6 +41,5 @@
     "/var/log/telegraf"
   ];
 
-
-  services.openssh.extraConfig = "HostCertificate ${./secrets/certs/martha-cert.pub}";
+  system.stateVersion = "19.09";
 }

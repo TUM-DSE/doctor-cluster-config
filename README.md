@@ -6,10 +6,7 @@
 
 # Add a new host
 
-```console
-$ cp donna.nix $host
-$ ln -s $host host-configuration.nix
-```
+New hosts are added in configurations.nix.
 
 # Quick hard reboot
 
@@ -17,22 +14,24 @@ $ ln -s $host host-configuration.nix
 $ echo 1 > /proc/sys/kernel/sysrq; echo b > /proc/sysrq-trigger
 ```
 
-# Home-manager
+# Update system
 
-To update home-manager use:
+We use [flakes](https://nixos.wiki/wiki/Flakes) to manage 
+nixpkgs versions. To upgrade use:
 
 ``` console
-$ cd /etc/nixos
-$ nix-shell --run "niv update"
+$ nix flake update --recreate-lock-file
 ```
+
+Than commit `flake.lock`.
+
+# Home-manager
 
 To install home-manager for a user simply run:
 
 ``` console
 $ nix-shell '<home-manager>' -A install
 ```
-
-than commit the updated ./nix/sources.json
 
 # Backups
 
