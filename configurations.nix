@@ -15,6 +15,7 @@ let
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/mosh.nix
+    ./modules/promtail.nix
     {
       nix.nixPath = [
         "home-manager=${home-manager}"
