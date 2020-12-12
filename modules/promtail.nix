@@ -8,7 +8,7 @@
 
       clients = [{
         basic_auth.username = "promtail-doctor@thalheim.io";
-        basic_auth.password_file = toString ../secrets/promtail-password;
+        basic_auth.password_file = "/etc/nixos/secrets/promtail-password";
         url = "http://rock.r/loki/api/v1/push";
       }];
 
