@@ -1,5 +1,9 @@
 { config, ... }:
-{
+let
+  systemd.tmpfiles.rules = [
+    "C /run/promtail-password 400 promtail root - /etc/nixos/secrets/promtail-password"
+  ];
+in {
   services.promtail = {
     enable = true;
     configuration = {
@@ -8,7 +12,7 @@
 
       clients = [{
         basic_auth.username = "promtail-doctor@thalheim.io";
-        basic_auth.password_file = "/etc/nixos/secrets/promtail-password";
+        basic_auth.password_file = "/run/promtail-password";
         url = "http://rock.r/loki/api/v1/push";
       }];
 
