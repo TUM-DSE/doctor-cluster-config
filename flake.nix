@@ -29,5 +29,11 @@
       inherit nixpkgs nur home-manager retiolum flake-registry;
       nixosSystem = nixpkgs.lib.nixosSystem;
     };
+    hydraJobs = {
+      configurations =
+        nixpkgs.lib.mapAttrs'
+          (name: config: nixpkgs.lib.nameValuePair name config.config.system.build.toplevel)
+          self.nixosConfigurations;
+    };
   };
 }
