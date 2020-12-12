@@ -11,7 +11,7 @@ steps:
 - name: build
   commands:
   - rm -rf $BUILDDIR/gcroots.tmp && mkdir -p $BUILDDIR/gcroots.tmp
-  - nix shell nixpkgs#git nixpkgs#nix-build-uncached -c nix-build-uncached -build-flags "--out-link $BUILDDIR/gcroots.tmp/result" ./nixos/ci.nix
+  - nix shell nixpkgs#git nixpkgs#nix-build-uncached -c nix-build-uncached -build-flags "--out-link $BUILDDIR/gcroots.tmp/result" ./ci.nix
   - rm -rf $BUILDDIR/gcroots && mv $BUILDDIR/gcroots.tmp $BUILDDIR/gcroots
   environment:
     BUILDDIR: /var/lib/drone/doctor-build
@@ -52,6 +52,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 4db63d621036546b374e66ea16be6e51e3334a01762517d0ff2056c01d948127
+hmac: b9765658fe29c56578fef602103efb5540da98fcae9524a111cd0efe17a8aac6
 
 ...
