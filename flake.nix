@@ -5,6 +5,7 @@
   # $ nix flake update --recreate-lock-file
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
 
     home-manager.url = "github:rycee/home-manager/release-20.09";
@@ -19,6 +20,7 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-unstable
     , nur
     , home-manager
     , retiolum
@@ -26,7 +28,7 @@
     , flake-registry
     }: {
     nixosConfigurations = import ./configurations.nix {
-      inherit nixpkgs nur home-manager retiolum flake-registry;
+      inherit nixpkgs nixpkgs-unstable nur home-manager retiolum flake-registry;
       nixosSystem = nixpkgs.lib.nixosSystem;
     };
     hydraJobs = {

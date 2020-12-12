@@ -1,4 +1,5 @@
 { nixpkgs
+, nixpkgs-unstable
 , nixosSystem
 , nur
 , home-manager
@@ -15,6 +16,8 @@ let
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/mosh.nix
+    # TODO remove in 21.03
+    "${nixpkgs-unstable}/nixos/modules/services/logging/promtail.nix"
     ./modules/promtail.nix
     {
       nix.nixPath = [
