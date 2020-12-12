@@ -6,7 +6,7 @@
 set -eu -o pipefail
 
 
-upgrade_cmd="cd /etc/nixos/ && git pull && sudo nixos-rebuild test -I nixpkgs=\$(nix-instantiate --eval --expr '(import (import /etc/nixos/nix/sources.nix).nixpkgs {}).path')"
+upgrade_cmd="cd /etc/nixos/ && git pull && sudo nixos-rebuild switch -I nixpkgs=\$(nix-instantiate --eval --expr '(import (import /etc/nixos/nix/sources.nix).nixpkgs {}).path')"
 
 echo Update $(hostname)
 sudo chown -R $USER .
