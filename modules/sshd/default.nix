@@ -15,7 +15,7 @@ in {
   assertions = [{
     assertion = builtins.pathExists cert;
     message = ''
-      Add a ssh certificate to ${./cert}
+      No ssh certificate found at ${toString cert}
     '';
   }];
 

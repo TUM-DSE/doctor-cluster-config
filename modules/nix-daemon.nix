@@ -1,7 +1,5 @@
 { lib, config, pkgs, ... }:
-let
-  sources = import ../nix/sources.nix {};
-in {
+{
   nix = {
     gc.automatic = true;
     gc.dates = "03:15";
@@ -19,11 +17,6 @@ in {
       fsync-metadata = ${lib.boolToString (config.fileSystems."/".fsType != "zfs")}
       experimental-features = nix-command flakes
     '';
-    nixPath = [
-      "nixpkgs=${pkgs.path}"
-      "home-manager=${sources.home-manager}"
-      "nixos-config=/etc/nixos/configuration.nix"
-    ];
     binaryCaches = [
       "https://nix-community.cachix.org"
       "https://mic92.cachix.org"

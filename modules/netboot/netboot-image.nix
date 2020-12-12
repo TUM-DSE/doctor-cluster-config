@@ -1,19 +1,27 @@
 # mkdir /var/lib/netboot
 # cp -rv $(nix-build netboot-image.nix)/* /var/lib/netboot
 let
-  sources = import ../../nix/sources.nix {};
-  pkgs = import sources.nixpkgs {};
+  flake = builtins.getFlake (toString ../..);
+  pkgs = flake.inputs.nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
-  nixos = import (sources.nixpkgs + "/nixos") {
-    configuration = { config, pkgs, lib, ... }: with lib; {
-      nixpkgs.config.packageOverrides = pkgs: {
-        nur = import sources.nur { inherit pkgs; };
-      };
+  nixos = import (pkgs.path + "/nixos") {
+    configuration = { config, pkgs, lib, modulesPath, ... }: with lib; {
+      networking.hostName = "netboot";
+      services.openssh.hostKeys = [{
+        bits = 4096;
+        path = ../../secrets/netboot_host_rsa_key;
+        type = "rsa";
+      } {
+        path = ../../secrets/netboot_host_ed25519_key;
+        type = "ed25519";
+      }];
+
+      nixpkgs.overlays = [ flake.inputs.nur.overlay ];
       imports = [
-        <nixpkgs/nixos/modules/profiles/minimal.nix>
-        <nixpkgs/nixos/modules/profiles/all-hardware.nix>
-        <nixpkgs/nixos/modules/installer/netboot/netboot.nix>
-        ../sshd.nix
+        "${modulesPath}/profiles/minimal.nix"
+        "${modulesPath}/profiles/all-hardware.nix"
+        "${modulesPath}/installer/netboot/netboot.nix"
+        ../sshd
         ../users.nix
         ../irc-announce.nix
         ../tor-ssh.nix
