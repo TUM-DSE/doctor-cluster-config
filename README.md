@@ -17,7 +17,7 @@ $ echo 1 > /proc/sys/kernel/sysrq; echo b > /proc/sysrq-trigger
 # Reboot switch
 
 If the host is no longer reachable, it is possible to remote reboot it from your raspberry pi:
-Therefore first ssh to `doctor.thalheim.io
+Therefore first ssh to `doctor.thalheim.io`, then execute:
 
 ```console
 $ reboot-servers --help
