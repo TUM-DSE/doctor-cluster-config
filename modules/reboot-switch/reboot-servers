@@ -1,0 +1,31 @@
+#!/bin/sh
+
+case "$1" in
+rose) 
+	ID=17
+	;;
+martha)
+	ID=27
+	;;
+donna) 
+	ID=22
+	;;
+amy) 
+	ID=23
+	;;
+clara)
+	ID=24
+	;;
+*)
+	echo "USAGE: $0 rose|martha|donna|amy|clara" >&2
+	exit 1
+esac
+
+
+if [ ! -d /sys/class/gpio/gpio$ID ]; then
+	echo $ID > /sys/class/gpio/export
+fi
+echo "out" > /sys/class/gpio/gpio$ID/direction
+echo 0 > /sys/class/gpio/gpio$ID/value
+sleep 5
+echo 1 > /sys/class/gpio/gpio$ID/value

@@ -14,6 +14,18 @@ New hosts are added in configurations.nix.
 $ echo 1 > /proc/sys/kernel/sysrq; echo b > /proc/sysrq-trigger
 ```
 
+# Reboot switch
+
+If the host is no longer reachable, it is possible to remote reboot it from your raspberry pi:
+Therefore first ssh to `doctor.thalheim.io
+
+```console
+$ reboot-servers --help
+USAGE: /run/current-system/sw/bin/reboot-servers rose|martha|donna|amy|clara
+# reboots rose
+$ reboot-servers rose
+```
+
 # Update system
 
 We use [flakes](https://nixos.wiki/wiki/Flakes) to manage 
