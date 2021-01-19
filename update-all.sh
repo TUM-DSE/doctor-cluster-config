@@ -6,7 +6,7 @@
 set -eu -o pipefail
 
 
-upgrade_cmd="git -C /etc/nixos pull --recurse-submodules && sudo nixos-rebuild switch"
+upgrade_cmd="git -C /etc/nixos pull && git -C /etc/nixos submodule update --init && sudo nixos-rebuild switch"
 
 echo Update $(hostname)
 sudo chown -R $USER .
