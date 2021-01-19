@@ -1,9 +1,8 @@
 { config, ... }:
-let
+{
   systemd.tmpfiles.rules = [
     "C /run/promtail-password 400 promtail root - /etc/nixos/secrets/promtail-password"
   ];
-in {
   services.promtail = {
     enable = true;
     configuration = {
