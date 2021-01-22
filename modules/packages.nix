@@ -20,7 +20,6 @@
     rsync
     git
     tig
-    python
     python3
     strace
     nethogs
