@@ -7,6 +7,7 @@ let
   # https://eurosys21ae.hotcrp.com/paper/10#cA4
   tester1Key = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJm6LIEB0yXpmS1QwycfhrSkTI/T6I4aZmMyyzY7B5Psw5CDzcmxD5uKOypvMez9bp90fHYa6tviDqX9NsqM52DOowVZffqxjhRxyqX31pjh2IVbmLkIbc8BcH03l8oJQA2WLuurwCNvnUKi4CKmVphbGS7kXhWffdSJTGsgYzW61FZ5tejIBRAaQ4d8ZPW3DlQSVVqbSJn7L3ldSepoKNRqrrazxtT0znmZaB2ZdzniITAvwF8nu3LomaiZapKMJf19yGQaNaMFwblSUyJvlAR3OMYs7Q2mIsFWVSgdmMo+6PKHxDGyTxI9rLwEbyvc/2lzgl65TQonCrddVHkigKMDHuf+UX6X+e6RugEiTa6ISynJRA6WCjYKjq4lN5p2J69WW0PjWv/ifxGZlQQn7MYtA9vqxTcmOm7ZOmCPHB6czvPVIq2gsAihYoZ8icr51Uanp4LM3dsNRYgr6Xk0Yxkp20s4M4cENEGIu61MsQYH/9xtayWZ49j2j2WNCUz0FiBr8fCNtSdkwQtbH8R81O8VKslth3a+DIMSww5kNQFECF+O9t11i/Vm94WLTPAorL2rBEeuR/r1gUZEDeyu6W/B+q4qRVL6Rqc8lReM4gtl+X/4v6v9rZwY1puLCxUilf+q3Z6RdyeIOqOPUF5N/+LeCX/YF3hGGIzIQcbVjukw== xxx@gmail.com
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfp3boCy9Pz8khCuh2oeyMxv/n2Ey+E2eAHbGjUWqTM tester1@everywhere
   '';
 in {
   users.extraUsers = {
