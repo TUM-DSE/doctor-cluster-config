@@ -51,7 +51,6 @@ in {
       #home = "/scratch/joerg";
       home = "/home/joerg";
       inherit extraGroups;
-      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1000;
       openssh.authorizedKeys.keys = [ joergsKey ];
@@ -100,15 +99,6 @@ in {
       openssh.authorizedKeys.keys = [ harshanavkisKeys ];
     };
 
-    okelmann = {
-      isNormalUser = true;
-      home = "/home/okelmann";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1006;
-      openssh.authorizedKeys.keys = [ okelmannKeys ];
-    };
-
     # used as ssh jump host
     iris = {
       isNormalUser = true;
@@ -116,6 +106,15 @@ in {
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1006;
       openssh.authorizedKeys.keys = [ irisKeys ];
+    };
+
+    okelmann = {
+      isNormalUser = true;
+      home = "/home/okelmann";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1008;
+      openssh.authorizedKeys.keys = [ okelmannKeys ];
     };
 
     root.openssh.authorizedKeys.keys = [ joergsKey harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
