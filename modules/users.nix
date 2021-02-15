@@ -34,15 +34,23 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCo0G1tuRCyWyCUFI2qTmkASrYId71ARg5Kr7FAlXO2NEwIoonuRdKaF6a0XRfZRklNrf/do2wi4lKKsRRd64bm7JDX1gdHYeoXuOWqeUdk6cOGJ9GMsAgRuI7Jl7BrS9p+8i0zmWnnQu0TsVUgmBogKS4b40iNW1JSj6aM93iHDvnUxFjRByM8xiTMpNtmYhP9QqSSsfM96ioGP6+s1n9nkUtBZwVJ2Dx1JodsmJQIqtbpsbflDqaj7lVxaCW+z3yLdT6jH5IGvK+DFxdXLHVKlK7Pyju5B/++uKjFAyj1pdD7txPVNN39vPFJi/UweYeimTLakifU1L2KqFxIEPqd hvub@hack-haven
   '';
 
+  # Peter Okelmann
+  okelmannKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITBcN9iw5Fn7yyfgiWFet3QWDoMcUNtzLi+PNoYS7jksvcKZy5pLOjE6wCpkbYx+Tcb4MyvoWPXvwdo5FfL4XdhZRO+JlZ66p/rGssq/wEr2BBUwohP7o39JLtiyXGXSsK6MO2aceOFLQr4KAdaeD8ST0XumGcV6bGqIbjFsK5FCxFhO8NkCFtavBjDwKUm3uyOnVCWMp12abUphzxrVtWhcsnw5GapohATP03mCNxmrn/L7x393HutxgjyduScX7++MjwVE6J7wCnztPUtJbh9jYemr/K9fBMBbLhQagOjrlQYGU5frgmLrPCRZusyg5HjWx6gJIxs/DskfgmW+V
+  '';
+
   irisKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos
   '';
+
+  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in {
   users.extraUsers = {
     joerg = {
       isNormalUser = true;
       #home = "/scratch/joerg";
       home = "/home/joerg";
+      inherit extraGroups;
       extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1000;
@@ -51,7 +59,7 @@ in {
     dimitra = {
       isNormalUser = true;
       home = "/home/dimitra";
-      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1001;
       openssh.authorizedKeys.keys = [ dimitraKeys ];
@@ -59,7 +67,7 @@ in {
     maurice = {
       isNormalUser = true;
       home = "/home/maurice";
-      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1002;
       openssh.authorizedKeys.keys = [ mauriceKeys ];
@@ -68,7 +76,7 @@ in {
     s1443541 = {
       isNormalUser = true;
       home = "/home/s1443541";
-      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 1003;
       openssh.authorizedKeys.keys = [ s1443541Keys ];
@@ -77,7 +85,7 @@ in {
     dimitrios = {
       isNormalUser = true;
       home = "/home/dimitrios";
-      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 1004;
       openssh.authorizedKeys.keys = [ dimitriosKeys ];
@@ -86,10 +94,19 @@ in {
     harshanavkis = {
       isNormalUser = true;
       home = "/home/harshanavkis";
-      extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1005;
       openssh.authorizedKeys.keys = [ harshanavkisKeys ];
+    };
+
+    okelmann = {
+      isNormalUser = true;
+      home = "/home/okelmann";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1006;
+      openssh.authorizedKeys.keys = [ okelmannKeys ];
     };
 
     # used as ssh jump host
