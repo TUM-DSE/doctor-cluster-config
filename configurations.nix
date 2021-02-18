@@ -84,7 +84,6 @@ in {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       ./martha.nix
-      ./modules/eurosys-users.nix
     ];
   };
 
@@ -92,7 +91,6 @@ in {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       ./rose.nix
-      ./modules/eurosys-users.nix
     ];
   };
 }
