@@ -17,6 +17,8 @@ in stdenv.mkDerivation rec {
     "KDIR=${kdir}"
   ];
 
+  patches = [ ./oot-metrics.patch ];
+
   nativeBuildInputs = [ perl ] ++ kernel.moduleBuildDependencies;
 
   installPhase = ''
