@@ -1,6 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
     ./modules/nfs-home.nix
+    ./modules/ci.nix
   ];
 
   networking.hostName = "martha";
