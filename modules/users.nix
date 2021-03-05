@@ -133,7 +133,7 @@ in {
     root.openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
   };
 
-  nix.trustedUsers = [ "joerg" "harshanavkis" ];
+  nix.trustedUsers = [ "joerg" "harshanavkis" "sandro" ];
 
   security.sudo.wheelNeedsPassword = false;
   programs.zsh.enable = true;
