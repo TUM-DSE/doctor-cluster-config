@@ -1,6 +1,10 @@
 let
-  joergsKey = ''
+  joergsKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine
+  '';
+
+  sandroKeys = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqNR2tsYH2igXjgiOA/yc3CdXqpg70ViICdGk/Acmxu
   '';
 
   mauriceKeys = ''
@@ -53,7 +57,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1000;
-      openssh.authorizedKeys.keys = [ joergsKey ];
+      openssh.authorizedKeys.keys = [ joergsKeys ];
     };
     dimitra = {
       isNormalUser = true;
@@ -117,12 +121,19 @@ in {
       openssh.authorizedKeys.keys = [ okelmannKeys ];
     };
 
-    root.openssh.authorizedKeys.keys = [ joergsKey harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
+    sandro = {
+      isNormalUser = true;
+      home = "/home/sandro";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1009;
+      openssh.authorizedKeys.keys = [ sandroKeys ];
+    };
+
+    root.openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
   };
 
   nix.trustedUsers = [ "joerg" "harshanavkis" ];
-
-  boot.initrd.network.ssh.authorizedKeys = [ joergsKey ];
 
   security.sudo.wheelNeedsPassword = false;
   programs.zsh.enable = true;
