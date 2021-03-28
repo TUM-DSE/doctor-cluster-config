@@ -67,6 +67,8 @@
     "enp2s0f0"
     "enp2s0f1"
   ];
+  # breaks docker and fails to reload after nixpkgs upgrades
+  systemd.services.firewall.reloadIfChanged = false;
 
   networking.nameservers = [ "8.8.8.8" ];
 }
