@@ -1,6 +1,7 @@
 { pkgs, lib, config, ...}: {
   imports = [
     ./modules/nfs-home.nix
+    ./modules/k3s/agent.nix
   ];
 
   networking.hostName = "rose";
