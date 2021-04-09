@@ -18,6 +18,23 @@ let
     ./modules/mosh.nix
     # TODO remove in 21.03
     "${nixpkgs-unstable}/nixos/modules/services/logging/promtail.nix"
+    # TODO remove in 21.03
+    ({lib, pkgs, ...}: {
+      disabledModules = [ "services/cluster/k3s/default.nix" ];
+      options.boot.zfs = {
+        enabled = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        package = lib.mkOption {
+          readOnly = true;
+          type = lib.types.package;
+          default = pkgs.zfs;
+        };
+      };
+    })
+    "${nixpkgs-unstable}/nixos/modules/services/cluster/k3s/default.nix"
+
     ./modules/promtail.nix
     {
       nix.nixPath = [
