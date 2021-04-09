@@ -21,16 +21,25 @@ let
     # TODO remove in 21.03
     ({lib, pkgs, ...}: {
       disabledModules = [ "services/cluster/k3s/default.nix" ];
-      options.boot.zfs = {
-        enabled = lib.mkOption {
+      options = {
+        # stub out new options until we upgrade
+        boot.zfs.enabled = lib.mkOption {
           type = lib.types.bool;
           default = true;
         };
-        package = lib.mkOption {
+        boot.zfs.package = lib.mkOption {
           readOnly = true;
           type = lib.types.package;
           default = pkgs.zfs;
         };
+        systemd.enableUnifiedCgroupHierarchy = lib.mkOption {
+          default = false;
+          type = lib.types.bool;
+        };
+      };
+
+      config = {
+        virtualisation.docker.package = nixpkgs-unstable.legacyPackages.x86_64-linux.docker;
       };
     })
     "${nixpkgs-unstable}/nixos/modules/services/cluster/k3s/default.nix"
