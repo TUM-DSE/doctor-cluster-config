@@ -2,7 +2,7 @@
   imports = [
     ./modules/nfs-home.nix
     ./modules/ci.nix
-    ./modules/k3s.nix
+    ./modules/k3s/server.nix
   ];
 
   networking.hostName = "martha";
