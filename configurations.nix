@@ -18,6 +18,10 @@ let
     ./modules/mosh.nix
     # TODO remove in 21.03
     "${nixpkgs-unstable}/nixos/modules/services/logging/promtail.nix"
+    ./modules/promtail.nix
+
+    "${nixpkgs-unstable}/nixos/modules//virtualisation/containerd.nix"
+    "${nixpkgs-unstable}/nixos/modules/services/cluster/k3s/default.nix"
     # TODO remove in 21.03
     ({lib, pkgs, ...}: {
       disabledModules = [ "services/cluster/k3s/default.nix" ];
@@ -37,14 +41,8 @@ let
           type = lib.types.bool;
         };
       };
-
-      config = {
-        virtualisation.docker.package = nixpkgs-unstable.legacyPackages.x86_64-linux.docker;
-      };
     })
-    "${nixpkgs-unstable}/nixos/modules/services/cluster/k3s/default.nix"
 
-    ./modules/promtail.nix
     {
       nix.nixPath = [
         "home-manager=${home-manager}"
