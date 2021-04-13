@@ -62,7 +62,15 @@ in {
     mkdir -m 0755 -p /bin
     ln -sfn /bin/sh /bin/.bash.tmp
     mv /bin/.bash.tmp /bin/bash
-   '';
+  '';
+
+  system.activationScripts.libld = let
+    ld = pkgs.stdenv.cc.bintools.dynamicLinker;
+  in ''
+    mkdir -m 0755 -p /lib64
+    ln -sfn ${ld} /lib64/.$(basename ${ld}).tmp
+    mv /lib64/.$(basename ${ld}).tmp /lib64/$(basename ${ld})
+  '';
 
   systemd.services.containerd.path = with pkgs; [ zfs ];
 
