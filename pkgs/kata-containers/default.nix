@@ -16,9 +16,8 @@ stdenv.mkDerivation rec {
       substituteInPlace "$f" \
         --replace "/opt" "$out/opt"
     done
-    for f in $out/opt/kata/share/defaults/kata-containers/*.toml; do
-      substituteInPlace "$f" \
-        --replace "valid_hypervisor_paths =" "valid_hypervisor_paths = [\"$out/opt/kata/bin/*\"]"
-    done
+
+    substituteInPlace $out/opt/kata/share/defaults/kata-containers/configuration-fc.toml \
+      --replace "valid_hypervisor_paths =" "valid_hypervisor_paths = [\"$out/opt/kata/bin/firecracker\"]"
   '';
 }
