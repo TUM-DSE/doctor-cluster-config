@@ -2,8 +2,20 @@
 let
   kata-containers = pkgs.callPackage ../../pkgs/cata-containers {};
   configDir = "${kata-containers}/opt/kata/share/defaults/kata-containers";
+  containerdShims = pkgs.runCommand "containerd-shims" {
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+  } ''
+    mkdir -p $out/bin
+    for shim in fc qemu qemu-virtiofs clh; do
+      makeWrapper ${kata-containers}/opt/kata/bin/containerd-shim-kata-v2 \
+        $out/bin/containerd-shim-kata-$shim-v2 \
+        --set KATA_CONF_FILE "${kata-containers}/opt/kata/share/defaults/kata-containers/configuration-$shim.toml"
+    done
+  '';
 in
 {
+  systemd.services.containerd.path = [ containerdShims ];
+
   virtualization.containerd.configText = ''
     # comes from kata-deploy
     [plugins.cri.containerd.runtimes.kata]
