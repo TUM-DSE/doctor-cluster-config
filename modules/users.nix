@@ -51,6 +51,10 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos
   '';
 
+  philipKeys = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMI+21MFo1RlD0Urx8bTJHJZnRNRSGuN9IZ6Ld7M2JS philip@x541uj
+  '';
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in {
   users.extraUsers = {
@@ -141,6 +145,15 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 1010;
       openssh.authorizedKeys.keys = [ anindyaKeys ];
+    };
+
+    philip = {
+      isNormalUser = true;
+      home = "/home/philip";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1011;
+      openssh.authorizedKeys.keys = [ philipKeys ];
     };
 
     root.openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
