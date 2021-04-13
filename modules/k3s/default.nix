@@ -55,6 +55,15 @@ in {
       [plugins.cri.containerd.runtimes.kata-clh.options]
         ConfigPath = "/opt/kata/share/defaults/kata-containers/configuration-clh.toml"
   '';
+
+  # HACK: scripts in /opt/kata/ use /bin/bash
+  # atomically replace /usr/bin/env
+  system.activationScripts.binbash = ''
+    mkdir -m 0755 -p /bin
+    ln -sfn /bin/sh /bin/.bash.tmp
+    mv /bin/.bash.tmp /bin/bash
+   '';
+
   systemd.services.containerd.path = with pkgs; [ zfs ];
 
   systemd.services.containerd.serviceConfig = {
