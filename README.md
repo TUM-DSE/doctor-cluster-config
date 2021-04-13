@@ -32,7 +32,7 @@ We use [flakes](https://nixos.wiki/wiki/Flakes) to manage
 nixpkgs versions. To upgrade use:
 
 ``` console
-$ nix flake update --recreate-lock-file
+$ nix flake update
 ```
 
 Than commit `flake.lock`.
