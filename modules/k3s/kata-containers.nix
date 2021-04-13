@@ -15,10 +15,19 @@ let
 in
 {
   systemd.services.containerd.path = [ containerdShims ];
+
   # qemu has this path hard-coded in its binary :(
   systemd.tmpfiles.rules = [
-    "L+ /opt/kata/ - - - - ${kata-containers}/opt/kata"
+    "L+ /opt/kata/share - - - - ${kata-containers}/opt/kata/share"
   ];
+
+  system.activationScripts.libld = let
+    ld = pkgs.stdenv.cc.bintools.dynamicLinker;
+  in ''
+    mkdir -m 0755 -p /lib64
+    ln -sfn ${ld} /lib64/.$(basename ${ld}).tmp
+    mv /lib64/.$(basename ${ld}).tmp /lib64/$(basename ${ld})
+  '';
 
   virtualization.containerd.configText = ''
     # comes from kata-deploy

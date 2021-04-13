@@ -39,6 +39,8 @@ in
     virtualisation.containerd.enable = true;
 
     virtualization.containerd.configText = ''
+      #[debug]
+      #  level = "debug"
       [plugins.cri.containerd]
         snapshotter = "zfs"
       [plugins.cri.cni]
