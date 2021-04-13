@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  kata-containers = pkgs.callPackage ../../pkgs/cata-containers {};
+  kata-containers = pkgs.callPackage ../../pkgs/kata-containers {};
   configDir = "${kata-containers}/opt/kata/share/defaults/kata-containers";
   containerdShims = pkgs.runCommand "containerd-shims" {
     nativeBuildInputs = [ pkgs.makeWrapper ];
