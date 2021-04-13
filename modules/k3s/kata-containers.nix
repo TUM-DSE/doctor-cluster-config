@@ -15,6 +15,10 @@ let
 in
 {
   systemd.services.containerd.path = [ containerdShims ];
+  # qemu has this path hard-coded in its binary :(
+  systemd.tmpfiles.rules = [
+    "L+ /opt/kata/ - - - - ${kata-containers}/opt/kata"
+  ];
 
   virtualization.containerd.configText = ''
     # comes from kata-deploy
