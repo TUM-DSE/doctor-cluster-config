@@ -8,7 +8,8 @@
     };
 
     ipv6 = mkOption {
-      type = types.str;
+      type = types.nullOr types.str;
+      default = null;
       description = ''
         own ipv4 address
       '';
@@ -68,6 +69,11 @@ in {
         ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
         linklocal = "fe80:942d:18ab:a4c9::6";
         serveBinaryCache = false;
+      };
+      sauron = {
+        ipv4 = "129.215.165.75";
+        #ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
+        linklocal = "fe80:942d:18ab:a4c9::7";
       };
     };
   };

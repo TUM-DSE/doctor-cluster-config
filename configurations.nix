@@ -117,4 +117,11 @@ in {
       ./rose.nix
     ];
   };
+
+  sauron = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./sauron.nix
+    ];
+  };
 }

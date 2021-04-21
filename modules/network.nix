@@ -16,7 +16,7 @@
   networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
      (name: host: ''
        ${host.ipv4} ${name}
-       ${host.ipv6} ${name}
+       ${lib.optionalString (host.ipv6 != null) "${host.ipv6} ${name}"}
        ${host.linklocal} ${name}.u
      '')
     config.networking.doctorwho.hosts);
