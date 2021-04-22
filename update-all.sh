@@ -14,5 +14,5 @@ eval $upgrade_cmd
 pssh \
   -t 0 \
   -O "ForwardAgent yes" \
-  -i -H amy.thalheim.io -H clara.thalheim.io -H donna.thalheim.io -H martha.thalheim.io \
+  -i -H amy.thalheim.io -H clara.thalheim.io -H donna.thalheim.io -H martha.thalheim.io -H sauron.thalheim.io \
   "$upgrade_cmd"
