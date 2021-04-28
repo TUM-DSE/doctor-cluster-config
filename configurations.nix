@@ -118,6 +118,13 @@ in {
     ];
   };
 
+  bill = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./bill.nix
+    ];
+  };
+
   sauron = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
