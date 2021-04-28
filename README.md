@@ -99,7 +99,7 @@ $ mount -t zfs zroot/root/tmp /mnt/tmp/
 $ chmod 777 /mnt/tmp
 ```
 
-## Install NixOS configuration
+## Prepare NixOS configuration
 
 ```console
 # We are are just interested in the hardware-configuration.nix that NixOS might come up for this hardware.
@@ -108,14 +108,19 @@ $ chmod 777 /mnt/tmp
 $ nixos-generate-config --root /mnt --dir /tmp/nixos
 # clone configuration to new server
 $ mkdir -p /mnt/etc/nixos
-$ nix-shell -p git --run 'git clone https://github.com/Mic92/doctor-cluster-config /mnt/etc/nixos'
-# also checkout secrets git submodule
-$ git -C /mnt/etc/nixos submodule update --init
+$ nix-shell -p git --run 'git clone https://github.com/Mic92/doctor-cluster-config /mnt/etc/nixos && git -C /mnt/etc/nixos submodule update --init'
+# Generates keys for tinc
+$ nix-shell -p tinc --run 'mkdir -p /mnt/etc/tinc/retiolum && sudo tincd --generate-keys -c /mnt/etc/tinc/retiolum -n retiolum'
 # pick a new hostname and and copy configuration for it
 $ cp clara.nix $newname.nix
+# copy ssh keys from the installer to the new system (requires sshd service to be started)
+# also share this public key (ssh_host_ed25519_key.pub) with @Mic92 to get a ssh certificate
+$ cp /etc/ssh/ssh_host_* /mnt/etc/ssh
+# the ssh certificate needs to go to modules/sshd/certs/$newname-cert.pub
 # Than adjust configuration in $newname.nix
 # Also add the new host in configurations.nix
-# we primarly need a new tinc ip address for the vpn following https://github.com/Mic92/retiolum
+# We primarly need a new tinc ip address for the vpn following https://github.com/Mic92/retiolum
+# Also share in this step the key generated to /mnt/etc/tinc/retiolum
 # Than run nixos-install
 $ nixos-install
 ```
