@@ -79,6 +79,13 @@ in {
         ipv4 = "192.168.32.74";
         #ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
         linklocal = "fe80:942d:18ab:a4c9::8";
+        serveBinaryCache = false;
+      };
+      nardole = {
+        ipv4 = "192.168.33.61";
+        #ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
+        serveBinaryCache = false;
+        linklocal = "fe80:942d:18ab:a4c9::9";
       };
     };
   };

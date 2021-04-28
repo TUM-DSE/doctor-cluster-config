@@ -125,6 +125,13 @@ in {
     ];
   };
 
+  nardole = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./nardole.nix
+    ];
+  };
+
   sauron = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
