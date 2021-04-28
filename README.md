@@ -121,8 +121,11 @@ $ cp /etc/ssh/ssh_host_* /mnt/etc/ssh
 # Also add the new host in configurations.nix
 # We primarly need a new tinc ip address for the vpn following https://github.com/Mic92/retiolum
 # Also share in this step the key generated to /mnt/etc/tinc/retiolum
+$ vim /mnt/etc/nixos/$newname.nix
+# add ip address of the machine to
+$ vim /mnt/etc/nixos/modules/hosts.nix
 # Than run nixos-install
-$ nixos-install
+$ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#bill'
 ```
 
 # Backups

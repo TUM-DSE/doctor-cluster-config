@@ -1,7 +1,6 @@
 {
   imports = [
     ./modules/nfs-home.nix
-    ./modules/pm-emulation.nix
   ];
 
   networking.hostName = "clara";
