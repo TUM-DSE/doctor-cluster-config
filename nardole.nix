@@ -20,5 +20,19 @@
     MACAddress = 94:05:BB:11:2D:70
   '';
 
+  # provide dhcp to bill's ipmi
+  systemd.network.networks."01-ipmi-dhcp".extraConfig = ''
+   [Match]
+   Name = eno1
+   
+   [Network]
+   Address = 192.168.24.50/24
+   DHCPServer = true
+   
+   [DHCPServer]
+   PoolOffset = 100
+   PoolSize = 20
+  '';
+
   system.stateVersion = "20.09";
 }

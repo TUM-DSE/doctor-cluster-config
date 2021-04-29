@@ -20,5 +20,19 @@
     MACAddress = 00:e0:4c:68:00:8f
   '';
 
+  # provide dhcp to nardole's ipmi
+  systemd.network.networks."01-ipmi-dhcp".extraConfig = ''
+   [Match]
+   Name = eno1
+   
+   [Network]
+   Address = 192.168.24.50/24
+   DHCPServer = true
+   
+   [DHCPServer]
+   PoolOffset = 100
+   PoolSize = 20
+  '';
+
   system.stateVersion = "20.09";
 }
