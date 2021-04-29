@@ -1,9 +1,8 @@
 { config, lib, ... }:
 let
   hosts = config.networking.doctorwho.hosts;
-  ownHostName = config.networking.hostName;
   filterHosts = name: host:
-    name != config.networking.hostName && host.serveBinaryCache && host.location == hosts.${ownHostName}.location;
+    name != config.networking.hostName && host.serveBinaryCache && host.location == config.networking.doctorwho.currentHost.location;
   filteredHosts = lib.filterAttrs filterHosts hosts;
 in
 {

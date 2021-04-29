@@ -45,6 +45,11 @@ in
       type = with types; attrsOf (submodule [{ options = hostOptions; }]);
       description = "A host in our cluster";
     };
+    networking.doctorwho.currentHost = mkOption {
+      type = with types; submodule [{ options = hostOptions; }];
+      default = config.networking.doctorwho.hosts.${config.networking.hostName};
+      description = "The host that is described by this configuration";
+    };
   };
   config = {
     networking.doctorwho.hosts = {

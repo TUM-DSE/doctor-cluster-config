@@ -72,5 +72,11 @@
   # breaks docker and fails to reload after nixpkgs upgrades
   systemd.services.firewall.reloadIfChanged = lib.mkForce false;
 
-  networking.nameservers = [ "8.8.8.8" ];
+  # TODO switch to DHCP eventually
+  networking.nameservers = if config.networking.doctorwho.currentHost.location == "munich" then [ 
+    "131.159.254.1"
+    "131.159.254.2"
+  ] else [
+    "8.8.8.8"
+  ];
 }
