@@ -125,7 +125,7 @@ $ vim /mnt/etc/nixos/$newname.nix
 # add ip address of the machine to
 $ vim /mnt/etc/nixos/modules/hosts.nix
 # Than run nixos-install
-$ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#bill'
+$ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#$newname'
 ```
 
 # Backups
