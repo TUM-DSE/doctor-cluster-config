@@ -157,9 +157,15 @@ in
       openssh.authorizedKeys.keys = [ philipKeys ];
     };
 
-    root.openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
+    root = {
+      openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
+      # /etc/nixos/secrets/root-password
+      hashedPassword = "$6$n7B6/qK5R7j$RRHT.1OLEeMBFsRSRqo2nOgJRlF4WTsVEPiI1BVaEvKZ1.M6imoUIhlTZRGtjSVzAs3JUI.4JdKcQ8Rc/Nx8S0";
+    };
   };
 
+  # needed so that we can set a root password
+  users.mutableUsers = false;
   nix.trustedUsers = [ "joerg" "harshanavkis" "sandro" ];
 
   security.sudo.wheelNeedsPassword = false;
