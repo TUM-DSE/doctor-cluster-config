@@ -34,5 +34,7 @@
    PoolSize = 20
   '';
 
+  networking.firewall.allowedUDPPorts = [ 67 68 ];
+
   system.stateVersion = "20.09";
 }
