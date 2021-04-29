@@ -3,6 +3,7 @@
   imports = [
     # TODO
     #./modules/nfs-home.nix
+    ./modules/ipmi.nix
   ];
 
   networking.hostName = "bill";
