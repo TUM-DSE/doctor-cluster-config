@@ -29,6 +29,13 @@
          wether this hosts serve a binary cache on port 5000
       '';
     };
+    
+    location = mkOption {
+      type = types.str;
+      description = ''
+         Where the server physcally is installed
+      '';
+    };
   };
 in {
   options = with lib; {
@@ -43,49 +50,58 @@ in {
         ipv4 = "129.215.165.57";
         ipv6 = "2001:630:3c1:164:b62e:99ff:fe3e:d369";
         linklocal = "fe80:942d:18ab:a4c9::1";
+	location = "edinburgh";
       };
       clara = {
         ipv4 = "129.215.165.58";
         ipv6 = "2001:630:3c1:164:b62e:99ff:fe3d:70f2";
         linklocal = "fe80:942d:18ab:a4c9::2";
+	location = "edinburgh";
       };
       donna = {
         ipv4 = "129.215.165.54";
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4ab8";
         linklocal = "fe80:942d:18ab:a4c9::3";
+	location = "edinburgh";
       };
       martha = {
         ipv4 = "129.215.165.53";
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4aba";
         linklocal = "fe80:942d:18ab:a4c9::4";
+	location = "edinburgh";
       };
       rose = {
         ipv4 = "129.215.165.52";
         ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
         linklocal = "fe80:942d:18ab:a4c9::5";
+	location = "edinburgh";
       };
       doctor = {
         ipv4 = "129.215.165.108";
         ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
         linklocal = "fe80:942d:18ab:a4c9::6";
         serveBinaryCache = false;
+	location = "edinburgh";
       };
       sauron = {
         ipv4 = "129.215.165.75";
         #ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
         linklocal = "fe80:942d:18ab:a4c9::7";
+	location = "edinburgh";
       };
       bill = {
         ipv4 = "192.168.32.74";
         #ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
         linklocal = "fe80:942d:18ab:a4c9::8";
         serveBinaryCache = false;
+	location = "munich";
       };
       nardole = {
         ipv4 = "192.168.33.61";
         #ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
         serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::9";
+	location = "munich";
       };
     };
   };
