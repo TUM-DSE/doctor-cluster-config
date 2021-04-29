@@ -1,5 +1,4 @@
 { pkgs, config, ... }:
-
 let
   graphene-sgx-driver = pkgs.callPackage ../../pkgs/graphene-sgx-driver {
     linux-sgx-driver = pkgs.callPackage ../../pkgs/linux-sgx-driver {
@@ -7,7 +6,8 @@ let
     };
     inherit (config.boot.kernelPackages) kernel;
   };
-in {
+in
+{
   imports = [ ./. ];
   boot.extraModulePackages = [ graphene-sgx-driver ];
 

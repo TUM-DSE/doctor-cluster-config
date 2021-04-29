@@ -1,10 +1,11 @@
 { config, lib, pkgs, ... }:
 let
-  kata-containers = pkgs.callPackage ../../pkgs/kata-containers {};
+  kata-containers = pkgs.callPackage ../../pkgs/kata-containers { };
   configDir = "${kata-containers}/opt/kata/share/defaults/kata-containers";
-  containerdShims = pkgs.runCommand "containerd-shims" {
-    nativeBuildInputs = [ pkgs.makeWrapper ];
-  } ''
+  containerdShims = pkgs.runCommand "containerd-shims"
+    {
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+    } ''
     mkdir -p $out/bin
     for shim in fc qemu qemu-virtiofs clh; do
       makeWrapper ${kata-containers}/opt/kata/bin/containerd-shim-kata-v2 \
@@ -21,13 +22,15 @@ in
     "L+ /opt/kata/share - - - - ${kata-containers}/opt/kata/share"
   ];
 
-  system.activationScripts.libld = let
-    ld = pkgs.stdenv.cc.bintools.dynamicLinker;
-  in ''
-    mkdir -m 0755 -p /lib64
-    ln -sfn ${ld} /lib64/.$(basename ${ld}).tmp
-    mv /lib64/.$(basename ${ld}).tmp /lib64/$(basename ${ld})
-  '';
+  system.activationScripts.libld =
+    let
+      ld = pkgs.stdenv.cc.bintools.dynamicLinker;
+    in
+    ''
+      mkdir -m 0755 -p /lib64
+      ln -sfn ${ld} /lib64/.$(basename ${ld}).tmp
+      mv /lib64/.$(basename ${ld}).tmp /lib64/$(basename ${ld})
+    '';
 
   virtualization.containerd.configText = ''
     # comes from kata-deploy

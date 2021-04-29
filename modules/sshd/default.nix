@@ -1,7 +1,8 @@
 { lib, config, ... }:
 let
   cert = ./certs + "/${config.networking.hostName}-cert.pub";
-in {
+in
+{
   services.openssh = {
     enable = true;
     passwordAuthentication = false;

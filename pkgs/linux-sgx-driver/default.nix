@@ -1,8 +1,8 @@
 { kernel, stdenv, fetchFromGitHub, perl }:
-
 let
   kdir = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   pname = "linux-sgx-driver";
   version = "2.6";
 

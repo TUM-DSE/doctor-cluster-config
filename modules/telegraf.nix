@@ -1,6 +1,8 @@
-{ pkgs, lib, config, ... }: let
+{ pkgs, lib, config, ... }:
+let
   isVM = lib.any (mod: mod == "xen-blkfront" || mod == "virtio_console") config.boot.initrd.kernelModules;
-in {
+in
+{
   config = {
     networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ];
 
@@ -17,8 +19,8 @@ in {
             '';
           };
         }) // {
-          system = {};
-          mem = {};
+          system = { };
+          mem = { };
           file = [{
             data_format = "influx";
             file_tag = "name";
@@ -46,8 +48,8 @@ in {
             ];
             data_format = "influx";
           };
-          systemd_units = {};
-          swap = {};
+          systemd_units = { };
+          swap = { };
           disk.tagdrop = {
             fstype = [ "tmpfs" "ramfs" "devtmpfs" "devfs" "iso9660" "overlay" "aufs" "squashfs" ];
             device = [ "rpc_pipefs" "lxcfs" "nsfs" "borgfs" ];
@@ -63,7 +65,7 @@ in {
     };
     security.sudo.extraRules = lib.mkIf (!isVM) [{
       users = [ "telegraf" ];
-      commands = [ {
+      commands = [{
         command = "${pkgs.smartmontools}/bin/smartctl";
         options = [ "NOPASSWD" ];
       }];

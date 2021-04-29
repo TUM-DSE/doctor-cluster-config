@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ...}: {
+{ pkgs, lib, config, ... }: {
   imports = [
     ./modules/nfs-home.nix
     ./modules/k3s/agent.nix

@@ -31,5 +31,5 @@
     (neovim.override { vimAlias = true; })
     ripgrep
     pciutils
- ];
+  ];
 }

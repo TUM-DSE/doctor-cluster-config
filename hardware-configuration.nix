@@ -18,7 +18,7 @@
   fileSystems."/boot" = {
     device = "/dev/sda1";
     fsType = "vfat";
-    options = ["nofail"];
+    options = [ "nofail" ];
   };
 
   fileSystems."/" = {

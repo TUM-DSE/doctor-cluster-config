@@ -7,5 +7,5 @@
     ];
     uid = 2001;
   };
-  nix.trustedUsers = ["nix"];
+  nix.trustedUsers = [ "nix" ];
 }

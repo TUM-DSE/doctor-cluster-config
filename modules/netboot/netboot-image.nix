@@ -11,10 +11,11 @@ let
         bits = 4096;
         path = ../../secrets/netboot_host_rsa_key;
         type = "rsa";
-      } {
-        path = ../../secrets/netboot_host_ed25519_key;
-        type = "ed25519";
-      }];
+      }
+        {
+          path = ../../secrets/netboot_host_ed25519_key;
+          type = "ed25519";
+        }];
 
       nixpkgs.overlays = [ flake.inputs.nur.overlay ];
       imports = [
@@ -47,7 +48,7 @@ let
     initrd http://${rpiAddress}/initrd
     boot
   '';
-   
+
   ipxeBootLocal = pkgs.writeText "boot-local.ipxe" ''
     #!ipxe
 
@@ -55,7 +56,8 @@ let
   '';
 
   build = nixos.config.system.build;
-in pkgs.stdenv.mkDerivation {
+in
+pkgs.stdenv.mkDerivation {
   name = "netboot";
   dontUnpack = true;
   dontBuild = true;

@@ -23,7 +23,7 @@ let
     "${nixpkgs-unstable}/nixos/modules//virtualisation/containerd.nix"
     "${nixpkgs-unstable}/nixos/modules/services/cluster/k3s/default.nix"
     # TODO remove in 21.03
-    ({lib, pkgs, ...}: {
+    ({ lib, pkgs, ... }: {
       disabledModules = [ "services/cluster/k3s/default.nix" ];
       options = {
         # stub out new options until we upgrade
@@ -75,7 +75,8 @@ let
     ./modules/zfs.nix
     ./modules/systemd-boot.nix
   ];
-in {
+in
+{
   amy = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [

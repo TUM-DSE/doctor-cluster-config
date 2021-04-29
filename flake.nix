@@ -29,15 +29,15 @@
     , nixos-hardware
     , flake-registry
     }: {
-    nixosConfigurations = import ./configurations.nix {
-      inherit nixpkgs nixpkgs-unstable nur home-manager retiolum flake-registry;
-      nixosSystem = nixpkgs.lib.nixosSystem;
+      nixosConfigurations = import ./configurations.nix {
+        inherit nixpkgs nixpkgs-unstable nur home-manager retiolum flake-registry;
+        nixosSystem = nixpkgs.lib.nixosSystem;
+      };
+      hydraJobs = {
+        configurations =
+          nixpkgs.lib.mapAttrs'
+            (name: config: nixpkgs.lib.nameValuePair name config.config.system.build.toplevel)
+            self.nixosConfigurations;
+      };
     };
-    hydraJobs = {
-      configurations =
-        nixpkgs.lib.mapAttrs'
-          (name: config: nixpkgs.lib.nameValuePair name config.config.system.build.toplevel)
-          self.nixosConfigurations;
-    };
-  };
 }

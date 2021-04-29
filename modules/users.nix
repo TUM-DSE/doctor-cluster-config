@@ -56,7 +56,8 @@ let
   '';
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
-in {
+in
+{
   users.extraUsers = {
     joerg = {
       isNormalUser = true;

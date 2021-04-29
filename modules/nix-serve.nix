@@ -1,10 +1,12 @@
-{ config, lib, ... }: let
+{ config, lib, ... }:
+let
   hosts = config.networking.doctorwho.hosts;
   ownHostName = config.networking.hostName;
-  filterHosts = name: host: 
+  filterHosts = name: host:
     name != config.networking.hostName && host.serveBinaryCache && host.location == hosts.${ownHostName}.location;
   filteredHosts = lib.filterAttrs filterHosts hosts;
-in {
+in
+{
   systemd.tmpfiles.rules = [
     "C /run/cache-priv-key.pem 400 nix-serve root - /etc/nixos/secrets/cache-priv-key.pem"
   ];

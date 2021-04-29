@@ -14,11 +14,11 @@
 
   # add an entry to /etc/hosts for each host
   networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
-     (name: host: ''
-       ${host.ipv4} ${name}
-       ${lib.optionalString (host.ipv6 != null) "${host.ipv6} ${name}"}
-       ${host.linklocal} ${name}.u
-     '')
+    (name: host: ''
+      ${host.ipv4} ${name}
+      ${lib.optionalString (host.ipv6 != null) "${host.ipv6} ${name}"}
+      ${host.linklocal} ${name}.u
+    '')
     config.networking.doctorwho.hosts);
 
   # does not play well with docker
@@ -56,9 +56,11 @@
   ];
 
   # allow incomming traffic from all our hosts
-  networking.firewall.extraCommands = lib.concatMapStringsSep "\n" (host: ''
-    iptables -A INPUT -s ${host.ipv4} -j nixos-fw-accept
-  '') (lib.attrValues config.networking.doctorwho.hosts);
+  networking.firewall.extraCommands = lib.concatMapStringsSep "\n"
+    (host: ''
+      iptables -A INPUT -s ${host.ipv4} -j nixos-fw-accept
+    '')
+    (lib.attrValues config.networking.doctorwho.hosts);
 
   # allow all traffic from internal 40GbE network
   networking.firewall.trustedInterfaces = [

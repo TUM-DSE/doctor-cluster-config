@@ -1,7 +1,8 @@
 { kernel, stdenv, fetchFromGitHub, python3, linux-sgx-driver }:
 let
   kdir = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   name = "graphene-sgx-driver";
   src = fetchFromGitHub {
     owner = "oscarlab";
