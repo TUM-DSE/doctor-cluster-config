@@ -21,9 +21,6 @@
     '')
     config.networking.doctorwho.hosts);
 
-  # does not play well with docker
-  services.resolved.enable = false;
-
   systemd.network.networks."ethernet".extraConfig = ''
     [Match]
     Type = ether
@@ -36,9 +33,6 @@
     IPv6AcceptRA = true
     Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
     IPForward = yes
-
-    [DHCP]
-    UseDNS = no
   '';
 
   networking.firewall.allowedTCPPorts = [
@@ -69,14 +63,7 @@
     "enp2s0f0"
     "enp2s0f1"
   ];
+
   # breaks docker and fails to reload after nixpkgs upgrades
   systemd.services.firewall.reloadIfChanged = lib.mkForce false;
-
-  # TODO switch to DHCP eventually
-  networking.nameservers = if config.networking.doctorwho.currentHost.location == "munich" then [ 
-    "131.159.254.1"
-    "131.159.254.2"
-  ] else [
-    "8.8.8.8"
-  ];
 }
