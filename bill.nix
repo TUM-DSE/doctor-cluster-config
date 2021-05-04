@@ -12,14 +12,6 @@
     ipv6 = "42:0:3c46:87ed:6232:1016:7553:939c";
   };
 
-  systemd.network.links."00-fix-mac".extraConfig = ''
-    [Match]
-    MACAddress = 3c:ec:ef:2c:f5:55
-
-    [Link]
-    MACAddress = 00:e0:4c:68:00:8f
-  '';
-
   # provide dhcp to nardole's ipmi
   systemd.network.networks."01-ipmi-dhcp".extraConfig = ''
    [Match]
