@@ -128,6 +128,28 @@ $ vim /mnt/etc/nixos/modules/hosts.nix
 $ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#$newname'
 ```
 
+
+## Ipmi
+
+On bill.r and nardole.r we have ipmi support!!
+
+On the machine with IPMI:
+
+```
+ipmitool lan print
+```
+
+to get the IPMI address. On the other machine run the following command to get a serial console:
+
+
+```
+$ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(</etc/nixos/secrets/ipmi-passwords)" sol activate
+```
+
+Than hit enter in order to get a login Prompt.
+IPMI also allows to change BIOS settings.
+
+
 # Backups
 
 Lorenzo back ups with borgbackup to his [personal storage](https://www.ed.ac.uk/geosciences/intranet/it/data-storage/personal-storage)
