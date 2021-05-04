@@ -147,6 +147,7 @@ $ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(</etc/nixos/secrets/ip
 ```
 
 Than hit enter in order to get a login Prompt.
+The root password is in /etc/nixos/secrets/root-password
 IPMI also allows to change BIOS settings.
 
 
