@@ -1,5 +1,4 @@
 { nixpkgs
-, nixpkgs-unstable
 , nixosSystem
 , nur
 , home-manager
@@ -16,32 +15,7 @@ let
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/mosh.nix
-    # TODO remove in 21.03
-    "${nixpkgs-unstable}/nixos/modules/services/logging/promtail.nix"
     ./modules/promtail.nix
-
-    "${nixpkgs-unstable}/nixos/modules//virtualisation/containerd.nix"
-    "${nixpkgs-unstable}/nixos/modules/services/cluster/k3s/default.nix"
-    # TODO remove in 21.03
-    ({ lib, pkgs, ... }: {
-      disabledModules = [ "services/cluster/k3s/default.nix" ];
-      options = {
-        # stub out new options until we upgrade
-        boot.zfs.enabled = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-        };
-        boot.zfs.package = lib.mkOption {
-          readOnly = true;
-          type = lib.types.package;
-          default = pkgs.zfs;
-        };
-        systemd.enableUnifiedCgroupHierarchy = lib.mkOption {
-          default = false;
-          type = lib.types.bool;
-        };
-      };
-    })
 
     {
       nix.nixPath = [
