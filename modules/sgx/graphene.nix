@@ -11,14 +11,6 @@ in
   imports = [ ./. ];
   boot.extraModulePackages = [ graphene-sgx-driver ];
 
-  # required for ptrace patch
-  boot.kernelPatches = [{
-    # needed for graphene: https://github.com/oscarlab/graphene/blob/b72786e9ded042b238737f6eb0387becc250ea47/Documentation/building.rst#L72
-    name = "fsgsbase.patch";
-    patch = pkgs.fetchpatch {
-      url = "https://github.com/torvalds/linux/compare/v5.4...Mic92:fsgsbase-5.4.patch";
-      name = "fsgsbase.patch";
-      sha256 = "0dwz5cndac5n4na08v5b2m2qh3bf1pw7yhb1psavj3pjxj3nabxp";
-    };
-  }];
+  # we need linux 5.9+: https://github.com/oscarlab/graphene-sgx-driver/issues/31
+  boot.kernelPackages = pkgs.linuxPackages_5_11;
 }
