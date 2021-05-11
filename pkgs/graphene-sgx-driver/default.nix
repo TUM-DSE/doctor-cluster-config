@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "oscarlab";
     repo = "graphene-sgx-driver";
-    rev = "fd435f02ff526fd4e473de03797b0bbab95fb748";
-    sha256 = "1ynri4fvqazl47272kkx8ca85ihiznci2fn1h1jmcma7cr4lyddk";
+    rev = "4386dbeb1260d8743ea3a5fbe4fc5fd61322008c";
+    sha256 = "sha256-zZ0FgCx63LCNmvQ909O27v/o4+93gefhgEE/oDr/bHw=";
   };
 
   ISGX_DRIVER_PATH = linux-sgx-driver.src;
