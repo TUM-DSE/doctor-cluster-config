@@ -50,18 +50,20 @@ in
     "d /run/telegraf/ 0700 telegraf - -"
   ];
 
-  systemd.services.k3s.serviceConfig.ExecStartPost = "${pkgs.k3s}/bin/k3s kubectl apply -f ${pkgs.writeText "resources.yaml" resources}";
-
   systemd.services.telegraf-kubernetes-setup = {
     wantedBy = [ "multi-user.target" ];
     requires = ["k3s.service"];
     after = ["k3s.service"];
     script = ''
+      ${pkgs.k3s}/bin/k3s kubectl apply -f ${pkgs.writeText "resources.yaml" resources}
       secretname=$(${pkgs.k3s}/bin/k3s kubectl get serviceaccount telegraf -o template="{{(index .secrets 0).name}}")
       ${pkgs.k3s}/bin/k3s kubectl get secret "$secretname" -o template='{{.data.token}}' | base64 -d > /run/telegraf/kubernetes-token
     '';
     serviceConfig = {
       Type = "oneshot";
+      # work-around potential race condition between k3s and this service.
+      RestartSec = "1s";
+      Restart = "on-failure";
       RemainAfterExit = true;
     };
   };
