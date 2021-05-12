@@ -4,6 +4,7 @@
     # TODO
     #./modules/nfs-home.nix
     ./modules/ipmi.nix
+    ./modules/k3s/agent.nix
   ];
 
   networking.hostName = "nardole";
