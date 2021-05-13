@@ -51,11 +51,13 @@
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 
-      packages = nixpkgs.lib.mapAttrs' (name: nixosConfig: let
+      packages = nixpkgs.lib.foldr (name: previous: let
+        nixosConfig = self.nixosConfigurations.${name};
         inherit (nixosConfig.pkgs) system;
-        deploy.${name} = deploy-rs.lib.${system}.activate.nixos nixosConfig;
-      in nixpkgs.lib.nameValuePair system deploy)
-        self.nixosConfigurations;
+        deploy = deploy-rs.lib.${system}.activate.nixos nixosConfig;
+        current = { ${system}.${name} = deploy; };
+      in nixpkgs.lib.recursiveUpdate previous current)
+        {} (builtins.attrNames self.nixosConfigurations);
 
       hydraJobs = {
         configurations =
