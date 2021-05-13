@@ -26,11 +26,12 @@
     Type = ether
 
     [Network]
+    DNSSEC = no
     DHCP = yes
     LLMNR = true
     LinkLocalAddressing = yes
     LLDP = true
-    IPv6AcceptRA = true
+    IPv6AcceptRA = yes
     Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
     IPForward = yes
   '';
