@@ -1,8 +1,22 @@
 # Update all servers
 
-1. Log into rose
-2. Change to `/etc/nixos`, do the configuration changes & run `git push`
-3. Run `./update-all.sh` to deploy to all servers
+1. Install [fabric2](https://pypi.org/project/fabric2/) via pip or load via `nix develop`
+2. Choose a deployment target:
+
+``` console
+$ fab -l
+Available tasks:
+
+  deploy-doctor      Deploy to rpi4, that is used to control power relay
+  deploy-edinburgh   Deploy to edinburgh servers starting with rose
+  deploy-tum         Deploy to TUM servers
+```
+
+3. Run!
+
+``` console
+$ fab deploy-tum
+```
 
 # Add a new host
 

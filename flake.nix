@@ -4,6 +4,12 @@
   # To update all inputs:
   # $ nix flake update --recreate-lock-file
   inputs = {
+    flake-utils.url = "github:numtide/flake-utils";
+
+    ## For accessing `deploy-rs`'s utility Nix functions
+    #deploy-rs.url = "github:serokell/deploy-rs";
+    #deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+
     # TODO switch to stable 21.05 after branch off
     nixpkgs.url = "github:Mic92/nixpkgs/master";
     nur.url = "github:nix-community/NUR";
@@ -25,7 +31,37 @@
     , retiolum
     , nixos-hardware
     , flake-registry
-    }: {
+    , flake-utils
+    }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      #deploy = deploy-rs.lib.${system}.activate;
+    in {
+      devShell = pkgs.mkShell {
+        buildInputs = [
+          pkgs.python3.pkgs.Fabric
+          pkgs.ipmitool
+          #deploy-rs.defaultPackage.${system}
+        ];
+      };
+    }) //
+    {
+      #deploy.nodes.nardole = {
+      #  hostname = "nardole.r";
+      #  profiles.system = {
+      #    user = "root";
+      #    path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nardole;
+      #  };
+      #};
+
+      #deploy.nodes.bill = {
+      #  hostname = "bill.r";
+      #  profiles.system = {
+      #    user = "root";
+      #    path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.bill;
+      #  };
+      #};
+
       nixosConfigurations = import ./configurations.nix {
         inherit nixpkgs nur home-manager retiolum flake-registry;
         nixosSystem = nixpkgs.lib.nixosSystem;
