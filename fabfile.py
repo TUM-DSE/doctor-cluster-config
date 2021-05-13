@@ -15,7 +15,9 @@ def deploy_nixos(hosts: List[str]) -> None:
     try:
         group = ThreadingGroup(*hosts, user="root", forward_agent=True)
         group.run("git -C /etc/nixos pull && git -C /etc/nixos submodule update --init")
-        group.run('nixos-rebuild switch 2>&1 | sed -e "s/^/[$(hostname)] /;"')
+        group.run('cd /etc/nixos && nix build .#$(hostname) 2>&1 | sed -e "s/^/[$(hostname)] /;"')
+
+        group.run('cd /etc/nixos && ./result | sed -e "s/^/[$(hostname)] /;"')
     except GroupException as ex:
         for conn, failed in ex.result.failed.items():
             cmd = failed.args[0].command

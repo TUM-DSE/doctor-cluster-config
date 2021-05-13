@@ -7,8 +7,9 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     ## For accessing `deploy-rs`'s utility Nix functions
-    #deploy-rs.url = "github:serokell/deploy-rs";
-    #deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+    deploy-rs.inputs.utils.follows = "flake-utils";
 
     # TODO switch to stable 21.05 after branch off
     nixpkgs.url = "github:Mic92/nixpkgs/master";
@@ -25,6 +26,7 @@
 
   outputs =
     { self
+    , deploy-rs
     , nixpkgs
     , nur
     , home-manager
@@ -35,37 +37,26 @@
     }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-      #deploy = deploy-rs.lib.${system}.activate;
     in {
       devShell = pkgs.mkShell {
         buildInputs = [
           pkgs.python3.pkgs.Fabric
           pkgs.ipmitool
-          #deploy-rs.defaultPackage.${system}
         ];
       };
     }) //
     {
-      #deploy.nodes.nardole = {
-      #  hostname = "nardole.r";
-      #  profiles.system = {
-      #    user = "root";
-      #    path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nardole;
-      #  };
-      #};
-
-      #deploy.nodes.bill = {
-      #  hostname = "bill.r";
-      #  profiles.system = {
-      #    user = "root";
-      #    path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.bill;
-      #  };
-      #};
-
       nixosConfigurations = import ./configurations.nix {
         inherit nixpkgs nur home-manager retiolum flake-registry;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
+
+      packages = nixpkgs.lib.mapAttrs' (name: nixosConfig: let
+        inherit (nixosConfig.pkgs) system;
+        deploy.${name} = deploy-rs.lib.${system}.activate.nixos nixosConfig;
+      in nixpkgs.lib.nameValuePair system deploy)
+        self.nixosConfigurations;
+
       hydraJobs = {
         configurations =
           nixpkgs.lib.mapAttrs'
