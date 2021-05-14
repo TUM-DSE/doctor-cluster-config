@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 
+import sys
+from typing import List
+
 from fabric import Connection, task
 from invoke.context import Context
 from fabric.group import ThreadingGroup
 from fabric.exceptions import GroupException
 
-from typing import List
+
+def run(group: ThreadingGroup, cmd: str) -> None:
+    """
+    Runs command and prefix its output with the hostname of the machine its running on.
+    """
+    group.run(f'set -eu -o pipefail; ({cmd}) 2>&1 | sed -e "s/^/[$HOSTNAME] /;"')
 
 
 def deploy_nixos(hosts: List[str]) -> None:
@@ -13,10 +21,14 @@ def deploy_nixos(hosts: List[str]) -> None:
     deploy to all hosts in parallel
     """
     try:
-        group = ThreadingGroup(*hosts, user="root", forward_agent=True)
-        group.run("git -C /etc/nixos pull && git -C /etc/nixos submodule update --init")
-        group.run('cd /etc/nixos && nixos-rebuild build .#$(hostname) 2>&1 | sed -e "s/^/[$(hostname)] /;"')
-        group.run('/etc/nixos/result/activate | sed -e "s/^/[$(hostname)] /;"')
+        g = ThreadingGroup(*hosts, user="root", forward_agent=True)
+        run(g, "git -C /etc/nixos pull && git -C /etc/nixos submodule update --init")
+        run(g, "cd /etc/nixos && nixos-rebuild build")
+        run(g, "/etc/nixos/result/bin/switch-to-configuration test")
+
+        # reconnect to check if we still access the machines
+        g = ThreadingGroup(*hosts, user="root")
+        run(g, "/etc/nixos/result/bin/switch-to-configuration boot")
     except GroupException as ex:
         for conn, failed in ex.result.failed.items():
             if isinstance(failed.args[0], str):
@@ -24,10 +36,8 @@ def deploy_nixos(hosts: List[str]) -> None:
             else:
                 msg = failed.args[0].command
             print(f"=== {conn.user}@{conn.host}: ===")
-            print(f"=== {cmd} ===")
+            print(f"=== {msg} ===")
             print(failed.result)
-        import sys
-
         sys.exit(1)
 
 
