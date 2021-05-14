@@ -6,11 +6,6 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
 
-    ## For accessing `deploy-rs`'s utility Nix functions
-    deploy-rs.url = "github:serokell/deploy-rs";
-    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
-    deploy-rs.inputs.utils.follows = "flake-utils";
-
     # TODO switch to stable 21.05 after branch off
     nixpkgs.url = "github:Mic92/nixpkgs/master";
     nur.url = "github:nix-community/NUR";
@@ -26,7 +21,6 @@
 
   outputs =
     { self
-    , deploy-rs
     , nixpkgs
     , nur
     , home-manager
@@ -50,14 +44,6 @@
         inherit nixpkgs nur home-manager retiolum flake-registry;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
-
-      packages = nixpkgs.lib.foldr (name: previous: let
-        nixosConfig = self.nixosConfigurations.${name};
-        inherit (nixosConfig.pkgs) system;
-        deploy = deploy-rs.lib.${system}.activate.nixos nixosConfig;
-        current = { ${system}.${name} = deploy; };
-      in nixpkgs.lib.recursiveUpdate previous current)
-        {} (builtins.attrNames self.nixosConfigurations);
 
       hydraJobs = {
         configurations =
