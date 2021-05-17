@@ -25,6 +25,20 @@
   }) cfg.macs);
 
   carrier = lib.imap0 (num: mac: "slave${toString num}") cfg.macs;
+
+  cfg2 = config.services.getty;
+
+  baseArgs = [
+    "--login-program" "${pkgs.shadow}/bin/login"
+  ] ++ optionals (cfg2.autologinUser != null) [
+    "--autologin" cfg2.autologinUser
+  ] ++ optionals (cfg2.loginOptions != null) [
+    "--login-options" cfg2.loginOptions
+  ] ++ cfg2.extraArgs;
+
+  gettyCmd = args:
+    "@${pkgs.util-linux}/sbin/agetty agetty ${lib.escapeShellArgs baseArgs} ${args}";
+
 in {
   options = {
     networking.doctowho.bonding.macs = lib.mkOption {
@@ -36,6 +50,14 @@ in {
     };
   };
   config = {
+    systemd.services."autovt@" = {
+      serviceConfig.ExecStart = [
+        "" # override upstream default with an empty ExecStart
+        (gettyCmd "--noclear %I $TERM")
+      ];
+      restartIfChanged = false;
+    };
+
     # current networkd crashes with our bonding interfaces
     systemd.package = pkgs.systemd-next.overrideAttrs (old: {
       name = "systemd-unstable";
