@@ -34,6 +34,8 @@
     IPv6AcceptRA = yes
     Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
     IPForward = yes
+    RouteMetric = 1024
+
   '';
 
   networking.firewall.allowedTCPPorts = [

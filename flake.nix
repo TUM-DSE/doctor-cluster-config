@@ -8,6 +8,7 @@
 
     # TODO switch to stable 21.05 after branch off
     nixpkgs.url = "github:Mic92/nixpkgs/master";
+    nixpkgs-systemd.url = "github:Mic92/nixpkgs/systemd";
     nur.url = "github:nix-community/NUR";
 
     home-manager.url = "github:rycee/home-manager/release-20.09";
@@ -22,6 +23,7 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-systemd
     , nur
     , home-manager
     , retiolum
@@ -41,7 +43,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nur home-manager retiolum flake-registry;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

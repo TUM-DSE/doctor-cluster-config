@@ -1,4 +1,5 @@
 { nixpkgs
+, nixpkgs-systemd
 , nixosSystem
 , nur
 , home-manager
@@ -26,6 +27,12 @@ let
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json
       '';
+
+      nixpkgs.config.packageOverrides = pkgs: {
+        systemd-next = (import nixpkgs-systemd {
+          inherit (pkgs) system;
+        }).systemd;
+      };
       nix.registry = {
         home-manager.flake = home-manager;
         nixpkgs.flake = nixpkgs;
