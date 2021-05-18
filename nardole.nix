@@ -6,6 +6,7 @@
     ./modules/bonding.nix
     ./modules/ipmi.nix
     ./modules/k3s/agent.nix
+    ./modules/xrdp.nix
   ];
 
   networking.hostName = "nardole";
