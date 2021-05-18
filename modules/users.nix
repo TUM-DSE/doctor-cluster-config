@@ -12,6 +12,9 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6WLnXEyW0Q2xvuvlBwp27LPljmmR0goCxKLhUHK9ljlYKwj4Nrij7ps0AgxDbWWrkeJVTVuD2e/R7dRnYlH2BpUmYJwOP3PKCkpVJ+XWTYKpkHUyHJNwhPPwGIsxiuOSdyrsv5YwbpwFTf8+BllZwThX/zMNLqtMz6FzYiWkLncQBE3ZB/6uQypLHfPb1Y57nmmsV+FzztrorgWDrG5lVp0x3kqCx2l2sPflhLJiW/3TuRRlLZecmE0pP1gv20j+NTfXiYivx4Cq1rdgkYFBAE7BG0j1PY49oZE9FF0pyWd+Fgrzrz2DG7HECPL37EO+M8nw10zBnD6GXniH0DsiMivz6mNZCm0CZ5TZQAJebx2hXXzFQYE7RL0O4+k4CA2RCvpctBpcBHS7RLSoCGpF9IkYUCRGsyy7YKTcXA94XKkNBr+zbT6emCnUG+0hyubgNHW2jEEXRhRKGkrBDeq1rXx+T7xr1QyLAbEDYFsFFq8tS8P3wE5q1Oy8drPZjEME= maurice@rose
   '';
 
+  atusushiKeys = ''
+  '';
+
   dimitraKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUXap/inau3PgwfwwzA/xgjPFwMIDNlNlQ6FDPxUS1bFxvLUewLlP7tHEjlU4aCe5/KPqtbnEOuU3ZBRBPiGAXA1WxIofQH4GLD9kUoxQXk3n9budu7Ni0Mc7fk4B4yKA6hAxdy78FDbWyJe7UMYhFvDJs9+A7HnxishLKrea3LjDVxW/2dhpIDOj7jKDJKh56m8WQn7Msb1w02f7o0J46EA49y1hlJFuGjLHSYwx5O7flFh2tyKiARDuriqp64rSLONWXmOWDX8d+JcnIZJGrMXxTWIuuqxkdsw0tvi7g/msDQrn8DVGX2sRxoGYksKMrMhYAAAoLiwH0Zi2777DZ demy@ubuntu
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDkFay+8y99fYWHXCn3JJG+iuA9UN4oEdUD2l4C5oyE+j9gIpc1m4TzNYOmBHmvZRKKwhrHKr8ORHdtm26+iQCkV2j5/AuununfsuXr/pL+Zmm+muKgVPdtturCEEa5uzfEiuFHa2BiwW4FarBu1pC/Oc35R8NOByDAPe190iOS4kf1JhlhbOjUHjf7b823FwDfqAteNVINyNoIBWG/yJBv9Xzlr62G2DNkUo9VLreANCgTwuLwP1q3gxavlUNIDsZYJ+k1TdjB0OK1T7MgCvz4gUIjLadYgnMi9qGeq5eiJxmcK1VUDenlY1rzKpTbt3pZwgFO9OX4OxGWczCSbKImi0UdpbsMoVnIHm6xe2Y+c54/AgeVztsWeD4L9PArrdjBaXkcy/ALs+xNhQEJgPZifU6PkL9c1PP++n7IozLZSTHex2WdXAqxsXTeEuE7ldpzAQL5Hnj3qsaIcdrccd9iWslfSBnWxFjqE3+bPe71I+1c1sdI0hP7OGQng+8ReKS6hL7LkzsJlDfI6k/WUg299K4Xq/ljqE7rT9K6/qxe8E2bBvo18DhgZ0WhPuwsDpGyZm9DwnYDN8Xuv5QutzPYyuGmm65YNjJ9I7Dhq4npKXVtZGZI/46KsvDqr6StLKyCNZywxdMFW3FN01+QWtRWNPCBJlYTE3r1pveEkM26Q== demy@ubuntu
@@ -23,10 +26,6 @@ let
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGaFuDu8EM/hA5UtAc3Q+0zXvRcwT6P6TZhtps/3R518 dimstav23@Spam
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDafd2SX0Mi6kiKXNaSYmMO71dFIVbBGLpaMt/MO4uzoX8rihtud4CIbCXm8iO+I/p7c8e5lfkyJbnmJsXS6VfkohP4K36V0r0ZQhXhU01KpgC86z8uAnPGowuvGQGseMPG5lR5qAC4keENx1wiIn+fP5N7xUNVQTLc9KKNswLYwzEj6hRvI+ZoUybNuEieqb251vcFzGGZ/+i8PyEJ8xhxql91QtmxKHeZTn1ogbr1AAlWFESnhvxY1ky48BKKAKSD9kEXB+iszjd6a2DvilD0C60b9yPeSRsKVAXhuy+/swcFs0ly5KV3FNWDKV9KGJP1aaRSgX0RE6C5MCdbjARv dimstav23@Spam
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOtq2p1WbvKsV63p1+GhgfDxMmN3dFUL+IM1/HcWSqJ dimstav23@gmail.com
-  '';
-
-  anindyaKeys = ''
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCedMIj++nqOrhjrAcgBlVxeoRPA85ukUy4e90CglX87j941C9D9OnZgBbc0Podb7bnl5U5IPZheM2ziWBkR3EF4NYGJOR0YXpeMy/Ovh8pRRClSzBXCb1XJl1t0/QwICFwi6VEtn9bGsfqeI+z80st5R8IQqYTbmNpWpna1pLEt73+A4uFXU6LURknTJ49kjs17DnrdQxcfGMf1UqbyzAXMgcCFp2MN73TMEN1N/bMbHQRE1m1YLqgxxVoLzd822XNUcQ0QDWPoeDuvhcwqYgO1igAf9h2GQ0fZupXytTu10EnziriWd8RfXK617EWPqGcGftZ8WkM3zZEz9TEO+dDUHPmotHpJ3mnRaeGvsTVrYUy5cP2SjVDnHyXCdt/SsM5lXJYRKIGVYDKPaU5AQ5iQtqCBQnTdHMy5zblyt5ULDCBOSvIwcXwAJhpROBxREIlNJD20hDWldBQGt75yAeqTTpvukAoYM2X9i3q3ewu6ak0wO03MZ4xjH4OOalrY0cEEW/+x2OVjjCz+oS0GoVExIVvTjA2SLEIVUBZ5dWJ8LElRcgoKGs151MUf06voiG/cmx9VOSsJNQu6lazZ036kbYt3WeGkV2CR26jHY4PWvcEtz6uuIj13eUhL+n0hzTkC8rHVjP7XHstohfjSEKto1HeXrFrn1NSwiU03HDuPw== a@anindyaspaul.com
   '';
 
   # Lorenzo
@@ -121,6 +120,7 @@ in
       openssh.authorizedKeys.keys = [ irisKeys ];
     };
 
+    # master student (thesis)
     okelmann = {
       isNormalUser = true;
       home = "/home/okelmann";
@@ -139,15 +139,7 @@ in
       openssh.authorizedKeys.keys = [ sandroKeys ];
     };
 
-    anindya = {
-      isNormalUser = true;
-      home = "/home/anindya";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1010;
-      openssh.authorizedKeys.keys = [ anindyaKeys ];
-    };
-
+    # master student (thesis)
     philip = {
       isNormalUser = true;
       home = "/home/philip";
@@ -155,6 +147,15 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1011;
       openssh.authorizedKeys.keys = [ philipKeys ];
+    };
+
+    atusushi = {
+      isNormalUser = true;
+      home = "/home/atusushi";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1012;
+      openssh.authorizedKeys.keys = [ atusushiKeys ];
     };
 
     root = {
