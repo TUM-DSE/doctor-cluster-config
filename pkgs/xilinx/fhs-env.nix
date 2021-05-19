@@ -1,13 +1,15 @@
 { callPackage
 , buildFHSUserEnv
 , runScript ? "bash -c"
+, xilinxName ? "xilinx-env"
 }:
 
 let
   xrt = callPackage ./xrt.nix { };
 in
 buildFHSUserEnv {
-  name = "xilinx-env";
+  name = xilinxName;
+  inherit runScript;
   targetPkgs = pkgs: with pkgs; [
     bash
     xrt
@@ -41,5 +43,4 @@ buildFHSUserEnv {
     source /opt/xilinx/Vitis/*/settings64.sh
     export XILINX_XRT="${xrt}"
   '';
-  runScript = "bash -c";
 }

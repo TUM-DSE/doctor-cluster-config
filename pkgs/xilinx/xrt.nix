@@ -1,6 +1,6 @@
 { stdenv
+, lib
 , fetchFromGitHub
-, linuxPackages_5_4
 , cmake
 , mesa
 , libdrm
@@ -99,11 +99,10 @@ in stdenv.mkDerivation rec {
     ln -s $out/opt/xilinx/xrt/lib/* $out/lib
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "xilinx runtime library";
     homepage = "https://www.xilinx.com/products/boards-and-kits/alveo/u50.html#gettingStarted";
     license = licenses.mit;
-    maintainers = with maintainers; [ mic92 ];
     platforms = [ "x86_64-linux" ];
   };
 }

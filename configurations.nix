@@ -45,9 +45,6 @@ let
   computeNodeModules = commonModules ++ [
     ./hardware-configuration.nix
     ./modules/tracing.nix
-    ./modules/dpdk.nix
-    ./modules/sgx
-    ./modules/sgx/graphene.nix
     ./modules/scratch-space.nix
     ./modules/scone.nix
     ./modules/watchdog.nix
@@ -56,18 +53,23 @@ let
     ./modules/zfs.nix
     ./modules/systemd-boot.nix
   ];
+  sgxNodeModules = computeNodeModules ++ [
+    ./modules/dpdk.nix
+    ./modules/sgx
+    ./modules/sgx/graphene.nix
+  ];
 in
 {
   amy = nixosSystem {
     system = "x86_64-linux";
-    modules = computeNodeModules ++ [
+    modules = sgxNodeModules ++ [
       ./amy.nix
     ];
   };
 
   clara = nixosSystem {
     system = "x86_64-linux";
-    modules = computeNodeModules ++ [
+    modules = sgxNodeModules ++ [
       ./clara.nix
     ];
   };
@@ -81,21 +83,21 @@ in
 
   donna = nixosSystem {
     system = "x86_64-linux";
-    modules = computeNodeModules ++ [
+    modules = sgxNodeModules ++ [
       ./donna.nix
     ];
   };
 
   martha = nixosSystem {
     system = "x86_64-linux";
-    modules = computeNodeModules ++ [
+    modules = sgxNodeModules ++ [
       ./martha.nix
     ];
   };
 
   rose = nixosSystem {
     system = "x86_64-linux";
-    modules = computeNodeModules ++ [
+    modules = sgxNodeModules ++ [
       ./rose.nix
     ];
   };
@@ -116,7 +118,7 @@ in
 
   sauron = nixosSystem {
     system = "x86_64-linux";
-    modules = computeNodeModules ++ [
+    modules = sgxNodeModules ++ [
       ./sauron.nix
     ];
   };

@@ -1,23 +1,38 @@
-{ stdenv, kernel, callPackage }:
+{ stdenv, kernel, callPackage, xrt, lib }:
 let
-  xrt = callPackage ./xrt.nix {};
   KERNELDIR = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
 in
 stdenv.mkDerivation rec {
-  pname = "xrt-drivers";
+  name = "xrt-drivers";
   dontUnpack = true;
   buildPhase = ''
     export INSTALL_MOD_PATH="$out"
 
-    modDir=$(echo ${xrt}/src/xrt-*/driver/xocl)
-    cp -r "$modDir" xocl
-    chmod -R +w xocl
+    cp -r ${xrt}/* .
+    chmod -R +w .
+    cd src/xrt-*/driver/xocl
 
-    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)/mgmtpf
-    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)/userpf
+    pushd mgmtpf
+    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)
+    popd
+
+    pushd userpf
+    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)
+    popd
   '';
+
   installPhase = ''
-    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)/mgmtpf modules_install
-    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)/userpf modules_install
+    pushd mgmtpf
+    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd) modules_install
+    popd
+
+    pushd userpf
+    make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd) modules_install
+    popd
   '';
+
+  meta = with lib; {
+    description = "kernel drivers for xrt runtime";
+    platforms = platforms.unix;
+  };
 }
