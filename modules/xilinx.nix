@@ -6,6 +6,7 @@ let
     inherit (config.boot.kernelPackages) kernel;
   };
   xilinx-env = pkgs.callPackage ../pkgs/xilinx/fhs-env.nix {};
+  xilinx-firmware = pkgs.callPackage ../pkgs/xilinx/firmware.nix {};
 in {
   environment.systemPackages = [
     (xilinx-env.override { xilinxName = "xilinx-shell"; runScript = "bash"; })
@@ -16,6 +17,11 @@ in {
 
   boot.extraModulePackages = [
     xrt-drivers
+  ];
+
+  systemd.tmpfiles.rules = [
+    "L+ /opt/xilinx/firmware - - - - ${xilinx-firmware}/opt/xilinx/firmware"
+    "L+ /lib/firmware/ - - - - ${xilinx-firmware}/lib/firmware"
   ];
 
   users.extraUsers.xilinx = {
