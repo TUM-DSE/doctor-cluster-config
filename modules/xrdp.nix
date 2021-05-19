@@ -12,6 +12,6 @@
   users.extraUsers.xrdp = {
     extraGroups = [ "wheel" "docker" "plugdev" "input" ];
     # /etc/nixos/secrets/xrdp-password
-    hashedPassword = "$6$RnQ9vDL2.$3yRErXemfCGqxFgH7vLT9Nm7zftQLmY2yuJ79XED1W/4vKksLeXeqEVhq8jDkq5MFtFxdGvDdLMjKa61jze.l1";
+    hashedPassword = "$6$JVnp0RXTKpCfSc.$A4mp4WmFzVFnwHUPYEjqMQmhlL/9o5tbKKv2y/nY3oojp/aLnWjUzTMspxCadcn4L9b7WyTFHt2VNVkZ6q9Y30";
   };
 }
