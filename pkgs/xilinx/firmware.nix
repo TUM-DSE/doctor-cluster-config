@@ -13,8 +13,16 @@ stdenv.mkDerivation rec {
     for p in *.deb; do
       dpkg-deb -x $p root
     done
-    find root
-    mkdir $out
+
+    mkdir -p control $out/share/xilinx-firmware
+    pushd control
+    for p in ../*.deb; do
+      name=$(basename "$p" .deb)
+      dpkg-deb -e $p "$name"
+      mv $name/postinst $out/share/xilinx-firmware/$name
+    done
+    popd
+
     cp -r root/{opt,lib} $out
   '';
 }

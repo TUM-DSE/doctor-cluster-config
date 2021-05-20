@@ -20,9 +20,22 @@ in {
   ];
 
   systemd.tmpfiles.rules = [
-    "L+ /opt/xilinx/firmware - - - - ${xilinx-firmware}/opt/xilinx/firmware"
-    "L+ /lib/firmware/ - - - - ${xilinx-firmware}/lib/firmware"
+    "L+ /opt/xilinx/xrt - - - - ${xrt}/opt/xilinx/xrt"
   ];
+
+  systemd.services.setup-xilinx-firmware = {
+    wantedBy = ["multi-user.target"];
+    script = ''
+      rm -rf /lib/firmware/xilinx /opt/xilinx/firmware
+      mkdir -p /lib/firmware/xilinx /opt/xilinx/firmware
+      cp -r ${xilinx-firmware}/lib/firmware/xilinx/* /lib/firmware/xilinx/
+      cp -r ${xilinx-firmware}/opt/xilinx/firmware/* /opt/xilinx/firmware/
+      for p in ${xilinx-firmware}/share/xilinx-firmware/*; do
+         echo $p
+         $p
+      done
+    '';
+  };
 
   users.extraUsers.xilinx = {
     isNormalUser = true;
