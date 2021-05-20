@@ -86,8 +86,7 @@ in {
         LLMNR = true
         LinkLocalAddressing = yes
         LLDP = true
-          IPv6AcceptRA = yes
-        Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
+        IPv6AcceptRA = yes
         IPForward = yes
         BindCarrier = ${toString carrier}
 
