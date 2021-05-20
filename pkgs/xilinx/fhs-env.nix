@@ -14,6 +14,7 @@ buildFHSUserEnv {
     bash
     coreutils
     zlib
+    lsb-release
     stdenv.cc.cc
     ncurses
     xorg.libXext
@@ -35,6 +36,11 @@ buildFHSUserEnv {
     opencl-clhpp
     ocl-icd
     opencl-headers
+
+    (pkgs.runCommand "firmware" {} ''
+      mkdir -p $out/lib/firmware
+      ln -s /host/lib/firmware/xilinx $out/lib/firmware/xilinx
+    '')
 
     # from installLibs.sh
     graphviz
