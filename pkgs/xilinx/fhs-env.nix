@@ -12,7 +12,6 @@ buildFHSUserEnv {
   inherit runScript;
   targetPkgs = pkgs: with pkgs; [
     bash
-    xrt
     coreutils
     zlib
     stdenv.cc.cc
@@ -32,6 +31,11 @@ buildFHSUserEnv {
     gtk2
     gtk3
 
+    # to compile some xilinx examples
+    opencl-clhpp
+    ocl-icd
+    opencl-headers
+
     # from installLibs.sh
     graphviz
     gcc
@@ -42,5 +46,6 @@ buildFHSUserEnv {
   profile = ''
     source /opt/xilinx/Vitis/*/settings64.sh
     export XILINX_XRT="${xrt}"
+    source $XILINX_XRT/opt/xilinx/xrt/setup.sh
   '';
 }
