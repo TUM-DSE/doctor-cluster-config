@@ -19,6 +19,10 @@ in {
     xrt-drivers
   ];
 
+  hardware.opengl.extraPackages = [
+    xrt
+  ];
+
   systemd.tmpfiles.rules = [
     "L+ /opt/xilinx/xrt - - - - ${xrt}/opt/xilinx/xrt"
   ];
