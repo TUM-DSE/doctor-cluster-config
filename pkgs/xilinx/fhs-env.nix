@@ -16,7 +16,7 @@ buildFHSUserEnv {
     zlib
     lsb-release
     stdenv.cc.cc
-    ncurses
+    ncurses5
     xorg.libXext
     xorg.libX11
     xorg.libXrender
@@ -44,7 +44,7 @@ buildFHSUserEnv {
 
     # from installLibs.sh
     graphviz
-    gcc
+    (lib.hiPrio gcc)
     unzip
     nettools
   ];
