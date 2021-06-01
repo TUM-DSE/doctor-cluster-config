@@ -6,7 +6,8 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/release-21.05";
+    #nixpkgs.url = "github:NixOS/nixpkgs/release-21.05";
+    nixpkgs.url = "github:Mic92/nixpkgs/release-21.05-backports";
     nixpkgs-systemd.url = "github:Mic92/nixpkgs/systemd";
     nur.url = "github:nix-community/NUR";
 
