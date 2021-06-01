@@ -6,12 +6,11 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
 
-    # TODO switch to stable 21.05 after branch off
-    nixpkgs.url = "github:Mic92/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-21.05";
     nixpkgs-systemd.url = "github:Mic92/nixpkgs/systemd";
     nur.url = "github:nix-community/NUR";
 
-    home-manager.url = "github:rycee/home-manager/release-20.09";
+    home-manager.url = "github:rycee/home-manager/release-21.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";

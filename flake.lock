@@ -18,11 +18,11 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1620759905,
-        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
+        "lastModified": 1622445595,
+        "narHash": "sha256-m+JRe6Wc5OZ/mKw2bB3+Tl0ZbtyxxxfnAWln8Q5qs+Y=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
+        "rev": "7d706970d94bc5559077eb1a6600afddcd25a7c8",
         "type": "github"
       },
       "original": {
@@ -38,27 +38,27 @@
         ]
       },
       "locked": {
-        "lastModified": 1617824794,
-        "narHash": "sha256-UGkvzx0nIXHhNq/KwJLjXvKAQRE2V33MuX+UirvqrkQ=",
+        "lastModified": 1622312560,
+        "narHash": "sha256-xBWgiwnPaL/iZasPxw3BuvPAee/2jiToiZjKvKLs+PA=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "2aa20ae969f2597c4df10a094440a66e9d7f8c86",
+        "rev": "ab64dc32493996c24607eab2cae6663466ddfb8a",
         "type": "github"
       },
       "original": {
         "owner": "rycee",
-        "ref": "release-20.09",
+        "ref": "release-21.05",
         "repo": "home-manager",
         "type": "github"
       }
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1620983891,
-        "narHash": "sha256-E2OKVgGo/cUqDsrIeYGVx64b4cxgzd7+bX33NHL0rbA=",
+        "lastModified": 1622521809,
+        "narHash": "sha256-7XcqrtrHDeaasKzg/ruroLsC2fb6Fi3aenCrv1+xVLk=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "c4399b921fa7ff5f93ee10b3521b56b722ed74d8",
+        "rev": "b2186d6c3cdc58fb3a8def0f608bcae61138cc6f",
         "type": "github"
       },
       "original": {
@@ -68,27 +68,27 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1621056276,
-        "narHash": "sha256-2fIb4elEjtWFaB19G4uyGhv5DGnByxFj8JdFU6Sc5DY=",
-        "owner": "Mic92",
+        "lastModified": 1622545991,
+        "narHash": "sha256-m+vaxvfsx18r9kOXvq9XBcsKqFLKQA40e6usay13sOo=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "24451fafb5a3fe9280c3c3396b908cd5dfe8024f",
+        "rev": "3182caa035a25328ee3da35897471ce0fc44e1e3",
         "type": "github"
       },
       "original": {
-        "owner": "Mic92",
-        "ref": "master",
+        "owner": "NixOS",
+        "ref": "release-21.05",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs-systemd": {
       "locked": {
-        "lastModified": 1621284947,
-        "narHash": "sha256-xK669boBfzZiSAml9PGGo6q4qgFwX048/wMFMnJUaHw=",
+        "lastModified": 1621285292,
+        "narHash": "sha256-1ZdCKUxLi7Ec/syJUjkDZXYtclOKHrap1ftsyusEPe0=",
         "owner": "Mic92",
         "repo": "nixpkgs",
-        "rev": "52d509489fa4235ac9c0855f9259accfb349243f",
+        "rev": "cd3fc12adc7581aac07af86dbb682fac4b750c94",
         "type": "github"
       },
       "original": {
@@ -100,11 +100,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1621272863,
-        "narHash": "sha256-yP1y7h0jAwhzQ0uGkMsi/KkMraqnjEOcrshcZcrTCGc=",
+        "lastModified": 1622546125,
+        "narHash": "sha256-iJvg/U+h6vIydCTanAAVrExKhFZIMEC/GSskhbRdZs8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c37ff0cfc7ba87add689e0aef5547f4d1406203d",
+        "rev": "1e09aa047de6072e70bfb9a0d481d19b548303e0",
         "type": "github"
       },
       "original": {
@@ -115,11 +115,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1620810008,
-        "narHash": "sha256-0VPWdl3uBIEoHkeXY+U3qap8X2RCSaxEHfNEq12F98U=",
+        "lastModified": 1622124008,
+        "narHash": "sha256-9GG0ROtqUpomlbTkVtw0IQGXuSmYh/1KQP27/r1ifdQ=",
         "ref": "master",
-        "rev": "2cea065487a396e191157b6f7d1da193d7986ce5",
-        "revCount": 88,
+        "rev": "57b6845c98b6ae20c6c8140d320c62f3d040ca19",
+        "revCount": 90,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
