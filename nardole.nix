@@ -22,22 +22,8 @@
     "b8:ce:f6:0b:ee:75"
   ];
 
-  # provide dhcp to bill's ipmi
-  systemd.network.networks."01-ipmi-dhcp".extraConfig = ''
-   [Match]
-   Name = eno1
-   
-   [Network]
-   Address = 192.168.24.50/24
-   DHCPServer = true
-   
-   [DHCPServer]
-   PoolOffset = 100
-   PoolSize = 20
-  '';
-
-  # DHCP
-  networking.firewall.allowedUDPPorts = [ 67 68 ];
+  # phillip needs this port for his bachelor thesis?
+  networking.firewall.allowedUDPPorts = [ 31850 ];
 
   system.stateVersion = "20.09";
 }
