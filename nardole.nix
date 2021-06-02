@@ -8,6 +8,7 @@
     ./modules/k3s/agent.nix
     ./modules/xrdp.nix
     ./modules/xilinx.nix
+    ./modules/dpdk.nix
   ];
 
   networking.hostName = "nardole";

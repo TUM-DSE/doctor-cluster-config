@@ -6,6 +6,7 @@
     ./modules/ipmi.nix
     ./modules/bonding.nix
     ./modules/k3s/server.nix
+    ./modules/dpdk.nix
   ];
 
   networking.hostName = "bill";
