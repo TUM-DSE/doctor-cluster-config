@@ -185,6 +185,8 @@ in
   users.mutableUsers = false;
   nix.trustedUsers = [ "joerg" "harshanavkis" "sandro" ];
 
+  # we cannot use this since we no longer have the database
+  programs.command-not-found.enable = false;
   security.sudo.wheelNeedsPassword = false;
   programs.zsh.enable = true;
   programs.fish.enable = true;
