@@ -155,6 +155,7 @@ in
       uid = 1011;
       openssh.authorizedKeys.keys = [ philipKeys ];
     };
+    programs.fish.enable = true;
 
     atsushi = {
       isNormalUser = true;
