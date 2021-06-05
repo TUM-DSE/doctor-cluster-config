@@ -15,9 +15,9 @@ in {
 
   boot.kernelPackages = pkgs.linuxPackages_5_4;
 
-  boot.extraModulePackages = [
-    xrt-drivers
-  ];
+  #boot.extraModulePackages = [
+  #  xrt-drivers
+  #];
 
   hardware.opengl.extraPackages = [
     xrt
