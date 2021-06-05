@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }:
-
 {
   # use networkd
   networking.dhcpcd.enable = false;
@@ -35,38 +34,14 @@
     Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
     IPForward = yes
     RouteMetric = 1024
-
   '';
 
-  networking.firewall.allowedTCPPorts = [
-    # iperf2
-    5001
-    # iperf3
-    5201
-  ];
-
-  networking.firewall.allowedUDPPorts = [
-    # iperf2
-    5001
-    # iperf3
-    5201
-  ];
-
-  # allow incomming traffic from all our hosts
-  networking.firewall.extraCommands = lib.concatMapStringsSep "\n"
-    (host: ''
-      iptables -A INPUT -s ${host.ipv4} -j nixos-fw-accept
-    '')
-    (lib.attrValues config.networking.doctorwho.hosts);
-
-  # allow all traffic from internal 40GbE network
-  networking.firewall.trustedInterfaces = [
-    "enp1s0f0"
-    "enp1s0f1"
-    "enp2s0f0"
-    "enp2s0f1"
-  ];
-
-  # breaks docker and fails to reload after nixpkgs upgrades
-  systemd.services.firewall.reloadIfChanged = lib.mkForce false;
+  # In TUM the university already firewall us, servers are only accessible from
+  # the chair network. The firewall.service also made trouble when reloading
+  # rules. It was also an issue when working with kubernetes as their internal
+  # firewall is insane. In Edinburgh it might become an issue, but than we
+  # don't really run any public services on their except for ssh and k3s, which
+  # are safe to run without a firewall. On amy we still have an NFS share however
+  # this one has our nodes whitelisted, which should make it an non issue as well.
+  networking.firewall.enable = false;
 }

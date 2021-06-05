@@ -22,8 +22,5 @@
     "b8:ce:f6:0b:ee:75"
   ];
 
-  # phillip needs this port for his bachelor thesis?
-  networking.firewall.allowedUDPPorts = [ 31850 ];
-
   system.stateVersion = "20.09";
 }
