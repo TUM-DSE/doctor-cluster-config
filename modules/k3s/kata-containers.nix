@@ -32,31 +32,37 @@ in
       mv /lib64/.$(basename ${ld}).tmp /lib64/$(basename ${ld})
     '';
 
-  virtualization.containerd.configText = ''
-    # comes from kata-deploy
-    [plugins.cri.containerd.runtimes.kata]
-      runtime_type = "io.containerd.kata.v2"
-      privileged_without_host_devices = true
-      pod_annotations = ["io.katacontainers.*"]
-      [plugins.cri.containerd.runtimes.kata.options]
-        ConfigPath = "${configDir}/configuration.toml"
-    [plugins.cri.containerd.runtimes.kata-fc]
-      runtime_type = "io.containerd.kata-fc.v2"
-      privileged_without_host_devices = true
-      pod_annotations = ["io.katacontainers.*"]
-      [plugins.cri.containerd.runtimes.kata-fc.options]
-        ConfigPath = "${configDir}/configuration-fc.toml"
-    [plugins.cri.containerd.runtimes.kata-qemu]
-      runtime_type = "io.containerd.kata-qemu.v2"
-      privileged_without_host_devices = true
-      pod_annotations = ["io.katacontainers.*"]
-      [plugins.cri.containerd.runtimes.kata-qemu.options]
-        ConfigPath = "${configDir}/configuration-qemu.toml"
-    [plugins.cri.containerd.runtimes.kata-clh]
-      runtime_type = "io.containerd.kata-clh.v2"
-      privileged_without_host_devices = true
-      pod_annotations = ["io.katacontainers.*"]
-      [plugins.cri.containerd.runtimes.kata-clh.options]
-        ConfigPath = "${configDir}/configuration-clh.toml"
-  '';
+  # from https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/containerd-kata.md#configure-containerd-to-use-kata-containers
+  virtualisation.containerd.settings = {
+    plugins = {
+      cri.containerd.runtimes = {
+        runc.runtime_type = "io.containerd.runc.v2";
+        # comes from kata-deploy
+        kata = {
+          runtime_type = "io.containerd.kata.v2";
+          privileged_without_host_devices = true;
+          pod_annotations = ["io.katacontainers.*"];
+          options.ConfigPath = "${configDir}/configuration.toml";
+        };
+        kata-fc = {
+          runtime_type = "io.containerd.kata-fc.v2";
+          privileged_without_host_devices = true;
+          pod_annotations = ["io.katacontainers.*"];
+          options.ConfigPath = "${configDir}/configuration-fc.toml";
+        };
+        kata-qemu = {
+          runtime_type = "io.containerd.kata-qemu.v2";
+          privileged_without_host_devices = true;
+          pod_annotations = ["io.katacontainers.*"];
+          options.ConfigPath = "${configDir}/configuration-qemu.toml";
+        };
+        kata-clh = {
+          runtime_type = "io.containerd.kata-clh.v2";
+          privileged_without_host_devices = true;
+          pod_annotations = ["io.katacontainers.*"];
+          options.ConfigPath = "${configDir}/configuration-clh.toml";
+        };
+      };
+    };
+  };
 }

@@ -22,14 +22,6 @@ let
   };
 in
 {
-  # TODO: Upstream this.
-  options.virtualization.containerd.configText = lib.mkOption {
-    type = lib.types.lines;
-    default = "";
-    description = ''
-      Verbatim lines to add to containerd.toml
-    '';
-  };
   imports = [
     ./kata-containers.nix
   ];
@@ -37,20 +29,9 @@ in
     services.k3s.enable = true;
     services.k3s.docker = lib.mkForce false;
     virtualisation.containerd.enable = true;
-
-    virtualization.containerd.configText = ''
-      #[debug]
-      #  level = "debug"
-      [plugins.cri.containerd]
-        snapshotter = "zfs"
-      [plugins.cri.cni]
-        bin_dir = "${pkgs.cni-plugins}/bin"
-        conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d"
-    '';
-
-    virtualisation.containerd.configFile = pkgs.writeText "containerd.toml" config.virtualization.containerd.configText;
-
-    systemd.services.containerd.path = with pkgs; [ zfs ];
+    virtualisation.containerd.settings = {
+      plugins.cri.cni.conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d";
+    };
 
     systemd.services.containerd.serviceConfig = {
       ExecStartPre = "-${pkgs.zfs}/bin/zfs create -o mountpoint=/var/lib/containerd/io.containerd.snapshotter.v1.zfs zroot/containerd";
