@@ -4,7 +4,7 @@
   concatAttrs = attrList: lib.fold (x: y: x // y) {} attrList;
 
   slaveLinks = concatAttrs (lib.imap0 (num: mac: {
-    "00-slave${toString num}".extraConfig = ''
+    "05-slave${toString num}".extraConfig = ''
       [Match]
       MACAddress = ${mac}
       Type = ether
@@ -15,7 +15,7 @@
   }) cfg.macs);
 
   slaveNetworks = concatAttrs (lib.imap0 (num: mac: {
-    "00-slave${toString num}".extraConfig = ''
+    "05-slave${toString num}".extraConfig = ''
       [Match]
       Name = slave${toString num}
 
@@ -57,7 +57,7 @@ in {
     systemd.network.links = slaveLinks;
 
     systemd.network.netdevs = {
-      "bond1" = {
+      "05-bond1" = {
         netdevConfig = {
           Name = "bond1";
           Kind = "bond";
@@ -76,7 +76,7 @@ in {
     };
 
     systemd.network.networks = slaveNetworks // {
-      "bond1".extraConfig = ''
+      "05-bond1".extraConfig = ''
         [Match]
         Name = bond1
 

@@ -20,19 +20,30 @@
     '')
     config.networking.doctorwho.hosts);
 
-  systemd.network.networks."ethernet".extraConfig = ''
+  # leave container interfaces alone
+  systemd.network.networks."05-veth".extraConfig = ''
+    [Match]
+    Driver=veth
+
+    [Network]
+  '';
+
+  systemd.network.networks."10-ethernet".extraConfig = ''
     [Match]
     Type = ether
 
     [Network]
     DNSSEC = no
     DHCP = yes
-    LLMNR = true
+    LLMNR = yes
     LinkLocalAddressing = yes
-    LLDP = true
+    LLDP = yes
     IPv6AcceptRA = yes
     Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
     IPForward = yes
+
+    [DHCP]
+    UseHostname = no
     RouteMetric = 1024
   '';
 
