@@ -18,6 +18,12 @@ Available tasks:
 $ fab deploy-tum
 ```
 
+# Add new users
+
+Add chair members to [./modules/users.nix](./modules/users.nix) and students to [./modules/students.nix](./modules/students.nix).
+Check that the uid is unique across both files and in the range between 1000-2000
+to avoid conflicts.
+
 # Add a new host
 
 New hosts are added in configurations.nix.

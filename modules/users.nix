@@ -43,37 +43,25 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCk5NDpY5ZdeUZl1jwiPuUgDad9i9oKxq2Ocm/P2Nf6SVMgl6aaiWEPzS7QfkZpOCqwtBqnBdUoykvQ8RwGCBoA7H9KiV0laqZFIbdNmiFKhZX4KQk8WVVxBlVgUIpLfp1eN7iu1PX0shO7/+zkObF2lAP2XMWpPOanfB1sHS2Um4AdEaYo+4QlUdrBS3WwBDLnuZdsG6B3CfAfVdj+zuJALnKdd/p+HUzDKD031SFGYUT7pzvsOVkmrvNbSv3l2dbVUKVjC7NDTMb3tk0iIGT5RdyYNth6mdR4EgtjNl+vZqWiM/1wRoY7SZ1gmSaXkgNNU3DM9tU7IHc0JFGXjRCxdNVy8EuxZ0f/szvVt9RyuCizkpJ6WJBKjqX651uDLxNJ4FV2qTK4jBANKpWVt5J4BIjCeIOCTSsRoW61WSefQy2LovHr/1B9/vmYsOsicYOd41lcCjJ1AuHIY6HzYS7nvxaFHoC0hvxJsFgCxHUHjDqjfuRaiBthtZu/2cRWcJybYWmsfRn7cKPKFNo7VscC1Hu0YVyKQMxyzq1y9lC54IXjoFrnkicUYYLA6jU5qwoadvPqCSnGfOZBKSW1gFOZYfGKlf0u/CDCqdm1IfVGXQwONzJaELhpmV9bcING0cXLs+XfLe5kPhg7vXb8qHTgC37Jtodf/+s3M4SbW7WA4w== hvub@hack-haven
   '';
 
-  # Vincent Picking (bachelor)
-  vincentKeys = ''
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDnR/hVO9bNFxc29M4E9wdgTTvlgIF62V6gflw0eKVDSNcKNyFIqDySWRVJna8OKt6cO68orHDKGo8VJxw9QIf/wnDTZseufzbUnFE/fMo56HgfTvdTYZtUyhJmoxf0IcA4DZRkEHklTZQUf2cIXi6DgUejiy2r4JhtOHFL6PIUivGLPtfsmgoy8hiVW2JN6asdAlNcznxKLhN9lOcvLlJtNcVpFx3ZjN6vLHVFfGxQdCCj6dWzwyjynPbqBUMIhMC7tuPzDJ7aBwTNV3ydpkGIvoVjJPZsbi4S1pDUs0P+aiwZaTmrGUFaVdQAP9S8De9YCrD24K7H6VspCGNwSqszj9m65M8pzm3HHEtYwNrPHjYWiS3fvLilDuDC5w0tGm9f3upsKqAC3u4CxsSgWFoPVza1mIVfsbK1YOOGBKbSx7PzQSrJLj6QqPW0Y1kMQ26VSDpc+hT4OonbQ9hh4QZZ5WecfRsE+2iJDQU0l/yasMaXG3PW7OcGg5l40t4xVP2ZRM3TURhKIXNxmVhMjRM9DZdaeZwVioIgogVfmd1XkRcoPq4NPFdwxSlzG/p6ZvTCtGw2Oq23W/bM/NTOhBtDK7+OQH4JGHhuxmndXImE96Vd05W25Adr1+F4xcEZzZlcUgbwn/WcNDvjryqTHiBcS622GsOWkZJKbWWBKhUmqw== vincent@hackatop
-  '';
-
-  # Peter Okelmann
-  okelmannKeys = ''
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITBcN9iw5Fn7yyfgiWFet3QWDoMcUNtzLi+PNoYS7jksvcKZy5pLOjE6wCpkbYx+Tcb4MyvoWPXvwdo5FfL4XdhZRO+JlZ66p/rGssq/wEr2BBUwohP7o39JLtiyXGXSsK6MO2aceOFLQr4KAdaeD8ST0XumGcV6bGqIbjFsK5FCxFhO8NkCFtavBjDwKUm3uyOnVCWMp12abUphzxrVtWhcsnw5GapohATP03mCNxmrn/L7x393HutxgjyduScX7++MjwVE6J7wCnztPUtJbh9jYemr/K9fBMBbLhQagOjrlQYGU5frgmLrPCRZusyg5HjWx6gJIxs/DskfgmW+V
-  '';
-
   irisKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos
-  '';
-
-  philipKeys = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMI+21MFo1RlD0Urx8bTJHJZnRNRSGuN9IZ6Ld7M2JS philip@x541uj
   '';
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
   users.extraUsers = {
+    # tum/edinburgh
     joerg = {
       isNormalUser = true;
-      #home = "/scratch/joerg";
       home = "/home/joerg";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1000;
       openssh.authorizedKeys.keys = [ joergsKeys ];
     };
+
+    # edinburgh
     dimitra = {
       isNormalUser = true;
       home = "/home/dimitra";
@@ -82,6 +70,8 @@ in
       uid = 1001;
       openssh.authorizedKeys.keys = [ dimitraKeys ];
     };
+
+    # edinburgh
     maurice = {
       isNormalUser = true;
       home = "/home/maurice";
@@ -91,6 +81,7 @@ in
       openssh.authorizedKeys.keys = [ mauriceKeys ];
     };
 
+    # edinburgh
     s1443541 = {
       isNormalUser = true;
       home = "/home/s1443541";
@@ -100,6 +91,7 @@ in
       openssh.authorizedKeys.keys = [ s1443541Keys ];
     };
 
+    # edinburgh
     dimitrios = {
       isNormalUser = true;
       home = "/home/dimitrios";
@@ -109,6 +101,7 @@ in
       openssh.authorizedKeys.keys = [ dimitriosKeys ];
     };
 
+    # tum
     harshanavkis = {
       isNormalUser = true;
       home = "/home/harshanavkis";
@@ -118,7 +111,8 @@ in
       openssh.authorizedKeys.keys = [ harshanavkisKeys ];
     };
 
-    # used as ssh jump host
+    # edinburgh
+    # uses edinburgh server as a ssh jump host
     iris = {
       isNormalUser = true;
       home = "/home/iris";
@@ -127,16 +121,8 @@ in
       openssh.authorizedKeys.keys = [ irisKeys ];
     };
 
-    # master student (thesis)
-    okelmann = {
-      isNormalUser = true;
-      home = "/home/okelmann";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1008;
-      openssh.authorizedKeys.keys = [ okelmannKeys ];
-    };
-
+    # dresden
+    # tests nixpkgs on our infra
     sandro = {
       isNormalUser = true;
       home = "/home/sandro";
@@ -146,16 +132,7 @@ in
       openssh.authorizedKeys.keys = [ sandroKeys ];
     };
 
-    # master student (thesis)
-    philip = {
-      isNormalUser = true;
-      home = "/home/philip";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1011;
-      openssh.authorizedKeys.keys = [ philipKeys ];
-    };
-
+    # tum
     atsushi = {
       isNormalUser = true;
       home = "/home/atsushi";
@@ -163,15 +140,6 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1012;
       openssh.authorizedKeys.keys = [ atsushiKeys ];
-    };
-
-    vincent = {
-      isNormalUser = true;
-      home = "/home/vincent";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/fish";
-      uid = 1013;
-      openssh.authorizedKeys.keys = [ vincentKeys ];
     };
 
     root = {
@@ -189,5 +157,4 @@ in
   programs.command-not-found.enable = false;
   security.sudo.wheelNeedsPassword = false;
   programs.zsh.enable = true;
-  programs.fish.enable = true;
 }
