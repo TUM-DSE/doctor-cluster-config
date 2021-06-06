@@ -16,7 +16,6 @@ let
   '';
 in
 {
-  imports = [ ./students.nix ];
   users.users = {
     # master thesis (joergs student)
     okelmann = {

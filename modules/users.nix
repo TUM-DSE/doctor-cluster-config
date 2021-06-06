@@ -50,7 +50,10 @@ let
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
-  users.extraUsers = {
+  ## we put all bachelor/master students here
+  imports = [ ./students.nix ];
+
+  users.users = {
     # tum/edinburgh
     joerg = {
       isNormalUser = true;
