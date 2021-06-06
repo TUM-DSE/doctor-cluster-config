@@ -24,7 +24,10 @@ def deploy_nixos(hosts: List[str]) -> None:
     try:
         g = ThreadingGroup(*hosts, user="root", forward_agent=True)
         # XXX remove retiolum cleanup at some point
-        run(g, "git -C /etc/nixos pull && git -C /etc/nixos submodule update --init && rm -rf /etc/nixos/retiolum")
+        run(g,
+            "git -C /etc/nixos pull https://github.com/Mic92/doctor-cluster-config master && " +
+            "git -C /etc/nixos submodule update --init && " +
+            "rm -rf /etc/nixos/retiolum")
         run(g, "cd /etc/nixos && nixos-rebuild build")
         run(g, "nixos-rebuild test")
 
