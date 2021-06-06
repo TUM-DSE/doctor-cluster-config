@@ -1,4 +1,4 @@
-{ config }:
+{ config, ... }:
 
 let
   # Vincent Picking (bachelor)
