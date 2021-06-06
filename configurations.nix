@@ -75,12 +75,12 @@ in
   };
 
   # currently blocks CI
-  #doctor = nixosSystem {
-  #  system = "aarch64-linux";
-  #  modules = commonModules ++ [
-  #    ./doctor.nix
-  #  ];
-  #};
+  doctor = nixosSystem {
+    system = "aarch64-linux";
+    modules = commonModules ++ [
+      ./doctor.nix
+    ];
+  };
 
   donna = nixosSystem {
     system = "x86_64-linux";
