@@ -23,7 +23,8 @@ def deploy_nixos(hosts: List[str]) -> None:
     """
     try:
         g = ThreadingGroup(*hosts, user="root", forward_agent=True)
-        run(g, "git -C /etc/nixos pull && git -C /etc/nixos submodule update --init")
+        # XXX remove retiolum cleanup at some point
+        run(g, "git -C /etc/nixos pull && git -C /etc/nixos submodule update --init && rm -rf /etc/nixos/retiolum")
         run(g, "cd /etc/nixos && nixos-rebuild build")
         run(g, "nixos-rebuild test")
 
@@ -38,7 +39,8 @@ def deploy_nixos(hosts: List[str]) -> None:
                 msg = failed.args[0].command
             print(f"=== {conn.user}@{conn.host}: ===")
             print(f"=== {msg} ===")
-            print(failed.result)
+            if hasattr(failed, "result"):
+                print(failed.result)
         sys.exit(1)
 
 
