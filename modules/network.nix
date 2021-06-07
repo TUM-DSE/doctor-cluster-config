@@ -23,9 +23,10 @@
   # leave container interfaces alone
   systemd.network.networks."05-veth".extraConfig = ''
     [Match]
-    Driver=veth
+    Driver = veth
 
-    [Network]
+    [Link]
+    Unmanaged = yes
   '';
 
   systemd.network.networks."10-ethernet".extraConfig = ''
