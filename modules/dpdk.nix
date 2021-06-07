@@ -25,7 +25,7 @@ with lib;
       "hugepages=${toString config.boot.hugepages.number}"
     ];
     boot.extraModulePackages = [
-      config.boot.kernelPackages.dpdk.kmod
+      config.boot.kernelPackages.dpdk-kmods
     ];
     boot.kernelModules = [ "igb_uio" ];
 
