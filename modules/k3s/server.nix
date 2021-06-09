@@ -1,36 +1,4 @@
 { config, lib, pkgs, ... }:
-let
-  resources = ''
-    apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: telegraf
-      namespace: default
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1beta1
-    kind: ClusterRole
-    metadata:
-      name: telegraf
-    rules:
-      - apiGroups: [ "" ]
-        resources:
-          - pods
-        verbs: [ "get", "list" ]
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1beta1
-    kind: ClusterRoleBinding
-    metadata:
-      name: telegraf
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: telegraf
-    subjects:
-      - kind: ServiceAccount
-        name: telegraf
-        namespace: default
-  '';
-in
 {
   imports = [ ./. ];
   # k3s api server
@@ -39,28 +7,20 @@ in
 
   services.telegraf = {
     extraConfig.kube_inventory = {
-      bearer_token = "/run/telegraf/kubernetes-token";
+      bearer_token = "/run/telegraf-kubernetes-token";
       url = "https://localhost:6443";
       insecure_skip_verify = true;
       resource_include = [ "pods" ];
     };
   };
 
-  systemd.tmpfiles.rules = [
-    "d /run/telegraf/ 0700 telegraf - -"
-  ];
-
   systemd.services.telegraf-kubernetes-setup = {
     wantedBy = [ "multi-user.target" ];
     requires = ["k3s.service"];
     after = ["k3s.service"];
-    script = ''
-      ${pkgs.k3s}/bin/k3s kubectl apply -f ${pkgs.writeText "resources.yaml" resources}
-      secretname=$(${pkgs.k3s}/bin/k3s kubectl get serviceaccount telegraf -o template="{{(index .secrets 0).name}}")
-      ${pkgs.k3s}/bin/k3s kubectl get secret "$secretname" -o template='{{.data.token}}' | base64 -d > /run/telegraf/kubernetes-token
-    '';
     serviceConfig = {
       Type = "oneshot";
+      ExecStart = "${pkgs.coreutils}/bin/install -o telegraf -m400 /etc/rancher/k3s/k3s.yaml /run/telegraf-kubernetes-token";
       # work-around potential race condition between k3s and this service.
       RestartSec = "1s";
       Restart = "on-failure";
@@ -72,5 +32,4 @@ in
     requires = [ "telegraf-kubernetes-setup.service" ];
     after = [ "telegraf-kubernetes-setup.service" ];
   };
-
 }
