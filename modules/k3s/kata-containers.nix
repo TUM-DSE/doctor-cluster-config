@@ -1,67 +1,52 @@
 { config, lib, pkgs, ... }:
 let
-  kata-containers = pkgs.callPackage ../../pkgs/kata-containers { };
-  configDir = "${kata-containers}/opt/kata/share/defaults/kata-containers";
-  containerdShims = pkgs.runCommand "containerd-shims"
-    {
-      nativeBuildInputs = [ pkgs.makeWrapper ];
-    } ''
-    mkdir -p $out/bin
-    for shim in fc qemu qemu-virtiofs clh; do
-      makeWrapper ${kata-containers}/opt/kata/bin/containerd-shim-kata-v2 \
-        $out/bin/containerd-shim-kata-$shim-v2 \
-        --set KATA_CONF_FILE "${kata-containers}/opt/kata/share/defaults/kata-containers/configuration-$shim.toml"
-    done
-  '';
+  kata-runtime = pkgs.callPackage ../../pkgs/kata-runtime { };
+  kata-images = pkgs.callPackage ../../pkgs/kata-images { };
+  settingsFormat = pkgs.formats.toml { };
+  cfg = config.virtualisation.kata-containers;
+  configFile = settingsFormat.generate "configuration.toml" cfg.settings;
 in
 {
-  systemd.services.containerd.path = [ containerdShims ];
+  options = {
+    virtualisation.kata-containers.settings = lib.mkOption {
+      type = settingsFormat.type;
+      default = { };
+      description = ''
+        Settings for kata's configuration.toml
+      '';
+    };
+  };
+  config = {
+    virtualisation.kata-containers.settings = {
+      hypervisor.qemu = {
+        path = lib.mkDefault "${pkgs.qemu_kvm}/bin/qemu-kvm";
+        kernel = lib.mkDefault "${kata-images}/share/kata-containers/vmlinux.container";
+        image = lib.mkDefault "${kata-images}/share/kata-containers/kata-containers.img";
+        machine_type = lib.mkDefault "pc";
+        valid_hypervisor_paths = lib.mkDefault [
+          cfg.settings.hypervisor.qemu.path
+        ];
+        cpu_features = lib.mkDefault "pmu=off";
+        virtio_fs_daemon = lib.mkDefault "${pkgs.qemu_kvm}/libexec/virtiofsd";
+        valid_virtio_fs_daemon_paths = lib.mkDefault [
+          cfg.settings.hypervisor.qemu.virtio_fs_daemon
+        ];
+      };
+      netmon.path = lib.mkDefault "${kata-runtime}/libexec/kata-containers/kata-netmon";
+      runtime.internetworking_model = lib.mkDefault "tcfilter";
+      runtime.sandbox_cgroup_only = lib.mkDefault config.systemd.enableUnifiedCgroupHierarchy;
+    };
+    systemd.services.containerd.path = [ kata-runtime ];
 
-  # qemu has this path hard-coded in its binary :(
-  systemd.tmpfiles.rules = [
-    "L+ /opt/kata/share - - - - ${kata-containers}/opt/kata/share"
-  ];
-
-  system.activationScripts.libld =
-    let
-      ld = pkgs.stdenv.cc.bintools.dynamicLinker;
-    in
-    ''
-      mkdir -m 0755 -p /lib64
-      ln -sfn ${ld} /lib64/.$(basename ${ld}).tmp
-      mv /lib64/.$(basename ${ld}).tmp /lib64/$(basename ${ld})
-    '';
-
-  # from https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/containerd-kata.md#configure-containerd-to-use-kata-containers
-  virtualisation.containerd.settings = {
-    plugins = {
-      cri.containerd.runtimes = {
-        runc.runtime_type = "io.containerd.runc.v2";
-        # comes from kata-deploy
-        kata = {
+    virtualisation.containerd.settings = {
+      version = 2;
+      debug.level = "debug";
+      plugins = {
+        "io.containerd.grpc.v1.cri".containerd.untrusted_workload_runtime = {
           runtime_type = "io.containerd.kata.v2";
-          privileged_without_host_devices = true;
-          pod_annotations = ["io.katacontainers.*"];
-          options.ConfigPath = "${configDir}/configuration.toml";
+          options.ConfigPath = configFile;
         };
-        kata-fc = {
-          runtime_type = "io.containerd.kata-fc.v2";
-          privileged_without_host_devices = true;
-          pod_annotations = ["io.katacontainers.*"];
-          options.ConfigPath = "${configDir}/configuration-fc.toml";
-        };
-        kata-qemu = {
-          runtime_type = "io.containerd.kata-qemu.v2";
-          privileged_without_host_devices = true;
-          pod_annotations = ["io.katacontainers.*"];
-          options.ConfigPath = "${configDir}/configuration-qemu.toml";
-        };
-        kata-clh = {
-          runtime_type = "io.containerd.kata-clh.v2";
-          privileged_without_host_devices = true;
-          pod_annotations = ["io.katacontainers.*"];
-          options.ConfigPath = "${configDir}/configuration-clh.toml";
-        };
+        "io.containerd.grpc.v1.cri".containerd.runtimes.runc.runtime_type = "io.containerd.runc.v2";
       };
     };
   };
