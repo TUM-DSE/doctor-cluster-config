@@ -29,6 +29,7 @@ in
         "io.containerd.grpc.v1.cri".containerd = {
           untrusted_workload_runtime = {
             runtime_type = "io.containerd.kata-qemu.v2";
+            privileged_without_host_devices = true;
           };
           runtimes.kata-qemu = {
             runtime_type = "io.containerd.kata-qemu.v2";
