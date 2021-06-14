@@ -23,7 +23,8 @@ let
 in
 buildGoModule rec {
   pname = "kata-runtime";
-  version = "2.2.0-alpha0";
+  #version = "2.2.0-alpha0";
+  version = "2.1.1";
 
   # https://github.com/NixOS/nixpkgs/issues/25959
   hardeningDisable = [ "fortify" ];
@@ -31,8 +32,8 @@ buildGoModule rec {
   src = fetchFromGitHub {
     owner = "kata-containers";
     repo = "kata-containers";
-    rev = "2.2.0-alpha0";
-    sha256 = "sha256-uXwZj7pmGqzpCTunSekEewujXJiO7h4mENW+mtxzj+k=";
+    rev = version;
+    sha256 = "sha256-Btq8ClkI5OV74LbXyEfgv0kBCpEHTBwgQVPak04flJA=";
   };
 
   sourceRoot = "source/src/runtime";
@@ -57,7 +58,19 @@ buildGoModule rec {
   '';
 
   installPhase = ''
+    runHook preInstall
     HOME=$TMPDIR GOPATH=$TMPDIR/gopath make ${toString makeFlags} install
+    ln -s $out/bin/containerd-shim-kata-v2 $out/bin/containerd-shim-kata-qemu-v2
+    ln -s $out/bin/containerd-shim-kata-v2 $out/bin/containerd-shim-kata-clh-v2
+
+    # qemu images don't work on read-only mounts, we need to put it into a mutable directory
+    sed -i \
+      -e "s!$out/share/kata-containers!/var/lib/kata-containers!" \
+      -e "s!^virtio_fs_daemon.*!virtio_fs_daemon=\"${qemu_kvm}/libexec/virtiofsd\"!" \
+      -e "s!^valid_virtio_fs_daemon_paths.*!valid_virtio_fs_daemon_paths=[\"${qemu_kvm}/libexec/virtiofsd\"]!" \
+      "$out/share/defaults/kata-containers/"*.toml
+
+    runHook postInstall
   '';
 
   meta = {
