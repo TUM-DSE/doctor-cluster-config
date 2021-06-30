@@ -6,7 +6,7 @@
   services.k3s.extraFlags = "--no-deploy traefik --flannel-backend=host-gw --container-runtime-endpoint unix:///run/containerd/containerd.sock";
 
   services.telegraf = {
-    extraConfig.kube_inventory = {
+    extraConfig.inputs.kube_inventory = {
       bearer_token = "/run/telegraf-kubernetes-token";
       tls_cert = "/run/telegraf-kubernetes-cert";
       tls_key = "/run/telegraf-kubernetes-key";
@@ -14,7 +14,24 @@
       insecure_skip_verify = true;
       resource_include = [ "pods" ];
     };
+    extraConfig.inputs.http = {
+      urls = [
+        "https://api.github.com/orgs/ls1-sys-prog-course/actions/runners"
+        "https://api.github.com/orgs/ls1-sys-prog-course-internal/actions/runners"
+      ];
+      bearer_token = "/run/telegraf-github-token";
+      headers = { Accept = "application/vnd.github.v3+json"; };
+      data_format = "json";
+      tag_keys = [ "os" "name" ];
+      json_query = "runners";
+      fielddrop = ["labels_*" "id"];
+      json_string_fields = [ "status" "busy" ];
+    };
   };
+
+  systemd.tmpfiles.rules = [
+    "C /run/telegraf-github-token 400 telegraf root - /etc/nixos/secrets/telegraf-github-token"
+  ];
 
   systemd.services.telegraf-kubernetes-setup = {
     wantedBy = [ "multi-user.target" ];
