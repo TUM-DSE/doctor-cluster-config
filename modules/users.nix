@@ -3,6 +3,10 @@ let
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine
   '';
 
+  redhaKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOb4/IcT/Ly2VjmhO8PhSlsBSziL3Yn7nTqoPrzRJ/FHHUfEZhUj0cx8h++wKas8Y6FELP0a121Hkki4L/QIhzd6zcTlqVQ19EX98KMmD9PsGlK5tdPV7+bjNLCtEXjqPIEYUi/cL/kvuKpMwLyzkVTyl5AFRvR9TQkITfHChWCV9KfKTFjM+h/FBQvH3zrjbpGbMiS7bclRL5Gvih3eOHSuQSrJurgkPr8cH1z47L8rqTlEwJ+9x54fQo2wbJm41BFcdY7qONSmtMI45EfFB3K7MdpH1ztg25l7K4ctgHayRASNI7IMIzijibd1acf08OutRec0XLLNGvCcKyW1EV redha@redha-Lenovo-U41-70
+  '';
+
   sandroKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqNR2tsYH2igXjgiOA/yc3CdXqpg70ViICdGk/Acmxu
   '';
@@ -136,6 +140,16 @@ in
     };
 
     # tum
+    redha = {
+      isNormalUser = true;
+      home = "/home/redha";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1010;
+      openssh.authorizedKeys.keys = [ redhaKeys ];
+    };
+
+    # tum
     atsushi = {
       isNormalUser = true;
       home = "/home/atsushi";
@@ -146,7 +160,7 @@ in
     };
 
     root = {
-      openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys ];
+      openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys redhaKeys ];
       # /etc/nixos/secrets/root-password
       hashedPassword = "$6$n7B6/qK5R7j$RRHT.1OLEeMBFsRSRqo2nOgJRlF4WTsVEPiI1BVaEvKZ1.M6imoUIhlTZRGtjSVzAs3JUI.4JdKcQ8Rc/Nx8S0";
     };
