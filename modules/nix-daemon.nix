@@ -15,7 +15,7 @@
       keep-derivations = true
       # in zfs we trust
       fsync-metadata = ${lib.boolToString (config.fileSystems."/".fsType != "zfs")}
-      experimental-features = ca-derivations ca-references nix-command flakes
+      experimental-features = nix-command flakes
     '';
 
     autoOptimiseStore = true;
