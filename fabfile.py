@@ -78,10 +78,10 @@ def wait_for_port(host: str, port: int, shutdown: bool=False) -> None:
 
 @task
 def reboot(c):
-    c.user = "root"
     """
     Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
     """
+    c.user = "root"
     c.run('reboot', asynchronous=True)
 
     print(f"Wait for {c.host} to shutdown",end="")
