@@ -51,6 +51,11 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos
   '';
 
+  # Paul Heidekrüger
+  paulKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6/nkUEjr09814INiM8+GS9x4RY8j/ulMVFiTsYTxCcbhCWFGgQ6NS+kg2iTtthHzsgaXddfoy2Zy6FwTTFpaekK30ZZaNPFK9h/Z8Nry6TgYJhPbe5ftinf8gWkhihGk4SnjVCGIc+eOK5MsS31stPReYEkeqtnbLiRzGgk2MmgworouHMy3x8N9nfcRWZVAQMzYeZtz9eqAB4T81zEPLcd9bHWziYr7Qy0nCc9aVQ3C/OkNT8yDinYIqaoDRRuiCfK5WhRzv2Sid7Qq5md2CVgctsM8GAOX6HMsmNN3JmElfUgE5eJpkpfp0GVEbYcZZyIlKXe0Oz3fECbSq78+PvdJkKs2pidU6KhoCuOGED9RQwXfeCxQL09Um6wCFmdr+A4XBIFSAbxxeHrM2bdQccxp4FLpiXJpI8hOJNCo4I6gnpYlv+DBjjm0h5+9Eb/Eq0d8Mz9BWBvO1ltbJMvA/S32AQyVUZKndNQ/K9oVdAXcDM0PFrkad8k5rRJK4QsfzY6b8zSbYuk2bA2cKxz29+8PJcbWZcSf+yyN3+ELFu2E2F3mgx/doPBgMk4y9gHRwr7HiN+7eYwiLVnF402f46D2bpj8LFGsCkeAbHS4DKFdn3vAOTs1wGK3cmgTQnH/edfaEN+zmuXXgh4gUr64vRyra+rn3PGbPQTRAmzoA3w== mailto:paul.heidekrueger@tum.de
+  '';
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
@@ -126,6 +131,16 @@ in
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1006;
       openssh.authorizedKeys.keys = [ irisKeys ];
+    };
+
+    # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
+    paul = {
+      isNormalUser = true;
+      home = "/home/paul";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1007;
+      openssh.authorizedKeys.keys = [ paulKeys ];
     };
 
     # dresden
