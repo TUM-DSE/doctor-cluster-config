@@ -14,6 +14,8 @@
     home-manager.url = "github:rycee/home-manager/release-21.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    eris.url = "github:Mic92/eris";
+
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
     flake-registry.url = "github:NixOS/flake-registry";
@@ -30,6 +32,7 @@
     , nixos-hardware
     , flake-registry
     , flake-utils
+    , eris
     }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -44,7 +47,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

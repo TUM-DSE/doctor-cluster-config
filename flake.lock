@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "eris": {
+      "locked": {
+        "lastModified": 1627208696,
+        "narHash": "sha256-qpMUvZ8GAgComDl2kjZwMFQdS9+OcH27JZ4Rwk9cbak=",
+        "owner": "Mic92",
+        "repo": "eris",
+        "rev": "311ba9026805d780ea595230b5c1f682702f0118",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "eris",
+        "type": "github"
+      }
+    },
     "flake-registry": {
       "flake": false,
       "locked": {
@@ -38,11 +53,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1624228557,
-        "narHash": "sha256-wwOqe73BsrXfRv1PhyXQFNC8iTET50KvE/HitdkRgxs=",
+        "lastModified": 1627158444,
+        "narHash": "sha256-+C0SqhyQQplhcmWl681ODGNWUng8Wp1yvC/MdI1Q7hY=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "35a24648d155843a4d162de98c17b1afd5db51e4",
+        "rev": "9c0abed5228d54aad120b4bc757b6f5935aeda1c",
         "type": "github"
       },
       "original": {
@@ -100,11 +115,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1626943157,
-        "narHash": "sha256-1/63vK5KASgEt4/qGvF6+LEhokwOIAjM4vWl6qyG65I=",
+        "lastModified": 1627186778,
+        "narHash": "sha256-oSDb2QpXNcrxFQiZMEM7AkvsOlW8QKpeIZHQCIXSnq8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "6c4a43390829ad08bc310f41700c95dfdbbe78e6",
+        "rev": "ef478c6189982ba0bae95edc1af75c170d9038dd",
         "type": "github"
       },
       "original": {
@@ -130,6 +145,7 @@
     },
     "root": {
       "inputs": {
+        "eris": "eris",
         "flake-registry": "flake-registry",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",

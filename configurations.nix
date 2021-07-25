@@ -5,6 +5,7 @@
 , home-manager
 , retiolum
 , flake-registry
+, eris
 }:
 let
   commonModules = [
@@ -48,7 +49,8 @@ let
     ./modules/scratch-space.nix
     ./modules/scone.nix
     ./modules/watchdog.nix
-    ./modules/nix-serve.nix
+    eris.nixosModules.eris
+    ./modules/eris.nix
     ./modules/docker.nix
     ./modules/zfs.nix
     ./modules/systemd-boot.nix
