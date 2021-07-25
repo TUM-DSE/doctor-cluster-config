@@ -51,11 +51,6 @@
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 
-      hydraJobs = {
-        configurations =
-          nixpkgs.lib.mapAttrs'
-            (name: config: nixpkgs.lib.nameValuePair name config.config.system.build.toplevel)
-            self.nixosConfigurations;
-      };
+      hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations;
     };
 }

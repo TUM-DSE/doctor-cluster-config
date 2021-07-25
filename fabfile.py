@@ -109,17 +109,3 @@ def deploy_tum(c):
     Deploy to TUM servers
     """
     deploy_nixos(["bill.r", "nardole.r"])
-
-@task
-def update_drone(c):
-    """
-    Build and Sign .drone.yml from .drone.start0
-    """
-    # TODO: add DRONE_TOKEN to ./secrets
-    env = dict(
-        PATH=os.environ.get("PATH"),
-        DRONE_SERVER="https://drone.thalheim.io/",
-        DRONE_TOKEN=os.environ.get("DRONE_TOKEN")
-    )
-    c.run("drone starlark --stdout .drone.star > .drone.yml", env=env)
-    c.run("drone sign --save Mic92/doctor-cluster-config", env=env)
