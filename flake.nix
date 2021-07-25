@@ -41,7 +41,6 @@
         buildInputs = [
           pkgs.python3.pkgs.Fabric
           pkgs.ipmitool
-          pkgs.drone-cli
         ];
       };
     }) //
