@@ -74,6 +74,15 @@ Make sure the system is booted into EFI:
 efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
 ```
 
+Also make sure to enable ipmi serial over lan (run `nix-shell -p ipmitool` on the same machine):
+
+```console
+$ ipmitool sol set privilege-level admin
+$ ipmitool sol set force-encryption false
+$ ipmitool sol set enabled true
+$ ipmitool sol payload enable
+```
+
 ## Partitioning
 
 Assuming `/dev/nvme0n1` is the root disk, the following commands will setup up zfs and one
