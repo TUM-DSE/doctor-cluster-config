@@ -76,7 +76,6 @@ in
     ];
   };
 
-  # currently blocks CI
   doctor = nixosSystem {
     system = "aarch64-linux";
     modules = commonModules ++ [
@@ -123,6 +122,13 @@ in
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
       ./sauron.nix
+    ];
+  };
+
+  yasmin = nixosSystem {
+    system = "aarch64-linux";
+    modules = computeNodeModules ++ [
+      ./yasmin.nix
     ];
   };
 }

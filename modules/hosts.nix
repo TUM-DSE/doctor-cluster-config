@@ -97,17 +97,24 @@ in
         location = "edinburgh";
       };
       bill = {
-        ipv4 = "192.168.32.74";
-        #ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
+        ipv4 = "131.159.102.1";
+        ipv6 = "2a09:80c0:102::1";
         linklocal = "fe80:942d:18ab:a4c9::8";
         serveBinaryCache = false;
         location = "munich";
       };
       nardole = {
-        ipv4 = "192.168.33.61";
-        #ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
+        ipv4 = "131.159.102.2";
+        ipv6 = "2a09:80c0:102::2";
         serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::9";
+        location = "munich";
+      };
+      yasmin = {
+        ipv4 = "131.159.102.7";
+        ipv6 = "2a09:80c0:102::7";
+        serveBinaryCache = false;
+        linklocal = "fe80:942d:18ab:a4c9::10";
         location = "munich";
       };
     };
