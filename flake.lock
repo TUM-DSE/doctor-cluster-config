@@ -15,6 +15,27 @@
         "type": "github"
       }
     },
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1627266442,
+        "narHash": "sha256-jmHGpI0XYdAXV31iNBnZwLebd1IZ4EoDlgv7beKQ24c=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "b099d59df490f63fb53387739f93c26c08d3b48f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
     "flake-registry": {
       "flake": false,
       "locked": {
@@ -113,6 +134,22 @@
         "type": "github"
       }
     },
+    "not-os": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1615586706,
+        "narHash": "sha256-Qe0hbUL2sByHGN0uP+nFzAi8gVsk8lZXSgzuZ0pj3Mc=",
+        "owner": "cleverca22",
+        "repo": "not-os",
+        "rev": "97186fc3ca8bfed153920353d4e54b46c145dd07",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cleverca22",
+        "repo": "not-os",
+        "type": "github"
+      }
+    },
     "nur": {
       "locked": {
         "lastModified": 1627567876,
@@ -153,7 +190,50 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-systemd": "nixpkgs-systemd",
         "nur": "nur",
-        "retiolum": "retiolum"
+        "retiolum": "retiolum",
+        "vmsh": "vmsh"
+      }
+    },
+    "rust-analyzer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1627221155,
+        "narHash": "sha256-NBUEhA4e9fAeXH+3BxnNJdTlGfhukzHIpqD7g2qK1RI=",
+        "owner": "rust-analyzer",
+        "repo": "rust-analyzer",
+        "rev": "5983d3745ac8490c1c2798fdc963aa9fc803dd03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-analyzer",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "vmsh": {
+      "inputs": {
+        "fenix": "fenix",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "not-os": "not-os"
+      },
+      "locked": {
+        "lastModified": 1627507390,
+        "narHash": "sha256-OSM8nY5v//NucViPzRouGNAEXsW3T2hnfYc/San74K4=",
+        "owner": "Mic92",
+        "repo": "vmsh",
+        "rev": "cef3693b10713d056f5ff98f16ade128fe330b55",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "vmsh",
+        "type": "github"
       }
     }
   },

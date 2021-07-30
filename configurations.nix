@@ -6,6 +6,7 @@
 , retiolum
 , flake-registry
 , eris
+, vmsh
 }:
 let
   commonModules = [
@@ -107,6 +108,7 @@ in
   bill = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
+      vmsh.nixosModules.linux-ioregionfd
       ./bill.nix
       ./hardware-configuration.nix
     ];

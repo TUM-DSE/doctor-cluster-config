@@ -20,6 +20,10 @@
 
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
+
+    vmsh.url = "github:Mic92/vmsh";
+    vmsh.inputs.flake-utils.follows = "flake-utils";
+    vmsh.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -33,6 +37,7 @@
     , flake-registry
     , flake-utils
     , eris
+    , vmsh
     }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -46,7 +51,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 
