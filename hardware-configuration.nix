@@ -13,8 +13,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  networking.hostId = "8425e348";
-
   fileSystems."/boot" = {
     device = "/dev/sda1";
     fsType = "vfat";

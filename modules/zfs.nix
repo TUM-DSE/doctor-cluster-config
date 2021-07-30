@@ -6,4 +6,5 @@
   };
   # 5.12 is too new
   boot.zfs.enableUnstable = true;
+  networking.hostId = "8425e348";
 }

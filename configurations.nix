@@ -44,7 +44,6 @@ let
   ];
 
   computeNodeModules = commonModules ++ [
-    ./hardware-configuration.nix
     ./modules/tracing.nix
     ./modules/scratch-space.nix
     ./modules/scone.nix
@@ -53,12 +52,13 @@ let
     ./modules/eris.nix
     ./modules/docker.nix
     ./modules/zfs.nix
-    ./modules/systemd-boot.nix
+    ./modules/bootloader.nix
   ];
   sgxNodeModules = computeNodeModules ++ [
     ./modules/dpdk.nix
     ./modules/sgx
     ./modules/sgx/graphene.nix
+    ./hardware-configuration.nix
   ];
 in
 {
@@ -108,6 +108,7 @@ in
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       ./bill.nix
+      ./hardware-configuration.nix
     ];
   };
 
@@ -115,6 +116,7 @@ in
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       ./nardole.nix
+      ./hardware-configuration.nix
     ];
   };
 
