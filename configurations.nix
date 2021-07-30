@@ -84,6 +84,14 @@ in
     ];
   };
 
+  #monitoring = nixosSystem {
+  #  system = "x86_64-linux";
+  #  #modules = commonModules ++ [
+  #  modules = [
+  #    ./modules/container.nix
+  #  ];
+  #};
+
   donna = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
