@@ -108,4 +108,4 @@ def deploy_tum(c):
     """
     Deploy to TUM servers
     """
-    deploy_nixos(["bill.r", "nardole.r"])
+    deploy_nixos(["bill.r", "nardole.r", "yasmin.r"])
