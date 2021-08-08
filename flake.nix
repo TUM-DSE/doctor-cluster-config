@@ -24,6 +24,9 @@
     vmsh.url = "github:Mic92/vmsh";
     vmsh.inputs.flake-utils.follows = "flake-utils";
     vmsh.inputs.nixpkgs.follows = "nixpkgs";
+
+    hercules-ci.url = "github:hercules-ci/hercules-ci-agent";
+    hercules-ci.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -38,6 +41,7 @@
     , flake-utils
     , eris
     , vmsh
+    , hercules-ci
     }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -51,7 +55,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh hercules-ci;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

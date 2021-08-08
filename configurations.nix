@@ -7,6 +7,7 @@
 , flake-registry
 , eris
 , vmsh
+, hercules-ci
 }:
 let
   commonModules = [
@@ -20,12 +21,15 @@ let
     ./modules/mosh.nix
     ./modules/promtail.nix
 
-    {
+    ({pkgs, ...}: {
+      services.hercules-ci-agent.package = hercules-ci.packages.${pkgs.system}.hercules-ci-agent-nixUnstable;
+
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${nixpkgs}"
         "nur=${nur}"
       ];
+
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json
       '';
@@ -35,12 +39,13 @@ let
           inherit (pkgs) system;
         }).systemd;
       };
+
       nix.registry = {
         home-manager.flake = home-manager;
         nixpkgs.flake = nixpkgs;
         nur.flake = nur;
       };
-    }
+    })
     retiolum.nixosModules.retiolum
   ];
 

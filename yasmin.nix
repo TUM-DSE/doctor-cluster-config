@@ -5,6 +5,7 @@
     #./modules/nfs-home.nix
     ./modules/ipmi.nix
     ./modules/yasmin-hardware.nix
+    ./modules/hercules-ci.nix
   ];
 
   networking.hostName = "yasmin";
