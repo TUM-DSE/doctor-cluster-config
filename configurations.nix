@@ -107,6 +107,7 @@ in
   martha = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
+      vmsh.nixosModules.linux-ioregionfd
       ./martha.nix
     ];
   };
