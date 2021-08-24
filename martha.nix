@@ -3,6 +3,7 @@
   imports = [
     ./modules/nfs-home.nix
     ./modules/ci.nix
+    ./modules/xfstest.nix
   ];
 
   networking.hostName = "martha";
