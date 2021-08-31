@@ -19,4 +19,12 @@
   users.users.daemon.isSystemUser = true;
   users.users.daemon.group = "daemon";
   users.groups.daemon = {};
+
+  users.users.sys.isSystemUser = true;
+  users.users.sys.group = "sys";
+  users.groups.sys = {};
+
+  users.users.bin.isSystemUser = true;
+  users.users.bin.group = "bin";
+  users.groups.bin = {};
 }
