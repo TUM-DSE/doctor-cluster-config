@@ -27,6 +27,9 @@
 
     hercules-ci.url = "github:hercules-ci/hercules-ci-agent";
     hercules-ci.inputs.nixpkgs.follows = "nixpkgs";
+
+    lambda-pirate.url = "github:pogobanane/lambda-pirate/fixes";
+    lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -42,6 +45,7 @@
     , eris
     , vmsh
     , hercules-ci
+    , lambda-pirate
     }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -55,7 +59,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh hercules-ci;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh hercules-ci lambda-pirate;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

@@ -8,6 +8,7 @@
 , eris
 , vmsh
 , hercules-ci
+, lambda-pirate
 }:
 let
   commonModules = [
@@ -108,6 +109,8 @@ in
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
       vmsh.nixosModules.linux-ioregionfd
+      lambda-pirate.nixosModules.knative
+      lambda-pirate.nixosModules.vhive
       ./martha.nix
     ];
   };
