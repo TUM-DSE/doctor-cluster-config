@@ -22,15 +22,12 @@ let
   };
 in
 {
-  imports = [
-    ./kata-containers.nix
-  ];
   config = {
     services.k3s.enable = true;
     services.k3s.docker = lib.mkForce false;
     virtualisation.containerd.enable = true;
     virtualisation.containerd.settings = {
-      plugins."io.containerd.grpc.v1.cri".cni.conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d";
+      plugins.cri.cni.conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d";
     };
 
     systemd.services.containerd.serviceConfig = {
