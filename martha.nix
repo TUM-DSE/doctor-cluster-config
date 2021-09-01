@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ./modules/nfs-home.nix
@@ -40,6 +40,10 @@
       monthly = 0;
     };
   };
+
+  # for lambda pirate
+  services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
+
   systemd.services.borgbackup-job-joerg-martha.serviceConfig.ReadWritePaths = [
     "/var/log/telegraf"
   ];
