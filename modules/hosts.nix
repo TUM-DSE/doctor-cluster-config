@@ -27,7 +27,7 @@ let
       type = types.bool;
       default = true;
       description = ''
-        wether this hosts serve a binary cache on port 5000
+        wether this hosts serve a binary cache on port 5001
       '';
     };
 

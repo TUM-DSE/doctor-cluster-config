@@ -16,9 +16,9 @@
         private => '/run/cache-priv-key.pem',
       },
       listen => [
-        'http://[::]:5000',
+        'http://[::]:5001',
       ],
     }
   '');
-  networking.firewall.allowedTCPPorts = [ 5000 ];
+  networking.firewall.allowedTCPPorts = [ 5001 ];
 }
