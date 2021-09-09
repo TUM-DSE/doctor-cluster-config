@@ -41,8 +41,6 @@
     };
   };
 
-  # for lambda pirate
-  services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
 
   systemd.services.borgbackup-job-joerg-martha.serviceConfig.ReadWritePaths = [
     "/var/log/telegraf"
