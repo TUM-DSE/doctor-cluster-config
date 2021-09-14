@@ -28,7 +28,7 @@
     hercules-ci.url = "github:hercules-ci/hercules-ci-agent/hercules-ci-agent-0.8.2";
     hercules-ci.inputs.nixpkgs.follows = "nixpkgs";
 
-    lambda-pirate.url = "github:pogobanane/lambda-pirate/fixes";
+    lambda-pirate.url = "github:pogobanane/lambda-pirate";
     lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
   };
 
