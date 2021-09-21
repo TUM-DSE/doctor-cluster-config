@@ -13,25 +13,32 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "zroot/root/nixos";
-      fsType = "zfs";
-    };
+  fileSystems."/" = {
+    device = "zroot/root/nixos";
+    fsType = "zfs";
+  };
 
-  fileSystems."/boot/EFI" =
-    { device = "/dev/disk/by-uuid/0D40-D110";
-      fsType = "vfat";
-    };
+  fileSystems."/boot/EFI" = {
+    device = "/dev/disk/by-uuid/0D40-D110";
+    fsType = "vfat";
+  };
 
-  fileSystems."/home" =
-    { device = "zroot/root/home";
-      fsType = "zfs";
-    };
+  fileSystems."/home" = {
+    device = "zroot/root/home";
+    fsType = "zfs";
+  };
 
-  fileSystems."/tmp" =
-    { device = "zroot/root/tmp";
-      fsType = "zfs";
-    };
+  # has a quota of 500GB
+  fileSystems."/traces" = {
+    device = "zroot/traces";
+    fsType = "zfs";
+    options = [ "nofail" ];
+  };
+
+  fileSystems."/tmp" = {
+    device = "zroot/root/tmp";
+    fsType = "zfs";
+  };
 
   swapDevices = [ ];
 
