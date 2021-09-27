@@ -14,6 +14,11 @@ let
   philipKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMI+21MFo1RlD0Urx8bTJHJZnRNRSGuN9IZ6Ld7M2JS philip@x541uj
   '';
+
+  # Moritz Lumme (internship)
+  mlKeys = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx ed25519-key-20210927
+  '';
 in
 {
   users.users = {
@@ -28,6 +33,15 @@ in
     };
 
     # master thesis (dimitrios student)
+    ml = {
+      isNormalUser = true;
+      home = "/home/ml";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1014;
+      openssh.authorizedKeys.keys = [ mlKeys ];
+    };
+
     philip = {
       isNormalUser = true;
       home = "/home/philip";
