@@ -183,7 +183,7 @@ in
 
   # needed so that we can set a root password
   users.mutableUsers = false;
-  nix.trustedUsers = [ "joerg" "harshanavkis" "sandro" ];
+  nix.trustedUsers = [ "joerg" "harshanavkis" "sandro" "redha" ];
 
   # we cannot use this since we no longer have the database
   programs.command-not-found.enable = false;
