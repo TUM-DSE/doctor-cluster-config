@@ -28,7 +28,8 @@
     fsType = "zfs";
   };
 
-  # has a quota of 500GB
+  # Redha uses this for his qemu traces
+  # - has a quota of 500GB
   fileSystems."/traces" = {
     device = "zroot/traces";
     fsType = "zfs";
