@@ -45,9 +45,8 @@
   };
 
   services.borgbackup.jobs.all-homes = {
-    paths = [
-      "/home"
-    ];
+    paths = [ "/home" ];
+    exclude = [ "/home/dimitra/workspace/rocksdb-5.6-native" ];
     doInit = true;
     repo = "/mnt/backup/borgbackup";
     preHook = ''
