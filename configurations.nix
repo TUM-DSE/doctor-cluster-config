@@ -7,7 +7,6 @@
 , flake-registry
 , eris
 , vmsh
-, hercules-ci
 , lambda-pirate
 }:
 let
@@ -23,8 +22,6 @@ let
     ./modules/promtail.nix
 
     ({pkgs, ...}: {
-      services.hercules-ci-agent.package = hercules-ci.packages.${pkgs.system}.hercules-ci-agent-nixUnstable;
-
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${nixpkgs}"

@@ -7,7 +7,6 @@
     ../modules/bonding.nix
     ../modules/k3s/server.nix
     ../modules/dpdk.nix
-    ../modules/hercules-ci.nix
     ../modules/xfstest.nix
   ];
 
