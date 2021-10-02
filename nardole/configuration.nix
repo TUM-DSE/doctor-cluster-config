@@ -3,11 +3,11 @@
   imports = [
     # TODO
     #./modules/nfs-home.nix
-    ./modules/bonding.nix
-    ./modules/ipmi.nix
+    ../modules/bonding.nix
+    ../modules/ipmi.nix
     #./modules/xilinx.nix
-    ./modules/dpdk.nix
-    ./modules/k3s/agent.nix
+    ../modules/dpdk.nix
+    ../modules/k3s/agent.nix
   ];
 
   networking.hostName = "nardole";

@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ./modules/nfs-home.nix
-    ./modules/ci.nix
-    ./modules/xfstest.nix
+    ../modules/nfs-home.nix
+    ../modules/ci.nix
+    ../modules/xfstest.nix
   ];
 
   networking.hostName = "martha";

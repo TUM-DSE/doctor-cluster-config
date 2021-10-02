@@ -1,7 +1,7 @@
 {
   imports = [
-    ./modules/reboot-switch
-    ./modules/raspberrypi-4.nix
+    ../modules/reboot-switch
+    ../modules/raspberrypi-4.nix
   ];
 
   networking.hostName = "doctor";

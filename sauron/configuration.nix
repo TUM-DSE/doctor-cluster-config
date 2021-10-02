@@ -1,7 +1,6 @@
 {
   imports = [
-    ./modules/nfs-home.nix
-    #./modules/k3s/server.nix
+    ../modules/nfs-home.nix
   ];
 
   networking.hostName = "sauron";

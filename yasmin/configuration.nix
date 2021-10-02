@@ -1,10 +1,8 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    # TODO
-    #./modules/nfs-home.nix
-    ./modules/ipmi.nix
-    ./modules/yasmin-hardware.nix
+    ../modules/ipmi.nix
+    ../modules/yasmin-hardware.nix
   ];
 
   networking.hostName = "yasmin";
