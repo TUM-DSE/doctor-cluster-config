@@ -73,21 +73,21 @@ in
   amy = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      ./amy/configuration.nix
+      ./hosts/amy.nix
     ];
   };
 
   clara = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      ./clara/configuration.nix
+      ./hosts/clara.nix
     ];
   };
 
   doctor = nixosSystem {
     system = "aarch64-linux";
     modules = commonModules ++ [
-      ./doctor/configuration.nix
+      ./hosts/doctor.nix
     ];
   };
 
@@ -102,7 +102,7 @@ in
   donna = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      ./donna/configuration.nix
+      ./hosts/donna.nix
     ];
   };
 
@@ -116,7 +116,7 @@ in
       #  # for lambda pirate
       #  services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
       #})
-      ./martha/configuration.nix
+      ./hosts/martha.nix
     ];
   };
 
@@ -124,7 +124,7 @@ in
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
       vmsh.nixosModules.linux-ioregionfd
-      ./rose/configuration.nix
+      ./hosts/rose.nix
     ];
   };
 
@@ -132,7 +132,7 @@ in
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       vmsh.nixosModules.linux-ioregionfd
-      ./bill/configuration.nix
+      ./hosts/bill.nix
       ./hardware-configuration.nix
     ];
   };
@@ -148,14 +148,14 @@ in
   sauron = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      ./sauron/configuration.nix
+      ./hosts/sauron.nix
     ];
   };
 
   yasmin = nixosSystem {
     system = "aarch64-linux";
     modules = computeNodeModules ++ [
-      ./yasmin/configuration.nix
+      ./hosts/yasmin.nix
     ];
   };
 }
