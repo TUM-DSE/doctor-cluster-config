@@ -23,11 +23,11 @@ def deploy_nixos(hosts: List[str]) -> None:
     """
     try:
         g = ThreadingGroup(*hosts, user="root", forward_agent=True)
-        # XXX remove retiolum cleanup at some point
+        # XXX remove secrets cleanup at some point
         run(g,
             "git -C /etc/nixos pull https://github.com/Mic92/doctor-cluster-config master && " +
             "git -C /etc/nixos submodule update --init && " +
-            "rm -rf /etc/nixos/retiolum")
+            "rm -rf /etc/nixos/secrets")
         run(g, "cd /etc/nixos && nixos-rebuild build")
         run(g, "nixos-rebuild test")
 
@@ -38,6 +38,8 @@ def deploy_nixos(hosts: List[str]) -> None:
         for conn, failed in ex.result.failed.items():
             if isinstance(failed.args[0], str):
                 msg = failed.args[0]
+            elif isinstance(failed.args[0], int):
+                msg = failed.args[1]
             else:
                 msg = failed.args[0].command
             print(f"=== {conn.user}@{conn.host}: ===")
