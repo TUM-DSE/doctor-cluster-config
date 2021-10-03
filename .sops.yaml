@@ -17,6 +17,16 @@ creation_rules:
     key_groups:
     - age:
       - *joerg
+      - *amy
+      - *clara
+      - *rose
+      - *donna
+      - *martha
+      - *doctor
+      - *bill
+      - *nardole
+      - *sauron
+      - *yasmin
   - path_regex: secrets.yml$
     key_groups:
     - age:
