@@ -141,7 +141,7 @@ $ nix-shell -p git --run 'git clone https://github.com/Mic92/doctor-cluster-conf
 # Generates keys for tinc
 $ nix-shell -p tinc --run 'mkdir -p /mnt/etc/tinc/retiolum && sudo tincd --generate-keys -c /mnt/etc/tinc/retiolum -n retiolum'
 # pick a new hostname and and copy configuration for it
-$ cp clara.nix $newname.nix
+$ cp hosts/clara.nix hosts/$newname.nix
 # copy ssh keys from the installer to the new system (requires sshd service to be started)
 # also share this public key (ssh_host_ed25519_key.pub) with @Mic92 to get a ssh certificate
 $ cp /etc/ssh/ssh_host_* /mnt/etc/ssh
@@ -150,7 +150,7 @@ $ cp /etc/ssh/ssh_host_* /mnt/etc/ssh
 # Also add the new host in configurations.nix
 # We primarly need a new tinc ip address for the vpn following https://github.com/Mic92/retiolum
 # Also share in this step the key generated to /mnt/etc/tinc/retiolum
-$ vim /mnt/etc/nixos/$newname.nix
+$ vim /mnt/etc/nixos/hosts/$newname.nix
 # add ip address of the machine to
 $ vim /mnt/etc/nixos/modules/hosts.nix
 # Than run nixos-install
