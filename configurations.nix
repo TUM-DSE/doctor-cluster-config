@@ -4,6 +4,7 @@
 , nur
 , home-manager
 , retiolum
+, sops-nix
 , flake-registry
 , eris
 , vmsh
@@ -21,12 +22,15 @@ let
     ./modules/mosh.nix
     ./modules/promtail.nix
 
+    sops-nix.nixosModules.sops
     ({pkgs, ...}: {
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${nixpkgs}"
         "nur=${nur}"
       ];
+
+      sops.defaultSopsFile = ./modules/secrets.yml;
 
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json

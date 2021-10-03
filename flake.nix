@@ -14,7 +14,12 @@
     home-manager.url = "github:rycee/home-manager/release-21.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    # optional, not necessary for the module
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     eris.url = "github:Mic92/eris";
+    eris.inputs.nixpkgs.follows = "nixpkgs";
 
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
@@ -35,6 +40,7 @@
     , nixpkgs-systemd
     , nur
     , home-manager
+    , sops-nix
     , retiolum
     , nixos-hardware
     , flake-registry
@@ -50,12 +56,14 @@
         buildInputs = [
           pkgs.python3.pkgs.Fabric
           pkgs.ipmitool
+          pkgs.age
+          pkgs.sops
         ];
       };
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh lambda-pirate;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh lambda-pirate sops-nix;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

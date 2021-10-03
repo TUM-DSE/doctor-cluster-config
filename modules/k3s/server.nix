@@ -2,6 +2,7 @@
 {
   imports = [ ./. ];
   # k3s api server
+  sops.secrets.telegraf-github-token.owner = "telegraf";
   networking.firewall.allowedTCPPorts = [ 6443 ];
   services.k3s.extraFlags = "--no-deploy traefik --flannel-backend=host-gw --container-runtime-endpoint unix:///run/containerd/containerd.sock";
 
@@ -19,7 +20,7 @@
         "https://api.github.com/orgs/ls1-sys-prog-course/actions/runners"
         "https://api.github.com/orgs/ls1-sys-prog-course-internal/actions/runners"
       ];
-      bearer_token = "/run/telegraf-github-token";
+      bearer_token = config.sops.secrets.telegraf-github-token.path;
       headers = { Accept = "application/vnd.github.v3+json"; };
       data_format = "json";
       tag_keys = [ "os" "name" ];
@@ -28,10 +29,6 @@
       json_string_fields = [ "status" "busy" ];
     };
   };
-
-  systemd.tmpfiles.rules = [
-    "C /run/telegraf-github-token 400 telegraf root - /etc/nixos/secrets/telegraf-github-token"
-  ];
 
   systemd.services.telegraf-kubernetes-setup = {
     wantedBy = [ "multi-user.target" ];
