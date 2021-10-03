@@ -140,7 +140,7 @@ in
   nardole = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
-      ./nardole/configuration.nix
+      ./hosts/nardole.nix
       ./hardware-configuration.nix
     ];
   };
