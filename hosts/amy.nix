@@ -13,37 +13,6 @@
           (lib.attrValues config.networking.doctorwho.hosts)}
   '';
 
-  services.borgbackup.jobs.joerg = {
-    paths = [
-      "/home/joerg"
-    ];
-    doInit = true;
-    repo = "borg@eve.thalheim.io:.";
-    preHook = ''
-      eval $(ssh-agent)
-      ssh-add /etc/nixos/secrets/borgbackup-ssh-key
-    '';
-    postHook = ''
-      cat > /var/log/telegraf/borgbackup-amy <<EOF
-      task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
-      EOF
-    '';
-    extraArgs = "--lock-wait 900";
-    encryption.mode = "none";
-    compression = "auto,zstd";
-    startAt = "daily";
-    prune.keep = {
-      within = "1d"; # Keep all archives from the last day
-      daily = 7;
-      weekly = 4;
-      monthly = 0;
-    };
-  };
-
-  systemd.timers.borgbackup-job-joerg = {
-    timerConfig.OnCalendar = lib.mkForce "04:00:00";
-  };
-
   sops.secrets.borgbackup-ssh-key = {};
   sops.secrets.borgbackup-password = {};
   services.borgbackup.jobs.all-homes = {
