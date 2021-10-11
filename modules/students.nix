@@ -65,7 +65,7 @@ in
     paul = {
       isNormalUser = true;
       home = "/home/paul";
-      inherit extraGroups;
+      inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1007;
       openssh.authorizedKeys.keys = [ paulKeys ];
