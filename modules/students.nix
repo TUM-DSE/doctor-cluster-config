@@ -15,9 +15,13 @@ let
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMI+21MFo1RlD0Urx8bTJHJZnRNRSGuN9IZ6Ld7M2JS philip@x541uj
   '';
 
-  # Moritz Lumme (internship)
   mlKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx ed25519-key-20210927
+  '';
+
+  # Paul Heidekrüger
+  paulKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6/nkUEjr09814INiM8+GS9x4RY8j/ulMVFiTsYTxCcbhCWFGgQ6NS+kg2iTtthHzsgaXddfoy2Zy6FwTTFpaekK30ZZaNPFK9h/Z8Nry6TgYJhPbe5ftinf8gWkhihGk4SnjVCGIc+eOK5MsS31stPReYEkeqtnbLiRzGgk2MmgworouHMy3x8N9nfcRWZVAQMzYeZtz9eqAB4T81zEPLcd9bHWziYr7Qy0nCc9aVQ3C/OkNT8yDinYIqaoDRRuiCfK5WhRzv2Sid7Qq5md2CVgctsM8GAOX6HMsmNN3JmElfUgE5eJpkpfp0GVEbYcZZyIlKXe0Oz3fECbSq78+PvdJkKs2pidU6KhoCuOGED9RQwXfeCxQL09Um6wCFmdr+A4XBIFSAbxxeHrM2bdQccxp4FLpiXJpI8hOJNCo4I6gnpYlv+DBjjm0h5+9Eb/Eq0d8Mz9BWBvO1ltbJMvA/S32AQyVUZKndNQ/K9oVdAXcDM0PFrkad8k5rRJK4QsfzY6b8zSbYuk2bA2cKxz29+8PJcbWZcSf+yyN3+ELFu2E2F3mgx/doPBgMk4y9gHRwr7HiN+7eYwiLVnF402f46D2bpj8LFGsCkeAbHS4DKFdn3vAOTs1wGK3cmgTQnH/edfaEN+zmuXXgh4gUr64vRyra+rn3PGbPQTRAmzoA3w== paul.heidekrueger@tum.de
   '';
   
   # Jasper Ruhl (guided research)
@@ -37,7 +41,7 @@ in
       openssh.authorizedKeys.keys = [ okelmannKeys ];
     };
 
-    # master thesis (dimitrios student)
+    # Moritz Lumme (internship)
     ml = {
       isNormalUser = true;
       home = "/home/ml";
@@ -47,6 +51,7 @@ in
       openssh.authorizedKeys.keys = [ mlKeys ];
     };
 
+    # master thesis (dimitrios student)
     philip = {
       isNormalUser = true;
       home = "/home/philip";
@@ -54,6 +59,16 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1011;
       openssh.authorizedKeys.keys = [ philipKeys ];
+    };
+
+    # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
+    paul = {
+      isNormalUser = true;
+      home = "/home/paul";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1007;
+      openssh.authorizedKeys.keys = [ paulKeys ];
     };
 
     # bachelor thesis (dimitrios student)
