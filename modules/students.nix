@@ -19,6 +19,11 @@ let
   mlKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx ed25519-key-20210927
   '';
+  
+  # Jasper Ruhl (guided research)
+  jrKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYva//qGT0//ljbMjZjX1ugxQjHJir8/Qp1yxy8ZDFCY7rwLi15M69/ZQ8NplU53bkW4ezqkf9CON80NpzfGTuyi7FO28JeWbHovyyHymkUM2wcFjAXOjQKgXz7NRKswZSDAdjZcX7nxHoqY4yI5fBy/9yYNrcdvKZ8NcCGFyhHQijdLUwo4hfOWKIHp4j4tLjQ0T7nKHmcuE+o5xr54EZpAvhQgyPFxrxYiLxX08ksDCykWocgJIiEDVBpw58vTQJxWzRMab/AnWs2FesKOKOfzy9wXa3ze++kb0WVzairhxj5lI2MUAZiE8nCEGBy7jiIDsQ3CaWMFpfvQHnvkd5 jasper@debianj
+  '';
 in
 {
   users.users = {
@@ -60,8 +65,18 @@ in
       uid = 1013;
       openssh.authorizedKeys.keys = [ vincentKeys ];
     };
+    
+    # guided research (redha student)
+    jasper = {
+      isNormalUser = true;
+      home = "/home/jasper";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/fish";
+      uid = 1015;
+      openssh.authorizedKeys.keys = [ jrKeys ];
+    };
   };
 
-  # only used by vincent atm
+  # only used by vincent atm (and jasper)
   programs.fish.enable = true;
 }
