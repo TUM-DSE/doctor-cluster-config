@@ -1,4 +1,7 @@
 { lib, config, pkgs, ... }: {
+  imports = [
+    ../modules/hardware/poweredge7515.nix
+  ];
   networking.hostName = "graham";
   networking.retiolum = {
     ipv4 = "10.243.29.";
