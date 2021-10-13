@@ -117,6 +117,22 @@ in
         linklocal = "fe80:942d:18ab:a4c9::10";
         location = "munich";
       };
+
+      graham = {
+        ipv4 = "131.159.38.71";
+        ipv6 = "2a09:80c0:102::8";
+        serveBinaryCache = false;
+        linklocal = "fe80:942d:18ab:a4c9::11";
+        location = "munich";
+      };
+
+      ryan = {
+        ipv4 = "131.159.38.71";
+        ipv6 = "2a09:80c0:102::8";
+        serveBinaryCache = false;
+        linklocal = "fe80:942d:18ab:a4c9::12";
+        location = "munich";
+      };
     };
   };
 }
