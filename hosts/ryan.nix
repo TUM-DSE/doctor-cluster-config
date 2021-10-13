@@ -5,7 +5,7 @@
   networking.hostName = "ryan";
   networking.retiolum = {
     ipv4 = "10.243.29.196";
-    ipv6 = "42:0:3c46:ab64:fa7c:171a:c94a:ac19";
+    ipv6 = "42:0:3c46:53a7:e0e3:a2b6:471d:44a";
   };
 
   networking.interfaces.eno8303.macAddress = "3c:ec:ef:2c:f5:15";
