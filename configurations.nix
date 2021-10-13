@@ -158,4 +158,18 @@ in
       ./hosts/yasmin.nix
     ];
   };
+
+  graham = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./hosts/graham.nix
+    ];
+  };
+
+  ryan = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./hosts/ryan.nix
+    ];
+  };
 }
