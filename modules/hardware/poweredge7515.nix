@@ -13,6 +13,11 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  fileSystems."/" = {
+    device = "zroot/root/nixos";
+    fsType = "zfs";
+  };
+
   fileSystems."/boot" = {
     # set with: dosfslabel /dev/nvme0n1p1 boot
     device = "/dev/disk/by-label/boot";
