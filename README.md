@@ -77,11 +77,25 @@ efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,rela
 Also make sure to enable ipmi serial over lan (run `nix-shell -p ipmitool` on the same machine):
 
 ```console
-$ ipmitool sol set privilege-level admin
-$ ipmitool sol set force-encryption false
-$ ipmitool sol set enabled true
-$ ipmitool sol payload enable
+ipmitool sol set privilege-level admin
+ipmitool sol set force-encryption false
+ipmitool sol set enabled true
+ipmitool sol payload enable
 ```
+
+Some motherboards might use a different channel instead of the default `0`, append some other number
+i.e. `1` to each command than
+
+```
+ipmitool sol set privilege-level admin 1
+ipmitool sol set force-encryption false 1
+ipmitool sol set enabled true 1
+ipmitool sol payload enable 1
+```
+
+Also make sure ipmi over lan is enabled in the BMC website and Serial over lan
+redirection is enabled in the BIOS/firmware setup page (vendor-specific).
+
 
 ## Partitioning
 
@@ -100,6 +114,8 @@ nvme0n1       8:0    0 894.3G  0 disk
 └─nvme0n1p2   8:2    0 893.8G  0 part
 # format boot partition
 $ mkfs.vfat -b32 /dev/nvme0n1p1
+# Add a label, that we can use to reliable mount /boot later
+$ dosfslabel /dev/nvme0n1p1 boot
 # Create a zpool for zfs
 $ zpool create -f zroot /dev/nvme0n1p2
 # Create zfs datasets: 
@@ -108,18 +124,18 @@ $ zpool create -f zroot /dev/nvme0n1p2
 # - zroot/nixos/home for /home
 # - zroot/reserved in case we run out-of-disk space (can be deleted in this case)
 # - zroot/docker for docker
-$ zfs create -o acltype=posixacl -o xattr=sa -o compression=lz4 -o mountpoint=none zroot/root
-$ zfs create -o mountpoint=legacy -o setuid=off -o devices=off -o sync=disabled zroot/root/tmp
-$ zfs create -o mountpoint=legacy -o com.sun:auto-snapshot=true zroot/root/home
-$ zfs create -o mountpoint=legacy -o com.sun:auto-snapshot=true zroot/root/nixos
-$ zfs create -o mountpoint=none -o refreservation=1G zroot/reserved
-$ zfs create -o mountpoint=none -o compression=lz4 zroot/docker
+zfs create -o acltype=posixacl -o xattr=sa -o compression=lz4 -o mountpoint=none zroot/root
+zfs create -o mountpoint=legacy -o setuid=off -o devices=off -o sync=disabled zroot/root/tmp
+zfs create -o mountpoint=legacy -o com.sun:auto-snapshot=true zroot/root/home
+zfs create -o mountpoint=legacy -o com.sun:auto-snapshot=true zroot/root/nixos
+zfs create -o mountpoint=none -o refreservation=1G zroot/reserved
+zfs create -o mountpoint=none -o compression=lz4 zroot/docker
 # mount zfs root to /mnt
 $ mount -t zfs zroot/root/nixos /mnt
 # prepare mountpoints for home,tmp,boot
 $ mkdir /mnt/{home,tmp,boot}
 # mount boot partition
-$ mount /dev/sda1 /mnt/boot/
+$ mount /dev/nvme0n1p1 /mnt/boot/
 # mount home partition
 $ mount -t zfs zroot/root/home /mnt/home/
 # mount temp partition
@@ -144,6 +160,7 @@ $ nix-shell -p tinc --run 'mkdir -p /mnt/etc/tinc/retiolum && sudo tincd --gener
 $ cp hosts/clara.nix hosts/$newname.nix
 # copy ssh keys from the installer to the new system (requires sshd service to be started)
 # also share this public key (ssh_host_ed25519_key.pub) with @Mic92 to get a ssh certificate
+$ mkdir -p /mnt/etc/ssh
 $ cp /etc/ssh/ssh_host_* /mnt/etc/ssh
 # the ssh certificate needs to go to modules/sshd/certs/$newname-cert.pub
 # Than adjust configuration in $newname.nix
