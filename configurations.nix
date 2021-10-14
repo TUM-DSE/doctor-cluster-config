@@ -109,7 +109,7 @@ in
   martha = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      vmsh.nixosModules.linux-ioregionfd
+      #vmsh.nixosModules.linux-ioregionfd
       #lambda-pirate.nixosModules.knative
       #lambda-pirate.nixosModules.vhive
       #({ config, ... }: {
@@ -123,7 +123,7 @@ in
   rose = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      vmsh.nixosModules.linux-ioregionfd
+      #vmsh.nixosModules.linux-ioregionfd
       ./hosts/rose.nix
     ];
   };
@@ -131,7 +131,7 @@ in
   bill = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
-      vmsh.nixosModules.linux-ioregionfd
+      #vmsh.nixosModules.linux-ioregionfd
       ./hosts/bill.nix
       ./hardware-configuration.nix
     ];
