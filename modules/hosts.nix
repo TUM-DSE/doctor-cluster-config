@@ -118,23 +118,19 @@ in
         location = "munich";
       };
 
-      graham = {
-        # TODO
-        ipv4 = "131.254.75.243";
-        # TODO
-        ipv6 = "2a09:80c0:102::8";
-        serveBinaryCache = false;
-        linklocal = "fe80:942d:18ab:a4c9::11";
-        location = "munich";
-      };
-
       ryan = {
-        # TODO
-        ipv4 = "131.159.38.202";
-        # TODO
+        ipv4 = "131.159.102.8";
         ipv6 = "2a09:80c0:102::8";
         serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::12";
+        location = "munich";
+      };
+
+      graham = {
+        ipv4 = "131.159.102.9";
+        ipv6 = "2a09:80c0:102::9";
+        serveBinaryCache = false;
+        linklocal = "fe80:942d:18ab:a4c9::11";
         location = "munich";
       };
     };

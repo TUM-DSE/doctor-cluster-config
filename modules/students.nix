@@ -51,7 +51,8 @@ in
       openssh.authorizedKeys.keys = [ mlKeys ];
     };
 
-    # master thesis (dimitrios student)
+    # Master thesis (dimitrios student)
+    # finished, Remove before christmas
     philip = {
       isNormalUser = true;
       home = "/home/philip";
