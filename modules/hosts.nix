@@ -119,7 +119,9 @@ in
       };
 
       graham = {
-        ipv4 = "131.159.38.71";
+        # TODO
+        ipv4 = "131.254.75.243";
+        # TODO
         ipv6 = "2a09:80c0:102::8";
         serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::11";
@@ -127,7 +129,9 @@ in
       };
 
       ryan = {
-        ipv4 = "131.159.38.71";
+        # TODO
+        ipv4 = "131.159.38.202";
+        # TODO
         ipv6 = "2a09:80c0:102::8";
         serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::12";
