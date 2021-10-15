@@ -34,6 +34,7 @@ def deploy_nixos(hosts: List[str]) -> None:
         # reconnect to check if we still access the machines
         g = ThreadingGroup(*hosts, user="root")
         run(g, "nixos-rebuild switch")
+        #run(g, "systemctl restart  tinc.retiolum tinc.retiolum-host-keys.service")
     except GroupException as ex:
         for conn, failed in ex.result.failed.items():
             if isinstance(failed.args[0], str):
@@ -110,4 +111,4 @@ def deploy_tum(c):
     """
     Deploy to TUM servers
     """
-    deploy_nixos(["bill.r", "nardole.r", "yasmin.r"])
+    deploy_nixos(["bill.r", "nardole.r", "yasmin.r", "graham.r", "ryan.r"])
