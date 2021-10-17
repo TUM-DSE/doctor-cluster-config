@@ -10,18 +10,21 @@ from deploy_nixos import DeployHost, DeployGroup
 
 def deploy_nixos(hosts: List[DeployHost]) -> None:
     """
-    deploy to all hosts in parallel
+    Deploy to all hosts in parallel
     """
     g = DeployGroup(hosts)
-    g.run_local(
-        "rsync --exclude='.git/' -vaF --delete -e ssh . $SSH_USER@$SSH_HOST:/etc/nixos",
-    )
+    def deploy(h: DeployHost) -> None:
+        h.run_local(
+            f"rsync --exclude='.git/' -vaF --delete -e ssh . {h.user}@{h.host}:/etc/nixos",
+        )
 
-    g.run(
-        "a=$FLAKE_ATTR;"
-        "a=${a:-$(< /proc/sys/kernel/hostname)}; "
-        "nixos-rebuild switch --build-host localhost --target-host $TARGET_HOST --flake /etc/nixos#$a"
-    )
+        flake_path = "/etc/nixos"
+        flake_attr = h.meta.get("flake_attr")
+        if flake_attr:
+            flake_path += "#" + flake_attr
+        target_host = h.meta.get("target_host", "localhost")
+        h.run(f"nixos-rebuild switch --build-host localhost --target-host {target_host} --flake {flake_path}")
+    g.run_function(deploy)
 
 
 @task
