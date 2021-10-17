@@ -3,8 +3,7 @@
 from invoke import task
 
 import sys
-from typing import List, Dict, Tuple, IO, Iterator, Optional
-from contextlib import contextmanager
+from typing import List
 from deploy_nixos import DeployHost, DeployGroup
 
 
