@@ -1,21 +1,23 @@
 # Update all servers
 
-1. Install [fabric2](https://pypi.org/project/fabric2/) via pip or load via `nix develop`
+1. Install [pyinvoke](https://github.com/pyinvoke/invoke) and rsync via pip or load via `nix develop`
 2. Choose a deployment target:
 
 ``` console
-$ fab -l
+$ inv -l
 Available tasks:
 
+  cleanup-gcroots
   deploy-doctor      Deploy to rpi4, that is used to control power relay
   deploy-edinburgh   Deploy to edinburgh servers starting with rose
   deploy-tum         Deploy to TUM servers
+  reboot             Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
 ```
 
 3. Run!
 
 ``` console
-$ fab deploy-tum
+$ inv deploy-tum
 ```
 
 # Add new users

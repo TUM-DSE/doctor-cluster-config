@@ -54,7 +54,7 @@
     in {
       devShell = pkgs.mkShell {
         buildInputs = [
-          pkgs.python3.pkgs.Fabric
+          pkgs.python3.pkgs.invoke
           pkgs.ipmitool
           pkgs.age
           pkgs.sops
