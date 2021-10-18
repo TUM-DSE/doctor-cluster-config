@@ -8,6 +8,7 @@
     ../modules/k3s/server.nix
     ../modules/dpdk.nix
     ../modules/xfstest.nix
+    ../modules/sys_prog_users.nix
   ];
 
   networking.hostName = "bill";
