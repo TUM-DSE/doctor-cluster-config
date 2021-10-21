@@ -8,7 +8,7 @@
     #./modules/xilinx.nix
     ../modules/dpdk.nix
     ../modules/k3s/agent.nix
-    ../modules/sys_prog_users.nix
+    ../modules/sys-prog/users.nix
   ];
 
   networking.hostName = "nardole";
