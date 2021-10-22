@@ -23,14 +23,6 @@ let
       '';
     };
 
-    serveBinaryCache = mkOption {
-      type = types.bool;
-      default = true;
-      description = ''
-        wether this hosts serve a binary cache on port 5001
-      '';
-    };
-
     location = mkOption {
       type = types.str;
       description = ''
@@ -87,7 +79,6 @@ in
         ipv4 = "129.215.165.108";
         ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
         linklocal = "fe80:942d:18ab:a4c9::6";
-        serveBinaryCache = false;
         location = "edinburgh";
       };
       sauron = {
@@ -100,20 +91,17 @@ in
         ipv4 = "131.159.102.1";
         ipv6 = "2a09:80c0:102::1";
         linklocal = "fe80:942d:18ab:a4c9::8";
-        serveBinaryCache = false;
         location = "munich";
       };
       nardole = {
         ipv4 = "131.159.102.2";
         ipv6 = "2a09:80c0:102::2";
-        serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::9";
         location = "munich";
       };
       yasmin = {
         ipv4 = "131.159.102.7";
         ipv6 = "2a09:80c0:102::7";
-        serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::10";
         location = "munich";
       };
@@ -121,7 +109,6 @@ in
       ryan = {
         ipv4 = "131.159.102.8";
         ipv6 = "2a09:80c0:102::8";
-        serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::12";
         location = "munich";
       };
@@ -129,7 +116,6 @@ in
       graham = {
         ipv4 = "131.159.102.9";
         ipv6 = "2a09:80c0:102::9";
-        serveBinaryCache = false;
         linklocal = "fe80:942d:18ab:a4c9::11";
         location = "munich";
       };

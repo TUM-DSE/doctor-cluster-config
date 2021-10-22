@@ -18,9 +18,6 @@
     # optional, not necessary for the module
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    eris.url = "github:Mic92/eris";
-    eris.inputs.nixpkgs.follows = "nixpkgs";
-
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
     flake-registry.url = "github:NixOS/flake-registry";
@@ -45,7 +42,6 @@
     , nixos-hardware
     , flake-registry
     , flake-utils
-    , eris
     , vmsh
     , lambda-pirate
     }:
@@ -63,7 +59,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry eris vmsh lambda-pirate sops-nix;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry vmsh lambda-pirate sops-nix;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

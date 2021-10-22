@@ -6,7 +6,6 @@
 , retiolum
 , sops-nix
 , flake-registry
-, eris
 , vmsh
 , lambda-pirate
 }:
@@ -56,8 +55,6 @@ let
     ./modules/scratch-space.nix
     ./modules/scone.nix
     ./modules/watchdog.nix
-    eris.nixosModules.eris
-    ./modules/eris.nix
     ./modules/docker.nix
     ./modules/zfs.nix
     ./modules/bootloader.nix

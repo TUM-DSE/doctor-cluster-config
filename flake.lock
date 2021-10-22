@@ -1,20 +1,5 @@
 {
   "nodes": {
-    "eris": {
-      "locked": {
-        "lastModified": 1627208696,
-        "narHash": "sha256-qpMUvZ8GAgComDl2kjZwMFQdS9+OcH27JZ4Rwk9cbak=",
-        "owner": "Mic92",
-        "repo": "eris",
-        "rev": "311ba9026805d780ea595230b5c1f682702f0118",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "eris",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -242,7 +227,6 @@
     },
     "root": {
       "inputs": {
-        "eris": "eris",
         "flake-registry": "flake-registry",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
