@@ -10,7 +10,7 @@
       clients = [{
         basic_auth.username = "promtail-doctor@thalheim.io";
         basic_auth.password_file = config.sops.secrets.promtail-password.path;
-        url = "http://rock.r/loki/api/v1/push";
+        url = "http://loki.r/loki/api/v1/push";
       }];
 
       scrape_configs = [{
