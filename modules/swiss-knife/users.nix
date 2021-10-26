@@ -79,7 +79,7 @@ let
   # Dan Lionis
   lionisKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuMTr7eaNJPD+bKZNpw3osDInBSBCrBh7Fp102zfr3PXyCyE6ForKh1nSLZTTLFKMgLWSIzkcefXbvEa39zXwFAhexxrbfRgh1/WjdKL5HM8Pn+OrirWoMstIkuJNlxwjc3bKJoItEeVXYYRm65audiQqZrzlfl+yFczDJRWKB3S9a36BgNA75s03jcLVea9HZhdN2IWwMxpE5DzJRlMoCcjyKpk4DLXQ+z7Xo5mo2i7MLBvgiqds+LWJoTeIcoSdJFiedreLOZoGxXIVJvaiZ0CIl3YW3uODaxS4I5+1LI8oIbwYPa9fbDfpHdk/PfYEbtPzdskzy89HSl6DZf6MYtP+ZGVX4yFkiFyYLCKCJ+K0/H07oxG0GVyNiQ5LjidGdwDUTzLzZXYYxOSBCz0Qzp75JFLz+xzkNDexE3jOJeWHA4B1yrpLmsj5UR08mGRETq4mQ12n81GCQ0bMMhrTaMNiG5lq4t4i1A/fO9b06TH9acSM5OwIjIWs+Bzd1NGk= dan@dan
-  ''
+  '';
   #----------------------------------------------------------------------------------------------------
 in
 {
