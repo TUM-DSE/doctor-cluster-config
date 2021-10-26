@@ -67,7 +67,7 @@ let
   #----------------------------------------------------------------------------------------------------
   # TeamE
   # Horia Balaban
-  BalabanKeys = ''
+  balabanKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPsMcOW7s/nCkqlPD7eTBUOnVJm/z9O8uV941mqnd0OusQAepExpOe6oX/dhrP3mw2TTR/rI+JDhA0Oa7GPcZZPv/IArycSPAvorfgraidbimtgmnMEePi2jJdFS/n/J5Fcm614YFpSjA8JSRuoADC9Dxni8EJmHF0uccln4Qe3hv7RTeohWmorLVLORl1yFOk7UADWwOGGQCES2uNeWuFIBq+GHG6znEP+d6eI6bmNLTgTApjlTK32E2y6HR68XiQCLKoOcMcW1zgsI9b7zrnZX54ZcNRY3Dm90WtpZQNSzEgg8oPLoLiBIgrZTb6XzqB8Ncw7ZjGPZalV+XMYfe/ hrjk@hrjk
   '';
 
@@ -80,24 +80,54 @@ in
 {
   #OS management course users
   users.users = {
-    # Marcel Schneider
-    schneider = {
+    # TeamA
+    teama = {
       isNormalUser = true;
-      home = "/home/schneider";
+      home = "/home/teama";
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
-      uid = 3000;
-      openssh.authorizedKeys.keys = [ schneiderKeys ];
+      uid = 4000;
+      openssh.authorizedKeys.keys = [ zhuKeys bacharKeys nefedovKeys ];
+    };
+    
+    # TeamB
+    teamb = {
+      isNormalUser = true;
+      home = "/home/teamb";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4001;
+      openssh.authorizedKeys.keys = [ schweigkoflerKeys gleichKeys alkhiatiKeys ];
+    };
+    
+    # TeamC
+    teamc = {
+      isNormalUser = true;
+      home = "/home/teamc";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4002;
+      openssh.authorizedKeys.keys = [ maesKeys misuracaKeys pirkowskiKeys ];
+    };
+    
+    # TeamD
+    teamd = {
+      isNormalUser = true;
+      home = "/home/teamd";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4003;
+      openssh.authorizedKeys.keys = [ romanenkoKeys KastnerKeys kedraKeys ];
     };
 
-    # Pablo Sichert (internship)
-    sichert = {
+    # TeamE
+    teame = {
       isNormalUser = true;
-      home = "/home/sichert";
+      home = "/home/teame";
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
-      uid = 3001;
-      openssh.authorizedKeys.keys = [ sichertKeys ];
+      uid = 4004;
+      openssh.authorizedKeys.keys = [ balabanKeys candeaKeys ];
     };
   };
 }
