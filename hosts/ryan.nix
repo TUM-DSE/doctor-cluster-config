@@ -1,6 +1,7 @@
 { lib, config, pkgs, ... }: {
   imports = [
     ../modules/hardware/poweredge7515.nix
+    ../modules/swiss-knife/users.nix
   ];
   networking.hostName = "ryan";
   networking.retiolum = {
