@@ -75,6 +75,11 @@ let
   candeaKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnvOy44nRcGnRFfyOjqZttjQPWKw7tPydMu+Yj6IneGowEJqoAqoGDR+mCdQVBrT7y81w0SWC1X6Glv5Tfu0mh8k9scHtBnFIxs2k4FnhB4tF1q67sigz92+/4a6zFqLNokFzNUYPm1zWWfi59cDj98ysjlUBNGauChgCfMsNYctjoU2EtKIRCUjL+dXR3tYyzcCz5erN/B+CYNNlR+opBAybHJqjYYXjHZeTnMEwxCZShddq1G25zW3/X/T+E27xMkGgzV5u38hBCK9coHg4AgLVJEipknmBo0mbeBvB55SRnKMKVmXhDCSRJ1je5kyiy4CnNJPpjUTGH/qqNosJt r4zvi@R4zvi
   '';
+  
+  # Dan Lionis
+  lionisKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuMTr7eaNJPD+bKZNpw3osDInBSBCrBh7Fp102zfr3PXyCyE6ForKh1nSLZTTLFKMgLWSIzkcefXbvEa39zXwFAhexxrbfRgh1/WjdKL5HM8Pn+OrirWoMstIkuJNlxwjc3bKJoItEeVXYYRm65audiQqZrzlfl+yFczDJRWKB3S9a36BgNA75s03jcLVea9HZhdN2IWwMxpE5DzJRlMoCcjyKpk4DLXQ+z7Xo5mo2i7MLBvgiqds+LWJoTeIcoSdJFiedreLOZoGxXIVJvaiZ0CIl3YW3uODaxS4I5+1LI8oIbwYPa9fbDfpHdk/PfYEbtPzdskzy89HSl6DZf6MYtP+ZGVX4yFkiFyYLCKCJ+K0/H07oxG0GVyNiQ5LjidGdwDUTzLzZXYYxOSBCz0Qzp75JFLz+xzkNDexE3jOJeWHA4B1yrpLmsj5UR08mGRETq4mQ12n81GCQ0bMMhrTaMNiG5lq4t4i1A/fO9b06TH9acSM5OwIjIWs+Bzd1NGk= dan@dan
+  ''
   #----------------------------------------------------------------------------------------------------
 in
 {
@@ -127,7 +132,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4004;
-      openssh.authorizedKeys.keys = [ balabanKeys candeaKeys ];
+      openssh.authorizedKeys.keys = [ balabanKeys candeaKeys lionisKeys ];
     };
   };
 }
