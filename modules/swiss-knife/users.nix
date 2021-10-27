@@ -81,6 +81,17 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuMTr7eaNJPD+bKZNpw3osDInBSBCrBh7Fp102zfr3PXyCyE6ForKh1nSLZTTLFKMgLWSIzkcefXbvEa39zXwFAhexxrbfRgh1/WjdKL5HM8Pn+OrirWoMstIkuJNlxwjc3bKJoItEeVXYYRm65audiQqZrzlfl+yFczDJRWKB3S9a36BgNA75s03jcLVea9HZhdN2IWwMxpE5DzJRlMoCcjyKpk4DLXQ+z7Xo5mo2i7MLBvgiqds+LWJoTeIcoSdJFiedreLOZoGxXIVJvaiZ0CIl3YW3uODaxS4I5+1LI8oIbwYPa9fbDfpHdk/PfYEbtPzdskzy89HSl6DZf6MYtP+ZGVX4yFkiFyYLCKCJ+K0/H07oxG0GVyNiQ5LjidGdwDUTzLzZXYYxOSBCz0Qzp75JFLz+xzkNDexE3jOJeWHA4B1yrpLmsj5UR08mGRETq4mQ12n81GCQ0bMMhrTaMNiG5lq4t4i1A/fO9b06TH9acSM5OwIjIWs+Bzd1NGk= dan@dan
   '';
   #----------------------------------------------------------------------------------------------------
+  # TeamF
+  # M Asim
+  asimKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAQC1NdDk7wZREJTdbYbwjJI8WKzrRQL5i2rXh3lBlysF0qnlq++m8GRR30ADtmhYs7W+8oK1AlOzxFAaYcZUFKOsb8+DfibyMf9TT+3vX5vShp8514MkL2xyHmromdie4YwUFsrl41iaDfEazwUY5+iIia+t83eKjnznbnsYho1h4xTQGz+c1mfwyM5Ald2BJcgivBz6OjhcNP4it11iHDeFoOyQZJM+syW7CSRctl5HdF4c4K6eMKcZsvajm4lA+MvXpztO7aWx4nGPQ/KgcpS+h0UyZvAd3z7viHq8P7Xl0uuaQQ+Zy0xvVeOV59Qs7mc2nDnV0Mvqkq3pasz9d1nsKKkqJmC/Pm1P7thnY/rAjFd6cyZoEREwYTM9A9YZVEKY7fzlDPLeA3LXQYfk1jtz539GD/BMtBalepLyFTfx7kHM3U9tnxFQF8G62N1CcxCuR07UrqnFGjntgA0z914Xd+nTKwZ6j/BpwcPNv2HjehKUwqzjWfuTMTItvYGnWdiBwfBLC3hhp2mlMIqfZhZP51mStutHvOOZl593V5zq3mrMjccg3TAtzd/CAKSnKsJ1vGGrJtisayPliJysFTnKtHiecsZzH7GaGb9cnjHj3KqdMraPv5OtzhFwhikc9bC8Vhc9OfqQ9DPptG1KZjnT9X8ODn16+efi2BmELaQ== miana@DESKTOP-C4S5NVI
+  '';
+
+  # Wenli Gao
+  wenliKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFxNewOIdN0gDnR95bUPU9qPaQ5sRzco7ilb+3JuYy8QiyFb2Mj8ZLGqIwszTRS8AYhCRJ1Ixzi77TH+QYZ76G5jxeKcS9BuydA3836Smlwx8p3fgLPZ67uKXg0oDXAeJh9lYWfXadTCr8IxT+kJCJ/OXuhFlYXXChir0up6llXYdUtU1A5eAmNIB2IkOecclJKZ6Z0UrhgHhzLzvNTw+PJP7f4Yv/nRwB4gIStpZyE7hXzcJXgJeF9bUNeegOjxD2cHjmTJ9C4mjqwxzh1EW+DWc+TssxM9L7np3IPIHG0GCStb2D5aGOYiSdilyj9mJcRylpE/LDrcKrAtw6mHzxClDTaq1Pw+OnZoUlr0OaJxxC2H0ipsaZznNVRcq+3iJS9Y6jVPN9vsnJ7iDR4sSmJtw3IAuzlnTZSWlE7k3OK/4P7MVEXIQ1yYfcUwXVonk9ILSs31OO9A31jRGLffbrQnYM6Zs6UUsfCHgNTEgTr8r90KPog8iODKrJ2tBdw9E= recyc@DESKTOP-M568C98
+  '';
+  #----------------------------------------------------------------------------------------------------
 in
 {
   #OS management course users
@@ -133,6 +144,16 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 4004;
       openssh.authorizedKeys.keys = [ balabanKeys candeaKeys lionisKeys ];
+    };
+    
+    # TeamF
+    teamf = {
+      isNormalUser = true;
+      home = "/home/teamf";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4005;
+      openssh.authorizedKeys.keys = [ asimKeys wenliKeys ];
     };
   };
 }
