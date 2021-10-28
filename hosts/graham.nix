@@ -21,7 +21,5 @@
   # IPMI/BMC:
   # - d0:8e:79:ba:02:1a
 
-  networking.interfaces.eno8303.macAddress = "3c:ec:ef:2c:f5:55";
-
   system.stateVersion = "21.05";
 }
