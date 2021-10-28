@@ -2,6 +2,7 @@
   imports = [
     ../modules/hardware/poweredge7515.nix
     ../modules/swiss-knife/users.nix
+    ../modules/swiss-knife/storage.nix
   ];
   networking.hostName = "ryan";
   networking.retiolum = {
