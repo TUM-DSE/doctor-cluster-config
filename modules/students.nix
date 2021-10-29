@@ -28,6 +28,11 @@ let
   jrKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYva//qGT0//ljbMjZjX1ugxQjHJir8/Qp1yxy8ZDFCY7rwLi15M69/ZQ8NplU53bkW4ezqkf9CON80NpzfGTuyi7FO28JeWbHovyyHymkUM2wcFjAXOjQKgXz7NRKswZSDAdjZcX7nxHoqY4yI5fBy/9yYNrcdvKZ8NcCGFyhHQijdLUwo4hfOWKIHp4j4tLjQ0T7nKHmcuE+o5xr54EZpAvhQgyPFxrxYiLxX08ksDCykWocgJIiEDVBpw58vTQJxWzRMab/AnWs2FesKOKOfzy9wXa3ze++kb0WVzairhxj5lI2MUAZiE8nCEGBy7jiIDsQ3CaWMFpfvQHnvkd5 jasper@debianj
   '';
+  
+  # Martin Fink (guided research)
+  mfKeys = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink
+  '';
 in
 {
   users.users = {
@@ -90,6 +95,16 @@ in
       shell = "/run/current-system/sw/bin/fish";
       uid = 1015;
       openssh.authorizedKeys.keys = [ jrKeys ];
+    };
+    
+    # guided research (rodrigo/redha student)
+    martin = {
+      isNormalUser = true;
+      home = "/home/martin";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1016;
+      openssh.authorizedKeys.keys = [ mfKeys ];
     };
   };
 
