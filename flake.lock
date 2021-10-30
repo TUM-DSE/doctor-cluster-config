@@ -133,6 +133,29 @@
         "type": "github"
       }
     },
+    "nix-ld": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1634471440,
+        "narHash": "sha256-dWhtT9CJWd4CLcy8oWXWdwY6vc4fJC4HIW+RuIL1nvg=",
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "rev": "55086c739b537e8257b7714aeffecaf7271932a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1633793047,
@@ -231,6 +254,7 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "lambda-pirate": "lambda-pirate",
+        "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-systemd": "nixpkgs-systemd",

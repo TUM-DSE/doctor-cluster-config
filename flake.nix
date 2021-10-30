@@ -29,6 +29,10 @@
 
     lambda-pirate.url = "github:pogobanane/lambda-pirate";
     lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+    nix-ld.inputs.utils.follows = "flake-utils";
   };
 
   outputs =
@@ -44,6 +48,7 @@
     , flake-utils
     , vmsh
     , lambda-pirate
+    , nix-ld
     }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -59,7 +64,7 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry vmsh lambda-pirate sops-nix;
+        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry vmsh lambda-pirate sops-nix nix-ld;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 

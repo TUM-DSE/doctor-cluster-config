@@ -8,6 +8,7 @@
 , flake-registry
 , vmsh
 , lambda-pirate
+, nix-ld
 }:
 let
   commonModules = [
@@ -160,6 +161,7 @@ in
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       ./hosts/graham.nix
+      nix-ld.nixosModules.nix-ld
     ];
   };
 
