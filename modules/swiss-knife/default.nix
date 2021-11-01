@@ -17,4 +17,12 @@
   environment.systemPackages = [
     pkgs.docker-compose
   ];
+
+  # Do not do collide with the TUM vpn
+  environment.etc."docker/daemon.json".text = builtins.toJSON {
+    default-address-pools = [{
+      base = "192.168.0.0/16";
+      size = 24;
+    }];
+  };
 }
