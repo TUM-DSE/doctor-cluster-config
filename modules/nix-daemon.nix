@@ -3,7 +3,7 @@
   nix = {
     gc.automatic = true;
     gc.dates = "03:15";
-    package = pkgs.nixFlakes;
+    package = pkgs.nix_2_4;
 
     # should be enough?
     nrBuildUsers = lib.mkDefault 32;
