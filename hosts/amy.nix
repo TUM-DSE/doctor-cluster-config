@@ -6,11 +6,34 @@
   };
 
   services.nfs.server.enable = true;
+  # TODO: remove ipv4
   services.nfs.server.exports = ''
         /home/ ${lib.concatMapStringsSep " "
     (host:
           ''${host.ipv4}(rw,nohide,insecure,no_subtree_check,no_root_squash)'')
-          (lib.attrValues config.networking.doctorwho.hosts)}
+          (lib.attrValues config.networking.doctorwho.hosts)} fd9a:5371:cd3f::/64(rw,nohide,insecure,no_subtree_check,no_root_squash)
+  '';
+
+  systemd.network.networks."08-dhcp-internal".extraConfig = ''
+    [Match]
+    Driver = i40e
+
+    [Network]
+    DHCPServer = yes
+    IPv6SendRA = yes
+    Address = 192.168.161.1/24
+    Address = fd9a:5371:cd3f::1/64
+
+    [DHCPServer]
+    EmitRouter = no
+
+    [IPv6Prefix]
+    Prefix = fd9a:5371:cd3f::/64
+
+    [IPv6SendRA]
+    RouterPreference = low
+    # don't act as a router
+    RouterLifetimeSec = 0
   '';
 
   sops.secrets.borgbackup-ssh-key = {};

@@ -1,6 +1,7 @@
 { config, ... }: {
+  # amy's address
   fileSystems."/home" = {
-    device = "${config.networking.doctorwho.hosts.amy.ipv4}:/home";
+    device = "[fd9a:5371:cd3f::1]:/home";
     fsType = "nfs4";
     options = [
       "noauto"
