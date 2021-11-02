@@ -13,8 +13,8 @@ in {
     (xilinx-env.override { xilinxName = "vitis"; runScript = "vitis"; })
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_5_4;
-
+  # those are unstable
+  #boot.kernelPackages = pkgs.linuxPackages_5_4;
   #boot.extraModulePackages = [
   #  xrt-drivers
   #];
