@@ -1,6 +1,7 @@
 { lib, config, pkgs, ... }: {
   imports = [
     ../modules/xilinx.nix
+    ../modules/xrdp.nix
     ../modules/hardware/poweredge7515.nix
   ];
   networking.hostName = "graham";
