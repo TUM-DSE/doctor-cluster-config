@@ -91,6 +91,11 @@ let
   wenliKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCy4HOVNL22DP6B5etTrJvN2A/QeX7jzZdoDs3VQGj9bWeNeVKVnavraW+jpzo+gizaV3tnPu/tdaVLLl755wqysQc5FWn0eoCxGbgYvaku0kpuDbJly5cvq2R01qB8mkrnV92EsyppUUxe3hw9wEyY7iy665vw3ZTRZpBnZelrl5D2Bv9KK2jSBx2k80GHfwEErXfu42DDsx9jnTLa9qTN2zE+LX9PCGBh35Qv1llJ+CHreFsWVlWdyNT5QFIGHW22tLQuCjcBg+l+rwqb19yA2UpEZgY2OUR/8gk2GUJwYJhKgRfHQnqU15P1cVTXqHTkzjvs1XHb6vok+qrwgOmkIt0eIuik5WE5QHeTP62B9xsaJMj65qrFSscjzJ3dxyXU0XixWdT1ibvcbWh08wRO4nt47RobTROUPkqszyoFn+reQ2MXZy/fkA29yZPG/WkDpRdrzRU1yGwf7mHG5DGswltiCfDFdAIg3Yy696KBA+fbNtIq9ZG+1hmYake9JsE=
   '';
+  
+  # Adrian Montoya
+  montoyaKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCok6tUbT156HkDi5+W/lRCsFv2pSyX3s4v5cmwxZUgfhojRV23S2VFzIJAGS//jL88SOz8IBxZoEi0xfChkUmKNzeq889a/O1tFmAYLLYVLo9WCH4Rres2Uw/QbVAAkOhiCDx4AzENKoskJA1llWCSOtFjcYBWVd3JIxMHcKg5fBYCCBg4BpYaN1YYtfo9f5zGkIojDx4/srg+gMQbHtlEqeVBRG/8MtXoPmP3Br145zoZo5loBQIh0FXliFELRHbiR543hsRs2Cs3uWrCUCuZzDhHcxNvkOE03PJTfXaD0mVpMESEkIzKu3Kj44MY8nI178WqNZZ5CFApv/k0o4eB emrys@DESKTOP-AR4IPFE
+  '';
   #----------------------------------------------------------------------------------------------------
 in
 {
@@ -153,7 +158,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4005;
-      openssh.authorizedKeys.keys = [ asimKeys wenliKeys ];
+      openssh.authorizedKeys.keys = [ asimKeys wenliKeys montoyaKeys ];
     };
   };
 }
