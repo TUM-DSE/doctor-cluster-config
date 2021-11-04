@@ -4,9 +4,6 @@
 , xilinxName ? "xilinx-env"
 }:
 
-let
-  xrt = callPackage ./xrt.nix { };
-in
 buildFHSUserEnv {
   name = xilinxName;
   inherit runScript;
@@ -51,7 +48,5 @@ buildFHSUserEnv {
   multiPkgs = null;
   profile = ''
     source /opt/xilinx/Vitis/*/settings64.sh
-    export XILINX_XRT="${xrt}"
-    source $XILINX_XRT/opt/xilinx/xrt/setup.sh
   '';
 }
