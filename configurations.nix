@@ -54,6 +54,7 @@ let
   computeNodeModules = commonModules ++ [
     ./modules/tracing.nix
     ./modules/scratch-space.nix
+    ./modules/irqbalance.nix
     ./modules/scone.nix
     ./modules/watchdog.nix
     ./modules/docker.nix
