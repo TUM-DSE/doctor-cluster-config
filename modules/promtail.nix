@@ -75,6 +75,11 @@
           {
             drop.expression = "ignored inotify event for";
           }
+          # silence kernel on yasmin:
+          # [1707104.162310] ACPI CPPC: PCC check channel failed for ss: 11. ret=-110
+          {
+            drop.expression = "PCC check channel failed for ss";
+          }
         ];
         relabel_configs = [{
           source_labels = [ "__journal__hostname" ];
