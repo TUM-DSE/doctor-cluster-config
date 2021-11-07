@@ -1,3 +1,5 @@
+{ config, ... }: 
+
 let
   joergsKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine
@@ -162,11 +164,14 @@ in
     };
 
     root = {
+      passwordFile = config.sops.secrets.root-password.path;
       openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys redhaKeys ];
       # /etc/nixos/secrets/root-password
       hashedPassword = "$6$n7B6/qK5R7j$RRHT.1OLEeMBFsRSRqo2nOgJRlF4WTsVEPiI1BVaEvKZ1.M6imoUIhlTZRGtjSVzAs3JUI.4JdKcQ8Rc/Nx8S0";
     };
   };
+
+  sops.secrets.root-password.neededForUsers = true;
 
   # needed so that we can set a root password
   users.mutableUsers = false;
