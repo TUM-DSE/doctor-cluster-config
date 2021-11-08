@@ -31,11 +31,11 @@
         "rust-analyzer-src": "rust-analyzer-src_2"
       },
       "locked": {
-        "lastModified": 1631413610,
-        "narHash": "sha256-fOj1wzj0Cnw2IkMkj72RJaUdbnAOuSIDM/vNwktnZi0=",
+        "lastModified": 1636179798,
+        "narHash": "sha256-OEuJHAJx/bqmhmqB+8m2XBgwA6hyDN28QIPZNlMpPKk=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "c381eb6b673221b97cf7caf60ccd8fd34a0db4b3",
+        "rev": "0d49b78d52903e766e38f217a804c8c69a1c019e",
         "type": "github"
       },
       "original": {
@@ -158,11 +158,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1635449388,
-        "narHash": "sha256-i7hMiAgpRTGsMPTQKuNCDfW/ftQ+g9N6iaMj+RN6yws=",
+        "lastModified": 1636317251,
+        "narHash": "sha256-u1cWvvtGH5mfGkeIKrqw2usk4IL7wDiRcnJkUSiZq3Q=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "518b9c2159e7d4b7696ee18b8828f9086012923b",
+        "rev": "fd6f34afcf062761fb5035230f6297752bfedcba",
         "type": "github"
       },
       "original": {
@@ -172,11 +172,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1635881826,
-        "narHash": "sha256-k5aPPLDpeDdvBF95Y+f0dGbFheS3OUt/4mkvKRZ6bHw=",
+        "lastModified": 1636398319,
+        "narHash": "sha256-dfO2b4q3p3McWCe2TgLw3mSaJBKpnnTaA/apIszgMs8=",
         "owner": "Mic92",
         "repo": "nixpkgs",
-        "rev": "b32cb5a26ef4c7ba78550ea04a3c04c18887792a",
+        "rev": "b865c030682d5daa5feeb6be7f793efce09672f3",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1635876996,
-        "narHash": "sha256-XEL96O4xSSnU7QiZ/qctGVFeqXOuTApQ6LALr23SWpc=",
+        "lastModified": 1636398495,
+        "narHash": "sha256-jwCrx3Bf6jB8IsiBRbwPoXAyHqoW9oYKscZPt5Qja2E=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "1933c7eff8e9640a02163c45eee919e2e52d080a",
+        "rev": "61b55f893b473bc51145fe096ce9968d689fb339",
         "type": "github"
       },
       "original": {
@@ -235,11 +235,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1635602407,
-        "narHash": "sha256-uQlPtGXpiwpwGX5BYnaxPw4zThHhj/Gv8Ek9Anrl1Jw=",
+        "lastModified": 1636375448,
+        "narHash": "sha256-rfQJ2kjag8oxkGLSqWib5OvCiidL7M9yV9S2x9CLwHU=",
         "ref": "master",
-        "rev": "330feff3bcb62562db45919d16857c7aed9940ed",
-        "revCount": 126,
+        "rev": "a79d3c3051fb5f053dbb4bac16f155afa272900d",
+        "revCount": 128,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
@@ -284,11 +284,11 @@
     "rust-analyzer-src_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1631382595,
-        "narHash": "sha256-F7Vjg8kl4Rx9vNvReBeaVFLN1BigH0EXahcNFtDAvFc=",
+        "lastModified": 1636133656,
+        "narHash": "sha256-QzGeeN03JXXw0NWMq8U0STO9jH7cI293ZB1Qb3HxR7E=",
         "owner": "rust-analyzer",
         "repo": "rust-analyzer",
-        "rev": "d270679997eb3aaf85de5173ff3276bc3c48fa41",
+        "rev": "5cd36e89ef68d324e680f14c4d64e302bccf5996",
         "type": "github"
       },
       "original": {
@@ -330,11 +330,11 @@
         "not-os": "not-os"
       },
       "locked": {
-        "lastModified": 1632126927,
-        "narHash": "sha256-bHSnnWqVdFVTjhk7DiHFJEbcvwjmyIqD72qG4Ci6if4=",
+        "lastModified": 1636295855,
+        "narHash": "sha256-YKycRFx/EsjLr88wS6unBa2UfCQcagKF86tmwdhUag4=",
         "owner": "Mic92",
         "repo": "vmsh",
-        "rev": "a1a3a2ef5d309644c06a84433b7f606225dce0d9",
+        "rev": "6cf84fe3c75b364174752236d5eb87b0fa6457ca",
         "type": "github"
       },
       "original": {
