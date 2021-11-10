@@ -51,7 +51,7 @@ in
       isNormalUser = true;
       home = "/home/ml";
       inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
+      shell = "/run/current-system/sw/bin/zsh";
       uid = 1014;
       openssh.authorizedKeys.keys = [ mlKeys ];
     };
