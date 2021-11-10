@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    # TODO
-    #./modules/nfs-home.nix
     ../modules/ipmi.nix
     ../modules/bonding.nix
     ../modules/k3s/server.nix

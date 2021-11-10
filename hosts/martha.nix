@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ../modules/nfs-home.nix
+    ../modules/edinburgh/nfs-home.nix
     ../modules/ci.nix
     ../modules/xfstest.nix
   ];
