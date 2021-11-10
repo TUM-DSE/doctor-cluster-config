@@ -21,6 +21,7 @@ let
     ./modules/network.nix
     ./modules/mosh.nix
     ./modules/promtail.nix
+    ./modules/zsh.nix
 
     sops-nix.nixosModules.sops
     ({pkgs, ...}: {

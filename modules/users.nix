@@ -180,5 +180,4 @@ in
   # we cannot use this since we no longer have the database
   programs.command-not-found.enable = false;
   security.sudo.wheelNeedsPassword = false;
-  programs.zsh.enable = true;
 }
