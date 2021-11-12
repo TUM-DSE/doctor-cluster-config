@@ -166,8 +166,6 @@ in
     root = {
       passwordFile = config.sops.secrets.root-password.path;
       openssh.authorizedKeys.keys = [ joergsKeys harshanavkisKeys mauriceKeys dimitraKeys s1443541Keys dimitriosKeys redhaKeys ];
-      # /etc/nixos/secrets/root-password
-      hashedPassword = "$6$n7B6/qK5R7j$RRHT.1OLEeMBFsRSRqo2nOgJRlF4WTsVEPiI1BVaEvKZ1.M6imoUIhlTZRGtjSVzAs3JUI.4JdKcQ8Rc/Nx8S0";
     };
   };
 
