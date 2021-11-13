@@ -9,6 +9,7 @@
 , vmsh
 , lambda-pirate
 , nix-ld
+, nixos-hardware
 }:
 let
   commonModules = [
@@ -163,6 +164,7 @@ in
     modules = computeNodeModules ++ [
       ./hosts/graham.nix
       nix-ld.nixosModules.nix-ld
+      nixos-hardware.nixosModules.dell-poweredge-r7515
     ];
   };
 

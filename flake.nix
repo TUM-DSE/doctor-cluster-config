@@ -8,6 +8,7 @@
 
     #nixpkgs.url = "github:NixOS/nixpkgs/release-21.05";
     nixpkgs.url = "github:Mic92/nixpkgs/release-21.05-backports";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/1464b7f955a239e59d93e9a77309beb860c76155";
     nixpkgs-systemd.url = "github:Mic92/nixpkgs/systemd";
     nur.url = "github:nix-community/NUR";
 
@@ -64,7 +65,18 @@
     }) //
     {
       nixosConfigurations = import ./configurations.nix {
-        inherit nixpkgs nixpkgs-systemd nur home-manager retiolum flake-registry vmsh lambda-pirate sops-nix nix-ld;
+        inherit
+          nixpkgs
+          nixpkgs-systemd
+          nur
+          home-manager
+          retiolum
+          flake-registry
+          vmsh
+          lambda-pirate
+          sops-nix
+          nix-ld
+          nixos-hardware;
         nixosSystem = nixpkgs.lib.nixosSystem;
       };
 
