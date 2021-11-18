@@ -12,6 +12,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     Deploy to all hosts in parallel
     """
     g = DeployGroup(hosts)
+
     def deploy(h: DeployHost) -> None:
         h.run_local(
             f"rsync --exclude='.git/' -vaF --delete -e ssh . {h.user}@{h.host}:/etc/nixos",
@@ -22,8 +23,25 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
         if flake_attr:
             flake_path += "#" + flake_attr
         target_host = h.meta.get("target_host", "localhost")
-        h.run(f"nixos-rebuild switch --build-host localhost --target-host {target_host} --flake {flake_path}")
+        h.run(
+            f"nixos-rebuild switch --build-host localhost --target-host {target_host} --flake {flake_path}"
+        )
+
     g.run_function(deploy)
+
+
+TUM = ["bill.r", "nardole.r", "yasmin.r", "graham.r", "ryan.r"]
+EDINBURGH = [
+    "rose.r",
+    "amy.r",
+    "martha.r",
+    "clara.r",
+    "donna.r",
+    "sauron.r",
+    "doctor.r",
+]
+
+ALL = TUM + EDINBURGH
 
 
 @task
@@ -31,9 +49,7 @@ def deploy_tum(c):
     """
     Deploy to TUM servers
     """
-    deploy_nixos(
-        [DeployHost(h) for h in ["bill.r", "nardole.r", "yasmin.r", "graham.r", "ryan.r"]]
-    )
+    deploy_nixos([DeployHost(h) for h in TUM])
 
 
 @task
@@ -50,9 +66,13 @@ def deploy_edinburgh(c):
     Deploy to edinburgh servers starting with rose
     """
     deploy_nixos([DeployHost("rose.r")])
-    deploy_nixos(
-        [DeployHost(h) for h in ["amy.r", "martha.r", "clara.r", "donna.r", "sauron.r"]]
-    )
+    deploy_nixos([DeployHost(h) for h in set(EDINBURGH) - set(["rose.r", "doctor.r"])])
+
+
+@task
+def reload_tinc(c):
+    g = DeployGroup(DeployHost(h) for h in ALL)
+    g.run("systemctl reload tinc.retiolum")
 
 
 def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
