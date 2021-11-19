@@ -69,12 +69,6 @@ def deploy_edinburgh(c):
     deploy_nixos([DeployHost(h) for h in set(EDINBURGH) - set(["rose.r", "doctor.r"])])
 
 
-@task
-def reload_tinc(c):
-    g = DeployGroup(DeployHost(h) for h in ALL)
-    g.run("systemctl restart tinc.retiolum-host-keys.service && systemctl reload tinc.retiolum")
-
-
 def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
     import socket, time
 
