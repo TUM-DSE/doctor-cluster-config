@@ -118,7 +118,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4001;
-      openssh.authorizedKeys.keys = [ schweigkoflerKeys gleichKeys alkhiatiKeys ];
+      openssh.authorizedKeys.keys = [ ];
     };
     
     # TeamC
@@ -138,7 +138,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4003;
-      openssh.authorizedKeys.keys = [ romanenkoKeys pirkowskiKeys kedraKeys ];
+      openssh.authorizedKeys.keys = [ romanenkoKeys pirkowskiKeys kedraKeys gleichKeys ];
     };
 
     # TeamE
