@@ -3,6 +3,8 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/swiss-knife
   ];
+
+  networking.firewall.trustedInterfaces = [ "swissknife0" "swissknife1" ];
   networking.hostName = "ryan";
   networking.retiolum = {
     ipv4 = "10.243.29.198";
