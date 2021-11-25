@@ -16,7 +16,8 @@
 
   systemd.network.networks."08-dhcp-internal".extraConfig = ''
     [Match]
-    Driver = i40e
+    MACAddress = 9c:69:b4:60:ba:cc
+    Type = ether
 
     [Network]
     DHCPServer = yes
