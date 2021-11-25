@@ -29,6 +29,7 @@
   cfg2 = config.services.getty;
 
   # current networkd crashes on bonds?
+  # TODO: remove in 21.11 release
   systemd = pkgs.systemd-next.overrideAttrs (old: {
     name = "systemd-unstable";
     src = pkgs.fetchFromGitHub {
