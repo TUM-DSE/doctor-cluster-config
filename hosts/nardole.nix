@@ -6,6 +6,7 @@
     ../modules/dpdk.nix
     ../modules/k3s/agent.nix
     ../modules/sys-prog/users.nix
+    ../modules/nfs/server.nix
   ];
 
   networking.hostName = "nardole";

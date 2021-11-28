@@ -7,6 +7,7 @@
     ../modules/dpdk.nix
     ../modules/xfstest.nix
     ../modules/sys-prog/users.nix
+    ../modules/nfs/server-backup.nix
   ];
 
   networking.hostName = "bill";

@@ -35,14 +35,13 @@
   };
 
   systemd.services.update-prefetch = {
-    wantedBy = [ "multi-user.target" ];
+    startAt = "daily";
     path = [ config.nix.package pkgs.nettools ];
     script = ''
       nix build \
        --out-link /run/next-system \
        github:Mic92/doctor-cluster-config/last-build#nixosConfigurations.$(hostname).config.system.build.toplevel
     '';
-    startAt = "daily";
   };
 
   imports = [ ./builder.nix ];
