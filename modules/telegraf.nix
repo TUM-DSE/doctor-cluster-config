@@ -69,7 +69,7 @@ in
                     while ("${pkgs.nfs-utils}/bin/showmount -e " ARGV[1] | getline) {
                       if (NR == 1) { continue }
                       if (mounts[$1] == 1) {
-                          printf "nfs_export,host=%s,path=%s present=1\n", ARGV[1], $1
+                          printf "nfs_export,server=%s,path=%s present=1\n", ARGV[1], $1
                       }
                       delete mounts[$1]
                     }
