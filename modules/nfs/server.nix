@@ -11,7 +11,8 @@
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
-    /home/ 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash)
+    /export/home 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash)
+    /export/share 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
   boot.zfs.extraPools = [ "zpool1" "zpool2" ];

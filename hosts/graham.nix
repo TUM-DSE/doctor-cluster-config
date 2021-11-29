@@ -3,6 +3,7 @@
     ../modules/xilinx.nix
     ../modules/xrdp.nix
     ../modules/hardware/poweredge7515.nix
+    ../modules/nfs/client.nix
   ];
   networking.hostName = "graham";
   networking.retiolum = {
