@@ -1,5 +1,6 @@
 { nixpkgs
 , nixpkgs-systemd
+, nixpkgs-21-05
 , nixosSystem
 , nur
 , home-manager
@@ -84,7 +85,8 @@ in
     ];
   };
 
-  doctor = nixosSystem {
+  # we need to increase /boot before we can upgrade
+  doctor = nixpkgs-21-05.lib.nixosSystem {
     system = "aarch64-linux";
     modules = commonModules ++ [
       ./hosts/doctor.nix

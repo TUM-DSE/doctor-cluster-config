@@ -174,16 +174,32 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1638519511,
-        "narHash": "sha256-xvh9DSHAgMvyJ+vN71TCeQas2dSn/ud0UDiS7f9G8zc=",
+        "lastModified": 1638524418,
+        "narHash": "sha256-DVNPnRpqgr8GQC3uw4Qwq5HuqDMJYV65fGBPAdudDCs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "19df09617db3022225761dfbf68d3ed798c96f14",
+        "rev": "5854a24cfccd5d7e9d487937d65cb668ffc6831c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "release-21.11",
+        "ref": "release-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-21-05": {
+      "locked": {
+        "lastModified": 1638131255,
+        "narHash": "sha256-PT1PVB3+A+BPLlvcFdvY8Lqrzg1zMPf/48WQ4P10Udk=",
+        "owner": "Mic92",
+        "repo": "nixpkgs",
+        "rev": "2dcbb8045ceec2bd239760cd40088274b743913b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "ref": "release-21.05-backports",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -259,6 +275,7 @@
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-21-05": "nixpkgs-21-05",
         "nixpkgs-systemd": "nixpkgs-systemd",
         "nur": "nur",
         "retiolum": "retiolum",
