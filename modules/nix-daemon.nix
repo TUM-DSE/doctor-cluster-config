@@ -8,8 +8,9 @@
     # should be enough?
     nrBuildUsers = lib.mkDefault 32;
 
-    daemonIOSchedClass = "idle";
-    daemonCPUSchedPolicy = "idle";
+    # re-add soon
+    #daemonIOSchedClass = "idle";
+    #daemonCPUSchedPolicy = "idle";
 
     # https://github.com/NixOS/nix/issues/719
     extraOptions = ''
