@@ -29,8 +29,6 @@
     "console=tty1"
   ];
 
-  services.getty.serialSpeed = [ 115200 ];
-
   # Required for the Wireless firmware
   hardware.enableRedistributableFirmware = true;
 }
