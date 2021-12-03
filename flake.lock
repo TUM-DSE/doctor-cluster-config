@@ -62,11 +62,11 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1637014545,
-        "narHash": "sha256-26IZAc5yzlD9FlDT54io1oqG/bBoyka+FJk5guaX4x4=",
+        "lastModified": 1638122382,
+        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "bba5dcc8e0b20ab664967ad83d24d64cb64ec4f4",
+        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
         "type": "github"
       },
       "original": {
@@ -97,11 +97,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1637917894,
-        "narHash": "sha256-mzkyjq+OW1K5XHG43zrnjJX/K1ehahVWlKjMzWX/Vvg=",
+        "lastModified": 1638281721,
+        "narHash": "sha256-d3vAVFG6zov9NwjSuYntBiD+I5KjJLwX09c7uAzbONI=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "7efd99ef876c220848553ae10218685d5e5d79cb",
+        "rev": "7329ffc6e911106494183557fc249180d5422929",
         "type": "github"
       },
       "original": {
@@ -174,16 +174,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1637748026,
-        "narHash": "sha256-u2DCuql+iJmB9yiCxtXuoZ8KfetxqjysIFG6qiwyckc=",
-        "owner": "Mic92",
+        "lastModified": 1638519511,
+        "narHash": "sha256-xvh9DSHAgMvyJ+vN71TCeQas2dSn/ud0UDiS7f9G8zc=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "efec89920760783496be958fdd44ee61e42f66ae",
+        "rev": "19df09617db3022225761dfbf68d3ed798c96f14",
         "type": "github"
       },
       "original": {
-        "owner": "Mic92",
-        "ref": "release-21.05-backports",
+        "owner": "NixOS",
+        "ref": "release-21.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -222,11 +222,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1638065059,
-        "narHash": "sha256-9bM0UBuvCHq6pqiqc/6nydZ6kaErDVzWTjVBt8H0Tkk=",
+        "lastModified": 1638394049,
+        "narHash": "sha256-FtXbXmO73mUe8BY+CfXuI3JAuDruUPP3qHAZPgfb6vc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c9ee440558ba66888c93d6dfb96fbe75f9d41eaa",
+        "rev": "7abfdce578e5214e799fc21c986112c8a781585e",
         "type": "github"
       },
       "original": {
@@ -237,11 +237,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1638015546,
-        "narHash": "sha256-8cXY7hNEdx2TUzDO5NGUCMN2RV5qRKEYPWH+e4eaw1g=",
+        "lastModified": 1638354110,
+        "narHash": "sha256-E9SyXtNH2Q23Wy/FoifV9v6r9zll7UsY0Fwr7+SfZ4M=",
         "ref": "master",
-        "rev": "df90492ddc4c33acc4222649589a60508c6210e2",
-        "revCount": 145,
+        "rev": "ec100968ca2dffca860ee77dabf44a7ff21bbf15",
+        "revCount": 148,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
@@ -307,15 +307,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1637735079,
-        "narHash": "sha256-VC6FEfYHkNMrCd9+0nATtUQAtkWOrkH4gzwGHNG4TTQ=",
+        "lastModified": 1638398014,
+        "narHash": "sha256-+0uVFLpbXIvA8CsNIKlU4kVpv0OodNCctB0uMk9zRh4=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "871408582627f43d0ecc5e4595dcf20cfe2ee227",
+        "rev": "0fa0857c41fc0826672c970220e61c6d1359f284",
         "type": "github"
       },
       "original": {
         "owner": "Mic92",
+        "ref": "feat/mount-secrets-readonly2",
         "repo": "sops-nix",
         "type": "github"
       }
