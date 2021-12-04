@@ -3,6 +3,7 @@
   imports = [
     ../modules/ipmi.nix
     ../modules/yasmin-hardware.nix
+    ../modules/nfs/client.nix
   ];
 
   networking.hostName = "yasmin";
