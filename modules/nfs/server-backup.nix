@@ -15,6 +15,12 @@
     };
   };
 
+  # this extends 5-bond1 from modules/bonding.nix
+  systemd.network.networks."05-bond1".extraConfig = ''
+    [Network]
+    Address = 2a09:80c0:102::f000:1/64
+  '';
+
   boot.zfs.extraPools = [ "zpool1" "zpool2" ];
 
   users.users.znapzend = {

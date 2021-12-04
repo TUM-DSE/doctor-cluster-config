@@ -15,6 +15,12 @@
     /export/share 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
+  # this extends 05-bond1 from modules/bonding.nix
+  systemd.network.networks."05-bond1".extraConfig = ''
+    [Network]
+    Address = 2a09:80c0:102::f000:0/64
+  '';
+
   boot.zfs.extraPools = [ "zpool1" "zpool2" ];
 
   fileSystems."/export/home" = {
