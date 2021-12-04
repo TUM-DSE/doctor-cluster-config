@@ -15,6 +15,12 @@
     /export/share 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
+  systemd.tmpfiles.rules =
+    let
+      loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
+    in
+      (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers);
+
   # this extends 05-bond1 from modules/bonding.nix
   systemd.network.networks."05-bond1".extraConfig = ''
     [Network]
