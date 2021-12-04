@@ -4,7 +4,7 @@
   # k3s api server
   sops.secrets.telegraf-github-token.owner = "telegraf";
   networking.firewall.allowedTCPPorts = [ 6443 ];
-  services.k3s.extraFlags = "--no-deploy traefik --flannel-backend=host-gw --container-runtime-endpoint unix:///run/containerd/containerd.sock";
+  services.k3s.extraFlags = "--no-deploy traefik --flannel-backend=host-gw --snapshotter=zfs --container-runtime-endpoint unix:///run/containerd/containerd.sock";
 
   services.telegraf = {
     extraConfig.inputs.kube_inventory = {

@@ -27,11 +27,21 @@ in
     services.k3s.docker = lib.mkForce false;
     virtualisation.containerd.enable = true;
     virtualisation.containerd.settings = {
-      plugins.cri.cni.conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d";
+      version = 2;
+      plugins."io.containerd.grpc.v1.cri" = {
+        cni.conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d";
+        # FIXME: upstream
+        cni.bin_dir = "${pkgs.runCommand "cni-bin-dir" {} ''
+          mkdir -p $out
+          ln -sf ${pkgs.cni-plugins}/bin/* ${pkgs.cni-plugin-flannel}/bin/* $out
+        ''}";
+      };
     };
 
     systemd.services.containerd.serviceConfig = {
-      ExecStartPre = ["-${pkgs.zfs}/bin/zfs create -o mountpoint=/var/lib/containerd/io.containerd.snapshotter.v1.zfs zroot/containerd"];
+      ExecStartPre = [
+        "-${pkgs.zfs}/bin/zfs create -o mountpoint=/var/lib/containerd/io.containerd.snapshotter.v1.zfs zroot/containerd"
+      ];
     };
   };
 }
