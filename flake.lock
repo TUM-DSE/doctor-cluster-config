@@ -97,16 +97,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1638281721,
-        "narHash": "sha256-d3vAVFG6zov9NwjSuYntBiD+I5KjJLwX09c7uAzbONI=",
+        "lastModified": 1638553958,
+        "narHash": "sha256-leETjYMtD9y37CvfRSQhIGibcIl4dNVlFkY/8QgqmAM=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "7329ffc6e911106494183557fc249180d5422929",
+        "rev": "6ce1d64073f48b9bc9425218803b1b607454c1e7",
         "type": "github"
       },
       "original": {
         "owner": "rycee",
-        "ref": "release-21.05",
+        "ref": "release-21.11",
         "repo": "home-manager",
         "type": "github"
       }
@@ -188,22 +188,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-21-05": {
-      "locked": {
-        "lastModified": 1638131255,
-        "narHash": "sha256-PT1PVB3+A+BPLlvcFdvY8Lqrzg1zMPf/48WQ4P10Udk=",
-        "owner": "Mic92",
-        "repo": "nixpkgs",
-        "rev": "2dcbb8045ceec2bd239760cd40088274b743913b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "ref": "release-21.05-backports",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-systemd": {
       "locked": {
         "lastModified": 1621285292,
@@ -275,7 +259,6 @@
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-21-05": "nixpkgs-21-05",
         "nixpkgs-systemd": "nixpkgs-systemd",
         "nur": "nur",
         "retiolum": "retiolum",

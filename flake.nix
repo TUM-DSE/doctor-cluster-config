@@ -7,12 +7,11 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     nixpkgs.url = "github:NixOS/nixpkgs/release-21.11";
-    nixpkgs-21-05.url = "github:Mic92/nixpkgs/release-21.05-backports";
     nixos-hardware.url = "github:NixOS/nixos-hardware/1464b7f955a239e59d93e9a77309beb860c76155";
     nixpkgs-systemd.url = "github:Mic92/nixpkgs/systemd";
     nur.url = "github:nix-community/NUR";
 
-    home-manager.url = "github:rycee/home-manager/release-21.05";
+    home-manager.url = "github:rycee/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix/feat/mount-secrets-readonly2";
@@ -41,7 +40,6 @@
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-21-05
     , nixpkgs-systemd
     , nur
     , home-manager
@@ -70,7 +68,6 @@
       nixosConfigurations = import ./configurations.nix {
         inherit
           nixpkgs
-          nixpkgs-21-05
           nixpkgs-systemd
           nur
           home-manager
