@@ -3,6 +3,7 @@
 1. Install [pyinvoke](https://github.com/pyinvoke/invoke) and rsync via pip or load via `nix develop`
 2. Choose a deployment target:
 
+
 ``` console
 $ inv -l
 Available tasks:
@@ -191,7 +192,7 @@ to get the IPMI address. On the other machine run the following command to get a
 
 
 ```
-$ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(</etc/nixos/secrets/ipmi-passwords)" sol activate
+$ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(sops -d --extract '["ipmi-passwords"]' secrets.yml)" sol activate
 ```
 
 Than hit enter in order to get a login Prompt.
