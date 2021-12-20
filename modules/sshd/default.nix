@@ -9,16 +9,15 @@ in
     useDns = false;
     # unbind gnupg sockets if they exists
     extraConfig = ''
-      HostCertificate ${cert}
+      ${lib.optionalString (builtins.pathExists cert) ''
+        HostCertificate ${cert}
+      ''}
       StreamLocalBindUnlink yes
     '';
   };
-  assertions = [{
-    assertion = builtins.pathExists cert;
-    message = ''
-      No ssh certificate found at ${toString cert}
-    '';
-  }];
+
+  warnings = lib.optional (! builtins.pathExists cert)
+    "No ssh certificate found at ${toString cert}";
 
   programs.ssh.knownHosts."github.com" = {
     hostNames = [ "github.com" ];
