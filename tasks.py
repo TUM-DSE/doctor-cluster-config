@@ -77,7 +77,7 @@ def _format_disks(host: DeployHost, device: str) -> None:
     # - partition 1 will be the boot partition
     # - partition 2 takes up the rest of the space and is for the system
     host.run(f"blkdiscard -f {device}")
-    host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef02 -t 2:8304 {device}")
+    host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef00 -t 2:8304 {device}")
 
     partitions = sfdisk_json(host, device)
     boot = partitions[0]["node"]
