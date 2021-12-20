@@ -56,6 +56,12 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos
   '';
 
+  # Myoung Jin Nam
+  mjnamKeys = ''
+   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9B7L8nxes3S4NekAKKGYl0DTrtWcak/Cznk60FxrQeEeMW3X3O/TNx++keMBfTpi+crzVbFvpJQxAsG3CsWTMK3OrW9HJJvDajQqgd3YJt43cn++EVBk6JQK/J08mvKz5/dFx8W7mfg5IljP1LMjbTJLEOy/slJjXIfuVt4Fvb5v2uqVvbzqRyIIACCJhlKeM1mnYsT0OItPq8cinUZrb5haxCuSRywgpjwnxuOZff4m8x5EkYJ1X2kKgAm8VbVpTHqQJ2d0tBmNkHw52m7hD1dvAUDbTC2Fum10cyrCX1Fw2y+a8br2Wc1wipkzZI3Vm83LKSNaBxuRQ3YXf8+J8RjmXY85f920IblVBEkVZnG5xDadVrX/neBX8e/tYL/V86LKvZMvEYV0Yq0IR4op04kyFhdpGD2IEMu4aAKH2wtAgrpaz+3T/xrS9Sg1ZKSEqOSX1kOvbVXLUCxPFqqk8eibQGsIo3pyplOvCNJVTKkO25ss4W77xq10YCUu6T90= poolmoo@Jin-X13-linux
+   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCavNkgsOAT2DzG/KEphfE0Mi3ymBm5ChvWiN5CPYiTs4Ygsf1eBN1KS4x57pPHG04XYOwRnhYq3LgWsbo/Cg8q1plBHGN1DJhLjhrxCQhan3zqhj7iOaDLPawEiupuUQ6D4cMzdlTHEK7iGyfq7pe84KBfW2l/PyQ6Dt92bxPgOut3x7/iVhhm03AQ2JQYwSp/ALrKnrHeT0yxk+vKkvKlMKhDf847XTRiwDHbq/d2oD0Tx6DntwfMte0Yi1UvCgAHos7nbgiXnr1zYdqrg5/daFXFr9tuPCEOEqhkHTe4EIgfnAXycBnFhGSlJFtkPOpvRIzF3YpIoyJ6vpS0t6w9f15zzXtk2Hy+ZmwhlhFI+dXl5QQ10samtD1ctuxSSWSbrc+50NCf1QfNxk+MQnGzEZT7JYZk3kra/hO/VNNBa8FA65vkZyaxzbhYM+a+81rXSRN20vMyF7h0vkHQUCMzqIQWRD1PAh+5AvBgUoruijkKrWIiNgCgP/TGMzUObD8= poolmoo@Jin-ThinkPad-T15g-Gen-1
+  '';
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
@@ -162,6 +168,16 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1012;
       openssh.authorizedKeys.keys = [ atsushiKeys ];
+    };
+
+    # tum
+    mjnam = {
+      isNormalUser = true;
+      home = "/home/mjnam";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1018;
+      openssh.authorizedKeys.keys = [ mjnamKeys ];
     };
 
     root = {
