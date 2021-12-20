@@ -167,4 +167,25 @@ in
       ./hosts/ryan.nix
     ];
   };
+
+  mickey = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./hosts/mickey.nix
+    ];
+  };
+
+  astrid = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./hosts/astrid.nix
+    ];
+  };
+
+  dan = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./hosts/dan.nix
+    ];
+  };
 }
