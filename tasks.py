@@ -103,16 +103,21 @@ def _format_disks(host: DeployHost, device: str) -> None:
 
 
 @task
-def format_disks(c, hosts="", disk=""):
+def format_disks(c, hosts, disk=""):
     """
     Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
     """
-    if hosts == "":
-        print("no `--hosts` provided")
-        return
-
     for h in get_hosts(hosts):
         _format_disks(h, disk)
+
+
+@task
+def install_nixos(c, hosts, flakeattr):
+    """
+    install nixos, i.e.: inv install-nixos --hosts new-hostname --flakeattr
+    """
+    for h in get_hosts(hosts):
+        h.run(f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr}")
 
 
 @task
