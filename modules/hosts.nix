@@ -44,6 +44,9 @@ in
     };
   };
   config = {
+    warnings = lib.optional (!(config.networking.doctorwho.hosts ? ${config.networking.hostName}))
+      "no network configuration for ${config.networking.hostName} found in ${./hosts.nix}";
+
     networking.doctorwho.hosts = {
       amy = {
         ipv4 = "129.215.165.57";

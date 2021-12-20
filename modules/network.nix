@@ -40,7 +40,9 @@
     LinkLocalAddressing = yes
     LLDP = yes
     IPv6AcceptRA = yes
-    Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
+    ${lib.optionalString (config.networking.doctorwho.hosts ? ${config.networking.hostName}) ''
+      Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
+    ''}
     IPForward = yes
 
     [DHCP]
