@@ -33,6 +33,11 @@ let
   mfKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink
   '';
+
+  # Alexandrina Panfil (master thesis with Dimitrios and Jin)
+  alexaKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/CRonODrMJoSAqiJh6ZsJuYDTVgUGyYjaR3HRR/zoMSIfiPXGny8T18tvvY7TW4EmXbXtR2zujgmb4Q50+Q0rV0HzwFp40EpGT0JCyZBB+HjdcbKY+hPMNLzGDt2qlAsp0qoXNW/3MrlmcQPMetQOGyTyeI1rDCbZjAxu3cS8+8dt5PjuO4oB7MAvKZdk4mMU2G46bCB/MKfS+vUcUGQZxSYU+GLS8SaH+Vrmi+jfCTJsgUjLwp2QwRQQ4YJzjXMptUtisWoAA5tcQuDYvd2CkorSLLKss9A0HxzJRm0zmd83/sLa3mv1fcCTy8BKnBfyNuX69btjCPafkQZ31ZvX73IsWM59lHt7//ZVOKTsY1yDvRL89RgqBECltLhzVp+pWfaa1Baln+5e+oLy4njLf/goq94p6+HeSiENXjAxmonarGI/Z6yCM7u2JD6YJSak11NytKzgHbbVQ+srDUvMT4w4ejUowSQPMQ1enV9ObSqz7WmfK0jxQjFMGm2aRW8= root@4a431c59236c
+  '';
 in
 {
   users.users = {
@@ -105,6 +110,15 @@ in
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1016;
       openssh.authorizedKeys.keys = [ mfKeys ];
+    };
+
+    alexa = {
+      isNormalUser = true;
+      home = "/home/alexa";
+      uid = 1017;
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      openssh.authorizedKeys.keys = [ alexaKeys ];
     };
   };
 
