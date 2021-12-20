@@ -6,10 +6,7 @@
   ];
 
   networking.hostName = "mickey";
-  networking.retiolum = {
-    # TODO
-    ipv6 = "42:0:3c46:87ed:6232:1016:7553:0000";
-  };
+  networking.retiolum.ipv6 = "42:0:3c46:a85d:33c6:14ca:3cf7:8827";
 
   system.stateVersion = "21.11";
 }
