@@ -80,6 +80,11 @@ let
   lionisKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuMTr7eaNJPD+bKZNpw3osDInBSBCrBh7Fp102zfr3PXyCyE6ForKh1nSLZTTLFKMgLWSIzkcefXbvEa39zXwFAhexxrbfRgh1/WjdKL5HM8Pn+OrirWoMstIkuJNlxwjc3bKJoItEeVXYYRm65audiQqZrzlfl+yFczDJRWKB3S9a36BgNA75s03jcLVea9HZhdN2IWwMxpE5DzJRlMoCcjyKpk4DLXQ+z7Xo5mo2i7MLBvgiqds+LWJoTeIcoSdJFiedreLOZoGxXIVJvaiZ0CIl3YW3uODaxS4I5+1LI8oIbwYPa9fbDfpHdk/PfYEbtPzdskzy89HSl6DZf6MYtP+ZGVX4yFkiFyYLCKCJ+K0/H07oxG0GVyNiQ5LjidGdwDUTzLzZXYYxOSBCz0Qzp75JFLz+xzkNDexE3jOJeWHA4B1yrpLmsj5UR08mGRETq4mQ12n81GCQ0bMMhrTaMNiG5lq4t4i1A/fO9b06TH9acSM5OwIjIWs+Bzd1NGk= dan@dan
   '';
+  
+  # Dan Lionis second key
+  lionisKeysSecond = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+uglSpt9ntOMPVxqNFubfNM7EMlbQHNCq3WBk39FRBiODJP1IuTmW5biTBlYnC1lN8Ye4HgBKTJBy9vtHJSbTtKffcR0TUcUw8I8GO6Sj4BdO4fJlm2W2OONGPKH7dv4W6EizwfRgOz+9Jyawb0PM9PooAJslnT0hkE76WdlitVSHYdgkfQghnSUHxF5wJg/epqQDFVoJIInEtTRiYp2pqiDhXzLG4/uQCKYbqa9mmPqN9arWHNK9IEHfhwYlyhU1iOw4uyoERqEhaSch1R0EFKOXeDjEyVYIV6Ql11qSe+GVgJWVL3DEzOeizYDDItkWaVY/jD0YMLWJIAX5q4cZ90mzRtel+KxAtpoDEK/rDARwL20fcY+2iXJeesY7ZvMWpT/wb8Z81WbbxFRiZa9Gzj4g0V1+BT1n/2nCB60G/9n1eGXf8NTX6THOuYIQuCD754YgG7RqIL6agXtwTVT8axZhJgww/Gehofr4+hyWD4uGIkbc53qFimIWR1ybLT7lTOLqSd3efTfCb7+4OoayOo39r8xNaq9MFj/PA5O5mx4/BQf0IUcrp/R4bl14zhEpSLviNxzGzLo4RQ4bT/2BgBE5cVW+9ROcBoyvZQzKW7zGfWz8kMt4XZGy63nwaoacKJMF/U5ng1IunTkUh7uuTY2dqlpYkppV90+2RYodfQ==
+  '';
   #----------------------------------------------------------------------------------------------------
   # TeamF
   # M Asim
@@ -149,7 +154,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4004;
-      openssh.authorizedKeys.keys = [ balabanKeys candeaKeys lionisKeys ];
+      openssh.authorizedKeys.keys = [ balabanKeys candeaKeys lionisKeys lionisKeysSecond ];
     };
     
     # TeamF
