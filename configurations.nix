@@ -24,6 +24,7 @@ let
     ./modules/mosh.nix
     ./modules/promtail.nix
     ./modules/zsh.nix
+    ./modules/binbash.nix
 
     sops-nix.nixosModules.sops
     ({pkgs, ...}: {
