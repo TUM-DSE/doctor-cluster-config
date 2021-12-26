@@ -25,12 +25,12 @@
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
 
-    vmsh.url = "github:Mic92/vmsh";
-    vmsh.inputs.flake-utils.follows = "flake-utils";
-    vmsh.inputs.nixpkgs.follows = "nixpkgs";
+    #vmsh.url = "github:Mic92/vmsh";
+    #vmsh.inputs.flake-utils.follows = "flake-utils";
+    #vmsh.inputs.nixpkgs.follows = "nixpkgs";
 
-    lambda-pirate.url = "github:pogobanane/lambda-pirate";
-    lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
+    #lambda-pirate.url = "github:pogobanane/lambda-pirate";
+    #lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
@@ -40,18 +40,9 @@
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-systemd
-    , nur
-    , home-manager
-    , sops-nix
-    , retiolum
-    , nixos-hardware
-    , flake-registry
     , flake-utils
-    , vmsh
-    , lambda-pirate
-    , nix-ld
-    }:
+    , ...
+    } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
@@ -65,21 +56,9 @@
       };
     }) //
     {
-      nixosConfigurations = import ./configurations.nix {
-        inherit
-          nixpkgs
-          nixpkgs-systemd
-          nur
-          home-manager
-          retiolum
-          flake-registry
-          vmsh
-          lambda-pirate
-          sops-nix
-          nix-ld
-          nixos-hardware;
-        nixosSystem = nixpkgs.lib.nixosSystem;
-      };
+      nixosConfigurations = import ./configurations.nix (inputs // {
+        inherit inputs;
+      });
 
       hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations;
     };

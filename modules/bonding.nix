@@ -27,18 +27,6 @@
   carrier = lib.imap0 (num: mac: "slave${toString num}") cfg.macs;
 
   cfg2 = config.services.getty;
-
-  # current networkd crashes on bonds?
-  # TODO: remove in 21.11 release
-  systemd = pkgs.systemd-next.overrideAttrs (old: {
-    name = "systemd-unstable";
-    src = pkgs.fetchFromGitHub {
-      owner = "systemd";
-      repo = "systemd";
-      rev = "39f1bdecc20daae6a659a24408914b78bd65e423";
-      sha256 = "sha256-g5dAo4uEyhbxAowOamXfRK2qSczozKiMzMETbFhNt4w=";
-    };
-  });
 in {
   options = {
     networking.doctowho.bonding.macs = lib.mkOption {
@@ -50,11 +38,6 @@ in {
     };
   };
   config = {
-    systemd.services.systemd-networkd.serviceConfig.ExecStart = [ 
-      ""
-      "!!${systemd}/lib/systemd/systemd-networkd"
-    ];
-
     systemd.network.links = slaveLinks;
 
     systemd.network.netdevs = {

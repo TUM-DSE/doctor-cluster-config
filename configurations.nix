@@ -1,18 +1,19 @@
 { nixpkgs
-, nixpkgs-systemd
-, nixosSystem
 , nur
 , home-manager
 , retiolum
 , sops-nix
 , flake-registry
-, vmsh
-, lambda-pirate
 , nix-ld
 , nixos-hardware
+, inputs
+, ...
 }:
+
 let
+  nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
   commonModules = [
+    { _module.args.inputs = inputs; }
     ./modules/packages.nix
     ./modules/nix-daemon.nix
     ./modules/telegraf.nix
@@ -37,12 +38,6 @@ let
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json
       '';
-
-      nixpkgs.config.packageOverrides = pkgs: {
-        systemd-next = (import nixpkgs-systemd {
-          inherit (pkgs) system;
-        }).systemd;
-      };
 
       nix.registry = {
         home-manager.flake = home-manager;
