@@ -117,7 +117,16 @@ def install_nixos(c, hosts, flakeattr):
     install nixos, i.e.: inv install-nixos --hosts new-hostname --flakeattr
     """
     for h in get_hosts(hosts):
-        h.run(f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr}")
+        h.run("install --target /mnt/etc/ssh -D /etc/ssh/ssh_host_*")
+        h.run(
+            f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr} && sync && reboot"
+        )
+
+
+@task
+def print_tinc_key(c, hosts):
+    for h in get_hosts(hosts):
+        h.run("tinc.retiolum export")
 
 
 @task
