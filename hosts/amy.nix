@@ -64,7 +64,6 @@
   # hide sshfs from the system
   systemd.services.borgbackup-job-all-homes.serviceConfig.PrivateMounts = true;
   systemd.services.borgbackup-job-all-homes.serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
-  systemd.services.borgbackup-job-joerg.serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
 
   fileSystems."/home" = {
     device = "zroot/root/home";
