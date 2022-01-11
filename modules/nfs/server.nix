@@ -19,7 +19,8 @@
     let
       loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
     in
-      (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers);
+      (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
+      ++ (builtins.map (n: v: "R /export/share/scratch/${n} - - - - -") config.users.deletedUsers);
 
   # this extends 05-bond1 from modules/bonding.nix
   systemd.network.networks."05-bond1".extraConfig = ''

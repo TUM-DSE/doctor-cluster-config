@@ -72,7 +72,10 @@ let
 in
 {
   ## we put all bachelor/master students here
-  imports = [ ./students.nix ];
+  imports = [
+    ./students.nix
+    ./delete-users.nix
+  ];
 
   users.users = {
     # tum/edinburgh
@@ -202,6 +205,11 @@ in
   };
 
   sops.secrets.root-password.neededForUsers = true;
+
+  # DANGER ZONE!
+  # Make sure all data is backed up before adding user names here. This will
+  # delete all data of the associated user
+  users.deletedUsers = [ ];
 
   # needed so that we can set a root password
   users.mutableUsers = false;
