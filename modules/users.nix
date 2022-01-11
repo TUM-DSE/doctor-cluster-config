@@ -64,6 +64,10 @@ let
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkPxcg1xUoA5xU2r0j5qsweBsQyZO4wtojTUUuDLa+NJuzL4WtISiYfkkAyPR9Bzg1mtyJHVV6rcJ9cwgN6uWl0fM0Nmxr4y1E+aLCp1nDIiTxt3e8bsCTzqdDpVjlNw4jXz+qY6/JoAFtoc0Ti2zRRAFYXAGOkQLAqKgIROtF0QswhteQ+s1BU5Ts7evr5y78LOB2wZOCU8bNerT15M/v+n37LzYaCupatB/sdZ0cploT1bHP44hNnFd5d38WIOFpoE4pfvBC5paBjE6qSc7RogsFukhYGhHgCLsvLL89gliBZ49xW8Md+g89lckZ0gIeoFPvsKe85A7Lvz5WxkzF
   '';
 
+  okelmannKeys = ''
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITBcN9iw5Fn7yyfgiWFet3QWDoMcUNtzLi+PNoYS7jksvcKZy5pLOjE6wCpkbYx+Tcb4MyvoWPXvwdo5FfL4XdhZRO+JlZ66p/rGssq/wEr2BBUwohP7o39JLtiyXGXSsK6MO2aceOFLQr4KAdaeD8ST0XumGcV6bGqIbjFsK5FCxFhO8NkCFtavBjDwKUm3uyOnVCWMp12abUphzxrVtWhcsnw5GapohATP03mCNxmrn/L7x393HutxgjyduScX7++MjwVE6J7wCnztPUtJbh9jYemr/K9fBMBbLhQagOjrlQYGU5frgmLrPCRZusyg5HjWx6gJIxs/DskfgmW+V
+  '';
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
@@ -180,6 +184,15 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1018;
       openssh.authorizedKeys.keys = [ mjnamKeys ];
+    };
+
+    okelmann = {
+      isNormalUser = true;
+      home = "/home/okelmann";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1008;
+      openssh.authorizedKeys.keys = [ okelmannKeys ];
     };
 
     root = {
