@@ -42,13 +42,20 @@
   };
 
   services.znapzend.enable = true;
-  services.znapzend.zetup = {
+  services.znapzend.zetup = let
+    postsend = task: toString (pkgs.writeScript "postsend" ''
+      cat > /var/log/telegraf/${task} <<EOF
+      task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
+      EOF
+    '');
+  in {
     "zpool1" = {
       plan = "1h=>10min";
       recursive = true;
       destinations.remote = {
         host = "znapzend@nfs-backup";
         dataset = "zpool1";
+        postsend = postsend "znapzend-home";
       };
     };
     "zpool2" = {
@@ -58,6 +65,7 @@
         remote = {
           host = "znapzend@nfs-backup";
           dataset = "zpool2";
+          postsend = postsend "znapzend-share";
         };
       };
     };

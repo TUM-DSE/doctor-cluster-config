@@ -14,7 +14,7 @@
     home-manager.url = "github:rycee/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    sops-nix.url = "github:Mic92/sops-nix/feat/mount-secrets-readonly2";
+    sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     #sops-nix.url = "github:Mic92/sops-nix";
     # optional, not necessary for the module
