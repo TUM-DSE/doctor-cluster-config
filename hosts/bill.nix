@@ -8,6 +8,7 @@
     ../modules/xfstest.nix
     ../modules/sys-prog/users.nix
     ../modules/nfs/server-backup.nix
+    #../modules/nfs/server.nix
   ];
 
   networking.hostName = "bill";

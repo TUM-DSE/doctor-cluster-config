@@ -4,6 +4,7 @@
     socat
     whois
 
+    jq
     psmisc
     libarchive
     sipcalc
@@ -22,7 +23,7 @@
     tig
     python3
     strace
-    nethogs
+    bandwhich
     iotop
     manpages
     dnsutils

@@ -7,6 +7,7 @@
     ../modules/k3s/agent.nix
     ../modules/sys-prog/users.nix
     ../modules/nfs/server.nix
+    #../modules/nfs/server-backup.nix
   ];
 
   networking.hostName = "nardole";
