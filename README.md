@@ -77,7 +77,7 @@ Make sure the system is booted into EFI:
 efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
 ```
 
-Also make sure to enable ipmi serial over lan (run `nix-shell -p ipmitool` on the same machine):
+Also make sure to enable IPMI serial over lan (run `nix-shell -p ipmitool` on the same machine):
 
 ```console
 ipmitool sol set privilege-level admin
@@ -96,7 +96,7 @@ ipmitool sol set enabled true 1
 ipmitool sol payload enable 1
 ```
 
-Also make sure ipmi over lan is enabled in the BMC website and Serial over lan
+Also make sure IPMI over lan is enabled in the BMC website and Serial over lan
 redirection is enabled in the BIOS/firmware setup page (vendor-specific).
 
 
@@ -178,9 +178,9 @@ $ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#$new
 ```
 
 
-## Ipmi
+## IPMI
 
-On all new TUM rack machines we have ipmi support!!!
+On all new TUM rack machines we have IPMI support!!!
 
 Generally, you can find the IPMI web interface at
 `https://$HOST-mgmt.dse.in.tum.de/` (i.e. [https://bill-mgmt.dse.in.tum.de]())
@@ -229,3 +229,33 @@ drwxr-xr-x  1 root root  0 Jul  7 16:49 rose-all-homes-2020-07-07T16:49:13
 # Monitoring
 
 Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?orgId=1
+
+## Names left to pick
+
+- Sarah
+- Jackson
+- Christina
+- Adelaide
+- Wilfred
+- River
+- Craig
+- Jack
+
+## Transport
+- Clara, Amy:          52x20x48
+- Rose, Martha, Donna: 50x23x48 (15-20Kg)
+- Grandalf:            37x25x21
+- Sauron:              45x21x45
+- Switch:              47x44x4
+
+- mickey: 
+- 10G: f4:ee:08:0a:ea:b5
+- BMC: f4:ee:08:0b:f6:31
+
+- astrid:
+- 10G: f4:ee:08:0a:ea:05
+- BMC: f4:ee:08:0b:9f:80
+
+- dan:
+- 10G: f4:ee:08:0a:ea:35
+- BMC: f4:ee:08:0b:f4:79
