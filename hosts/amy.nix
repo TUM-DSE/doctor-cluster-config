@@ -33,8 +33,8 @@
     RouterLifetimeSec = 0
   '';
 
-  sops.secrets.borgbackup-ssh-key = {};
-  sops.secrets.borgbackup-password = {};
+  sops.secrets.edinburgh-borgbackup-ssh = {};
+  sops.secrets.edinburgh-borgbackup-password = {};
   services.borgbackup.jobs.all-homes = {
     paths = [ "/home" ];
     exclude = [ "/home/dimitra/workspace/rocksdb-5.6-native" ];
@@ -50,7 +50,7 @@
     '';
     encryption = {
       mode = "repokey";
-      passCommand = "cat ${config.sops.secrets.borgbackup-password.path}";
+      passCommand = "cat ${config.sops.secrets.edinburgh-borgbackup-password.path}";
     };
     compression = "auto,zstd";
     startAt = "daily";
