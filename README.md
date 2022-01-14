@@ -180,25 +180,34 @@ $ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#$new
 
 ## Ipmi
 
-On bill.r and nardole.r we have ipmi support!!
+On all new TUM rack machines we have ipmi support!!!
 
-On the machine with IPMI:
+Generally, you can find the IPMI web interface at
+`https://$HOST-mgmt.dse.in.tum.de/` (i.e. [https://bill-mgmt.dse.in.tum.de]())
+once the device has been installed in the rack.  These addresses are only
+available through the management network, so you must use the [RBG
+vpn](https://vpn.rbg.tum.de/) for il1 to access them.
+
+You can also retrieve the IP addresses assigned to the IPMI/BMC firmware by
+running:
 
 ```
 ipmitool lan print
 ```
 
-to get the IPMI address. On the other machine run the following command to get a serial console:
-
+on the machine. On the other host (i.e. your laptop) you can run the following command to get a serial console:
 
 ```
 $ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(sops -d --extract '["ipmi-passwords"]' secrets.yml)" sol activate
 ```
 
-Than hit enter in order to get a login Prompt.
-The root password is in /etc/nixos/secrets/root-password
-IPMI also allows to change BIOS settings.
+The IPMI password here is encrypted with
+[sops](https://github.com/mozilla/sops). To decrypt it on your machine, your
+age/pgp fingerprint must be added to `.sops.yaml` in this repository. And one of
+the existing users must re-encrypt `secrets.yml` with your key. 
 
+Then press enter to get a login prompt. The root password for all machines is
+also stored in [secrets.yaml]().
 
 # Backups
 

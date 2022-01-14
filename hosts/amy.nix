@@ -41,7 +41,7 @@
     doInit = true;
     repo = "/mnt/backup/borgbackup";
     preHook = ''
-      ${pkgs.sshfs}/bin/sshfs -oIdentityFile=${config.sops.secrets.borgbackup-ssh-key.path} -oPort=22222 s1443541@csce.datastore.ed.ac.uk:/csce/datastore/inf/users/s1443541 /mnt/backup
+      ${pkgs.sshfs}/bin/sshfs -oIdentityFile=${config.sops.secrets.edinburgh-borgbackup-ssh.path} -oPort=22222 s1443541@csce.datastore.ed.ac.uk:/csce/datastore/inf/users/s1443541 /mnt/backup
     '';
     postHook = ''
       cat > /var/log/telegraf/borgbackup-datastore <<EOF
