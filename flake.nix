@@ -7,8 +7,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     nixpkgs.url = "github:NixOS/nixpkgs/release-21.11";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/1464b7f955a239e59d93e9a77309beb860c76155";
-    nixpkgs-systemd.url = "github:Mic92/nixpkgs/systemd";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager.url = "github:rycee/home-manager/release-21.11";

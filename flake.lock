@@ -77,27 +77,26 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1636790648,
-        "narHash": "sha256-BcQBjcnXEPdiD/k2trHNLiBZRhDeeNybtO6apwMkRBo=",
+        "lastModified": 1641965797,
+        "narHash": "sha256-AfxfIzAZbt9aAzpVBn0Bwhd/M4Wix7G91kEjm9H6FPo=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "1464b7f955a239e59d93e9a77309beb860c76155",
+        "rev": "87a35a0d58f546dc23f37b4f6af575d0e4be6a7a",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "1464b7f955a239e59d93e9a77309beb860c76155",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1641687203,
-        "narHash": "sha256-W6Xrb/l1x+E+WMVLw4q5HUnNjt3x4WQFSYJtjJtopbU=",
+        "lastModified": 1642299705,
+        "narHash": "sha256-T2eZyoBZV7o0WoVoYfNvZx5CL99GUlNl6x0RG1hVFu0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "00acdb2aa817048fbe1f91ece18fe7de09762531",
+        "rev": "2bf8d0b948155663530be0e2a0d04d7744e55716",
         "type": "github"
       },
       "original": {
@@ -107,29 +106,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-systemd": {
-      "locked": {
-        "lastModified": 1621285292,
-        "narHash": "sha256-1ZdCKUxLi7Ec/syJUjkDZXYtclOKHrap1ftsyusEPe0=",
-        "owner": "Mic92",
-        "repo": "nixpkgs",
-        "rev": "cd3fc12adc7581aac07af86dbb682fac4b750c94",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "ref": "systemd",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
-        "lastModified": 1641731596,
-        "narHash": "sha256-GXsEQrOjV48Yw1gbMabZuA/T3zTrKU667hIA6H9Cmj0=",
+        "lastModified": 1642309336,
+        "narHash": "sha256-pi1J7ltKSfbH5n29LbyJZykHYPGMjuwk1j+wR1HMP74=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "51692edec933703bcc36062e53c6f50c5be3e622",
+        "rev": "9a47a6d3b2d9a35a743ff17061826302c1c0f12b",
         "type": "github"
       },
       "original": {
@@ -161,7 +144,6 @@
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-systemd": "nixpkgs-systemd",
         "nur": "nur",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix"
