@@ -36,6 +36,7 @@
     DNSSEC = no
     DHCP = yes
     LLMNR = yes
+    MulticastDNS = yes
     LinkLocalAddressing = yes
     LLDP = yes
     IPv6AcceptRA = yes

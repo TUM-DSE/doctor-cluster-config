@@ -31,6 +31,8 @@ in {
         [Network]
         DNSSEC = no
         DHCP = no
+        LLMNR = yes
+        MulticastDNS = yes
         LinkLocalAddressing = yes
         Address = 192.168.55.${toString (num + 1)}/24
         Address = fd00::${toString (num + 1)}/64
