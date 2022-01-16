@@ -16,7 +16,6 @@
     (name: host: ''
       ${host.ipv4} ${name}
       ${lib.optionalString (host.ipv6 != null) "${host.ipv6} ${name}"}
-      ${host.linklocal} ${name}.u
     '')
     config.networking.doctorwho.hosts);
 
@@ -40,9 +39,6 @@
     LinkLocalAddressing = yes
     LLDP = yes
     IPv6AcceptRA = yes
-    ${lib.optionalString (config.networking.doctorwho.hosts ? ${config.networking.hostName}) ''
-      Address = ${config.networking.doctorwho.hosts.${config.networking.hostName}.linklocal}/64
-    ''}
     IPForward = yes
 
     [DHCP]
