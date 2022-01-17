@@ -95,9 +95,12 @@ def _format_disks(host: DeployHost, device: str) -> None:
     host.run(f"zfs create -o mountpoint=legacy zroot/root/nixos")
     host.run(f"zfs create -o mountpoint=legacy zroot/root/home")
 
-    ## and finally mount
+
+def _mount_disks(host: DeployHost, device: str) -> None:
+    host.run(f"zpool import -af")
+    # and finally mount
     host.run(f"mount -t zfs zroot/root/nixos /mnt")
-    host.run(f"mkdir /mnt/home /mnt/boot")
+    host.run(f"mkdir -p /mnt/home /mnt/boot")
     host.run(f"mount -t zfs zroot/root/home /mnt/home")
     host.run(f"mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
 
@@ -109,6 +112,16 @@ def format_disks(c, hosts, disk=""):
     """
     for h in get_hosts(hosts):
         _format_disks(h, disk)
+        _mount_disks(h, disk)
+
+
+@task
+def mount_disks(c, hosts, disk=""):
+    """
+    Mount disks from the installer, i.e.: inv mount-disks --hosts new-hostname --disk /dev/nvme0n1
+    """
+    for h in get_hosts(hosts):
+        _mount_disks(h, disk)
 
 
 @task
