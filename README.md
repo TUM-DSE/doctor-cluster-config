@@ -68,6 +68,14 @@ To install home-manager for a user simply run:
 $ nix-shell '<home-manager>' -A install
 ```
 
+This will initiate your home-manager and will generate a file similar to the one in ```home/.config/nixpkgs/home.nix```
+
+# Visual Studio Code Server support in NixOS
+
+You can use [this](https://github.com/msteen/nixos-vscode-server) to enable support for VS Code Server in NixOS.
+
+An example of the ```home.nix``` configured for VS Code support is shown in ```home/.config/nixpkgs/home.nix```.
+
 # Installation
 
 Make sure the system is booted into EFI:
