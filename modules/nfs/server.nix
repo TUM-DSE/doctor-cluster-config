@@ -99,4 +99,77 @@
       };
     };
   };
+  sops.secrets.tum-borgbackup-password = {};
+  sops.secrets.tum-borgbackup-home-ssh = {};
+  sops.secrets.tum-borgbackup-share-ssh = {};
+
+  systemd.services.borgbackup-job-eva-share.serviceConfig.ReadWritePaths = [
+    "/var/log/telegraf"
+  ];
+
+  services.borgbackup.jobs.eva-share = {
+    paths = [
+      "/export/share"
+    ];
+    repo = "il1dsenixosbk@eva.r:/mnt/backup/nfs-share";
+    encryption = {
+      mode = "repokey";
+      passCommand = "cat ${config.sops.secrets.tum-borgbackup-password.path}";
+    };
+    compression = "auto,zstd";
+    startAt = "daily";
+    preHook = ''
+      set -x
+      eval $(ssh-agent)
+      ssh-add ${config.sops.secrets.tum-borgbackup-share-ssh.path}
+    '';
+
+    postHook = ''
+      cat > /var/log/telegraf/borgbackup-nfs-share <<EOF
+      task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+      EOF
+    '';
+
+    prune.keep = {
+      within = "1d"; # Keep all archives from the last day
+      daily = 7;
+      weekly = 4;
+      monthly = 0;
+    };
+  };
+
+  systemd.services.borgbackup-job-eva-home.serviceConfig.ReadWritePaths = [
+    "/var/log/telegraf"
+  ];
+
+  services.borgbackup.jobs.eva-home = {
+    paths = [
+      "/export/home"
+    ];
+    repo = "il1dsenixosbk@eva.r:/mnt/backup/nfs-home";
+    encryption = {
+      mode = "repokey";
+      passCommand = "cat ${config.sops.secrets.tum-borgbackup-password.path}";
+    };
+    compression = "auto,zstd";
+    startAt = "daily";
+    preHook = ''
+      set -x
+      eval $(ssh-agent)
+      ssh-add ${config.sops.secrets.tum-borgbackup-home-ssh.path}
+    '';
+
+    postHook = ''
+      cat > /var/log/telegraf/borgbackup-nfs-home <<EOF
+      task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+      EOF
+    '';
+
+    prune.keep = {
+      within = "1d"; # Keep all archives from the last day
+      daily = 7;
+      weekly = 4;
+      monthly = 0;
+    };
+  };
 }
