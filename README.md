@@ -201,6 +201,12 @@ on the machine. On the other host (i.e. your laptop) you can run the following c
 $ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(sops -d --extract '["ipmi-passwords"]' secrets.yml)" sol activate
 ```
 
+The following will reboot the machine:
+
+```
+$ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(sops -d --extract '["ipmi-passwords"]' secrets.yml)" power cycle 
+```
+
 The IPMI password here is encrypted with
 [sops](https://github.com/mozilla/sops). To decrypt it on your machine, your
 age/pgp fingerprint must be added to `.sops.yaml` in this repository. And one of
