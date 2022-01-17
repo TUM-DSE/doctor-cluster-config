@@ -1,6 +1,9 @@
 { pkgs, ... }: {
   boot.kernelParams = [
-    "console=ttyS1,115200"
+    "console=ttyS0,115200n8"
+    "console=tty0"
+
+    "console=ttyS1,115200n8"
     "console=tty1"
   ];
 
