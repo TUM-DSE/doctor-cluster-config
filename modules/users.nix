@@ -67,6 +67,11 @@ let
   okelmannKeys = ''
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITBcN9iw5Fn7yyfgiWFet3QWDoMcUNtzLi+PNoYS7jksvcKZy5pLOjE6wCpkbYx+Tcb4MyvoWPXvwdo5FfL4XdhZRO+JlZ66p/rGssq/wEr2BBUwohP7o39JLtiyXGXSsK6MO2aceOFLQr4KAdaeD8ST0XumGcV6bGqIbjFsK5FCxFhO8NkCFtavBjDwKUm3uyOnVCWMp12abUphzxrVtWhcsnw5GapohATP03mCNxmrn/L7x393HutxgjyduScX7++MjwVE6J7wCnztPUtJbh9jYemr/K9fBMBbLhQagOjrlQYGU5frgmLrPCRZusyg5HjWx6gJIxs/DskfgmW+V
   '';
+  
+  # Simon Ellmann
+  ackxolotlKeys = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIa2YRaVvN0qZ1OD1x1zHQMW7RZ5dBCCenHbb/AUV46H ackxolotl
+  '';
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
@@ -196,6 +201,15 @@ in
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1008;
       openssh.authorizedKeys.keys = [ okelmannKeys ];
+    };
+    
+    ackxolotl = {
+      isNormalUser = true;
+      home = "/home/ackxolotl";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 1013;
+      openssh.authorizedKeys.keys = [ ackxolotlKeys ];
     };
 
     root = {
