@@ -5,8 +5,8 @@ let
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMI+21MFo1RlD0Urx8bTJHJZnRNRSGuN9IZ6Ld7M2JS philip@x541uj
   '';
 
-  mlKeys = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx ed25519-key-20210927
+  m00wlKeys = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de
   '';
 
   paulKeys = ''
@@ -28,13 +28,13 @@ in
 {
   users.users = {
     # Moritz Lumme (internship)
-    ml = {
+    m00wl = {
       isNormalUser = true;
-      home = "/home/ml";
+      home = "/home/m00wl";
       inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
+      shell = "/run/current-system/sw/bin/bash";
       uid = 1014;
-      openssh.authorizedKeys.keys = [ mlKeys ];
+      openssh.authorizedKeys.keys = [ m00wlKeys ];
     };
 
     # Master thesis (dimitrios student)
