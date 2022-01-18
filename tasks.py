@@ -92,6 +92,7 @@ def _format_disks(host: DeployHost, device: str) -> None:
 
     # setup zfs dataset
     host.run(f"zfs create -o mountpoint=none zroot/root")
+    host.run(f"zfs create -o mountpoint=none zroot/docker")
     host.run(f"zfs create -o mountpoint=legacy zroot/root/nixos")
     host.run(f"zfs create -o mountpoint=legacy zroot/root/home")
 
@@ -130,7 +131,8 @@ def install_nixos(c, hosts, flakeattr):
     install nixos, i.e.: inv install-nixos --hosts new-hostname --flakeattr
     """
     for h in get_hosts(hosts):
-        h.run("install --target /mnt/etc/ssh -D /etc/ssh/ssh_host_*")
+        h.run("install -m400 --target /mnt/etc/ssh -D /etc/ssh/ssh_host_*")
+        h.run("chmod 444 /mnt/etc/ssh/ssh_host_*.pub")
         h.run(
             f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr} && sync && reboot"
         )
