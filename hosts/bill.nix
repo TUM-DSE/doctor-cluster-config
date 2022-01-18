@@ -4,6 +4,7 @@
     ../modules/ipmi.nix
     ../modules/bonding.nix
     ../modules/k3s/server.nix
+    ../modules/k3s/runner-monitoring.nix
     ../modules/dpdk.nix
     ../modules/xfstest.nix
     ../modules/sys-prog/users.nix
