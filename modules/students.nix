@@ -93,7 +93,10 @@ in
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
-  users.deletedUsers = [ "vincent" ];
+  users.deletedUsers = [
+    "vincent"
+    "ml"
+  ];
 
   # only used by jasper atm
   programs.fish.enable = true;
