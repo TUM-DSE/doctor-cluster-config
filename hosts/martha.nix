@@ -4,7 +4,12 @@
     ../modules/edinburgh/nfs-home.nix
     ../modules/ci.nix
     ../modules/xfstest.nix
+
+    ../modules/k3s/agent.nix
+    ../modules/edinburgh/k3s.nix
   ];
+
+  services.k3s.serverAddr = "https://rose.thalheim.io:6443";
 
   networking.hostName = "martha";
   networking.retiolum = {

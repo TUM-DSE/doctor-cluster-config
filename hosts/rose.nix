@@ -1,6 +1,9 @@
 { pkgs, lib, config, ... }: {
   imports = [
     ../modules/edinburgh/nfs-home.nix
+    # this is just a test cluster for Jörg to play with
+    ../modules/k3s/server.nix
+    ../modules/edinburgh/k3s.nix
   ];
 
   networking.hostName = "rose";
