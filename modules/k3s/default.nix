@@ -1,25 +1,5 @@
 { config, lib, pkgs, ... }:
 let
-  flannel = builtins.toJSON {
-    name = "cbr0";
-    cniVersion = "0.3.1";
-    plugins = [
-      {
-        type = "flannel";
-        delegate = {
-          hairpinMode = true;
-          forceAddress = true;
-          isDefaultGateway = true;
-        };
-      }
-      {
-        type = "portmap";
-        capabilities = {
-          portMappings = true;
-        };
-      }
-    ];
-  };
 in
 {
   config = {
@@ -29,7 +9,7 @@ in
     virtualisation.containerd.settings = {
       version = 2;
       plugins."io.containerd.grpc.v1.cri" = {
-        cni.conf_dir = "${pkgs.writeTextDir "net.d/10-flannel.conflist" flannel}/net.d";
+        cni.conf_dir = "/var/lib/rancher/k3s/agent/etc/cni/net.d/";
         # FIXME: upstream
         cni.bin_dir = "${pkgs.runCommand "cni-bin-dir" {} ''
           mkdir -p $out
