@@ -3,7 +3,7 @@
     ../modules/edinburgh/nfs-home.nix
 
     ../modules/k3s/agent.nix
-    ../modules/edinburgh/k3s.nix
+    #../modules/edinburgh/k3s.nix
   ];
 
   networking.hostName = "clara";
