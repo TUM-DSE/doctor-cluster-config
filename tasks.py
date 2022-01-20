@@ -59,6 +59,14 @@ def deploy_tum(c):
 
 
 @task
+def deploy_host(c, host):
+    """
+    Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
+    """
+    deploy_nixos([DeployHost(host)])
+
+
+@task
 def deploy_doctor(c):
     """
     Deploy to rpi4, that is used to control power relay
