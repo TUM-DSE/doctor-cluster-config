@@ -110,6 +110,8 @@ redirection is enabled in the BIOS/firmware setup page (vendor-specific).
 
 ## Partitioning
 
+TODO: partitioning is no longer manual...
+
 Assuming `/dev/nvme0n1` is the root disk, the following commands will setup up zfs and one
 partition formatted as fat32 (used for efi boot).
 
@@ -157,6 +159,8 @@ $ chmod 777 /mnt/tmp
 
 ## Prepare NixOS configuration
 
+TODO: this is now automated as well
+
 ```console
 # We are are just interested in the hardware-configuration.nix that NixOS might come up for this hardware.
 # Compare /tmp/nixos/hardware-configuration.nix with hardware-configuration.nix we have in the repo
@@ -185,6 +189,17 @@ $ vim /mnt/etc/nixos/modules/hosts.nix
 $ nix-shell -p nixFlakes -p git --run 'nixos-install --flake /mnt/etc/nixos#$newname'
 ```
 
+## Adding keys...
+
+TODO, `ssh-ca-sign` is not yet part of doctor-cluster-config
+
+Ssh ca certificate, so that hosts automatically trust each other.
+``` console
+$ HOST=astrid
+$ IP=IP_OR_HOSTNAME_FOR_SCANNING
+$ ./ssh-ca-sign $HOST,$HOST.r,$HOST.dse.in.tum.de,$HOST.thalheim.io $IP
+$ mv $IP-cert.pub ./modules/sshd/certs/$HOST-cert.pub
+```
 
 ## IPMI
 
