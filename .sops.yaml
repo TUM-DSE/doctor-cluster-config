@@ -11,6 +11,7 @@ keys:
   - &sauron age1t447x7xtqqhmfr026uhfn6ys62hlhseakw9qlrveadqxk7sehyysx62rq9
   - &yasmin age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6
   - &graham age1qnz850jesp6l4968vqdp40mqenmtx3czhy5l8hsz4kym3aj8c56srs5dkk
+  - &astrid age1hen4wskutter8h4ypkhv7aqvh7mr9gl7pz7gd9mgln4jl2ckxq7qaks7h6
 # command to add a new age key for a new host
 # nix-shell -p ssh-to-age --run "ssh-keyscan $host | ssh-to-age"
 creation_rules:
@@ -19,6 +20,7 @@ creation_rules:
     - age:
       - *joerg
       - *amy
+      - *astrid
       - *clara
       - *rose
       - *donna
