@@ -46,10 +46,20 @@ in
         ipv6 = "2001:630:3c1:164:b62e:99ff:fe3e:d369";
         location = "edinburgh";
       };
+      astrid = {
+        ipv4 = "131.159.102.11";
+        ipv6 = "2a09:80c0:102::11";
+        location = "munich";
+      };
       clara = {
         ipv4 = "129.215.165.58";
         ipv6 = "2001:630:3c1:164:b62e:99ff:fe3d:70f2";
         location = "edinburgh";
+      };
+      dan = {
+        ipv4 = "131.159.102.12";
+        ipv6 = "2a09:80c0:102::12";
+        location = "munich";
       };
       donna = {
         ipv4 = "129.215.165.54";
@@ -79,6 +89,11 @@ in
       bill = {
         ipv4 = "131.159.102.1";
         ipv6 = "2a09:80c0:102::1";
+        location = "munich";
+      };
+      mickey = {
+        ipv4 = "131.159.102.10";
+        ipv6 = "2a09:80c0:102::10";
         location = "munich";
       };
       nardole = {
