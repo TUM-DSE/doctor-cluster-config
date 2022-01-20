@@ -182,6 +182,24 @@ def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
                 sys.stdout.flush()
 
 
+def ipmi_password(c) -> str:
+    return c.run("""sops -d --extract '["ipmi-passwords"]' secrets.yml""", hide=True).stdout
+
+
+@task
+def ipmi_serial(c, host=""):
+    c.run(
+        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol activate"""
+    )
+
+
+@task
+def ipmi_powercycle(c, host=""):
+    c.run(
+        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
+    )
+
+
 @task
 def reboot(c, hosts=""):
     """
