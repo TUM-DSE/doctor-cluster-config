@@ -1,3 +1,14 @@
+# Accessing the server
+
+All servers in TU munich are accessible from within the TUM network i.e. eduroam and LAN.
+
+Furthermore ls1 employes can use the il1 profile from
+[here](https://vpn.rbg.tum.de). This vpn also gives access to the management
+network. Students of the university can use the [lrz
+openvpn](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb) to access
+the servers.
+
+
 # Update all servers
 
 1. Install [pyinvoke](https://github.com/pyinvoke/invoke) and rsync via pip or load via `nix develop`
