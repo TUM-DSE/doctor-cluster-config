@@ -8,6 +8,16 @@ network. Students of the university can use the [lrz
 openvpn](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb) to access
 the servers.
 
+All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
+
+- `$hostname.dse.inf.tum.de` for the machine itself.
+- `$hostname-mgmt.dse.in.tum.de` for the IPMI/BMC interface.
+
+i.e. bill has the addresses `bill.dse.inf.tum.de` and `bill-mgmt.dse.inf.tum.de`.
+
+All hostnames can be looked up in [./hosts](./hosts). Note that we still have a
+few machines in Edinburgh as well that are not accessible in this way.
+Where a machine is located can be also looked up in [modules/hosts.nix][modules/hosts.nix].
 
 # Update all servers
 
