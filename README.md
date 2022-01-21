@@ -17,7 +17,7 @@ i.e. bill has the addresses `bill.dse.inf.tum.de` and `bill-mgmt.dse.inf.tum.de`
 
 All hostnames can be looked up in [./hosts](./hosts). Note that we still have a
 few machines in Edinburgh as well that are not accessible in this way.
-Where a machine is located can be also looked up in [modules/hosts.nix][modules/hosts.nix].
+Where a machine is located can be also looked up in [modules/hosts.nix](modules/hosts.nix).
 
 # Update all servers
 
