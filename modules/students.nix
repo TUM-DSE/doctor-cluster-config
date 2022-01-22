@@ -1,10 +1,6 @@
 { config, ... }:
 
 let
-  philipKeys = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMI+21MFo1RlD0Urx8bTJHJZnRNRSGuN9IZ6Ld7M2JS philip@x541uj
-  '';
-
   m00wlKeys = ''
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de
   '';
@@ -35,17 +31,6 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1014;
       openssh.authorizedKeys.keys = [ m00wlKeys ];
-    };
-
-    # Master thesis (dimitrios student)
-    # finished, Remove before christmas
-    philip = {
-      isNormalUser = true;
-      home = "/home/philip";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1011;
-      openssh.authorizedKeys.keys = [ philipKeys ];
     };
 
     # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
@@ -96,6 +81,7 @@ in
   users.deletedUsers = [
     "vincent"
     "ml"
+    "philip"
   ];
 
   # only used by jasper atm
