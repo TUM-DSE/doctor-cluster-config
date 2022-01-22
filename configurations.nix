@@ -26,6 +26,7 @@ let
     ./modules/zsh.nix
     ./modules/binbash.nix
     ./modules/systemd.nix
+    ./modules/cleanup-usr.nix
 
     sops-nix.nixosModules.sops
     ({pkgs, ...}: {
