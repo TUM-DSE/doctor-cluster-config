@@ -2,7 +2,7 @@
   imports = [
     ../modules/edinburgh/nfs-home.nix
 
-    ../modules/k3s/agent.nix
+    #../modules/k3s/agent.nix
     #../modules/edinburgh/k3s.nix
   ];
 

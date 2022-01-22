@@ -5,7 +5,7 @@
     ../modules/ci.nix
     ../modules/xfstest.nix
 
-    ../modules/k3s/agent.nix
+    #../modules/k3s/agent.nix
     #../modules/edinburgh/k3s.nix
   ];
 
