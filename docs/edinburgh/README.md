@@ -2,14 +2,13 @@ We still have a few machines in Edinburgh
 
 # Hosts
 
-- amy
-- clara
-- donna
-- rose
-- martha
-
-- sauron
-- doctor
+- [amy](amy.md)
+- [clara](clara.md)
+- [donna](donna.md)
+- [rose](rose.md)
+- [martha](martha.md)
+- [sauron](sauron.md)
+- [doctor](doctor.md)
 
 # Reboot switch
 
