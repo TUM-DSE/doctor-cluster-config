@@ -7,15 +7,35 @@ Machine:   Type: Desktop System: sysGen www.sysgen.de product: Super Server v: 0
            serial: 0123456789 Chassis: type: 3 v: 0123456789 serial: 0123456789 
            Mobo: Supermicro model: X12SCZ-TLN4F v: 1.01A serial: UM20BS000427 
            UEFI: American Megatrends v: 1.0a date: 01/11/2021 
-Memory:    RAM: total: 125.7 GiB used: 35.15 GiB (28.0%) 
-           RAM Report: missing: Required tool dmidecode not installed. Check --recommends 
-PCI Slots: Missing: Required tool dmidecode not installed. Check --recommends 
+Memory:    RAM: total: 125.7 GiB used: 35.19 GiB (28.0%) 
+           Array-1: capacity: 128 GiB note: est. slots: 4 EC: None max-module-size: 32 GiB 
+           note: est. 
+           Device-1: DIMMA1 size: 32 GiB speed: 2400 MT/s type: DDR4 
+           detail: synchronous unbuffered (unregistered) bus-width: 64 bits total: 64 bits 
+           manufacturer: Kingston part-no: KHX3200C16D4/32GX serial: 825151A9 
+           Device-2: DIMMA2 size: 32 GiB speed: 2400 MT/s type: DDR4 
+           detail: synchronous unbuffered (unregistered) bus-width: 64 bits total: 64 bits 
+           manufacturer: Kingston part-no: KHX3200C16D4/32GX serial: 735150BB 
+           Device-3: DIMMB1 size: 32 GiB speed: 2400 MT/s type: DDR4 
+           detail: synchronous unbuffered (unregistered) bus-width: 64 bits total: 64 bits 
+           manufacturer: Kingston part-no: KHX3200C16D4/32GX serial: 735171CE 
+           Device-4: DIMMB2 size: 32 GiB speed: 2400 MT/s type: DDR4 
+           detail: synchronous unbuffered (unregistered) bus-width: 64 bits total: 64 bits 
+           manufacturer: Kingston part-no: KHX3200C16D4/32GX serial: 041171D8 
+PCI Slots: Slot: 4 type: x4 PCI Express 3 x8 PCH SLOT4 PCI-E 3.0 X4 (IN X8) status: In Use 
+           length: Short 
+           Slot: 6 type: x16 PCI Express 3 x16 CPU SLOT6 PCI-E 3.0 X16 status: In Use length: Long 
+           Slot: 7 type: x4 PCI Express 3 x4 PCH SLOT7 PCI-E 3.0 X4 status: Available 
+           length: Short 
+           Slot: N/A type: x4 M.2 Socket 3 PCI-E M.2-M1 status: Available length: Short 
+           Slot: N/A type: x1 M.2 Socket 1-SD PCI-E M.2-E1 status: Available length: Short 
 CPU:       Info: 10-Core model: Intel Core i9-10900K bits: 64 type: MT MCP arch: Comet Lake rev: 5 
-           cache: L2: 20 MiB 
+           cache: L1: 640 KiB L2: 20 MiB L3: 20 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 147994 
-           Speed: 5115 MHz min/max: 800/5300 MHz Core speeds (MHz): 1: 5115 2: 5077 3: 5058 
-           4: 5110 5: 5089 6: 5205 7: 5104 8: 5093 9: 5076 10: 5093 11: 5101 12: 5010 13: 5012 
-           14: 5035 15: 5087 16: 5089 17: 5135 18: 5051 19: 5094 20: 5039 
+           Speed: 5071 MHz min/max: 800/5300 MHz volts: 1.0 V ext-clock: 100 MHz 
+           Core speeds (MHz): 1: 5071 2: 5036 3: 5073 4: 5105 5: 5244 6: 5260 7: 5050 8: 5101 
+           9: 5101 10: 5094 11: 5091 12: 5037 13: 5038 14: 5084 15: 5038 16: 5113 17: 5036 
+           18: 5045 19: 5095 20: 5093 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 05:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -94,8 +114,8 @@ Partition: ID-1: / size: 831.59 GiB used: 93.1 GiB (11.2%) fs: zfs logical: zroo
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 557 
-           Uptime: 14:24:30  up 16 days 17:45,  0 users,  load average: 0.07, 0.04, 0.01 
+Info:      Processes: 574 
+           Uptime: 14:32:46  up 16 days 17:53,  0 users,  load average: 0.00, 0.02, 0.00 
            wakeups: 0 Init: systemd v: 249 target: multi-user.target Compilers: gcc: 10.3.0 
            Packages: nix-sys: 496 Client: Sudo v: 1.9.7p2 inxi: 3.3.04 
 ```

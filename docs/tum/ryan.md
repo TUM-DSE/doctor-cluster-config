@@ -7,28 +7,65 @@ Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: 9P0
            type: 23 serial: 9P0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .9P0PSH3.CNCMS0016O01PE. UEFI: Dell v: 2.2.4 
            date: 04/12/2021 
-Memory:    RAM: total: 503.25 GiB used: 253.84 GiB (50.4%) 
-           RAM Report: missing: Required tool dmidecode not installed. Check --recommends 
-PCI Slots: Missing: Required tool dmidecode not installed. Check --recommends 
+Memory:    RAM: total: 503.25 GiB used: 253.85 GiB (50.4%) 
+           Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
+           note: est. 
+           Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 24178C4F 
+           Device-2: A2 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 241789BA 
+           Device-3: A3 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 2414B4EC 
+           Device-4: A4 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 2414B4D8 
+           Device-5: A5 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 2414B4E0 
+           Device-6: A6 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 2414B528 
+           Device-7: A7 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 2414B4E6 
+           Device-8: A8 size: 64 GiB speed: 3200 MT/s type: DDR4 
+           detail: synchronous registered (buffered) bus-width: 64 bits total: 72 bits 
+           manufacturer: 80AD869D80AD part-no: HMAA8GR7AJR4N-XN serial: 2414B4EF 
+           Device-9: A9 size: No Module Installed 
+           Device-10: A10 size: No Module Installed 
+           Device-11: A11 size: No Module Installed 
+           Device-12: A12 size: No Module Installed 
+           Device-13: A13 size: No Module Installed 
+           Device-14: A14 size: No Module Installed 
+           Device-15: A15 size: No Module Installed 
+           Device-16: A16 size: No Module Installed 
+PCI Slots: Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: Long 
+           Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Long 
+           Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long 
+           Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 4 status: In Use length: Long 
+           Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long 
 CPU:       Info: 64-Core model: AMD EPYC 7713P bits: 64 type: MT MCP arch: Zen 3 rev: 1 cache: 
            L2: 32 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511047 
-           Speed: 2478 MHz min/max: 1500/2000 MHz boost: enabled Core speeds (MHz): 1: 1797 
-           2: 1793 3: 2390 4: 2231 5: 2000 6: 2472 7: 2475 8: 2039 9: 2042 10: 2086 11: 2504 
-           12: 2047 13: 2036 14: 1911 15: 2045 16: 2039 17: 3036 18: 2651 19: 2716 20: 2692 
-           21: 2669 22: 3048 23: 3042 24: 2623 25: 1912 26: 1859 27: 2822 28: 2473 29: 2822 
-           30: 3090 31: 2816 32: 2817 33: 2811 34: 1910 35: 1911 36: 1914 37: 2946 38: 3486 
-           39: 2946 40: 2719 41: 1793 42: 2720 43: 2742 44: 2544 45: 2473 46: 2164 47: 2156 
-           48: 2154 49: 3418 50: 2181 51: 2349 52: 1794 53: 2364 54: 2366 55: 1794 56: 1620 
-           57: 1623 58: 1624 59: 1595 60: 1628 61: 1619 62: 1796 63: 1792 64: 1794 65: 1792 
-           66: 1795 67: 1794 68: 1794 69: 1795 70: 1794 71: 1793 72: 1663 73: 1794 74: 1933 
-           75: 1793 76: 1793 77: 1790 78: 1791 79: 1793 80: 1793 81: 2206 82: 2141 83: 2136 
-           84: 2142 85: 2152 86: 2134 87: 2215 88: 2216 89: 2184 90: 3092 91: 3090 92: 3094 
-           93: 2693 94: 2686 95: 2349 96: 1950 97: 2343 98: 2467 99: 2412 100: 2456 101: 2796 
-           102: 2010 103: 2137 104: 1991 105: 2189 106: 2251 107: 1912 108: 3002 109: 3429 
-           110: 3422 111: 3437 112: 2997 113: 3435 114: 3442 115: 3435 116: 3404 117: 3393 
-           118: 1911 119: 3406 120: 3442 121: 3064 122: 2793 123: 2772 124: 2458 125: 2776 
-           126: 2895 127: 3083 128: 2865 
+           Speed: 1793 MHz min/max: 1500/2000 MHz boost: enabled volts: 1.8 V ext-clock: 2000 MHz 
+           Core speeds (MHz): 1: 1792 2: 1794 3: 2021 4: 2028 5: 1654 6: 1793 7: 1791 8: 2356 
+           9: 2157 10: 2343 11: 2333 12: 2343 13: 2410 14: 2140 15: 2367 16: 2400 17: 2196 
+           18: 2203 19: 2202 20: 2192 21: 2111 22: 2196 23: 2188 24: 2204 25: 2156 26: 3173 
+           27: 3439 28: 3439 29: 3448 30: 3136 31: 3157 32: 2470 33: 2039 34: 3688 35: 2762 
+           36: 2941 37: 2948 38: 2949 39: 2950 40: 2950 41: 1791 42: 2947 43: 2951 44: 3692 
+           45: 2945 46: 1794 47: 1794 48: 1791 49: 1791 50: 1794 51: 1793 52: 1793 53: 1792 
+           54: 1790 55: 1792 56: 1790 57: 1792 58: 1793 59: 1796 60: 1793 61: 1794 62: 1794 
+           63: 1792 64: 2334 65: 2533 66: 2333 67: 2332 68: 2249 69: 2235 70: 2326 71: 2342 
+           72: 1791 73: 1791 74: 1792 75: 1792 76: 1793 77: 1795 78: 1649 79: 1629 80: 1600 
+           81: 1628 82: 1557 83: 1626 84: 1626 85: 2153 86: 1769 87: 1793 88: 1794 89: 1793 
+           90: 3377 91: 3685 92: 3699 93: 3690 94: 3563 95: 2354 96: 2406 97: 2357 98: 2292 
+           99: 2950 100: 2949 101: 3386 102: 3380 103: 3383 104: 3685 105: 3398 106: 3043 
+           107: 2147 108: 3041 109: 2736 110: 2728 111: 2733 112: 2711 113: 3062 114: 3305 
+           115: 3027 116: 3310 117: 3324 118: 2126 119: 3322 120: 3327 121: 3292 122: 3301 
+           123: 3256 124: 3299 125: 2878 126: 3307 127: 3300 128: 3211 
 Graphics:  Device-1: Matrox Systems Integrated Matrox G200eW3 Graphics driver: mgag200 v: kernel 
            bus-ID: c3:00.0 chip-ID: 102b:0536 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -114,7 +151,7 @@ Swap:      Alert: No swap data was found.
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
 Info:      Processes: 1360 
-           Uptime: 14:25:00  up 5 days 19:51,  1 user,  load average: 0.07, 0.16, 0.12 wakeups: 0 
+           Uptime: 14:33:20  up 5 days 20:00,  1 user,  load average: 0.04, 0.08, 0.09 wakeups: 0 
            Init: systemd v: 249 target: multi-user.target Compilers: gcc: 10.3.0 Packages: 945 
            nix-default: 214 nix-sys: 517 nix-usr: 214 Client: Sudo v: 1.9.7p2 inxi: 3.3.04 
 ```
