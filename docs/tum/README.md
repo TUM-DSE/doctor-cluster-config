@@ -30,7 +30,8 @@ i.e. bill has the addresses `bill.dse.inf.tum.de` and `bill-mgmt.dse.inf.tum.de`
 # CI servers
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab
-TODO: generate report with inxi
+
+**TODO: generate host info with inxi, once machines are online**
 
 - [astrid](astrid.md)
 - [dan](dan.md)
