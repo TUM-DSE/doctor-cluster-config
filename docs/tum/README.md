@@ -42,11 +42,11 @@ TODO: generate report with inxi
 
 ## FPGA-servers
 
-Those servers are manually managed by @atsushikoshiba.
-They run ubuntu, hence accounts/ssh keys added to this repos won't appear on those
-machines.
+Those servers are manually managed by @atsushikoshiba.  They run ubuntu. That
+means that accounts/ssh keys added to this repos won't appear on those machines.
+Those machines also are not backed up
 
-- hinoki
+- [hinoki](hinoki.md)
 - sakura
 
 ## Names left to pick
