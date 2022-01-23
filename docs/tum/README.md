@@ -19,25 +19,26 @@ i.e. bill has the addresses `bill.dse.inf.tum.de` and `bill-mgmt.dse.inf.tum.de`
 
 ## AMD-Epyc servers
 
-- graham
-- ryan (currently used for Swiss-knife course)
+- [graham](graham.md)
+- [ryan](ryan.md) (currently used for Swiss-knife course)
 
 ## Servers used for NFS/Services
 
-- bill
-- nardole
+- [bill](bill.md)
+- [nardole](nardole.md)
 
 # CI servers
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab
+TODO: generate report with inxi
 
-- astrid
-- dan
-- mickey
+- [astrid](astrid.md)
+- [dan](dan.md)
+- [mickey](mickey.md)
 
 ## ARM64
 
-- yasmin
+- [yasmin](yasmin.md)
 
 ## FPGA-servers
 
@@ -50,11 +51,11 @@ machines.
 
 ## Names left to pick
 
-- Sarah
-- Jackson
-- Christina
-- Adelaide
-- Wilfred
-- River
-- Craig
-- Jack
+- sarah
+- jackson
+- christina
+- adelaide
+- wilfred
+- river
+- craig
+- jack
