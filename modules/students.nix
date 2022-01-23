@@ -6,7 +6,7 @@ let
   '';
 
   paulKeys = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKKEzG+MxYA+LU8lUKHTWHNmtSe8sZkWcAE78xVExYG paul.heidekrueger@in.tum.de
+    ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local
   '';
   
   jrKeys = ''
