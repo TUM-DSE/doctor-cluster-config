@@ -1,23 +1,5 @@
-# Accessing the server
-
-All servers in TU munich are accessible from within the TUM network i.e. eduroam and LAN.
-
-Furthermore ls1 employes can use the il1 profile from
-[here](https://vpn.rbg.tum.de). This vpn also gives access to the management
-network. Students of the university can use the [lrz
-openvpn](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb) to access
-the servers.
-
-All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
-
-- `$hostname.dse.inf.tum.de` for the machine itself.
-- `$hostname-mgmt.dse.in.tum.de` for the IPMI/BMC interface.
-
-i.e. bill has the addresses `bill.dse.inf.tum.de` and `bill-mgmt.dse.inf.tum.de`.
-
-All hostnames can be looked up in [./hosts](./hosts). Note that we still have a
-few machines in Edinburgh as well that are not accessible in this way.
-Where a machine is located can be also looked up in [modules/hosts.nix](modules/hosts.nix).
+All hostnames can be looked up in [./hosts](./hosts). Most of the servers are in
+[TU Munich](docs/tum). Some machines are in [Edinburgh](docs/edinburgh).
 
 # Update all servers
 
@@ -45,30 +27,14 @@ $ inv deploy-tum
 # Add new users
 
 Add chair members to [./modules/users.nix](./modules/users.nix) and students to [./modules/students.nix](./modules/students.nix).
-Check that the uid is unique across both files and in the range between 1000-2000
-to avoid conflicts.
+
+For chair members use a uid in the 1000-2000. For new students use a uid in the
+2000-3000 range. Check that the uid is unique across both files and in the
+range between to avoid conflicts.
 
 # Add a new host
 
 New hosts are added in configurations.nix.
-
-# Quick hard reboot
-
-```console
-$ echo 1 > /proc/sys/kernel/sysrq; echo b > /proc/sysrq-trigger
-```
-
-# Reboot switch
-
-If the host is no longer reachable, it is possible to remote reboot it from your raspberry pi:
-Therefore first ssh to `doctor.thalheim.io`, then execute:
-
-```console
-$ reboot-servers --help
-USAGE: /run/current-system/sw/bin/reboot-servers rose|martha|donna|amy|clara
-# reboots rose
-$ reboot-servers rose
-```
 
 # Update system
 
@@ -259,53 +225,6 @@ the existing users must re-encrypt `secrets.yml` with your key.
 Then press enter to get a login prompt. The root password for all machines is
 also stored in [secrets.yaml]().
 
-# Backups
-
-Lorenzo back ups with borgbackup to his [personal storage](https://www.ed.ac.uk/geosciences/intranet/it/data-storage/personal-storage)
-
-They can be access from any host like this (secrets are in https://github.com/Mic92/doctor-cluster-secrets for access from other hosts):
-
-```
-$ sudo nix-shell -p borgbackup sshfs
-[nix-shell:/etc/nixos]# mkdir -p /mnt/backup /tmp/borgbackup && sshfs -oIdentityFile=/etc/nixos/secrets/borgbackup-ssh-key -oPort=22222 s1443541@csce.datastore.ed.ac.uk:/csce/datastore/inf/users/s1443541 /mnt/backup && BORG_PASSPHRASE=$(cat /etc/nixos/secrets/borgbackup-password) borgfs /mnt/backup/borgbackup /tmp/borgbackup
-[nix-shell:/etc/nixos]# ls -la /tmp/borgbackup
-total 12
-drwxr-xr-x  1 root root  0 Jul  7 17:00 .
-drwxrwxrwt 20 root root 21 Jul  7 17:00 ..
-drwxr-xr-x  1 root root  0 Jul  7 15:23 rose-all-homes-2020-07-07T15:23:39.failed
-drwxr-xr-x  1 root root  0 Jul  7 16:49 rose-all-homes-2020-07-07T16:49:13
-```
-
 # Monitoring
 
 Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?orgId=1
-
-## Names left to pick
-
-- Sarah
-- Jackson
-- Christina
-- Adelaide
-- Wilfred
-- River
-- Craig
-- Jack
-
-## Transport
-- Clara, Amy:          52x20x48
-- Rose, Martha, Donna: 50x23x48 (15-20Kg)
-- Grandalf:            37x25x21
-- Sauron:              45x21x45
-- Switch:              47x44x4
-
-- mickey: 
-- 10G: f4:ee:08:0a:ea:b5
-- BMC: f4:ee:08:0b:f6:31
-
-- astrid:
-- 10G: f4:ee:08:0a:ea:05
-- BMC: f4:ee:08:0b:9f:80
-
-- dan:
-- 10G: f4:ee:08:0a:ea:35
-- BMC: f4:ee:08:0b:f4:79
