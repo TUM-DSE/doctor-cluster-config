@@ -1,3 +1,6 @@
+# ethstick11
+
+```
 System:    Host: ethstick11.dse.in.tum.de Kernel: Darwin 20.3.0 arm64 bits: 64 
            compiler: clang v: 12.0.5 Console: tty s000 OS: Darwin 20.3.0 
 Machine:   Type: N/A Mobo: N/A model: N/A serial: N/A BIOS: N/A v: N/A date: N/A 
@@ -43,3 +46,4 @@ Info:      Processes: 206
            Init: launchd v: N/A Compilers: gcc: N/A clang: 12.0.5 Packages: 398 
            nix-default: 55 nix-usr: 343 Shell: Bash (sudo) v: 3.2.57 
            running-in: tty s000 (SSH) inxi: 3.3.04 
+```
