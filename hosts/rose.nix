@@ -9,5 +9,7 @@
     ipv6 = "42:0:3c46:a5a1:618d:663a:f0f1:ec88";
   };
 
+  boot.hugepages.number = 8000;
+
   system.stateVersion = "19.09";
 }

@@ -6,7 +6,7 @@
     ../modules/xfstest.nix
   ];
 
-  services.k3s.serverAddr = "https://rose.thalheim.io:6443";
+  boot.hugepages.number = 8000;
 
   networking.hostName = "martha";
   networking.retiolum = {
