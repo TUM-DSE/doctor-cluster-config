@@ -36,7 +36,17 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     g.run_function(deploy)
 
 
-TUM = ["bill.r", "nardole.r", "yasmin.r", "graham.r", "ryan.r"]
+TUM = [
+    "astrid.r",
+    "dan.r",
+    "mickey.r",
+
+    "bill.r",
+    "nardole.r",
+    "yasmin.r",
+    "graham.r",
+    "ryan.r"
+]
 EDINBURGH = [
     "rose.r",
     "amy.r",
