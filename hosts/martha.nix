@@ -6,8 +6,6 @@
     ../modules/xfstest.nix
   ];
 
-  boot.hugepages.number = 8000;
-
   networking.hostName = "martha";
   networking.retiolum = {
     ipv4 = "10.243.29.179";

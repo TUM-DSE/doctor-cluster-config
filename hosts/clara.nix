@@ -3,6 +3,8 @@
     ../modules/edinburgh/nfs-home.nix
   ];
 
+  boot.hugepages.number = 8000;
+
   networking.hostName = "clara";
   networking.retiolum = {
     ipv4 = "10.243.29.182";
