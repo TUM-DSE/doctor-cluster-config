@@ -92,11 +92,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1642888911,
-        "narHash": "sha256-TwfXEION3DcOivzDqXSKNf1PNTZWF124nOF/UbZGRlE=",
+        "lastModified": 1643253271,
+        "narHash": "sha256-2zMm76LLLIY15jOnd4rmto7+1ObBWNyvo2R6npIyQ/s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3d35529a48d3ad50ad959463755b0b7fe392cfa7",
+        "rev": "043f3d6493415fa51ea24d1228bbee82e4aac306",
         "type": "github"
       },
       "original": {
@@ -108,11 +108,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1642901390,
-        "narHash": "sha256-e98PGszkvxHMQpQGka7xSxOLwjpYiboNgqjBAPlbqB4=",
+        "lastModified": 1643253305,
+        "narHash": "sha256-N1VlXCoBEegmS9XGDref+/3NS/uITxxwwZag3/waH5I=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "ac6437cbc86ae6ee74651b71ad66c227c9294586",
+        "rev": "0fcd6a45f5202c8bdb4d74a3fe9ccf0773a29784",
         "type": "github"
       },
       "original": {
@@ -123,11 +123,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1642684652,
-        "narHash": "sha256-JvgeaU5yZKq7SvZ2OGnSH2kLqVXjanlUAzXx1UTd1Y8=",
+        "lastModified": 1643184839,
+        "narHash": "sha256-TxbsBpjZlekLux7pG8Me5TORr/2T7jy8dgyaA3dk26I=",
         "ref": "master",
-        "rev": "a936ca474dbaf28c8f1f5d1d96598f707d7946c6",
-        "revCount": 181,
+        "rev": "8a44afaec545f0726d1319562ce2e1c450da92a5",
+        "revCount": 182,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
@@ -156,11 +156,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1641374494,
-        "narHash": "sha256-a56G6Um43+0+n+yNYhRCh/mSvDdRVzQHSKcFaDEB9/8=",
+        "lastModified": 1643003126,
+        "narHash": "sha256-JO5WrnP6+5qN3isdmm9VmjzvCM64UElgGnql7vEGjKU=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "7edb4b080023ef12f39262a3aa7aab31015a7a0e",
+        "rev": "c86068ac9a317f235be24a468206f874ba00f8d0",
         "type": "github"
       },
       "original": {
