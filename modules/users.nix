@@ -222,7 +222,7 @@ in
 
     root = {
       passwordFile = config.sops.secrets.root-password.path;
-      openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys;
+      openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmann;
     };
   };
 
