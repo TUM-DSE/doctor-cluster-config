@@ -2,10 +2,7 @@
   "nodes": {
     "fenix": {
       "inputs": {
-        "nixpkgs": [
-          "lambda-pirate",
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs",
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
@@ -24,10 +21,7 @@
     },
     "fenix_2": {
       "inputs": {
-        "nixpkgs": [
-          "vmsh",
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_3",
         "rust-analyzer-src": "rust-analyzer-src_2"
       },
       "locked": {
@@ -174,6 +168,22 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1643169865,
+        "narHash": "sha256-+KIpNRazbc8Gac9jdWCKQkFv9bjceaLaLhlwqUEYu8c=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "945ec499041db73043f745fad3b2a3a01e826081",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1643377871,
         "narHash": "sha256-K5FQzpg8bbLrOuxpBExZfT4PALX2HVBxZjv8rpFvdqI=",
         "owner": "Mic92",
@@ -184,6 +194,22 @@
       "original": {
         "owner": "Mic92",
         "ref": "release-21.11-backports",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1643169865,
+        "narHash": "sha256-+KIpNRazbc8Gac9jdWCKQkFv9bjceaLaLhlwqUEYu8c=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "945ec499041db73043f745fad3b2a3a01e826081",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -242,7 +268,7 @@
         "lambda-pirate": "lambda-pirate",
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nur": "nur",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
