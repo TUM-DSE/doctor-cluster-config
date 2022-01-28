@@ -6,10 +6,6 @@
     ../modules/nfs/client.nix
   ];
   networking.hostName = "graham";
-  networking.retiolum = {
-    ipv4 = "10.243.29.199";
-    ipv6 = "42:0:3c46:ab64:fa7c:171a:c94a:ac19";
-  };
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media

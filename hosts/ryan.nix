@@ -6,10 +6,6 @@
 
   networking.firewall.trustedInterfaces = [ "swissknife0" "swissknife1" ];
   networking.hostName = "ryan";
-  networking.retiolum = {
-    ipv4 = "10.243.29.198";
-    ipv6 = "42:0:3c46:53a7:e0e3:a2b6:471d:44a";
-  };
 
   networking.doctorwho.swissknife.macs = [
     "e4:3d:1a:72:00:f0"

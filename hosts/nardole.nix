@@ -11,10 +11,6 @@
   ];
 
   networking.hostName = "nardole";
-  networking.retiolum = {
-    ipv4 = "10.243.29.173";
-    ipv6 = "42:0:3c46:362d:a9aa:4996:c78e:839a";
-  };
 
   # unused 1Gbit/s port, messes up k3s networking
   systemd.network.networks."05-unmanaged".extraConfig = ''
