@@ -7,6 +7,8 @@
 , nix-ld
 , nixos-hardware
 , inputs
+, vmsh
+, lambda-pirate
 , ...
 }:
 
@@ -100,13 +102,13 @@ in
   martha = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      #vmsh.nixosModules.linux-ioregionfd
-      #lambda-pirate.nixosModules.knative
-      #lambda-pirate.nixosModules.vhive
-      #({ config, ... }: {
-      #  # for lambda pirate
-      #  services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
-      #})
+      vmsh.nixosModules.linux-ioregionfd
+      lambda-pirate.nixosModules.knative
+      lambda-pirate.nixosModules.vhive
+      ({ config, ... }: {
+        # for lambda pirate
+        services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
+      })
       ./hosts/martha.nix
     ];
   };

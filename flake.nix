@@ -25,12 +25,12 @@
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
 
-    #vmsh.url = "github:Mic92/vmsh";
-    #vmsh.inputs.flake-utils.follows = "flake-utils";
-    #vmsh.inputs.nixpkgs.follows = "nixpkgs";
+    vmsh.url = "github:Mic92/vmsh";
+    vmsh.inputs.flake-utils.follows = "flake-utils";
+    vmsh.inputs.nixpkgs.follows = "nixpkgs";
 
-    #lambda-pirate.url = "github:pogobanane/lambda-pirate";
-    #lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
+    lambda-pirate.url = "github:pogobanane/lambda-pirate";
+    lambda-pirate.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
