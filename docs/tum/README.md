@@ -10,10 +10,10 @@ the servers.
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
-- `$hostname.dse.inf.tum.de` for the machine itself.
+- `$hostname.dse.in.tum.de` for the machine itself.
 - `$hostname-mgmt.dse.in.tum.de` for the IPMI/BMC interface.
 
-i.e. bill has the addresses `bill.dse.inf.tum.de` and `bill-mgmt.dse.inf.tum.de`.
+i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 # Hosts
 
