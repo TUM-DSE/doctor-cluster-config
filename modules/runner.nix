@@ -26,9 +26,6 @@
     ];
   };
 
-  # does this improve performance?
-  nix.settings.trusted-users = [ "gitlab-runner" ];
-
   systemd.services.gitlab-runner = {
     confinement.enable = true;
     confinement.packages = config.services.gitlab-runner.extraPackages;
