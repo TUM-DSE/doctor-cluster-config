@@ -39,3 +39,7 @@ creation_rules:
     key_groups:
     - age:
       - *joerg
+  - path_regex: terraform/secrets.enc.json$
+    key_groups:
+    - age:
+      - *joerg
