@@ -65,15 +65,3 @@ resource "github_repository_webhook" "gitlab" {
 
   events = ["push", "pull_request"]
 }
-
-# TODO
-#resource "null_resource" "update-runner-token" {
-#  provisioner "local-exec" {
-#    command = <<EOT
-#    val="CI_SERVER_URL=https://gitlab.com\nREGISTRATION_TOKEN=${gitlab_project.repos["Mic92/dotfiles"].runners_token}"
-#sops \
-#   --set "[\"gitlab-runner-registration\"] \"$val\"" \
-#  ../../secrets/secrets.yaml
-#EOT
-#  }
-#}
