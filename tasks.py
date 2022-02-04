@@ -13,6 +13,9 @@ def get_hosts(hosts: str) -> List[DeployHost]:
     return [DeployHost(h) for h in hosts.split(",")]
 
 
+RSYNC_EXCLUDES = ["gdb", "zsh", ".terraform", ".direnv", ".mypy-cache", ".git"]
+
+
 def deploy_nixos(hosts: List[DeployHost]) -> None:
     """
     Deploy to all hosts in parallel
@@ -21,7 +24,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
 
     def deploy(h: DeployHost) -> None:
         h.run_local(
-            f"rsync --exclude='.git/' -vaF --delete -e ssh . {h.user}@{h.host}:/etc/nixos",
+            f"rsync {' --exclude '.join([''] + RSYNC_EXCLUDES)} -vaF --delete -e ssh . {h.user}@{h.host}:/etc/nixos"
         )
 
         flake_path = "/etc/nixos"
@@ -40,12 +43,11 @@ TUM = [
     "astrid.r",
     "dan.r",
     "mickey.r",
-
     "bill.r",
     "nardole.r",
     "yasmin.r",
     "graham.r",
-    "ryan.r"
+    "ryan.r",
 ]
 EDINBURGH = [
     "rose.r",
@@ -193,7 +195,9 @@ def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
 
 
 def ipmi_password(c) -> str:
-    return c.run("""sops -d --extract '["ipmi-passwords"]' secrets.yml""", hide=True).stdout
+    return c.run(
+        """sops -d --extract '["ipmi-passwords"]' secrets.yml""", hide=True
+    ).stdout
 
 
 @task
