@@ -108,6 +108,11 @@ creation_rules:
       - *astrid
       - *mickey
       - *dan
+  - path_regex: modules/gitlab-runner/secrets.yml$
+    key_groups:
+    - age:
+      - *joerg
+      - *graham
   - path_regex: modules/secrets.yml$
     key_groups:
     - age:

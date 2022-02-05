@@ -15,6 +15,6 @@ in {
     extraGroups = [ "wheel" "docker" "plugdev" "input" ];
     # /etc/nixos/secrets/xrdp-password
     hashedPassword = "$6$JVnp0RXTKpCfSc.$A4mp4WmFzVFnwHUPYEjqMQmhlL/9o5tbKKv2y/nY3oojp/aLnWjUzTMspxCadcn4L9b7WyTFHt2VNVkZ6q9Y30";
-    uid = 2002;
+    uid = 5002;
   };
 }

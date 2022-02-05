@@ -1,6 +1,5 @@
 xilinx-password: ENC[AES256_GCM,data:oDtpYvnuMfYWJ9r/5BH7,iv:d5RPC4k8ZgVbRiQnWf9ds0AYK4U8mudV/xBzu7edEDE=,tag:MQaJnKt1gec9RtoWig7BKA==,type:str]
 root-password: ENC[AES256_GCM,data:4qDNAkIEvBW0c82kxRuS,iv:WVgZXO5vNp2+zcaKbJURd9g4PailXJF5KmmHwmqIN8c=,tag:NGSGIZxBQDpgWGYJFwCCIQ==,type:str]
-gitlab-runner-registration: ENC[AES256_GCM,data:bzGcWKAaWqgJtr03iqQB8u0spuPYXq3otKL0pjKo72IUGncYkYYSrbZx7pWazdWz2IOoC/rVPoMtYHqoCIKlgtUWZhBKNWSxJQ==,iv:F3V0akT31YdDci+72MXWJjynM/Eeg9/0TM6yixOHWsw=,tag:F0o6GfLPwcnNDZ4ITq+BTA==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -25,8 +24,8 @@ sops:
             bERIUjVQak96eldEcDVQSEk4ZC9BZVkK00IOX2VJFEGcX0N3xloev2vCKo0UpWEG
             ikHEtDdIo8AQhDtdwI62U+Masyb2AH9H/WqdCsqLLAKTfMNLfATZ0Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-02-05T04:48:39Z"
-    mac: ENC[AES256_GCM,data:BiLsXywGejNVGAYl7mz1iM5DnQgVlks6nnxDj4yWSJeURSX8xaBvWUrlwfDg/KNoixPz9zNSQGpwj8Yun+2vG9oWmSMDWhUgB67rjKHGFu76/rgqxdE+hx3gmgrmX2LoSuKHTChZ2buiNukanqOTK8AFanUufD0ojPdl+05vJVc=,iv:aOcPUAQ4oRLZJb1YPwhaCu+rhccTS4MLSAca8U2bZy8=,tag:Z84DDbznugbUq1jd8FbAHA==,type:str]
+    lastmodified: "2022-02-05T05:12:38Z"
+    mac: ENC[AES256_GCM,data:PnqtqesOiE6+9usgcDECemkvxiFid+2pCRoJ+Ybao0lYV7WB73ikaF94wulcMimje91Miz+sWT1Wthwlv+FBPPV/nwdcSK9QoyHt1K67Stgd9vo+vkGEXCVmBFPnpDo3NwKnXOAFKd7uQ5aUqYzxWj3ok4vXu9XU3R1iS056ZAo=,iv:s2+3D7jgVQjG/h5VmHfuetCRUDk6Ysnaq9yHlSb9ths=,tag:5A/81uBHoyoNjsOiJfHIbw==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.7.1

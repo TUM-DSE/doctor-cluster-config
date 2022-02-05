@@ -4,6 +4,7 @@
     restartUnits = [
       "gitlab-runner"
     ];
+    sopsFile = ./secrets.yml;
   };
 
   services.gitlab-runner = {
@@ -72,4 +73,20 @@
   };
 
   users.groups.gitlab-runner = {};
+
+  nix.distributedBuilds = true;
+  nix.buildMachines = [{
+    hostName = "yasmin.dse.in.tum.de";
+    maxJobs = 96;
+    sshKey = config.sops.secrets.gitlab-builder-ssh-key.path;
+    sshUser = "ssh-ng://gitlab-builder";
+    system = "aarch64-linux";
+    supportedFeatures = [
+      "big-parallel"
+      "kvm"
+      "nixos-test"
+    ];
+  }];
+
+  sops.secrets.gitlab-builder-ssh-key.sopsFile = ./secrets.yml;
 }
