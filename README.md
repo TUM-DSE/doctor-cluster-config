@@ -228,3 +228,10 @@ also stored in [secrets.yaml]().
 # Monitoring
 
 Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?orgId=1
+
+# CI
+
+All machines are build by [gitlab ci](https://gitlab.com/TUM-DSE/doctor-cluster-config/-/pipelines) on a
+self-hosted runner. Gitlab will also propagate the build status to the github repository eventually. 
+The resulting builds are uploaded to https://tum-dse.cachix.org from where
+machines can download them while upgrading.
