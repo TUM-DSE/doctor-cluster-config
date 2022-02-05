@@ -31,14 +31,14 @@ let
     ./modules/cleanup-usr.nix
 
     sops-nix.nixosModules.sops
-    ({pkgs, ...}: {
+    ({pkgs, config, ...}: {
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${nixpkgs}"
         "nur=${nur}"
       ];
 
-      sops.defaultSopsFile = ./modules/secrets.yml;
+      sops.defaultSopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
 
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json

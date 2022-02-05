@@ -20,7 +20,7 @@
 {
   imports = [ ./. ];
 
-  sops.secrets.znapzend = {};
+  sops.secrets.znapzend.sopsFile = ./secrets.yml;
   programs.ssh.extraConfig = ''
     Host nfs-backup
       User znapzend
@@ -99,9 +99,9 @@
       };
     };
   };
-  sops.secrets.tum-borgbackup-password = {};
-  sops.secrets.tum-borgbackup-home-ssh = {};
-  sops.secrets.tum-borgbackup-share-ssh = {};
+  sops.secrets.tum-borgbackup-password.sopsFile = ./secrets.yml;
+  sops.secrets.tum-borgbackup-home-ssh.sopsFile = ./secrets.yml;
+  sops.secrets.tum-borgbackup-share-ssh.sopsFile = ./secrets.yml;
 
   systemd.services.borgbackup-job-eva-share.serviceConfig.ReadWritePaths = [
     "/var/log/telegraf"

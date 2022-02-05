@@ -1,7 +1,9 @@
 { config, lib, pkgs, ... }:
 {
   # k3s api server
+  # TODO: move this to k3s secret
   sops.secrets.telegraf-github-token.owner = "telegraf";
+  sops.secrets.telegraf-github-token.sopsFile = ./secrets.yml;
 
   services.telegraf = {
     extraConfig.inputs.kube_inventory = {

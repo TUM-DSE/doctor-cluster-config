@@ -163,6 +163,11 @@ def print_tinc_key(c, hosts):
     for h in get_hosts(hosts):
         h.run("tinc.retiolum export")
 
+@task
+def print_age_key(c, hosts):
+    for h in get_hosts(hosts):
+        h.run("nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'")
+
 
 @task
 def deploy_edinburgh(c):
