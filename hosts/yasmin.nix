@@ -4,7 +4,7 @@
     ../modules/ipmi.nix
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
-    ../modules/gitlab/builder.nix
+    ../modules/gitlab-runner/builder.nix
   ];
 
   networking.hostName = "yasmin";
