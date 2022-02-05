@@ -9,6 +9,7 @@ data "github_repositories" "my-non-archived-repos" {
 resource "gitlab_project" "repos" {
   for_each                            = toset(data.github_repositories.my-repos.full_names)
   name                                = element(split("/", each.key), 1)
+  namespace_id                        = gitlab_group.tum_dse.id
   import_url                          = "https://github.com/${each.key}"
   mirror                              = true
   mirror_trigger_builds               = true
