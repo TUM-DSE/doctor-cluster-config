@@ -28,13 +28,5 @@
     ActivationPolicy = down
   '';
 
-  # Redha uses this for his qemu traces
-  # - has a quota of 500GB
-  fileSystems."/traces" = {
-    device = "zroot/traces";
-    fsType = "zfs";
-    options = [ "nofail" ];
-  };
-
   system.stateVersion = "20.09";
 }
