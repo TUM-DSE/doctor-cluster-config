@@ -145,6 +145,7 @@ in
     };
 
     # edinburgh
+    # delete once we are finished with edinburgh...
     # uses edinburgh server as a ssh jump host
     iris = {
       isNormalUser = true;
