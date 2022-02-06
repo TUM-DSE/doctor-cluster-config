@@ -5,6 +5,7 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/gitlab-runner
+    ../modules/nfs/home.nix
   ];
   networking.hostName = "graham";
 
