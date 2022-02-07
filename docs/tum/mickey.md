@@ -7,7 +7,7 @@ Machine:   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 3YBV
            type: 23 serial: 3YBVXK3 
            Mobo: Dell model: 04JN2K v: A09 serial: .3YBVXK3.CNFCP001B3002P. UEFI: Dell v: 2.12.2 
            date: 07/09/2021 
-Memory:    RAM: total: 125.53 GiB used: 2.78 GiB (2.2%) 
+Memory:    RAM: total: 125.53 GiB used: 13.61 GiB (10.8%) 
            Array-1: capacity: 1024 GiB slots: 16 EC: Multi-bit ECC max-module-size: 64 GiB 
            note: est. 
            Device-1: A1 size: 32 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -49,11 +49,11 @@ CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 bits: 64 type: MT MCP SM
            arch: Cascade Lake rev: 7 cache: L2: 27.5 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200124 
            Speed: 1000 MHz min/max: N/A volts: 1.8 V ext-clock: 10400 MHz Core speeds (MHz): 
-           1: 1000 2: 1001 3: 1001 4: 1000 5: 1000 6: 1000 7: 1001 8: 1550 9: 1000 10: 1000 
-           11: 1000 12: 1000 13: 1000 14: 1001 15: 1000 16: 1000 17: 1001 18: 1000 19: 1000 
-           20: 1000 21: 1000 22: 1000 23: 1000 24: 1000 25: 1000 26: 1001 27: 1000 28: 1000 
-           29: 1000 30: 1000 31: 1000 32: 1000 33: 1000 34: 1000 35: 1000 36: 1000 37: 1000 
-           38: 1000 39: 1000 40: 1000 
+           1: 1000 2: 1000 3: 1001 4: 1000 5: 1000 6: 1000 7: 1000 8: 1000 9: 1001 10: 1000 
+           11: 1000 12: 1000 13: 1000 14: 1000 15: 1000 16: 1001 17: 1000 18: 1001 19: 1001 
+           20: 1001 21: 1001 22: 1001 23: 1000 24: 1001 25: 1001 26: 1000 27: 1001 28: 1000 
+           29: 1000 30: 1001 31: 1001 32: 1000 33: 1000 34: 1001 35: 1000 36: 1001 37: 1001 
+           38: 1000 39: 1001 40: 1000 
 Graphics:  Device-1: Matrox Systems Integrated Matrox G200eW3 Graphics vendor: Dell 
            driver: mgag200 v: kernel bus-ID: 03:00.0 chip-ID: 102b:0536 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -74,27 +74,35 @@ Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: De
            Device-4: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell 
            driver: bnxt_en v: kernel port: 2000 bus-ID: 5e:00.1 chip-ID: 14e4:16d8 class-ID: 0200 
            IF: enp94s0f1np1 state: down mac: f4:ee:08:0a:ea:b6 
-           IF-ID-1: docker0 state: down mac: 02:42:4a:a6:95:2f 
+           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: b2:a6:39:28:fd:af 
+           IP v4: 10.42.2.1/24 scope: global broadcast: 10.42.2.255 
+           IP v6: fe80::b0a6:39ff:fe28:fdaf/64 scope: link 
+           IF-ID-2: docker0 state: down mac: 02:42:4a:a6:95:2f 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
+           IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:a85d:33c6:14ca:3cf7:8827/12 scope: global 
            IP v6: fe80::b2d9:2a9d:70a1:b055/64 virtual: stable-privacy scope: link 
+           IF-ID-4: veth1cfecdd6 state: up speed: 10000 Mbps duplex: full mac: 9a:ea:ab:4a:bb:a2 
+           IF-ID-5: veth54c08e97 state: up speed: 10000 Mbps duplex: full mac: b2:af:31:71:11:7e 
            WAN IP: 131.159.102.10 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas 
            v: 07.714.04.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.45 TiB 
-           allocated: 4.65 GiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.44 TiB 
+           allocated: 10.6 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 4.72 GiB (0.2%) 
+Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 10.95 GiB (0.4%) 
            ID-1: /dev/nvme0n1 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB size: 1.46 TiB 
            speed: 63.2 Gb/s lanes: 4 rotation: SSD serial: PHAB1233010E1P9SGN rev: 1.1.5 
            temp: 24.9 C scheme: GPT 
-Partition: ID-1: / size: 1.41 TiB used: 4.65 GiB (0.3%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 71.5 MiB (7.0%) fs: vfat dev: /dev/nvme0n1p1 
+Partition: ID-1: / size: 1.41 TiB used: 9.58 GiB (0.7%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 1022 MiB used: 243.8 MiB (23.9%) fs: vfat dev: /dev/nvme0n1p1 
            ID-3: /home size: 1.4 TiB used: 128 KiB (0.0%) fs: zfs logical: zroot/root/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 549 Uptime: 1h 03m wakeups: 0 Init: systemd v: 249 target: multi-user.target 
-           Compilers: gcc: 10.3.0 Packages: nix-sys: 452 Client: Sudo v: 1.9.7p2 inxi: 3.3.04 
+Info:      Processes: 573 
+           Uptime: 14:23:12  up 14 days  0:37,  0 users,  load average: 0.14, 0.14, 0.10 
+           wakeups: 0 Init: systemd v: 249 target: multi-user.target Compilers: gcc: 10.3.0 
+           Packages: nix-sys: 466 Client: Sudo v: 1.9.7p2 inxi: 3.3.04 
 ```
+![hardware topology](mickey.lstopo.svg)
