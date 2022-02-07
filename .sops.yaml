@@ -1,5 +1,6 @@
 keys:
   - &joerg age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+  - &peter age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
   - &amy age137rtvc63e3rg0qtlc8nwmajqljuckjdptncd4nmk8w8hvdlcr3tsj2f8d8
   - &clara age1hsvqmpun5c4ht8vk9pjhppav3zdxm37h820uws07xe88gpejfs6qyzhwav
   - &rose age18s9fs98d44dcgn2cn9a4p3zryc0z88u2wmrs62yvyr06gzxpzdnshp70vp
@@ -22,66 +23,79 @@ creation_rules:
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *amy
   - path_regex: hosts/clara.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *clara
   - path_regex: hosts/rose.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *rose
   - path_regex: hosts/donna.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *donna
   - path_regex: hosts/martha.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *martha
   - path_regex: hosts/doctor.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *doctor
   - path_regex: hosts/bill.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *bill
   - path_regex: hosts/nardole.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *nardole
   - path_regex: hosts/sauron.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *sauron
   - path_regex: hosts/yasmin.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *yasmin
   - path_regex: hosts/graham.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *graham
   - path_regex: hosts/ryan.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *ryan
   - path_regex: hosts/astrid.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *astrid
   - path_regex: hosts/mickey.yml$
     key_groups:
@@ -92,17 +106,20 @@ creation_rules:
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *dan
   - path_regex: modules/nfs/secrets.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *bill
       - *nardole
   - path_regex: modules/k3s/secrets.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *bill
       - *nardole
       - *astrid
@@ -112,11 +129,13 @@ creation_rules:
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *graham
   - path_regex: modules/secrets.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
       - *amy
       - *astrid
       - *clara
@@ -136,7 +155,9 @@ creation_rules:
     key_groups:
     - age:
       - *joerg
+      - *peter
   - path_regex: terraform/secrets.enc.json$
     key_groups:
     - age:
       - *joerg
+      - *peter
