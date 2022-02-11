@@ -31,8 +31,8 @@
   # fsid is necessary so that we can failover to the backup nfs, without getting
   # stale mounts on our clients.
   services.nfs.server.exports = ''
-    /export/home 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25)
-    /export/share 2a09:80c0:102::/64(rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26)
+    /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25)
+    /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26)
   '';
 
   systemd.tmpfiles.rules =
