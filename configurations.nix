@@ -116,13 +116,6 @@ in
   rose = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      #vmsh.nixosModules.linux-ioregionfd
-      #lambda-pirate.nixosModules.knative
-      #lambda-pirate.nixosModules.vhive
-      #({ config, ... }: {
-      #  # for lambda pirate
-      #  services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
-      #})
       ./hosts/rose.nix
     ];
   };
@@ -178,6 +171,13 @@ in
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
       ./hosts/mickey.nix
+      vmsh.nixosModules.linux-ioregionfd
+      lambda-pirate.nixosModules.knative
+      lambda-pirate.nixosModules.vhive
+      ({ config, ... }: {
+        # for lambda pirate
+        services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
+      })
     ];
   };
 
