@@ -23,7 +23,7 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home" = {
+  fileSystems."/old-home" = {
     device = "zroot/root/home";
     fsType = "zfs";
   };

@@ -5,6 +5,7 @@
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
     ../modules/gitlab-runner/builder.nix
+    ../modules/nfs/client.nix
   ];
 
   networking.hostName = "yasmin";
