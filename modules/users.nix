@@ -68,6 +68,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIa2YRaVvN0qZ1OD1x1zHQMW7RZ5dBCCenHbb/AUV46H ackxolotl"
   ];
 
+  chenjiyangKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnFkSHWAPt8/MwZ/+IzBzTwBWLqYT9seZO9MI3JPfW3mMxz9BeuuTXVGDgHXePlNOiPV/bnjSnBHALzS1A6+z6qYBpVX1+pT2fPJRXGqDYqWL4aMjiQZvfJ9aUnKbTA4ivVsNpDbf2QlySZiZTYE4IFroo5xtMxvrYgbvfV1ZfywihJPnrX58ddB7begp+jCliqKtOoCNEclxsiRw0hsawhm9YSmn525u9bLwi2+mPAhi6nL1DtPTTZLGlkVPAg21El9PqiYWpjRXmAHrMMcZCQEaS3+TqJYXHoX1U8ShSZ0vtwgkpiIoFGyjqjPHWDcacVEYZxABTwTlBq74on3RB"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
@@ -219,6 +223,17 @@ in
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1013;
       openssh.authorizedKeys.keys = ackxolotlKeys;
+    };
+
+    # Jiyang Chen
+    # tum
+    chenjiyang = {
+      isNormalUser = true;
+      home = "/home/chenjiyang";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1019;
+      openssh.authorizedKeys.keys = chenjiyangKeys;
     };
 
     root = {
