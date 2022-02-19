@@ -48,11 +48,11 @@
     "flake-registry": {
       "flake": false,
       "locked": {
-        "lastModified": 1643363428,
-        "narHash": "sha256-O22w+/XyeEWSgSGp4rYaBwfePjl/N78+zF9fUfpbXiE=",
+        "lastModified": 1644873853,
+        "narHash": "sha256-dyXxs6wh1uqCPaXfAc3PAnxeRbEFg4Bikza3Aqq0YVw=",
         "owner": "NixOS",
         "repo": "flake-registry",
-        "rev": "c4ed6ef2f582dd260c06bf600232ff0568aebf4c",
+        "rev": "8d4ec27c73f33091e3b4b50ee89f38f73b946626",
         "type": "github"
       },
       "original": {
@@ -121,11 +121,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1644833365,
-        "narHash": "sha256-1JEwTtpD1KVnncNe5DMa4Ooz9i4jTxewPkXI6GP3Fcc=",
+        "lastModified": 1644844632,
+        "narHash": "sha256-nMHz089ymz6lrudTviaODcCFAylT/b/03cNBrCCNUho=",
         "owner": "pogobanane",
         "repo": "lambda-pirate",
-        "rev": "413249eeae49263aa6c4479a7de7fb3dd729aa13",
+        "rev": "b92bcdd8ce0352e5d87b2eb626e1c75dd49ab1a1",
         "type": "github"
       },
       "original": {
@@ -184,11 +184,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1644691988,
-        "narHash": "sha256-WoZCvPNlQ/ZaOYLmSTPCl1dfCa4mloaUtS1CfBgwPT8=",
+        "lastModified": 1644870092,
+        "narHash": "sha256-RLPD92lqXW98LDIbbwYqwAbt3R4iD1V1PiylfgBq5cU=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "c361b954759195c2ac085fbbed5ad7d513e1585b",
+        "rev": "10eab1c4cd8e715c0b41d32c28af2b89fc67bed0",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1644619458,
-        "narHash": "sha256-TmkRueZH6BJGUNPxfQzPCTwvl8wul4646mEHyiXqc54=",
+        "lastModified": 1645275756,
+        "narHash": "sha256-QtTDZhSsa8w3+t4ToKjb1+na7BFtnpfa0yX9OBB0SLM=",
         "owner": "Mic92",
         "repo": "nixpkgs",
-        "rev": "2d5f130be7a0119d7a717ae000f7b5836e42a9a9",
+        "rev": "4391cc83237d78460ecbcfedbb8b3bc35a158250",
         "type": "github"
       },
       "original": {
@@ -215,11 +215,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1644391231,
-        "narHash": "sha256-rLPkKnQ3VIV2gSK1eKtxyMX80QLKuUUmFVgquknhAfc=",
+        "lastModified": 1645110661,
+        "narHash": "sha256-o7SgjMerb3qTSoqmP7cn6v8dXGGDwtQ30FP9M9wh/IU=",
         "owner": "Mic92",
         "repo": "nixpkgs",
-        "rev": "9e05010687f630a5677d2cc017bef1ddba329f03",
+        "rev": "f4d68ce291383f13a4bcb34c35f31484198101d6",
         "type": "github"
       },
       "original": {
@@ -247,11 +247,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1644709971,
-        "narHash": "sha256-eKO98KWmJpx5hdTYRBZafGEen3rDLisWul9YG8FgMDk=",
+        "lastModified": 1645271045,
+        "narHash": "sha256-roWSAmjwU6B/2gYmphvSqGQOrQD0Cd6bOYJJFqwEkbA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "be9675eee38de8f5a2f2129aca8b03fb6e3221d4",
+        "rev": "a331ed9fb29bdb39d089d036fb0cf0a4d0bf06cb",
         "type": "github"
       },
       "original": {
@@ -262,11 +262,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1644451209,
-        "narHash": "sha256-D+EYHU5aCINS7NiKz/FKoeNEFxGfyfK0zuwHpRGugAQ=",
+        "lastModified": 1645106410,
+        "narHash": "sha256-Y9dsLF7kh6anPmgrTJDdBw2Br1tWkQyt+6wH4/K5W7Q=",
         "ref": "master",
-        "rev": "51ea735157391f9fd4d682901ee4854ba04eb181",
-        "revCount": 190,
+        "rev": "ecbb48c98ddf9284069d3ed52f4301c37c9f0347",
+        "revCount": 194,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
@@ -358,11 +358,11 @@
         "not-os": "not-os"
       },
       "locked": {
-        "lastModified": 1643978526,
-        "narHash": "sha256-pWO2JgFOLiXInSkg/7RYIYXa5r1B8aGpNPoR9Aq7yjc=",
+        "lastModified": 1645178030,
+        "narHash": "sha256-3Vka44vsUrOCjauUQRgDwoc0qkQbOBXjdHVa6xN7O3k=",
         "owner": "Mic92",
         "repo": "vmsh",
-        "rev": "25a38b690dc83448003214ce71f9fae0a53448d7",
+        "rev": "f0ae68aab26da2a0b0a20c360525ba32002ae312",
         "type": "github"
       },
       "original": {
