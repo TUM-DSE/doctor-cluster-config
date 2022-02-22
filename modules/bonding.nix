@@ -68,6 +68,7 @@ in {
         DNSSEC = no
         DHCP = yes
         LLMNR = true
+        EmitLLDP = true
         MulticastDNS = yes
         LinkLocalAddressing = yes
         LLDP = true
