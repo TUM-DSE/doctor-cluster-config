@@ -27,12 +27,6 @@
     fsType = "vfat";
   };
 
-  # allow to mount nfs
-  fileSystems."/home" = lib.mkDefault {
-    device = "zroot/root/home";
-    fsType = "zfs";
-  };
-
   fileSystems."/tmp" = {
     device = "zroot/root/tmp";
     fsType = "zfs";
