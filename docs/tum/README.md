@@ -52,6 +52,28 @@ machines.  Those machines also are not backed up.
 - [hinoki](hinoki.md)
 - sakura
 
+# Storage
+
+We have a shared nfs-based `/home` mounted. The nfs for /home is based on a NVME
+disk on nardole and is limited to 1TB. If you need fast local disk access use
+`/scratch/$YOURUSER` - however unlike `/home` and `/share` this directory are
+not included in the backup. If you want to share larger datasets between
+machines use `/share`, which is based on two hard disk (15TB capacity).
+
+Both nfs export stored on `nardole` are also replicated to `bill` every 15
+minutes using zfs replication based on
+[znapzend](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server-backup.nix).
+In case there are hardware problems with `nardole`, `bill` can take over serving
+the nfs.
+
+# Backups and snapshots
+
+ZFS is used on all machines whenever possible. We enable automatic snapshots of
+the filesystem every 15 minutes. The snapshot can be accessed by entering the
+`.zfs` directory of a zfs dataset (i.e. `/home/.zfs`, `/share/.zfs` or `/.zfs`).
+Furthermore `/share` and `/home` are backed up daily to get RBG storage using
+[borgbackup](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server.nix)
+
 ## Names left to pick
 
 - sarah
