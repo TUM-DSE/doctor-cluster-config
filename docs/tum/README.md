@@ -20,7 +20,7 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 ## AMD-Epyc servers
 
 - [graham](graham.md)
-- [ryan](ryan.md) (currently used for Swiss-knife course)
+- [ryan](ryan.md)
 
 ## Servers used for NFS/Services
 
