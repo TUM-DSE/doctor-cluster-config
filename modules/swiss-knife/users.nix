@@ -15,7 +15,7 @@ in
       uid = 4000;
       openssh.authorizedKeys.keys = [ ];
     };
-    
+
     # TeamB
     teamb = {
       isNormalUser = true;
@@ -25,7 +25,7 @@ in
       uid = 4001;
       openssh.authorizedKeys.keys = [ ];
     };
-    
+
     # TeamC
     teamc = {
       isNormalUser = true;
@@ -35,7 +35,7 @@ in
       uid = 4002;
       openssh.authorizedKeys.keys = [ ];
     };
-    
+
     # TeamD
     teamd = {
       isNormalUser = true;
@@ -55,7 +55,7 @@ in
       uid = 4004;
       openssh.authorizedKeys.keys = [ ];
     };
-    
+
     # TeamF
     teamf = {
       isNormalUser = true;
@@ -66,4 +66,14 @@ in
       openssh.authorizedKeys.keys = [ ];
     };
   };
+
+  # to delete users after course end
+  #users.deletedUsers = [
+  #    "teama"
+  #    "teamb"
+  #    "teamc"
+  #    "teamd"
+  #    "teame"
+  #    "teamf"
+  #];
 }

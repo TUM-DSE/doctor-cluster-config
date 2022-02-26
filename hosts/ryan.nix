@@ -1,16 +1,9 @@
 { lib, config, pkgs, ... }: {
   imports = [
     ../modules/hardware/poweredge7515.nix
-    ../modules/swiss-knife
   ];
 
-  networking.firewall.trustedInterfaces = [ "swissknife0" "swissknife1" ];
   networking.hostName = "ryan";
-
-  networking.doctorwho.swissknife.macs = [
-    "e4:3d:1a:72:00:f0"
-    "e4:3d:1a:72:00:f1"
-  ];
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media

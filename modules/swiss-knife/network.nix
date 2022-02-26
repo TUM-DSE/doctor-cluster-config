@@ -39,5 +39,11 @@ in {
         IPForward = yes
       '';
     }) config.networking.doctorwho.swissknife.macs);
+    networking.firewall.trustedInterfaces = [ "swissknife0" "swissknife1" ];
   };
+  # Example usage on ryan:
+  #networking.doctorwho.swissknife.macs = [
+  #  "e4:3d:1a:72:00:f0"
+  #  "e4:3d:1a:72:00:f1"
+  #];
 }
