@@ -2,7 +2,7 @@
   imports = [ ./. ];
 
   fileSystems."/home" = {
-    device = "nfs:/export/share";
+    device = "nfs:/export/home";
     fsType = "nfs4";
     options = [
       "nofail"
