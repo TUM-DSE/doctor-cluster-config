@@ -4,8 +4,6 @@
     ../modules/xrdp.nix
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
-    ../modules/gitlab-runner
-    ../modules/nfs/client.nix
   ];
   networking.hostName = "graham";
 
