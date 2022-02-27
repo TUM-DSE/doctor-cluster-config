@@ -1,0 +1,29 @@
+#/usr/bin/env bash
+
+set -eu -o pipefail
+
+
+if [ $# -ne 2 ]; then
+  echo "USAGE: $0 hosts host.pub|HOST"
+  echo "example: $0 host,host.i,host.r,bill.dse.in.tum.de HOSTNAME"
+  exit 1
+fi
+
+hosts=$1
+host=$2
+
+dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+workdir=$(mktemp -d)
+trap "{ rm -rf "$workdir"; }" EXIT
+
+(
+  umask 077
+  sops --extract '["ssh-ca"]' -d "$dir/ca-keys.yaml" > "$workdir/ssh-ca"
+)
+
+cd $workdir
+pubkey="${host}.pub"
+ssh-keyscan -t ed25519 "$host" | awk '{$1=""; print $0}' > "$pubkey"
+
+ssh-keygen -h -s "$workdir/ssh-ca" -n "$hosts" -I "$(basename "$pubkey" .pub)" "$pubkey"
+mv "${host}-cert.pub" "${dir}/certs/$(echo "$host" | grep -o '^[^.]\+')-cert.pub"

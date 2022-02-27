@@ -16,9 +16,15 @@ keys:
   - &astrid age1hen4wskutter8h4ypkhv7aqvh7mr9gl7pz7gd9mgln4jl2ckxq7qaks7h6
   - &mickey age120dyz5upjmv0z4e23vj2dhcm0c5cvm6tmwzl5sj5ye4jrjtwg4tsy3n7m3
   - &dan age1l86ru9amzp3g484wevpa64yjn8ppw0wn2qhud8xz05q84hvq0p0qatqpvq
+admins: &admins
+  - *joerg
+  - *peter
 # command to add a new age key for a new host
 # nix-shell -p ssh-to-age --run "ssh-keyscan $host | ssh-to-age"
 creation_rules:
+  - path_regex: modules/sshd/[^/]+\.yaml$
+    key_groups:
+    - age: *admins
   - path_regex: hosts/amy.yml$
     key_groups:
     - age:
@@ -153,11 +159,7 @@ creation_rules:
       - *yasmin
   - path_regex: secrets.yml$
     key_groups:
-    - age:
-      - *joerg
-      - *peter
+    - age: *admins
   - path_regex: terraform/secrets.enc.json$
     key_groups:
-    - age:
-      - *joerg
-      - *peter
+    - age: *admins
