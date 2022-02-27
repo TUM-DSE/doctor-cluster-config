@@ -130,7 +130,7 @@ creation_rules:
     - age:
       - *joerg
       - *peter
-      - *graham
+      - *ryan
   - path_regex: modules/secrets.yml$
     key_groups:
     - age:
