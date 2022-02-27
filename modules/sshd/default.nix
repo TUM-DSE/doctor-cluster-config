@@ -34,6 +34,7 @@ in
       "*.r"
       "*.i"
       "*.thalheim.io"
+      "*.dse.in.tum.de"
     ];
     publicKeyFile = ./certs/ssh-ca.pub;
   };
