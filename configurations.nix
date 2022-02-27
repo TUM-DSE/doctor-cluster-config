@@ -167,19 +167,19 @@ in
     ];
   };
 
-  mickey = nixosSystem {
-    system = "x86_64-linux";
-    modules = computeNodeModules ++ [
-      ./hosts/mickey.nix
-      vmsh.nixosModules.linux-ioregionfd
-      lambda-pirate.nixosModules.knative
-      lambda-pirate.nixosModules.vhive
-      ({ config, ... }: {
-        # for lambda pirate
-        services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
-      })
-    ];
-  };
+  #mickey = nixosSystem {
+  #  system = "x86_64-linux";
+  #  modules = computeNodeModules ++ [
+  #    ./hosts/mickey.nix
+  #    vmsh.nixosModules.linux-ioregionfd
+  #    lambda-pirate.nixosModules.knative
+  #    lambda-pirate.nixosModules.vhive
+  #    ({ config, ... }: {
+  #      # for lambda pirate
+  #      services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
+  #    })
+  #  ];
+  #};
 
   astrid = nixosSystem {
     system = "x86_64-linux";
