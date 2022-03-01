@@ -74,6 +74,21 @@ the filesystem every 15 minutes. The snapshot can be accessed by entering the
 Furthermore `/share` and `/home` are backed up daily to get RBG storage using
 [borgbackup](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server.nix)
 
+# Networking
+
+Our chair currently has two networks:
+
+- `il01_16` for the machines:
+  - order 10Gbit/s SFP+ connectors for fiber!
+  - ipv4: 131.159.102.0/24
+  - ipv6: 2a09:80c0:102::/64
+- il01_15 for management
+  - usually 1Gbit/s RJ-45
+  - ipv4: 172.24.90.0/24
+
+To add a new machine send the MAC address of your host interface and your IPMI/management interface to `ls1.admin@in.tum.de`.
+If the RGB group asks which networks to connect your machine to, tell them `il01_16` for the machine and `il01_15` for IPMI/BMC.
+
 ## Names left to pick
 
 - sarah
