@@ -31,8 +31,6 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab
 
-**TODO: generate host info with inxi, once machines are online**
-
 - [astrid](astrid.md)
 - [dan](dan.md)
 - [mickey](mickey.md)
@@ -82,7 +80,7 @@ Our chair currently has two networks:
   - order 10Gbit/s SFP+ connectors for fiber!
   - ipv4: 131.159.102.0/24
   - ipv6: 2a09:80c0:102::/64
-- il01_15 for management
+- `il01_15` for management
   - usually 1Gbit/s RJ-45
   - ipv4: 172.24.90.0/24
 
