@@ -24,16 +24,6 @@ in
 {
   # for new students please use a uid in the range between 2000-3000
   users.users = {
-    # Moritz Lumme (internship)
-    m00wl = {
-      isNormalUser = true;
-      home = "/home/m00wl";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1014;
-      openssh.authorizedKeys.keys = m00wlKeys;
-    };
-
     # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
     paul = {
       isNormalUser = true;
@@ -83,6 +73,7 @@ in
     "vincent"
     "ml"
     "philip"
+    "m00wl"
   ];
 
   # only used by jasper atm
