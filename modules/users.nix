@@ -247,7 +247,10 @@ in
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
-  users.deletedUsers = [ ];
+  users.deletedUsers = [
+    # User for Eurosys 22 artifact evaluation
+    "reviewer"
+  ];
 
   # needed so that we can set a root password
   users.mutableUsers = false;

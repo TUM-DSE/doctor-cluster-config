@@ -4,7 +4,6 @@
     ../modules/edinburgh/nfs-home.nix
     ../modules/ci.nix
     ../modules/xfstest.nix
-    ../modules/eurosys-reviewer.nix
   ];
 
   networking.hostName = "martha";

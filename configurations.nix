@@ -7,8 +7,6 @@
 , nix-ld
 , nixos-hardware
 , inputs
-, vmsh
-, lambda-pirate
 , ...
 }:
 
@@ -102,13 +100,6 @@ in
   martha = nixosSystem {
     system = "x86_64-linux";
     modules = sgxNodeModules ++ [
-      vmsh.nixosModules.linux-ioregionfd
-      #lambda-pirate.nixosModules.knative
-      #lambda-pirate.nixosModules.vhive
-      #({ config, ... }: {
-      #  # for lambda pirate
-      #  services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
-      #})
       ./hosts/martha.nix
     ];
   };
@@ -123,7 +114,6 @@ in
   bill = nixosSystem {
     system = "x86_64-linux";
     modules = computeNodeModules ++ [
-      #vmsh.nixosModules.linux-ioregionfd
       ./hosts/bill.nix
       ./hardware-configuration.nix
     ];
@@ -167,19 +157,12 @@ in
     ];
   };
 
-  #mickey = nixosSystem {
-  #  system = "x86_64-linux";
-  #  modules = computeNodeModules ++ [
-  #    ./hosts/mickey.nix
-  #    vmsh.nixosModules.linux-ioregionfd
-  #    lambda-pirate.nixosModules.knative
-  #    lambda-pirate.nixosModules.vhive
-  #    ({ config, ... }: {
-  #      # for lambda pirate
-  #      services.vhive.dockerRegistryIp = config.networking.doctorwho.hosts.${config.networking.hostName}.ipv4;
-  #    })
-  #  ];
-  #};
+  mickey = nixosSystem {
+    system = "x86_64-linux";
+    modules = computeNodeModules ++ [
+      ./hosts/mickey.nix
+    ];
+  };
 
   astrid = nixosSystem {
     system = "x86_64-linux";
