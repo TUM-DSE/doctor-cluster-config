@@ -4,7 +4,6 @@
     ../modules/bonding.nix
     ../modules/ipmi.nix
     ../modules/dpdk.nix
-    ../modules/k3s/agent.nix
     ../modules/sys-prog/users.nix
     ../modules/nfs/server.nix
     #../modules/nfs/server-backup.nix
