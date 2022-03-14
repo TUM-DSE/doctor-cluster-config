@@ -69,6 +69,16 @@ in
       shell = "/run/current-system/sw/bin/bash";
       openssh.authorizedKeys.keys = alexaKeys;
     };
+
+    # Julian Pritzi, Harshas's student (Benchmarking tool for ICU project)
+    julian = {
+      isNormalUser = true;
+      home = "/home/julian";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2000;
+      openssh.authorizedKeys.keys = julianKeys;
+    };
   };
 
   # DANGER ZONE!
