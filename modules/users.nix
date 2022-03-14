@@ -72,6 +72,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnFkSHWAPt8/MwZ/+IzBzTwBWLqYT9seZO9MI3JPfW3mMxz9BeuuTXVGDgHXePlNOiPV/bnjSnBHALzS1A6+z6qYBpVX1+pT2fPJRXGqDYqWL4aMjiQZvfJ9aUnKbTA4ivVsNpDbf2QlySZiZTYE4IFroo5xtMxvrYgbvfV1ZfywihJPnrX58ddB7begp+jCliqKtOoCNEclxsiRw0hsawhm9YSmn525u9bLwi2+mPAhi6nL1DtPTTZLGlkVPAg21El9PqiYWpjRXmAHrMMcZCQEaS3+TqJYXHoX1U8ShSZ0vtwgkpiIoFGyjqjPHWDcacVEYZxABTwTlBq74on3RB"
   ];
 
+  michioKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCapmHctgbYWL/cnXtk59vnUC8Bei+oA6xX66vFQRAxWX/b8nuHPx2HOHJFDRS9QfYpcOweZPgkCM+DzUOXF2VmYZrbtyaZTNsdrAn9Xl6wmNrqIqLl4G7/dB2CyGZs3+i7yXgXL73phOCpNGCnOSTnJjPm0EnjpIE0TtKKhf/17//lkRRYBc10iSjhl/79B27+1+N4aJV+gK+ObZRshoTjKqqPYe6o+qzyLSE2jOlf2PkK/QbPiGgHkpFbRPsvjfA9r5OZezSLDTyY5THksRFg/+3imRMAGvxIPmQkfDJr53UlgA8xKcTmI5r7c4S13MaQG4B+Qe/MjY7S0f9P2J+J micchie@epi.hq.netapp.com"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
@@ -234,6 +238,18 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 1019;
       openssh.authorizedKeys.keys = chenjiyangKeys;
+    };
+
+    # Michio Honda
+    # edinburgh
+    # evaluating rkt-io for a few days
+    michio = {
+      isNormalUser = true;
+      home = "/home/michio";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1020;
+      openssh.authorizedKeys.keys = michioKeys;
     };
 
     root = {
