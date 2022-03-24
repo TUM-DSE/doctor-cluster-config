@@ -47,6 +47,7 @@ let
         nixpkgs.flake = nixpkgs;
         nur.flake = nur;
       };
+      time.timeZone = "UTC";
     })
     retiolum.nixosModules.retiolum
   ];
