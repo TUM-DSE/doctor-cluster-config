@@ -126,12 +126,18 @@ class DeployHost:
     def run_local(
         self, cmd: str, stdout: FILE = None, stderr: FILE = None
     ) -> subprocess.CompletedProcess:
+        """
+        run on the current host: DeployHost
+        """
         print(f"[{self.command_prefix}] {cmd}")
         return self._run(cmd, shell=True, stdout=stdout, stderr=stderr)
 
     def run(
         self, cmd: str, stdout: FILE = None, stderr: FILE = None
     ) -> subprocess.CompletedProcess:
+        """
+        run on the remote host (self)
+        """
         print(f"[{self.command_prefix}] {cmd}")
         ssh_opts = ["-A"] if self.forward_agent else []
         cmd = (
