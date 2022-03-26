@@ -4,6 +4,7 @@ from invoke import task
 
 import subprocess
 import sys
+import os
 import json
 from typing import List, Any
 from deploy_nixos import DeployHost, DeployGroup
@@ -37,6 +38,28 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
         )
 
     g.run_function(deploy)
+
+
+def document_nixos(hosts: List[str]) -> None:
+    """
+    Generate documentation, expects "hostname.r"
+    """
+    tum = DeployGroup([DeployHost(h) for h in set(hosts).intersection(set(TUM))])
+    edi = DeployGroup([DeployHost(h) for h in set(hosts).intersection(set(EDINBURGH)) - set(["doctor.r"])])
+
+    def doc_tum(h: DeployHost) -> None:
+        h.run_local(f"../generate-host-info.sh {h.host}")
+
+    def doc_edi(h: DeployHost) -> None:
+        h.run_local(f"../generate-host-info.sh {h.host}")
+
+    pwd = os.getcwd()
+    os.chdir("docs/tum")
+    tum.run_function(doc_tum)
+    os.chdir(pwd)
+    os.chdir("docs/edinburgh")
+    edi.run_function(doc_edi)
+    os.chdir(pwd)
 
 
 TUM = [
@@ -84,6 +107,39 @@ def deploy_doctor(c):
     Deploy to rpi4, that is used to control power relay
     """
     deploy_nixos([DeployHost("doctor.r")])
+
+
+@task
+def deploy_edinburgh(c):
+    """
+    Deploy to edinburgh servers starting with rose
+    """
+    deploy_nixos([DeployHost("rose.r")])
+    deploy_nixos([DeployHost(h) for h in set(EDINBURGH) - set(["rose.r", "doctor.r"])])
+
+
+@task
+def document_tum(c):
+    """
+    Regenerate docs for TUM servers
+    """
+    document_nixos(TUM)
+
+
+@task
+def document_host(c, host):
+    """
+    Regenerate docs for a single host, i.e. inv deploy-host --host hostname.r
+    """
+    document_nixos([host])
+
+
+@task
+def document_edinburgh(c):
+    """
+    Regenerate docs for edinburgh servers
+    """
+    document_nixos(EDINBURGH)
 
 
 def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
@@ -167,15 +223,6 @@ def print_tinc_key(c, hosts):
 def print_age_key(c, hosts):
     for h in get_hosts(hosts):
         h.run("nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'")
-
-
-@task
-def deploy_edinburgh(c):
-    """
-    Deploy to edinburgh servers starting with rose
-    """
-    deploy_nixos([DeployHost("rose.r")])
-    deploy_nixos([DeployHost(h) for h in set(EDINBURGH) - set(["rose.r", "doctor.r"])])
 
 
 def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:

@@ -39,6 +39,7 @@
     } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
+      selfPkgs = self.packages.x86_64-linux;
     in {
       devShell = pkgs.mkShell {
         buildInputs = [
@@ -47,6 +48,19 @@
           pkgs.age
           pkgs.sops
         ];
+      };
+      packages = {
+        netboot = pkgs.callPackage ./modules/netboot/netboot.nix {
+          inherit pkgs;
+          inherit (nixpkgs.lib) nixosSystem;
+          extraModules = [
+            {_module.args.inputs = inputs;}
+          ];
+        };
+
+        netboot-pixie-core = pkgs.callPackage ./modules/netboot/netboot-pixie-core.nix {
+          inherit (selfPkgs) netboot;
+        };
       };
     }) //
     {

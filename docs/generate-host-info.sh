@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-hostname=$(basename "$1" .dse.in.tum.de)
+hostname=$(echo "$1" | cut -d"." -f"1")
 report="$hostname.md"
 echo -e "# ${hostname}\n" > "$report"
 echo "\`\`\`" >> "$report"
