@@ -6,8 +6,13 @@ import subprocess
 import sys
 import os
 import json
+from pathlib import Path
 from typing import List, Any
 from deploy_nixos import DeployHost, DeployGroup
+from typing import IO, Any, Callable, List, Dict, Optional, Text
+
+ROOT = Path(__file__).parent.parent.resolve()
+os.chdir(ROOT)
 
 
 def get_hosts(hosts: str) -> List[DeployHost]:
@@ -45,7 +50,12 @@ def document_nixos(hosts: List[str]) -> None:
     Generate documentation, expects "hostname.r"
     """
     tum = DeployGroup([DeployHost(h) for h in set(hosts).intersection(set(TUM))])
-    edi = DeployGroup([DeployHost(h) for h in set(hosts).intersection(set(EDINBURGH)) - set(["doctor.r"])])
+    edi = DeployGroup(
+        [
+            DeployHost(h)
+            for h in set(hosts).intersection(set(EDINBURGH)) - set(["doctor.r"])
+        ]
+    )
 
     def doc_tum(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
@@ -83,6 +93,22 @@ EDINBURGH = [
 ]
 
 ALL = TUM + EDINBURGH
+
+HAS_TTY = sys.stderr.isatty()
+
+
+def color_text(code: int, file: IO[Any] = sys.stdout) -> Callable[[str], None]:
+    def wrapper(text: str) -> None:
+        if HAS_TTY:
+            print(f"\x1b[{code}m{text}\x1b[0m", file=file)
+        else:
+            print(text, file=file)
+
+    return wrapper
+
+
+warn = color_text(31, file=sys.stderr)
+info = color_text(32)
 
 
 @task
@@ -198,8 +224,16 @@ def install_nixos(c, hosts, flakeattr):
         h.run("install -m400 --target /mnt/etc/ssh -D /etc/ssh/ssh_host_*")
         h.run("chmod 444 /mnt/etc/ssh/ssh_host_*.pub")
         h.run(
-            f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr} && sync && reboot"
+            f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr} && sync"
         )
+        info("Device information:")
+        info(
+            "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
+        )
+        h.run("nix-shell -p inxi --command 'inxi -F'")
+        h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
+        h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
+        h.run("reboot")
 
 
 @task
@@ -207,10 +241,13 @@ def print_tinc_key(c, hosts):
     for h in get_hosts(hosts):
         h.run("tinc.retiolum export")
 
+
 @task
 def print_age_key(c, hosts):
     for h in get_hosts(hosts):
-        h.run("nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'")
+        h.run(
+            "nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'"
+        )
 
 
 def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
@@ -247,7 +284,7 @@ def ipmi_serial(c, host=""):
     )
     c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol activate""",
-        pty=True
+        pty=True,
     )
 
 
