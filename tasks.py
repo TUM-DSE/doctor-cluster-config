@@ -119,27 +119,15 @@ def deploy_edinburgh(c):
 
 
 @task
-def document_tum(c):
+def update_docs(c, hosts=""):
     """
-    Regenerate docs for TUM servers
+    Regenerate docs for all servers
     """
-    document_nixos(TUM)
-
-
-@task
-def document_host(c, host):
-    """
-    Regenerate docs for a single host, i.e. inv deploy-host --host hostname.r
-    """
-    document_nixos([host])
-
-
-@task
-def document_edinburgh(c):
-    """
-    Regenerate docs for edinburgh servers
-    """
-    document_nixos(EDINBURGH)
+    if hosts != "":
+        host_list = hosts.split(",")
+    else:
+        host_list = ALL
+    document_nixos(host_list)
 
 
 def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
