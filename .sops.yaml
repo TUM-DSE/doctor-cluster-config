@@ -17,6 +17,7 @@ keys:
   - &astrid age1hen4wskutter8h4ypkhv7aqvh7mr9gl7pz7gd9mgln4jl2ckxq7qaks7h6
   - &mickey age120dyz5upjmv0z4e23vj2dhcm0c5cvm6tmwzl5sj5ye4jrjtwg4tsy3n7m3
   - &dan age1l86ru9amzp3g484wevpa64yjn8ppw0wn2qhud8xz05q84hvq0p0qatqpvq
+  - &christina age168tqvf7373e7wj0q8p0trzm5t0mvlp4t296uuswa98s2waerfsgqdvzmhe
 admins: &admins
   - *joerg
   - *peter
@@ -132,6 +133,13 @@ creation_rules:
       - *peter
       - *cmainas
       - *dan
+  - path_regex: hosts/christina.yml$
+    key_groups:
+    - age:
+      - *joerg
+      - *peter
+      - *cmainas
+      - *christina
   - path_regex: modules/nfs/secrets.yml$
     key_groups:
     - age:
