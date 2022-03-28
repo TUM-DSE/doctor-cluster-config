@@ -255,7 +255,8 @@ def ipmi_password(c) -> str:
 @task
 def ipmi_serial(c, host=""):
     c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol activate"""
+        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol activate""",
+        pty=True
     )
 
 
