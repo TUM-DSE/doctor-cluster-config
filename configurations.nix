@@ -39,7 +39,13 @@
         "nur=${nur}"
       ];
 
-      sops.defaultSopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
+      sops.defaultSopsFile = let
+        sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
+      in
+        if builtins.pathExists sopsFile then
+          sopsFile
+        else
+          null;
 
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json
