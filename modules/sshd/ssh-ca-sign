@@ -5,7 +5,7 @@ set -eu -o pipefail
 
 if [ $# -ne 2 ]; then
   echo "USAGE: $0 hosts host.pub|HOST"
-  echo "example: $0 host,host.i,host.r,bill.dse.in.tum.de HOSTNAME"
+  echo "example: $0 host,host.i,host.r,host.dse.in.tum.de HOSTNAME"
   exit 1
 fi
 
