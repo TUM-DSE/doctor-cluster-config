@@ -1,6 +1,7 @@
 keys:
   - &joerg age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
   - &peter age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+  - &cmainas age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
   - &amy age137rtvc63e3rg0qtlc8nwmajqljuckjdptncd4nmk8w8hvdlcr3tsj2f8d8
   - &clara age1hsvqmpun5c4ht8vk9pjhppav3zdxm37h820uws07xe88gpejfs6qyzhwav
   - &rose age18s9fs98d44dcgn2cn9a4p3zryc0z88u2wmrs62yvyr06gzxpzdnshp70vp
@@ -19,6 +20,7 @@ keys:
 admins: &admins
   - *joerg
   - *peter
+  - *cmainas
 # command to add a new age key for a new host
 # nix-shell -p ssh-to-age --run "ssh-keyscan $host | ssh-to-age"
 creation_rules:
@@ -30,95 +32,112 @@ creation_rules:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *amy
   - path_regex: hosts/clara.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *clara
   - path_regex: hosts/rose.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *rose
   - path_regex: hosts/donna.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *donna
   - path_regex: hosts/martha.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *martha
   - path_regex: hosts/doctor.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *doctor
   - path_regex: hosts/bill.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *bill
   - path_regex: hosts/nardole.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *nardole
   - path_regex: hosts/sauron.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *sauron
   - path_regex: hosts/yasmin.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *yasmin
   - path_regex: hosts/graham.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *graham
   - path_regex: hosts/ryan.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *ryan
   - path_regex: hosts/astrid.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *astrid
   - path_regex: hosts/mickey.yml$
     key_groups:
     - age:
       - *joerg
+      - *peter
+      - *cmainas
       - *mickey
   - path_regex: hosts/dan.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *dan
   - path_regex: modules/nfs/secrets.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *bill
       - *nardole
   - path_regex: modules/k3s/secrets.yml$
@@ -126,6 +145,7 @@ creation_rules:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *bill
       - *nardole
       - *astrid
@@ -136,12 +156,14 @@ creation_rules:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *ryan
   - path_regex: modules/secrets.yml$
     key_groups:
     - age:
       - *joerg
       - *peter
+      - *cmainas
       - *amy
       - *astrid
       - *clara
