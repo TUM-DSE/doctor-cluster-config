@@ -214,4 +214,13 @@ in {
         ./hosts/dan.nix
       ];
   };
+
+  christina = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/christina.nix
+      ];
+  };
 }
