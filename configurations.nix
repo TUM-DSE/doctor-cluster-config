@@ -229,4 +229,13 @@ in {
         ./hosts/christina.nix
       ];
   };
+
+  jackson = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/jackson.nix
+      ];
+  };
 }
