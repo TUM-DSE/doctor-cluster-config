@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix

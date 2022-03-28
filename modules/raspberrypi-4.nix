@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Assuming this is installed on top of the disk image.
   fileSystems = {
     "/boot" = {

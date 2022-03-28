@@ -7,5 +7,5 @@
     ];
     uid = 5003;
   };
-  nix.trustedUsers = [ "gitlab-builder" ];
+  nix.trustedUsers = ["gitlab-builder"];
 }

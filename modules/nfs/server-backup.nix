@@ -1,6 +1,10 @@
-{ config, lib, pkgs, ... }:
 {
-  imports = [ ./. ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [./.];
 
   systemd.services.znapzend-setup = {
     wantedBy = ["multi-user.target"];
@@ -21,7 +25,7 @@
     };
   };
 
-  boot.zfs.extraPools = [ "zpool1" "zpool2" ];
+  boot.zfs.extraPools = ["zpool1" "zpool2"];
 
   users.users.znapzend = {
     isSystemUser = true;

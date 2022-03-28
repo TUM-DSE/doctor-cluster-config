@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = [
     (pkgs.stdenv.mkDerivation {
       name = "reboot-servers";

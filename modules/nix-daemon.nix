@@ -1,5 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   nix = {
     gc.automatic = true;
     gc.dates = "03:15";
@@ -39,7 +44,7 @@
 
   systemd.services.update-prefetch = {
     startAt = "daily";
-    path = [ config.nix.package pkgs.nettools pkgs.git ];
+    path = [config.nix.package pkgs.nettools pkgs.git];
     script = ''
       nix build \
        --out-link /run/next-system \
@@ -64,12 +69,14 @@
       '';
     };
   };
-  services.telegraf.extraConfig.inputs.file = [{
-    data_format = "prometheus";
-    files = [ "/etc/flake-inputs.prom" ];
-  }];
+  services.telegraf.extraConfig.inputs.file = [
+    {
+      data_format = "prometheus";
+      files = ["/etc/flake-inputs.prom"];
+    }
+  ];
 
-  imports = [ ./builder.nix ];
+  imports = [./builder.nix];
 
   nixpkgs.config.allowUnfree = true;
 }

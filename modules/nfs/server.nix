@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 # NFS failover setup based on znapzend.
 #
 # This setup works as follow:
@@ -18,7 +23,7 @@
 #
 # Than swap the imports for `nfs/server.nix` and `nfs/server-backup.nix` in both nixos configurations.
 {
-  imports = [ ./. ];
+  imports = [./.];
 
   sops.secrets.znapzend.sopsFile = ./secrets.yml;
   programs.ssh.extraConfig = ''
@@ -35,25 +40,24 @@
     /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26)
   '';
 
-  systemd.tmpfiles.rules =
-    let
-      loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
-    in
-      (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
-      ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers);
+  systemd.tmpfiles.rules = let
+    loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
+  in
+    (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
+    ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers);
 
-  boot.zfs.extraPools = [ "zpool1" "zpool2" ];
+  boot.zfs.extraPools = ["zpool1" "zpool2"];
 
   fileSystems."/export/home" = {
     device = "zpool1/home";
     fsType = "zfs";
-    options = [ "nofail" ];
+    options = ["nofail"];
   };
 
   fileSystems."/export/share" = {
     device = "zpool2/share";
     fsType = "zfs";
-    options = [ "nofail" ];
+    options = ["nofail"];
   };
 
   systemd.services.znapzend-setup = {
@@ -72,11 +76,12 @@
 
   services.znapzend.enable = true;
   services.znapzend.zetup = let
-    postsend = task: toString (pkgs.writeScript "postsend" ''
-      cat > /var/log/telegraf/${task} <<EOF
-      task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
-      EOF
-    '');
+    postsend = task:
+      toString (pkgs.writeScript "postsend" ''
+        cat > /var/log/telegraf/${task} <<EOF
+        task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
+        EOF
+      '');
   in {
     "zpool1" = {
       plan = "1h=>10min";

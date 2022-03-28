@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # k3s api server
   # TODO: move this to k3s secret
   sops.secrets.telegraf-github-token.owner = "telegraf";
@@ -12,7 +16,7 @@
       tls_key = "/run/telegraf-kubernetes-key";
       url = "https://localhost:6443";
       insecure_skip_verify = true;
-      resource_include = [ "pods" ];
+      resource_include = ["pods"];
     };
     extraConfig.inputs.http = {
       urls = [
@@ -20,17 +24,17 @@
         "https://api.github.com/orgs/ls1-sys-prog-course-internal/actions/runners"
       ];
       bearer_token = config.sops.secrets.telegraf-github-token.path;
-      headers = { Accept = "application/vnd.github.v3+json"; };
+      headers = {Accept = "application/vnd.github.v3+json";};
       data_format = "json";
-      tag_keys = [ "os" "name" ];
+      tag_keys = ["os" "name"];
       json_query = "runners";
       fielddrop = ["labels_*" "id"];
-      json_string_fields = [ "status" "busy" ];
+      json_string_fields = ["status" "busy"];
     };
   };
 
   systemd.services.telegraf-kubernetes-setup = {
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     requires = ["k3s.service"];
     after = ["k3s.service"];
     serviceConfig = {
@@ -49,7 +53,7 @@
   };
 
   systemd.services.telegraf = {
-    wants = [ "telegraf-kubernetes-setup.service" ];
-    after = [ "telegraf-kubernetes-setup.service" ];
+    wants = ["telegraf-kubernetes-setup.service"];
+    after = ["telegraf-kubernetes-setup.service"];
   };
 }

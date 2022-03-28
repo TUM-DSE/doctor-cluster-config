@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # use networkd
   networking.dhcpcd.enable = false;
   systemd.network.enable = true;

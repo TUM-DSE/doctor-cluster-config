@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   users.users.fsgqa.shell = "/bin/sh";
   users.users.fsgqa.isNormalUser = true;
   users.users.fsgqa.group = "fsgqa";

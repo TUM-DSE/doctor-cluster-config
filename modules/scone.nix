@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{lib, ...}: {
   # Open ports for communicating with CAS
   networking.firewall.allowedTCPPorts = [
     8081

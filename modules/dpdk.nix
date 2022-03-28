@@ -1,9 +1,13 @@
-{ config, pkgs, lib, ... }:
-with lib;
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+with lib; {
   options = {
     boot.hugepages.size = mkOption {
-      type = types.enum [ "1GB" "2MB" ];
+      type = types.enum ["1GB" "2MB"];
       description = ''
         Size of one hugetable
       '';
@@ -27,7 +31,7 @@ with lib;
     boot.extraModulePackages = [
       config.boot.kernelPackages.dpdk-kmods
     ];
-    boot.kernelModules = [ "igb_uio" ];
+    boot.kernelModules = ["igb_uio"];
 
     # From the output of udevadm info -a -p /sys/bus/pci/devices/0000:03:00.0,
     # where 0000:03:00.0 is our NVME device

@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ../modules/edinburgh/nfs-home.nix
   ];

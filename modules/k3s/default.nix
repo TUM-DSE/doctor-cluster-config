@@ -1,7 +1,10 @@
-{ config, lib, pkgs, ... }:
-let
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+in {
   config = {
     services.k3s.enable = true;
     services.k3s.docker = lib.mkForce false;
@@ -23,8 +26,8 @@ in
     ];
 
     systemd.services.k3s = {
-      wants = [ "containerd.service" ];
-      after = [ "containerd.service" ];
+      wants = ["containerd.service"];
+      after = ["containerd.service"];
     };
 
     systemd.services.containerd.serviceConfig = {

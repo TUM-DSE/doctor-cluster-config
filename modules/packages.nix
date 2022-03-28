@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     socat
     whois
@@ -29,7 +28,7 @@
     dnsutils
     netcat
     mtr
-    (neovim.override { vimAlias = true; })
+    (neovim.override {vimAlias = true;})
     ripgrep
     pciutils
   ];

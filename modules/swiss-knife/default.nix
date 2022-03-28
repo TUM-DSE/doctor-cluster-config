@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./users.nix
     ./network.nix
@@ -20,9 +23,11 @@
 
   # Do not do collide with the TUM vpn
   environment.etc."docker/daemon.json".text = builtins.toJSON {
-    default-address-pools = [{
-      base = "192.168.0.0/16";
-      size = 24;
-    }];
+    default-address-pools = [
+      {
+        base = "192.168.0.0/16";
+        size = 24;
+      }
+    ];
   };
 }

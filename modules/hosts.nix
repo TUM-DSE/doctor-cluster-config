@@ -1,5 +1,8 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   hostOptions = with lib; {
     ipv4 = mkOption {
       type = types.str;
@@ -23,21 +26,21 @@ let
       '';
     };
   };
-in
-{
+in {
   options = with lib; {
     networking.doctorwho.hosts = mkOption {
-      type = with types; attrsOf (submodule [{ options = hostOptions; }]);
+      type = with types; attrsOf (submodule [{options = hostOptions;}]);
       description = "A host in our cluster";
     };
     networking.doctorwho.currentHost = mkOption {
-      type = with types; submodule [{ options = hostOptions; }];
+      type = with types; submodule [{options = hostOptions;}];
       default = config.networking.doctorwho.hosts.${config.networking.hostName};
       description = "The host that is described by this configuration";
     };
   };
   config = {
-    warnings = lib.optional (!(config.networking.doctorwho.hosts ? ${config.networking.hostName}))
+    warnings =
+      lib.optional (!(config.networking.doctorwho.hosts ? ${config.networking.hostName}))
       "no network configuration for ${config.networking.hostName} found in ${./hosts.nix}";
 
     networking.doctorwho.hosts = {

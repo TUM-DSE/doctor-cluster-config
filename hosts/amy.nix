@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   networking.hostName = "amy";
   networking.retiolum = {
     ipv4 = "10.243.29.181";
@@ -36,8 +41,8 @@
   sops.secrets.edinburgh-borgbackup-ssh = {};
   sops.secrets.edinburgh-borgbackup-password = {};
   services.borgbackup.jobs.all-homes = {
-    paths = [ "/home" ];
-    exclude = [ "/home/dimitra/workspace/rocksdb-5.6-native" ];
+    paths = ["/home"];
+    exclude = ["/home/dimitra/workspace/rocksdb-5.6-native"];
     doInit = true;
     repo = "/mnt/backup/borgbackup";
     preHook = ''
@@ -63,7 +68,7 @@
   };
   # hide sshfs from the system
   systemd.services.borgbackup-job-all-homes.serviceConfig.PrivateMounts = true;
-  systemd.services.borgbackup-job-all-homes.serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
+  systemd.services.borgbackup-job-all-homes.serviceConfig.ReadWritePaths = ["/var/log/telegraf"];
 
   fileSystems."/home" = {
     device = "zroot/root/home";

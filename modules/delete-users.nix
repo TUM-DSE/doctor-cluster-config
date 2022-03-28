@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     users.deletedUsers = lib.mkOption {
       type = with lib.types; listOf str;

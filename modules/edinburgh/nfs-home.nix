@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   # amy's address
   fileSystems."/home" = {
     device = "[fd9a:5371:cd3f::1]:/home";

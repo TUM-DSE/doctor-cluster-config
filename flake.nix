@@ -31,12 +31,12 @@
     nix-ld.inputs.utils.follows = "flake-utils";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    , ...
-    } @ inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
       selfPkgs = self.packages.x86_64-linux;
@@ -62,11 +62,12 @@
           inherit (selfPkgs) netboot;
         };
       };
-    }) //
-    {
-      nixosConfigurations = import ./configurations.nix (inputs // {
-        inherit inputs;
-      });
+    })
+    // {
+      nixosConfigurations = import ./configurations.nix (inputs
+        // {
+          inherit inputs;
+        });
 
       hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations;
     };

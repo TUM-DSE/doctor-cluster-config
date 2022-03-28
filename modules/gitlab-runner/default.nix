@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }: {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   sops.secrets.gitlab-runner-registration = {
     owner = "gitlab-runner";
     restartUnits = [
@@ -75,18 +80,20 @@
   users.groups.gitlab-runner = {};
 
   nix.distributedBuilds = true;
-  nix.buildMachines = [{
-    hostName = "yasmin.dse.in.tum.de";
-    maxJobs = 96;
-    sshKey = config.sops.secrets.gitlab-builder-ssh-key.path;
-    sshUser = "ssh-ng://gitlab-builder";
-    system = "aarch64-linux";
-    supportedFeatures = [
-      "big-parallel"
-      "kvm"
-      "nixos-test"
-    ];
-  }];
+  nix.buildMachines = [
+    {
+      hostName = "yasmin.dse.in.tum.de";
+      maxJobs = 96;
+      sshKey = config.sops.secrets.gitlab-builder-ssh-key.path;
+      sshUser = "ssh-ng://gitlab-builder";
+      system = "aarch64-linux";
+      supportedFeatures = [
+        "big-parallel"
+        "kvm"
+        "nixos-test"
+      ];
+    }
+  ];
 
   sops.secrets.gitlab-builder-ssh-key.sopsFile = ./secrets.yml;
 }

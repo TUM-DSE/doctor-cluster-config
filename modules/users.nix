@@ -1,7 +1,5 @@
-{ config, ... }: 
-
-let
-  joergsKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine" ];
+{config, ...}: let
+  joergsKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine"];
 
   redhaKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOb4/IcT/Ly2VjmhO8PhSlsBSziL3Yn7nTqoPrzRJ/FHHUfEZhUj0cx8h++wKas8Y6FELP0a121Hkki4L/QIhzd6zcTlqVQ19EX98KMmD9PsGlK5tdPV7+bjNLCtEXjqPIEYUi/cL/kvuKpMwLyzkVTyl5AFRvR9TQkITfHChWCV9KfKTFjM+h/FBQvH3zrjbpGbMiS7bclRL5Gvih3eOHSuQSrJurgkPr8cH1z47L8rqTlEwJ+9x54fQo2wbJm41BFcdY7qONSmtMI45EfFB3K7MdpH1ztg25l7K4ctgHayRASNI7IMIzijibd1acf08OutRec0XLLNGvCcKyW1EV redha@redha-Lenovo-U41-70"
@@ -63,7 +61,7 @@ let
   okelmannKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITBcN9iw5Fn7yyfgiWFet3QWDoMcUNtzLi+PNoYS7jksvcKZy5pLOjE6wCpkbYx+Tcb4MyvoWPXvwdo5FfL4XdhZRO+JlZ66p/rGssq/wEr2BBUwohP7o39JLtiyXGXSsK6MO2aceOFLQr4KAdaeD8ST0XumGcV6bGqIbjFsK5FCxFhO8NkCFtavBjDwKUm3uyOnVCWMp12abUphzxrVtWhcsnw5GapohATP03mCNxmrn/L7x393HutxgjyduScX7++MjwVE6J7wCnztPUtJbh9jYemr/K9fBMBbLhQagOjrlQYGU5frgmLrPCRZusyg5HjWx6gJIxs/DskfgmW+V"
   ];
-  
+
   ackxolotlKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIa2YRaVvN0qZ1OD1x1zHQMW7RZ5dBCCenHbb/AUV46H ackxolotl"
   ];
@@ -76,9 +74,8 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCapmHctgbYWL/cnXtk59vnUC8Bei+oA6xX66vFQRAxWX/b8nuHPx2HOHJFDRS9QfYpcOweZPgkCM+DzUOXF2VmYZrbtyaZTNsdrAn9Xl6wmNrqIqLl4G7/dB2CyGZs3+i7yXgXL73phOCpNGCnOSTnJjPm0EnjpIE0TtKKhf/17//lkRRYBc10iSjhl/79B27+1+N4aJV+gK+ObZRshoTjKqqPYe6o+qzyLSE2jOlf2PkK/QbPiGgHkpFbRPsvjfA9r5OZezSLDTyY5THksRFg/+3imRMAGvxIPmQkfDJr53UlgA8xKcTmI5r7c4S13MaQG4B+Qe/MjY7S0f9P2J+J micchie@epi.hq.netapp.com"
   ];
 
-  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
-in
-{
+  extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
+in {
   ## we put all bachelor/master students here
   imports = [
     ./students.nix
@@ -108,7 +105,7 @@ in
       openssh.authorizedKeys.keys = dimitraKeys;
     };
 
-    # Maurice Bailleu 
+    # Maurice Bailleu
     # edinburgh
     maurice = {
       isNormalUser = true;
@@ -217,7 +214,7 @@ in
       uid = 1008;
       openssh.authorizedKeys.keys = okelmannKeys;
     };
-    
+
     # Simon Ellmann
     # tum
     ackxolotl = {
@@ -270,7 +267,7 @@ in
 
   # needed so that we can set a root password
   users.mutableUsers = false;
-  nix.trustedUsers = [ "joerg" "harshanavkis" "sandro" "redha" ];
+  nix.trustedUsers = ["joerg" "harshanavkis" "sandro" "redha"];
 
   # we cannot use this since we no longer have the database
   programs.command-not-found.enable = false;
