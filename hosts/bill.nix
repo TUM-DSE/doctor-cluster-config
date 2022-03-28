@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../modules/ipmi.nix
+    ../modules/ipmi-supermicro.nix
     ../modules/bonding.nix
     ../modules/dpdk.nix
     ../modules/xfstest.nix

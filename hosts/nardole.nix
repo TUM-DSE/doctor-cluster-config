@@ -5,7 +5,7 @@
 }: {
   imports = [
     ../modules/bonding.nix
-    ../modules/ipmi.nix
+    ../modules/ipmi-supermicro.nix
     ../modules/dpdk.nix
     ../modules/sys-prog/users.nix
     ../modules/nfs/server.nix
