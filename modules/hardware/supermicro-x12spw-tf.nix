@@ -19,12 +19,6 @@
     fsType = "zfs";
   };
 
-  fileSystems."/home" = {
-    device = "zroot/root/home";
-    fsType = "zfs";
-    options = ["nofail"];
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/NIXOS_BOOT";
     fsType = "vfat";
