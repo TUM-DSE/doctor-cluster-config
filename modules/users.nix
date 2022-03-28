@@ -70,6 +70,10 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnFkSHWAPt8/MwZ/+IzBzTwBWLqYT9seZO9MI3JPfW3mMxz9BeuuTXVGDgHXePlNOiPV/bnjSnBHALzS1A6+z6qYBpVX1+pT2fPJRXGqDYqWL4aMjiQZvfJ9aUnKbTA4ivVsNpDbf2QlySZiZTYE4IFroo5xtMxvrYgbvfV1ZfywihJPnrX58ddB7begp+jCliqKtOoCNEclxsiRw0hsawhm9YSmn525u9bLwi2+mPAhi6nL1DtPTTZLGlkVPAg21El9PqiYWpjRXmAHrMMcZCQEaS3+TqJYXHoX1U8ShSZ0vtwgkpiIoFGyjqjPHWDcacVEYZxABTwTlBq74on3RB"
   ];
 
+  cmainasKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/UeXK/s6ZU9cp05safmSmiQ+kwLacZcDipO4/3aEiYjkq6Nf9/OLINLhg0QbPhvXLwJRh7CuEBkWOSNQx+u5rcemHA8GnhVIfWCoUSMEiZma4W3DvkzuLSxmaT9LZGZGOZkHJV6uNF1QnVeOyD0oafXiivVMow6Rr/HLIruvHfaM2xxj2EJsRdkXHHyBveXc44l/FAWfljU5DrpyLo03D4UI2Ko63MP02YLuNmZU2Rnb4LAPdFzJ6sGf1DX0UIabKvOBj/MJqzfZvRhmU3z2MuKDK97JbV2WiQhBm4NOd61Iid35nlODgRhL8CGArwrk86vufEtHndWy5DRwg0M7q/DvEYd7iNXDN8DKca+6UtQsNBTa8a5eOZuBvMAXsEWpBwKaIjpTVw9NeJd9Yt52Wj+LNRtChJJr5Z8UltC9TWFkyiJPNVfxuNhagW+OgmzK/LKXAGp2l+24U1ntBTdT9PONg2LWpxbfHGsYfhC4FWyE/HzJ5vSC6rGOdACjPYFFiAh5VsbLOTPrlF6Xu40Plm/BiFAE/Cr1n16LFu2sPe1PlKs+1pdhStTN0GzlV1y6VmFPmcYecpB/K7ZV0gJOe2ERqyb8yOqJp50evcwtzF3ZJKR9qRMjOXycOwdqigDU3+nCKHrWz6XwYkHUwLZ7ydJVDbzwT7rDlc871kRm7Nw=="
+  ];
+
   extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
 in {
   ## we put all bachelor/master students here
@@ -222,6 +226,7 @@ in {
       openssh.authorizedKeys.keys = ackxolotlKeys;
     };
 
+
     # Jiyang Chen
     # tum
     chenjiyang = {
@@ -231,6 +236,17 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 1019;
       openssh.authorizedKeys.keys = chenjiyangKeys;
+    };
+
+    # Charalampos Mainas
+    # tum
+    cmainas = {
+      isNormalUser = true;
+      home = "/home/cmainas";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1020;
+      openssh.authorizedKeys.keys = cmainasKeys;
     };
 
     root = {
