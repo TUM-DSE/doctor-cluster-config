@@ -11,7 +11,7 @@ from typing import List, Any
 from deploy_nixos import DeployHost, DeployGroup
 from typing import IO, Any, Callable, List, Dict, Optional, Text
 
-ROOT = Path(__file__).parent.parent.resolve()
+ROOT = Path(__file__).parent.resolve()
 os.chdir(ROOT)
 
 
