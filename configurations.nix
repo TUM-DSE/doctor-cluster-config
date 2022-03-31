@@ -17,7 +17,7 @@
     ./modules/nix-daemon.nix
     ./modules/telegraf.nix
     ./modules/tor-ssh.nix
-    ./modules/users.nix
+    (import ./modules/users.nix true)
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/mosh.nix
@@ -39,6 +39,7 @@
         "nur=${nur}"
       ];
 
+      sops.secrets.root-password.neededForUsers = true;
       sops.defaultSopsFile = let
         sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
       in
@@ -236,6 +237,15 @@ in {
       computeNodeModules
       ++ [
         ./hosts/jackson.nix
+      ];
+    };
+
+  adelaide = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/adelaide.nix
       ];
   };
 }
