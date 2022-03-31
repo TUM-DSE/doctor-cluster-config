@@ -1,4 +1,4 @@
-args@{
+{
   lib,
   pkgs,
   ...
@@ -48,7 +48,7 @@ args@{
     ../tor-ssh.nix
     ../nix-daemon.nix
     ../nur.nix
-    (import ../users.nix (args // { withSops = false; }))
+    (import ../users.nix false)
   ];
 
   documentation.enable = false;
