@@ -48,7 +48,7 @@
     ../tor-ssh.nix
     ../nix-daemon.nix
     ../nur.nix
-    ../users.nix
+    ../users.nix { withSops = false; }
   ];
 
   documentation.enable = false;
