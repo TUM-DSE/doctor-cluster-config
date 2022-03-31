@@ -1,4 +1,6 @@
-{config, ...}: let
+{config, lib, ...}: let
+  withSops = false;
+
   joergsKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine"];
 
   redhaKeys = [
@@ -250,12 +252,10 @@ in {
     };
 
     root = {
-      passwordFile = config.sops.secrets.root-password.path;
+      passwordFile = lib.optionalString withSops config.sops.secrets.root-password.path;
       openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmannKeys;
     };
   };
-
-  sops.secrets.root-password.neededForUsers = true;
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will

@@ -39,6 +39,7 @@
         "nur=${nur}"
       ];
 
+      sops.secrets.root-password.neededForUsers = true;
       sops.defaultSopsFile = let
         sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
       in
