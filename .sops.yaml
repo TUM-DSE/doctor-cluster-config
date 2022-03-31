@@ -19,6 +19,7 @@ keys:
   - &dan age1l86ru9amzp3g484wevpa64yjn8ppw0wn2qhud8xz05q84hvq0p0qatqpvq
   - &christina age168tqvf7373e7wj0q8p0trzm5t0mvlp4t296uuswa98s2waerfsgqdvzmhe
   - &jackson age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv
+  - &adelaide age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59
 admins: &admins
   - *joerg
   - *peter
@@ -148,6 +149,13 @@ creation_rules:
       - *peter
       - *cmainas
       - *jackson
+  - path_regex: hosts/adelaide.yml$
+    key_groups:
+    - age:
+      - *joerg
+      - *peter
+      - *cmainas
+      - *adelaide
   - path_regex: modules/nfs/secrets.yml$
     key_groups:
     - age:
@@ -181,20 +189,23 @@ creation_rules:
       - *peter
       - *cmainas
       - *amy
-      - *astrid
       - *clara
       - *rose
-      - *dan
       - *donna
       - *martha
-      - *mickey
       - *doctor
       - *bill
       - *nardole
       - *sauron
+      - *yasmin
       - *graham
       - *ryan
-      - *yasmin
+      - *astrid
+      - *mickey
+      - *dan
+      - *christina
+      - *jackson
+      - *adelaide
   - path_regex: secrets.yml$
     key_groups:
     - age: *admins

@@ -238,5 +238,14 @@ in {
       ++ [
         ./hosts/jackson.nix
       ];
+    };
+
+  adelaide = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/adelaide.nix
+      ];
   };
 }
