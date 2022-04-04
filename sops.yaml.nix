@@ -1,3 +1,5 @@
+# To update .sops.yaml:
+# nix2yaml sops.yaml.nix > .sops.yaml
 let 
   mapAttrsToList = f: attrs:
     map (name: f name attrs.${name}) (builtins.attrNames attrs);
