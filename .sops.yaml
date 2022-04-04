@@ -1,3 +1,5 @@
+# AUTOMATICALLY GENERATED WITH:
+# nix2yaml sops.yaml.nix
 creation_rules:
   - key_groups:
       - age:

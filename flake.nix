@@ -47,7 +47,11 @@
           pkgs.ipmitool
           pkgs.age
           pkgs.sops
-          (pkgs.writeScriptBin "nix2yaml" "nix eval --json -f \"$@\" | ${pkgs.yq-go}/bin/yq e -P -")
+          (pkgs.writeScriptBin "nix2yaml" ''
+            echo "# AUTOMATICALLY GENERATED WITH:"
+            echo "# nix2yaml $*"
+            nix eval --json -f "$@" | ${pkgs.yq-go}/bin/yq e -P -
+          '')
         ];
       };
       packages = {
