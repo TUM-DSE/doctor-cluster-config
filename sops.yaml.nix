@@ -25,9 +25,13 @@ let
   # command to add a new age key for a new host
   # nix-shell -p ssh-to-age --run "ssh-keyscan $host | ssh-to-age"
   keys = {
+    # users
     joerg     = "age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz";
     peter     = "age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd";
     cmainas   = "age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4";
+    simon     = "age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe";
+
+    # machines
     amy       = "age137rtvc63e3rg0qtlc8nwmajqljuckjdptncd4nmk8w8hvdlcr3tsj2f8d8";
     clara     = "age1hsvqmpun5c4ht8vk9pjhppav3zdxm37h820uws07xe88gpejfs6qyzhwav";
     rose      = "age18s9fs98d44dcgn2cn9a4p3zryc0z88u2wmrs62yvyr06gzxpzdnshp70vp";
@@ -52,6 +56,7 @@ let
     admin = [ # admins may access all secrets
       joerg
       peter
+      simon
       cmainas
     ]; 
     all = (mapAttrsToList (key: value: value) keys);
@@ -129,6 +134,7 @@ let
     ];
     "modules/secrets.yml$" = groups.all;
     "secrets.yml$" = [];
+    "modules/sshd/ca-keys.yml$" = [];
     "terraform/secrets.enc.json$" = [];
   };
 in {
