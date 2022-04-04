@@ -32,7 +32,7 @@ let
           "${modulesPath}/profiles/all-hardware.nix"
           "${modulesPath}/installer/netboot/netboot.nix"
           ../sshd
-          (import ../users.nix true)
+          (import ../users.nix { withSops = false; })
           ../irc-announce.nix
           ../tor-ssh.nix
           ../watchdog.nix

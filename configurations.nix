@@ -17,7 +17,7 @@
     ./modules/nix-daemon.nix
     ./modules/telegraf.nix
     ./modules/tor-ssh.nix
-    (import ./modules/users.nix true)
+    (import ./modules/users.nix { withSops = true; })
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/mosh.nix
