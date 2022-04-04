@@ -4,23 +4,12 @@ let
   mapAttrsToList = f: attrs:
     map (name: f name attrs.${name}) (builtins.attrNames attrs);
 
-  mapAttrs = builtins.mapAttrs or
-    (f: set:
-      builtins.listToAttrs (map (attr: { name = attr; value = f attr set.${attr}; }) (builtins.attrNames set)));
-    
-  age_keys = {path_regex, age_keys}:
-  {
-    path_regex = path_regex;
+  renderPermissions = (attrs: mapAttrsToList (path: keys: {
+    path_regex = path;
     key_groups = [{
-      age = age_keys ++ groups.admin;
+      age = keys ++ groups.admin;
     }];
-  };
-  
-  tolist = (list: mapAttrsToList (key: value: 
-  age_keys { 
-    path_regex = key; 
-    age_keys = value; 
-  }) list);
+  }) attrs);
 
   # command to add a new age key for a new host
   # nix-shell -p ssh-to-age --run "ssh-keyscan $host | ssh-to-age"
@@ -59,10 +48,10 @@ let
       simon
       cmainas
     ]; 
-    all = (mapAttrsToList (key: value: value) keys);
+    all = builtins.attrValues keys;
   };
 
-  sops_permissions = with keys; {
+  sopsPermissions = with keys; {
     "modules/sshd/[^/]+\\.yaml$" = [];
     "hosts/amy.yml$" = [
       amy
@@ -148,6 +137,5 @@ in {
     #    ];}
     #  ];
     #}
-    
-  ] ++ (tolist sops_permissions);
+  ] ++ (renderPermissions sopsPermissions);
 }
