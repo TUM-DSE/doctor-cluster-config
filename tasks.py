@@ -251,6 +251,26 @@ def print_age_key(c, hosts):
         )
 
 
+@task
+def update_sops_files(c):
+    """
+    Update all sops yaml and json files according to .sops.yaml rules
+    """
+
+    c.run(
+        """
+find . \
+        -not -path "./.github/*" \
+        -not -path "./.gitlab-ci.yml" \
+        -not -path "./.mergify.yml" \
+        -type f \
+        \( -iname '*.enc.json' -o -iname '*.yml' \) \
+        -print0 | \
+        xargs -0 -n1 sops updatekeys --yes
+"""
+    )
+
+
 def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
     import socket, time
 
