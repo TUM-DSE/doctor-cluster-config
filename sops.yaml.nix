@@ -12,7 +12,7 @@ let
   }) attrs);
 
   # command to add a new age key for a new host
-  # nix-shell -p ssh-to-age --run "ssh-keyscan $host | ssh-to-age"
+  # inv print-age-key --hosts "host1,host2"
   keys = {
     # users
     joerg     = "age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz";

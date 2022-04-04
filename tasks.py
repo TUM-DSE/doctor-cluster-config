@@ -245,6 +245,9 @@ def print_tinc_key(c, hosts):
 
 @task
 def print_age_key(c, hosts):
+    """
+    Print age key for sops, inv print-age-key --hosts "host1,host2"
+    """
     for h in get_hosts(hosts):
         h.run(
             "nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'"
