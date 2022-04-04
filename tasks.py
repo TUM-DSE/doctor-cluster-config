@@ -231,6 +231,7 @@ def install_nixos(c, hosts, flakeattr):
             "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
         )
         h.run("nix-shell -p inxi --command 'inxi -F'")
+        h.run("nix-shell -p inxi --command 'inxi -FZ'")
         h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
         h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
         h.run("reboot")

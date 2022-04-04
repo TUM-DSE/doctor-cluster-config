@@ -82,10 +82,23 @@ Generate a sops key for `$hostname` (from the ssh identity of the pxebooted OS)
 inv print-age-key $host
 ```
 
-in .sops.yaml, add the printed key in `keys:` and add a `creation-rule:` for `hosts/$hostname.yml`
+in `sops.yaml.nix`, add the printed key to `keys` and add `sops_permissions` for `hosts/$hostname.yml`:
+
+```nix
+keys = {
+  $hostname = "ageKEYGIBBERISH";
+  ...
+};
+sops_permissions = with keys; {
+  "hosts/$hostname.yml$" = [ $hostname ];
+  ...
+};
+```
+
+Changes in sops.yaml.nix have to be applied with
 
 ```
-vim .sops.yml
+nix2yaml sops.yaml.nix > .sops.yaml
 ```
 
 With that creation rule we can create and populate `hosts/$hostname.yml` secrets with a random `root-password:`
@@ -93,6 +106,8 @@ With that creation rule we can create and populate `hosts/$hostname.yml` secrets
 ```
 sops hosts/$hostname.yml
 ```
+
+Note that if a rule wasn't created but only changed, run `sops updatekeys path/to.yml` to re-encrypt it.
 
 Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`.
 
