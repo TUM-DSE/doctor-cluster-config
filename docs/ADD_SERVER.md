@@ -22,7 +22,7 @@ Offer an image via pixie network boot and boot the server from it:
 nix shell .#netboot-pixie-core --command "sudo nixboot-pixie-core"
 ```
 
-Given that your ssh key is in module/users.nix you may connect now via `ssh root@$host` to check out `lsblk` or fix internet connectivity. 
+Given that your ssh key is in `module/users.nix`, you may connect now via `ssh root@$host` to check out `lsblk` or fix internet connectivity. 
 Take care that your ssh-agent is working for later inv commands to work. 
 
 
@@ -59,13 +59,11 @@ ipmitool sol payload enable 1
 Also make sure IPMI over lan is enabled in the BMC website and Serial over lan
 redirection is enabled in the BIOS/firmware setup page (vendor-specific).
 
+## SSH CA
 
-## TODO SSH CA
-
-TODO, `ssh-ca-sign` is not yet part of doctor-cluster-config
-
-Ssh ca certificate, so that hosts automatically trust each other.
+Create ssh ca certificate, so that hosts automatically trust each other.
 ``` console
+$ cd modules/sshd
 $ HOST=astrid
 $ IP=IP_OR_HOSTNAME_FOR_SCANNING
 $ ./ssh-ca-sign $HOST,$HOST.r,$HOST.dse.in.tum.de,$HOST.thalheim.io $IP
@@ -150,5 +148,4 @@ Install nixOS
 inv install-nixos --hosts $host  --flakeattr $hostname
 ```
 
-Finally, note down the MAC addresses of the relevant NICs (and the IPMI) which are printed by install-nixos to give them to the admins. 
-
+Finally, note down the MAC addresses of the relevant NICs (and the IPMI) which are printed by install-nixos to give them to the chair admins. 
