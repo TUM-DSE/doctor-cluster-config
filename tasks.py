@@ -6,6 +6,8 @@ import subprocess
 import sys
 import os
 import json
+import random
+import string
 from pathlib import Path
 from typing import List, Any
 from deploy_nixos import DeployHost, DeployGroup
@@ -299,6 +301,20 @@ def ipmi_password(c) -> str:
     return c.run(
         """sops -d --extract '["ipmi-passwords"]' secrets.yml""", hide=True
     ).stdout
+
+
+@task
+def generate_root_password(c):
+    """
+    Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
+    """
+    size = 12
+    chars = string.ascii_letters + string.digits
+    passw = ''.join(random.choice(chars) for x in range(size))
+    out = c.run(f"echo '{passw}' | mkpasswd -m sha-512 -s", echo=True)
+    print("# Add the following secrets")
+    print(f"root-password: {passw}")
+    print(f"root-password-hash: {out.stdout}")
 
 
 @task

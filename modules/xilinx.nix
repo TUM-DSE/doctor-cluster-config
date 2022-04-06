@@ -16,11 +16,11 @@ in {
     })
   ];
 
-  sops.secrets.xilinx-password.neededForUsers = true;
+  sops.secrets.xilinx-password-hash.neededForUsers = true;
 
   users.extraUsers.xilinx = {
     isNormalUser = true;
-    passwordFile = config.sops.secrets.xilinx-password.path;
+    passwordFile = config.sops.secrets.xilinx-password-hash.path;
     extraGroups = ["wheel" "docker" "plugdev" "input"];
     uid = 5002;
   };

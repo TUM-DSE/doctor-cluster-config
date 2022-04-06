@@ -1,4 +1,5 @@
-root-password: ENC[AES256_GCM,data:gnDNNa5LlBgyQQmkka3D,iv:Q3a8Xq8ncgq/ZIfUOppxWY0dM4dMxA+vS0sJykQBQxw=,tag:BvQGuqoZP4W21qf67Po8oA==,type:str]
+root-password: ENC[AES256_GCM,data:XABn2bx/pSTN0mNc,iv:oYACR4OGthP5f2Kex+UkDiJKX+9yNMrUCSjT5An9/Yc=,tag:Iws8wnz8RBqjExjTtLT4Ng==,type:str]
+root-password-hash: ENC[AES256_GCM,data:n+w6ZE/QfJGh6rXX6/urhhuKYp23z5QPRzkiJuXZII9eJEnr9xpVdTNwQXlmkU8PKfSMxbQQOR+8Gds30nvkvITPNh3QzbXTjvUFjD6sfdlmYZBOCN4zVUVuc5udQWhMqfg2hKuOfWPTeQ==,iv:HfqfYH4ZTCciTTAqAB2gYtdBGB+LmXuc7E87JNjlPLk=,tag:6L7KekuxXaQvLQOgGdjd+g==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -50,8 +51,8 @@ sops:
             b1NoZUdWVm5VOGZFMlcveDV3d20ydjAKltrjBm2vY53pDh/VJfj5QxEpOd3LGoC+
             KQIZVij6SX+9KPjK2+b+g3bKdZtUb2QloEhBTfDmZNdm2vcGnT+Mng==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-02-05T04:50:11Z"
-    mac: ENC[AES256_GCM,data:yy7UyOABgVy9yFgUHd9q+WngrvkVHZW5v0eclWHyfqjuFlMGeQPnDtZKsoYcB0eZgE5opfuUxFxebiJ1wWLIBR/+AzKgSgmStACKuSiatmCqSndKyVb1yM9p2x9Afuhy6HR9GX3R5uWkmB39tW718/Rw/KsKy5LokFDHfVuCuwo=,iv:Q6oBddQWbdwWBxM1acWQzQaPSD4bSqbHMSnHuq3iwRg=,tag:qda+vamFOJjTwS8DIJeRlQ==,type:str]
+    lastmodified: "2022-04-06T07:22:32Z"
+    mac: ENC[AES256_GCM,data:MwN/FN1SpBat8uqspPbfTguJy1o0/YaGeLnMjTky6vQS0eCgapX9IOibKKNOXxUVDFXiXOh2DTjEqig6THwRs8hSIZr7z0qMPSXbvIMiVIZ9UvhJTE773ybIxzuNMsIzwe0/kmWX0OhpEQyT4qav2EbaygI0FBFWiE72qaI9oe0=,iv:7JeruKr5JayoDWASvOaCybW/+x3T5JjyVd9CdIY1W0E=,tag:xALNCFTvcckOEtooFj26Hg==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
-    version: 3.7.1
+    version: 3.7.2

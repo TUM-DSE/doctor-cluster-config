@@ -47,6 +47,7 @@
           pkgs.ipmitool
           pkgs.age
           pkgs.sops
+          pkgs.mkpasswd
           (pkgs.writeScriptBin "nix2yaml" ''
             echo "# AUTOMATICALLY GENERATED WITH:"
             echo "# nix2yaml $*"
