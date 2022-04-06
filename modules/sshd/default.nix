@@ -16,6 +16,7 @@ in {
       ''}
       StreamLocalBindUnlink yes
     '';
+    forwardX11 = true;
   };
 
   warnings =
