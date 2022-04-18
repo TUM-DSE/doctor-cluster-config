@@ -5,3 +5,9 @@ resource "github_actions_secret" "github-token" {
   secret_name      = "ACCESS_TOKEN"
   plaintext_value  = data.sops_file.secrets.data["GITHUB_TOKEN"]
 }
+
+resource "github_actions_secret" "github-token2" {
+  repository       = "doctor-cluster-config"
+  secret_name      = "ACCESS_TOKEN"
+  plaintext_value  = data.sops_file.secrets.data["GITHUB_TOKEN"]
+}
