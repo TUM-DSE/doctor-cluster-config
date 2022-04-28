@@ -52,9 +52,7 @@
             echo "# nix2yaml $*"
             nix eval --json -f "$@" | ${pkgs.yq-go}/bin/yq e -P -
           '')
-        ] ++ pkgs.lib.optional (pkgs.stdenv.isLinux) [
-          pkgs.mkpasswd
-        ];
+        ] ++ pkgs.lib.optional (pkgs.stdenv.isLinux) pkgs.mkpasswd;
       };
       packages = {
         netboot = pkgs.callPackage ./modules/netboot/netboot.nix {
