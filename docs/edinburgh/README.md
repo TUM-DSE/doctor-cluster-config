@@ -44,7 +44,7 @@ drwxr-xr-x  1 root root  0 Jul  7 16:49 rose-all-homes-2020-07-07T16:49:13
 
 # Networking
 
-A graph of how the servers are connected right now can be found [here](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/edinburgh/graph.md).
+A graph of how the servers are connected right now can be found [here](graph.md).
 
 ## Sizes for transport to Munich
 - Clara, Amy:          52x20x48
