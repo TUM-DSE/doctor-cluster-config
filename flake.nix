@@ -47,12 +47,13 @@
           pkgs.ipmitool
           pkgs.age
           pkgs.sops
-          pkgs.mkpasswd
           (pkgs.writeScriptBin "nix2yaml" ''
             echo "# AUTOMATICALLY GENERATED WITH:"
             echo "# nix2yaml $*"
             nix eval --json -f "$@" | ${pkgs.yq-go}/bin/yq e -P -
           '')
+        ] ++ pkgs.lib.optional (pkgs.stdenv.isLinux) [
+          pkgs.mkpasswd
         ];
       };
       packages = {
