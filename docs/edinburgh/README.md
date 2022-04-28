@@ -42,6 +42,10 @@ drwxr-xr-x  1 root root  0 Jul  7 15:23 rose-all-homes-2020-07-07T15:23:39.faile
 drwxr-xr-x  1 root root  0 Jul  7 16:49 rose-all-homes-2020-07-07T16:49:13
 ```
 
+# Networking
+
+A graph of how the servers are connected right now can be found [here](graph.md).
+
 ## Sizes for transport to Munich
 - Clara, Amy:          52x20x48
 - Rose, Martha, Donna: 50x23x48 (15-20Kg)
