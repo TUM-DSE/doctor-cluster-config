@@ -74,6 +74,10 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/UeXK/s6ZU9cp05safmSmiQ+kwLacZcDipO4/3aEiYjkq6Nf9/OLINLhg0QbPhvXLwJRh7CuEBkWOSNQx+u5rcemHA8GnhVIfWCoUSMEiZma4W3DvkzuLSxmaT9LZGZGOZkHJV6uNF1QnVeOyD0oafXiivVMow6Rr/HLIruvHfaM2xxj2EJsRdkXHHyBveXc44l/FAWfljU5DrpyLo03D4UI2Ko63MP02YLuNmZU2Rnb4LAPdFzJ6sGf1DX0UIabKvOBj/MJqzfZvRhmU3z2MuKDK97JbV2WiQhBm4NOd61Iid35nlODgRhL8CGArwrk86vufEtHndWy5DRwg0M7q/DvEYd7iNXDN8DKca+6UtQsNBTa8a5eOZuBvMAXsEWpBwKaIjpTVw9NeJd9Yt52Wj+LNRtChJJr5Z8UltC9TWFkyiJPNVfxuNhagW+OgmzK/LKXAGp2l+24U1ntBTdT9PONg2LWpxbfHGsYfhC4FWyE/HzJ5vSC6rGOdACjPYFFiAh5VsbLOTPrlF6Xu40Plm/BiFAE/Cr1n16LFu2sPe1PlKs+1pdhStTN0GzlV1y6VmFPmcYecpB/K7ZV0gJOe2ERqyb8yOqJp50evcwtzF3ZJKR9qRMjOXycOwdqigDU3+nCKHrWz6XwYkHUwLZ7ydJVDbzwT7rDlc871kRm7Nw=="
   ];
 
+  masaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIODydnvMp1+Ppx4J4IwXtnxwJhAVrFc4oRj5GEmimX8 masanori.misono@in.tum.de"
+  ];
+
   extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
 in {
   ## we put all bachelor/master students here
@@ -247,6 +251,17 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 1020;
       openssh.authorizedKeys.keys = cmainasKeys;
+    };
+
+    # Masanouri Misono
+    # tum
+    masa = {
+      isNormalUser = true;
+      home = "/home/masa";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1021;
+      openssh.authorizedKeys.keys = masaKeys;
     };
 
     root = {
