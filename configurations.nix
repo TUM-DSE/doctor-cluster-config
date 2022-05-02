@@ -192,7 +192,6 @@ in {
       computeNodeModules
       ++ [
         ./hosts/ryan.nix
-        ./modules/dpdk.nix
       ];
   };
 

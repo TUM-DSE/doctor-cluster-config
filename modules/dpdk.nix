@@ -11,14 +11,14 @@ with lib; {
       description = ''
         Size of one hugetable
       '';
-      default = "1GB";
+      default = "2MB";
     };
     boot.hugepages.number = mkOption {
       type = types.int;
       description = ''
-        own ipv6 address
+        Nr of hugepages
       '';
-      default = 8;
+      default = 1000;
     };
   };
   config = {

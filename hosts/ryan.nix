@@ -8,7 +8,11 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/gitlab-runner
+    ../modules/dpdk.nix
   ];
+
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 8;
 
   networking.hostName = "ryan";
 
