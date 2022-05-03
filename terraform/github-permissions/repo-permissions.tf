@@ -6,7 +6,7 @@ locals {
     "Mic92"
   ])
 
-  perms-TUM-DSE = {
+  sys-prog-TUM-DSE = {
     "doctor-cluster-config" = setunion(
       local.sys-prog-tutors, 
       local.sys-prog-students
@@ -14,9 +14,26 @@ locals {
     "foo" = toset(["bar"])
   }
 
-  # Nested loop over both lists, and flatten the result.
-  perms1 = distinct(flatten([
-    for repo, users in local.perms-TUM-DSE : [
+  sys-prog-ls1-courses = {
+    "anti-cheat" = setunion(
+      local.sys-prog-tutors
+    )
+    "foo" = toset(["bar"])
+  }
+
+  # Nested loop over both the object and the sets, and flatten the result.
+  sys-prog-TUM-DSE-flat = distinct(flatten([
+    for repo, users in local.sys-prog-TUM-DSE : [
+      for user in users : {
+        repo = repo
+        user = user
+      }
+    ]
+  ]))
+
+  # Nested loop over both the object and the sets, and flatten the result.
+  sys-prog-ls1-courses-flat = distinct(flatten([
+    for repo, users in local.sys-prog-ls1-courses: [
       for user in users : {
         repo = repo
         user = user
@@ -25,26 +42,19 @@ locals {
   ]))
 }
 
-resource "github_repository_collaborator" "doctor-cluster-students" {
-  for_each   = { for repo in local.perms1 : "${repo.repo}.${repo.user}" => repo }
+resource "github_repository_collaborator" "sys_prog_TUM_DSE" {
+  for_each   = { for repo in local.sys-prog-TUM-DSE-flat : "${repo.repo}.${repo.user}" => repo }
+  # the provider cannot be variable within one module, so this stays fixed
   provider   = github.TUM-DSE
   repository = each.value.repo
   username   = each.value.user
   permission = "pull"
 }
 
-#resource "github_repository_collaborator" "doctor-cluster-tutors" {
-#  for_each   = local.sys-prog-students
-#  provider   = github.TUM-DSE
-#  repository = "doctor-cluster-config"
-#  username   = each.value
-#  permission = "pull"
-#}
-#
-#resource "github_repository_collaborator" "add_users2" {
-#  for_each   = local.sys-prog-tutors
-#  provider   = github.ls1-courses
-#  repository = "anti-cheat"
-#  username   = each.value
-#  permission = "pull"
-#}
+resource "github_repository_collaborator" "sys_prog_ls1_courses" {
+  for_each   = { for repo in local.sys-prog-ls1-courses-flat : "${repo.repo}.${repo.user}" => repo }
+  provider   = github.ls1-courses
+  repository = each.value.repo
+  username   = each.value.user
+  permission = "pull"
+}
