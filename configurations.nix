@@ -248,4 +248,13 @@ in {
         ./hosts/adelaide.nix
       ];
   };
+  jack = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/jack.nix
+      ];
+  };
+
 }

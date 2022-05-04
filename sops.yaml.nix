@@ -15,10 +15,11 @@ let
   # inv print-age-key --hosts "host1,host2"
   keys = {
     # users
-    joerg     = "age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz";
-    peter     = "age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd";
-    cmainas   = "age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4";
-    simon     = "age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe";
+    joerg      = "age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz";
+    peter      = "age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd";
+    cmainas    = "age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4";
+    simon      = "age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe";
+    dimitrios  = "age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8";
 
     # machines
     amy       = "age137rtvc63e3rg0qtlc8nwmajqljuckjdptncd4nmk8w8hvdlcr3tsj2f8d8";
@@ -39,6 +40,7 @@ let
     christina = "age168tqvf7373e7wj0q8p0trzm5t0mvlp4t296uuswa98s2waerfsgqdvzmhe";
     jackson   = "age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv";
     adelaide  = "age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59";
+    jack      = "age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y";
   };
 
   groups = with keys; {
@@ -47,6 +49,7 @@ let
       peter
       simon
       cmainas
+      dimitrios
     ]; 
     all = builtins.attrValues keys;
   };
@@ -106,6 +109,9 @@ let
     ];
     "hosts/adelaide.yml$" = [
       adelaide
+    ];
+    "hosts/jack.yml$" = [
+      jack
     ];
     "modules/nfs/secrets.yml$" = [
       bill

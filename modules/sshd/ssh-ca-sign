@@ -18,7 +18,7 @@ trap "{ rm -rf "$workdir"; }" EXIT
 
 (
   umask 077
-  sops --extract '["ssh-ca"]' -d "$dir/ca-keys.yaml" > "$workdir/ssh-ca"
+  sops --extract '["ssh-ca"]' -d "$dir/ca-keys.yml" > "$workdir/ssh-ca"
 )
 
 cd $workdir
