@@ -64,6 +64,7 @@
 
   ackxolotlKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIa2YRaVvN0qZ1OD1x1zHQMW7RZ5dBCCenHbb/AUV46H ackxolotl"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAoK64f9T/jZhetTKuUnfcTZRB0pY1qXr0fvxVG6hm61 macbook"
   ];
 
   chenjiyangKeys = [
