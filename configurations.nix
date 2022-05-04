@@ -238,7 +238,7 @@ in {
       ++ [
         ./hosts/jackson.nix
       ];
-    };
+  };
 
   adelaide = nixosSystem {
     system = "x86_64-linux";
@@ -247,7 +247,26 @@ in {
       ++ [
         ./hosts/adelaide.nix
       ];
+    };
+
+  wilfred = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/wilfred.nix
+      ];
+    };
+
+  river = nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      computeNodeModules
+      ++ [
+        ./hosts/river.nix
+      ];
   };
+
   jack = nixosSystem {
     system = "x86_64-linux";
     modules =

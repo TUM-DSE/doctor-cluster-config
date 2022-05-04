@@ -40,6 +40,8 @@ let
     christina = "age168tqvf7373e7wj0q8p0trzm5t0mvlp4t296uuswa98s2waerfsgqdvzmhe";
     jackson   = "age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv";
     adelaide  = "age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59";
+    wilfred   = "age14esukks86hdswm9tjpjpjwxquset7407ffahxk6tc3t2ayanta4swyvw5f";
+    river     = "age1kkace98a960arj2qlzuuzpxxgm5r6ktw902ak6qydejdx6kxrs9q79vl4a";
     jack      = "age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y";
   };
 
@@ -109,6 +111,12 @@ let
     ];
     "hosts/adelaide.yml$" = [
       adelaide
+    ];
+    "hosts/wilfred.yml$" = [
+      wilfred
+    ];
+    "hosts/river.yml$" = [
+      river
     ];
     "hosts/jack.yml$" = [
       jack

@@ -1,3 +1,5 @@
+# AUTOMATICALLY GENERATED WITH:
+# nix2yaml sops.yaml.nix
 creation_rules:
   - key_groups:
       - age:
@@ -136,6 +138,15 @@ creation_rules:
     path_regex: hosts/nardole.yml$
   - key_groups:
       - age:
+          - age1kkace98a960arj2qlzuuzpxxgm5r6ktw902ak6qydejdx6kxrs9q79vl4a
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+    path_regex: hosts/river.yml$
+  - key_groups:
+      - age:
           - age18s9fs98d44dcgn2cn9a4p3zryc0z88u2wmrs62yvyr06gzxpzdnshp70vp
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
@@ -161,6 +172,15 @@ creation_rules:
           - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
           - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
     path_regex: hosts/sauron.yml$
+  - key_groups:
+      - age:
+          - age14esukks86hdswm9tjpjpjwxquset7407ffahxk6tc3t2ayanta4swyvw5f
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+    path_regex: hosts/wilfred.yml$
   - key_groups:
       - age:
           - age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6
@@ -223,10 +243,12 @@ creation_rules:
           - age120dyz5upjmv0z4e23vj2dhcm0c5cvm6tmwzl5sj5ye4jrjtwg4tsy3n7m3
           - age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1kkace98a960arj2qlzuuzpxxgm5r6ktw902ak6qydejdx6kxrs9q79vl4a
           - age18s9fs98d44dcgn2cn9a4p3zryc0z88u2wmrs62yvyr06gzxpzdnshp70vp
           - age1cxtzg79g4ueqawa2hwstkkyeyq6e53q6r4te527lnjvzhujjc5ns96qehp
           - age1t447x7xtqqhmfr026uhfn6ys62hlhseakw9qlrveadqxk7sehyysx62rq9
           - age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe
+          - age14esukks86hdswm9tjpjpjwxquset7407ffahxk6tc3t2ayanta4swyvw5f
           - age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
