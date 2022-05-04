@@ -1,5 +1,3 @@
-# AUTOMATICALLY GENERATED WITH:
-# nix2yaml sops.yaml.nix
 creation_rules:
   - key_groups:
       - age:
@@ -91,6 +89,15 @@ creation_rules:
           - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
           - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
     path_regex: hosts/graham.yml$
+  - key_groups:
+      - age:
+          - age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+    path_regex: hosts/jack.yml$
   - key_groups:
       - age:
           - age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv
@@ -209,6 +216,7 @@ creation_rules:
           - age1t7mujjjvczz9gsrsalegr79yp424scpx0mcxl6c3j7stmea8falqqnu9p7
           - age1tmauqc99j526s4gpjxz335jag423utcjpldak6ealu6c796n59xqq62wja
           - age1qnz850jesp6l4968vqdp40mqenmtx3czhy5l8hsz4kym3aj8c56srs5dkk
+          - age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y
           - age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age12fzpr4rm4xwm9t8jwyeu449lsetxruv9mf9m28jqwkvs86yrlqnqn8kfcd

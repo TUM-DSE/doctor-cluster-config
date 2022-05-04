@@ -40,6 +40,7 @@ let
     christina = "age168tqvf7373e7wj0q8p0trzm5t0mvlp4t296uuswa98s2waerfsgqdvzmhe";
     jackson   = "age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv";
     adelaide  = "age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59";
+    jack      = "age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y";
   };
 
   groups = with keys; {
@@ -108,6 +109,9 @@ let
     ];
     "hosts/adelaide.yml$" = [
       adelaide
+    ];
+    "hosts/jack.yml$" = [
+      jack
     ];
     "modules/nfs/secrets.yml$" = [
       bill
