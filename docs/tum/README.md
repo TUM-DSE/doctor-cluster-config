@@ -22,6 +22,19 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 - [graham](graham.md)
 - [ryan](ryan.md)
 
+## Intel Xeon servers
+
+Coming soon:
+
+- single socket Xeon Gold 5317
+  - jackson
+  - christina
+  - adelaide
+  - wilfred
+  - river 
+- dual socket Xeon Gold 6326, GPU
+  - jack
+
 ## Servers used for NFS/Services
 
 - [bill](bill.md)
@@ -35,10 +48,11 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
 - [dan](dan.md)
 - [mickey](mickey.md)
 
+
 ## ARM64
 
 - [yasmin](yasmin.md)
-- [ethstick11](ethstick11.md): m1 mac mini, no ipmi, in Redhas office, accounts are created manually
+- [sarah/ethstick11](ethstick11.md): m1 mac mini, no ipmi, in Redhas office, accounts are created manually
 
 ## FPGA-servers
 
@@ -74,7 +88,7 @@ Furthermore `/share` and `/home` are backed up daily to get RBG storage using
 
 # Networking
 
-Our chair currently has two networks:
+Our chair currently has three networks:
 
 - `il01_16` for the machines:
   - order 10Gbit/s SFP+ connectors for fiber!
@@ -83,6 +97,10 @@ Our chair currently has two networks:
 - `il01_15` for management
   - usually 1Gbit/s RJ-45
   - ipv4: 172.24.90.0/24
+- L3 Switch "Craig" `craig-mgmt.dse.in.tum.de`
+  - 6x 100Gbit/s QSFP
+  - many 10Gbit/s SFP+
+  - ip: to be configured
 
 To add a new machine send the MAC address of your host interface and your IPMI/management interface to `ls1.admin@in.tum.de`.
 If the RGB group asks which networks to connect your machine to, tell them `il01_16` for the machine and `il01_15` for IPMI/BMC.
@@ -91,11 +109,4 @@ A graph of how the servers are connected right now can be found [here](graph.md)
 
 ## Names left to pick
 
-- sarah
-- jackson
-- christina
-- adelaide
-- wilfred
-- river
-- craig
-- jack
+none
