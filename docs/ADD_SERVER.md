@@ -19,7 +19,7 @@ Set the IPMI login to the credentials defined in `sops secrets.yml`.
 Offer an image via pixie network boot and boot the server from it:
 
 ```
-nix shell .#netboot-pixie-core --command "sudo nixboot-pixie-core"
+nix shell .#netboot-pixie-core --command "sudo netboot-pixie-core"
 ```
 
 Given that your ssh key is in `module/users.nix`, you may connect now via `ssh root@$host` to check out `lsblk` or fix internet connectivity. 
