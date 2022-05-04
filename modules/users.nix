@@ -267,7 +267,7 @@ in {
 
     root = {
       passwordFile = lib.optionalString withSops config.sops.secrets.root-password-hash.path;
-      openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmannKeys;
+      openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmannKeys ++ ackxolotlKeys;
     };
   };
 
