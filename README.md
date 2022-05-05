@@ -3,8 +3,9 @@ All hostnames can be looked up in [./hosts](./hosts). Most of the servers are in
 
 # Update all servers
 
-1. Install [pyinvoke](https://github.com/pyinvoke/invoke) and rsync via pip or load via `nix develop`
-2. Choose a deployment target:
+1. Install [nix](https://nixos.org/download.html#download-nix)
+2. [Enable flake support in nix](https://nixos.wiki/wiki/Flakes#Non-NixOS)
+3. Choose a deployment target:
 
 
 ``` console
