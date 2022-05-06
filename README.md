@@ -1,11 +1,22 @@
 All hostnames can be looked up in [./hosts](./hosts). Most of the servers are in
 [TU Munich](docs/tum). Some machines are in [Edinburgh](docs/edinburgh).
 
-# Update all servers
+# New admins: getting started
 
-1. Install [nix](https://nixos.org/download.html#download-nix)
-2. [Enable flake support in nix](https://nixos.wiki/wiki/Flakes#Non-NixOS)
-3. Choose a deployment target:
+1. Install [nix](https://nixos.org/download.html#download-nix) (the recommended Multi-user installation is not NixOS, but only a package manager)
+2. [Enable flake support in nix](https://nixos.wiki/wiki/Flakes#Non-NixOS). This effectively adds the following flags to all your `nix <flags> develop`-like commands: `--extra-experimental-features nix-command --extra-experimental-features flakes`
+3. Clone the `doctor-cluster-config` repo, `cd` into it and run: `nix flakes develop`. This opens a shell with additional packages available such as `inv --list`, `sops` and `age`.
+4. To generate new admin key, run (requires [age](https://github.com/FiloSottile/age)):
+```
+mkdir -p ~/.config/sops/age/
+age-keygen -o ~/.config/sops/age/keys.txt
+```
+Provide the generated key to a pre-existing admin and wait for him to re-encrypt all secrets in this repo with it. After pulling the re-encrypted secrets you can read them with `sops secrets.yml`.
+
+
+# Apply config to all servers
+
+Choose a deployment target:
 
 
 ``` console
@@ -19,7 +30,7 @@ Available tasks:
   reboot             Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
 ```
 
-3. Run!
+Run!
 
 ``` console
 $ inv deploy-tum
@@ -101,18 +112,6 @@ the existing users must re-encrypt `secrets.yml` with your key.
 
 Then press enter to get a login prompt. The root password for all machines is
 also stored in [secrets.yaml]().
-
-# Info for new admin users
-
-Clone the `doctor-cluster-config` repo and run:
-`nix --extra-experimental-features nix-command --extra-experimental-features flakes develop`
-
-To generate new admin key, run (requires [age](https://github.com/FiloSottile/age)):
-```
-mkdir -p ~/.config/sops/age/
-age-keygen -o ~/.config/sops/age/keys.txt
-```
-Provide the generated key to a pre-existing admin and wait for it to be deployed.
 
 # Monitoring
 
