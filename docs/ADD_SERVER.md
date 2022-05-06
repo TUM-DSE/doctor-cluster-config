@@ -10,55 +10,9 @@ To open a shell with required tools installed (such as sops) you can use the nix
 First, establish a direct connection (1 to 1, ideally no switch) with the server and set up your machine as a gateway. 
 On NixOS you can use the module described here [dnsmasq.nix](DNSMASQ.md).
 
-On Ubuntu you have to set up a network bridge (here named *internal*) using `systemd-networkd` and `brctl`.
-More specifically, create the following files ([source](https://major.io/2015/03/26/creating-a-bridge-for-virtual-machines-using-systemd-networkd/)):
-```
-❯ cat /etc/systemd/network/internal.netdev
-[NetDev]
-Name=internal
-Kind=bridge
+On Ubuntu you can follow the instructions described [here](DNSMASQ_UBUNTU.md).
 
-❯ cat /etc/systemd/network/uplink.network
-[Match]
-Name=eth0
-[Network]
-Bridge=internal
-
-❯ cat /etc/systemd/network/internal.network
-[Match]
-Name=internal
-[Network]
-Address=192.168.32.50/24
-LLMNR=true
-LLDP=true
-```
-Start systemd-neworkd with `systemctl start systemd-networkd`.
-Check the created bridge with `brctl show`.
-After you make sure your bridge is set up successfully `sudo ip l set eth0 master internal`.
-Install `dnsmasq` and append the extra config from `dnsmasq.nix` into `/etc/dnsmasq.conf`:
-```
-interface=internal
-#interface=virttap
-listen-address=127.0.0.1
-dhcp-range=192.168.32.50,192.168.32.100,12h
-# disable dns
-port=0
-```
-and then restart the dnsmasq service with `sudo systemctl restart dnsmasq.service`.
-`journalctl -f -u dnsmasq` will give you the IP address of the server.
-
-Clone the `doctor-cluster-config` repo and run:
-`nix --extra-experimental-features nix-command --extra-experimental-features flakes develop`
-
-If it's your first setup, to generate new admin key, run (requires [age](https://github.com/FiloSottile/age)):
-```
-mkdir -p ~/.config/sops/age/
-age-keygen -o ~/.config/sops/age/keys.txt
-```
-Provide the generated key to a pre-existing admin and wait for it to be deployed.
-Pull the new repo version with your added key and then by running `sops secrets.yaml` you will get the decrypted secrets where you can find the IPMI password to set.
-
-Go to the IPMI administration page in your browser and set the decrypted IPMI login credentials found with `sops secrets.yml`.
+Then go to the IPMI administration page in your browser and set the decrypted IPMI login to the credentials defined in `sops secrets.yml`.
 
 ## PXEBoot
 
