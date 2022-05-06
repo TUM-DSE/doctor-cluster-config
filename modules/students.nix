@@ -23,6 +23,10 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZs04queaSB/BGQesCEiunOkeEydB5rJ2WUXSrGlDLVoJ6/Q7fAHM99200fxK7h0vtKda4OkdUEBtRtq2wn+Z0YW51mFvzJ7214ZIY4JKtYX02KW8r7gVXYmjoX3VWEKi5iKfld0WO9jaDN3InU5CYyYx1nHl+BNasxIHtUzjhHCC+Ggxt3Kc+IxW2DV8J9/JwhKhgedqvqbc93+V05/UeYwG0Q9z1mwBEuOlGv8yP6uhCWmHzxbJYo+oxU5nSXM0lPHecxa7M8hROXEVrSxg27vUg7JoiSQ1wt3lzNQS4Abd8JLqOJlQYQvbz5Xxd0KhD0kaBCptXBCxdOo+YLi06XNs16rRtQPM51jTrero3h1wfA51XR7w7j52nbLC2ZGMyaSO1c5IQ5d5Xad/F1ZcOQQWvFhK+ie9LJzvR0AXiFXzEBvmPiZ82rLdjWGPO4975fSYTOxshZojk7oV4fQyd5vKCsjChL0JC2chPfYRv2kti/9CVqVseznVMPE/JgdE= julian@mind"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCkHALCUCursw1AvmYaQLfYBee1lGR4sqqlTEHfatyAqQrCxFnWNnO03ScEfNsDQKDZPRQ/RZYOOHlNxoKQzYaHlpbFafePKNH+lKZWibabp4HT3ho0mi56i2sqXLSMP+y3nz4S7vx678CVgyK1/gW9wB0ORNh1Ss1NqPhi/DFxHVxcLig3mjCVoC6QzIzTLq8uVP/bOD2jtED/PSdAFQQNd2RjKWea7UjjH7IiQvvJHwl1OB8X1x7mxwuQuHCMj7kwwKfEEvqOy3NiDzY9Ewc7HihFLkROMK3obbYLoQjYf/tP9SYpekWx4Q8CpgmvAblwDcv8unmnYAN2Cj5PQ4YulBPCOwNfmVCvsp3gX8eLG6XNYjnHt7DIEm8Yj4EeSCuB6DLOR2Em5eKH57qzQFHyubdIwVoY1xzfdd1wzaKuL+ahoLKmZ23Q6bK795BwZBogyoceREg9surF9P8l9mJi2Yn8aGMtCF9ecIySNGYwI1AqKGYX14Vo9HA3nfADCI1wCND5LyqD6UDGfM1iBV38gGl05jyywcTgpctI4ryQy6SUDf9x+CZuDwHXihR6Rj9Oj1Vy6zFdCKq4xt76xCsIPuy+6CY4RdOkCNmQn3NKeRnttLmyYIpLbHkTdYs8GIyLsf1mz6uHZNcWg5fwPTabgT8PJ5yJRQo9IoXGawf+vQ== julian.pritzi@gmail.com"
   ];
+
+  mwerndleKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8PIGWr3IcUfKlTgKGFg7+ksCcEIBj9zrbCwQMSI5yn5s4a2G0tCj00cquK+NnuP5Ka265yvZUb8QYwiN/pGEZQR36hATose/Meyo50UMBfNOeE2+AATnWPmPekKkR/tefxPijOt/BbuOYQfOPk5UUpS6N0Sb0KgrY/H0M3tC9Wv0kM9gLAOoTTqEj7u3Tvz0udo3V8CTU+5GwDL+MeUu6iDDm2QwtaiiookEp576WT6GeF/tfEqrf2SAF0LbTjlwQ8V7izGy4BHyjYlVfiO92khGRJjB9Hx508nN3KHEHnv1TtMxK26ONqZRCxD3z2OiLP8IBn4jB/drk6C+jVDr1OxOrvDE03arKVcFf1FE36nNy04R8rGITvcgYBmmK6cmCk27xLoWgEEDGPRc+lrlI9j8Zl30HSoeoXq1UKA+kExFSlNVfw/Y8VfaoSLfIlT9E1uoTHqEwiM+4mPmf94rhiD7oikYsSZRFZJ5lnCNGkF1XzxnSflLMu2IvktiLGosfVz48H/Pc9eA56Qt9roFDBbcaFzzquHOpCZ5bb8x8U7Kdo+mPYmITW+ALFFEQXZIXSXdqzpQbslpp4uwFq8xiJ7XiCs0tc3HSr8uDtG1FvWWVTo8cbdNuYAin+LSiZPqqSiu152+Uh9CGAYanbROqafVlRSOKLUx7uXio4m9hMQ== m.werndle@yahoo.com"
+  ];
 in {
   # for new students please use a uid in the range between 2000-3000
   users.users = {
@@ -75,6 +79,16 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2000;
       openssh.authorizedKeys.keys = julianKeys;
+    };
+
+    # Matthias Werndle, Dimitris' BSc student (Generic programming model for PM)
+    mwerndle = {
+      isNormalUser = true;
+      home = "/home/mwerndle";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2001;
+      openssh.authorizedKeys.keys = mwerndleKeys;
     };
   };
 
