@@ -3,14 +3,17 @@
 set -eu -o pipefail
 
 
-if [ $# -ne 2 ]; then
-  echo "USAGE: $0 hosts host.pub|HOST"
-  echo "example: $0 host,host.i,host.r,host.dse.in.tum.de HOSTNAME"
+if [ $# -ne 3 ]; then
+  echo "USAGE: $0 hostname hosts host.pub|HOST"
+  echo "example: $0 host host.i,host.r,host.dse.in.tum.de HOST"
   exit 1
 fi
 
-hosts=$1
-host=$2
+host=$1
+hostnames=$2
+ip=$3
+
+hosts=$1,$2
 
 dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 workdir=$(mktemp -d)
@@ -22,8 +25,8 @@ trap "{ rm -rf "$workdir"; }" EXIT
 )
 
 cd $workdir
-pubkey="${host}.pub"
-ssh-keyscan -t ed25519 "$host" | awk '{$1=""; print $0}' > "$pubkey"
+pubkey="${ip}.pub"
+ssh-keyscan -t ed25519 "$ip" | awk '{$1=""; print $0}' > "$pubkey"
 
 ssh-keygen -h -s "$workdir/ssh-ca" -n "$hosts" -I "$(basename "$pubkey" .pub)" "$pubkey"
-mv "${host}-cert.pub" "${dir}/certs/$(echo "$hosts" | grep -o '^[^,]\+')-cert.pub"
+mv "${ip}-cert.pub" "${dir}/certs/$(echo "$hosts" | grep -o '^[^,]\+')-cert.pub"

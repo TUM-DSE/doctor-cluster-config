@@ -67,7 +67,7 @@ Create ssh ca certificate, so that hosts automatically trust each other.
 $ cd modules/sshd
 $ HOST=astrid
 $ IP=IP_OR_HOSTNAME_FOR_SCANNING
-$ ./ssh-ca-sign $HOST,$HOST.r,$HOST.dse.in.tum.de,$HOST.thalheim.io $IP
+$ ./ssh-ca-sign $HOST $HOST.r,$HOST.dse.in.tum.de,$HOST.thalheim.io $IP
 ```
 
 ## Prepare NixOS config
