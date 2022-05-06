@@ -26,4 +26,4 @@ pubkey="${host}.pub"
 ssh-keyscan -t ed25519 "$host" | awk '{$1=""; print $0}' > "$pubkey"
 
 ssh-keygen -h -s "$workdir/ssh-ca" -n "$hosts" -I "$(basename "$pubkey" .pub)" "$pubkey"
-mv "${host}-cert.pub" "${dir}/certs/$(echo "$host" | grep -o '^[^.]\+')-cert.pub"
+mv "${host}-cert.pub" "${dir}/certs/$(echo "$hosts" | grep -o '^[^,]\+')-cert.pub"

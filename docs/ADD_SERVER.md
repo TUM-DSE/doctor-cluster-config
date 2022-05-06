@@ -68,7 +68,6 @@ $ cd modules/sshd
 $ HOST=astrid
 $ IP=IP_OR_HOSTNAME_FOR_SCANNING
 $ ./ssh-ca-sign $HOST,$HOST.r,$HOST.dse.in.tum.de,$HOST.thalheim.io $IP
-$ mv $IP-cert.pub ./modules/sshd/certs/$HOST-cert.pub
 ```
 
 ## Prepare NixOS config
