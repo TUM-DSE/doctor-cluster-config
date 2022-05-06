@@ -10,8 +10,9 @@ To open a shell with required tools installed (such as sops) you can use the nix
 First, establish a direct connection (1 to 1, ideally no switch) with the server and set up your machine as a gateway. 
 On NixOS you can use the module described here [dnsmasq.nix](DNSMASQ.md).
 
-Set the IPMI login to the credentials defined in `sops secrets.yml`.
+On Ubuntu you can follow the instructions described [here](DNSMASQ_UBUNTU.md).
 
+Then go to the IPMI administration page in your browser and set the decrypted IPMI login to the credentials defined in `sops secrets.yml`.
 
 ## PXEBoot
 

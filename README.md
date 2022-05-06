@@ -102,6 +102,18 @@ the existing users must re-encrypt `secrets.yml` with your key.
 Then press enter to get a login prompt. The root password for all machines is
 also stored in [secrets.yaml]().
 
+# Info for new admin users
+
+Clone the `doctor-cluster-config` repo and run:
+`nix --extra-experimental-features nix-command --extra-experimental-features flakes develop`
+
+To generate new admin key, run (requires [age](https://github.com/FiloSottile/age)):
+```
+mkdir -p ~/.config/sops/age/
+age-keygen -o ~/.config/sops/age/keys.txt
+```
+Provide the generated key to a pre-existing admin and wait for it to be deployed.
+
 # Monitoring
 
 Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?orgId=1
