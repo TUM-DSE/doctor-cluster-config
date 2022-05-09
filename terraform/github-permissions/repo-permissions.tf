@@ -1,14 +1,19 @@
 locals {
   sys-prog-tutors = toset([
-    "tutorname1",
-    "tutorname2",
+    # SoSe22
+    "jfly609",
+    "catarinalegria",
+    "emilshkhlyv",
+    "yuae-tum",
+    "zhangluktim",
+    "ensarkaya",
+    "weigsimo",
+    "schnedom",
   ])
 
   sys-prog-students = setunion(
-    sys-prog-tutors,
+    local.sys-prog-tutors,
     toset([
-      "student1",
-      "student2"
     ])
   )
 
@@ -18,7 +23,9 @@ locals {
   sys-prog-ls1-courses = {
     "anti-cheat" = local.sys-prog-tutors
     "task1-syscalls-tum-test-student" = local.sys-prog-tutors
-    "task2-fileio-tum-test-student" = local.sys-prog-tutors
+    "task2-fileio-tum-test-student" = local.sys-prog-tutors   # main, rust solution
+    "task2-fileio-masi456" = local.sys-prog-tutors            # cpp solution
+    "task2-fileio-rgouicem" = local.sys-prog-tutors           # c solution
     "task3-processes-tum-test-student" = local.sys-prog-tutors
     "task4-concurrency-tum-test-student" = local.sys-prog-tutors
     "task5-memory-tum-test-student" = local.sys-prog-tutors
