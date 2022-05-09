@@ -56,6 +56,8 @@ let
     all = builtins.attrValues keys;
   };
 
+  # This is the list of permissions per file. The admin group has permissions
+  # for all files. Amy.yml additionally can be decrytped by amy.
   sopsPermissions = with keys; {
     "modules/sshd/[^/]+\\.yaml$" = [];
     "hosts/amy.yml$" = [
@@ -139,6 +141,7 @@ let
     "secrets.yml$" = [];
     "modules/sshd/ca-keys.yml$" = [];
     "terraform/secrets.enc.json$" = [];
+    "terraform/github-permissions/secrets.enc.json$" = []; # is a symlink to terraform/secrets
   };
 in {
   creation_rules = [
