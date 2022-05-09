@@ -141,6 +141,7 @@ let
     "secrets.yml$" = [];
     "modules/sshd/ca-keys.yml$" = [];
     "terraform/secrets.enc.json$" = [];
+    "terraform/github-permissions/secrets.enc.json$" = []; # is a symlink to terraform/secrets
   };
 in {
   creation_rules = [
