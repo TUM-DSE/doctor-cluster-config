@@ -1,9 +1,7 @@
-# Set github access permissions in bulk
+# Set github access permissions with groups
 
-Useful to give fine-grained access permissions for github repos in bulk. 
-For example, to give personal github accounts of sys-prog tutors access to several repos.
-
-Permissions (such as `push` permission) are defined as objects in `repo-permissions.tf`.
+Creates and manages github groups to assign a group of users access to only some repos of an organization.
+For example, to give personal github accounts of sys-prog tutors access to the sys-prog-tytors group.
 
 ## Prequesits
 
@@ -19,7 +17,4 @@ git pull
 cd terraform/github-permissions
 terraform init
 terraform apply # review changes and type yes
-git add terraform.tfstate
-git commit
-git push
 ```
