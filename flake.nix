@@ -56,7 +56,8 @@
       };
       packages = {
         netboot = pkgs.callPackage ./modules/netboot/netboot.nix {
-          inherit pkgs;
+          # this nixosSystem is built for x86_64 machines regardless of the host machine
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
           inherit (nixpkgs.lib) nixosSystem;
           extraModules = [
             {_module.args.inputs = inputs;}
