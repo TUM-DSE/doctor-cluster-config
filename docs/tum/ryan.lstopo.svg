@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1396px' height='617px' viewBox='0 0 1396px 617px' version='1.1'>
-	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='1396' height='579' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1427px' height='617px' viewBox='0 0 1427px 617px' version='1.1'>
+	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='1427' height='579' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Machine_0_text' class='Machine' font-family='Monospace' x='7' y='17' fill='rgb(0,0,0)' font-size='10px'>Machine (503GB total)</text>
 	<rect id='Package_0_rect' class='Package' x='7' y='24' width='974' height='293' fill='rgb(210,231,164)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Package_0_text' class='Package' font-family='Monospace' x='14' y='41' fill='rgb(0,0,0)' font-size='10px'>Package L#0</text>
@@ -217,82 +217,75 @@
 	<line id='HostBridge_6_line' class='HostBridge' x1='995' y1='303' x2='1002' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_6_line_2' class='HostBridge' x1='1002' y1='303' x2='1026' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='HostBridge_6_text_2' class='HostBridge' font-family='Monospace' x='1005' y='316' fill='rgb(0,0,0)' font-size='10px'>16</text>
-	<line id='HostBridge_6_line_3' class='HostBridge' x1='1002' y1='427' x2='1026' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='HostBridge_6_text_3' class='HostBridge' font-family='Monospace' x='1005' y='440' fill='rgb(0,0,0)' font-size='10px'>32</text>
-	<line id='HostBridge_6_line_1' class='HostBridge' x1='1002' y1='303' x2='1002' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='HostBridge_6_line_3' class='HostBridge' x1='1002' y1='337' x2='1026' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='HostBridge_6_text_3' class='HostBridge' font-family='Monospace' x='1005' y='350' fill='rgb(0,0,0)' font-size='10px'>32</text>
+	<line id='HostBridge_6_line_1' class='HostBridge' x1='1002' y1='303' x2='1002' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<rect id='PCIBridge_7_rect' class='PCIBridge' x='1026' y='300' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_7_line' class='PCIBridge' x1='1033' y1='303' x2='1040' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_7_line_2' class='PCIBridge' x1='1040' y1='303' x2='1064' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PCIBridge_7_text_2' class='PCIBridge' font-family='Monospace' x='1043' y='316' fill='rgb(0,0,0)' font-size='10px'>16</text>
-	<line id='PCIBridge_7_line_3' class='PCIBridge' x1='1040' y1='365' x2='1064' y2='365' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_7_text_3' class='PCIBridge' font-family='Monospace' x='1043' y='378' fill='rgb(0,0,0)' font-size='10px'>16</text>
-	<line id='PCIBridge_7_line_1' class='PCIBridge' x1='1040' y1='303' x2='1040' y2='365' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_5_rect' class='PCI' x='1064' y='300' width='112' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_5_text' class='PCI' font-family='Monospace' x='1071' y='317' fill='rgb(0,0,0)' font-size='10px'>PCI 81:00.0</text>
-	<rect id='Net_5_rect' class='Net' x='1071' y='324' width='98' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_5_text' class='Net' font-family='Monospace' x='1078' y='341' fill='rgb(0,0,0)' font-size='10px'>Net enp129s0f0</text>
-	<rect id='PCI_6_rect' class='PCI' x='1064' y='362' width='112' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_6_text' class='PCI' font-family='Monospace' x='1071' y='379' fill='rgb(0,0,0)' font-size='10px'>PCI 81:00.1</text>
-	<rect id='Net_6_rect' class='Net' x='1071' y='386' width='98' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_6_text' class='Net' font-family='Monospace' x='1078' y='403' fill='rgb(0,0,0)' font-size='10px'>Net enp129s0f1</text>
-	<rect id='PCIBridge_8_rect' class='PCIBridge' x='1026' y='424' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_8_line' class='PCIBridge' x1='1033' y1='427' x2='1040' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_8_line_2' class='PCIBridge' x1='1040' y1='427' x2='1064' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_8_text_2' class='PCIBridge' font-family='Monospace' x='1043' y='440' fill='rgb(0,0,0)' font-size='10px'>32</text>
-	<line id='PCIBridge_8_line_1' class='PCIBridge' x1='1040' y1='427' x2='1040' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_7_rect' class='PCI' x='1064' y='424' width='80' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_7_text' class='PCI' font-family='Monospace' x='1071' y='441' fill='rgb(0,0,0)' font-size='10px'>PCI 84:00.0</text>
-	<rect id='HostBridge_9_rect' class='HostBridge' x='1183' y='300' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='HostBridge_9_line' class='HostBridge' x1='1190' y1='303' x2='1197' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='HostBridge_9_line_2' class='HostBridge' x1='1197' y1='303' x2='1221' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='HostBridge_9_text_2' class='HostBridge' font-family='Monospace' x='1200' y='316' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
-	<line id='HostBridge_9_line_3' class='HostBridge' x1='1197' y1='427' x2='1221' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='HostBridge_9_text_3' class='HostBridge' font-family='Monospace' x='1200' y='440' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
-	<line id='HostBridge_9_line_4' class='HostBridge' x1='1197' y1='551' x2='1221' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='HostBridge_9_text_4' class='HostBridge' font-family='Monospace' x='1200' y='564' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
-	<line id='HostBridge_9_line_1' class='HostBridge' x1='1197' y1='303' x2='1197' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCIBridge_10_rect' class='PCIBridge' x='1221' y='300' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_10_line' class='PCIBridge' x1='1228' y1='303' x2='1235' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_10_line_2' class='PCIBridge' x1='1235' y1='303' x2='1259' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_10_text_2' class='PCIBridge' font-family='Monospace' x='1238' y='316' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
-	<line id='PCIBridge_10_line_3' class='PCIBridge' x1='1235' y1='365' x2='1259' y2='365' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_10_text_3' class='PCIBridge' font-family='Monospace' x='1238' y='378' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
-	<line id='PCIBridge_10_line_1' class='PCIBridge' x1='1235' y1='303' x2='1235' y2='365' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_8_rect' class='PCI' x='1259' y='300' width='130' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_8_text' class='PCI' font-family='Monospace' x='1266' y='317' fill='rgb(0,0,0)' font-size='10px'>PCI c4:00.0</text>
-	<rect id='Net_7_rect' class='Net' x='1266' y='324' width='116' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_7_text' class='Net' font-family='Monospace' x='1273' y='341' fill='rgb(0,0,0)' font-size='10px'>Net enp196s0f0np0</text>
-	<rect id='PCI_9_rect' class='PCI' x='1259' y='362' width='130' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_9_text' class='PCI' font-family='Monospace' x='1266' y='379' fill='rgb(0,0,0)' font-size='10px'>PCI c4:00.1</text>
-	<rect id='Net_8_rect' class='Net' x='1266' y='386' width='116' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_8_text' class='Net' font-family='Monospace' x='1273' y='403' fill='rgb(0,0,0)' font-size='10px'>Net enp196s0f1np1</text>
-	<rect id='PCIBridge_11_rect' class='PCIBridge' x='1221' y='424' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_11_line' class='PCIBridge' x1='1228' y1='427' x2='1235' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_11_line_2' class='PCIBridge' x1='1235' y1='427' x2='1259' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_11_text_2' class='PCIBridge' font-family='Monospace' x='1238' y='440' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
-	<line id='PCIBridge_11_line_3' class='PCIBridge' x1='1235' y1='489' x2='1259' y2='489' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_11_text_3' class='PCIBridge' font-family='Monospace' x='1238' y='502' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
-	<line id='PCIBridge_11_line_1' class='PCIBridge' x1='1235' y1='427' x2='1235' y2='489' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_10_rect' class='PCI' x='1259' y='424' width='94' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_10_text' class='PCI' font-family='Monospace' x='1266' y='441' fill='rgb(0,0,0)' font-size='10px'>PCI c1:00.0</text>
-	<rect id='Net_9_rect' class='Net' x='1266' y='448' width='80' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_9_text' class='Net' font-family='Monospace' x='1273' y='465' fill='rgb(0,0,0)' font-size='10px'>Net eno8303</text>
-	<rect id='PCI_11_rect' class='PCI' x='1259' y='486' width='94' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_11_text' class='PCI' font-family='Monospace' x='1266' y='503' fill='rgb(0,0,0)' font-size='10px'>PCI c1:00.1</text>
-	<rect id='Net_10_rect' class='Net' x='1266' y='510' width='80' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_10_text' class='Net' font-family='Monospace' x='1273' y='527' fill='rgb(0,0,0)' font-size='10px'>Net eno8403</text>
-	<rect id='PCIBridge_12_rect' class='PCIBridge' x='1221' y='548' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_12_line' class='PCIBridge' x1='1228' y1='551' x2='1235' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_12_line_2' class='PCIBridge' x1='1235' y1='551' x2='1259' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_12_text_2' class='PCIBridge' font-family='Monospace' x='1238' y='564' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
-	<line id='PCIBridge_12_line_1' class='PCIBridge' x1='1235' y1='551' x2='1235' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCIBridge_13_rect' class='PCIBridge' x='1259' y='548' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_13_line' class='PCIBridge' x1='1266' y1='551' x2='1273' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_13_line_2' class='PCIBridge' x1='1273' y1='551' x2='1297' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_13_line_1' class='PCIBridge' x1='1273' y1='551' x2='1273' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_12_rect' class='PCI' x='1297' y='548' width='80' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_12_text' class='PCI' font-family='Monospace' x='1304' y='565' fill='rgb(0,0,0)' font-size='10px'>PCI c3:00.0</text>
-	<rect id='anon_rect' x='0' y='579' width='1396' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_7_line_1' class='PCIBridge' x1='1040' y1='303' x2='1040' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_5_rect_2' class='PCI' x='1067' y='303' width='140' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_5_rect' class='PCI' x='1064' y='300' width='140' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_5_text' class='PCI' font-family='Monospace' x='1071' y='317' fill='rgb(0,0,0)' font-size='10px'>2 x { PCI 81:00.0-1 }</text>
+	<rect id='PCIBridge_8_rect' class='PCIBridge' x='1026' y='334' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_8_line' class='PCIBridge' x1='1033' y1='337' x2='1040' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_8_line_2' class='PCIBridge' x1='1040' y1='337' x2='1064' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_8_text_2' class='PCIBridge' font-family='Monospace' x='1043' y='350' fill='rgb(0,0,0)' font-size='10px'>32</text>
+	<line id='PCIBridge_8_line_1' class='PCIBridge' x1='1040' y1='337' x2='1040' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_7_rect' class='PCI' x='1064' y='334' width='80' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_7_text' class='PCI' font-family='Monospace' x='1071' y='351' fill='rgb(0,0,0)' font-size='10px'>PCI 84:00.0</text>
+	<rect id='HostBridge_9_rect' class='HostBridge' x='1214' y='300' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='HostBridge_9_line' class='HostBridge' x1='1221' y1='303' x2='1228' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='HostBridge_9_line_2' class='HostBridge' x1='1228' y1='303' x2='1252' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='HostBridge_9_text_2' class='HostBridge' font-family='Monospace' x='1231' y='316' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
+	<line id='HostBridge_9_line_3' class='HostBridge' x1='1228' y1='427' x2='1252' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='HostBridge_9_text_3' class='HostBridge' font-family='Monospace' x='1231' y='440' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
+	<line id='HostBridge_9_line_4' class='HostBridge' x1='1228' y1='551' x2='1252' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='HostBridge_9_text_4' class='HostBridge' font-family='Monospace' x='1231' y='564' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
+	<line id='HostBridge_9_line_1' class='HostBridge' x1='1228' y1='303' x2='1228' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCIBridge_10_rect' class='PCIBridge' x='1252' y='300' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_10_line' class='PCIBridge' x1='1259' y1='303' x2='1266' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_10_line_2' class='PCIBridge' x1='1266' y1='303' x2='1290' y2='303' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_10_text_2' class='PCIBridge' font-family='Monospace' x='1269' y='316' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
+	<line id='PCIBridge_10_line_3' class='PCIBridge' x1='1266' y1='365' x2='1290' y2='365' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_10_text_3' class='PCIBridge' font-family='Monospace' x='1269' y='378' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
+	<line id='PCIBridge_10_line_1' class='PCIBridge' x1='1266' y1='303' x2='1266' y2='365' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_8_rect' class='PCI' x='1290' y='300' width='130' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_8_text' class='PCI' font-family='Monospace' x='1297' y='317' fill='rgb(0,0,0)' font-size='10px'>PCI c4:00.0</text>
+	<rect id='Net_5_rect' class='Net' x='1297' y='324' width='116' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_5_text' class='Net' font-family='Monospace' x='1304' y='341' fill='rgb(0,0,0)' font-size='10px'>Net enp196s0f0np0</text>
+	<rect id='PCI_9_rect' class='PCI' x='1290' y='362' width='130' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_9_text' class='PCI' font-family='Monospace' x='1297' y='379' fill='rgb(0,0,0)' font-size='10px'>PCI c4:00.1</text>
+	<rect id='Net_6_rect' class='Net' x='1297' y='386' width='116' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_6_text' class='Net' font-family='Monospace' x='1304' y='403' fill='rgb(0,0,0)' font-size='10px'>Net enp196s0f1np1</text>
+	<rect id='PCIBridge_11_rect' class='PCIBridge' x='1252' y='424' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_11_line' class='PCIBridge' x1='1259' y1='427' x2='1266' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_11_line_2' class='PCIBridge' x1='1266' y1='427' x2='1290' y2='427' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_11_text_2' class='PCIBridge' font-family='Monospace' x='1269' y='440' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
+	<line id='PCIBridge_11_line_3' class='PCIBridge' x1='1266' y1='489' x2='1290' y2='489' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_11_text_3' class='PCIBridge' font-family='Monospace' x='1269' y='502' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
+	<line id='PCIBridge_11_line_1' class='PCIBridge' x1='1266' y1='427' x2='1266' y2='489' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_10_rect' class='PCI' x='1290' y='424' width='94' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_10_text' class='PCI' font-family='Monospace' x='1297' y='441' fill='rgb(0,0,0)' font-size='10px'>PCI c1:00.0</text>
+	<rect id='Net_7_rect' class='Net' x='1297' y='448' width='80' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_7_text' class='Net' font-family='Monospace' x='1304' y='465' fill='rgb(0,0,0)' font-size='10px'>Net eno8303</text>
+	<rect id='PCI_11_rect' class='PCI' x='1290' y='486' width='94' height='55' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_11_text' class='PCI' font-family='Monospace' x='1297' y='503' fill='rgb(0,0,0)' font-size='10px'>PCI c1:00.1</text>
+	<rect id='Net_8_rect' class='Net' x='1297' y='510' width='80' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_8_text' class='Net' font-family='Monospace' x='1304' y='527' fill='rgb(0,0,0)' font-size='10px'>Net eno8403</text>
+	<rect id='PCIBridge_12_rect' class='PCIBridge' x='1252' y='548' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_12_line' class='PCIBridge' x1='1259' y1='551' x2='1266' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_12_line_2' class='PCIBridge' x1='1266' y1='551' x2='1290' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_12_text_2' class='PCIBridge' font-family='Monospace' x='1269' y='564' fill='rgb(0,0,0)' font-size='10px'>0.5</text>
+	<line id='PCIBridge_12_line_1' class='PCIBridge' x1='1266' y1='551' x2='1266' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCIBridge_13_rect' class='PCIBridge' x='1290' y='548' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_13_line' class='PCIBridge' x1='1297' y1='551' x2='1304' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_13_line_2' class='PCIBridge' x1='1304' y1='551' x2='1328' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_13_line_1' class='PCIBridge' x1='1304' y1='551' x2='1304' y2='551' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_12_rect' class='PCI' x='1328' y='548' width='80' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_12_text' class='PCI' font-family='Monospace' x='1335' y='565' fill='rgb(0,0,0)' font-size='10px'>PCI c3:00.0</text>
+	<rect id='anon_rect' x='0' y='579' width='1427' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='596' fill='rgb(0,0,0)' font-size='10px'>Host: ryan</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='610' fill='rgb(0,0,0)' font-size='10px'>Date: Sat 26 Mar 2022 09:29:33 PM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='610' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 11 May 2022 11:23:36 AM UTC</text>
 </svg>
