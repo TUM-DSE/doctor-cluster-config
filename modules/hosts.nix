@@ -109,16 +109,44 @@ in {
         ipv6 = "2a09:80c0:102::7";
         location = "munich";
       };
-
       ryan = {
         ipv4 = "131.159.102.8";
         ipv6 = "2a09:80c0:102::8";
         location = "munich";
       };
-
       graham = {
         ipv4 = "131.159.102.9";
         ipv6 = "2a09:80c0:102::9";
+        location = "munich";
+      };
+      christina = {
+        ipv4 = "131.159.102.14";
+        ipv6 = "2a09:80c0:102::14";
+        location = "munich";
+      };
+      jackson = {
+        ipv4 = "131.159.102.3";
+        ipv6 = "2a09:80c0:102::3";
+        location = "munich";
+      };
+      adelaide = {
+        ipv4 = "131.159.102.13";
+        ipv6 = "2a09:80c0:102::13";
+        location = "munich";
+      };
+      wilfred = {
+        ipv4 = "131.159.102.15";
+        ipv6 = "2a09:80c0:102::15";
+        location = "munich";
+      };
+      river = {
+        ipv4 = "131.159.102.16";
+        ipv6 = "2a09:80c0:102::16";
+        location = "munich";
+      };
+      jack = {
+        ipv4 = "131.159.102.17";
+        ipv6 = "2a09:80c0:102::17";
         location = "munich";
       };
     };

@@ -24,16 +24,15 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 ## Intel Xeon servers
 
-Coming soon:
-
-- single socket Xeon Gold 5317
-  - jackson
-  - christina
-  - adelaide
-  - wilfred
-  - river 
+- single socket Xeon Gold 5317  
+These 5 have an additional link to craig via 100G. 
+  - [jackson](jackson.md)
+  - [christina](christina.md)
+  - [adelaide](adelaide.md)
+  - [wilfred](wilfred.md)
+  - [river](river.md)
 - dual socket Xeon Gold 6326, GPU
-  - jack
+  - [jack](jack.md)
 
 ## Servers used for NFS/Services
 
