@@ -48,7 +48,10 @@
     ../tor-ssh.nix
     ../nix-daemon.nix
     ../nur.nix
-    (import ../users.nix { withSops = false; })
+    ../users.nix
+    ({...}: {
+      users.withSops = false;
+    })
   ];
 
   documentation.enable = false;

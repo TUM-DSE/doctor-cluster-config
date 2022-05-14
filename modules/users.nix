@@ -1,4 +1,4 @@
-{ withSops }: {config, lib, ...}: let
+{config, lib, ...}: let
   joergsKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine"];
 
   redhaKeys = [
@@ -81,6 +81,16 @@
 
   extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
 in {
+  options = {
+    users.withSops = lib.mkOption {
+      type = lib.types.bool;
+      description = ''
+        Wether to use sops to populate user secrets
+      '';
+      default = true;
+    };
+  };
+
   ## we put all bachelor/master students here
   imports = [
     ./students.nix
@@ -88,205 +98,207 @@ in {
     ./whitelist-hosts.nix
   ];
 
-  users.users = {
-    # Jörg Thalheim
-    # tum/edinburgh
-    joerg = {
-      isNormalUser = true;
-      home = "/home/joerg";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1000;
-      openssh.authorizedKeys.keys = joergsKeys;
+  config = {
+    users.users = {
+      # Jörg Thalheim
+      # tum/edinburgh
+      joerg = {
+        isNormalUser = true;
+        home = "/home/joerg";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1000;
+        openssh.authorizedKeys.keys = joergsKeys;
+      };
+
+      # Dimitra Giantsidi
+      # edinburgh
+      dimitra = {
+        isNormalUser = true;
+        home = "/home/dimitra";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1001;
+        openssh.authorizedKeys.keys = dimitraKeys;
+      };
+
+      # Maurice Bailleu
+      # edinburgh
+      maurice = {
+        isNormalUser = true;
+        home = "/home/maurice";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1002;
+        openssh.authorizedKeys.keys = mauriceKeys;
+      };
+
+      # Lorenzo
+      # edinburgh
+      s1443541 = {
+        isNormalUser = true;
+        home = "/home/s1443541";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1003;
+        openssh.authorizedKeys.keys = s1443541Keys;
+      };
+
+      # Dimitris Stavrakakis
+      # tum
+      dimitrios = {
+        isNormalUser = true;
+        home = "/home/dimitrios";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1004;
+        openssh.authorizedKeys.keys = dimitriosKeys;
+      };
+
+      # Harshavardhan Unnibhavi
+      # tum
+      harshanavkis = {
+        isNormalUser = true;
+        home = "/home/harshanavkis";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1005;
+        openssh.authorizedKeys.keys = harshanavkisKeys;
+      };
+
+      # edinburgh
+      # delete once we are finished with edinburgh...
+      # uses edinburgh server as a ssh jump host
+      iris = {
+        isNormalUser = true;
+        home = "/home/iris";
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1006;
+        openssh.authorizedKeys.keys = irisKeys;
+      };
+
+      # Dresden
+      # tests nixpkgs on our infra
+      sandro = {
+        isNormalUser = true;
+        home = "/home/sandro";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1009;
+        openssh.authorizedKeys.keys = sandroKeys;
+      };
+
+      # Redha Gouicem
+      # tum
+      redha = {
+        isNormalUser = true;
+        home = "/home/redha";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1010;
+        openssh.authorizedKeys.keys = redhaKeys;
+      };
+
+      # Atsushi Koshiba
+      # tum
+      atsushi = {
+        isNormalUser = true;
+        home = "/home/atsushi";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1012;
+        openssh.authorizedKeys.keys = atsushiKeys;
+      };
+
+      # Myoung Jin Nam
+      # tum
+      mjnam = {
+        isNormalUser = true;
+        home = "/home/mjnam";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1018;
+        openssh.authorizedKeys.keys = mjnamKeys;
+      };
+
+      # Peter Okelmann
+      # tum
+      okelmann = {
+        isNormalUser = true;
+        home = "/home/okelmann";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1008;
+        openssh.authorizedKeys.keys = okelmannKeys;
+      };
+
+      # Simon Ellmann
+      # tum
+      ackxolotl = {
+        isNormalUser = true;
+        home = "/home/ackxolotl";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1013;
+        openssh.authorizedKeys.keys = ackxolotlKeys;
+      };
+
+
+      # Jiyang Chen
+      # tum
+      chenjiyang = {
+        isNormalUser = true;
+        home = "/home/chenjiyang";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1019;
+        openssh.authorizedKeys.keys = chenjiyangKeys;
+      };
+
+      # Charalampos Mainas
+      # tum
+      cmainas = {
+        isNormalUser = true;
+        home = "/home/cmainas";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1020;
+        openssh.authorizedKeys.keys = cmainasKeys;
+      };
+
+      # Masanouri Misono
+      # tum
+      masa = {
+        isNormalUser = true;
+        home = "/home/masa";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1021;
+        openssh.authorizedKeys.keys = masaKeys;
+      };
+
+      root = {
+        passwordFile = lib.optionalString config.users.withSops config.sops.secrets.root-password-hash.path;
+        openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmannKeys ++ ackxolotlKeys;
+      };
     };
 
-    # Dimitra Giantsidi
-    # edinburgh
-    dimitra = {
-      isNormalUser = true;
-      home = "/home/dimitra";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1001;
-      openssh.authorizedKeys.keys = dimitraKeys;
-    };
+    # DANGER ZONE!
+    # Make sure all data is backed up before adding user names here. This will
+    # delete all data of the associated user
+    users.deletedUsers = [
+      # User for Eurosys 22 artifact evaluation
+      "reviewer"
+      # Michio Honda
+      "michio"
+    ];
 
-    # Maurice Bailleu
-    # edinburgh
-    maurice = {
-      isNormalUser = true;
-      home = "/home/maurice";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1002;
-      openssh.authorizedKeys.keys = mauriceKeys;
-    };
+    # needed so that we can set a root password
+    users.mutableUsers = false;
+    nix.trustedUsers = ["joerg" "harshanavkis" "sandro" "redha"];
 
-    # Lorenzo
-    # edinburgh
-    s1443541 = {
-      isNormalUser = true;
-      home = "/home/s1443541";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1003;
-      openssh.authorizedKeys.keys = s1443541Keys;
-    };
-
-    # Dimitris Stavrakakis
-    # tum
-    dimitrios = {
-      isNormalUser = true;
-      home = "/home/dimitrios";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1004;
-      openssh.authorizedKeys.keys = dimitriosKeys;
-    };
-
-    # Harshavardhan Unnibhavi
-    # tum
-    harshanavkis = {
-      isNormalUser = true;
-      home = "/home/harshanavkis";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1005;
-      openssh.authorizedKeys.keys = harshanavkisKeys;
-    };
-
-    # edinburgh
-    # delete once we are finished with edinburgh...
-    # uses edinburgh server as a ssh jump host
-    iris = {
-      isNormalUser = true;
-      home = "/home/iris";
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1006;
-      openssh.authorizedKeys.keys = irisKeys;
-    };
-
-    # Dresden
-    # tests nixpkgs on our infra
-    sandro = {
-      isNormalUser = true;
-      home = "/home/sandro";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1009;
-      openssh.authorizedKeys.keys = sandroKeys;
-    };
-
-    # Redha Gouicem
-    # tum
-    redha = {
-      isNormalUser = true;
-      home = "/home/redha";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1010;
-      openssh.authorizedKeys.keys = redhaKeys;
-    };
-
-    # Atsushi Koshiba
-    # tum
-    atsushi = {
-      isNormalUser = true;
-      home = "/home/atsushi";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1012;
-      openssh.authorizedKeys.keys = atsushiKeys;
-    };
-
-    # Myoung Jin Nam
-    # tum
-    mjnam = {
-      isNormalUser = true;
-      home = "/home/mjnam";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1018;
-      openssh.authorizedKeys.keys = mjnamKeys;
-    };
-
-    # Peter Okelmann
-    # tum
-    okelmann = {
-      isNormalUser = true;
-      home = "/home/okelmann";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1008;
-      openssh.authorizedKeys.keys = okelmannKeys;
-    };
-
-    # Simon Ellmann
-    # tum
-    ackxolotl = {
-      isNormalUser = true;
-      home = "/home/ackxolotl";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1013;
-      openssh.authorizedKeys.keys = ackxolotlKeys;
-    };
-
-
-    # Jiyang Chen
-    # tum
-    chenjiyang = {
-      isNormalUser = true;
-      home = "/home/chenjiyang";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1019;
-      openssh.authorizedKeys.keys = chenjiyangKeys;
-    };
-
-    # Charalampos Mainas
-    # tum
-    cmainas = {
-      isNormalUser = true;
-      home = "/home/cmainas";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1020;
-      openssh.authorizedKeys.keys = cmainasKeys;
-    };
-
-    # Masanouri Misono
-    # tum
-    masa = {
-      isNormalUser = true;
-      home = "/home/masa";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1021;
-      openssh.authorizedKeys.keys = masaKeys;
-    };
-
-    root = {
-      passwordFile = lib.optionalString withSops config.sops.secrets.root-password-hash.path;
-      openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmannKeys ++ ackxolotlKeys;
-    };
+    # we cannot use this since we no longer have the database
+    programs.command-not-found.enable = false;
+    security.sudo.wheelNeedsPassword = false;
   };
-
-  # DANGER ZONE!
-  # Make sure all data is backed up before adding user names here. This will
-  # delete all data of the associated user
-  users.deletedUsers = [
-    # User for Eurosys 22 artifact evaluation
-    "reviewer"
-    # Michio Honda
-    "michio"
-  ];
-
-  # needed so that we can set a root password
-  users.mutableUsers = false;
-  nix.trustedUsers = ["joerg" "harshanavkis" "sandro" "redha"];
-
-  # we cannot use this since we no longer have the database
-  programs.command-not-found.enable = false;
-  security.sudo.wheelNeedsPassword = false;
 }

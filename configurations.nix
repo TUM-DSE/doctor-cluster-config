@@ -17,7 +17,7 @@
     ./modules/nix-daemon.nix
     ./modules/telegraf.nix
     ./modules/tor-ssh.nix
-    (import ./modules/users.nix { withSops = true; })
+    ./modules/users.nix
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/mosh.nix
@@ -39,6 +39,7 @@
         "nur=${nur}"
       ];
 
+      #sops.withSops = true;
       sops.secrets.root-password-hash.neededForUsers = true;
       sops.defaultSopsFile = let
         sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
