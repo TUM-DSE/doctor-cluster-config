@@ -123,12 +123,12 @@ TUM = [
     "yasmin.r",
     "graham.r",
     "ryan.r",
-    "christina.dse.in.tum.de",
-    "jackson.dse.in.tum.de",
-    "adelaide.dse.in.tum.de",
-    "wilfred.dse.in.tum.de",
-    "river.dse.in.tum.de",
-    "jack.dse.in.tum.de",
+    "christina.r",
+    "jackson.r",
+    "adelaide.r",
+    "wilfred.r",
+    "river.r",
+    "jack.r",
 ]
 EDINBURGH = [
     "rose.r",
