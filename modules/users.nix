@@ -85,6 +85,7 @@ in {
   imports = [
     ./students.nix
     ./delete-users.nix
+    ./whitelist-hosts.nix
   ];
 
   users.users = {

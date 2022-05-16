@@ -29,6 +29,7 @@
   ];
 in {
   # for new students please use a uid in the range between 2000-3000
+  # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
     # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
     paul = {
@@ -68,6 +69,7 @@ in {
       uid = 1017;
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
+      allowedHosts = ["graham"];
       openssh.authorizedKeys.keys = alexaKeys;
     };
 
