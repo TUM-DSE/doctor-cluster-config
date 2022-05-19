@@ -20,8 +20,9 @@
     };
     extraConfig.inputs.http = {
       urls = [
-        "https://api.github.com/orgs/ls1-sys-prog-course/actions/runners"
-        "https://api.github.com/orgs/ls1-sys-prog-course-internal/actions/runners"
+        "https://api.github.com/orgs/ls1-sys-prog-course/actions/runners?per_page=100"
+        "https://api.github.com/orgs/ls1-courses/actions/runners?per_page=100"
+        "https://api.github.com/orgs/ls1-cloud-lab-course/actions/runners?per_page=100"
       ];
       bearer_token = config.sops.secrets.telegraf-github-token.path;
       headers = {Accept = "application/vnd.github.v3+json";};
