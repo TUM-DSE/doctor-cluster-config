@@ -7,7 +7,7 @@ stages:
 eval:
  stage: eval
  script:
-   - nix run github:nix-community/nix-eval-jobs -- --workers 8 --gc-roots-dir $(pwd)/gcroot --flake '.#hydraJobs' > jobs.json
+   - nix run github:nix-community/nix-eval-jobs#nix-eval-jobs -- --workers 8 --gc-roots-dir $(pwd)/gcroot --flake '.#hydraJobs' > jobs.json
    - nix run nixpkgs/nixpkgs-unstable#jq -- -r '.attr + " " + .drvPath' < jobs.json > jobs
    - |
      echo > generated-config.yml
