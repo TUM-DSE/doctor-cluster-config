@@ -46,9 +46,13 @@
     startAt = "daily";
     path = [config.nix.package pkgs.nettools pkgs.git];
     script = ''
-      nix build \
-       --out-link /run/next-system \
-       github:Mic92/doctor-cluster-config/last-build#nixosConfigurations.$(hostname).config.system.build.toplevel
+      export PATH=${lib.makeBinPath (with pkgs; [config.nix.package pkgs.jq pkgs.curl pkgs.iproute2 pkgs.nettools])}
+      # skip service if do not have a default route
+      if ! ip r g 8.8.8.8; then
+        exit
+      fi
+      out=$(curl -L 'https://gitlab.com/TUM-DSE/doctor-cluster-config/-/jobs/artifacts/master/raw/jobs.json?job=eval' | jq -r "select(.attr | contains(\"nixos-$(hostname)\")) | .outputs.out")
+      nix-store --add-root /run/next-system -r "$out"
     '';
   };
 
