@@ -20,8 +20,8 @@ eval:
          script:
            - nix build --out-link "result-$attr" -L "$drvPath"
            - |
-             if [[ -n "$CACHIX_SIGNING_KEY" ]]; then
-               nix run nixpkgs/nixpkgs-unstable#cachix -- push ${CACHIX_NAME:-mic92} "result-$attr"
+             if [[ -n "$CACHIX_AUTH_TOKEN" ]]; then
+               nix run nixpkgs/nixpkgs-unstable#cachix -- push ${CACHIX_NAME:-tum-dse} "result-$attr"
              fi
      EOF
      done < jobs
