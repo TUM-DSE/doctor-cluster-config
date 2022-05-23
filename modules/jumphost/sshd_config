@@ -1,4 +1,9 @@
+# This section is maintained by: https://github.com/TUM-DSE/doctor-cluster-config/tree/master/modules/jumphost
+
 AuthorizedKeysFile %h/.ssh/authorized_keys %h/.ssh/authorized_keys2 /etc/ssh/authorized_keys.d/%u
+
+# see https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/sshd/certs/login-cert.pub
+HostCertificate /etc/ssh/login-cert.pub
 
 Match User tunnel
   AllowTcpForwarding yes
@@ -16,3 +21,4 @@ Match User deploy
   AllowAgentForwarding no
   AllowTcpForwarding no
   X11Forwarding no
+

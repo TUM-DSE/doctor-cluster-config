@@ -23,11 +23,20 @@
        block: "{{ lookup('file', './sshd_config') }}"
        path: /etc/ssh/sshd_config
      register: sshd_conf
+   - name: add SSH ca cert
+     copy:
+       dest: /etc/ssh/login-cert.pub
+       owner: root
+       group: root
+       mode: '0644'
+       content: |
+         {{ lookup('file', './../sshd/certs/login-cert.pub') }}
+     register: ssh_cert
    - name: reload sshd
      service:
        name: ssh
        state: reloaded
-     when: sshd_conf.changed
+     when: sshd_conf.changed or ssh_cert.changed
    - name: Create /etc/ssh/authorized_keys.d
      file:
        path: /etc/ssh/authorized_keys.d
@@ -55,6 +64,7 @@
        mode: '0644'
        content: |
          ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMhE8XxI6/FFnQThGXqEfPL0Y8LVat+3OqLChzgePzfv
+
    - name: Update and upgrade apt packages for security updates
      apt:
        upgrade: yes
