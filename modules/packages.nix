@@ -13,7 +13,7 @@
     file
     wget
     htop
-    ag
+    silver-searcher
     lsof
     tcpdump
     tmux
@@ -24,7 +24,7 @@
     strace
     bandwhich
     iotop
-    manpages
+    man-pages
     dnsutils
     netcat
     mtr
