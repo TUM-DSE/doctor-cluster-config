@@ -1,12 +1,18 @@
 # Accessing the server
 
-All servers in TU munich are accessible from within the TUM network i.e. eduroam and LAN.
+There are several ways to access the servers:
 
-Furthermore ls1 employes can use the il1 profile from
-[here](https://vpn.rbg.tum.de). This vpn also gives access to the management
-network. Students of the university can use the [lrz
-openvpn](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb) to access
-the servers.
+- eduroam and LAN (All servers in TU munich are accessible from within the TUM network)
+- VPN provided by RBG:
+  - this option only works for ls1 employes
+  - this vpn also gives access to the management network (i.e. for IPMI access)
+  - use the il1 profile from [here](https://vpn.rbg.tum.de)
+- VPN provided by LRZ:
+  - This vpn is also accessible by students, see this [link](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb)
+- Via SSH jump host:
+  - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
+  - Example usage: `ssh -J tunnel@login.dse.in.tum.de "<yourusername>@nardole.dse.in.tum.de"`
+  - Keys are uploaded via the machine bill whenever nixos configuration is updated.
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
