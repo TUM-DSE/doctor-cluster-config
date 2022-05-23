@@ -1,0 +1,20 @@
+AuthorizedKeysFile %h/.ssh/authorized_keys %h/.ssh/authorized_keys2 /etc/ssh/authorized_keys.d/%u
+
+Match User tunnel
+  AllowTcpForwarding yes
+  X11Forwarding no
+  AllowAgentForwarding no
+  PermitTunnel no
+  PermitTTY no
+  PasswordAuthentication no
+  ChrootDirectory %h
+  ForceCommand /bin/false
+
+Match User deploy
+  ForceCommand internal-sftp
+  PasswordAuthentication no
+  ChrootDirectory /etc/ssh/authorized_keys.d
+  PermitTunnel no
+  AllowAgentForwarding no
+  AllowTcpForwarding no
+  X11Forwarding no
