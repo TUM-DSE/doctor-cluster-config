@@ -7,8 +7,6 @@ Match User tunnel
   PermitTunnel no
   PermitTTY no
   PasswordAuthentication no
-  ChrootDirectory %h
-  ForceCommand /bin/false
 
 Match User deploy
   ForceCommand internal-sftp
