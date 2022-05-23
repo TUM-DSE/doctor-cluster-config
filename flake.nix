@@ -15,7 +15,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
-    home-manager.url = "github:rycee/home-manager/release-21.11";
+    #home-manager.url = "github:rycee/home-manager/release-21.11";
+    home-manager.url = "github:rycee/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix";
