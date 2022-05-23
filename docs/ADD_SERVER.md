@@ -63,12 +63,12 @@ redirection is enabled in the BIOS/firmware setup page (vendor-specific).
 ## SSH CA
 
 Create ssh ca certificate, so that hosts automatically trust each other.
-``` console
-$ cd modules/sshd
-$ HOST=astrid
-$ IP=IP_OR_HOSTNAME_FOR_SCANNING
-$ ./ssh-ca-sign $HOST $HOST.r,$HOST.dse.in.tum.de,$HOST.thalheim.io $IP
+
+```console
+inv generate-ssh-cert <HOSTNAME> <IP_OR_HOSTNAME_FOR_SCANNING>
 ```
+
+then commit the generated certificate: `modules/sshd/certs/<HOSTNAME>-cert.pub`.
 
 ## Prepare NixOS config
 

@@ -313,6 +313,14 @@ def print_age_key(c, hosts):
             "nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'"
         )
 
+@task
+def generate_ssh_cert(c, host, ip_or_host):
+    """
+    Generate ssh cert for host, i.e. inv generate-ssh-cert bill 131.159.102.1
+    """
+    h = host
+    c.run(f"{ROOT}/modules/sshd/ssh-ca-sign {h} {h}.r,{h}.dse.in.tum.de,{h}.thalheim.io {ip_or_host}")
+
 
 @task
 def update_sops_files(c):
