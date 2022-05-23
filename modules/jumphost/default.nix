@@ -1,0 +1,28 @@
+{ config, lib, pkgs, ... }:
+{
+  # defined in bills's secrets
+  sops.secrets.deploy-ssh-key = {};
+
+  programs.ssh.knownHosts."login.dse.in.tum.de" = {
+    hostNames = ["login.dse.in.tum.de"];
+    publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOdlUylM9WIFfIYZDK8rjVYQzX+RYwIlLgsEh4j0pNx6";
+  };
+
+  systemd.services.update-authorized-keys = let
+    sshKeys = builtins.concatLists (lib.mapAttrsToList (_: user: user.openssh.authorizedKeys.keys) config.users.users);
+    authorizedKeys = pkgs.writeText "authorized-keys" (builtins.concatStringsSep "\n" sshKeys);
+  in {
+    description = "Update authorized keys on login.dse.in.tum.de";
+    wantedBy = ["multi-user.target"];
+    script = ''
+      ${pkgs.openssh}/bin/scp -v -i $CREDENTIALS_DIRECTORY/deploy ${authorizedKeys} deploy@login.dse.in.tum.de:tunnel
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      DynamicUser = true;
+      User = "deploy";
+      LoadCredential = "deploy:${config.sops.secrets.deploy-ssh-key.path}";
+      RemainAfterExit = "yes";
+    };
+  };
+}

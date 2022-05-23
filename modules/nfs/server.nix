@@ -62,7 +62,7 @@
 
   systemd.services.znapzend-setup = {
     wantedBy = ["multi-user.target"];
-    before = ["znapzend"];
+    before = ["znapzend.service"];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = [

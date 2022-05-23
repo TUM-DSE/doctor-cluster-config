@@ -1,0 +1,59 @@
+---
+- name: Setup sftp-only access to deploy sshd keys from nix
+  hosts: all
+  become: yes
+  tasks:
+   - name: Add user to deploy ssh keys via sftp
+     user:
+      name: deploy
+      state: present
+      shell: /usr/sbin/nologin
+      system: yes
+      createhome: no
+   - name: Add user for ssh forwarding
+     user:
+      name: tunnel
+      state: present
+      shell: /usr/sbin/nologin
+      system: yes
+      createhome: no
+   - name: Append to sshd_config
+     blockinfile:
+       block: "{{ lookup('file', './sshd_config') }}"
+       path: /etc/ssh/sshd_config
+     register: sshd_conf
+   - name: reload sshd
+     service:
+       name: ssh
+       state: reloaded
+     when: sshd_conf.changed
+   - name: Create /etc/ssh/authorized_keys.d
+     file:
+       path: /etc/ssh/authorized_keys.d
+       mode: '0755'
+       state: directory
+   - name: Create empty ssh key file for tunnel user
+     file:
+       path: /etc/ssh/authorized_keys.d/tunnel
+       owner: root
+       group: root
+       mode: '0644'
+       state: touch
+   - name: allow deploy user to change the tunnel user config
+     ansible.posix.acl:
+       path: /etc/ssh/authorized_keys.d/tunnel
+       entry: user:deploy:rw
+       state: present
+   - name: Add ssh key for deploy user
+     copy:
+       dest: /etc/ssh/authorized_keys.d/deploy
+       owner: root
+       group: root
+       mode: '0644'
+       content: |
+         ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMhE8XxI6/FFnQThGXqEfPL0Y8LVat+3OqLChzgePzfv
+   - name: Update and upgrade apt packages for security updates
+     apt:
+       upgrade: yes
+       update_cache: yes
+       cache_valid_time: 86400 #One day
