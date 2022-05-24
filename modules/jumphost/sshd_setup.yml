@@ -42,13 +42,6 @@
        path: /etc/ssh/authorized_keys.d
        mode: '0755'
        state: directory
-   - name: allow deploy user to change the tunnel user config
-     ansible.posix.acl:
-       path: /etc/ssh/authorized_keys.d/tunnel
-       entity: deploy
-       etype: user
-       permissions: rw
-       state: present
    - name: Create empty ssh key file for tunnel user
      file:
        path: /etc/ssh/authorized_keys.d/tunnel
@@ -56,6 +49,13 @@
        group: root
        mode: '0644'
        state: touch
+   - name: allow deploy user to change the tunnel user config
+     ansible.posix.acl:
+       path: /etc/ssh/authorized_keys.d/tunnel
+       entity: deploy
+       etype: user
+       permissions: rw
+       state: present
    - name: Add ssh key for deploy user
      copy:
        dest: /etc/ssh/authorized_keys.d/deploy
