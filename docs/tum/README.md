@@ -13,6 +13,7 @@ There are several ways to access the servers:
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Example usage: `ssh -J tunnel@login.dse.in.tum.de "<yourusername>@nardole.dse.in.tum.de"`
   - Keys are uploaded via the machine bill whenever nixos configuration is updated.
+  - You can generate an SSH config file for all TUM hosts with [this script](../gen-tum-ssh-config.sh), providing your username as an argument
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
