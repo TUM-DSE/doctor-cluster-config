@@ -27,6 +27,11 @@
   mwerndleKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8PIGWr3IcUfKlTgKGFg7+ksCcEIBj9zrbCwQMSI5yn5s4a2G0tCj00cquK+NnuP5Ka265yvZUb8QYwiN/pGEZQR36hATose/Meyo50UMBfNOeE2+AATnWPmPekKkR/tefxPijOt/BbuOYQfOPk5UUpS6N0Sb0KgrY/H0M3tC9Wv0kM9gLAOoTTqEj7u3Tvz0udo3V8CTU+5GwDL+MeUu6iDDm2QwtaiiookEp576WT6GeF/tfEqrf2SAF0LbTjlwQ8V7izGy4BHyjYlVfiO92khGRJjB9Hx508nN3KHEHnv1TtMxK26ONqZRCxD3z2OiLP8IBn4jB/drk6C+jVDr1OxOrvDE03arKVcFf1FE36nNy04R8rGITvcgYBmmK6cmCk27xLoWgEEDGPRc+lrlI9j8Zl30HSoeoXq1UKA+kExFSlNVfw/Y8VfaoSLfIlT9E1uoTHqEwiM+4mPmf94rhiD7oikYsSZRFZJ5lnCNGkF1XzxnSflLMu2IvktiLGosfVz48H/Pc9eA56Qt9roFDBbcaFzzquHOpCZ5bb8x8U7Kdo+mPYmITW+ALFFEQXZIXSXdqzpQbslpp4uwFq8xiJ7XiCs0tc3HSr8uDtG1FvWWVTo8cbdNuYAin+LSiZPqqSiu152+Uh9CGAYanbROqafVlRSOKLUx7uXio4m9hMQ== m.werndle@yahoo.com"
   ];
+  
+  mfaltusKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCk/FU+8EXhfm16DuOuC/9WJT8O2zkRscjVUVZNqjcYhelJbnzcYcnLdkwcnTik8qwrgj5DKI2N0I+RuoZuqGo9q5FlRuvv+GHDuaB8UVjhJrmm9vpTy8Eng52AlttJAOLKhnJQ1BidqvKXD93RGba5S2a0AK0Pdqm7z029RkGNo2zUp5rnuLQmmeitIej7vdZmxx1sk5cYiYBLScwOl7whK7O7ymFQtGQjRB8OC2apAAJ6GVNtoCYbZ71vsHoVKYRD2laHfWpJ3zcE89MWtRxtAjNxSNTB9ZkJLND73NBQtBUt9et4R54hCPbiJgMnWV00LQbfWl9+FrE1yJQA3pJsV8ceqNFC6z4Get6XCOHr4sK129Ww2vTgORHXr+QCMwV0ejeTYOk+ypQG4pFjzM1b2c8RXIT4V9jE16FdGzss2z7Ic9lxtzCJdsA7lg3jrvSpr8zAzoUez+Z2pP9QUAMMb6Q4EqU3sWQn6pHUqP4Lpzb5WGWAn9AMd2qB0sVuJQheYDRsuo4OidLtiOEj+IHkrRGNuAAtbLvFinaouqhYdHKiizX+ddTTl3hGtoD2cX3MixhHCy1LypL08VmORL/yUI90uHkqajWCwNnOLABx/Sa+ZSkTHsAilEkU1TvO9aox2iMbsc1nZwilaBR+onvHP2x0d94BTGHRV3al34BhJw== marcel@Desktop-17"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -91,6 +96,16 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2001;
       openssh.authorizedKeys.keys = mwerndleKeys;
+    };
+    
+    # Marcel Faltus, Redha's BSc student (Porting QEMU for Apple M1)
+    mfaltus = {
+      isNormalUser = true;
+      home = "/home/mfaltus";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2002;
+      openssh.authorizedKeys.keys = mfaltusKeys;
     };
   };
 
