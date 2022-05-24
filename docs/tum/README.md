@@ -57,7 +57,7 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
 ## ARM64
 
 - [yasmin](yasmin.md)
-- [sarah/ethstick11](ethstick11.md): m1 mac mini, no ipmi, in Redhas office, accounts are created manually
+- [sarah](sarah.md): M1 Mac Mini, no ipmi, in Redha's office, accounts are created manually
 
 ## FPGA-servers
 
