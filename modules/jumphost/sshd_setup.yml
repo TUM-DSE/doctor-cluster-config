@@ -63,7 +63,7 @@
        group: root
        mode: '0644'
        content: |
-         ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMhE8XxI6/FFnQThGXqEfPL0Y8LVat+3OqLChzgePzfv
+         ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpkqkEz8grxBHfDecJwTHi14lcaZOgUA5HbKP/2tdia
 
    - name: Update and upgrade apt packages for security updates
      apt:
