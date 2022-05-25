@@ -3,6 +3,7 @@
   ...
 }:
 {
+# This is used for persistent memory
   config = {
     # enable dax option for fs
     boot.kernelPatches = [ {
