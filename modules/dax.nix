@@ -2,7 +2,7 @@
   config,
   ...
 }:
-with lib; {
+{
   config = {
     # enable dax option for fs
     boot.kernelPatches = [ {
