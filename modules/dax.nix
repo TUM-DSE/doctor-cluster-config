@@ -10,7 +10,7 @@
       name = "daxfs-config";
       patch = null;
       extraConfig = ''
-	    CONFIG_FS_DAX y
+	    FS_DAX y
           '';
     } ];
   };
