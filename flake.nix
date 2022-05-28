@@ -8,15 +8,14 @@
     flake-modules-core.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO Switch to nixos release as soon as it comes out
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
     # In case we need backports, we can use our fork
     #nixpkgs.url = "github:TUM-DSE/nixpkgs/release-21.11-backports";
     nixpkgs-unstable.url = "github:Mic92/nixpkgs/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
-    #home-manager.url = "github:rycee/home-manager/release-21.11";
-    home-manager.url = "github:rycee/home-manager/master";
+    home-manager.url = "github:rycee/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix";
