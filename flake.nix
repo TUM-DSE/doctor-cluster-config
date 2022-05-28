@@ -4,7 +4,7 @@
   # To update all inputs:
   # $ nix flake update --recreate-lock-file
   inputs = {
-    flake-modules-core.url = "github:hercules-ci/flake-modules-core";
+    flake-modules-core.url = "github:hercules-ci/flake-parts";
     flake-modules-core.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO Switch to nixos release as soon as it comes out
@@ -44,7 +44,7 @@
         imports = [
           ./configurations.nix
         ];
-        perSystem = system: {inputs', pkgs, ...}: {
+        perSystem = {system, inputs', pkgs, ...}: {
           devShells.default = pkgs.mkShell {
             buildInputs = [
               pkgs.python3.pkgs.invoke
