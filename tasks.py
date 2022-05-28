@@ -342,25 +342,20 @@ find . \
     )
 
 
-def wait_for_port(host: str, port: int, shutdown: bool = False) -> None:
+def wait_for_host(host: str, shutdown: bool = False) -> None:
     import socket, time
 
     while True:
-        try:
-            with socket.create_connection((host, port), timeout=1):
-                if shutdown:
-                    time.sleep(1)
-                    sys.stdout.write(".")
-                    sys.stdout.flush()
-                else:
-                    break
-        except OSError as ex:
+            res = subprocess.run(["ping", "-q", "-c", "1", "-w", "2", host], stdout=subprocess.DEVNULL)
             if shutdown:
-                break
+                if res.returncode == 1:
+                    break
             else:
-                time.sleep(0.01)
-                sys.stdout.write(".")
-                sys.stdout.flush()
+                if res.returncode == 0:
+                    break
+            time.sleep(1)
+            sys.stdout.write(".")
+            sys.stdout.flush()
 
 
 def ipmi_password(c) -> str:
@@ -413,12 +408,12 @@ def reboot(c, hosts=""):
 
         print(f"Wait for {h.host} to shutdown", end="")
         sys.stdout.flush()
-        wait_for_port(h.host, h.port, shutdown=True)
+        wait_for_host(h.host, shutdown=True)
         print("")
 
         print(f"Wait for {h.host} to start", end="")
         sys.stdout.flush()
-        wait_for_port(h.host, h.port)
+        wait_for_host(h.host)
         print("")
 
 
