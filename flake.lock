@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1653510071,
-        "narHash": "sha256-KoBs0USqNunyxaBOYx/trSREMf8f3fA+msDfADiMI5o=",
+        "lastModified": 1653748799,
+        "narHash": "sha256-oxmLhSV3lOrrhGsbw3UqeIc/Bo6TdDJxV3jyBVd3Czk=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "c7d1a3d10117247892df7db45cef562bf62789d5",
+        "rev": "88ee50725f0f4b4d246dc06bdf55236eeee7595f",
         "type": "github"
       },
       "original": {
@@ -95,11 +95,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1653723027,
-        "narHash": "sha256-iAOzEeZYglOG5PnoHVUh1HnPJGF3T3ocv8jbm3jDkMs=",
+        "lastModified": 1653794838,
+        "narHash": "sha256-o3g0fJOxZEnJP3Q0kGIIgbLkImjMONUt952skaEUW2E=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9af86f3121dcc29756b5cdde04659a48440d5bb0",
+        "rev": "fc206e3522e7a737e3c24acc8cf18e6792fb1e52",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1653190490,
-        "narHash": "sha256-GFZux6yNxTBmO7MVak/UM6I62TsyDJ6vNlEeznozT8Y=",
+        "lastModified": 1653743686,
+        "narHash": "sha256-olDbBUd+5WwIqE3r47Lap0QQiteLpQQJ7Dg1xq8g07o=",
         "owner": "Mic92",
         "repo": "nixpkgs",
-        "rev": "76c222ad3b734cd4f3398b7e524c4ca72e9881c7",
+        "rev": "23c8c04fc8e7cb0fb83aef209e625f79fe66ff53",
         "type": "github"
       },
       "original": {
@@ -159,11 +159,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1653724318,
-        "narHash": "sha256-4J2d/fc7huLrYsU7VRiquSNOcQoqQQQGNweR48zFEc4=",
+        "lastModified": 1653781997,
+        "narHash": "sha256-DTOUNYEz357Ye+W317Gexz5YPxWJis/U6eh1HV/OF+M=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "7a8313c6322856a5adbf9217e289733e67020652",
+        "rev": "b2eeb22b8af41966eba6148c52993f84971520f5",
         "type": "github"
       },
       "original": {
@@ -174,11 +174,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1653483614,
-        "narHash": "sha256-di6ZRgwfTIAP+lEnfrueUObZRQhIzB4doU2t3698R48=",
+        "lastModified": 1653778807,
+        "narHash": "sha256-y6l2oOiGjRdq9MvbCXRGG/hMxapqqJquXT8nEq5fv8c=",
         "ref": "master",
-        "rev": "85a852af887049e0cc7ecd9eb8f58fa8e5f582c6",
-        "revCount": 222,
+        "rev": "1a780078cb6f50ce0e5c0b305c6fa4d1fa91048d",
+        "revCount": 223,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
