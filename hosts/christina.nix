@@ -9,8 +9,6 @@
     ../modules/dax.nix
   ];
 
-  doctorwho.pmem.devices = [ "pmem0" ];
-
   networking.hostName = "christina";
 
   system.stateVersion = "21.11";
