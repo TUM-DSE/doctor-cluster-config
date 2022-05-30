@@ -1,0 +1,3 @@
+# Generate and add Github token from here: https://github.com/settings/tokens
+# Give access to `repo` and all `admin:` scopes
+export GITHUB_TOKEN=<TODO>

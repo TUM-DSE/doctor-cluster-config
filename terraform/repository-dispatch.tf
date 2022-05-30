@@ -3,11 +3,11 @@
 resource "github_actions_secret" "github-token" {
   repository       = "nixpkgs"
   secret_name      = "ACCESS_TOKEN"
-  plaintext_value  = data.sops_file.secrets.data["GITHUB_TOKEN"]
+  plaintext_value  = data.sops_file.secrets.data["ls1-admin-bot-token"]
 }
 
 resource "github_actions_secret" "github-token2" {
   repository       = "doctor-cluster-config"
   secret_name      = "ACCESS_TOKEN"
-  plaintext_value  = data.sops_file.secrets.data["GITHUB_TOKEN"]
+  plaintext_value  = data.sops_file.secrets.data["ls1-admin-bot-token"]
 }

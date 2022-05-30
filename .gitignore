@@ -1,5 +1,6 @@
 host-configuration.nix
 terraform/.direnv
+terraform/.envrc.local
 terraform/.terraform/
 terraform/github-permissions/.terraform/
 terraform.tfstate.backup

@@ -40,15 +40,24 @@ resource "gitlab_project_variable" "github-token" {
   ])
   project   = each.key
   key       = "GITHUB_TOKEN"
-  value     = data.sops_file.secrets.data["GITHUB_TOKEN"]
+  value     = data.sops_file.secrets.data["ls1-admin-bot-token"]
   protected = true
   masked    = true
 }
 
 resource "gitlab_service_github" "github" {
-  for_each       = toset(data.github_repositories.my-repos.names)
+  # XXX gitlab made this a "Premium" feature now
+  for_each       = toset([
+    "Swiss-Knife-LLVM-Assignments",
+    "Treaty",
+    "cycle-accurate-hardware-benchmark-tool",
+    "doctor-cluster-config",
+    "research-work-info",
+    "safepm-pmdk",
+    "seminars"
+  ])
   project        = gitlab_project.repos["TUM-DSE/${each.key}"].id
-  token          = data.sops_file.secrets.data["GITHUB_TOKEN"]
+  token          = data.sops_file.secrets.data["ls1-admin-bot-token"]
   repository_url = "https://github.com/TUM-DSE/${each.key}"
 }
 
