@@ -18,3 +18,7 @@ resource "github_membership" "bot" {
   role     = "admin"
   provider = github.owner
 }
+
+output "accept_invitation" {
+  value = "Visit https://github.com/orgs/${var.org_name}/invitation as ${data.github_user.current.login} to accept the invitation"
+}

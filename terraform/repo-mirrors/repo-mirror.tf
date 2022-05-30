@@ -40,7 +40,7 @@ resource "gitlab_project_variable" "github-token" {
   ])
   project   = each.key
   key       = "GITHUB_TOKEN"
-  value     = data.sops_file.secrets.data["ls1-admin-bot-token"]
+  value     = data.sops_file.secrets.data["doctor-cluster-bot-token"]
   protected = true
   masked    = true
 }
@@ -57,7 +57,7 @@ resource "gitlab_service_github" "github" {
     "seminars"
   ])
   project        = gitlab_project.repos["TUM-DSE/${each.key}"].id
-  token          = data.sops_file.secrets.data["ls1-admin-bot-token"]
+  token          = data.sops_file.secrets.data["doctor-cluster-bot-token"]
   repository_url = "https://github.com/TUM-DSE/${each.key}"
 }
 
