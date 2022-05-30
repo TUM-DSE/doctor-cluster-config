@@ -55,16 +55,22 @@
    - name: Create /etc/ssh/authorized_keys.d
      file:
        path: /etc/ssh/authorized_keys.d
+       owner: root
+       group: root
        mode: '0755'
        state: directory
    - name: Create empty ssh key file for tunnel user
      file:
        path: /etc/ssh/authorized_keys.d/tunnel
+       owner: root
+       group: root
        mode: '0644'
        state: touch
    - name: Add ssh key for deploy user
      copy:
        dest: /etc/ssh/authorized_keys.d/deploy
+       owner: root
+       group: root
        mode: '0644'
        content: |
          ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpkqkEz8grxBHfDecJwTHi14lcaZOgUA5HbKP/2tdia
