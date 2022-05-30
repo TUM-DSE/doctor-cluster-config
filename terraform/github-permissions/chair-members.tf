@@ -38,3 +38,10 @@ resource "github_membership" "ls1-cloud-lab-course" {
   role     = "admin"
   provider = github.ls1-cloud-lab-course
 }
+
+resource "github_membership" "ls1-sys-prog-course" {
+  for_each = local.chair_members
+  username = each.value
+  role     = "admin"
+  provider = github.ls1-sys-prog-course
+}
