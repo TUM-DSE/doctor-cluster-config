@@ -18,3 +18,8 @@ provider "github" {
   alias = "ls1-courses"
   owner = "ls1-courses"
 }
+
+provider "github" {
+  alias = "ls1-cloud-lab-course"
+  owner = "ls1-cloud-lab-course"
+}

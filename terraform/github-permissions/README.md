@@ -11,7 +11,7 @@ For example, to give personal github accounts of sys-prog tutors access to the s
 - create a `.envrc.local` file as described [here](../README.md)
 
 
-## Apply repo-permissions.tf
+## Apply terraform
 
 ```console
 git pull
