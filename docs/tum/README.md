@@ -41,6 +41,9 @@ These 5 have an additional link to craig via 100G.
 - dual socket Xeon Gold 6326, GPU
   - [jack](jack.md)
 
+**Note**: these servers are equipped with Persistent Memory (PM). 
+For information on how to setup the PM in App-Direct mode, please see [here](../SETUP_PM.md)
+
 ## Servers used for NFS/Services
 
 - [bill](bill.md)
