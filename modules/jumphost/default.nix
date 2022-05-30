@@ -15,7 +15,7 @@
     description = "Update authorized keys on login.dse.in.tum.de";
     wantedBy = ["multi-user.target"];
     script = ''
-      ${pkgs.openssh}/bin/scp -v -i $CREDENTIALS_DIRECTORY/deploy ${authorizedKeys} deploy@login.dse.in.tum.de:tunnel
+      ${pkgs.openssh}/bin/ssh -v -i $CREDENTIALS_DIRECTORY/deploy deploy@login.dse.in.tum.de < ${authorizedKeys}
     '';
     serviceConfig = {
       Type = "oneshot";

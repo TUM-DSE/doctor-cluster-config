@@ -14,9 +14,8 @@ Match User tunnel
   PasswordAuthentication no
 
 Match User deploy
-  ForceCommand internal-sftp
+  ForceCommand /usr/local/bin/update-tunnel-keys
   PasswordAuthentication no
-  ChrootDirectory /etc/ssh/authorized_keys.d
   PermitTunnel no
   AllowAgentForwarding no
   AllowTcpForwarding no

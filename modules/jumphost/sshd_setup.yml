@@ -7,9 +7,24 @@
      user:
       name: deploy
       state: present
-      shell: /usr/sbin/nologin
+      shell: /usr/local/bin/update-tunnel-keys
       system: yes
       createhome: no
+   - name: Allow deploy user to update tunnel keys
+     community.general.sudoers:
+       name: update-tunnel-keys
+       user: deploy
+       commands: /usr/local/bin/update-tunnel-keys
+   - name: Add command to deploy tunnel keys
+     copy:
+       dest: /usr/local/bin/update-tunnel-keys
+       owner: root
+       group: root
+       mode: '0755'
+       content: |
+         #!/usr/bin/env bash
+         echo "Updating ssh keys..."
+         /bin/cat > /etc/ssh/authorized_keys.d/tunnel
    - name: Add user for ssh forwarding
      user:
       name: tunnel
@@ -45,15 +60,11 @@
    - name: Create empty ssh key file for tunnel user
      file:
        path: /etc/ssh/authorized_keys.d/tunnel
-       owner: deploy
-       group: root
        mode: '0644'
        state: touch
    - name: Add ssh key for deploy user
      copy:
        dest: /etc/ssh/authorized_keys.d/deploy
-       owner: root
-       group: root
        mode: '0644'
        content: |
          ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpkqkEz8grxBHfDecJwTHi14lcaZOgUA5HbKP/2tdia
