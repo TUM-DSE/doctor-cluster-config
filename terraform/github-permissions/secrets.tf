@@ -1,1 +1,1 @@
-../secrets.tf
+../repo-mirrors/secrets.tf

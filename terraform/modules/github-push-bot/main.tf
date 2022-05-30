@@ -1,7 +1,6 @@
 provider "github" {
   alias = "owner"
   owner = var.org_name
-  token = var.github_token
 }
 
 provider "github" {
@@ -17,4 +16,5 @@ data "github_user" "current" {
 resource "github_membership" "bot" {
   username = data.github_user.current.login
   role     = "admin"
+  provider = github.owner
 }

@@ -15,7 +15,6 @@ locals {
     "anti-cheat",
     "task1-syscalls-tum-test-student",
     "task2-fileio-tum-test-student",   # main, rust solution
-    "task2-fileio-masi456",            # cpp solution
     "task2-fileio-rgouicem",           # c solution
     "task3-processes-tum-test-student",
     "task4-concurrency-tum-test-student",
