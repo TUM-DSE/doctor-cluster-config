@@ -1,5 +1,5 @@
 with import <nixpkgs> {};
-mkShell {
+mkShellNoCC {
   nativeBuildInputs = [
     bashInteractive
     ansible

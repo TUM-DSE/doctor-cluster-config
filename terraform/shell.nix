@@ -1,5 +1,5 @@
 with import (builtins.getFlake (toString ../.)).inputs.nixpkgs-unstable {};
-  mkShell {
+  mkShellNoCC {
     nativeBuildInputs = [
       bashInteractive
       sops

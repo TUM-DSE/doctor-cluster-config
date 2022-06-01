@@ -1,6 +1,6 @@
 {pkgs ? import <nixpkgs> {}}:
 with pkgs;
-  mkShell {
+  mkShellNoCC {
     buildInputs = [
       qemu_kvm
       dhcp

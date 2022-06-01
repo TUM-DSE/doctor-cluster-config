@@ -44,7 +44,7 @@
           ./configurations.nix
         ];
         perSystem = {system, inputs', pkgs, ...}: {
-          devShells.default = pkgs.mkShell {
+          devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.python3.pkgs.invoke
               pkgs.ipmitool
