@@ -43,7 +43,7 @@
         imports = [
           ./configurations.nix
         ];
-        perSystem = {system, inputs', pkgs, ...}: {
+        perSystem = {system, self', pkgs, ...}: {
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.python3.pkgs.invoke
@@ -68,7 +68,7 @@
             };
 
             netboot-pixie-core = pkgs.callPackage ./modules/netboot/netboot-pixie-core.nix {
-              inherit (inputs'.packages) netboot;
+              inherit (self'.packages) netboot;
             };
           };
         };
