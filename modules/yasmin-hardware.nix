@@ -22,7 +22,7 @@
     fsType = "zfs";
   };
 
-  fileSystems."/boot/EFI" = {
+  fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/0D40-D110";
     fsType = "vfat";
   };
