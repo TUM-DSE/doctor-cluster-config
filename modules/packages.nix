@@ -31,5 +31,11 @@
     (neovim.override {vimAlias = true;})
     ripgrep
     pciutils
+
+    # various terminfo packages
+    termite.terminfo
+    wezterm.terminfo
+    kitty.terminfo
+    foot.terminfo
   ];
 }
