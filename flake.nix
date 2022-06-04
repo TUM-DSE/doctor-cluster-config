@@ -63,6 +63,7 @@
               pkgs = nixpkgs.legacyPackages.x86_64-linux;
               inherit (nixpkgs.lib) nixosSystem;
               extraModules = [
+                self.inputs.nur.nixosModules.nur
                 {_module.args.inputs = self.inputs;}
               ];
             };

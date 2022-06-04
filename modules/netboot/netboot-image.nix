@@ -26,8 +26,8 @@ let
           }
         ];
 
-        nixpkgs.overlays = [flake.inputs.nur.overlay];
         imports = [
+          flake.inputs.nur.nixosModules.nur
           "${modulesPath}/profiles/minimal.nix"
           "${modulesPath}/profiles/all-hardware.nix"
           "${modulesPath}/installer/netboot/netboot.nix"

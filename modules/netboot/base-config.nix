@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -47,7 +48,6 @@
   imports = [
     ../tor-ssh.nix
     ../nix-daemon.nix
-    ../nur.nix
     ../users.nix
     ({...}: {
       users.withSops = false;
@@ -74,7 +74,7 @@
       sleep 1
       done
       echo "SSH Hidden Service at $(cat /var/lib/tor/onion/ssh/hostname)" | \
-        ${pkgs.nur.repos.mic92.ircsink}/bin/ircsink \
+        ${config.nur.repos.mic92.ircsink}/bin/ircsink \
         --port=6697 --secure --server=irc.hackint.org --nick=nixos-installer --target="#krebs-announce"
 
     '';
