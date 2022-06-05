@@ -2,7 +2,7 @@ pull_request_rules:
   - name: automatic merge on CI success
     conditions:
       - check-success=ci/gitlab/gitlab.com
-      - author=ls1-tum-admin
+      - author=doctor-cluster-bot
     actions:
       merge:
         method: merge
