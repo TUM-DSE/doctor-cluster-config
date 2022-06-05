@@ -79,4 +79,10 @@
      apt:
        upgrade: yes
        update_cache: yes
+       autoclean: yes
+       autoremove: yes
        cache_valid_time: 86400 #One day
+     register: system_upgrade
+   - name: Reboot the machine when updates have been applied
+     reboot:
+     when: system_upgrade.changed

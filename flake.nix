@@ -42,6 +42,7 @@
         systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
         imports = [
           ./configurations.nix
+          ./modules/monitoring/flake-module.nix
         ];
         perSystem = {system, self', pkgs, ...}: {
           devShells.default = pkgs.mkShellNoCC {
