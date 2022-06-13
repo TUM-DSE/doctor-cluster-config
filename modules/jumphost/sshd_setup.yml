@@ -7,7 +7,8 @@
      user:
       name: deploy
       state: present
-      shell: /usr/local/bin/update-tunnel-keys
+      shell: /bin/sh
+      home: /
       system: yes
       createhome: no
    - name: Allow deploy user to update tunnel keys

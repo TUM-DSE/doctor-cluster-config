@@ -14,7 +14,7 @@ Match User tunnel
   PasswordAuthentication no
 
 Match User deploy
-  ForceCommand /usr/local/bin/update-tunnel-keys
+  ForceCommand sudo /usr/local/bin/update-tunnel-keys
   PasswordAuthentication no
   PermitTunnel no
   AllowAgentForwarding no
