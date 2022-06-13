@@ -6,7 +6,6 @@
 }: {
   imports = [
     ../modules/edinburgh/nfs-home.nix
-    ../modules/ci.nix
   ];
 
   networking.hostName = "martha";
