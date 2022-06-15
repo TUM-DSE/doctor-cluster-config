@@ -79,6 +79,11 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIODydnvMp1+Ppx4J4IwXtnxwJhAVrFc4oRj5GEmimX8 masanori.misono@in.tum.de"
   ];
 
+  sebastianKeys = [
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDHQTf4Oz2eHoihkAXKpibIs+F7XUf7n28rL3kJXcQGlnar2xRLEwdWRxBrwKKdk092NVUTLXTFYopfIuJXFoJ8= sebastian@ThSt-I9"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFE6FC1RI5x+kb68QYg0RVAQvkH9Pz5Qmh9VZA9lRXlz/7A4SfV36oLaCwUKEpZv428fVcdc1ZFf69bLZKbyEGk= sebastian@A2003110405LEN1"
+  ];
+
   extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
 in {
   options = {
@@ -275,6 +280,17 @@ in {
         shell = "/run/current-system/sw/bin/bash";
         uid = 1021;
         openssh.authorizedKeys.keys = masaKeys;
+      };
+
+      # Sebastian Reimers
+      # tum
+      sebastian = {
+        isNormalUser = true;
+        home = "/home/sebastian";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1022;
+        openssh.authorizedKeys.keys = sebastianKeys;
       };
 
       root = {
