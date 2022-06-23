@@ -25,5 +25,13 @@
   # IPMI/BMC:
   # - d0:8e:79:ba:02:1a
 
+  # Allow qemu to access bridges
+  environment.etc."qemu/bridge.conf" = {
+    user = "root";
+    group = "qemu";
+    mode = "640";
+    text = "allow all";
+  };
+
   system.stateVersion = "21.05";
 }
