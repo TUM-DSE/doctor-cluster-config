@@ -33,5 +33,14 @@
     text = "allow all";
   };
 
+  # Don't manage tap devices with systemd-networkd
+  systemd.network.networks."06-tap".extraConfig = ''
+    [Match]
+    Name = tap*
+
+    [Link]
+    Unmanaged = yes
+  '';
+
   system.stateVersion = "21.05";
 }
