@@ -176,6 +176,16 @@ def deploy_host(c, host):
 
 
 @task
+def deploy_local(c, host):
+    """
+    Deploy NixOS configuration on the same machine. The NixOS configuration is
+    selected based on the hostname.
+    """
+    c.run(
+        f"""sudo nixos-rebuild switch --flake .#"""
+    )
+
+@task
 def deploy_doctor(c):
     """
     Deploy to rpi4, that is used to control power relay

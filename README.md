@@ -24,10 +24,25 @@ $ inv -l
 Available tasks:
 
   cleanup-gcroots
-  deploy-doctor      Deploy to rpi4, that is used to control power relay
-  deploy-edinburgh   Deploy to edinburgh servers starting with rose
-  deploy-tum         Deploy to TUM servers
-  reboot             Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
+  deploy-doctor            Deploy to rpi4, that is used to control power relay
+  deploy-edinburgh         Deploy to edinburgh servers starting with rose
+  deploy-host              Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
+  deploy-local             Deploy NixOS configuration on the same machine. The NixOS configuration is
+  deploy-tum               Deploy to TUM servers
+  format-disks             Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
+  generate-root-password   Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
+  generate-ssh-cert        Generate ssh cert for host, i.e. inv generate-ssh-cert bill 131.159.102.1
+  install-nixos            install nixos, i.e.: inv install-nixos --hosts new-hostname --flakeattr
+  ipmi-powercycle
+  ipmi-serial
+  mount-disks              Mount disks from the installer, i.e.: inv mount-disks --hosts new-hostname --disk /dev/nvme0n1
+  print-age-key            Print age key for sops, inv print-age-key --hosts "host1,host2"
+  print-tinc-key
+  reboot                   Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
+  update-docs              Regenerate docs for all servers
+  update-lldp-info         Regenerate lldp info for all servers
+  update-sops-files        Update all sops yaml and json files according to .sops.yaml rules
+
 ```
 
 Run!
