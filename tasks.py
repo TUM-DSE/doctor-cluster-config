@@ -176,7 +176,7 @@ def deploy_host(c, host):
 
 
 @task
-def deploy_local(c, host):
+def deploy_local(c):
     """
     Deploy NixOS configuration on the same machine. The NixOS configuration is
     selected based on the hostname.
