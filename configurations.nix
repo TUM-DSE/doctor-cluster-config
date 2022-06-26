@@ -27,6 +27,7 @@
     ./modules/binbash.nix
     ./modules/systemd.nix
     ./modules/cleanup-usr.nix
+    ./modules/qemu-bridge.nix
 
     sops-nix.nixosModules.sops
     ({

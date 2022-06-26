@@ -25,22 +25,5 @@
   # IPMI/BMC:
   # - d0:8e:79:ba:02:1a
 
-  # Allow qemu to access bridges
-  environment.etc."qemu/bridge.conf" = {
-    user = "root";
-    group = "qemu";
-    mode = "640";
-    text = "allow all";
-  };
-
-  # Don't manage tap devices with systemd-networkd
-  systemd.network.networks."06-tap".extraConfig = ''
-    [Match]
-    Name = tap*
-
-    [Link]
-    Unmanaged = yes
-  '';
-
   system.stateVersion = "21.05";
 }
