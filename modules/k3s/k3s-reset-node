@@ -1,4 +1,5 @@
 #!/bin/sh
+# THIS IS DANGEROUS BECAUSE IT DELETES SECRETS/CERTS e.g. in /var/lib/rancher.
 set -eux -o pipefail
 shopt -s nullglob
 systemctl stop containerd k3s
