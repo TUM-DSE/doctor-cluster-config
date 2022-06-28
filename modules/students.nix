@@ -33,6 +33,10 @@
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBK37Hp7Tjuqjm9iGBJL6/GIqNZRN6NSQD4SKomAAL+Zjx7UV+HXX19hruvRdkjz/RNeU27vYthrKwtfqIggzEiI= marcel@Desktop-17"
   ];
 
+  gierensKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -107,6 +111,16 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2002;
       openssh.authorizedKeys.keys = mfaltusKeys;
+    };
+
+    # Sandro Gierens, Peter's BSc student (applying ioregionfd to KVM/qemu devices)
+    gierens = {
+      isNormalUser = true;
+      home = "/home/gierens";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2003;
+      openssh.authorizedKeys.keys = gierensKeys;
     };
   };
 
