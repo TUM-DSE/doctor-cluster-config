@@ -78,16 +78,8 @@
     enable = true;
     # every 15 minutes
     interval = "*:0/15";
-    commands.zpool1 = {
-      target = "syncoid@nfs-backup:zpool1";
-      sshKey = config.sops.secrets.syncoid.path;
-    };
     commands."zpool1/home" = {
       target = "syncoid@nfs-backup:zpool1/home";
-      sshKey = config.sops.secrets.syncoid.path;
-    };
-    commands.zpool2 = {
-      target = "syncoid@nfs-backup:zpool2";
       sshKey = config.sops.secrets.syncoid.path;
     };
     commands."zpool2/share" = {
