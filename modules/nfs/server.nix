@@ -98,6 +98,7 @@
 
   systemd.services.syncoid-zpool1-home = {
     serviceConfig.ExecStopPost = [("+${pkgs.writeShellScript "telegraf" ''
+      umask 022
       cat > /var/log/telegraf/syncoid-home <<EOF
       task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
       EOF
@@ -106,6 +107,7 @@
 
   systemd.services.syncoid-zpool2-share = {
     serviceConfig.ExecStopPost = [("+${pkgs.writeShellScript "telegraf" ''
+      umask 022
       cat > /var/log/telegraf/syncoid-share <<EOF
       task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
       EOF
