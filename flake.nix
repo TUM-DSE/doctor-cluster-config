@@ -8,9 +8,9 @@
     flake-modules-core.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO Switch to nixos release as soon as it comes out
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
+    #nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
     # In case we need backports, we can use our fork
-    #nixpkgs.url = "github:TUM-DSE/nixpkgs/release-21.11-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/release-22.05-backports";
     nixpkgs-unstable.url = "github:Mic92/nixpkgs/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
