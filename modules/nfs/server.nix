@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-# NFS failover setup based on znapzend.
+# NFS failover setup based on syncoid.
 #
 # This setup works as follow:
 # - The nfs server uses zsnapzend to sync its zfs pools to the nfs backup every 10 minutes
 # - Both nfs server and nfs backup have a dedicated ip address: 2a09:80c0:102::f000:0/64 for the server
 # - If the nfs server becomes unavailable the backup server can become the nfs
 #   server by importing `nfs/server.nix` instead of `nfs/server-backup.nix`
-#
 # To migrate nfs service from one machine to another while both machines are still online, first remove
 # their ipv6 addresses to avoid ipv6 duplicate address detection to fail:
 #
@@ -25,11 +24,12 @@
 {
   imports = [./.];
 
-  sops.secrets.znapzend.sopsFile = ./secrets.yml;
+  sops.secrets.syncoid.sopsFile = ./secrets.yml;
+  sops.secrets.syncoid.owner = "syncoid";
   programs.ssh.extraConfig = ''
     Host nfs-backup
-      User znapzend
-      IdentityFile ${config.sops.secrets.znapzend.path}
+      User syncoid
+      IdentityFile ${config.sops.secrets.syncoid.path}
   '';
 
   services.nfs.server.enable = true;
@@ -60,9 +60,9 @@
     options = ["nofail"];
   };
 
-  systemd.services.znapzend-setup = {
+  systemd.services.syncoid-setup = {
     wantedBy = ["multi-user.target"];
-    before = ["znapzend.service"];
+    before = ["syncoid.service"];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = [
@@ -74,36 +74,44 @@
     };
   };
 
-  services.znapzend.enable = true;
-  services.znapzend.zetup = let
-    postsend = task:
-      toString (pkgs.writeScript "postsend" ''
-        cat > /var/log/telegraf/${task} <<EOF
-        task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
-        EOF
-      '');
-  in {
-    "zpool1" = {
-      plan = "1h=>10min";
-      recursive = true;
-      destinations.remote = {
-        host = "znapzend@nfs-backup";
-        dataset = "zpool1";
-        postsend = postsend "znapzend-home";
-      };
+  services.syncoid = {
+    enable = true;
+    # every 15 minutes
+    interval = "*:0/15";
+    commands.zpool1 = {
+      target = "syncoid@nfs-backup:zpool1";
+      sshKey = config.sops.secrets.syncoid.path;
     };
-    "zpool2" = {
-      plan = "1h=>10min";
-      recursive = true;
-      destinations = {
-        remote = {
-          host = "znapzend@nfs-backup";
-          dataset = "zpool2";
-          postsend = postsend "znapzend-share";
-        };
-      };
+    commands."zpool1/home" = {
+      target = "syncoid@nfs-backup:zpool1/home";
+      sshKey = config.sops.secrets.syncoid.path;
+    };
+    commands.zpool2 = {
+      target = "syncoid@nfs-backup:zpool2";
+      sshKey = config.sops.secrets.syncoid.path;
+    };
+    commands."zpool2/share" = {
+      target = "syncoid@nfs-backup:zpool2/share";
+      sshKey = config.sops.secrets.syncoid.path;
     };
   };
+
+  systemd.services.syncoid-zpool1-home = {
+    serviceConfig.ExecStopPost = [("+${pkgs.writeShellScript "telegraf" ''
+      cat > /var/log/telegraf/syncoid-home <<EOF
+      task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
+      EOF
+    ''}")];
+  };
+
+  systemd.services.syncoid-zpool2-share = {
+    serviceConfig.ExecStopPost = [("+${pkgs.writeShellScript "telegraf" ''
+      cat > /var/log/telegraf/syncoid-share <<EOF
+      task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
+      EOF
+    ''}")];
+  };
+
   sops.secrets.tum-borgbackup-password.sopsFile = ./secrets.yml;
   sops.secrets.tum-borgbackup-home-ssh.sopsFile = ./secrets.yml;
   sops.secrets.tum-borgbackup-share-ssh.sopsFile = ./secrets.yml;

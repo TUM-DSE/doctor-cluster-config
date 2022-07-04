@@ -83,7 +83,7 @@ machines use `/share`, which is based on two hard disk (15TB capacity).
 
 Both nfs export stored on `nardole` are also replicated to `bill` every 15
 minutes using zfs replication based on
-[znapzend](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server-backup.nix).
+[syncoid](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server-backup.nix).
 In case there are hardware problems with `nardole`, `bill` can take over serving
 the nfs.
 
