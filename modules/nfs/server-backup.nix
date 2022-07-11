@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: {
@@ -40,4 +39,11 @@
     ];
   };
   users.groups.syncoid = {};
+
+  # Syncoid leaves zfs-auto-snap behind, that we cleanup simply like this.
+  systemd.services.prune-auto-snaps = {
+    path = [ config.boot.zfs.package ];
+    startAt = "daily";
+    serviceConfig.ExecStart = "${pkgs.zfs-prune-snapshots}/bin/zfs-prune-snapshots  -p 'zfs-auto-snap' 1w zpool1 zpool2";
+  };
 }
