@@ -16,6 +16,7 @@
     {_module.args.inputs = self.inputs;}
     ./modules/packages.nix
     ./modules/nix-daemon.nix
+    ./modules/auto-upgrade.nix
     ./modules/telegraf.nix
     ./modules/tor-ssh.nix
     ./modules/users.nix
