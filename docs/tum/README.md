@@ -91,7 +91,12 @@ the nfs.
 
 ZFS is used on all machines whenever possible. We enable automatic snapshots of
 the filesystem every 15 minutes. The snapshot can be accessed by entering the
-`.zfs` directory of a zfs dataset (i.e. `/home/.zfs`, `/share/.zfs` or `/.zfs`).
+`.zfs` directory of a zfs dataset mountpoint.
+
+- for NFS mounted directories, snapshots are on the NFS master node (nardole?, `/export/home/.zfs` or `/export/share/.zfs`)
+- for local zfs datasets (`zfs list`) snapshots are at `/.zfs`, `/home/.zfs`, ...
+- mount the snapshots with `zfs set snapdir=visible zpoolname/datasetname`
+
 Furthermore `/share` and `/home` are backed up daily to get RBG storage using
 [borgbackup](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server.nix)
 
