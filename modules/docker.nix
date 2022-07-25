@@ -8,5 +8,8 @@
     enableOnBoot = true;
     storageDriver = "zfs";
     extraOptions = "--userland-proxy=false --ip-masq=true --storage-opt=zfs.fsname=zroot/docker";
+
+    # not compatible with docker swarm
+    liveRestore = false;
   };
 }
