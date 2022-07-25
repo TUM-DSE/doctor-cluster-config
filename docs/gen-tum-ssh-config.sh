@@ -34,7 +34,7 @@ Host *.dse.in.tum.de
 EOF
 
 # Download list of machines
-curl -s https://github.com/TUM-DSE/doctor-cluster-config/tree/master/docs/tum > "$tempfile"
+curl -s https://github.com/TUM-DSE/doctor-cluster-config/tree/master/docs/hosts > "$tempfile"
 machines=$(egrep '^.+<spa.+\.md' "$tempfile" | cut -d'>' -f3 | cut -d'<' -f1 | cut -d'.' -f1)
 
 # Generate entry for each machine
