@@ -1,5 +1,5 @@
-All hostnames can be looked up in [./hosts](./hosts). Most of the servers are in
-[TU Munich](docs/tum). Some machines are in [Edinburgh](docs/edinburgh).
+The documenation for all hosts lives in [here](docs/hosts). 
+The corresponding nixos configuration is in [./hosts](./hosts). 
 
 # New admins: getting started
 
@@ -24,11 +24,9 @@ $ inv -l
 Available tasks:
 
   cleanup-gcroots
-  deploy-doctor            Deploy to rpi4, that is used to control power relay
-  deploy-edinburgh         Deploy to edinburgh servers starting with rose
+  deploy                   Deploy to servers
   deploy-host              Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
   deploy-local             Deploy NixOS configuration on the same machine. The NixOS configuration is
-  deploy-tum               Deploy to TUM servers
   format-disks             Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
   generate-root-password   Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
   generate-ssh-cert        Generate ssh cert for host, i.e. inv generate-ssh-cert bill 131.159.102.1
@@ -42,13 +40,12 @@ Available tasks:
   update-docs              Regenerate docs for all servers
   update-lldp-info         Regenerate lldp info for all servers
   update-sops-files        Update all sops yaml and json files according to .sops.yaml rules
-
 ```
 
 Run!
 
 ``` console
-$ inv deploy-tum
+$ inv deploy
 ```
 
 # Add new users
@@ -93,7 +90,7 @@ An example of the ```home.nix``` configured for VS Code support is shown in ```h
 
 # IPMI
 
-On all new TUM rack machines we have IPMI support!!!
+On our TUM rack machines we have IPMI support.
 
 Generally, you can find the IPMI web interface at
 `https://$HOST-mgmt.dse.in.tum.de/` (i.e. https://bill-mgmt.dse.in.tum.de)
