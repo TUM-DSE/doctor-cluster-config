@@ -37,6 +37,10 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
+  heKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -121,6 +125,17 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2003;
       openssh.authorizedKeys.keys = gierensKeys;
+    };
+
+    # Yi He: sys-prog attending student SS22. Wants to debug racy task8 somewhere where the bugs reproduce.
+    he = {
+      isNormalUser = true;
+      home = "/home/he";
+      uid = 2004;
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      allowedHosts = ["wilfred"];
+      openssh.authorizedKeys.keys = heKeys;
     };
   };
 
