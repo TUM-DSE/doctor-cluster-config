@@ -52,14 +52,14 @@ def document_nixos(hosts: List[str]) -> None:
     """
     Generate documentation, expects "hostname.r"
     """
-    tum = DeployGroup([DeployHost(h) for h in HOSTS])
+    hosts = DeployGroup([DeployHost(h) for h in HOSTS])
 
-    def doc_tum(h: DeployHost) -> None:
+    def doc_host(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
 
     pwd = os.getcwd()
     os.chdir("docs/hosts")
-    tum.run_function(doc_tum)
+    hosts.run_function(doc_host)
     os.chdir(pwd)
 
 
