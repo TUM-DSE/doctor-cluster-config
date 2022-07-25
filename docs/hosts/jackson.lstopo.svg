@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='734px' height='400px' viewBox='0 0 734px 400px' version='1.1'>
-	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='734' height='362' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='733px' height='465px' viewBox='0 0 733px 465px' version='1.1'>
+	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='733' height='427' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Machine_0_text' class='Machine' font-family='Monospace' x='7' y='17' fill='rgb(0,0,0)' font-size='10px'>Machine (995GB total)</text>
 	<rect id='Package_0_rect' class='Package' x='7' y='24' width='329' height='293' fill='rgb(210,231,164)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Package_0_text' class='Package' font-family='Monospace' x='14' y='41' fill='rgb(0,0,0)' font-size='10px'>Package L#0</text>
@@ -122,29 +122,40 @@
 	<line id='PCIBridge_7_line' class='PCIBridge' x1='388' y1='244' x2='395' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_7_line_2' class='PCIBridge' x1='395' y1='244' x2='419' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PCIBridge_7_text_2' class='PCIBridge' font-family='Monospace' x='398' y='257' fill='rgb(0,0,0)' font-size='10px'>32</text>
-	<line id='PCIBridge_7_line_1' class='PCIBridge' x1='395' y1='244' x2='395' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_7_rect_2' class='PCI' x='422' y='244' width='140' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_7_rect' class='PCI' x='419' y='241' width='140' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_7_text' class='PCI' font-family='Monospace' x='426' y='258' fill='rgb(0,0,0)' font-size='10px'>2 x { PCI 51:00.0-1 }</text>
-	<rect id='HostBridge_8_rect' class='HostBridge' x='569' y='241' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='HostBridge_8_line' class='HostBridge' x1='576' y1='244' x2='583' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='HostBridge_8_line_2' class='HostBridge' x1='583' y1='244' x2='607' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='HostBridge_8_text_2' class='HostBridge' font-family='Monospace' x='586' y='257' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
-	<line id='HostBridge_8_line_1' class='HostBridge' x1='583' y1='244' x2='583' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCIBridge_9_rect' class='PCIBridge' x='607' y='241' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_9_line' class='PCIBridge' x1='614' y1='244' x2='621' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<line id='PCIBridge_9_line_2' class='PCIBridge' x1='621' y1='244' x2='645' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCIBridge_9_text_2' class='PCIBridge' font-family='Monospace' x='624' y='257' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
-	<line id='PCIBridge_9_line_1' class='PCIBridge' x1='621' y1='244' x2='621' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_9_rect' class='PCI' x='645' y='241' width='82' height='114' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='PCI_9_text' class='PCI' font-family='Monospace' x='652' y='258' fill='rgb(0,0,0)' font-size='10px'>PCI 8a:00.0</text>
-	<rect id='Block_4_rect' class='Block' x='652' y='265' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Block_4_text' class='Block' font-family='Monospace' x='659' y='282' fill='rgb(0,0,0)' font-size='10px'>Block sdb</text>
-	<text id='Block_4_text_1' class='Block' font-family='Monospace' x='659' y='296' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
-	<rect id='Block_5_rect' class='Block' x='652' y='310' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Block_5_text' class='Block' font-family='Monospace' x='659' y='327' fill='rgb(0,0,0)' font-size='10px'>Block sda</text>
-	<text id='Block_5_text_1' class='Block' font-family='Monospace' x='659' y='341' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
-	<rect id='anon_rect' x='0' y='362' width='734' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='anon_text' font-family='Monospace' x='7' y='379' fill='rgb(0,0,0)' font-size='10px'>Host: jackson</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='393' fill='rgb(0,0,0)' font-size='10px'>Date: Mon 30 May 2022 09:17:02 AM UTC</text>
+	<line id='PCIBridge_7_line_3' class='PCIBridge' x1='395' y1='337' x2='419' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_7_text_3' class='PCIBridge' font-family='Monospace' x='398' y='350' fill='rgb(0,0,0)' font-size='10px'>32</text>
+	<line id='PCIBridge_7_line_1' class='PCIBridge' x1='395' y1='244' x2='395' y2='337' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_7_rect' class='PCI' x='419' y='241' width='136' height='86' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_7_text' class='PCI' font-family='Monospace' x='426' y='258' fill='rgb(0,0,0)' font-size='10px'>PCI 51:00.0</text>
+	<rect id='Net_4_rect' class='Net' x='426' y='265' width='92' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_4_text' class='Net' font-family='Monospace' x='433' y='282' fill='rgb(0,0,0)' font-size='10px'>Net enp81s0f0</text>
+	<rect id='OpenFabrics_5_rect' class='OpenFabrics' x='426' y='296' width='122' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='OpenFabrics_5_text' class='OpenFabrics' font-family='Monospace' x='433' y='313' fill='rgb(0,0,0)' font-size='10px'>OpenFabrics irdma0</text>
+	<rect id='PCI_8_rect' class='PCI' x='419' y='334' width='136' height='86' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_8_text' class='PCI' font-family='Monospace' x='426' y='351' fill='rgb(0,0,0)' font-size='10px'>PCI 51:00.1</text>
+	<rect id='Net_6_rect' class='Net' x='426' y='358' width='92' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_6_text' class='Net' font-family='Monospace' x='433' y='375' fill='rgb(0,0,0)' font-size='10px'>Net enp81s0f1</text>
+	<rect id='OpenFabrics_7_rect' class='OpenFabrics' x='426' y='389' width='122' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='OpenFabrics_7_text' class='OpenFabrics' font-family='Monospace' x='433' y='406' fill='rgb(0,0,0)' font-size='10px'>OpenFabrics irdma1</text>
+	<rect id='HostBridge_8_rect' class='HostBridge' x='562' y='241' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='HostBridge_8_line' class='HostBridge' x1='569' y1='244' x2='576' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='HostBridge_8_line_2' class='HostBridge' x1='576' y1='244' x2='600' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='HostBridge_8_text_2' class='HostBridge' font-family='Monospace' x='579' y='257' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
+	<line id='HostBridge_8_line_1' class='HostBridge' x1='576' y1='244' x2='576' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCIBridge_9_rect' class='PCIBridge' x='600' y='241' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_9_line' class='PCIBridge' x1='607' y1='244' x2='614' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<line id='PCIBridge_9_line_2' class='PCIBridge' x1='614' y1='244' x2='638' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCIBridge_9_text_2' class='PCIBridge' font-family='Monospace' x='617' y='257' fill='rgb(0,0,0)' font-size='10px'>7.9</text>
+	<line id='PCIBridge_9_line_1' class='PCIBridge' x1='614' y1='244' x2='614' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_9_rect' class='PCI' x='638' y='241' width='82' height='114' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='PCI_9_text' class='PCI' font-family='Monospace' x='645' y='258' fill='rgb(0,0,0)' font-size='10px'>PCI 8a:00.0</text>
+	<rect id='Block_8_rect' class='Block' x='645' y='265' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Block_8_text' class='Block' font-family='Monospace' x='652' y='282' fill='rgb(0,0,0)' font-size='10px'>Block sdb</text>
+	<text id='Block_8_text_1' class='Block' font-family='Monospace' x='652' y='296' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
+	<rect id='Block_9_rect' class='Block' x='645' y='310' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Block_9_text' class='Block' font-family='Monospace' x='652' y='327' fill='rgb(0,0,0)' font-size='10px'>Block sda</text>
+	<text id='Block_9_text_1' class='Block' font-family='Monospace' x='652' y='341' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
+	<rect id='anon_rect' x='0' y='427' width='733' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='anon_text' font-family='Monospace' x='7' y='444' fill='rgb(0,0,0)' font-size='10px'>Host: jackson</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='458' fill='rgb(0,0,0)' font-size='10px'>Date: Mon 25 Jul 2022 09:25:13 AM UTC</text>
 </svg>

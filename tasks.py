@@ -52,26 +52,14 @@ def document_nixos(hosts: List[str]) -> None:
     """
     Generate documentation, expects "hostname.r"
     """
-    tum = DeployGroup([DeployHost(h) for h in set(hosts).intersection(set(TUM))])
-    edi = DeployGroup(
-        [
-            DeployHost(h)
-            for h in set(hosts).intersection(set(EDINBURGH)) - set(["doctor.r"])
-        ]
-    )
+    tum = DeployGroup([DeployHost(h) for h in HOSTS])
 
     def doc_tum(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
 
-    def doc_edi(h: DeployHost) -> None:
-        h.run_local(f"../generate-host-info.sh {h.host}")
-
     pwd = os.getcwd()
-    os.chdir("docs/tum")
+    os.chdir("docs/hosts")
     tum.run_function(doc_tum)
-    os.chdir(pwd)
-    os.chdir("docs/edinburgh")
-    edi.run_function(doc_edi)
     os.chdir(pwd)
 
 
@@ -79,13 +67,7 @@ def get_lldp_neighbors(hosts: List[str]) -> None:
     """
     Get LLDP-discovered neighbors, expects "hostname.r"
     """
-    tum = DeployGroup([DeployHost(h) for h in set(hosts).intersection(set(TUM))])
-    edi = DeployGroup(
-        [
-            DeployHost(h)
-            for h in set(hosts).intersection(set(EDINBURGH)) - set(["doctor.r"])
-        ]
-    )
+    tum = DeployGroup([DeployHost(h) for h in HOSTS])
 
     def doc_tum(h: DeployHost) -> None:
         h.run_local(f"../../get-lldp-neighbors.sh {h.host}")
@@ -114,7 +96,7 @@ def get_lldp_neighbors(hosts: List[str]) -> None:
     os.chdir(pwd)
 
 
-TUM = [
+HOSTS = [
     "astrid.dse.in.tum.de",
     "dan.dse.in.tum.de",
     "mickey.dse.in.tum.de",
@@ -130,17 +112,6 @@ TUM = [
     "river.dse.in.tum.de",
     "jack.dse.in.tum.de",
 ]
-EDINBURGH = [
-    "rose.r",
-    "amy.r",
-    "martha.r",
-    "clara.r",
-    "donna.r",
-    "sauron.r",
-    "doctor.r",
-]
-
-ALL = TUM + EDINBURGH
 
 HAS_TTY = sys.stderr.isatty()
 
@@ -160,11 +131,11 @@ info = color_text(32)
 
 
 @task
-def deploy_tum(c):
+def deploy(c):
     """
-    Deploy to TUM servers
+    Deploy to servers
     """
-    deploy_nixos([DeployHost(h) for h in TUM])
+    deploy_nixos([DeployHost(h) for h in HOSTS])
 
 
 @task
@@ -181,25 +152,7 @@ def deploy_local(c):
     Deploy NixOS configuration on the same machine. The NixOS configuration is
     selected based on the hostname.
     """
-    c.run(
-        f"""sudo nixos-rebuild switch --flake .#"""
-    )
-
-@task
-def deploy_doctor(c):
-    """
-    Deploy to rpi4, that is used to control power relay
-    """
-    deploy_nixos([DeployHost("doctor.r")])
-
-
-@task
-def deploy_edinburgh(c):
-    """
-    Deploy to edinburgh servers starting with rose
-    """
-    deploy_nixos([DeployHost("rose.r")])
-    deploy_nixos([DeployHost(h) for h in set(EDINBURGH) - set(["rose.r", "doctor.r"])])
+    c.run(f"""sudo nixos-rebuild switch --flake .#""")
 
 
 @task
@@ -210,7 +163,7 @@ def update_docs(c, hosts=""):
     if hosts != "":
         host_list = hosts.split(",")
     else:
-        host_list = ALL
+        host_list = HOSTS
     document_nixos(host_list)
 
 
@@ -222,7 +175,7 @@ def update_lldp_info(c, hosts=""):
     if hosts != "":
         host_list = hosts.split(",")
     else:
-        host_list = ALL
+        host_list = HOSTS
     get_lldp_neighbors(host_list)
 
 
@@ -323,13 +276,16 @@ def print_age_key(c, hosts):
             "nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'"
         )
 
+
 @task
 def generate_ssh_cert(c, host, ip_or_host):
     """
     Generate ssh cert for host, i.e. inv generate-ssh-cert bill 131.159.102.1
     """
     h = host
-    c.run(f"{ROOT}/modules/sshd/ssh-ca-sign {h} {h}.r,{h}.dse.in.tum.de,{h}.thalheim.io {ip_or_host}")
+    c.run(
+        f"{ROOT}/modules/sshd/ssh-ca-sign {h} {h}.r,{h}.dse.in.tum.de,{h}.thalheim.io {ip_or_host}"
+    )
 
 
 @task
@@ -356,16 +312,18 @@ def wait_for_host(host: str, shutdown: bool = False) -> None:
     import socket, time
 
     while True:
-            res = subprocess.run(["ping", "-q", "-c", "1", "-w", "2", host], stdout=subprocess.DEVNULL)
-            if shutdown:
-                if res.returncode == 1:
-                    break
-            else:
-                if res.returncode == 0:
-                    break
-            time.sleep(1)
-            sys.stdout.write(".")
-            sys.stdout.flush()
+        res = subprocess.run(
+            ["ping", "-q", "-c", "1", "-w", "2", host], stdout=subprocess.DEVNULL
+        )
+        if shutdown:
+            if res.returncode == 1:
+                break
+        else:
+            if res.returncode == 0:
+                break
+        time.sleep(1)
+        sys.stdout.write(".")
+        sys.stdout.flush()
 
 
 def ipmi_password(c) -> str:
@@ -381,7 +339,7 @@ def generate_root_password(c):
     """
     size = 12
     chars = string.ascii_letters + string.digits
-    passw = ''.join(random.choice(chars) for x in range(size))
+    passw = "".join(random.choice(chars) for x in range(size))
     out = c.run(f"echo '{passw}' | mkpasswd -m sha-512 -s", echo=True)
     print("# Add the following secrets")
     print(f"root-password: {passw}")
