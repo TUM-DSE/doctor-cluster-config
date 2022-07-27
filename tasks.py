@@ -72,24 +72,12 @@ def get_lldp_neighbors(hosts: List[str]) -> None:
     def doc_tum(h: DeployHost) -> None:
         h.run_local(f"../../get-lldp-neighbors.sh {h.host}")
 
-    def doc_edi(h: DeployHost) -> None:
-        h.run_local(f"../../get-lldp-neighbors.sh {h.host}")
-
     pwd = os.getcwd()
-    os.chdir("docs/tum")
+    os.chdir("docs/hosts")
     if not os.path.exists("lldp"):
         os.mkdir("lldp")
     os.chdir("lldp")
     tum.run_function(doc_tum)
-    os.system("../../generate-lldp-graph.sh")
-    os.chdir("..")
-    shutil.rmtree("lldp", ignore_errors=True)
-    os.chdir(pwd)
-    os.chdir("docs/edinburgh")
-    if not os.path.exists("lldp"):
-        os.mkdir("lldp")
-    os.chdir("lldp")
-    edi.run_function(doc_edi)
     os.system("../../generate-lldp-graph.sh")
     os.chdir("..")
     shutil.rmtree("lldp", ignore_errors=True)

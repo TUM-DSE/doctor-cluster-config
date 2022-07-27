@@ -43,19 +43,11 @@ for HOST in "${!INTERFACES[@]}"; do
         continue
     fi
 
-    if [[ "$PWD" =~ tum ]] || [[ "$PWD" =~ edinburgh ]]; then
-        if [[ "$PWD" =~ tum ]]; then
-            SITE="tum"
-        else
-            SITE="edinburgh"
-        fi
+    URL="https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts"
 
-        URL="https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/$SITE"
-
-        for INTERFACE in ${INTERFACES[$HOST]}; do
-            echo "      click $HOST.$INTERFACE \"$URL/$HOST.md\" \"$HOST\""
-        done
-    fi
+    for INTERFACE in ${INTERFACES[$HOST]}; do
+        echo "      click $HOST.$INTERFACE \"$URL/$HOST.md\" \"$HOST\""
+    done
 done >> "$report"
 
 echo '```' >> "$report"
