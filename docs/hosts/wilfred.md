@@ -7,7 +7,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100628 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50530 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002397 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 92.08 GiB (9.3%) 
+Memory:    RAM: total: 995.21 GiB used: 92.71 GiB (9.3%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -48,10 +48,10 @@ PCI Slots: Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short
 CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch: Ice Lake rev: 6 
            cache: L1: 960 KiB L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 1723 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
-           Core speeds (MHz): 1: 1723 2: 2044 3: 3603 4: 3569 5: 3195 6: 2101 7: 1322 8: 2170 
-           9: 2941 10: 1650 11: 2157 12: 2313 13: 2007 14: 944 15: 2184 16: 3538 17: 3503 18: 2067 
-           19: 2343 20: 1447 21: 3532 22: 3500 23: 1930 24: 2097 
+           Speed: 1941 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
+           Core speeds (MHz): 1: 1941 2: 2349 3: 2024 4: 3606 5: 2355 6: 3121 7: 2110 8: 935 
+           9: 2221 10: 1864 11: 1409 12: 2099 13: 1710 14: 3603 15: 3564 16: 3530 17: 3562 
+           18: 1034 19: 2002 20: 3600 21: 2965 22: 3163 23: 3597 24: 3535 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -79,6 +79,7 @@ Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe 
            IP v6: fe80::b696:91ff:feb3:8b04/64 scope: link 
            IF-ID-1: docker0 state: down mac: 02:42:2b:2e:f8:cb 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
+           IP v6: fe80::42:2bff:fe2e:f8cb/64 scope: link 
            IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:6dcc:65aa:4cb4:c1a9:9548/12 scope: global 
            IP v6: fe80::a2df:cdfc:e9d0:1c62/64 virtual: stable-privacy scope: link 
@@ -94,21 +95,21 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.717.02.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.44 TiB 
-           allocated: 300 GiB 
+           allocated: 301 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 742.68 GiB (13.9%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 747.59 GiB (14.0%) 
            ID-1: /dev/sda vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
            serial: N/A rev: 102Q scheme: GPT 
            ID-2: /dev/sdb vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
            serial: N/A rev: 102Q 
-Partition: ID-1: / size: 1.68 TiB used: 299.48 GiB (17.4%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 133.3 MiB (13.0%) fs: vfat dev: /dev/sda1 
-           ID-3: /home size: 888.34 GiB used: 292.77 GiB (33.0%) fs: nfs4 remote: nfs:/export/home 
+Partition: ID-1: / size: 1.68 TiB used: 299.35 GiB (17.4%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 1022 MiB used: 106.7 MiB (10.4%) fs: vfat dev: /dev/sda1 
+           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 380 
-           Uptime: 09:25:12  up 11 days  4:24,  0 users,  load average: 0.12, 0.17, 0.17 
+Info:      Processes: 376 
+           Uptime: 12:46:17  up 13 days  7:45,  0 users,  load average: 0.07, 0.10, 0.09 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 
            Packages: nix-sys: 455 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```

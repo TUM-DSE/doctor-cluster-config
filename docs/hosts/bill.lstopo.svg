@@ -34,9 +34,9 @@
 	<rect id='PU_3_rect' class='PU' x='102' y='265' width='56' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PU_3_text' class='PU' font-family='Monospace' x='112' y='282' fill='rgb(0,0,0)' font-size='10px'>PU L#3</text>
 	<text id='PU_3_text_1' class='PU' font-family='Monospace' x='118' y='296' fill='rgb(0,0,0)' font-size='10px'>P#11</text>
-	<rect id='L2_2_rect' class='L2' x='176' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='L2_2_rect' class='L2' x='190' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='L2_2_rect' class='L2' x='204' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='L2_2_rect' class='L2' x='185' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='L2_2_rect' class='L2' x='199' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='L2_2_rect' class='L2' x='213' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='L2_2_text' class='L2' font-family='Monospace' x='176' y='138' fill='rgb(0,0,0)' font-size='10px'>10x total</text>
 	<rect id='L2_9_rect' class='L2' x='237' y='110' width='74' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='L2_9_text' class='L2' font-family='Monospace' x='244' y='127' fill='rgb(0,0,0)' font-size='10px'>L2 (256KB)</text>
@@ -148,5 +148,5 @@
 	<text id='Net_10_text' class='Net' font-family='Monospace' x='377' y='634' fill='rgb(0,0,0)' font-size='10px'>Net eno1</text>
 	<rect id='anon_rect' x='0' y='655' width='574' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='672' fill='rgb(0,0,0)' font-size='10px'>Host: bill</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='686' fill='rgb(0,0,0)' font-size='10px'>Date: Mon 25 Jul 2022 09:25:13 AM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='686' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 27 Jul 2022 12:46:20 PM UTC</text>
 </svg>

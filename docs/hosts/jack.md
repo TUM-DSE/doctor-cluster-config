@@ -7,7 +7,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-120U-TNR v: 0123456789
            serial: E411764X2300334 Chassis: type: 1 v: 0123456789 serial: C119UAK12P20190 
            Mobo: Supermicro model: X12DPU-6 v: 1.02A serial: HM218S018239 
            UEFI: American Megatrends LLC. v: 1.2 date: 02/15/2022 
-Memory:    RAM: total: 125.52 GiB used: 15.88 GiB (12.7%) 
+Memory:    RAM: total: 125.52 GiB used: 25.79 GiB (20.5%) 
            Array-1: capacity: 12 TiB slots: 32 EC: Single-bit ECC max-module-size: 384 GiB 
            note: est. 
            Device-1: P1-DIMMA1 size: 256 GiB speed: 3200 MT/s type: Logical non-volatile device 
@@ -86,15 +86,14 @@ PCI Slots: Slot: N/A type: x16 <OUT OF SPEC> RSC-W-66G4 SLOT1 PCI-E 4.0 X16 stat
 CPU:       Info: 2x 16-Core model: Intel Xeon Gold 6326 bits: 64 type: MT MCP SMP arch: Ice Lake 
            rev: 6 cache: L1: 5 MiB L2: 48 MiB L3: 96 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 371843 
-           Speed: 3469 MHz min/max: 800/3500 MHz volts: 1.6 V ext-clock: 100 MHz 
-           Core speeds (MHz): 1: 3469 2: 2159 3: 3302 4: 3300 5: 3465 6: 3450 7: 2861 8: 3162 
-           9: 3300 10: 3197 11: 3235 12: 3179 13: 3299 14: 2873 15: 1037 16: 2987 17: 906 18: 2371 
-           19: 3498 20: 2922 21: 1269 22: 2075 23: 2261 24: 3502 25: 800 26: 1301 27: 3379 
-           28: 1952 29: 926 30: 2111 31: 3101 32: 3469 33: 2213 34: 3503 35: 1856 36: 2097 
-           37: 3503 38: 3500 39: 2084 40: 2781 41: 1548 42: 1287 43: 3503 44: 1287 45: 825 
-           46: 2349 47: 2206 48: 2029 49: 2042 50: 2041 51: 3500 52: 2118 53: 2065 54: 1999 
-           55: 2022 56: 1391 57: 1762 58: 1998 59: 1555 60: 961 61: 1886 62: 1937 63: 3503 
-           64: 3502 
+           Speed: 1342 MHz min/max: 800/3500 MHz volts: 1.6 V ext-clock: 100 MHz 
+           Core speeds (MHz): 1: 1342 2: 800 3: 2197 4: 1563 5: 2051 6: 1312 7: 2194 8: 3105 
+           9: 2044 10: 3500 11: 1312 12: 1546 13: 801 14: 1902 15: 3500 16: 3500 17: 1769 18: 2336 
+           19: 2047 20: 2080 21: 3145 22: 3502 23: 3506 24: 801 25: 2191 26: 3257 27: 1694 
+           28: 2036 29: 2125 30: 998 31: 3503 32: 2111 33: 3503 34: 2224 35: 3500 36: 2207 
+           37: 2200 38: 1363 39: 2180 40: 839 41: 1278 42: 1989 43: 1862 44: 1663 45: 3497 46: 801 
+           47: 3500 48: 3503 49: 3503 50: 3503 51: 3503 52: 3368 53: 2506 54: 3254 55: 3500 
+           56: 3503 57: 1045 58: 2019 59: 2384 60: 1920 61: 2226 62: 2057 63: 1310 64: 2474 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Device-2: NVIDIA GA102GL [A40] driver: N/A bus-ID: ca:00.0 chip-ID: 10de:2235 
@@ -131,19 +130,19 @@ Bluetooth: Device-1: Linux 5.4.62 with aspeed_vhub RNDIS/Ethernet Gadget type: U
            driver: rndis_host v: kernel bus-ID: 1-7.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
 RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 846 GiB 
-           allocated: 41.7 GiB 
+           allocated: 41.6 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 894.25 GiB usable: 1.74 TiB used: 506.37 GiB (28.4%) 
+Drives:    Local Storage: total: raw: 894.25 GiB usable: 1.74 TiB used: 528.52 GiB (29.7%) 
            ID-1: /dev/sda vendor: Intel model: SSDSC2KB960G8 size: 894.25 GiB speed: 6.0 Gb/s 
            rotation: SSD serial: PHYF152302UG960CGN rev: 0132 scheme: GPT 
-Partition: ID-1: / size: 851.58 GiB used: 32.76 GiB (3.8%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 133.1 MiB (13.0%) fs: vfat dev: /dev/sda1 
-           ID-3: /home size: 888.34 GiB used: 292.77 GiB (33.0%) fs: nfs4 remote: nfs:/export/home 
+Partition: ID-1: / size: 851.58 GiB used: 32.7 GiB (3.8%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 1022 MiB used: 106.5 MiB (10.4%) fs: vfat dev: /dev/sda1 
+           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 819 
-           Uptime: 09:25:12  up 25 days  1:58,  2 users,  load average: 0.40, 0.10, 0.03 
+Info:      Processes: 812 
+           Uptime: 12:46:17  up 27 days  5:19,  2 users,  load average: 0.05, 0.02, 0.00 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 
            Packages: nix-sys: 456 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```

@@ -7,7 +7,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100679 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50442 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002384 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 14.94 GiB (1.5%) 
+Memory:    RAM: total: 995.21 GiB used: 14.98 GiB (1.5%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -48,10 +48,10 @@ PCI Slots: Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short
 CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch: Ice Lake rev: 6 
            cache: L1: 960 KiB L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 1777 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
-           Core speeds (MHz): 1: 1777 2: 3526 3: 1836 4: 1501 5: 1415 6: 2529 7: 2135 8: 3500 
-           9: 3584 10: 2106 11: 3570 12: 2340 13: 2036 14: 2058 15: 1828 16: 2169 17: 3559 
-           18: 2057 19: 3507 20: 1207 21: 3381 22: 2691 23: 2224 24: 1790 
+           Speed: 1988 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
+           Core speeds (MHz): 1: 1988 2: 1794 3: 1066 4: 3573 5: 2454 6: 3500 7: 3497 8: 3570 
+           9: 1755 10: 1837 11: 3536 12: 2827 13: 3576 14: 2427 15: 2098 16: 1728 17: 3600 
+           18: 3211 19: 3503 20: 1158 21: 2065 22: 2101 23: 1037 24: 2010 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -97,21 +97,21 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.717.02.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.73 TiB 
-           allocated: 4.96 GiB 
+           allocated: 4.79 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 448.13 GiB (8.4%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 452.99 GiB (8.5%) 
            ID-1: /dev/sda vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
            serial: N/A rev: 102Q scheme: GPT 
            ID-2: /dev/sdb vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
            serial: N/A rev: 102Q 
-Partition: ID-1: / size: 1.68 TiB used: 4.92 GiB (0.3%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 133.3 MiB (13.0%) fs: vfat dev: /dev/sda1 
-           ID-3: /home size: 888.34 GiB used: 292.77 GiB (33.0%) fs: nfs4 remote: nfs:/export/home 
+Partition: ID-1: / size: 1.68 TiB used: 4.76 GiB (0.3%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 1022 MiB used: 106.7 MiB (10.4%) fs: vfat dev: /dev/sda1 
+           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 387 
-           Uptime: 09:25:12  up 4 days 21:56,  0 users,  load average: 0.16, 0.10, 0.09 wakeups: 0 
+Info:      Processes: 394 
+           Uptime: 12:46:17  up 7 days  1:17,  0 users,  load average: 0.13, 0.09, 0.09 wakeups: 0 
            Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 Packages: 
            nix-sys: 455 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```

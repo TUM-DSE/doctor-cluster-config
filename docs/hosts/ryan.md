@@ -7,7 +7,7 @@ Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: 9P0
            type: 23 serial: 9P0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .9P0PSH3.CNCMS0016O01PE. UEFI: Dell v: 2.2.4 
            date: 04/12/2021 
-Memory:    RAM: total: 503.19 GiB used: 273.32 GiB (54.3%) 
+Memory:    RAM: total: 503.19 GiB used: 264.45 GiB (52.6%) 
            Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
            note: est. 
            Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
@@ -50,22 +50,22 @@ PCI Slots: Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: 
 CPU:       Info: 64-Core model: AMD EPYC 7713P bits: 64 type: MT MCP arch: Zen 3 rev: 1 cache: 
            L2: 32 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511059 
-           Speed: 2943 MHz min/max: 1500/2000 MHz boost: enabled volts: 1.8 V ext-clock: 2000 MHz 
-           Core speeds (MHz): 1: 2943 2: 3690 3: 1795 4: 1792 5: 1793 6: 1792 7: 1808 8: 3695 
-           9: 3694 10: 2949 11: 2951 12: 2672 13: 2769 14: 1790 15: 2714 16: 2947 17: 1793 
-           18: 1791 19: 1791 20: 1795 21: 1734 22: 1650 23: 1794 24: 1793 25: 2339 26: 2181 
-           27: 1793 28: 1789 29: 1793 30: 1792 31: 1788 32: 1792 33: 1794 34: 1795 35: 1793 
-           36: 1795 37: 1794 38: 1792 39: 1791 40: 1794 41: 3689 42: 1792 43: 1656 44: 1795 
-           45: 1794 46: 1913 47: 3172 48: 1909 49: 2412 50: 2093 51: 1735 52: 2949 53: 1751 
-           54: 1753 55: 1792 56: 1793 57: 1793 58: 1792 59: 1795 60: 1794 61: 1795 62: 1794 
-           63: 2747 64: 3625 65: 3599 66: 2928 67: 2671 68: 2471 69: 2473 70: 2474 71: 2471 
-           72: 1794 73: 1793 74: 2948 75: 1790 76: 1791 77: 1792 78: 1793 79: 1793 80: 1791 
-           81: 1794 82: 1792 83: 2389 84: 2160 85: 2948 86: 1791 87: 1792 88: 1796 89: 1791 
-           90: 2951 91: 2950 92: 2950 93: 3698 94: 2949 95: 2956 96: 2987 97: 3273 98: 2754 
-           99: 1839 100: 1790 101: 1789 102: 1792 103: 1792 104: 1794 105: 1853 106: 1840 
-           107: 1828 108: 2950 109: 2948 110: 2676 111: 2727 112: 2952 113: 3696 114: 2951 
-           115: 2954 116: 1913 117: 2394 118: 2261 119: 1913 120: 2420 121: 2355 122: 1913 
-           123: 1911 124: 2374 125: 1790 126: 1790 127: 1792 128: 1791 
+           Speed: 1790 MHz min/max: 1500/2000 MHz boost: enabled volts: 1.8 V ext-clock: 2000 MHz 
+           Core speeds (MHz): 1: 1790 2: 1792 3: 1791 4: 1791 5: 1794 6: 1792 7: 1790 8: 1795 
+           9: 1793 10: 1792 11: 1791 12: 1793 13: 1794 14: 1910 15: 1795 16: 1794 17: 1793 
+           18: 1795 19: 1792 20: 1791 21: 1625 22: 1630 23: 1650 24: 1792 25: 1743 26: 1655 
+           27: 1791 28: 1794 29: 2347 30: 2000 31: 1654 32: 1793 33: 1792 34: 2902 35: 1913 
+           36: 1911 37: 1791 38: 1790 39: 1792 40: 1791 41: 1794 42: 1791 43: 2380 44: 2154 
+           45: 1791 46: 1795 47: 1795 48: 1793 49: 1790 50: 1791 51: 1793 52: 1791 53: 1792 
+           54: 2336 55: 2135 56: 2562 57: 2467 58: 2722 59: 2473 60: 2473 61: 2471 62: 2700 
+           63: 2128 64: 2442 65: 2254 66: 1795 67: 1793 68: 1791 69: 1514 70: 1515 71: 1512 
+           72: 1408 73: 1512 74: 1513 75: 1758 76: 1659 77: 1794 78: 2355 79: 2171 80: 1793 
+           81: 1795 82: 1796 83: 1793 84: 1796 85: 1793 86: 2173 87: 1797 88: 1796 89: 1795 
+           90: 2327 91: 2211 92: 1794 93: 1793 94: 1792 95: 1789 96: 1794 97: 1792 98: 1795 
+           99: 1909 100: 1913 101: 1912 102: 1913 103: 1915 104: 2384 105: 1754 106: 1707 
+           107: 1731 108: 1626 109: 1570 110: 1656 111: 1629 112: 1652 113: 1793 114: 1793 
+           115: 1794 116: 1794 117: 1793 118: 1910 119: 1687 120: 1706 121: 2334 122: 2059 
+           123: 1792 124: 1790 125: 1795 126: 1791 127: 1790 128: 1791 
 Graphics:  Device-1: Matrox Systems Integrated Matrox G200eW3 Graphics driver: mgag200 v: kernel 
            bus-ID: c3:00.0 chip-ID: 102b:0536 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -125,27 +125,26 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID SAS-3 3008 [Fury] driver: megaraid_sas 
            v: 07.717.02.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 721 GiB 
-           allocated: 767 GiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 732 GiB 
+           allocated: 756 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 3.46 TiB used: 1.74 TiB (50.5%) 
+Drives:    Local Storage: total: 3.46 TiB used: 1.53 TiB (44.1%) 
            ID-1: /dev/nvme0n1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB size: 1.46 TiB 
            rotation: SSD serial: S61ANA0R501358 rev: 2.0.2 scheme: GPT 
            ID-2: /dev/nvme1n1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB size: 1.46 TiB 
            rotation: SSD serial: S61ANA0R501123 rev: 2.0.2 scheme: GPT 
            ID-3: /dev/sda model: AL15SEB060NY size: 558.91 GiB speed: <unknown> serial: N/A 
            rev: EF06 
-Partition: ID-1: / size: 878.35 GiB used: 204.63 GiB (23.3%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 499.7 MiB used: 109.5 MiB (21.9%) fs: vfat dev: /dev/nvme0n1p1 
-           ID-3: /home size: 888.34 GiB used: 292.77 GiB (33.0%) fs: nfs4 remote: nfs:/export/home 
-           ID-4: /tmp size: 685.15 GiB used: 11.43 GiB (1.7%) fs: zfs logical: zroot/root/tmp 
+Partition: ID-1: / size: 884.04 GiB used: 199.52 GiB (22.6%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 499.7 MiB used: 87.7 MiB (17.5%) fs: vfat dev: /dev/nvme0n1p1 
+           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
+           ID-4: /tmp size: 695.23 GiB used: 10.71 GiB (1.5%) fs: zfs logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 1388 
-           Uptime: 09:25:13  up 25 days  2:07,  0 users,  load average: 0.12, 0.24, 2.53 
-           wakeups: 0 Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 
-           Packages: 884 nix-default: 214 nix-sys: 456 nix-usr: 214 Client: Sudo v: 1.9.10 
-           inxi: 3.3.04 
+Info:      Processes: 1391 
+           Uptime: 12:46:18  up 27 days  5:28,  1 user,  load average: 0.26, 0.17, 0.18 wakeups: 0 
+           Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 Packages: 884 
+           nix-default: 214 nix-sys: 456 nix-usr: 214 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](ryan.lstopo.svg)
