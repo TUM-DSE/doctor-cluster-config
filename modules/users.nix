@@ -84,6 +84,10 @@
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFE6FC1RI5x+kb68QYg0RVAQvkH9Pz5Qmh9VZA9lRXlz/7A4SfV36oLaCwUKEpZv428fVcdc1ZFf69bLZKbyEGk= sebastian@A2003110405LEN1"
   ];
 
+  matthiasKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDg/MON5ETxrOAcmxbnphJao1MxxeRIDDn7M6tMqERThU5gPumc2W/eAkWqXs/ZdgmMV9vBVdmZS4J++L2yLwWdcZcSeUC7lMdRMRW8i56ME6tOMymZIk0Z6p+BFFzgncOa+IFtx1QZ8Pl4Z8wfVNU9L5XY6lrfgoDjR40KgIpa4XZE1SiO2BbCsa2zhA1ZNCeOa6FEpK80BlA7Jw4pJ0w+Bl7UfGiOTkQ9idoygy7/B8Z48jSXgHPlOzxR1HyvG8QoNEGThK0o441DxVPfy4p9Q5HFqj2Wf1Vrxktoco6dpdNkuU89z5L/JsKfkbo9dBNRW6ICVus84rLUr6uFFyU39FahRtfJ7xsZjt2IVd2eY2nZWdJ2Pd7ytzzD+djJKsnDJXm96fh6qpjYHzDGPqLUkd86FGSpr3gbFvCprXkUDi8J5z/GkdAwNeqk9kUdYBEcGS5E3jciAxz4fmDGYhJ8O6gs9MRT947mWG1Q6+vOqcglxBUX+5w7LIb9bhUNLTs= mhille@mhilleWork"
+  ];
+
   extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
 in {
   options = {
@@ -291,6 +295,17 @@ in {
         shell = "/run/current-system/sw/bin/bash";
         uid = 1022;
         openssh.authorizedKeys.keys = sebastianKeys;
+      };
+
+      # Matthias Hille
+      # tud
+      matthias = {
+        isNormalUser = true;
+        home = "/home/matthias";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1023;
+        openssh.authorizedKeys.keys = matthiasKeys;
       };
 
       root = {
