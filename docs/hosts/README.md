@@ -11,7 +11,7 @@ There are several ways to access the servers:
   - This vpn is also accessible by students, see this [link](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb)
 - Via SSH jump host:
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
-  - Example usage: `ssh -J tunnel@login.dse.in.tum.de "<yourusername>@nardole.dse.in.tum.de"`
+  - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dse.in.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dse.in.tum.de`
   - Keys are uploaded via the machine bill whenever nixos configuration is updated.
   - You can generate an SSH config file for all TUM hosts with [this script](../gen-tum-ssh-config.sh), providing your username as an argument
 
