@@ -126,17 +126,6 @@ in {
       uid = 2003;
       openssh.authorizedKeys.keys = gierensKeys;
     };
-
-    # Yi He: sys-prog attending student SS22. Wants to debug racy task8 somewhere where the bugs reproduce.
-    he = {
-      isNormalUser = true;
-      home = "/home/he";
-      uid = 2004;
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      allowedHosts = ["wilfred"];
-      openssh.authorizedKeys.keys = heKeys;
-    };
   };
 
   # DANGER ZONE!
@@ -147,6 +136,7 @@ in {
     "ml"
     "philip"
     "m00wl"
+    "he"
   ];
 
   # only used by jasper atm
