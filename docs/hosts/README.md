@@ -119,6 +119,8 @@ Our chair currently has three networks:
 To add a new machine send the MAC address of your host interface and your IPMI/management interface to `ls1.admin@in.tum.de`.
 If the RGB group asks which networks to connect your machine to, tell them `il01_16` for the machine and `il01_15` for IPMI/BMC.
 
+A graph of how the servers are connected right now can be found [here](graph.md).
+
 ## Names left to pick
 
 none
