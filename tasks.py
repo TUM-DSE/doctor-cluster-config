@@ -63,6 +63,27 @@ def document_nixos(hosts: List[str]) -> None:
     os.chdir(pwd)
 
 
+def get_lldp_neighbors(hosts: List[str]) -> None:
+    """
+    Get LLDP-discovered neighbors, expects "hostname.r"
+    """
+    tum = DeployGroup([DeployHost(h) for h in HOSTS])
+
+    def doc_tum(h: DeployHost) -> None:
+        h.run_local(f"../../get-lldp-neighbors.sh {h.host}")
+
+    pwd = os.getcwd()
+    os.chdir("docs/hosts")
+    if not os.path.exists("lldp"):
+        os.mkdir("lldp")
+    os.chdir("lldp")
+    tum.run_function(doc_tum)
+    os.system("../../generate-lldp-graph.sh")
+    os.chdir("..")
+    shutil.rmtree("lldp", ignore_errors=True)
+    os.chdir(pwd)
+
+
 HOSTS = [
     "astrid.dse.in.tum.de",
     "dan.dse.in.tum.de",
@@ -132,6 +153,18 @@ def update_docs(c, hosts=""):
     else:
         host_list = HOSTS
     document_nixos(host_list)
+
+
+@task
+def update_lldp_info(c, hosts=""):
+    """
+    Regenerate lldp info for all servers
+    """
+    if hosts != "":
+        host_list = hosts.split(",")
+    else:
+        host_list = HOSTS
+    get_lldp_neighbors(host_list)
 
 
 def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
