@@ -1,8 +1,8 @@
 {...}: {
   flake.templates = {
-    trivial = {
-      path = ./hello-cluster;
-      description = "A very basic flake";
+    cluster-project = {
+      path = ./cluster-project;
+      description = "A basic make project with gcc";
     };
   };
 }
