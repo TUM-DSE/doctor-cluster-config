@@ -43,6 +43,7 @@
         imports = [
           ./configurations.nix
           ./modules/monitoring/flake-module.nix
+          ./templates
         ];
         perSystem = {system, self', pkgs, ...}: {
           devShells.default = pkgs.mkShellNoCC {
@@ -78,4 +79,5 @@
           hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations;
         };
       }).config.flake;
+
 }
