@@ -1,13 +1,25 @@
 # Templates
 
-## Project template
+Opinionated templates for getting started with nix on the doctor cluster. You will learn how to install per-project and user-global packages (and environments).
 
-Initialize a simple project with nix flakes
+
+## Using templates
+
+Initialize a nix flake project
 
 ```
 $ mkdir myproject
 $ cd myproject
-$ nix flake init --template github:TUM-DSE/doctor-cluster-config#cluster-project
+$ nix flake init --template github:TUM-DSE/doctor-cluster-config#project-template
+```
+
+It is good practice to versionate this folder with git!
+
+
+## Project template
+
+```
+$ nix flake init --template github:TUM-DSE/doctor-cluster-config#project-template
 ```
 
 With this newly initialized flake.nix you can enter your development shell
@@ -22,3 +34,16 @@ Note that `gcc` is wrapped by nixos of which you can inspect additional paramete
 
 
 ## Home-manager template
+
+```
+$ nix flake init --template github:TUM-DSE/doctor-cluster-config#home-manager
+```
+
+With this newly initialized flake.nix you can define user-global packages (, config files, user services and environment) in `home.nix`. 
+
+Switch to your home configuration:
+
+```
+$ ls ./flake.nix
+$ nix run .#switch-jdoe-hm
+```
