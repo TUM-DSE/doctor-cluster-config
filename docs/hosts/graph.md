@@ -14,15 +14,16 @@
       mickey.enp94s0f0np0["enp94s0f0np0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       nardole.slave0["slave0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       nardole.slave1["slave1"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
-      river.enp24s0f0["enp24s0f0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       ryan.enp2s0f0np0["enp2s0f0np0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       ryan.enp196s0f0np0["enp196s0f0np0"]-- 10G ---ryan.enp196s0f1np1["enp196s0f1np1"]
       ryan.enp196s0f0np0["enp196s0f0np0"]-- 10G ---ryan.3de698baa3784079["3de698baa3784079"]
       ryan.enp196s0f1np1["enp196s0f1np1"]-- 10G ---ryan.3de698baa3784079["3de698baa3784079"]
+      wilfred.eno1["eno1"]-- 10G ---river.ae904c71a4674386["ae904c71a4674386"]
+      wilfred.eno2["eno2"]-- 10G ---river.ae904c71a4674386["ae904c71a4674386"]
       wilfred.enp24s0f0["enp24s0f0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       yasmin.eno1["eno1"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       subgraph river
-      river.enp24s0f0["enp24s0f0"]
+      river.ae904c71a4674386["ae904c71a4674386"]
       end
       subgraph astrid
       astrid.enp94s0f0np0["enp94s0f0np0"]
@@ -50,6 +51,8 @@
       dan.enp94s0f0np0["enp94s0f0np0"]
       end
       subgraph wilfred
+      wilfred.eno1["eno1"]
+      wilfred.eno2["eno2"]
       wilfred.enp24s0f0["enp24s0f0"]
       end
       subgraph adelaide
@@ -71,7 +74,7 @@
       ryan.enp196s0f1np1["enp196s0f1np1"]
       ryan.enp2s0f0np0["enp2s0f0np0"]
       end
-      click river.enp24s0f0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/river.md" "river"
+      click river.ae904c71a4674386 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/river.md" "river"
       click astrid.enp94s0f0np0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/astrid.md" "astrid"
       click bill.slave0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/bill.md" "bill"
       click bill.slave1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/bill.md" "bill"
@@ -80,6 +83,8 @@
       click mickey.enp94s0f0np0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/mickey.md" "mickey"
       click jackson.enp24s0f0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/jackson.md" "jackson"
       click dan.enp94s0f0np0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/dan.md" "dan"
+      click wilfred.eno1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/wilfred.md" "wilfred"
+      click wilfred.eno2 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/wilfred.md" "wilfred"
       click wilfred.enp24s0f0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/wilfred.md" "wilfred"
       click adelaide.enp24s0f0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/adelaide.md" "adelaide"
       click graham.enp196s0f0np0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/graham.md" "graham"
