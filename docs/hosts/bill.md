@@ -7,7 +7,7 @@ Machine:   Type: Desktop System: sysGen www.sysgen.de product: Super Server v: 0
            serial: 0123456789 Chassis: type: 3 v: 0123456789 serial: 0123456789 
            Mobo: Supermicro model: X12SCZ-TLN4F v: 1.01A serial: UM20BS000421 
            UEFI: American Megatrends v: 1.0a date: 01/11/2021 
-Memory:    RAM: total: 125.68 GiB used: 26.1 GiB (20.8%) 
+Memory:    RAM: total: 125.68 GiB used: 25.89 GiB (20.6%) 
            Array-1: capacity: 128 GiB note: est. slots: 4 EC: None max-module-size: 32 GiB 
            note: est. 
            Device-1: DIMMA1 size: 32 GiB speed: 2400 MT/s type: DDR4 
@@ -32,10 +32,10 @@ PCI Slots: Slot: 4 type: x4 PCI Express 3 x8 PCH SLOT4 PCI-E 3.0 X4 (IN X8) stat
 CPU:       Info: 10-Core model: Intel Core i9-10900K bits: 64 type: MT MCP arch: Comet Lake rev: 5 
            cache: L1: 640 KiB L2: 20 MiB L3: 20 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 147994 
-           Speed: 5102 MHz min/max: 800/5300 MHz volts: 1.0 V ext-clock: 100 MHz 
-           Core speeds (MHz): 1: 5102 2: 5015 3: 5108 4: 2405 5: 5120 6: 5119 7: 5049 8: 5188 
-           9: 5095 10: 5103 11: 5100 12: 5085 13: 5099 14: 5079 15: 5111 16: 5096 17: 5105 
-           18: 5098 19: 5100 20: 5090 
+           Speed: 5096 MHz min/max: 800/5300 MHz volts: 1.0 V ext-clock: 100 MHz 
+           Core speeds (MHz): 1: 5096 2: 5088 3: 5125 4: 5102 5: 5106 6: 5103 7: 5299 8: 5199 
+           9: 5119 10: 5112 11: 5119 12: 5111 13: 5095 14: 5087 15: 5201 16: 5299 17: 5119 
+           18: 5091 19: 5100 20: 5097 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 05:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -80,8 +80,8 @@ Network:   Device-1: Intel Ethernet I219-LM vendor: Super Micro driver: e1000e v
 Bluetooth: Device-1: Linux 3.18.0 with ast_vhub RNDIS/Ethernet Gadget type: USB driver: rndis_host 
            v: kernel bus-ID: 1-13.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
-RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB free: 516 GiB 
-           allocated: 412 GiB 
+RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB free: 522 GiB 
+           allocated: 406 GiB 
            Components: Online: N/A 
            Device-2: zpool2 type: zfs status: ONLINE level: linear size: 14.5 TiB free: 14.3 TiB 
            allocated: 206 GiB 
@@ -89,7 +89,7 @@ RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB
            Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 745 GiB 
            allocated: 143 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 92.83 GiB (0.3%) 
+Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 92.77 GiB (0.3%) 
            ID-1: /dev/nvme0n1 vendor: Samsung model: SSD 970 EVO Plus 1TB size: 931.51 GiB 
            speed: 31.6 Gb/s lanes: 4 rotation: SSD serial: S4EWNX0R513894H rev: 2B2QEXM7 
            scheme: GPT 
@@ -99,14 +99,14 @@ Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 92.83 Gi
            speed: 6.0 Gb/s rotation: 7200 rpm serial: VRJXEZ3K rev: 0A85 scheme: GPT 
            ID-4: /dev/sdc vendor: Western Digital model: WD80EFBX-68AZZN0 size: 7.28 TiB 
            speed: 6.0 Gb/s rotation: 7200 rpm serial: VRJ0MZ7K rev: 0A85 scheme: GPT 
-Partition: ID-1: / size: 808.65 GiB used: 92.52 GiB (11.4%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 499.7 MiB used: 87.4 MiB (17.5%) fs: vfat dev: /dev/sda1 
-           ID-3: /tmp size: 716.36 GiB used: 236 MiB (0.0%) fs: zfs logical: zroot/root/tmp 
+Partition: ID-1: / size: 808.92 GiB used: 92.61 GiB (11.4%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 499.7 MiB used: 87.7 MiB (17.5%) fs: vfat dev: /dev/sda1 
+           ID-3: /tmp size: 716.38 GiB used: 75.6 MiB (0.0%) fs: zfs logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 541 
-           Uptime: 12:46:18  up 26 days  4:31,  0 users,  load average: 0.04, 0.03, 0.00 
+Info:      Processes: 514 
+           Uptime: 11:50:43  up 33 days  3:35,  0 users,  load average: 0.10, 0.04, 0.01 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target Compilers: gcc: 10.3.0 
            Packages: nix-sys: 454 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```

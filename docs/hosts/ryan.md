@@ -1,13 +1,13 @@
 # ryan
 
 ```
-System:    Host: ryan Kernel: 5.15.49 x86_64 bits: 64 compiler: gcc v: 11.3.0 Console: N/A 
+System:    Host: ryan Kernel: 5.15.58 x86_64 bits: 64 compiler: gcc v: 11.3.0 Console: N/A 
            Distro: NixOS 22.05 (Quokka) 
 Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: 9P0PSH3 Chassis: 
            type: 23 serial: 9P0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .9P0PSH3.CNCMS0016O01PE. UEFI: Dell v: 2.2.4 
            date: 04/12/2021 
-Memory:    RAM: total: 503.19 GiB used: 264.45 GiB (52.6%) 
+Memory:    RAM: total: 503.19 GiB used: 114.67 GiB (22.8%) 
            Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
            note: est. 
            Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
@@ -49,23 +49,23 @@ PCI Slots: Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: 
            Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long 
 CPU:       Info: 64-Core model: AMD EPYC 7713P bits: 64 type: MT MCP arch: Zen 3 rev: 1 cache: 
            L2: 32 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511059 
-           Speed: 1790 MHz min/max: 1500/2000 MHz boost: enabled volts: 1.8 V ext-clock: 2000 MHz 
-           Core speeds (MHz): 1: 1790 2: 1792 3: 1791 4: 1791 5: 1794 6: 1792 7: 1790 8: 1795 
-           9: 1793 10: 1792 11: 1791 12: 1793 13: 1794 14: 1910 15: 1795 16: 1794 17: 1793 
-           18: 1795 19: 1792 20: 1791 21: 1625 22: 1630 23: 1650 24: 1792 25: 1743 26: 1655 
-           27: 1791 28: 1794 29: 2347 30: 2000 31: 1654 32: 1793 33: 1792 34: 2902 35: 1913 
-           36: 1911 37: 1791 38: 1790 39: 1792 40: 1791 41: 1794 42: 1791 43: 2380 44: 2154 
-           45: 1791 46: 1795 47: 1795 48: 1793 49: 1790 50: 1791 51: 1793 52: 1791 53: 1792 
-           54: 2336 55: 2135 56: 2562 57: 2467 58: 2722 59: 2473 60: 2473 61: 2471 62: 2700 
-           63: 2128 64: 2442 65: 2254 66: 1795 67: 1793 68: 1791 69: 1514 70: 1515 71: 1512 
-           72: 1408 73: 1512 74: 1513 75: 1758 76: 1659 77: 1794 78: 2355 79: 2171 80: 1793 
-           81: 1795 82: 1796 83: 1793 84: 1796 85: 1793 86: 2173 87: 1797 88: 1796 89: 1795 
-           90: 2327 91: 2211 92: 1794 93: 1793 94: 1792 95: 1789 96: 1794 97: 1792 98: 1795 
-           99: 1909 100: 1913 101: 1912 102: 1913 103: 1915 104: 2384 105: 1754 106: 1707 
-           107: 1731 108: 1626 109: 1570 110: 1656 111: 1629 112: 1652 113: 1793 114: 1793 
-           115: 1794 116: 1794 117: 1793 118: 1910 119: 1687 120: 1706 121: 2334 122: 2059 
-           123: 1792 124: 1790 125: 1795 126: 1791 127: 1790 128: 1791 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511080 
+           Speed: 1630 MHz min/max: 1500/2000 MHz boost: enabled volts: 1.8 V ext-clock: 2000 MHz 
+           Core speeds (MHz): 1: 1630 2: 1594 3: 1791 4: 1907 5: 1792 6: 1635 7: 1513 8: 1515 
+           9: 1650 10: 1791 11: 1657 12: 1647 13: 1793 14: 1792 15: 1791 16: 1792 17: 1793 
+           18: 1792 19: 1791 20: 1791 21: 1793 22: 1796 23: 1884 24: 2199 25: 1793 26: 2394 
+           27: 2289 28: 1912 29: 1912 30: 1913 31: 1914 32: 1915 33: 3062 34: 1794 35: 1793 
+           36: 1628 37: 1795 38: 1794 39: 1794 40: 1793 41: 1795 42: 1629 43: 1655 44: 1794 
+           45: 1633 46: 1512 47: 2006 48: 2357 49: 1795 50: 1629 51: 1639 52: 1781 53: 1655 
+           54: 1795 55: 1794 56: 1795 57: 1792 58: 2354 59: 1850 60: 1847 61: 1794 62: 1793 
+           63: 2700 64: 1792 65: 1796 66: 1794 67: 1794 68: 1797 69: 1793 70: 1796 71: 1794 
+           72: 1794 73: 1798 74: 2274 75: 1795 76: 1793 77: 1794 78: 1792 79: 1792 80: 1795 
+           81: 1912 82: 1912 83: 1913 84: 1913 85: 2527 86: 1912 87: 1910 88: 1911 89: 2389 
+           90: 2597 91: 2353 92: 2374 93: 1727 94: 1655 95: 1637 96: 2149 97: 2087 98: 1556 
+           99: 1654 100: 1791 101: 1790 102: 1793 103: 2733 104: 2187 105: 2600 106: 2784 
+           107: 1844 108: 1791 109: 1791 110: 1792 111: 1790 112: 1794 113: 1790 114: 1794 
+           115: 1790 116: 1791 117: 1794 118: 1793 119: 1688 120: 1792 121: 1793 122: 1793 
+           123: 1692 124: 1793 125: 1792 126: 1792 127: 1633 128: 1511 
 Graphics:  Device-1: Matrox Systems Integrated Matrox G200eW3 Graphics driver: mgag200 v: kernel 
            bus-ID: c3:00.0 chip-ID: 102b:0536 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -102,48 +102,42 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
            IF: enp196s0f1np1 state: up speed: 10000 Mbps duplex: full mac: e4:3d:1a:72:00:f1 
            IP v4: 169.254.196.76/16 scope: link 
            IP v6: fe80::e63d:1aff:fe72:f1/64 scope: link 
-           IF-ID-1: br-2443cf1dc11a state: down mac: 02:42:72:7b:b6:51 
+           IF-ID-1: br-2443cf1dc11a state: down mac: 02:42:0d:f5:28:1c 
            IP v4: 192.168.0.1/24 scope: global broadcast: 192.168.0.255 
-           IF-ID-2: br-5ef571064773 state: down mac: 02:42:70:90:79:85 
+           IF-ID-2: br-5ef571064773 state: down mac: 02:42:74:4b:6b:9c 
            IP v4: 192.168.94.1/24 scope: global broadcast: 192.168.94.255 
-           IF-ID-3: br-b64ed8ed8f30 state: down mac: 02:42:21:35:1b:05 
+           IF-ID-3: br-b64ed8ed8f30 state: down mac: 02:42:d8:4e:1f:c1 
            IP v4: 192.168.23.1/24 scope: global broadcast: 192.168.23.255 
-           IF-ID-4: br-b6a8b5be58e3 state: down mac: 02:42:87:b9:4c:64 
+           IF-ID-4: br-b6a8b5be58e3 state: down mac: 02:42:6d:52:b8:94 
            IP v4: 192.168.5.1/24 scope: global broadcast: 192.168.5.255 
-           IF-ID-5: br-gierens0 state: up speed: 10 Mbps duplex: unknown mac: 7e:77:a5:6e:b3:71 
-           IP v4: 192.168.56.1/24 scope: global 
-           IP v6: fe80::7c77:a5ff:fe6e:b371/64 scope: link 
-           IF-ID-6: docker0 state: down mac: 02:42:12:0a:a6:2c 
+           IF-ID-5: docker0 state: down mac: 02:42:dc:94:44:4b 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IP v6: fe80::42:12ff:fe0a:a62c/64 scope: link 
-           IF-ID-7: tap-gierens0 state: up speed: 10 Mbps duplex: full mac: 62:25:b1:38:e2:3d 
-           IP v6: fe80::6025:b1ff:fe38:e23d/64 scope: link 
-           IF-ID-8: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
+           IF-ID-6: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:53a7:e0e3:a2b6:471d:44a/12 scope: global 
-           IP v6: fe80::e5ff:6452:25fc:5ee6/64 virtual: stable-privacy scope: link 
+           IP v6: fe80::722e:906e:452f:e0fd/64 virtual: stable-privacy scope: link 
            WAN IP: 131.159.102.8 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID SAS-3 3008 [Fury] driver: megaraid_sas 
            v: 07.717.02.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 732 GiB 
-           allocated: 756 GiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 706 GiB 
+           allocated: 782 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 3.46 TiB used: 1.53 TiB (44.1%) 
+Drives:    Local Storage: total: raw: 3.46 TiB usable: 4.91 TiB used: 651.95 GiB (13.0%) 
            ID-1: /dev/nvme0n1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB size: 1.46 TiB 
            rotation: SSD serial: S61ANA0R501358 rev: 2.0.2 scheme: GPT 
            ID-2: /dev/nvme1n1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB size: 1.46 TiB 
            rotation: SSD serial: S61ANA0R501123 rev: 2.0.2 scheme: GPT 
            ID-3: /dev/sda model: AL15SEB060NY size: 558.91 GiB speed: <unknown> serial: N/A 
            rev: EF06 
-Partition: ID-1: / size: 884.04 GiB used: 199.52 GiB (22.6%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 499.7 MiB used: 87.7 MiB (17.5%) fs: vfat dev: /dev/nvme0n1p1 
-           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
-           ID-4: /tmp size: 695.23 GiB used: 10.71 GiB (1.5%) fs: zfs logical: zroot/root/tmp 
+Partition: ID-1: / size: 856.28 GiB used: 197.2 GiB (23.0%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 499.7 MiB used: 88 MiB (17.6%) fs: vfat dev: /dev/nvme0n1p1 
+           ID-3: /home size: 891.31 GiB used: 301.89 GiB (33.9%) fs: nfs4 remote: nfs:/export/home 
+           ID-4: /tmp size: 661.55 GiB used: 2.47 GiB (0.4%) fs: zfs logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 1391 
-           Uptime: 12:46:18  up 27 days  5:28,  1 user,  load average: 0.26, 0.17, 0.18 wakeups: 0 
+Info:      Processes: 1395 
+           Uptime: 11:50:45  up 3 days  5:01,  1 user,  load average: 6.60, 4.70, 1.99 wakeups: 0 
            Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 Packages: 884 
            nix-default: 214 nix-sys: 456 nix-usr: 214 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```

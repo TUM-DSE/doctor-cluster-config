@@ -7,7 +7,7 @@ Machine:   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 3YBV
            type: 23 serial: 3YBVXK3 
            Mobo: Dell model: 04JN2K v: A09 serial: .3YBVXK3.CNFCP001B3002P. UEFI: Dell v: 2.12.2 
            date: 07/09/2021 
-Memory:    RAM: total: 125.53 GiB used: 5.4 GiB (4.3%) 
+Memory:    RAM: total: 125.53 GiB used: 9.57 GiB (7.6%) 
            Array-1: capacity: 1024 GiB slots: 16 EC: Multi-bit ECC max-module-size: 64 GiB 
            note: est. 
            Device-1: A1 size: 32 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -48,8 +48,8 @@ PCI Slots: Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length:
 CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 bits: 64 type: MT MCP SMP 
            arch: Cascade Lake rev: 7 cache: L2: 27.5 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200120 
-           Speed: 2500 MHz min/max: N/A volts: 1.8 V ext-clock: 10400 MHz Core speeds (MHz): 
-           1: 2500 2: 2500 3: 2500 4: 2500 5: 2500 6: 2500 7: 2500 8: 2500 9: 2500 10: 1000 
+           Speed: 1000 MHz min/max: N/A volts: 1.8 V ext-clock: 10400 MHz Core speeds (MHz): 
+           1: 1000 2: 2500 3: 2500 4: 2500 5: 2500 6: 2500 7: 2500 8: 2500 9: 2500 10: 2500 
            11: 2500 12: 2500 13: 2500 14: 2500 15: 2500 16: 2500 17: 2500 18: 2500 19: 2500 
            20: 2500 21: 2500 22: 2500 23: 2500 24: 2500 25: 2500 26: 2500 27: 2500 28: 2500 
            29: 2500 30: 2500 31: 2500 32: 2500 33: 2500 34: 2500 35: 2500 36: 2500 37: 2500 
@@ -82,26 +82,30 @@ Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: De
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:a85d:33c6:14ca:3cf7:8827/12 scope: global 
            IP v6: fe80::37c1:92c9:4bb:f38f/64 virtual: stable-privacy scope: link 
-           IF-ID-4: veth4b1297e1 state: up speed: 10000 Mbps duplex: full mac: 32:ab:a3:41:fe:4f 
-           IF-ID-5: veth9be111d0 state: up speed: 10000 Mbps duplex: full mac: e2:fc:c4:ef:ae:cb 
-           IF-ID-6: vethc944ee19 state: up speed: 10000 Mbps duplex: full mac: 42:0b:5e:94:ba:ee 
+           IF-ID-4: veth0ea01be9 state: up speed: 10000 Mbps duplex: full mac: 7a:5a:b1:50:81:6d 
+           IF-ID-5: veth5db1e5ec state: up speed: 10000 Mbps duplex: full mac: 12:9f:f3:d5:17:98 
+           IF-ID-6: veth7be7448a state: up speed: 10000 Mbps duplex: full mac: ae:95:ce:e5:46:89 
+           IF-ID-7: veth96c84e2d state: up speed: 10000 Mbps duplex: full mac: 6e:9e:56:3e:20:1d 
+           IF-ID-8: vethc0be1b4f state: up speed: 10000 Mbps duplex: full mac: 52:34:05:5f:60:1e 
            WAN IP: 131.159.102.10 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas 
            v: 07.717.02.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.42 TiB 
-           allocated: 35 GiB 
+           allocated: 32.6 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 325.24 GiB (10.9%) 
+Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 477.23 GiB (16.0%) 
            ID-1: /dev/nvme0n1 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB size: 1.46 TiB 
            speed: 63.2 Gb/s lanes: 4 rotation: SSD serial: PHAB1233010E1P9SGN rev: 1.1.5 
            scheme: GPT 
-Partition: ID-1: / size: 1.4 TiB used: 21.83 GiB (1.5%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 107.1 MiB (10.5%) fs: vfat dev: /dev/nvme0n1p1 
-           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
+Partition: ID-1: / size: 1.4 TiB used: 19.4 GiB (1.4%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 1022 MiB used: 107.4 MiB (10.5%) fs: vfat dev: /dev/nvme0n1p1 
+           ID-3: /home size: 891.31 GiB used: 301.89 GiB (33.9%) fs: nfs4 remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 575 Uptime: 1h 23m wakeups: 0 Init: systemd v: 250 target: multi-user.target 
-           Compilers: gcc: 11.3.0 Packages: nix-sys: 468 Client: Sudo v: 1.9.10 inxi: 3.3.04 
+Info:      Processes: 579 
+           Uptime: 11:50:44  up 7 days  0:28,  0 users,  load average: 0.08, 0.12, 0.14 wakeups: 0 
+           Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 Packages: 
+           nix-sys: 468 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](mickey.lstopo.svg)

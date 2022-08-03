@@ -7,7 +7,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100634 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50540 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002614 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 321.11 GiB (32.3%) 
+Memory:    RAM: total: 995.21 GiB used: 321.75 GiB (32.3%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -48,10 +48,10 @@ PCI Slots: Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short
 CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch: Ice Lake rev: 6 
            cache: L1: 960 KiB L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 3367 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
-           Core speeds (MHz): 1: 3367 2: 3157 3: 2261 4: 3568 5: 943 6: 2192 7: 913 8: 2194 
-           9: 3500 10: 3152 11: 3600 12: 2863 13: 2755 14: 2035 15: 2017 16: 2179 17: 3540 
-           18: 1839 19: 3524 20: 3574 21: 2430 22: 2294 23: 2027 24: 1694 
+           Speed: 2482 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
+           Core speeds (MHz): 1: 2482 2: 1913 3: 878 4: 2578 5: 3603 6: 3603 7: 2161 8: 1919 
+           9: 3500 10: 1637 11: 1935 12: 1819 13: 2009 14: 3566 15: 3540 16: 3500 17: 2649 
+           18: 3581 19: 3606 20: 2155 21: 3082 22: 978 23: 3600 24: 3525 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
@@ -59,10 +59,14 @@ Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: k
 Audio:     Message: No device data found. 
 Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe v: kernel 
            port: 0780 bus-ID: 01:00.0 chip-ID: 8086:1563 class-ID: 0200 
-           IF: eno1 state: down mac: 3c:ec:ef:62:ad:f2 
+           IF: eno1 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:62:ad:f2 
+           IP v4: 169.254.209.2/16 scope: link 
+           IP v6: fe80::3eec:efff:fe62:adf2/64 scope: link 
            Device-2: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe v: kernel 
            port: 0780 bus-ID: 01:00.1 chip-ID: 8086:1563 class-ID: 0200 
-           IF: eno2 state: down mac: 3c:ec:ef:62:ad:f3 
+           IF: eno2 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:62:ad:f3 
+           IP v4: 169.254.211.203/16 scope: link 
+           IP v6: fe80::3eec:efff:fe62:adf3/64 scope: link 
            Device-3: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel port: 7020 
            bus-ID: 18:00.0 chip-ID: 8086:10fb class-ID: 0200 
            IF: enp24s0f0 state: up speed: 10000 Mbps duplex: full mac: 00:1b:21:c3:7b:ec 
@@ -94,21 +98,21 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.717.02.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.44 TiB 
-           allocated: 300 GiB 
+           allocated: 301 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 748.54 GiB (14.0%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 752.77 GiB (14.1%) 
            ID-1: /dev/sda vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
            serial: N/A rev: 102Q scheme: GPT 
            ID-2: /dev/sdb vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
            serial: N/A rev: 102Q 
-Partition: ID-1: / size: 1.68 TiB used: 300.31 GiB (17.4%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 106.7 MiB (10.4%) fs: vfat dev: /dev/sda1 
-           ID-3: /home size: 889.11 GiB used: 297.82 GiB (33.5%) fs: nfs4 remote: nfs:/export/home 
+Partition: ID-1: / size: 1.68 TiB used: 300.46 GiB (17.5%) fs: zfs logical: zroot/root/nixos 
+           ID-2: /boot size: 1022 MiB used: 107 MiB (10.5%) fs: vfat dev: /dev/sda1 
+           ID-3: /home size: 891.31 GiB used: 301.89 GiB (33.9%) fs: nfs4 remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 397 
-           Uptime: 12:46:17  up 13 days 22:30,  0 users,  load average: 0.07, 0.08, 0.09 
+Info:      Processes: 400 
+           Uptime: 11:50:43  up 20 days 21:34,  0 users,  load average: 0.12, 0.09, 0.09 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 
            Packages: nix-sys: 455 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```
