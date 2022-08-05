@@ -72,87 +72,13 @@
     ++ [
       ./modules/tracing.nix
       ./modules/scratch-space.nix
-      ./modules/scone.nix
       ./modules/watchdog.nix
       ./modules/docker.nix
       ./modules/zfs.nix
       ./modules/bootloader.nix
     ];
-  sgxNodeModules =
-    computeNodeModules
-    ++ [
-      ./modules/dpdk.nix
-      ./modules/sgx
-      ./modules/sgx/graphene.nix
-      ./hardware-configuration.nix
-    ];
 in {
   flake.nixosConfigurations = {
-    amy = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        sgxNodeModules
-        ++ [
-          ./hosts/amy.nix
-        ];
-    };
-
-    clara = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        sgxNodeModules
-        ++ [
-          ./hosts/clara.nix
-        ];
-    };
-
-    # we need to increase /boot before we can upgrade
-    doctor = nixosSystem {
-      system = "aarch64-linux";
-      modules =
-        commonModules
-        ++ [
-          ./hosts/doctor.nix
-        ];
-    };
-
-    donna = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        sgxNodeModules
-        ++ [
-          ./hosts/donna.nix
-        ];
-    };
-
-    martha = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        sgxNodeModules
-        ++ [
-          ./hosts/martha.nix
-        ];
-    };
-
-    rose = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        sgxNodeModules
-        ++ [
-          ./hosts/rose.nix
-        ];
-    };
-
-    bill = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        computeNodeModules
-        ++ [
-          ./hosts/bill.nix
-          ./hardware-configuration.nix
-        ];
-    };
-
     nardole = nixosSystem {
       system = "x86_64-linux";
       modules =
@@ -160,15 +86,6 @@ in {
         ++ [
           ./hosts/nardole.nix
           ./hardware-configuration.nix
-        ];
-    };
-
-    sauron = nixosSystem {
-      system = "x86_64-linux";
-      modules =
-        sgxNodeModules
-        ++ [
-          ./hosts/sauron.nix
         ];
     };
 
