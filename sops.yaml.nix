@@ -22,15 +22,7 @@ let
     dimitrios  = "age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8";
 
     # machines
-    amy       = "age137rtvc63e3rg0qtlc8nwmajqljuckjdptncd4nmk8w8hvdlcr3tsj2f8d8";
-    clara     = "age1hsvqmpun5c4ht8vk9pjhppav3zdxm37h820uws07xe88gpejfs6qyzhwav";
-    rose      = "age18s9fs98d44dcgn2cn9a4p3zryc0z88u2wmrs62yvyr06gzxpzdnshp70vp";
-    donna     = "age1tmauqc99j526s4gpjxz335jag423utcjpldak6ealu6c796n59xqq62wja";
-    martha    = "age12fzpr4rm4xwm9t8jwyeu449lsetxruv9mf9m28jqwkvs86yrlqnqn8kfcd";
-    doctor    = "age1t7mujjjvczz9gsrsalegr79yp424scpx0mcxl6c3j7stmea8falqqnu9p7";
-    bill      = "age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq";
     nardole   = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
-    sauron    = "age1t447x7xtqqhmfr026uhfn6ys62hlhseakw9qlrveadqxk7sehyysx62rq9";
     yasmin    = "age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6";
     graham    = "age1qnz850jesp6l4968vqdp40mqenmtx3czhy5l8hsz4kym3aj8c56srs5dkk";
     ryan      = "age1cxtzg79g4ueqawa2hwstkkyeyq6e53q6r4te527lnjvzhujjc5ns96qehp";
@@ -60,21 +52,6 @@ let
   # for all files. Amy.yml additionally can be decrytped by amy.
   sopsPermissions = with keys; {
     "modules/sshd/[^/]+\\.yaml$" = [];
-    "hosts/amy.yml$" = [
-      amy
-    ];
-    "hosts/clara.yml$" = [
-      clara
-    ];
-    "hosts/rose.yml$" = [
-      rose
-    ];
-    "hosts/donna.yml$" = [
-      donna
-    ];
-    "hosts/martha.yml$" = [
-      martha
-    ];
     "hosts/doctor.yml$" = [
       doctor
     ];
@@ -83,9 +60,6 @@ let
     ];
     "hosts/nardole.yml$" = [
       nardole
-    ];
-    "hosts/sauron.yml$" = [
-      sauron
     ];
     "hosts/yasmin.yml$" = [
       yasmin
@@ -128,8 +102,6 @@ let
       nardole
     ];
     "modules/k3s/secrets.yml$" = [
-      bill
-      nardole
       astrid
       mickey
       dan

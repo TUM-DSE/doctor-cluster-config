@@ -123,4 +123,10 @@ A graph of how the servers are connected right now can be found [here](graph.md)
 
 ## Names left to pick
 
-none
+- amy
+- bill
+- clara
+- doctor
+- donna
+- martha
+- rose
