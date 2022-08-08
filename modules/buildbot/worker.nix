@@ -19,7 +19,24 @@ in
     ./hostfile.nix
   ];
   users.groups.buildbot-worker = {};
+  sops.secrets.buildbot-builder-ssh-key = {};
   sops.secrets.buildbot-nix-worker-password.owner = "buildbot-worker";
+
+  nix.distributedBuilds = true;
+  nix.buildMachines = [
+    {
+      hostName = "yasmin.dse.in.tum.de";                             
+      maxJobs = 96;
+      sshKey = config.sops.secrets.buildbot-builder-ssh-key.path;
+      sshUser = "ssh-ng://buildbot-worker";
+      system = "aarch64-linux";
+      supportedFeatures = [
+        "big-parallel"
+        "kvm"
+        "nixos-test"
+      ];
+    }
+  ];
 
   systemd.services.buildbot-worker = {
     description = "Buildbot Worker.";
