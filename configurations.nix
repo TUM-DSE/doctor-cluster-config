@@ -15,6 +15,7 @@
   commonModules = [
     {_module.args.inputs = self.inputs;}
     ./modules/packages.nix
+    ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
     ./modules/telegraf.nix
@@ -79,13 +80,21 @@
     ];
 in {
   flake.nixosConfigurations = {
+    bill = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/bill.nix
+        ];
+    };
+
     nardole = nixosSystem {
       system = "x86_64-linux";
       modules =
         computeNodeModules
         ++ [
           ./hosts/nardole.nix
-          ./hardware-configuration.nix
         ];
     };
 

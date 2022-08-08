@@ -5,6 +5,9 @@ AuthorizedKeysFile %h/.ssh/authorized_keys %h/.ssh/authorized_keys2 /etc/ssh/aut
 # see https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/sshd/certs/login-cert.pub
 HostCertificate /etc/ssh/login-cert.pub
 
+# Increase number of connections for deployment scripts
+MaxStartups 64:30:256
+
 Match User tunnel
   AllowTcpForwarding yes
   X11Forwarding no

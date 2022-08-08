@@ -23,6 +23,7 @@ let
 
     # machines
     nardole   = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
+    bill      = "age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq";
     yasmin    = "age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6";
     graham    = "age1qnz850jesp6l4968vqdp40mqenmtx3czhy5l8hsz4kym3aj8c56srs5dkk";
     ryan      = "age1cxtzg79g4ueqawa2hwstkkyeyq6e53q6r4te527lnjvzhujjc5ns96qehp";
@@ -105,9 +106,6 @@ let
       astrid
       mickey
       dan
-    ];
-    "modules/gitlab-runner/secrets.yml$" = [
-      ryan
     ];
     "modules/secrets.yml$" = groups.all;
     "secrets.yml$" = [];
