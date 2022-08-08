@@ -15,6 +15,7 @@
   commonModules = [
     {_module.args.inputs = self.inputs;}
     ./modules/packages.nix
+    ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
     ./modules/telegraf.nix
