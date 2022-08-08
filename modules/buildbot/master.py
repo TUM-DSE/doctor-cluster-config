@@ -88,8 +88,18 @@ def build_config() -> dict[str, Any]:
 
     systemd_secrets = secrets.SecretInAFile(dirname=credentials)
     c["secretsProviders"] = [systemd_secrets]
-    c["workers"] = [worker.Worker(item["name"], item["pass"]) for item in worker_config]
-    worker_names = [item["name"] for item in worker_config]
+    c["workers"] = []
+    worker_names = []
+    for item in worker_config:
+        cores = item.get("cores")
+        if cores:
+            for i in range(cores):
+                worker_name = f"{item['name']}-{i}"
+                c["workers"].append(worker.Worker(worker_name, item["pass"]))
+                worker_names.append(worker_name)
+        else:
+            c["workers"].append(worker.Worker(item["name"], item["pass"]))
+            worker_names.append(item["name"])
     c["builders"] = [
         # Since all workers run on the same machine, we only assign one of them to do the evaluation.
         # This should prevent exessive memory usage.

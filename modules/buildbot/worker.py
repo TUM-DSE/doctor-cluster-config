@@ -54,5 +54,5 @@ def setup_worker(application: service.Application, id: int) -> None:
 # directory; do not edit it.
 application = service.Application("buildbot-worker")
 
-for i in range(min(multiprocessing.cpu_count(), 8)):
+for i in range(multiprocessing.cpu_count()):
     setup_worker(application, i)
