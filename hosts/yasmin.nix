@@ -8,6 +8,7 @@
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
     ../modules/nfs/client.nix
+    ../modules/buildbot/builder.nix
   ];
 
   networking.hostName = "yasmin";
