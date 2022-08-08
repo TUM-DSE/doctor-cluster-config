@@ -115,7 +115,7 @@ def build_config() -> dict[str, Any]:
 
     c["db"] = {"db_url": os.environ.get("DB_URL", "sqlite:///state.sqlite")}
 
-    c["protocols"] = {"pb": {"port": 9989}}
+    c["protocols"] = {"pb": {"port": "tcp:9989:interface=\\:\\:"}}
     c["buildbotURL"] = "https://buildbot.dse.in.tum.de/"
 
     return c

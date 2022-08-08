@@ -34,7 +34,6 @@ def setup_worker(application: service.Application, id: int) -> None:
     numcpus = None
     allow_shutdown = None
 
-    print(f"worker: {workername}")
     s = Worker(
         None,
         None,

@@ -27,7 +27,7 @@ in
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.git pkgs.nix pkgs.cachix pkgs.gh ];
     environment.PYTHONPATH = "${python.withPackages (p: [ package ])}/${python.sitePackages}";
-    environment.MASTER_URL = "tcp:buildbot-master:9989";
+    environment.MASTER_URL = ''tcp:host=2a09\:80c0\:102\:\:1:port=9989'';
     environment.BUILDBOT_DIR = buildbotDir;
     environment.WORKER_PASSWORD_FILE = config.sops.secrets.buildbot-nix-worker-password.path;
 
