@@ -57,7 +57,7 @@
   systemd.services.buildbot-master.serviceConfig = {
     # only allow localhost and the TUM ipv6 subnet
     IPAddressAllow = ["localhost" "2a09:80c0:102::/64"];
-    #IPAddressDeny = ["any"];
+    IPAddressDeny = ["any"];
   };
 
   services.nginx.enable = true;
