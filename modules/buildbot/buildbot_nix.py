@@ -374,7 +374,7 @@ def nix_eval_config(
             env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
             github_token_secret=util.Secret(github_token_secret),
             base_branches=["master"],
-            owners=["mic92-buildbot"],
+            owners=["doctor-cluster-bot"],
             command=[
                 "gh",
                 "pr",
