@@ -7,7 +7,6 @@
     ../modules/ipmi.nix
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
-    ../modules/gitlab-runner/builder.nix
     ../modules/nfs/client.nix
   ];
 

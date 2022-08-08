@@ -7,7 +7,6 @@
   imports = [
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
-    ../modules/gitlab-runner
     ../modules/dpdk.nix
   ];
 

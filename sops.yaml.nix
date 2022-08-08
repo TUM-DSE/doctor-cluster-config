@@ -107,9 +107,6 @@ let
       mickey
       dan
     ];
-    "modules/gitlab-runner/secrets.yml$" = [
-      ryan
-    ];
     "modules/secrets.yml$" = groups.all;
     "secrets.yml$" = [];
     "modules/sshd/ca-keys.yml$" = [];
