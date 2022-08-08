@@ -54,12 +54,6 @@
     ];
   };
 
-  systemd.services.buildbot-master.serviceConfig = {
-    # only allow localhost and the TUM ipv6 subnet
-    IPAddressAllow = ["localhost" "2a09:80c0:102::/64"];
-    IPAddressDeny = ["any"];
-  };
-
   services.nginx.enable = true;
   services.nginx.virtualHosts."buildbot-master" = {
     locations."/".proxyPass = "http://127.0.0.1:1810/";
