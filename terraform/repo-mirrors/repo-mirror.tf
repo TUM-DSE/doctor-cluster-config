@@ -15,50 +15,7 @@ resource "gitlab_project" "repos" {
   mirror_trigger_builds               = true
   mirror_overwrites_diverged_branches = true
   shared_runners_enabled              = false
-  ci_config_path = lookup({
-    "TUM-DSE/doctor-cluster-config" : ".gitlab-ci.yml@TUM-DSE/doctor-cluster-config",
-    }, each.key,
-    # sane default
-  "")
   visibility_level = "public"
-}
-
-resource "gitlab_project_variable" "cachix-key" {
-  for_each = toset([
-    gitlab_project.repos["TUM-DSE/doctor-cluster-config"].id
-  ])
-  project   = each.key
-  key       = "CACHIX_AUTH_TOKEN"
-  value     = data.sops_file.secrets.data["CACHIX_AUTH_TOKEN"]
-  protected = true
-  masked    = true
-}
-
-resource "gitlab_project_variable" "github-token" {
-  for_each = toset([
-    gitlab_project.repos["TUM-DSE/doctor-cluster-config"].id
-  ])
-  project   = each.key
-  key       = "GITHUB_TOKEN"
-  value     = data.sops_file.secrets.data["doctor-cluster-bot-token"]
-  protected = true
-  masked    = true
-}
-
-resource "gitlab_service_github" "github" {
-  # XXX gitlab made this a "Premium" feature now
-  for_each       = toset([
-    "Swiss-Knife-LLVM-Assignments",
-    "Treaty",
-    "cycle-accurate-hardware-benchmark-tool",
-    "doctor-cluster-config",
-    "research-work-info",
-    "safepm-pmdk",
-    "seminars"
-  ])
-  project        = gitlab_project.repos["TUM-DSE/${each.key}"].id
-  token          = data.sops_file.secrets.data["doctor-cluster-bot-token"]
-  repository_url = "https://github.com/TUM-DSE/${each.key}"
 }
 
 resource "github_repository_webhook" "gitlab" {
