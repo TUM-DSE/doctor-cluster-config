@@ -286,8 +286,8 @@ def update_sops_files(c):
         """
 find . \
         -not -path "./.github/*" \
-        -not -path "./.gitlab-ci.yml" \
-        -not -path "./.mergify.yml" \
+        -not -path "./modules/jumphost/*.yml" \
+        -not -path "./modules/monitoring/*.yml" \
         -type f \
         \( -iname '*.enc.json' -o -iname '*.yml' \) \
         -print0 | \
