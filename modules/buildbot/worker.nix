@@ -6,7 +6,6 @@ let
   buildbotDir = "${home}/worker";
 in
 {
-  nix.settings.allowed-users = ["buildbot-worker"];
   users.users.buildbot-worker = {
     description = "Buildbot Worker User.";
     isSystemUser = true;
