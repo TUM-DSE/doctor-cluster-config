@@ -8,6 +8,7 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
+    ../modules/buildbot/worker.nix
   ];
 
   boot.hugepages.size = "1GB";
