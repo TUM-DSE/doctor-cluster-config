@@ -13,9 +13,9 @@
       PORT   = "1810";
       DB_URL = config.services.buildbot-master.dbUrl;
       # Github app used for the login button
-      GITHUB_OAUTH_ID = "d1b24258af1abc157934";
-      # comma seperated list of users that are allowed to login to buildbot and do stuff
-      GITHUB_ADMINS = "Mic92";
+      GITHUB_OAUTH_ID = "1448d1d1a3d84fa023f4";
+      # UNUSED: comma seperated list of users that are allowed to login to buildbot and do stuff
+      # GITHUB_ADMINS = "Mic92,pogobanane";
     };
     serviceConfig = {
       # in master.py we read secrets from $CREDENTIALS_DIRECTORY

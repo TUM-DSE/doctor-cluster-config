@@ -5,6 +5,8 @@ import sys
 import json
 
 from buildbot.plugins import worker, util, schedulers, reporters, secrets
+
+# buildbot/www/authz/roles.p
 from buildbot.process.properties import Interpolate
 from pathlib import Path
 from typing import Any
@@ -49,9 +51,19 @@ def build_config() -> dict[str, Any]:
         # allow to manually trigger a nix-build
         schedulers.ForceScheduler(name="force", builderNames=["nix-eval"]),
         # allow to manually update flakes
-        schedulers.ForceScheduler(name="update-flake", builderNames=["nix-update-flake"], buttonName="Update flakes"),
+        schedulers.ForceScheduler(
+            name="update-flake",
+            builderNames=["nix-update-flake"],
+            buttonName="Update flakes",
+        ),
         # updates flakes once a weeek
-        schedulers.NightlyTriggerable(name='update-flake-weekly', builderNames=['nix-update-flake'], hour=3, minute=0, dayOfWeek=6)
+        schedulers.NightlyTriggerable(
+            name="update-flake-weekly",
+            builderNames=["nix-update-flake"],
+            hour=3,
+            minute=0,
+            dayOfWeek=6,
+        ),
     ]
 
     github_api_token = read_secret_file("github-token")
@@ -83,7 +95,11 @@ def build_config() -> dict[str, Any]:
         # This should prevent exessive memory usage.
         nix_eval_config([worker_names[0]], github_token_secret="github-token"),
         nix_build_config(worker_names, enable_cachix),
-        nix_update_flake_config(worker_names, "TUM-DSE/doctor-cluster-config", github_token_secret="github-token"),
+        nix_update_flake_config(
+            worker_names,
+            "TUM-DSE/doctor-cluster-config",
+            github_token_secret="github-token",
+        ),
     ]
 
     github_admins = os.environ.get("GITHUB_ADMINS", "").split(",")
@@ -95,11 +111,11 @@ def build_config() -> dict[str, Any]:
         ),
         "authz": util.Authz(
             roleMatchers=[
-                util.RolesFromUsername(roles=["admin"], usernames=github_admins)
+                util.RolesFromGroups(groupPrefix="")  # so we can match on TUM-DSE
             ],
             allowRules=[
-                util.AnyEndpointMatcher(role="admin", defaultDeny=False),
-                util.AnyControlEndpointMatcher(role="admins")
+                util.AnyEndpointMatcher(role="TUM-DSE", defaultDeny=False),
+                util.AnyControlEndpointMatcher(role="TUM-DSE"),
             ],
         ),
         "plugins": dict(waterfall_view={}, console_view={}, grid_view={}),
