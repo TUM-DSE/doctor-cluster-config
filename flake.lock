@@ -80,11 +80,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1660030916,
-        "narHash": "sha256-KeVTmST6vAS85uUaSYlzv6OWhveawfIGhqX1SMq+L30=",
+        "lastModified": 1660407119,
+        "narHash": "sha256-04lWO0pDbhAXFdL4v2VzzwgxrZ5IefKn+TmZPiPeKxg=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "3975d5158f00accda15a11180b2c08654cfb2807",
+        "rev": "12620020f76b1b5d2b0e6fbbda831ed4f5fe56e1",
         "type": "github"
       },
       "original": {
@@ -95,11 +95,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1660187857,
-        "narHash": "sha256-+Qmz6wx9qVGpbodRUOFs+ROTXlG/LbasiH+IikF1OQ8=",
+        "lastModified": 1660410996,
+        "narHash": "sha256-arkfX1YYFmwMyDTCguzoOI4epABC41FGQU4J1/G3/9M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b946a106c1c62988c69832faae10e491a7817e0b",
+        "rev": "70b6236f3cbc815f2cae8d597418c714cf83d1c8",
         "type": "github"
       },
       "original": {
@@ -127,11 +127,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1660079530,
-        "narHash": "sha256-PTDWAr0c7ZFMar6RT1tXhjda3nLOGicuzI9PE86zvCM=",
+        "lastModified": 1660397163,
+        "narHash": "sha256-eZyXph/Hnn7zTv5erVXXpVM1dGqgnXuCHTIIGbV5Beo=",
         "owner": "Mic92",
         "repo": "nixpkgs",
-        "rev": "3560d4194e4ea5e29fed39264f8b2f7b3c7b5138",
+        "rev": "a223b4d9d1b81f047da4fd16676ed0d55f54ba31",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1660181147,
-        "narHash": "sha256-49/rBWoZA5uVa3Egq12mlrM+z2T3DbbuXqO0XjpFnUQ=",
+        "lastModified": 1660447042,
+        "narHash": "sha256-1hRTaAt6rLfKyCgoffZdXyLhyjmI3yFriEQFV2490Hk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "3013fafff48b531f632b1a50afdc88a4078dc69c",
+        "rev": "1dc7b2cf72bc742ba5f2a397c44b114289068cfb",
         "type": "github"
       },
       "original": {
