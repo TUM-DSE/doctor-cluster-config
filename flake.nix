@@ -1,11 +1,18 @@
 {
   description = "NixOS configuration with flakes";
 
+  nixConfig.extra-substituters = [
+    "https://tum-dse.cachix.org"
+  ];
+  nixConfig.extra-trusted-public-keys = [
+    "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
+  ];
+
   # To update all inputs:
   # $ nix flake update --recreate-lock-file
   inputs = {
-    flake-modules-core.url = "github:hercules-ci/flake-parts";
-    flake-modules-core.inputs.nixpkgs.follows = "nixpkgs";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO Switch to nixos release as soon as it comes out
     nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
@@ -28,15 +35,19 @@
 
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+
+    deploykit.url = "github:numtide/deploykit";
+    deploykit.inputs.nixpkgs.follows = "nixpkgs";
+    deploykit.inputs.flake-parts.follows = "flake-parts";
   };
 
   outputs = {
     self,
     nixpkgs,
-    flake-modules-core,
+    flake-parts,
     ...
   } @ inputs:
-    (flake-modules-core.lib.evalFlakeModule
+    (flake-parts.lib.evalFlakeModule
       { inherit self; }
       {
         systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
@@ -45,13 +56,14 @@
           ./modules/monitoring/flake-module.nix
           ./templates
         ];
-        perSystem = {system, self', pkgs, ...}: {
+        perSystem = {system, self', inputs', pkgs, ...}: {
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.python3.pkgs.invoke
               pkgs.ipmitool
               pkgs.age
               pkgs.sops
+              inputs'.deploykit.packages.deploykit
               (pkgs.writeScriptBin "nix2yaml" ''
                 echo "# AUTOMATICALLY GENERATED WITH:"
                 echo "# nix2yaml $*"

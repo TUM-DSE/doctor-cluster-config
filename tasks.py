@@ -11,7 +11,7 @@ import string
 import shutil
 from pathlib import Path
 from typing import List, Any
-from deploy_nixos import DeployHost, DeployGroup
+from deploykit import DeployHost, DeployGroup
 from typing import IO, Any, Callable, List, Dict, Optional, Text
 
 ROOT = Path(__file__).parent.resolve()

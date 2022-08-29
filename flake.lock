@@ -1,6 +1,29 @@
 {
   "nodes": {
-    "flake-modules-core": {
+    "deploykit": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661774097,
+        "narHash": "sha256-dvWpOU3dU9TfSnK7I+CSDrCaASr+uR5VepG/SQs/RIg=",
+        "owner": "numtide",
+        "repo": "deploykit",
+        "rev": "c8cd9ddcd647e3116b07e920e53aebf047cbeac5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "deploykit",
+        "type": "github"
+      }
+    },
+    "flake-parts": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -173,7 +196,8 @@
     },
     "root": {
       "inputs": {
-        "flake-modules-core": "flake-modules-core",
+        "deploykit": "deploykit",
+        "flake-parts": "flake-parts",
         "flake-registry": "flake-registry",
         "home-manager": "home-manager",
         "nix-ld": "nix-ld",

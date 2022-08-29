@@ -31,13 +31,11 @@
 
     binaryCaches = [
       "https://nix-community.cachix.org"
-      "https://mic92.cachix.org"
       "https://tum-dse.cachix.org"
     ];
 
     binaryCachePublicKeys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "mic92.cachix.org-1:gi8IhgiT3CYZnJsaW7fxznzTkMUOn1RY4GmXdT/nXYQ="
       "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
     ];
   };
