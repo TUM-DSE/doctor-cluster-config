@@ -11,7 +11,7 @@ import string
 import shutil
 from pathlib import Path
 from typing import List, Any
-from deploy_nixos import DeployHost, DeployGroup
+from deploykit import DeployHost, DeployGroup
 from typing import IO, Any, Callable, List, Dict, Optional, Text
 
 ROOT = Path(__file__).parent.resolve()
@@ -42,17 +42,17 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
             flake_path += "#" + flake_attr
         target_host = h.meta.get("target_host", "localhost")
         h.run(
-            f"nixos-rebuild switch --build-host localhost --target-host {target_host} --flake {flake_path}"
+            f"nixos-rebuild switch --option accept-flake-config true --build-host localhost --target-host {target_host} --flake {flake_path}"
         )
 
     g.run_function(deploy)
 
 
-def document_nixos(hosts: List[str]) -> None:
+def document_nixos(_hosts: List[str]) -> None:
     """
     Generate documentation, expects "hostname.r"
     """
-    hosts = DeployGroup([DeployHost(h) for h in HOSTS])
+    hosts = DeployGroup([DeployHost(h) for h in _hosts])
 
     def doc_host(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
