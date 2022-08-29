@@ -48,11 +48,11 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     g.run_function(deploy)
 
 
-def document_nixos(hosts: List[str]) -> None:
+def document_nixos(_hosts: List[str]) -> None:
     """
     Generate documentation, expects "hostname.r"
     """
-    hosts = DeployGroup([DeployHost(h) for h in HOSTS])
+    hosts = DeployGroup([DeployHost(h) for h in _hosts])
 
     def doc_host(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
