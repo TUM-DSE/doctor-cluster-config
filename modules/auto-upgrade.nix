@@ -2,6 +2,9 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.flake = "github:TUM-DSE/doctor-cluster-config";
 
+  # add a random jitter so not all machines reboot at the same time.
+  systemd.timers.auto-reboot.timerConfig.RandomizedDelaySec = 60 * 20;
+
   systemd.services.auto-reboot = {
     path = [ pkgs.systemd pkgs.util-linux ];
     # The last saturday in a month
