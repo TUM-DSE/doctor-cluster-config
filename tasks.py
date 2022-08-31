@@ -19,7 +19,7 @@ os.chdir(ROOT)
 
 
 def get_hosts(hosts: str) -> List[DeployHost]:
-    return [DeployHost(h) for h in hosts.split(",")]
+    return [DeployHost(h, user="root") for h in hosts.split(",")]
 
 
 RSYNC_EXCLUDES = ["gdb", "zsh", ".terraform", ".direnv", ".mypy-cache", ".git"]
@@ -52,7 +52,7 @@ def document_nixos(_hosts: List[str]) -> None:
     """
     Generate documentation, expects "hostname.r"
     """
-    hosts = DeployGroup([DeployHost(h) for h in _hosts])
+    hosts = DeployGroup([DeployHost(h, user="root") for h in _hosts])
 
     def doc_host(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
@@ -67,7 +67,7 @@ def get_lldp_neighbors(hosts: List[str]) -> None:
     """
     Get LLDP-discovered neighbors, expects "hostname.r"
     """
-    tum = DeployGroup([DeployHost(h) for h in HOSTS])
+    tum = DeployGroup([DeployHost(h, user="root") for h in HOSTS])
 
     def doc_tum(h: DeployHost) -> None:
         h.run_local(f"../../get-lldp-neighbors.sh {h.host}")
@@ -123,7 +123,7 @@ def deploy(c):
     """
     Deploy to servers
     """
-    deploy_nixos([DeployHost(h) for h in HOSTS])
+    deploy_nixos([DeployHost(h, user="root") for h in HOSTS])
 
 
 @task
@@ -131,7 +131,7 @@ def deploy_host(c, host):
     """
     Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
     """
-    deploy_nixos([DeployHost(host)])
+    deploy_nixos([DeployHost(host, user="root")])
 
 
 @task
@@ -357,7 +357,7 @@ def reboot(c, hosts=""):
     """
     Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
     """
-    deploy_hosts = [DeployHost(h) for h in hosts.split(",")]
+    deploy_hosts = [DeployHost(h, user="root") for h in hosts.split(",")]
     for h in deploy_hosts:
         g = DeployGroup([h])
         g.run("reboot &")
@@ -375,7 +375,7 @@ def reboot(c, hosts=""):
 
 @task
 def cleanup_gcroots(c, hosts=""):
-    deploy_hosts = [DeployHost(h) for h in hosts.split(",")]
+    deploy_hosts = [DeployHost(h, user="root") for h in hosts.split(",")]
     for h in deploy_hosts:
         g = DeployGroup([h])
         g.run("find /nix/var/nix/gcroots/auto -type s -delete")
