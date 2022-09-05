@@ -7,6 +7,7 @@
     ../modules/hardware/supermicro-x12spw-tf.nix
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
+    ../modules/linux-ioregionfd.nix
   ];
 
   boot.hugepages.size = "1GB";
