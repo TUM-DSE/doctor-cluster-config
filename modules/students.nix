@@ -41,6 +41,10 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
   ];
 
+  vandaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHNFtsaHwUsqyiDn4MHVxmAPSgGkSODvPoUX71XWMMD vanda@arch"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -125,6 +129,16 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2003;
       openssh.authorizedKeys.keys = gierensKeys;
+    };
+
+    # Vanda Hendrychova, Masa's MSc student (extensible unikernels)
+    vanda = {
+      isNormalUser = true;
+      home = "/home/vanda";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2004;
+      openssh.authorizedKeys.keys = vandaKeys;
     };
   };
 
