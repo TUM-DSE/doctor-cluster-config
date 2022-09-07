@@ -47,7 +47,8 @@ in
     environment.PYTHONPATH = "${python.withPackages (p: [ package ])}/${python.sitePackages}";
     environment.MASTER_URL = ''tcp:host=2a09\:80c0\:102\:\:1:port=9989'';
     environment.BUILDBOT_DIR = buildbotDir;
-    environment.WORKER_PASSWORD_FILE = "%d/buildbot-nix-worker-password";
+    #environment.WORKER_PASSWORD_FILE = "%d/buildbot-nix-worker-password";
+    environment.WORKER_PASSWORD_FILE = "${config.sops.secrets.buildbot-nix-worker-password.path}";
 
     serviceConfig = {
       Type = "simple";
@@ -57,9 +58,9 @@ in
 
       ExecStart = "${python.pkgs.twisted}/bin/twistd --nodaemon --pidfile= --logfile - --python ${./worker.py}";
 
-      LoadCredential = [
-        "buildbot-nix-worker-password:${config.sops.secrets.buildbot-nix-worker-password.path}"
-      ];
+      #LoadCredential = [
+      #  "buildbot-nix-worker-password:${config.sops.secrets.buildbot-nix-worker-password.path}"
+      #];
     };
   };
 }
