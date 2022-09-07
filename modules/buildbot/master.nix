@@ -31,11 +31,11 @@ in
       DB_URL = config.services.buildbot-master.dbUrl;
       # Github app used for the login button
       GITHUB_OAUTH_ID = githubOauthId;
-      GITHUB_ORG = "numtide";
-      GITHUB_REPO = "blended";
+      GITHUB_ORG = "TUM-DSE";
+      GITHUB_REPO = "doctor-cluster-config";
 
       BUILDBOT_URL = "https://${buildbotDomain}/";
-      BUILDBOT_GITHUB_USER = "numtide-bot";
+      BUILDBOT_GITHUB_USER = "doctor-cluster-bot";
       # UNUSED: comma seperated list of users that are allowed to login to buildbot and do stuff
       # GITHUB_ADMINS = "Mic92,pogobanane";
     };
