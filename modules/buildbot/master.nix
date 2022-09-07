@@ -1,5 +1,17 @@
 { config, lib, pkgs, ... }:
 
+let
+  # TODO: make this an option
+
+  # https://github.com/organizations/numtide/settings/applications
+  # Application name: BuildBot
+  # Homepage URL: https://buildbot.numtide.com
+  # Authorization callback URL: https://buildbot.numtide.com/auth/login
+  # oauth_token:  2516248ec6289e4d9818122cce0cbde39e4b788d
+
+  buildbotDomain = "buildbot.dse.in.tum.de";
+  githubOauthId = "1448d1d1a3d84fa023f4";
+in
 {
   services.buildbot-master = {
     enable = true;
@@ -15,10 +27,15 @@
 
   systemd.services.buildbot-master = {
     environment = {
-      PORT   = "1810";
+      PORT = "1810";
       DB_URL = config.services.buildbot-master.dbUrl;
       # Github app used for the login button
-      GITHUB_OAUTH_ID = "1448d1d1a3d84fa023f4";
+      GITHUB_OAUTH_ID = githubOauthId;
+      GITHUB_ORG = "numtide";
+      GITHUB_REPO = "blended";
+
+      BUILDBOT_URL = "https://${buildbotDomain}/";
+      BUILDBOT_GITHUB_USER = "numtide-bot";
       # UNUSED: comma seperated list of users that are allowed to login to buildbot and do stuff
       # GITHUB_ADMINS = "Mic92,pogobanane";
     };
@@ -28,18 +45,19 @@
         "github-token:${config.sops.secrets.github-token.path}"
         "github-webhook-secret:${config.sops.secrets.github-webhook-secret.path}"
         "github-oauth-secret:${config.sops.secrets.github-oauth-secret.path}"
-        "github-workers:${config.sops.secrets.github-workers.path}"
+        "buildbot-nix-workers:${config.sops.secrets.buildbot-nix-workers.path}"
         "cachix-name:${config.sops.secrets.cachix-name.path}"
         "cachix-token:${config.sops.secrets.cachix-token.path}"
       ];
     };
   };
+
   sops.secrets = {
     # doctor-cluster-bot-token
     github-token = {};
     github-webhook-secret = {};
     github-oauth-secret = {};
-    github-workers = {};
+    buildbot-nix-workers = {};
     cachix-name = {};
     cachix-token = {};
   };
@@ -50,7 +68,7 @@
   ];
 
   services.postgresql = {
-    ensureDatabases = ["buildbot"];
+    ensureDatabases = [ "buildbot" ];
     ensureUsers = [
       {
         name = "buildbot";
@@ -59,7 +77,9 @@
     ];
   };
 
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.nginx.enable = true;
+
   services.nginx.virtualHosts."buildbot-master" = {
     locations."/".proxyPass = "http://127.0.0.1:1810/";
     locations."/sse" = {

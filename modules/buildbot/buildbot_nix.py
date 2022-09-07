@@ -3,16 +3,19 @@
 import json
 import os
 import re
+import multiprocessing
 from pathlib import Path
 import uuid
 from collections import defaultdict
 
 from buildbot.steps.trigger import Trigger
 from buildbot.plugins import util, steps
-from typing import Any, Generator, Optional
+from typing import Any, Generator
 from buildbot.process import buildstep, logobserver
 from buildbot.process.properties import Properties
 from twisted.internet import defer
+from buildbot.process.results import ALL_RESULTS
+from buildbot.process.results import statusToString
 
 
 class BuildTrigger(Trigger):
@@ -59,6 +62,23 @@ class BuildTrigger(Trigger):
             props.setProperty("error", error, "spawner")
             triggered_schedulers.append((sch, props))
         return triggered_schedulers
+
+    def getCurrentSummary(self):
+        """
+        The original build trigger will the generic builder name `nix-build` in this case, which is not helpful
+        """
+        if not self.triggeredNames:
+            return {"step": "running"}
+        summary = []
+        if self._result_list:
+            for status in ALL_RESULTS:
+                count = self._result_list.count(status)
+                if count:
+                    summary.append(
+                        f"{self._result_list.count(status)} {statusToString(status, count)}"
+                    )
+        return {"step": f"({', '.join(summary)})"}
+
 
 
 class NixEvalCommand(buildstep.ShellMixin, steps.BuildStep):
@@ -178,26 +198,23 @@ class MergePr(steps.ShellCommand):
 
     def __init__(
         self,
-        github_token_secret: str,
         base_branches: list[str],
         owners: list[str],
         **kwargs: Any,
     ) -> None:
-        self.github_token_secret = github_token_secret
-        self.base_branches = base_branches
-        self.rendered_token = None
-        self.owners = owners
         super().__init__(**kwargs)
+        self.base_branches = base_branches
+        self.owners = owners
+        self.observer = logobserver.BufferLogObserver()
+        self.addLogObserver("stdio", self.observer)
 
     @defer.inlineCallbacks
     def reconfigService(
         self,
-        github_token_secret: str,
         base_branches: list[str],
         owners: list[str],
         **kwargs: Any,
     ) -> Generator[Any, object, Any]:
-        self.rendered_token = yield self.renderSecrets(github_token_secret)
         self.base_branches = base_branches
         self.owners = owners
         super().reconfigService(**kwargs)
@@ -214,7 +231,7 @@ class MergePr(steps.ShellCommand):
 
         cmd = yield self.makeRemoteShellCommand()
         yield self.runCommand(cmd)
-        return util.SUCCESS
+        return cmd.results()
 
 
 class CreatePr(steps.ShellCommand):
@@ -268,14 +285,15 @@ def nix_update_flake_config(
             haltOnFailure=True,
         )
     )
+    user = os.environ.get("BUILDBOT_GITHUB_USER", "buildbot")
     factory.addStep(
         steps.ShellCommand(
             name="Update flakes",
             env=dict(
-                GIT_AUTHOR_NAME="buildbot",
-                GIT_AUTHOR_EMAIL="buildbot@thalheim.io",
-                GIT_COMMITTER_NAME="buildbot",
-                GIT_COMMITTER_EMAIL="buildbot@thalheim.io",
+                GIT_AUTHOR_NAME=user,
+                GIT_AUTHOR_EMAIL=f"{user}@users.noreply.github.com",
+                GIT_COMMITTER_NAME=user,
+                GIT_COMMITTER_EMAIL=f"{user}@users.noreply.github.com",
             ),
             command=[
                 "nix",
@@ -301,6 +319,7 @@ def nix_update_flake_config(
             haltOnFailure=True,
         )
     )
+
     factory.addStep(
         CreatePr(
             name="Create pull-request",
@@ -341,9 +360,15 @@ def nix_eval_config(
     """
     factory = util.BuildFactory()
     # check out the source
+    url_with_secret = util.Interpolate(
+        f"https://git:%(secret:{github_token_secret})s@github.com/%(prop:project)s"
+    )
     factory.addStep(
-        steps.GitHub(
-            repourl=util.Property("repository"), method="clean", submodules=True
+        steps.Git(
+            repourl=url_with_secret,
+            method="clean",
+            submodules=True,
+            haltOnFailure=True,
         )
     )
 
@@ -357,7 +382,7 @@ def nix_eval_config(
                 "github:nix-community/nix-eval-jobs",
                 "--",
                 "--workers",
-                "8",
+                multiprocessing.cpu_count(),
                 "--gc-roots-dir",
                 # FIXME: don't hardcode this
                 "/var/lib/buildbot-worker/gcroot",
@@ -367,14 +392,14 @@ def nix_eval_config(
             haltOnFailure=True,
         )
     )
+    user = os.environ.get("BUILDBOT_GITHUB_USER")
     # Merge flake-update pull requests if CI succeeds
-    factory.addStep(
+    if user:
         MergePr(
             name="Merge pull-request",
             env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
-            github_token_secret=util.Secret(github_token_secret),
             base_branches=["master"],
-            owners=["doctor-cluster-bot"],
+            owners=[user],
             command=[
                 "gh",
                 "pr",
@@ -385,7 +410,6 @@ def nix_eval_config(
                 util.Property("pullrequesturl"),
             ],
         )
-    )
 
     return util.BuilderConfig(
         name="nix-eval",
