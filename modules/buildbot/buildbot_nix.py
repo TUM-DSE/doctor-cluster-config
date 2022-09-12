@@ -44,15 +44,21 @@ class BuildTrigger(Trigger):
         return props
 
     def getSchedulersAndProperties(self):
+        build_props = self.build.getProperties()
+        repo_name = build_props.getProperty("github.repository.full_name")
+
         sch = self.schedulerNames[0]
         triggered_schedulers = []
         for job in self.jobs:
-            attr = job.get("attr")
+            attr = job.get("attr", "eval-error")
+            name = attr
+            if repo_name is not None:
+                name = f"{repo_name}: {name}"
             drv_path = job.get("drvPath")
             error = job.get("error")
             out_path = job.get("outputs", {}).get("out")
             props = Properties()
-            props.setProperty("virtual_builder_name", attr, "spawner")
+            props.setProperty("virtual_builder_name", name, "spawner")
             props.setProperty("virtual_builder_tags", "", "spawner")
             props.setProperty("attr", attr, "spawner")
             props.setProperty("drv_path", drv_path, "spawner")
@@ -78,7 +84,6 @@ class BuildTrigger(Trigger):
                         f"{self._result_list.count(status)} {statusToString(status, count)}"
                     )
         return {"step": f"({', '.join(summary)})"}
-
 
 
 class NixEvalCommand(buildstep.ShellMixin, steps.BuildStep):
@@ -107,12 +112,14 @@ class NixEvalCommand(buildstep.ShellMixin, steps.BuildStep):
 
             for line in self.observer.getStdout().split("\n"):
                 if line != "":
-                    jobs.append(json.loads(line))
+                    job = json.loads(line)
+                    jobs.append(job)
             self.build.addStepsAfterCurrentStep(
                 [BuildTrigger(scheduler="nix-build", name="nix-build", jobs=jobs)]
             )
 
         return result
+
 
 # FIXME this leaks memory... but probably not enough that we care
 class RetryCounter:
@@ -120,16 +127,18 @@ class RetryCounter:
         self.builds: dict[uuid.UUID, int] = defaultdict(lambda: retries)
 
     def retry_build(self, id: uuid.UUID) -> int:
-        retries =  self.builds[id]
+        retries = self.builds[id]
         if retries > 1:
             self.builds[id] = retries - 1
             return retries
         else:
             return 0
 
+
 # For now we limit this to two. Often this allows us to make the error log
 # shorter because we won't see the logs for all previous succeeded builds
 RETRY_COUNTER = RetryCounter(retries=2)
+
 
 class NixBuildCommand(buildstep.ShellMixin, steps.BuildStep):
     """
@@ -280,6 +289,7 @@ def nix_update_flake_config(
     factory.addStep(
         steps.Git(
             repourl=url_with_secret,
+            alwaysUseLatest=True,
             method="clean",
             submodules=True,
             haltOnFailure=True,
@@ -319,7 +329,6 @@ def nix_update_flake_config(
             haltOnFailure=True,
         )
     )
-
     factory.addStep(
         CreatePr(
             name="Create pull-request",
@@ -392,23 +401,26 @@ def nix_eval_config(
             haltOnFailure=True,
         )
     )
+    # Merge flake-update pull requests if CI succeeds
     user = os.environ.get("BUILDBOT_GITHUB_USER")
     # Merge flake-update pull requests if CI succeeds
     if user:
-        MergePr(
-            name="Merge pull-request",
-            env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
-            base_branches=["master"],
-            owners=[user],
-            command=[
-                "gh",
-                "pr",
-                "merge",
-                "--repo",
-                util.Property("project"),
-                "--rebase",
-                util.Property("pullrequesturl"),
-            ],
+        factory.addStep(
+            MergePr(
+                name="Merge pull-request",
+                env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
+                base_branches=["master"],
+                owners=[user],
+                command=[
+                    "gh",
+                    "pr",
+                    "merge",
+                    "--repo",
+                    util.Property("project"),
+                    "--rebase",
+                    util.Property("pullrequesturl"),
+                ],
+            )
         )
 
     return util.BuilderConfig(
@@ -433,6 +445,9 @@ def nix_build_config(
             command=[
                 "nix",
                 "build",
+                "--option",
+                "keep-going",
+                "true",
                 "-L",
                 "--out-link",
                 util.Interpolate("result-%(prop:attr)s"),
@@ -445,7 +460,7 @@ def nix_build_config(
         factory.addStep(
             steps.ShellCommand(
                 name="Upload cachix",
-                env=dict(CACHIX_AUTH_TOKEN=util.Secret("cachix-token")),
+                env=dict(CACHIX_SIGNING_KEY=util.Secret("cachix-token")),
                 command=[
                     "cachix",
                     "push",
