@@ -26,41 +26,47 @@ def read_secret_file(secret_name: str) -> str:
         sys.exit(1)
     return Path(directory).joinpath(secret_name).read_text().rstrip()
 
+
 ORG = os.environ["GITHUB_ORG"]
 REPO = os.environ["GITHUB_REPO"]
 BUILDBOT_URL = os.environ["BUILDBOT_URL"]
+
 
 def build_config() -> dict[str, Any]:
     c = {}
     c["buildbotNetUsageData"] = None
 
     # configure a janitor which will delete all logs older than one month, and will run on sundays at noon
-    c['configurators'] = [util.JanitorConfigurator(
-        logHorizon=timedelta(weeks=4),
-        hour=12,
-        dayOfWeek=6
-    )]
+    c["configurators"] = [
+        util.JanitorConfigurator(logHorizon=timedelta(weeks=4), hour=12, dayOfWeek=6)
+    ]
 
     c["schedulers"] = [
-        # build all pushes to master
+        # build all pushes to default branch
         schedulers.SingleBranchScheduler(
             name="master",
-            change_filter=util.ChangeFilter(repository=f"https://github.com/{ORG}/{REPO}", branch="master"),
+            change_filter=util.ChangeFilter(
+                filter_fn=lambda c: c.branch
+                == c.properties.getProperty("github.repository.default_branch"),
+            ),
             builderNames=["nix-eval"],
         ),
         # build all pull requests
         schedulers.SingleBranchScheduler(
             name="prs",
-            change_filter=util.ChangeFilter(repository=f"https://github.com/{ORG}/{REPO}", category="pull"),
+            change_filter=util.ChangeFilter(
+                repository=f"https://github.com/{ORG}/{REPO}", category="pull"
+            ),
             builderNames=["nix-eval"],
         ),
         schedulers.SingleBranchScheduler(
             name="flake-sources",
-            change_filter=util.ChangeFilter(repository=f"https://github.com/{ORG}/nixpkgs", branch="main"),
+            change_filter=util.ChangeFilter(
+                repository=f"https://github.com/{ORG}/nixpkgs", branch="main"
+            ),
             treeStableTimer=20,
             builderNames=["nix-update-flake"],
         ),
-
         # this is triggered from `nix-eval`
         schedulers.Triggerable(
             name="nix-build",
@@ -127,6 +133,7 @@ def build_config() -> dict[str, Any]:
     ]
 
     c["www"] = {
+        "avatar_methods": [util.AvatarGitHub()],
         "port": int(os.environ.get("PORT", "1810")),
         "auth": util.GitHubAuth(
             os.environ.get("GITHUB_OAUTH_ID"), read_secret_file("github-oauth-secret")
@@ -154,7 +161,7 @@ def build_config() -> dict[str, Any]:
     c["db"] = {"db_url": os.environ.get("DB_URL", "sqlite:///state.sqlite")}
 
     c["protocols"] = {"pb": {"port": "tcp:9989:interface=\\:\\:"}}
-    c["buildbotURL"] =  BUILDBOT_URL
+    c["buildbotURL"] = BUILDBOT_URL
 
     return c
 
