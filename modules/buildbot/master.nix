@@ -47,7 +47,7 @@ in
         "github-oauth-secret:${config.sops.secrets.github-oauth-secret.path}"
         "buildbot-nix-workers:${config.sops.secrets.buildbot-nix-workers.path}"
         "cachix-name:${config.sops.secrets.cachix-name.path}"
-        "cachix-token:${config.sops.secrets.cachix-token.path}"
+        "cachix-auth-token:${config.sops.secrets.cachix-auth-token.path}"
       ];
     };
   };
@@ -59,7 +59,7 @@ in
     github-oauth-secret = {};
     buildbot-nix-workers = {};
     cachix-name = {};
-    cachix-token = {};
+    cachix-auth-token = {};
   };
 
   imports = [

@@ -30,6 +30,7 @@ def read_secret_file(secret_name: str) -> str:
 ORG = os.environ["GITHUB_ORG"]
 REPO = os.environ["GITHUB_REPO"]
 BUILDBOT_URL = os.environ["BUILDBOT_URL"]
+BUILDBOT_GITHUB_USER = os.environ["BUILDBOT_GITHUB_USER"]
 
 
 def build_config() -> dict[str, Any]:
@@ -108,7 +109,8 @@ def build_config() -> dict[str, Any]:
     worker_config = json.loads(read_secret_file("buildbot-nix-workers"))
 
     credentials = os.environ.get("CREDENTIALS_DIRECTORY", ".")
-    enable_cachix = os.path.isfile(os.path.join(credentials, "cachix-token"))
+    has_cachix_auth_token = os.path.isfile(os.path.join(credentials, "cachix-auth-token"))
+    has_cachix_signing_key = os.path.isfile(os.path.join(credentials, "cachix-signing-key"))
 
     systemd_secrets = secrets.SecretInAFile(dirname=credentials)
     c["secretsProviders"] = [systemd_secrets]
@@ -123,12 +125,13 @@ def build_config() -> dict[str, Any]:
     c["builders"] = [
         # Since all workers run on the same machine, we only assign one of them to do the evaluation.
         # This should prevent exessive memory usage.
-        nix_eval_config([worker_names[0]], github_token_secret="github-token"),
-        nix_build_config(worker_names, enable_cachix),
+        nix_eval_config([worker_names[0]], github_token_secret="github-token", automerge_users=[BUILDBOT_GITHUB_USER]),
+        nix_build_config(worker_names, has_cachix_auth_token, has_cachix_signing_key),
         nix_update_flake_config(
             worker_names,
             f"{ORG}/{REPO}",
             github_token_secret="github-token",
+            github_bot_user=BUILDBOT_GITHUB_USER
         ),
     ]
 
