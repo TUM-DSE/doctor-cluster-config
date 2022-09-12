@@ -460,7 +460,7 @@ def nix_build_config(
         factory.addStep(
             steps.ShellCommand(
                 name="Upload cachix",
-                env=dict(CACHIX_SIGNING_KEY=util.Secret("cachix-token")),
+                env=dict(CACHIX_AUTH_TOKEN=util.Secret("cachix-token")),
                 command=[
                     "cachix",
                     "push",
