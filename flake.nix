@@ -88,7 +88,9 @@
           };
         };
         flake = {
-          hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations;
+          hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations // {
+            devShells = self.devShells.x86_64-linux.default;
+          };
         };
       }).config.flake;
 
