@@ -353,6 +353,18 @@ def ipmi_powercycle(c, host=""):
 
 
 @task
+def run(c, command, hosts=""):
+    """
+    Run provided command on the given hosts, if no host list is provided, than the command is run on all hosts.
+    """
+    if hosts == "":
+        g = DeployGroup([DeployHost(h, user="root") for h in HOSTS])
+    else:
+        g = DeployGroup(get_hosts(hosts))
+    g.run(command)
+
+
+@task
 def reboot(c, hosts=""):
     """
     Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
