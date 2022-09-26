@@ -6,7 +6,6 @@
   imports = [
     ../modules/bonding.nix
     ../modules/ipmi-supermicro.nix
-    ../modules/dpdk.nix
     ../modules/sys-prog/users.nix
     ../modules/nfs/server.nix
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
