@@ -29,4 +29,13 @@
   # IPMI/BMC:
   # -  d0:8e:79:ba:1a:22
   system.stateVersion = "21.05";
+
+  # Don't manage tap devices with systemd-networkd
+  systemd.network.networks."06-peter".extraConfig = ''
+    [Match]
+    Name = enp129s0f?
+
+    [Link]
+    Unmanaged = yes
+  '';
 }
