@@ -107,6 +107,7 @@ in {
   ## we put all bachelor/master students here
   imports = [
     ./students.nix
+    ./reviewer-accounts.nix
     ./delete-users.nix
     ./whitelist-hosts.nix
   ];

@@ -56,6 +56,13 @@ For chair members use a uid in the 1000-2000. For new students use a uid in the
 2000-3000 range. Check that the uid is unique across both files and in the
 range between to avoid conflicts.
 
+If you need to give reviewers access i.e. for artifact evaluation, add them to
+[./modules/reviewer-accounts.nix](./modules/reviewer-accounts.nix).  We use the
+uid range 4000-5000 there. By using `users.users.<username>.allowedHosts` it's
+possible to limit the hosts these users can access. To access the machine, they
+can use the ssh tunnel as described in
+[here](./docs/hosts#accessing-the-server).
+
 # Add new servers
 
 For installing new servers, see [Add servers](docs/ADD_SERVER.md).
