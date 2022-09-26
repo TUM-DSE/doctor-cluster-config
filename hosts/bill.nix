@@ -6,7 +6,6 @@
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/bonding.nix
-    ../modules/dpdk.nix
     ../modules/jumphost
     ../modules/sys-prog/users.nix
     ../modules/nfs/server-backup.nix
