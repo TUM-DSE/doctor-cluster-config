@@ -14,7 +14,7 @@ in {
           description = "List of hosts the user is allowed to login. If empty all hosts are allowed";
         };
         config = lib.mkIf (config.allowedHosts != [] && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)) {
-          shell = lib.mkForce "/run/current-system/sw/bin/false";
+          shell = lib.mkForce "/run/current-system/sw/bin/nologin";
         };
       }));
     };
