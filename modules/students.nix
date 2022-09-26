@@ -80,17 +80,6 @@ in {
       openssh.authorizedKeys.keys = mfKeys;
     };
 
-    # Alexandrina Panfil (bachelor thesis with Dimitrios and Jin)
-    alexa = {
-      isNormalUser = true;
-      home = "/home/alexa";
-      uid = 1017;
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      allowedHosts = ["graham"];
-      openssh.authorizedKeys.keys = alexaKeys;
-    };
-
     # Julian Pritzi, Harshas's student (Benchmarking tool for ICU project)
     julian = {
       isNormalUser = true;
@@ -146,6 +135,7 @@ in {
   # Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
   users.deletedUsers = [
+    "alexa"
     "vincent"
     "ml"
     "philip"
