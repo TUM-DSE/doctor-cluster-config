@@ -29,6 +29,7 @@ in {
     enable = true;
     recommendedProxySettings = true;
     virtualHosts."stable-diffusion.thalheim.io" = vhost;
+    virtualHosts."stable-confusion.thalheim.io" = vhost;
     virtualHosts."stable-confusion.r" = vhost;
   };
 
