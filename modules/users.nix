@@ -1,4 +1,8 @@
-{config, lib, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
   joergsKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine"];
 
   redhaKeys = [
@@ -34,14 +38,6 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGaFuDu8EM/hA5UtAc3Q+0zXvRcwT6P6TZhtps/3R518 dimstav23@Spam"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDafd2SX0Mi6kiKXNaSYmMO71dFIVbBGLpaMt/MO4uzoX8rihtud4CIbCXm8iO+I/p7c8e5lfkyJbnmJsXS6VfkohP4K36V0r0ZQhXhU01KpgC86z8uAnPGowuvGQGseMPG5lR5qAC4keENx1wiIn+fP5N7xUNVQTLc9KKNswLYwzEj6hRvI+ZoUybNuEieqb251vcFzGGZ/+i8PyEJ8xhxql91QtmxKHeZTn1ogbr1AAlWFESnhvxY1ky48BKKAKSD9kEXB+iszjd6a2DvilD0C60b9yPeSRsKVAXhuy+/swcFs0ly5KV3FNWDKV9KGJP1aaRSgX0RE6C5MCdbjARv dimstav23@Spam"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOtq2p1WbvKsV63p1+GhgfDxMmN3dFUL+IM1/HcWSqJ dimstav23@gmail.com"
-  ];
-
-  s1443541Keys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMGYuFUPoNlV6I5H5dxqiGjp39w+8Yrj96NjEicr7Fgl4OTIvCw2++MscyLsVsLnT0CQv9AKMiKNzRPJ/GYOMwgMIDZ9Sfa0T6jPjHghjCHB7UPt7X6NZCEyqoh2R1TpfkJ4hewvH8DWGQcvtDLd37URFIQzFet8Km6unLJPbWbcdoAd1HQZd8Ww5a4YQR2Ek+ZjIp1cm4w/YtZaiLqsSgDFedglZVGCvhG0xQs+esN2HdvvlhkcArDw74/LeJo9HkvK+QJSMqrXHd+1BHk/gtxmE2A5t7uYsyfH73QZffh0eVtiZbDG9hwEE9mmnFD83do7delEdAUGJR/n1EJ+6z"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8d4N+83o7l4OHu9awJkrPN27Rbhzx7WmmhmRs8q9UpAuoj9HgoA57JWlIz/EyyQYxjkK7su7emX5Thprg8AwKvI90rFPM2xO7GSuzAWx44++JhlQ7VgHAy9NIiBhLjg04AuK8pNKEWDu8D/sY7GGVMbcDJnOC+pxbX37qZb/I6liAKYfs8BwWasCgXf3JwdM7pj5ijYbfdxy3H2qU5STJkLEBQZF7vTOCLrKvbVswYKFh3DZJbKvqGVIqnmhhvkOUEr5No9YQtgJm5hM7ZJEnCtNeQbKyzIhcW2qOK5yilJrqHcVFI+o6dqL/V1QZB3um6EpEoOfY1483hR9HD+/remCHHxFwiDpptzSuPdW5Hpoe3J4aSHI7znJKI8IW/ugK7o+Xy4Wau4SdUu40kJsnHWEiOUL9M9ZJ7b7XTrAT9qv2KmMl17Sw1qZSYp5SFdVkfUnTCdZF1Zf8leT6WW0LTIuyUESfxfDB3OKlBmAJFNg4L42SjtJLrwuXCgugnhKVp/xNbA+0YHS0Lgy8TJbXkgd/xVekFdhwC7w9Iqszi4KTmGQilPLA2XJfndUedPphDD1Xq1dFWRG9fnKImzmW7JpCvAUHFUrdAqCcJ0Eg4RNkfK4aYFGYk54d/yI6beJPvshjhNf1UqWJqbUdy+jn0E5N53BNnTWFj3Rk/O2uXw=="
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1VKEyjAXXdwAy/aMMYKf2F5HQ1888BwA+tVW5KvfqA"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUqTN9nkNiZniNOzLPkLSwkmmxz7t6xmzBdr0UQm5cBmFzu5BXT2OAfAiaEzN9piygn1MEXCREjYDOvAYtoU9V70z0+QnwB0A2XlCkedHq/8HIxwTWLP+GWR3adNXaDkbh/++zdhOrJdzfaGvM1Fm/0Inzux1OJykWMxDOiNZ5Q3eNrN5bYolVYyTUwFZnbHDuB8dzxH38GM8fLrPDaNlPlR1E0JvAQ1oSpwMTa8LgZl3r40+INHr6en/rM4K7p9eYNSQEtrNbPyPEa+Gw9xeAMopOpRTUBgUwQTzM8pux6lypyUqaxzDC4ZZXRQlMEFvjHYaBMRSVoK/wD+F7xarJ2ZmOu0NBEKh+XJDitQqbm5HpwskhUBvplqgF7BBbJbxW3jDL+0SrOZKyAQHSvRWgYiMrAk4cJ1hZi6bgTgBxLdTSMf+LSqNKi5xv0oiyTGG5gfuBy8OiQXhNaf36xuzNW/fgPLmoB+Kp8h+PV70R8CP0hhwWCgdWtBacpxIqVrc= s1443541@rose"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGuh1HdYe68HOIGiJyJqzhANMmWdjzVwRLzz9f/39bua"
   ];
 
   harshanavkisKeys = [
@@ -147,17 +143,6 @@ in {
         openssh.authorizedKeys.keys = mauriceKeys;
       };
 
-      # Lorenzo
-      # edinburgh
-      s1443541 = {
-        isNormalUser = true;
-        home = "/home/s1443541";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1003;
-        openssh.authorizedKeys.keys = s1443541Keys;
-      };
-
       # Dimitris Stavrakakis
       # tum
       dimitrios = {
@@ -257,7 +242,6 @@ in {
         openssh.authorizedKeys.keys = ackxolotlKeys;
       };
 
-
       # Jiyang Chen
       # tum
       chenjiyang = {
@@ -315,7 +299,15 @@ in {
 
       root = {
         passwordFile = lib.optionalString config.users.withSops config.sops.secrets.root-password-hash.path;
-        openssh.authorizedKeys.keys = joergsKeys ++ harshanavkisKeys ++ mauriceKeys ++ dimitraKeys ++ s1443541Keys ++ dimitriosKeys ++ redhaKeys ++ okelmannKeys ++ ackxolotlKeys;
+        openssh.authorizedKeys.keys =
+          joergsKeys
+          ++ harshanavkisKeys
+          ++ mauriceKeys
+          ++ dimitraKeys
+          ++ dimitriosKeys
+          ++ redhaKeys
+          ++ okelmannKeys
+          ++ ackxolotlKeys;
       };
     };
 
