@@ -1,6 +1,8 @@
 {config, ...}: let
   risottoKeys = [
     # FIXME: add more keys here
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN86RJ37+RmP8Kh9Va2yHPxqryiTHBBmG7kTUszaJ7Oz asplos23ae"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd8+GGUwNV5SAikEEucPFuCufCIjexQhuBTNglyzK7yYYnb1dbkBxoWet3bHfwrkkdcbMbyVa19mVGawCJr84/J8imaJGcQjuLtJvUyioJ0+/GbataEviOTk0Ibq58SYemAHk5vx9xFSpA0yR2zWTTrTJ9DQpahTPrLOXmXoC6NOKud9WTwDsZqyjL1iYT0ointt5XlsoYJcpu6DZYgAdGfgWFUp9WCrTnhHc/FndL1PRvGIC1nDF1yMPt9uvKv/+bO8PkNa3Oza0XIk73WmhkYJMAlLvPyF5BK5Rv2GvGKnG9J/SwSbgdhfJKgFeB9kdcZ/GNo2TL8wxJRmXl2KAB asplos23ae"
   ] ++ config.users.users.redha.openssh.authorizedKeys.keys
     ++ config.users.users.joerg.openssh.authorizedKeys.keys;
 in {
