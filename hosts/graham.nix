@@ -11,7 +11,6 @@
     ../modules/nfs/client.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_5_10;
   networking.hostName = "graham";
 
   # 10GbE NICs for network benchmarks:

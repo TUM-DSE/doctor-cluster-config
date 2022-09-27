@@ -1,5 +1,8 @@
-{...}: {
+{pkgs, ...}: {
   imports = [./.];
+
+  # linux 5_15 currently causes issues.
+  boot.kernelPackages = pkgs.linuxPackages_5_10;
 
   fileSystems."/home" = {
     device = "nfs:/export/home";
