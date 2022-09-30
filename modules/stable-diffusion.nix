@@ -23,7 +23,6 @@
   };
 in {
   networking.firewall.allowedTCPPorts = [80];
-  networking.firewall.allowedUDPPorts = [80];
 
   services.nginx = {
     enable = true;
