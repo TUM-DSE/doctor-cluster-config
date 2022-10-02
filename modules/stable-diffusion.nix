@@ -64,7 +64,7 @@ in {
 
     serviceConfig = {
       WorkingDirectory = directory;
-      ExecStart = "${pkgs.docker}/bin/docker compose --profile auto up --build";
+      ExecStart = "${pkgs.docker}/bin/docker compose --profile auto up --build --remove-orphans";
     };
   };
 }
