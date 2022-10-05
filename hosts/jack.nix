@@ -9,6 +9,7 @@
     ../modules/dax.nix
     ../modules/nvidia.nix
     ../modules/stable-diffusion.nix
+    ../modules/dpdk.nix
   ];
 
   doctorwho.pmem.devices = [ "pmem0" "pmem1" ];
