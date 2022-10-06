@@ -88,7 +88,7 @@
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFbOAoiGH2iTed3lz9DGJu/+rDJnVrbuKGX741qsCu4XWvlbrzCugffFugPTfRyykTT0SWRyhWe2bVjAWP4k1OsDQB9d5JI3b0dETHYByksUs0SQyjg5JPMZnVtfxrtQhaPsrHc+bie+sUjC4FObn0YD1tQeY6RMK7gmN8F6X8rjoRvSQ== mhille@mhilleWork"
   ];
   
-  martinKeys = [
+  martinklKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvQLwToitv9b0cZK2UNUh26BYJ8/ie8oexCyye+BpXP martin@kleppmann.com"
   ];
 
@@ -303,13 +303,13 @@ in {
 
       # Martin Kleppmann
       # tum
-      martin = {
+      martinkl = {
         isNormalUser = true;
-        home = "/home/martin";
+        home = "/home/martinkl";
         inherit (config.users.users.joerg) extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1024;
-        openssh.authorizedKeys.keys = martinKeys;
+        openssh.authorizedKeys.keys = martinklKeys;
       };
 
       root = {
