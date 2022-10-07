@@ -23,7 +23,12 @@ in
       ps.psycopg2
       ps.buildbot-worker
     ];
+    home = "/var/lib/buildbot-master";
   };
+
+  # We don't want this to collide with normal user uids
+  users.users.buildbot.isSystemUser = true;
+  users.users.buildbot.isNormalUser = lib.mkForce false;
 
   systemd.services.buildbot-master = {
     environment = {
