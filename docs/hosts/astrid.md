@@ -1,13 +1,16 @@
 # astrid
 
 ```
-System:    Host: astrid Kernel: 5.15.56 x86_64 bits: 64 compiler: gcc v: 11.3.0 Console: N/A 
-           Distro: NixOS 22.05 (Quokka) 
+System:    Host: astrid Kernel: 5.10.145 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\pj2pgza4k6gsyampwgfljbdvl2v3lby5-initrd-linux-5.10.145-initrd.efi 
+           init=/nix/store/5hr8rmn0h4wahfnfarsrcvh12zvxsx8q-nixos-system-astrid-22.05.20220926.8237988/init 
+           console=ttyS0,115200n8 console=tty0 panic=1 boot.panic_on_fail loglevel=4 
+           Console: N/A Distro: NixOS 22.05 (Quokka) 
 Machine:   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 2YBVXK3 Chassis: 
            type: 23 serial: 2YBVXK3 
            Mobo: Dell model: 04JN2K v: A09 serial: .2YBVXK3.CNFCP001B301ND. UEFI: Dell v: 2.12.2 
            date: 07/09/2021 
-Memory:    RAM: total: 125.53 GiB used: 10.21 GiB (8.1%) 
+Memory:    RAM: total: 125.53 GiB used: 12.83 GiB (10.2%) 
            Array-1: capacity: 1024 GiB slots: 16 EC: Multi-bit ECC max-module-size: 64 GiB 
            note: est. 
            Device-1: A1 size: 32 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -45,19 +48,33 @@ PCI Slots: Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length:
            length: 2.5" drive form factor 
            Slot: 6 type: x4 PCI Express 3 SFF-8639 PCIe SSD Slot 6 in Bay 1 status: Available 
            length: 2.5" drive form factor 
-CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 bits: 64 type: MT MCP SMP 
-           arch: Cascade Lake rev: 7 cache: L2: 27.5 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200112 
-           Speed: 2500 MHz min/max: N/A volts: 1.8 V ext-clock: 10400 MHz Core speeds (MHz): 
-           1: 2500 2: 2500 3: 2500 4: 2558 5: 2500 6: 2500 7: 2500 8: 2500 9: 2500 10: 2500 
-           11: 2500 12: 2500 13: 2500 14: 2500 15: 2500 16: 2500 17: 2500 18: 2500 19: 2500 
-           20: 2500 21: 2500 22: 2500 23: 2500 24: 2500 25: 2500 26: 2500 27: 2500 28: 2500 
-           29: 2500 30: 2500 31: 2500 32: 2500 33: 2500 34: 2500 35: 2500 36: 2500 37: 2500 
-           38: 2500 39: 2500 40: 2500 
+CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 socket: LGA2011 bits: 64 type: MT MCP SMP 
+           arch: Cascade Lake family: 6 model-id: 55 (85) stepping: 7 microcode: 5003302 cache: 
+           L2: 27.5 MiB 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200120 
+           Speed: 1001 MHz min/max: N/A base/boost: 2500/4000 volts: 1.8 V ext-clock: 10400 MHz 
+           Core speeds (MHz): 1: 1001 2: 1001 3: 1001 4: 1000 5: 1001 6: 1000 7: 1001 8: 1544 
+           9: 1000 10: 1001 11: 1000 12: 1001 13: 1001 14: 1001 15: 1000 16: 1000 17: 1000 
+           18: 1001 19: 1000 20: 1001 21: 1000 22: 1000 23: 1000 24: 1000 25: 1000 26: 1001 
+           27: 1000 28: 1100 29: 1001 30: 1000 31: 1001 32: 1001 33: 1001 34: 1000 35: 1000 
+           36: 1001 37: 1000 38: 1000 39: 1000 40: 1000 
+           Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
+           Type: l1tf status: Not affected 
+           Type: mds status: Not affected 
+           Type: meltdown status: Not affected 
+           Type: mmio_stale_data mitigation: Clear CPU buffers; SMT vulnerable 
+           Type: retbleed mitigation: Enhanced IBRS 
+           Type: spec_store_bypass 
+           mitigation: Speculative Store Bypass disabled via prctl and seccomp 
+           Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization 
+           Type: spectre_v2 
+           mitigation: Enhanced IBRS, IBPB: conditional, RSB filling, PBRSB-eIBRS: SW sequence 
+           Type: srbds status: Not affected 
+           Type: tsx_async_abort mitigation: TSX disabled 
 Graphics:  Device-1: Matrox Systems Integrated Matrox G200eW3 Graphics vendor: Dell 
            driver: mgag200 v: kernel bus-ID: 03:00.0 chip-ID: 102b:0536 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
-           Message: Unable to show advanced data. Required tool glxinfo missing. 
+           Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
 Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: Dell driver: tg3 
            v: kernel port: 2000 bus-ID: 04:00.0 chip-ID: 14e4:165f class-ID: 0200 
@@ -74,41 +91,48 @@ Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: De
            Device-4: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell 
            driver: bnxt_en v: kernel port: 2000 bus-ID: 5e:00.1 chip-ID: 14e4:16d8 class-ID: 0200 
            IF: enp94s0f1np1 state: down mac: f4:ee:08:0a:ea:06 
-           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: d2:38:f8:3b:72:45 
+           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: de:fa:f3:72:c9:03 
            IP v4: 10.42.0.1/24 scope: global broadcast: 10.42.0.255 
-           IP v6: fe80::605f:f4ff:fe4b:e9fd/64 scope: link 
-           IF-ID-2: docker0 state: down mac: 02:42:dd:ba:61:fc 
+           IP v6: fe80::dcfa:f3ff:fe72:c903/64 scope: link 
+           IF-ID-2: docker0 state: down mac: 02:42:68:1a:e2:29 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:98ac:9c80:4f25:50e3:1d8f/12 scope: global 
-           IP v6: fe80::a698:34e4:1631:fa80/64 virtual: stable-privacy scope: link 
-           IF-ID-4: veth01801508 state: up speed: 10000 Mbps duplex: full mac: 2e:c4:2d:aa:54:74 
-           IF-ID-5: veth1292eb23 state: up speed: 10000 Mbps duplex: full mac: 9a:0f:a6:33:29:7a 
-           IF-ID-6: veth50464e78 state: up speed: 10000 Mbps duplex: full mac: 2a:ff:a3:cb:72:71 
-           IF-ID-7: veth6c60fc60 state: up speed: 10000 Mbps duplex: full mac: 36:c2:5c:34:31:63 
-           IF-ID-8: veth86341dcb state: up speed: 10000 Mbps duplex: full mac: 76:e9:f4:f3:e4:61 
-           IF-ID-9: vetha3c27499 state: up speed: 10000 Mbps duplex: full mac: 82:7a:f3:61:a2:4e 
-           IF-ID-10: vethf933b035 state: up speed: 10000 Mbps duplex: full mac: 62:cf:74:88:c8:bf 
-           IF-ID-11: vethf9fc6102 state: up speed: 10000 Mbps duplex: full mac: 26:ae:e1:ec:2c:e4 
+           IF-ID-4: veth00d9953d state: up speed: 10000 Mbps duplex: full mac: 0a:0d:25:63:64:2c 
+           IF-ID-5: veth044c4698 state: up speed: 10000 Mbps duplex: full mac: 9a:6e:ce:1f:00:d4 
+           IF-ID-6: veth0ccb2bb0 state: up speed: 10000 Mbps duplex: full mac: 0e:5d:03:06:4c:7d 
+           IF-ID-7: veth2a6d48c2 state: up speed: 10000 Mbps duplex: full mac: d6:62:78:26:e3:8a 
+           IF-ID-8: veth5051a58f state: up speed: 10000 Mbps duplex: full mac: 16:fd:e6:c6:59:f9 
+           IF-ID-9: veth6ed2d340 state: up speed: 10000 Mbps duplex: full mac: f2:52:68:52:1f:71 
+           IF-ID-10: veth8a3b22ca state: up speed: 10000 Mbps duplex: full mac: ee:b1:9e:2d:aa:ef 
+           IF-ID-11: veth97fa871a state: up speed: 10000 Mbps duplex: full mac: ae:16:97:17:b3:93 
+           IF-ID-12: vethb2c1a5c7 state: up speed: 10000 Mbps duplex: full mac: 5a:a4:85:75:b2:fb 
            WAN IP: 131.159.102.11 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas 
-           v: 07.717.02.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.43 TiB 
-           allocated: 19.8 GiB 
+           v: 07.714.04.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.42 TiB 
+           allocated: 32.2 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 471.72 GiB (15.9%) 
-           ID-1: /dev/nvme0n1 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB size: 1.46 TiB 
-           speed: 63.2 Gb/s lanes: 4 rotation: SSD serial: PHAB123301411P9SGN rev: 1.1.5 
-           scheme: GPT 
-Partition: ID-1: / size: 1.4 TiB used: 13.77 GiB (1.0%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 107.4 MiB (10.5%) fs: vfat dev: /dev/nvme0n1p1 
-           ID-3: /home size: 891.31 GiB used: 301.89 GiB (33.9%) fs: nfs4 remote: nfs:/export/home 
+Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 560.11 GiB (18.8%) 
+           ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB 
+           size: 1.46 TiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
+           rotation: SSD serial: PHAB123301411P9SGN rev: 1.1.5 temp: 25.9 C scheme: GPT 
+           SMART: yes health: PASSED on: 260d 19h cycles: 41 read-units: 2,586,492 [1.32 TB] 
+           written-units: 27,035,919 [13.8 TB] 
+Partition: ID-1: / raw-size: N/A size: 1.4 TiB used: 20.99 GiB (1.5%) fs: zfs 
+           logical: zroot/root/nixos 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 107.1 MiB (10.5%) fs: vfat 
+           block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1 
+           ID-3: /home raw-size: N/A size: 890.32 GiB used: 359.58 GiB (40.4%) fs: nfs4 
+           remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 593 
-           Uptime: 11:50:44  up 7 days  0:30,  0 users,  load average: 0.08, 0.13, 0.12 wakeups: 0 
-           Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 Packages: 
-           nix-sys: 468 Client: Sudo v: 1.9.10 inxi: 3.3.04 
+           System Temperatures: lm-sensors cpu: 78.0 C mobo: N/A 
+           Fan Speeds (RPM): lm-sensors N/A 
+Info:      Processes: 602 
+           Uptime: 14:57:38  up 14 days  3:15,  0 users,  load average: 0.26, 0.21, 0.32 
+           wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
+           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 468 lib: 71 nix-usr: 0 Client: Sudo 
+           v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](astrid.lstopo.svg)

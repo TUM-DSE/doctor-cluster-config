@@ -1,13 +1,16 @@
 # adelaide
 
 ```
-System:    Host: adelaide Kernel: 5.15.53 x86_64 bits: 64 compiler: gcc v: 11.3.0 Console: N/A 
-           Distro: NixOS 22.05 (Quokka) 
+System:    Host: adelaide Kernel: 5.10.145 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\0hpgqx2wi9bkz73h48441xlg07gikg42-initrd-linux-5.10.145-initrd.efi 
+           init=/nix/store/fmdndraami72ljylzcrpw7l2g37m1bzc-nixos-system-adelaide-22.05.20220926.8237988/init 
+           console=ttyS1,115200n8 console=tty1 panic=1 boot.panic_on_fail loglevel=4 
+           Console: N/A Distro: NixOS 22.05 (Quokka) 
 Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789 
            serial: E424030X2100634 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50540 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002614 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 321.75 GiB (32.3%) 
+Memory:    RAM: total: 995.21 GiB used: 10.58 GiB (1.1%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -45,17 +48,31 @@ PCI Slots: Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short
            length: Long 
            Slot: N/A type: x16 <OUT OF SPEC> RSC-WR-6 SLOT1 PCI-E 4.0 X16 status: In Use 
            length: Long 
-CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch: Ice Lake rev: 6 
-           cache: L1: 960 KiB L2: 18 MiB L3: 18 MiB 
+CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch: Ice Lake 
+           family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 960 KiB 
+           L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 2482 MHz min/max: 800/3600 MHz volts: 1.6 V ext-clock: 100 MHz 
-           Core speeds (MHz): 1: 2482 2: 1913 3: 878 4: 2578 5: 3603 6: 3603 7: 2161 8: 1919 
-           9: 3500 10: 1637 11: 1935 12: 1819 13: 2009 14: 3566 15: 3540 16: 3500 17: 2649 
-           18: 3581 19: 3606 20: 2155 21: 3082 22: 978 23: 3600 24: 3525 
+           Speed: 1396 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 1396 2: 1501 3: 2213 4: 1662 5: 1835 6: 3201 
+           7: 3199 8: 1774 9: 2540 10: 1855 11: 2976 12: 3220 13: 3124 14: 1407 15: 2163 16: 2928 
+           17: 1625 18: 2395 19: 2758 20: 2762 21: 2880 22: 1788 23: 2627 24: 1158 
+           Vulnerabilities: Type: itlb_multihit status: Not affected 
+           Type: l1tf status: Not affected 
+           Type: mds status: Not affected 
+           Type: meltdown status: Not affected 
+           Type: mmio_stale_data mitigation: Clear CPU buffers; SMT vulnerable 
+           Type: retbleed status: Not affected 
+           Type: spec_store_bypass 
+           mitigation: Speculative Store Bypass disabled via prctl and seccomp 
+           Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization 
+           Type: spectre_v2 
+           mitigation: Enhanced IBRS, IBPB: conditional, RSB filling, PBRSB-eIBRS: SW sequence 
+           Type: srbds status: Not affected 
+           Type: tsx_async_abort status: Not affected 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
            Display: server: No display server data found. Headless machine? tty: N/A 
-           Message: Unable to show advanced data. Required tool glxinfo missing. 
+           Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
 Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe v: kernel 
            port: 0780 bus-ID: 01:00.0 chip-ID: 8086:1563 class-ID: 0200 
@@ -81,39 +98,46 @@ Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe 
            IF: enp81s0 state: up speed: 100000 Mbps duplex: full mac: b4:96:91:b3:8a:90 
            IP v4: 192.168.1.101/24 type: dynamic scope: global 
            IP v6: fe80::b696:91ff:feb3:8a90/64 scope: link 
-           IF-ID-1: docker0 state: down mac: 02:42:60:c6:03:ab 
+           IF-ID-1: docker0 state: down mac: 02:42:1c:d3:a6:a2 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:b79b:e658:22f8:3a00:fc74/12 scope: global 
-           IP v6: fe80::957e:4d8c:b429:fa82/64 virtual: stable-privacy scope: link 
-           IF-ID-3: usb0 state: unknown speed: -1 duplex: half mac: 36:a3:0c:6b:5e:43 
+           IF-ID-3: usb0 state: unknown speed: N/A duplex: N/A mac: 36:a3:0c:6b:5e:43 
            IP v4: 169.254.3.1/24 type: dynamic scope: global 
            IP v6: fe80::34a3:cff:fe6b:5e43/64 scope: link 
            WAN IP: 131.159.102.13 
-Bluetooth: Device-1: Linux 5.1.3-2965b36-dirty-17921c0 with aspeed_vhub RNDIS/Ethernet Gadget 
-           type: USB driver: rndis_host v: kernel bus-ID: 1-11.2:4 chip-ID: 0b1f:03ee 
-           class-ID: 0a00 
+Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v: kernel 
+           bus-ID: 1-11.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid_sas 
-           v: 07.717.02.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
+           v: 07.714.04.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.44 TiB 
-           allocated: 301 GiB 
+           allocated: 300 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 752.77 GiB (14.1%) 
-           ID-1: /dev/sda vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
-           serial: N/A rev: 102Q scheme: GPT 
-           ID-2: /dev/sdb vendor: Samsung model: MZ1L21T9 size: 1.75 TiB speed: <unknown> 
-           serial: N/A rev: 102Q 
-Partition: ID-1: / size: 1.68 TiB used: 300.46 GiB (17.5%) fs: zfs logical: zroot/root/nixos 
-           ID-2: /boot size: 1022 MiB used: 107 MiB (10.5%) fs: vfat dev: /dev/sda1 
-           ID-3: /home size: 891.31 GiB used: 301.89 GiB (33.9%) fs: nfs4 remote: nfs:/export/home 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 830.55 GiB (15.5%) 
+           ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
+           physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
+           temp: 31 C scheme: GPT 
+           SMART: yes state: enabled 
+           ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
+           physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
+           temp: 27 C 
+           SMART: yes state: enabled 
+Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 299.68 GiB (17.4%) fs: zfs 
+           logical: zroot/root/nixos 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 106.8 MiB (10.5%) fs: vfat 
+           block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
+           ID-3: /home raw-size: N/A size: 890.32 GiB used: 359.58 GiB (40.4%) fs: nfs4 
+           remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           Missing: Required tool sensors not installed. Check --recommends 
-Info:      Processes: 400 
-           Uptime: 11:50:43  up 20 days 21:34,  0 users,  load average: 0.12, 0.09, 0.09 
-           wakeups: 0 Init: systemd v: 250 target: multi-user.target Compilers: gcc: 11.3.0 
-           Packages: nix-sys: 455 Client: Sudo v: 1.9.10 inxi: 3.3.04 
+           System Temperatures: lm-sensors cpu: 49.0 C mobo: N/A 
+           Fan Speeds (RPM): lm-sensors N/A 
+Info:      Processes: 389 
+           Uptime: 14:57:37  up 14 days  3:17,  0 users,  load average: 0.10, 0.09, 0.09 
+           wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
+           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 455 lib: 68 nix-usr: 0 Client: Sudo 
+           v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](adelaide.lstopo.svg)
