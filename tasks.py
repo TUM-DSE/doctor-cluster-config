@@ -69,6 +69,8 @@ This file is generated through `inv update-docs` by `tasks.py`.
 
 ## List of slots
 
+Note that ubuntu workstations and servers don't appear in this list. 
+
 """
 
     def doc_cards(h: DeployHost) -> str:
@@ -79,7 +81,7 @@ This file is generated through `inv update-docs` by `tasks.py`.
                 line = f"✅{line}"
             if "status: In Use" in line:
                 line = f"❌{line}"
-            result += f"{line}\n"
+            result += f"{line}  \n"
         return f"### {h.host} \n\n{result} \n\n"
 
     results = hosts.run_function(doc_cards)
