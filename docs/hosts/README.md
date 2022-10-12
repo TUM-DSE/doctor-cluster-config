@@ -24,6 +24,10 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 # Hosts
 
+- [Expansion cards and slots](expasion_cards.md)
+- [Network graph](graph.md).
+
+
 ## AMD-Epyc servers
 
 - [graham](graham.md)
