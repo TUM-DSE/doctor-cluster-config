@@ -48,18 +48,64 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     g.run_function(deploy)
 
 
+def document_cards(hosts: DeployGroup) -> str:
+    """
+    Documents PCI expansion cards and returns a markdown string.
+    """
+    cards = """
+# Expansion cards and slots
+
+This file is generated through `inv update-docs` by `tasks.py`.
+
+
+## List of cards
+
+- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port)
+- 3x AMD/Xilinx Alevo U280 FPGA with 100GbE NIC (bought, on the way)
+- 3x AMD/Xilinx Alevo SN1022 100GbE SmartNIC (bought, on the way)
+- ?x AMD/Xilinx Alevo U50
+- ...
+
+
+## List of slots
+
+"""
+
+    def doc_cards(h: DeployHost) -> str:
+        result = ""
+        out = h.run("nix-shell -p \'inxi.override { withRecommends = true; }\' --run \"sudo inxi --slots -xxx -c0 --wrap-max 200\"", stdout=subprocess.PIPE)
+        for line in out.stdout.splitlines():
+            if "status: Available" in line:
+                line = f"✅{line}"
+            if "status: In Use" in line:
+                line = f"❌{line}"
+            result += f"{line}\n"
+        return f"### {h.host} \n\n{result} \n\n"
+
+    results = hosts.run_function(doc_cards)
+    results2 = list(map(lambda result: result.result, list(sorted(results, key=lambda i: i.host.host))))
+    cards += "".join(results2)
+    return cards
+
 def document_nixos(_hosts: List[str]) -> None:
     """
     Generate documentation, expects "hostname.r"
     """
     hosts = DeployGroup([DeployHost(h, user="root") for h in _hosts])
 
-    def doc_host(h: DeployHost) -> None:
-        h.run_local(f"../generate-host-info.sh {h.host}")
-
     pwd = os.getcwd()
     os.chdir("docs/hosts")
+
+    # generate per-host docs
+    def doc_host(h: DeployHost) -> None:
+        h.run_local(f"../generate-host-info.sh {h.host}")
     hosts.run_function(doc_host)
+
+    # generate expansion cards docs
+    cards = document_cards(hosts)
+    with open("expansion_cards.md", "w") as file:
+        file.write(cards)
+
     os.chdir(pwd)
 
 
