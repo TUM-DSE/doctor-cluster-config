@@ -1,15 +1,5 @@
 locals {
-  sys-prog-tutors = toset([
-    # SoSe22
-    "jfly609",
-    "catarinalegria",
-    "emilshkhlyv",
-    "yuae-tum",
-    "zhangluktim",
-    "ensarkaya",
-    "weigsimo",
-    "schnedom",
-  ])
+  sys-prog-tutors = toset([])
 
   sys-prog-upstreams = toset([
     "anti-cheat",
