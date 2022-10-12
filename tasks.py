@@ -57,6 +57,11 @@ def document_cards(hosts: DeployGroup) -> str:
 
 This file is generated through `inv update-docs` by `tasks.py`.
 
+Parameters to consider for matching cards to slots: 
+
+    - long or short: size of slot
+    - height: how many pci slots does the card take up? Is it a fat FPGA?
+    - internal/external: does the slot need to be accessible from the outside (to plug cables in)
 
 ## List of cards
 
@@ -81,7 +86,7 @@ Note that ubuntu workstations and servers don't appear in this list.
                 line = f"✅{line}"
             if "status: In Use" in line:
                 line = f"❌{line}"
-            result += f"{line}  \n"
+            result += f"{line}   \n"
         return f"### {h.host} \n\n{result} \n\n"
 
     results = hosts.run_function(doc_cards)
