@@ -423,7 +423,10 @@ def ipmi_serial(c, host=""):
 
 
 @task
-def impi_powerconsumption(c):
+def ipmi_powerconsumption(c):
+    """
+    Measure the power consumption of our servers via IPMI. Note that this does not include all servers.
+    """
     def mgmt_hostname(hostname: str) -> str:
         splits = hostname.split(".")
         splits[0] = f"{splits[0]}-mgmt"
