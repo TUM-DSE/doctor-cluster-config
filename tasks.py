@@ -154,6 +154,30 @@ HOSTS = [
     "jack.dse.in.tum.de",
 ]
 
+# used for different IPMI power readings
+MANUFACTURERS = dict({
+    "dell": [
+        "ryan.dse.in.tum.de",
+        "graham.dse.in.tum.de",
+        "astrid.dse.in.tum.de",
+        "dan.dse.in.tum.de",
+        "mickey.dse.in.tum.de",
+    ],
+    "supermicro": [
+        "jackson.dse.in.tum.de",
+        "christina.dse.in.tum.de",
+        "adelaide.dse.in.tum.de",
+        "wilfred.dse.in.tum.de",
+        "river.dse.in.tum.de",
+        "jack.dse.in.tum.de",
+    ],
+    "supermicro_broken": [
+        "bill.dse.in.tum.de",
+        "nardole.dse.in.tum.de",
+    ]
+})
+
+
 HAS_TTY = sys.stderr.isatty()
 
 
@@ -396,6 +420,49 @@ def ipmi_serial(c, host=""):
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol activate""",
         pty=True,
     )
+
+
+@task
+def impi_powerconsumption(c):
+    def mgmt_hostname(hostname: str) -> str:
+        splits = hostname.split(".")
+        splits[0] = f"{splits[0]}-mgmt"
+        hostname = ".".join(splits)
+        return hostname
+
+    total = 0
+    hosts = []
+
+    # dell:
+    # ipmitool -I lanplus -H 172.24.90.7 -U ADMIN -a sensor get Pwr\ Consumption
+    for hostname in MANUFACTURERS['dell']:
+        hosts += [hostname.split(".")[0]]
+        hostname = mgmt_hostname(hostname)
+        print(hostname)
+        res = c.run(f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' sensor get Pwr\ Consumption")
+        reading = [line for line in res.stdout.splitlines() if "Sensor Reading" in line][0]
+        reading = reading.strip().split(":")[1].strip().split(" ")[0]
+        total += int(reading)
+        print(f"  {reading} Watts")
+        print("")
+
+    # supermicro:
+    # ipmitool -I lanplus -H 172.24.90.7 -U ADMIN -a dcmi power reading
+    for hostname in MANUFACTURERS['supermicro']:
+        hosts += [hostname.split(".")[0]]
+        hostname = mgmt_hostname(hostname)
+        print(hostname)
+        res = c.run(f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' dcmi power reading")
+        reading = [line for line in res.stdout.splitlines() if "Instantaneous power reading:" in line][0]
+        reading = reading.strip().split(":")[1].strip().split(" ")[0]
+        total += int(reading)
+        print(f"  {reading} Watts")
+        print("")
+
+    print("")
+    print(f"  Measured hosts: {hosts}")
+    print(f"  Total Consumption: {total} Watts")
+    print("")
 
 
 @task
