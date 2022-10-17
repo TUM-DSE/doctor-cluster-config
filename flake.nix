@@ -12,7 +12,7 @@
   # $ nix flake update --recreate-lock-file
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-parts.inputs.nixpkgs.follows = "nixpkgs";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
     # TODO Switch to nixos release as soon as it comes out
     nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
