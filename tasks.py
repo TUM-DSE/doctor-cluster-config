@@ -65,10 +65,11 @@ Parameters to consider for matching cards to slots:
 
 ## List of cards
 
-- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port)
+- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
 - 3x AMD/Xilinx Alevo U280 FPGA with 100GbE NIC (bought, on the way)
 - 3x AMD/Xilinx Alevo SN1022 100GbE SmartNIC (bought, on the way)
 - ?x AMD/Xilinx Alevo U50
+- 1x Nvidia A40 GPU (high profile, dual slot)
 - ...
 
 
