@@ -79,15 +79,49 @@ Note that ubuntu workstations and servers don't appear in this list.
 
 """
 
+    def get_slots(h: DeployHost) -> List[str]:
+        ret = []
+        
+        # get pci ids in the same order as inxi
+        dmi_slots = h.run("nix-shell -p \'dmidecode\' --run \"sudo dmidecode -t slot\"", stdout=subprocess.PIPE)
+        for slot in dmi_slots.stdout.split("System Slot Information")[1:]:
+            description = ""
+            for line in slot.splitlines():
+                if "Bus Address" in line:
+                    pciid = line.split(": ")[1].strip()
+                    # get slot descriptions
+                    description = h.run(f"nix-shell -p \'pciutils\' --run \"lspci -m -s {pciid}\"", stdout=subprocess.PIPE)
+                    description = description.stdout.strip()
+                    description = description.replace(" \"", ", ")
+                    description = description.replace("\"", "")
+            if len(description) == 0:
+                ret += ["This slot has no pci id. It is not usable for expansion cards."]
+            else:
+                ret += [description]
+        return ret
+
+
     def doc_cards(h: DeployHost) -> str:
         result = ""
-        out = h.run("nix-shell -p \'inxi.override { withRecommends = true; }\' --run \"sudo inxi --slots -xxx -c0 --wrap-max 200\"", stdout=subprocess.PIPE)
-        for line in out.stdout.splitlines():
+        descriptions = get_slots(h)
+        descriptions.reverse() # reverse so pop gives the first
+        inxi_slots = h.run("nix-shell -p \'inxi.override { withRecommends = true; }\' --run \"sudo inxi --slots -xxx -c0 --wrap-max 200\"", stdout=subprocess.PIPE)
+        for line in inxi_slots.stdout.splitlines():
+            is_device_line = False
+            # print slot description or "PCI Slots:"
             if "status: Available" in line:
-                line = f"✅{line}"
+                line = f"- ✅{line}"
+                is_device_line = True
             if "status: In Use" in line:
-                line = f"❌{line}"
+                line = f"- ❌{line}"
+                is_device_line = True
             result += f"{line}   \n"
+            # print expansion card description
+            if is_device_line:
+                if len(descriptions) == 0:
+                    result += "Error\n"
+                else:
+                    result += f"{descriptions.pop()}  \n"
         return f"### {h.host} \n\n{result} \n\n"
 
     results = hosts.run_function(doc_cards)
