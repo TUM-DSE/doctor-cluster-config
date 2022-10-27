@@ -9,7 +9,7 @@ Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: BP0
            type: 23 serial: BP0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .BP0PSH3.CNCMS0016O00V8. UEFI: Dell v: 2.5.5 
            date: 10/07/2021 
-Memory:    RAM: total: 503.25 GiB used: 271.42 GiB (53.9%) 
+Memory:    RAM: total: 503.25 GiB used: 255.45 GiB (50.8%) 
            Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
            note: est. 
            Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
@@ -52,22 +52,22 @@ PCI Slots: Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: 
 CPU:       Info: 64-Core model: AMD EPYC 7713P socket: SP3 bits: 64 type: MT MCP arch: Zen 3 
            family: 19 (25) model-id: 1 stepping: 1 microcode: A001173 cache: L2: 32 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511052 
-           Speed: 1952 MHz min/max: 1500/3721 MHz base/boost: 2000/3900 boost: enabled 
-           volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 2301 2: 2056 3: 2316 4: 2634 
-           5: 2678 6: 2952 7: 2342 8: 1872 9: 2123 10: 2052 11: 2218 12: 2119 13: 2227 14: 2335 
-           15: 2133 16: 2036 17: 1794 18: 1793 19: 1794 20: 1795 21: 1794 22: 1794 23: 1793 
-           24: 1791 25: 2314 26: 2331 27: 2306 28: 2367 29: 2331 30: 2310 31: 2675 32: 2632 
-           33: 2620 34: 2335 35: 2324 36: 2328 37: 2725 38: 2717 39: 2719 40: 2723 41: 1801 
-           42: 2724 43: 3503 44: 2715 45: 2733 46: 2920 47: 2723 48: 2730 49: 2726 50: 2722 
-           51: 3602 52: 1790 53: 2733 54: 2736 55: 1794 56: 1662 57: 1796 58: 1790 59: 1793 
-           60: 1793 61: 1793 62: 1791 63: 2220 64: 1790 65: 1793 66: 1794 67: 1791 68: 1791 
-           69: 1796 70: 1759 71: 1684 72: 1654 73: 1652 74: 2352 75: 1646 76: 1652 77: 1631 
-           78: 1795 79: 1794 80: 1793 81: 1798 82: 1793 83: 1794 84: 1792 85: 2789 86: 1793 
-           87: 1790 88: 1794 89: 1794 90: 2590 91: 2576 92: 2303 93: 2608 94: 2450 95: 2442 
-           96: 2347 97: 2307 98: 2149 99: 2932 100: 2732 101: 2634 102: 2662 103: 2087 104: 2379 
-           105: 2352 106: 2398 107: 1803 108: 2750 109: 2750 110: 2744 111: 2726 112: 2789 
-           113: 3593 114: 3031 115: 3045 116: 3030 117: 3027 118: 2113 119: 3030 120: 3037 
-           121: 3045 122: 3326 123: 3051 124: 3026 125: 3029 126: 3032 127: 3607 128: 3320 
+           Speed: 1771 MHz min/max: 1500/3721 MHz base/boost: 2000/3900 boost: enabled 
+           volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 1916 2: 2322 3: 1781 4: 2369 
+           5: 2309 6: 2362 7: 2363 8: 1865 9: 1657 10: 1792 11: 1792 12: 1835 13: 2019 14: 1683 
+           15: 2618 16: 1922 17: 2387 18: 2252 19: 2279 20: 2408 21: 2377 22: 2326 23: 2380 
+           24: 2381 25: 1633 26: 2121 27: 3024 28: 3033 29: 3025 30: 3027 31: 2692 32: 2692 
+           33: 3002 34: 1654 35: 1634 36: 1658 37: 2163 38: 1636 39: 1660 40: 1669 41: 2332 
+           42: 1637 43: 1698 44: 1794 45: 1792 46: 1789 47: 1790 48: 1789 49: 1790 50: 2352 
+           51: 1794 52: 2325 53: 1590 54: 1791 55: 1795 56: 1793 57: 1797 58: 1791 59: 1792 
+           60: 1789 61: 1791 62: 1793 63: 2330 64: 1779 65: 1776 66: 1776 67: 1779 68: 1680 
+           69: 1629 70: 1715 71: 1660 72: 1659 73: 1656 74: 2638 75: 1658 76: 1656 77: 1653 
+           78: 1629 79: 1655 80: 1635 81: 1652 82: 1654 83: 1645 84: 1659 85: 2317 86: 1654 
+           87: 1681 88: 1683 89: 1646 90: 3187 91: 3182 92: 3298 93: 3004 94: 3007 95: 3552 
+           96: 2391 97: 3007 98: 3022 99: 3004 100: 3004 101: 3436 102: 3432 103: 3447 104: 3449 
+           105: 3403 106: 3401 107: 2304 108: 2458 109: 2237 110: 2216 111: 2062 112: 2091 
+           113: 1995 114: 2064 115: 2138 116: 3081 117: 3428 118: 1777 119: 3440 120: 2860 
+           121: 2864 122: 2710 123: 2567 124: 2567 125: 2245 126: 2239 127: 2238 128: 2478 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -128,42 +128,42 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-7: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:ab64:fa7c:171a:c94a:ac19/12 scope: global 
-           IP v6: fe80::ef0e:711b:dca7:b161/64 virtual: stable-privacy scope: link 
+           IP v6: fe80::a1fc:a81:38cd:d37a/64 virtual: stable-privacy scope: link 
            WAN IP: 131.159.102.9 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID SAS-3 3008 [Fury] driver: megaraid_sas 
            v: 07.714.04.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 384 GiB 
-           allocated: 1.08 TiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 540 GiB 
+           allocated: 948 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.46 TiB usable: 4.91 TiB used: 1.25 TiB (25.5%) 
+Drives:    Local Storage: total: raw: 3.46 TiB usable: 4.91 TiB used: 1.25 TiB (25.6%) 
            ID-1: /dev/nvme0n1 maj-min: 259:3 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
            serial: S61ANA0R501400 rev: 2.0.2 temp: 17 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 362d 22h cycles: 17 read-units: 96,600,915 [49.4 TB] 
-           written-units: 125,429,846 [64.2 TB] 
+           SMART: yes health: PASSED on: 1y 14d 0h cycles: 17 read-units: 101,166,252 [51.7 TB] 
+           written-units: 127,976,571 [65.5 TB] 
            ID-2: /dev/nvme1n1 maj-min: 259:2 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
            serial: S61ANA0R501120 rev: 2.0.2 temp: 18 Celsius C 
-           SMART: yes health: PASSED on: 362d 22h cycles: 18 read-units: 336 [172 MB] 
+           SMART: yes health: PASSED on: 1y 14d 0h cycles: 18 read-units: 457 [233 MB] 
            ID-3: /dev/sda maj-min: 8:0 model: AL15SEB060NY size: 558.91 GiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: 10000 rpm serial: N/A 
            rev: EF06 temp: 18 C scheme: MBR 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.06 TiB used: 752.78 GiB (69.1%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.21 TiB used: 742.88 GiB (60.1%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 110.2 MiB (22.0%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 88 MiB (17.6%) fs: vfat 
            block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:4 
-           ID-3: /home raw-size: N/A size: 890.32 GiB used: 359.58 GiB (40.4%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.51 GiB used: 368.48 GiB (41.1%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 336.75 GiB used: 46.5 MiB (0.0%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 493.83 GiB used: 1.17 GiB (0.2%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 41.8 C mobo: 0 C 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 1530 
-           Uptime: 14:57:38  up 14 days  6:26,  12 users,  load average: 0.22, 0.09, 0.05 
+Info:      Processes: 1505 
+           Uptime: 17:25:22  up 30 days  8:54,  9 users,  load average: 0.41, 0.23, 0.13 
            wakeups: 0 Init: systemd v: 250 target: graphical.target tool: systemctl Compilers: 
            gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 830 lib: 192 nix-usr: 0 Client: Sudo 
            v: 1.9.10 inxi: 3.3.04 

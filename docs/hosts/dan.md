@@ -10,7 +10,7 @@ Machine:   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 4YBV
            type: 23 serial: 4YBVXK3 
            Mobo: Dell model: 04JN2K v: A09 serial: .4YBVXK3.CNFCP001B3004W. UEFI: Dell v: 2.12.2 
            date: 07/09/2021 
-Memory:    RAM: total: 125.53 GiB used: 9.42 GiB (7.5%) 
+Memory:    RAM: total: 125.53 GiB used: 14.68 GiB (11.7%) 
            Array-1: capacity: 1024 GiB slots: 16 EC: Multi-bit ECC max-module-size: 64 GiB 
            note: est. 
            Device-1: A1 size: 32 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -53,10 +53,10 @@ CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 socket: LGA2011 bits: 64
            L2: 27.5 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200125 
            Speed: 1001 MHz min/max: N/A base/boost: 2500/4000 volts: 1.8 V ext-clock: 10400 MHz 
-           Core speeds (MHz): 1: 1001 2: 1000 3: 1000 4: 1000 5: 1000 6: 1001 7: 1000 8: 1000 
-           9: 1001 10: 1000 11: 1000 12: 1001 13: 1000 14: 1000 15: 1001 16: 1000 17: 1001 
-           18: 1000 19: 1001 20: 1001 21: 1000 22: 1001 23: 1000 24: 1000 25: 1001 26: 1001 
-           27: 1000 28: 1001 29: 1000 30: 1000 31: 1001 32: 1001 33: 1000 34: 1000 35: 1000 
+           Core speeds (MHz): 1: 1001 2: 1000 3: 1001 4: 1000 5: 1001 6: 1001 7: 1001 8: 1001 
+           9: 1000 10: 1000 11: 1000 12: 1000 13: 1000 14: 1001 15: 1000 16: 1000 17: 1001 
+           18: 1000 19: 1000 20: 1000 21: 1000 22: 1001 23: 1000 24: 1000 25: 1001 26: 1000 
+           27: 1001 28: 1000 29: 1001 30: 1000 31: 1001 32: 1000 33: 1001 34: 1000 35: 1000 
            36: 1000 37: 1001 38: 1001 39: 1000 40: 1000 
            Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
            Type: l1tf status: Not affected 
@@ -98,33 +98,33 @@ Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: De
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:550c:ec4f:2dbb:3b14:95/12 scope: global 
-           IF-ID-4: veth428305fd state: up speed: 10000 Mbps duplex: full mac: 12:0f:32:79:4f:03 
-           IF-ID-5: veth8c2c8b86 state: up speed: 10000 Mbps duplex: full mac: fe:b1:bf:43:bb:af 
+           IF-ID-4: veth8ae8fbc8 state: up speed: 10000 Mbps duplex: full mac: 32:40:88:51:f2:8f 
+           IF-ID-5: vetha8ff2c92 state: up speed: 10000 Mbps duplex: full mac: 7a:c3:13:1a:b0:69 
            IF-ID-6: vethf65e8cfd state: up speed: 10000 Mbps duplex: full mac: fe:44:6a:ab:57:68 
            WAN IP: 131.159.102.12 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas 
            v: 07.714.04.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.43 TiB 
-           allocated: 24.3 GiB 
+           allocated: 26.2 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 550.33 GiB (18.5%) 
+Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 559.66 GiB (18.8%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
            rotation: SSD serial: PHAB1234003F1P9SGN rev: 1.1.5 temp: 25.9 C scheme: GPT 
-           SMART: yes health: PASSED on: 260d 2h cycles: 15 read-units: 2,250,959 [1.15 TB] 
-           written-units: 20,203,617 [10.3 TB] 
-Partition: ID-1: / raw-size: N/A size: 1.4 TiB used: 15.4 GiB (1.1%) fs: zfs 
+           SMART: yes health: PASSED on: 276d 5h cycles: 15 read-units: 2,362,494 [1.20 TB] 
+           written-units: 20,785,740 [10.6 TB] 
+Partition: ID-1: / raw-size: N/A size: 1.4 TiB used: 15.76 GiB (1.1%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 107.1 MiB (10.5%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.5 MiB (7.8%) fs: vfat 
            block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1 
-           ID-3: /home raw-size: N/A size: 890.32 GiB used: 359.58 GiB (40.4%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.51 GiB used: 368.48 GiB (41.1%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 82.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 588 
-           Uptime: 14:57:38  up 14 days  3:14,  0 users,  load average: 0.06, 0.03, 0.05 
+Info:      Processes: 567 
+           Uptime: 17:25:22  up 30 days  5:41,  0 users,  load average: 0.13, 0.09, 0.08 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
            gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 468 lib: 71 nix-usr: 0 Client: Sudo 
            v: 1.9.10 inxi: 3.3.04 

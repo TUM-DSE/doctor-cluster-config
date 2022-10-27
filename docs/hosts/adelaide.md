@@ -10,7 +10,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100634 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50540 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002614 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 10.58 GiB (1.1%) 
+Memory:    RAM: total: 995.21 GiB used: 12.14 GiB (1.2%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -52,10 +52,10 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch:
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 960 KiB 
            L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 1396 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 1396 2: 1501 3: 2213 4: 1662 5: 1835 6: 3201 
-           7: 3199 8: 1774 9: 2540 10: 1855 11: 2976 12: 3220 13: 3124 14: 1407 15: 2163 16: 2928 
-           17: 1625 18: 2395 19: 2758 20: 2762 21: 2880 22: 1788 23: 2627 24: 1158 
+           Speed: 2706 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 2706 2: 1558 3: 1204 4: 2997 5: 1466 6: 1249 
+           7: 3070 8: 2852 9: 3184 10: 931 11: 1613 12: 1758 13: 2450 14: 2052 15: 2914 16: 2169 
+           17: 2900 18: 2573 19: 2545 20: 2515 21: 1183 22: 2696 23: 2409 24: 2184 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -113,29 +113,29 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.714.04.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.44 TiB 
-           allocated: 300 GiB 
+           allocated: 299 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 830.55 GiB (15.5%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 838.65 GiB (15.7%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 31 C scheme: GPT 
+           temp: 30 C scheme: GPT 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
            temp: 27 C 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 299.68 GiB (17.4%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 298.91 GiB (17.4%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 106.8 MiB (10.5%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.3 MiB (7.8%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 890.32 GiB used: 359.58 GiB (40.4%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.51 GiB used: 368.48 GiB (41.1%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 49.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 45.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 389 
-           Uptime: 14:57:37  up 14 days  3:17,  0 users,  load average: 0.10, 0.09, 0.09 
+Info:      Processes: 375 
+           Uptime: 17:25:21  up 30 days  5:45,  0 users,  load average: 0.10, 0.09, 0.09 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
            gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 455 lib: 68 nix-usr: 0 Client: Sudo 
            v: 1.9.10 inxi: 3.3.04 
