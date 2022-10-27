@@ -49,6 +49,22 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZAI0TEuR1dVXq214bv6mn6QLNfYMPJWh5HwfpzM8YRGJSaHUvPadi8IvcLgN3CtXcsEkTPt36VgWX49L0V59uJ8K4CpH/Ry7gEqU4uHZlBySUercvLyrqM7Eq5YcHkntFsbB/xqrhharkxtv3vYbvYhQpgOlcdA1g2cxG2wtNA5icg6vV1UDsyiAyibHgIIVZ9fvCqWhf9bZz6wjrLmmklTF3SqByteil2BpS57mv5JvRQx+RFIXeg3ciuT35uY7v5TAuRkRC0yoTVjpEDISHKOc8JNAZSgUXHdFj5XYQ/APULDa71hmSZNq2A2Gkf+sRwU5Evou5MqWGQ55jaiZ9r2Hedbd33BP97/MzH1OPDdHK/R9vrJX7+ZSsncUjO0sSkUTKajk5H2jB1gq8c+SeldZGLSBPl6mzk3a1aPgV5MpPXm7EvPa1dQccWZTZZKUuuA2gPyVMO9f7XBZRcYCdColS6Kj/fbq7Lg+XhgRVz53BShBQuP0Qtvcf3XWyEQ0= mikilio@nubara"
   ];
 
+  yiheKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
+  ];
+
+  yiwenliuKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRyucUSzY0R13Aykigj6quuV4iV2qcwKv3A21HtOiqxZZtmk0mb555EvteqkIE7xSuFMQza+Y9ccJ6iQb0NZlCFCnq99r+9rEiCjzE6V7jcOeAJnqJabbSWo/4KbrQCoRF8Tdvp1ghf47mzyoLFfZy4hGjCJabIcE3lIjhiVUqDVYR6yjROGF11aHcDbloQnj8QIBujl+s/JE849tEW4bNvRmZJlmY0vAwH0OE8JTjcDSiBZlTINhw+VDN8MsKFitrtc/Nc9tgN1lDsMLn9kZo3p7ySKCFYb5X/iYDWejfKhedFsjpEUSCfc/LNevFkd9/BuLForjlLqKLNr5q2EbP yiwen@liu-HP-Pavilion-Notebook"
+  ];
+
+  hanwenliuKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCg4q6+mU1KxqSVKSV4aI3AS4OY13l5nCoNIpo6ZKdgsZHbTtu00+fdQod7RBbDGRuNuVcwnCDgSvwo+BZDNw0txk/jnewoBKWJYOsoidLatMcoL2KL2hNBpUDXFaMd1IdC3bT8PRF0mvms3DMovKgAcFdgDz49KXyd/Djtm44v+Ck5yl4EZLUDg871yuWCzeQEqEiECxcoIceRAng1SomE3KM5ew+rbkHnVIusieQwTFWvbeE8tisVFg/zl6WlH9rybV61LbTHHci0NaY7hN0cDP8XrYkFbCfoHVkgQ0aYm5bH6a41IwVuoyJtLHBH8TP/KwHAhlVmKMix62jkjL94it9vf3EBCZWcfD42RZIWMcbd9PkQKuuYMwyHEeE0+oXfAVppS1noyVub9DAh2oKEwKbQ1Zw2EHs4ooMm3HeaE4k2xB5cZzeIA1MmdEwknD8cwC43+QeZu8rq5YDe2Bo3djGLB/SGFwx2wiwsKsAPxbwRIAer/S2Iy5bKtsiyLL8= hanwen.liu@tum.de"
+  ];
+
+   wonbangseoKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfkMY+WghQqHDM+GmJa/oaH7zQiHHYsZ3cLZtexZDIJn/Vlkj3zEvaLhTL7IpQ7PFiwPdIMeO17csvIqTzqaaoqXkFDD+YZKGlFhPoj14yrHxAOuXuaw0Fxg+RhfW0VyHKQ56ZvBvgRm5IcosTtdjl9jYrUjAQP61KJQXxTWYXH0V4Vhg3CbAf9rs2oevDtYp3AMrWkU3vpvzEamCyn4C9c/TvGORYUlWsqfbT1Y6hEmsZZnpIVNTsD6VVGVAf9TzDM/rb4vozui5A6YWG/JRv2Q/fW49WAOQGOWFD32v3bVhsagE9kG7bIayYCw2Xjalgj6qKJLmK1ZdUHj4ui+StGY+Y/LlAyLgcVmiL51UaXPcMCcZBA5LZFbtBEA2Z4B0sqe0063Hur367f07VhW3vkE6ch983j8rJQPemerciEYCqtMH9lGtk+yNMOAmCD7Je0D/dvYhPUxVaBtJqU4ZnpnZvRXHUasKjYQQ7Jaltw/YMkoXT9ml73sMA90apQSM= wb1@WB1"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -142,6 +158,50 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2005;
       openssh.authorizedKeys.keys = mikilioKeys;
+    };
+
+    # Yi He, Sys-lab WS22 (Sebastian's group)
+    yihe = {
+      isNormalUser = true;
+      home = "/home/yihe";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2006;
+      allowedHosts = ["ryan"];
+      openssh.authorizedKeys.keys = yiheKeys;
+    };
+
+    # Yiwen Liu, Sys-lab WS22 (Sebastian's group)
+    yiwenliu = {
+      isNormalUser = true;
+      home = "/home/yiwenliu";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2007;
+      allowedHosts = ["ryan"];
+      openssh.authorizedKeys.keys = yiwenliuKeys;
+    };
+
+    # Hanwen Liu, Sys-lab WS22 (Sebastian's group)
+    hanwenliu = {
+      isNormalUser = true;
+      home = "/home/hanwenliu";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2008;
+      allowedHosts = ["ryan"];
+      openssh.authorizedKeys.keys = hanwenliuKeys;
+    };
+
+    # Wonbang Seo, Sys-lab WS22 (Sebastian's group)
+    wonbangseo = {
+      isNormalUser = true;
+      home = "/home/wonbangseo";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2009;
+      allowedHosts = ["ryan"];
+      openssh.authorizedKeys.keys = wonbangseoKeys;
     };
   };
 
