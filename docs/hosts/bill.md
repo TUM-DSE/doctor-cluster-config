@@ -11,7 +11,7 @@ Machine:   Type: Desktop System: sysGen www.sysgen.de product: Super Server v: 0
            serial: 0123456789 Chassis: type: 3 v: 0123456789 serial: 0123456789 
            Mobo: Supermicro model: X12SCZ-TLN4F v: 1.01A serial: UM20BS000421 
            UEFI: American Megatrends v: 1.0a date: 01/11/2021 
-Memory:    RAM: total: 125.68 GiB used: 26.95 GiB (21.4%) 
+Memory:    RAM: total: 125.68 GiB used: 28.3 GiB (22.5%) 
            Array-1: capacity: 128 GiB note: est. slots: 4 EC: None max-module-size: 32 GiB 
            note: est. 
            Device-1: DIMMA1 size: 32 GiB speed: 2400 MT/s type: DDR4 
@@ -37,10 +37,10 @@ CPU:       Info: 10-Core model: Intel Core i9-10900K bits: 64 type: MT MCP arch:
            family: 6 model-id: A5 (165) stepping: 5 microcode: E0 cache: L1: 640 KiB L2: 20 MiB 
            L3: 20 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 147994 
-           Speed: 5092 MHz min/max: 800/5300 MHz base/boost: 3600/3700 volts: 1.0 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 5092 2: 2775 3: 5066 4: 5102 5: 5111 6: 5099 
-           7: 3376 8: 5125 9: 5096 10: 5100 11: 5095 12: 5100 13: 4988 14: 5117 15: 5178 16: 5109 
-           17: 5101 18: 5112 19: 5096 20: 5104 
+           Speed: 5105 MHz min/max: 800/5300 MHz base/boost: 3600/3700 volts: 1.0 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 5105 2: 5106 3: 5108 4: 5093 5: 5119 6: 5124 
+           7: 5103 8: 4992 9: 5111 10: 5106 11: 5100 12: 5099 13: 5090 14: 5108 15: 2584 16: 5104 
+           17: 5100 18: 5005 19: 5103 20: 5099 
            Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -105,41 +105,41 @@ RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB
            Device-2: zpool2 type: zfs status: ONLINE level: linear size: 14.5 TiB free: 14.3 TiB 
            allocated: 228 GiB 
            Components: Online: N/A 
-           Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 759 GiB 
-           allocated: 129 GiB 
+           Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 757 GiB 
+           allocated: 131 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 92.93 GiB (0.3%) 
+Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 94.08 GiB (0.3%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
-           rotation: SSD serial: S4EWNX0R513894H rev: 2B2QEXM7 temp: 25 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 72d 5h cycles: 2 read-units: 49,887,731 [25.5 TB] 
-           written-units: 3,813,928 [1.95 TB] 
+           rotation: SSD serial: S4EWNX0R513894H rev: 2B2QEXM7 temp: 26 Celsius C scheme: GPT 
+           SMART: yes health: PASSED on: 72d 5h cycles: 2 read-units: 49,887,738 [25.5 TB] 
+           written-units: 3,816,144 [1.95 TB] 
            ID-2: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
-           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNA0N901002 rev: 404Q temp: 25 C 
+           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNA0N901002 rev: 404Q temp: 26 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 213d 16h cycles: 36 read: 20.41 TiB 
-           written: 48.2 TiB 
+           SMART: yes state: enabled health: PASSED on: 1y 214d 14h cycles: 36 read: 20.41 TiB 
+           written: 48.22 TiB 
            ID-3: /dev/sdb maj-min: 8:16 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRJXEZ3K rev: 0A85 temp: 28 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 351d 4h cycles: 1 
+           rotation: 7200 rpm serial: VRJXEZ3K rev: 0A85 temp: 29 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 352d 1h cycles: 1 
            ID-4: /dev/sdc maj-min: 8:32 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRJ0MZ7K rev: 0A85 temp: 28 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 351d 4h cycles: 1 
-Partition: ID-1: / raw-size: N/A size: 823.05 GiB used: 92.79 GiB (11.3%) fs: zfs 
+           rotation: 7200 rpm serial: VRJ0MZ7K rev: 0A85 temp: 29 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 352d 2h cycles: 1 
+Partition: ID-1: / raw-size: N/A size: 822.6 GiB used: 93.9 GiB (11.4%) fs: zfs 
            logical: zroot/root/nixos 
            ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 66.5 MiB (13.3%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /tmp raw-size: N/A size: 730.34 GiB used: 75.5 MiB (0.0%) fs: zfs 
+           ID-3: /tmp raw-size: N/A size: 728.8 GiB used: 110.2 MiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 32.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 34.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 539 
-           Uptime: 17:25:21  up 32 days 17:06,  0 users,  load average: 0.09, 0.04, 0.02 
+Info:      Processes: 540 
+           Uptime: 15:18:11  up 33 days 14:59,  0 users,  load average: 0.09, 0.04, 0.00 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
            gcc: 10.3.0 Packages: nix-default: 0 nix-sys: 469 lib: 72 nix-usr: 0 Client: Sudo 
            v: 1.9.10 inxi: 3.3.04 

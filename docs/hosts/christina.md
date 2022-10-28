@@ -1,9 +1,9 @@
 # christina
 
 ```
-System:    Host: christina Kernel: 5.10.145 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\1bf85h65zf2g4mwj5gfkpwikx3q4lmr9-initrd-linux-5.10.145-initrd.efi 
-           init=/nix/store/5clp9cd6nxhw8miwjmqdwrc24ngsip7a-nixos-system-christina-22.05.20220928.b5b0418/init 
+System:    Host: christina Kernel: 5.10.148 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\bp07k1iac2ycqgp51kgs1khp0vnd9d9z-initrd-linux-5.10.148-initrd.efi 
+           init=/nix/store/66n4k8awdd7cdhgnl9gwa7f5cf8lczri-nixos-system-christina-22.05.20221021.22b999f/init 
            console=ttyS1,115200n8 console=tty1 default_hugepagesz=2MB hugepagesz=2MB 
            hugepages=1000 panic=1 boot.panic_on_fail loglevel=4 
            Console: N/A Distro: NixOS 22.05 (Quokka) 
@@ -11,7 +11,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100644 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50535 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002555 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 251.21 GiB used: 43.05 GiB (17.1%) 
+Memory:    RAM: total: 251.21 GiB used: 5.68 GiB (2.3%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -53,10 +53,10 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch:
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 960 KiB 
            L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 1511 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 1511 2: 1618 3: 2590 4: 2680 5: 2148 6: 2914 
-           7: 2606 8: 2158 9: 3184 10: 1692 11: 1499 12: 1389 13: 2691 14: 3153 15: 2207 16: 1487 
-           17: 1266 18: 2333 19: 1745 20: 1781 21: 2116 22: 2301 23: 1144 24: 1579 
+           Speed: 1623 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 1623 2: 3243 3: 3097 4: 2345 5: 2306 6: 1814 
+           7: 1303 8: 1592 9: 1573 10: 2915 11: 2078 12: 2519 13: 2232 14: 2019 15: 1066 16: 1226 
+           17: 2851 18: 1674 19: 2961 20: 1806 21: 1981 22: 1318 23: 1962 24: 3254 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -98,9 +98,9 @@ Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe 
            Device-6: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel port: a000 
            bus-ID: 51:00.1 chip-ID: 8086:10fb class-ID: 0200 
            IF: enp81s0f1 state: down mac: 00:1b:21:c3:85:e2 
-           IF-ID-1: docker0 state: down mac: 02:42:6b:57:be:37 
+           IF-ID-1: docker0 state: down mac: 02:42:10:2b:3f:5d 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IF-ID-2: docker_gwbridge state: down mac: 02:42:fd:cc:af:90 
+           IF-ID-2: docker_gwbridge state: down mac: 02:42:0e:0e:44:d1 
            IP v4: 172.18.0.1/16 scope: global broadcast: 172.18.255.255 
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:9a2d:93c6:b09e:fc2:92a9/16 scope: global 
@@ -117,29 +117,27 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.49 TiB 
            allocated: 246 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 769.62 GiB (14.4%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 598.71 GiB (11.2%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 27 C 
+           temp: 26 C 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 27 C scheme: GPT 
+           temp: 26 C scheme: GPT 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.62 TiB used: 182.22 GiB (11.0%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.62 TiB used: 182.19 GiB (11.0%) fs: zfs 
            logical: zroot/root/nixos 
            ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.4 MiB (7.8%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 896.51 GiB used: 368.48 GiB (41.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.45 GiB used: 368.77 GiB (41.1%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 41.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 33.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 405 
-           Uptime: 17:25:21  up 20 days 23:28,  3 users,  load average: 0.15, 0.13, 0.11 
-           wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
-           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 456 lib: 68 nix-usr: 0 Client: Sudo 
-           v: 1.9.10 inxi: 3.3.04 
+Info:      Processes: 398 Uptime: 1h 46m wakeups: 0 Init: systemd v: 250 target: multi-user.target 
+           tool: systemctl Compilers: gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 456 lib: 68 
+           nix-usr: 0 Client: Sudo v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](christina.lstopo.svg)

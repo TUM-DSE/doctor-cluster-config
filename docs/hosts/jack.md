@@ -11,7 +11,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-120U-TNR v: 0123456789
            serial: E411764X2300334 Chassis: type: 1 v: 0123456789 serial: C119UAK12P20190 
            Mobo: Supermicro model: X12DPU-6 v: 1.02A serial: HM218S018239 
            UEFI: American Megatrends LLC. v: 1.2 date: 02/15/2022 
-Memory:    RAM: total: 125.52 GiB used: 36.8 GiB (29.3%) 
+Memory:    RAM: total: 125.52 GiB used: 43.58 GiB (34.7%) 
            Array-1: capacity: 12 TiB slots: 32 EC: Single-bit ECC max-module-size: 384 GiB 
            note: est. 
            Device-1: P1-DIMMA1 size: 256 GiB speed: 3200 MT/s type: Logical non-volatile device 
@@ -91,15 +91,15 @@ CPU:       Info: 2x 16-Core model: Intel Xeon Gold 6326 bits: 64 type: MT MCP SM
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 5 MiB L2: 48 MiB 
            L3: 96 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 371944 
-           Speed: 2408 MHz min/max: 800/2901 MHz base/boost: 2900/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 2408 2: 2711 3: 1094 4: 2760 5: 1711 6: 2556 
-           7: 1842 8: 1941 9: 2242 10: 2624 11: 2487 12: 1865 13: 1584 14: 2858 15: 1951 16: 1877 
-           17: 1500 18: 1867 19: 1876 20: 2380 21: 1849 22: 1644 23: 1872 24: 1498 25: 1719 
-           26: 1769 27: 942 28: 3276 29: 1230 30: 1881 31: 1522 32: 1885 33: 1877 34: 960 35: 1244 
-           36: 1442 37: 1876 38: 1631 39: 1488 40: 2955 41: 1038 42: 930 43: 1506 44: 1127 
-           45: 1139 46: 1076 47: 1108 48: 904 49: 1554 50: 1978 51: 1952 52: 2632 53: 1872 
-           54: 1938 55: 2448 56: 1975 57: 1803 58: 2196 59: 1878 60: 1915 61: 1947 62: 1656 
-           63: 3332 64: 1801 
+           Speed: 3061 MHz min/max: 800/2901 MHz base/boost: 2900/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 3061 2: 2138 3: 1138 4: 2583 5: 1702 6: 1691 
+           7: 1179 8: 1343 9: 801 10: 1500 11: 1884 12: 1833 13: 1686 14: 2463 15: 1282 16: 1861 
+           17: 2904 18: 2754 19: 1527 20: 1864 21: 2488 22: 1817 23: 1773 24: 1848 25: 2419 
+           26: 1970 27: 1336 28: 1415 29: 2259 30: 1897 31: 2003 32: 1895 33: 1049 34: 1541 
+           35: 1871 36: 1294 37: 2946 38: 1911 39: 3161 40: 1092 41: 1145 42: 1545 43: 2252 
+           44: 1849 45: 1654 46: 3265 47: 1858 48: 1980 49: 948 50: 2452 51: 1900 52: 1805 
+           53: 1088 54: 2469 55: 1874 56: 2408 57: 2138 58: 1997 59: 1880 60: 1064 61: 1906 
+           62: 1207 63: 2525 64: 1825 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -156,25 +156,25 @@ Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v
 RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 767 GiB 
            allocated: 121 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 894.25 GiB usable: 1.74 TiB used: 714.78 GiB (40.1%) 
+Drives:    Local Storage: total: raw: 894.25 GiB usable: 1.74 TiB used: 710.02 GiB (39.8%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Intel model: SSDSC2KB960G8 
            family: S4510/S4610/S4500/S4600 Series SSDs size: 894.25 GiB block-size: 
            physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s rotation: SSD 
-           serial: PHYF152302UG960CGN rev: 0132 temp: 16 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 170d 20h cycles: 24 read: 1.93 TiB 
-           written: 5.87 TiB 
-Partition: ID-1: / raw-size: N/A size: 838.29 GiB used: 98.54 GiB (11.8%) fs: zfs 
+           serial: PHYF152302UG960CGN rev: 0132 temp: 17 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 171d 18h cycles: 24 read: 1.93 TiB 
+           written: 5.89 TiB 
+Partition: ID-1: / raw-size: N/A size: 837.81 GiB used: 98.1 GiB (11.7%) fs: zfs 
            logical: zroot/root/nixos 
            ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.2 MiB (7.7%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 896.51 GiB used: 368.48 GiB (41.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.45 GiB used: 368.77 GiB (41.1%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 57.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 58.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 837 
-           Uptime: 17:25:21  up 2 days  3:57,  1 user,  load average: 0.00, 0.01, 0.05 wakeups: 0 
+Info:      Processes: 843 
+           Uptime: 15:18:11  up 3 days  1:49,  0 users,  load average: 0.00, 0.01, 0.00 wakeups: 0 
            Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
            Packages: nix-default: 0 nix-sys: 518 lib: 97 nix-usr: 0 Client: Sudo v: 1.9.10 
            inxi: 3.3.04 
