@@ -72,17 +72,24 @@ Parameters to consider for matching cards to slots:
     - 3x bought, on the way
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
-    - jackson: dual port. (Jackson-craig,)
-    - christina: dual port. (,)
-    - adelaide: single port. (adelaide-craig)
-    - wilfred: single port. (wilfred-craig)
-    - river: single port. (river-craig)
-- 7x Broadcom BCM57416 10G NIC (RJ-45?)
+    - jackson: dual port. (Jackson-craig,) Cx0/1, vlan1
+    - christina: dual port. (christina,christina)
+    - adelaide: single port. (adelaide-craig) vlan1
+    - wilfred: single port. (wilfred-craig) Cx0/5, vlan2
+    - river: single port. (river-craig) Cx0/3, vlan2
+- 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
+    - graham: dual port. RJ-45 (graham-graham,graham-graham)
+    - ryan: dual port. RJ-45 (ryan-ryan,ryan-ryan)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
 
+Furthermore, there are some onboard 2 port 10G RJ-45 NICs connected pairwise (christina-adelaide, wilfred-river)
+
 Most of the 10G NICs are in use to provider internet.
+
+(^ list last updated 28.10.22)
+
 
 ## List of slots
 

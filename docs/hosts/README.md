@@ -25,18 +25,21 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 # Hosts
 
 - [Expansion cards and slots](expansion_cards.md)
-- [Network graph](graph.md)
+- [Network graph](graph.md) (see also networking notes in "Expansion cards and slots")
 
 
 ## AMD-Epyc servers
+
+Our epyc servers are shared devices on which many users usually work concurrently.
 
 - [graham](graham.md)
 - [ryan](ryan.md)
 
 ## Intel Xeon servers
 
+Those servers (or individual devices) are sometimes used exclusively by a single user to conduct benchmarks. 
+
 - single socket Xeon Gold 5317  
-These 5 have an additional link to craig via 100G. 
   - [jackson](jackson.md)
   - [christina](christina.md)
   - [adelaide](adelaide.md)
