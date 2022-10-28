@@ -1,3 +1,5 @@
+xilinx-password: ENC[AES256_GCM,data:78OREfXOax3p6GwZ,iv:jFVzmJsg6TL45FWNnb1yWYBehCVzOMhHoEJNTFqs51s=,tag:nEYgsaclx+/Lh8PSrktlEA==,type:str]
+xilinx-password-hash: ENC[AES256_GCM,data:hmUD18sF1aUKANiMoFAWGyCxh4f4JVxB4m0CrYvK2XzBbYRdq4s0LJPFqb7Z6B0bt8CRnzShZ1G2aZWBOYRKBQK4x7BqVbdLQDuWVlIVn0dX/u92jiDGj6oQ+MpwZYz6DBGHC28twn0kCg==,iv:+YffJA4Q0zHjgc0aU7YBdLeT6UweoS3NmZ4LxMIJiH8=,tag:f0kwJUHqb76LxiJ3UH25Zg==,type:str]
 root-password: ENC[AES256_GCM,data:A2T2f6SCnmQxRuYk,iv:iYrTWxDn5+VjLXEF6gw9BdD9vzT1bzuYXOe9Z08Ypcw=,tag:cV2AdNWRd4MohpgyhRwo/A==,type:str]
 root-password-hash: ENC[AES256_GCM,data:daLP7aH9dZcqx81I1TbRuL4ij/VQ5N672jG+R9Imp0V607o2iKvhJfsVN2xefr49CbO34TFTLQiaSkCnzjAjpaPbhWbolNV3Rq+WUbiidgsy9vNAHEn+3vlSvAqb61eZq0tHXNfEzOkRlA==,iv:GjcwTn5s3TODtxClZ5FDPen+Y36BSUuHGnKsiT0UQAQ=,tag:erraKw/ITBJgbw4bMW5jrw==,type:str]
 buildbot-nix-worker-password: ENC[AES256_GCM,data:w8Q04vEC7bc6coOql4+EqsG8bSA=,iv:8+JNWZtcPcIBRRjOrbVrZfs3xO4mkB7QCdCFSXJZ4wg=,tag:KXPPIRJfNPPvFDBkI7/39w==,type:str]
@@ -62,8 +64,8 @@ sops:
             RzhWVlBObWRKRXRIWEtZL0ViK2U0NzAKT6yjrEH7suv+RLnyBYqQ0Kko+/XBJcnw
             g63Hz/rcEtRYbfMNxBjAVuNb0hDsNPYco0/3R7Ua+cyXUn0Bx2zPsQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-08-08T15:02:37Z"
-    mac: ENC[AES256_GCM,data:aL7PVkvB3RzKp7nA3ZNm4ZDHtmG1b20TL8ZifRPhEv4NIZwcEC6HPDet450uL7E3LmK10/LBs36DW5JCYpARlh598uNxUmcJvHGTIDooD+1mX0C7Z+IQjavVUvu5bhyHu3f+WOME9x7pLbBZUqZiW/dnKWIqm//isVMwBQfRs1I=,iv:z5UwhRg7pLhheiTfmvqMeeKguHmSdM564QP4giP+Woo=,tag:s65Zw+cfeB2WdBvZA5gGXA==,type:str]
+    lastmodified: "2022-10-28T11:58:20Z"
+    mac: ENC[AES256_GCM,data:YEaNZ/skEtdL9GFXPpbZJTkAq8aqvT41AroSkTmpQFZp2bZT8xWje/zIw7qsNMyxz0oelY+Alj7xf14lPgsnRy/kc4grrOjph9yunRZ2GxHc1Nt4I+AM5xrYzyrdI/KJ4a7zG5sN2LyVF2aLqLKDOi4sKh7OUIv/+Hjqk+KDmrg=,iv:mk+AozRMz1nzAj9V94SUSo91qHNxsljxZ3zHpkrF8Y4=,tag:vfD0RmVweOOwtdUkefbTvw==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.7.3
