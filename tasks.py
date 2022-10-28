@@ -65,13 +65,24 @@ Parameters to consider for matching cards to slots:
 
 ## List of cards
 
-- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+- 1x Nvidia A40 GPU (high profile, dual slot)
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
     - 1x available
     - 3x bought, on the way
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-- 1x Nvidia A40 GPU (high profile, dual slot)
+- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+    - jackson: dual port. (Jackson-craig,)
+    - christina: dual port. (,)
+    - adelaide: single port. (adelaide-craig)
+    - wilfred: single port. (wilfred-craig)
+    - river: single port. (river-craig)
+- 7x Broadcom BCM57416 10G NIC (RJ-45?)
+- 5x Intel X520-2 10G NIC (SFI/SFP+)
+- 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
+- 1x Intel X710 10G NIC (SFI/SFP+?)
+
+Most of the 10G NICs are in use to provider internet.
 
 ## List of slots
 
@@ -95,7 +106,7 @@ Note that ubuntu workstations and servers don't appear in this list.
                     description = description.replace(" \"", ", ")
                     description = description.replace("\"", "")
             if len(description) == 0:
-                ret += ["This slot has no pci id. It is not usable for expansion cards."]
+                ret += ["No device/PCI ID."]
             else:
                 ret += [description]
         return ret
