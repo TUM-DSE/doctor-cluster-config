@@ -13,6 +13,7 @@
     #../modules/nfs/client.nix
     ../modules/nfs
     ../modules/xilinx.nix
+    ../modules/xrdp-passwords.nix
   ];
 
   boot.hugepages.size = "1GB";

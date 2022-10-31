@@ -102,31 +102,39 @@ Note that ubuntu workstations and servers don't appear in this list.
 
     def get_slots(h: DeployHost) -> List[str]:
         ret = []
-        
+
         # get pci ids in the same order as inxi
-        dmi_slots = h.run("nix-shell -p \'dmidecode\' --run \"sudo dmidecode -t slot\"", stdout=subprocess.PIPE)
+        dmi_slots = h.run(
+            "nix-shell -p 'dmidecode' --run \"sudo dmidecode -t slot\"",
+            stdout=subprocess.PIPE,
+        )
         for slot in dmi_slots.stdout.split("System Slot Information")[1:]:
             description = ""
             for line in slot.splitlines():
                 if "Bus Address" in line:
                     pciid = line.split(": ")[1].strip()
                     # get slot descriptions
-                    description = h.run(f"nix-shell -p \'pciutils\' --run \"lspci -m -s {pciid}\"", stdout=subprocess.PIPE)
+                    description = h.run(
+                        f"nix-shell -p 'pciutils' --run \"lspci -m -s {pciid}\"",
+                        stdout=subprocess.PIPE,
+                    )
                     description = description.stdout.strip()
-                    description = description.replace(" \"", ", ")
-                    description = description.replace("\"", "")
+                    description = description.replace(' "', ", ")
+                    description = description.replace('"', "")
             if len(description) == 0:
                 ret += ["No device/PCI ID."]
             else:
                 ret += [description]
         return ret
 
-
     def doc_cards(h: DeployHost) -> str:
         result = ""
         descriptions = get_slots(h)
-        descriptions.reverse() # reverse so pop gives the first
-        inxi_slots = h.run("nix-shell -p \'inxi.override { withRecommends = true; }\' --run \"sudo inxi --slots -xxx -c0 --wrap-max 200\"", stdout=subprocess.PIPE)
+        descriptions.reverse()  # reverse so pop gives the first
+        inxi_slots = h.run(
+            "nix-shell -p 'inxi.override { withRecommends = true; }' --run \"sudo inxi --slots -xxx -c0 --wrap-max 200\"",
+            stdout=subprocess.PIPE,
+        )
         for line in inxi_slots.stdout.splitlines():
             is_device_line = False
             # print slot description or "PCI Slots:"
@@ -146,9 +154,15 @@ Note that ubuntu workstations and servers don't appear in this list.
         return f"### {h.host} \n\n{result} \n\n"
 
     results = hosts.run_function(doc_cards)
-    results2 = list(map(lambda result: result.result, list(sorted(results, key=lambda i: i.host.host))))
+    results2 = list(
+        map(
+            lambda result: result.result,
+            list(sorted(results, key=lambda i: i.host.host)),
+        )
+    )
     cards += "".join(results2)
     return cards
+
 
 def document_nixos(_hosts: List[str]) -> None:
     """
@@ -162,6 +176,7 @@ def document_nixos(_hosts: List[str]) -> None:
     # generate per-host docs
     def doc_host(h: DeployHost) -> None:
         h.run_local(f"../generate-host-info.sh {h.host}")
+
     hosts.run_function(doc_host)
 
     # generate expansion cards docs
@@ -211,27 +226,29 @@ HOSTS = [
 ]
 
 # used for different IPMI power readings
-MANUFACTURERS = dict({
-    "dell": [
-        "ryan.dse.in.tum.de",
-        "graham.dse.in.tum.de",
-        "astrid.dse.in.tum.de",
-        "dan.dse.in.tum.de",
-        "mickey.dse.in.tum.de",
-    ],
-    "supermicro": [
-        "jackson.dse.in.tum.de",
-        "christina.dse.in.tum.de",
-        "adelaide.dse.in.tum.de",
-        "wilfred.dse.in.tum.de",
-        "river.dse.in.tum.de",
-        "jack.dse.in.tum.de",
-    ],
-    "supermicro_broken": [
-        "bill.dse.in.tum.de",
-        "nardole.dse.in.tum.de",
-    ]
-})
+MANUFACTURERS = dict(
+    {
+        "dell": [
+            "ryan.dse.in.tum.de",
+            "graham.dse.in.tum.de",
+            "astrid.dse.in.tum.de",
+            "dan.dse.in.tum.de",
+            "mickey.dse.in.tum.de",
+        ],
+        "supermicro": [
+            "jackson.dse.in.tum.de",
+            "christina.dse.in.tum.de",
+            "adelaide.dse.in.tum.de",
+            "wilfred.dse.in.tum.de",
+            "river.dse.in.tum.de",
+            "jack.dse.in.tum.de",
+        ],
+        "supermicro_broken": [
+            "bill.dse.in.tum.de",
+            "nardole.dse.in.tum.de",
+        ],
+    }
+)
 
 
 HAS_TTY = sys.stderr.isatty()
@@ -454,7 +471,7 @@ def ipmi_password(c) -> str:
 
 
 @task
-def generate_root_password(c):
+def generate_password(c, user="root"):
     """
     Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
     """
@@ -463,8 +480,8 @@ def generate_root_password(c):
     passw = "".join(random.choice(chars) for x in range(size))
     out = c.run(f"echo '{passw}' | mkpasswd -m sha-512 -s", echo=True)
     print("# Add the following secrets")
-    print(f"root-password: {passw}")
-    print(f"root-password-hash: {out.stdout}")
+    print(f"{user}-password: {passw}")
+    print(f"{user}-password-hash: {out.stdout}")
 
 
 @task
@@ -483,6 +500,7 @@ def ipmi_powerconsumption(c):
     """
     Measure the power consumption of our servers via IPMI. Note that this does not include all servers.
     """
+
     def mgmt_hostname(hostname: str) -> str:
         splits = hostname.split(".")
         splits[0] = f"{splits[0]}-mgmt"
@@ -494,12 +512,16 @@ def ipmi_powerconsumption(c):
 
     # dell:
     # ipmitool -I lanplus -H 172.24.90.7 -U ADMIN -a sensor get Pwr\ Consumption
-    for hostname in MANUFACTURERS['dell']:
+    for hostname in MANUFACTURERS["dell"]:
         hosts += [hostname.split(".")[0]]
         hostname = mgmt_hostname(hostname)
         print(hostname)
-        res = c.run(f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' sensor get Pwr\ Consumption")
-        reading = [line for line in res.stdout.splitlines() if "Sensor Reading" in line][0]
+        res = c.run(
+            f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' sensor get Pwr\ Consumption"
+        )
+        reading = [
+            line for line in res.stdout.splitlines() if "Sensor Reading" in line
+        ][0]
         reading = reading.strip().split(":")[1].strip().split(" ")[0]
         total += int(reading)
         print(f"  {reading} Watts")
@@ -507,12 +529,18 @@ def ipmi_powerconsumption(c):
 
     # supermicro:
     # ipmitool -I lanplus -H 172.24.90.7 -U ADMIN -a dcmi power reading
-    for hostname in MANUFACTURERS['supermicro']:
+    for hostname in MANUFACTURERS["supermicro"]:
         hosts += [hostname.split(".")[0]]
         hostname = mgmt_hostname(hostname)
         print(hostname)
-        res = c.run(f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' dcmi power reading")
-        reading = [line for line in res.stdout.splitlines() if "Instantaneous power reading:" in line][0]
+        res = c.run(
+            f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' dcmi power reading"
+        )
+        reading = [
+            line
+            for line in res.stdout.splitlines()
+            if "Instantaneous power reading:" in line
+        ][0]
         reading = reading.strip().split(":")[1].strip().split(" ")[0]
         total += int(reading)
         print(f"  {reading} Watts")
@@ -529,6 +557,13 @@ def ipmi_powercycle(c, host=""):
     c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
     )
+
+
+@task
+def random_password(c, host=""):
+    """
+    Generate password
+    """
 
 
 @task

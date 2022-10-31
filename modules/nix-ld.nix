@@ -17,7 +17,6 @@
             fuse3
             alsa-lib
             at-spi2-atk
-            at-spi2-core
             atk
             cairo
             cups
@@ -28,6 +27,7 @@
             freetype
             gdk-pixbuf
             glib
+            gtk2
             gtk3
             libGL
             libappindicator-gtk3
@@ -35,7 +35,6 @@
             libnotify
             libpulseaudio
             libuuid
-            xorg.libxcb
             libxkbcommon
             mesa
             nspr
@@ -56,8 +55,12 @@
             xorg.libXtst
             xorg.libxkbfile
             xorg.libxshmfence
+            xorg.libXft
+            xorg.libxcb
             zlib
           ];
+
+          ignoreCollisions = true;
         };
       in
       "${ld_library_path}/lib";
