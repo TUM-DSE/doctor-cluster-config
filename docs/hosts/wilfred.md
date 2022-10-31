@@ -1,9 +1,9 @@
 # wilfred
 
 ```
-System:    Host: wilfred Kernel: 5.10.148 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\ki8rz10s5ha7r54cr8gg9l9zn5yc3a1g-initrd-linux-5.10.148-initrd.efi 
-           init=/nix/store/vbhqqp55mwzpdk18nnnp2wf6nj0h682i-nixos-system-wilfred-22.05.20221021.22b999f/init 
+System:    Host: wilfred Kernel: 5.10.150 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\bdwr203l60j43pqlb1a7g34l785dsnic-initrd-linux-5.10.150-initrd.efi 
+           init=/nix/store/4y4k66blhr2shy0l2pxp61yjfzz5fa53-nixos-system-wilfred-22.05.20221028.7269939/init 
            console=ttyS1,115200n8 console=tty1 default_hugepagesz=1GB hugepagesz=1GB hugepages=8 
            panic=1 boot.panic_on_fail loglevel=4 
            Console: N/A Distro: NixOS 22.05 (Quokka) 
@@ -11,7 +11,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100628 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50530 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002397 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 14.62 GiB (1.5%) 
+Memory:    RAM: total: 995.21 GiB used: 16.81 GiB (1.7%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -53,10 +53,10 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch:
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 960 KiB 
            L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 2774 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 2774 2: 1928 3: 1867 4: 1497 5: 2211 6: 1266 
-           7: 3154 8: 2741 9: 2289 10: 2702 11: 1466 12: 1487 13: 1364 14: 1760 15: 1767 16: 1886 
-           17: 2719 18: 3078 19: 2409 20: 2307 21: 1494 22: 1414 23: 3210 24: 2950 
+           Speed: 3044 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 3044 2: 3022 3: 1738 4: 1671 5: 2120 6: 2801 
+           7: 2415 8: 2931 9: 3013 10: 2677 11: 1679 12: 3174 13: 2659 14: 2508 15: 2947 16: 2685 
+           17: 1939 18: 3045 19: 1548 20: 2173 21: 2044 22: 1473 23: 2690 24: 1304 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -94,12 +94,9 @@ Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe 
            Device-4: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel port: 7000 
            bus-ID: 18:00.1 chip-ID: 8086:10fb class-ID: 0200 
            IF: enp24s0f1 state: down mac: 00:1b:21:c3:82:2e 
-           Device-5: Intel Ethernet E810-C for QSFP driver: ice v: kernel port: 7000 
+           Device-5: Intel Ethernet E810-C for QSFP driver: N/A modules: ice port: 7000 
            bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 
-           IF: enp81s0 state: up speed: 100000 Mbps duplex: full mac: b4:96:91:b3:8b:04 
-           IP v4: 192.168.1.103/24 type: dynamic scope: global 
-           IP v6: fe80::b696:91ff:feb3:8b04/64 scope: link 
-           IF-ID-1: docker0 state: down mac: 02:42:95:29:5a:93 
+           IF-ID-1: docker0 state: down mac: 02:42:fd:5f:4a:22 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:6dcc:65aa:4cb4:c1a9:9548/16 scope: global 
@@ -116,27 +113,29 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.41 TiB 
            allocated: 328 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 695.05 GiB (13.0%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 866.08 GiB (16.2%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
            temp: 28 C scheme: GPT 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 28 C 
+           temp: 27 C 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 326.2 GiB (19.0%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 326.03 GiB (19.0%) fs: zfs 
            logical: zroot/root/nixos 
            ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.3 MiB (7.8%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 896.45 GiB used: 368.77 GiB (41.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.17 GiB used: 368.79 GiB (41.2%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 49.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 45.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 379 Uptime: 1h 48m wakeups: 0 Init: systemd v: 250 target: multi-user.target 
-           tool: systemctl Compilers: gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 455 lib: 68 
-           nix-usr: 0 Client: Sudo v: 1.9.10 inxi: 3.3.04 
+Info:      Processes: 380 
+           Uptime: 10:26:07  up 1 day 10:22,  0 users,  load average: 0.10, 0.10, 0.09 wakeups: 0 
+           Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
+           Packages: nix-default: 0 nix-sys: 455 lib: 68 nix-usr: 0 Client: Sudo v: 1.9.10 
+           inxi: 3.3.04 
 ```
 ![hardware topology](wilfred.lstopo.svg)

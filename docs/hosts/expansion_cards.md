@@ -18,11 +18,12 @@ Parameters to consider for matching cards to slots:
     - 3x bought, on the way
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+    - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (Jackson-craig,) Cx0/1, vlan1
     - christina: dual port. (christina,christina)
     - adelaide: single port. (adelaide-craig) vlan1
-    - wilfred: single port. (wilfred-craig) Cx0/5, vlan2
-    - river: single port. (river-craig) Cx0/3, vlan2
+    - wilfred: single port. (wilfred-river)
+    - river: single port. (river-wilfred)
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,ryan-ryan)
@@ -133,8 +134,8 @@ No device/PCI ID.
 PCI Slots:   
 - ❌  Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: Long    
 c4:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01, Broadcom Inc. and subsidiaries, Device 4161  
-- ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: In Use length: Long    
+81:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
 - ❌  Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long    
 03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ❌  Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 4 status: In Use length: Long    

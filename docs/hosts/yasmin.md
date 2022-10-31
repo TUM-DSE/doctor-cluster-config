@@ -1,9 +1,9 @@
 # yasmin
 
 ```
-System:    Host: yasmin Kernel: 5.10.145 aarch64 bits: 64 compiler: gcc v: 9.3.0 
-           parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/ksaahqlpgwmnfx4zzjmdh0ypv5bikppa-linux-5.10.145-Image 
-           init=/nix/store/s783cs1ql8643c6s9lcmh6w2qpsy8z70-nixos-system-yasmin-22.05.20220926.8237988/init 
+System:    Host: yasmin Kernel: 5.10.150 aarch64 bits: 64 compiler: gcc v: 9.3.0 
+           parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/0bg061379i31ihg1iaql04ak6z2sl8bc-linux-5.10.150-Image 
+           init=/nix/store/s92az4nrl1p2ri0flnf48sd3hzhsd3a3-nixos-system-yasmin-22.05.20221028.7269939/init 
            console=ttyS0,115200n8 console=tty0 console=ttyS0,115200n8 console=ttyAMA0,115200n8 
            console=tty0 panic=1 boot.panic_on_fail loglevel=4 
            Console: N/A Distro: NixOS 22.05 (Quokka) 
@@ -11,7 +11,7 @@ Machine:   Type: Server System: GIGABYTE product: R181-T90-00 v: 0100 serial: GL
            Chassis: type: 23 v: 1.0 serial: 01234567890123456789AB 
            Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 UEFI: GIGABYTE v: F34 
            date: 08/13/2020 
-Memory:    RAM: total: 251.27 GiB used: 36.17 GiB (14.4%) 
+Memory:    RAM: total: 251.27 GiB used: 13.77 GiB (5.5%) 
            Array-1: capacity: 2 TiB slots: 12 EC: Multi-bit ECC max-module-size: 170.67 GiB 
            note: est. 
            Device-1: DIMM_P0_A0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -45,38 +45,34 @@ PCI Slots: Slot: 0 type: x16 PCI Express 3 OCP_1_x16 status: Available length: S
 CPU:       Info: 224-Core (2-Die) model: N/A bits: 64 type: MCP MCM arch: ARMv8 family: 8 
            model-id: 1 stepping: 2 
            features: Use -f option to see features bogomips: 89600 
-           Speed: 4294967 MHz min/max: 1000/2000 MHz base/boost: 2000/2500 boost: disabled 
-           volts: 0.8 V ext-clock: 33 MHz Core speeds (MHz): 1: 4294967 2: 4294967 3: 4294967 
-           4: 1510 5: 1200 6: 1000 7: 1140 8: 4294967 9: 4294967 10: 1010 11: 4294967 12: 1080 
-           13: 1040 14: 1040 15: 1000 16: 1000 17: 4294967 18: 4294967 19: 1120 20: 4294967 
-           21: 1040 22: 4294967 23: 4294967 24: 1100 25: 4294967 26: 1000 27: 4294967 28: 4294967 
-           29: 1820 30: 4294967 31: 4294967 32: 1350 33: 4294967 34: 1000 35: 1020 36: 1040 
-           37: 1020 38: 4294967 39: 1130 40: 1000 41: 1020 42: 1250 43: 4294967 44: 1020 
-           45: 4294967 46: 4294967 47: 4294967 48: 4294967 49: 4294967 50: 1120 51: 4294967 
-           52: 1040 53: 4294967 54: 4294967 55: 1100 56: 1000 57: 4294967 58: 1910 59: 4294967 
-           60: 1820 61: 4294967 62: 4294967 63: 1350 64: 4294967 65: 1000 66: 1020 67: 1020 
-           68: 4294967 69: 1510 70: 1130 71: 1000 72: 1020 73: 1250 74: 4294967 75: 1020 
-           76: 4294967 77: 4294967 78: 4294967 79: 4294967 80: 1200 81: 1120 82: 4294967 83: 1040 
-           84: 4294967 85: 4294967 86: 1100 87: 1000 88: 4294967 89: 4294967 90: 1820 91: 1000 
-           92: 4294967 93: 4294967 94: 1350 95: 4294967 96: 1000 97: 1020 98: 1020 99: 4294967 
-           100: 1130 101: 1000 102: 1140 103: 1020 104: 1250 105: 4294967 106: 1020 107: 4294967 
-           108: 4294967 109: 4294967 110: 4294967 111: 1120 112: 4294967 113: 4294967 114: 4294967 
-           115: 1040 116: 4294967 117: 4294967 118: 1100 119: 1000 120: 4294967 121: 4294967 
-           122: 1820 123: 4294967 124: 4294967 125: 4294967 126: 1350 127: 4294967 128: 1000 
-           129: 1020 130: 1020 131: 4294967 132: 1130 133: 1000 134: 1020 135: 1250 136: 1010 
-           137: 4294967 138: 1020 139: 4294967 140: 4294967 141: 4294967 142: 1080 143: 1040 
-           144: 1000 145: 1000 146: 4294967 147: 4294967 148: 4294967 149: 4294967 150: 4294967 
-           151: 4294967 152: 4294967 153: 4294967 154: 4294967 155: 1070 156: 4294967 157: 4294967 
-           158: 1040 159: 4294967 160: 4294967 161: 1040 162: 4294967 163: 1910 164: 1510 
-           165: 1200 166: 1000 167: 1140 168: 4294967 169: 4294967 170: 4294967 171: 1010 
-           172: 4294967 173: 2000 174: 1040 175: 1000 176: 1000 177: 4294967 178: 4294967 
-           179: 4294967 180: 4294967 181: 4294967 182: 4294967 183: 4294967 184: 4294967 
-           185: 4294967 186: 1070 187: 4294967 188: 4294967 189: 1040 190: 4294967 191: 1040 
-           192: 4294967 193: 4294967 194: 1910 195: 1510 196: 1200 197: 1000 198: 1140 
-           199: 4294967 200: 4294967 201: 1010 202: 4294967 203: 1070 204: 2000 205: 1040 
-           206: 1000 207: 1000 208: 4294967 209: 4294967 210: 4294967 211: 4294967 212: 4294967 
-           213: 4294967 214: 4294967 215: 4294967 216: 4294967 217: 1070 218: 4294967 219: 4294967 
-           220: 1040 221: 4294967 222: 1040 223: 4294967 224: 1910 
+           Speed: 1850 MHz min/max: 1000/2000 MHz base/boost: 2000/2500 boost: disabled 
+           volts: 0.8 V ext-clock: 33 MHz Core speeds (MHz): 1: 1140 2: 1040 3: 1000 4: 1330 
+           5: 1500 6: 1510 7: 1120 8: 1330 9: 1290 10: 1200 11: 1230 12: 1510 13: 1150 14: 1190 
+           15: 1190 16: 1480 17: 1280 18: 1000 19: 1240 20: 1200 21: 1280 22: 2000 23: 1000 
+           24: 1120 25: 1190 26: 1180 27: 1000 28: 1180 29: 1310 30: 1310 31: 1370 32: 1410 
+           33: 1330 34: 1120 35: 1210 36: 1370 37: 1340 38: 1340 39: 1000 40: 1350 41: 1040 
+           42: 1350 43: 1220 44: 1250 45: 1360 46: 1260 47: 1470 48: 1280 49: 1000 50: 1240 
+           51: 1200 52: 1280 53: 2000 54: 1000 55: 1120 56: 1180 57: 1000 58: 1200 59: 1180 
+           60: 1310 61: 1310 62: 1370 63: 1410 64: 1330 65: 1120 66: 1210 67: 1340 68: 1340 
+           69: 1330 70: 1000 71: 1350 72: 1040 73: 1350 74: 1220 75: 1250 76: 1360 77: 1260 
+           78: 1280 79: 1000 80: 1500 81: 1240 82: 1200 83: 1280 84: 2000 85: 1000 86: 1120 
+           87: 1180 88: 1000 89: 1180 90: 1310 91: 1510 92: 1310 93: 1370 94: 1410 95: 1330 
+           96: 1120 97: 1210 98: 1340 99: 1340 100: 1000 101: 1350 102: 1120 103: 1040 104: 1350 
+           105: 1220 106: 1250 107: 1360 108: 1260 109: 1280 110: 1000 111: 1240 112: 1200 
+           113: 1640 114: 1330 115: 1280 116: 2000 117: 1000 118: 1120 119: 1180 120: 1000 
+           121: 1180 122: 1310 123: 1310 124: 1370 125: 1290 126: 1410 127: 1330 128: 1120 
+           129: 1210 130: 1340 131: 1340 132: 1000 133: 1350 134: 1040 135: 1350 136: 1200 
+           137: 1220 138: 1250 139: 1360 140: 1260 141: 1230 142: 1510 143: 1150 144: 1190 
+           145: 1480 146: 1140 147: 1040 148: 1020 149: 1640 150: 1020 151: 1850 152: 1250 
+           153: 1490 154: 1000 155: 1000 156: 1430 157: 1000 158: 1190 159: 1850 160: 1190 
+           161: 1370 162: 1470 163: 1200 164: 1330 165: 1500 166: 1510 167: 1120 168: 1330 
+           169: 1290 170: 1250 171: 1200 172: 1230 173: 1510 174: 1150 175: 1190 176: 1480 
+           177: 1140 178: 1040 179: 1640 180: 1020 181: 1490 182: 1850 183: 1250 184: 1490 
+           185: 1000 186: 1000 187: 1430 188: 1000 189: 1190 190: 1190 191: 1370 192: 1000 
+           193: 1470 194: 1200 195: 1330 196: 1500 197: 1510 198: 1120 199: 1330 200: 1290 
+           201: 1200 202: 1230 203: 1000 204: 1510 205: 1150 206: 1190 207: 1480 208: 1140 
+           209: 1040 210: 1640 211: 1020 212: 1850 213: 1250 214: 1430 215: 1490 216: 1000 
+           217: 1000 218: 1430 219: 1000 220: 1190 221: 1190 222: 1370 223: 1470 224: 1200 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -93,7 +89,7 @@ Graphics:  Device-1: ASPEED Graphics Family driver: ast v: kernel bus-ID: 0e:00.
            Display: server: No display server data found. Headless machine? tty: N/A 
            Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
-           Sound Server-1: ALSA v: k5.10.145 running: yes 
+           Sound Server-1: ALSA v: k5.10.150 running: yes 
 Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede 
            v: 8.37.0.20 port: N/A bus-ID: 0b:00.0 chip-ID: 1077:8070 class-ID: 0200 
            IF: eno1 state: up speed: 10000 Mbps duplex: full mac: b4:2e:99:3f:74:7c 
@@ -111,43 +107,43 @@ Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigab
            IF: enp0s15f1u1u3c2 state: unknown speed: N/A duplex: N/A mac: 16:d4:72:2c:21:77 
            IP v4: 169.254.252.174/16 scope: link 
            IP v6: fe80::14d4:72ff:fe2c:2177/64 scope: link 
-           IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:ad:a4:d2:00 
+           IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:1b:a3:ec:79 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IP v6: fe80::42:adff:fea4:d200/64 scope: link 
+           IP v6: fe80::42:1bff:fea3:ec79/64 scope: link 
            IF-ID-2: eno2 state: down mac: b4:2e:99:3f:74:7d 
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
-           IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/12 scope: global 
-           IF-ID-4: veth91e39bd state: up speed: 10000 Mbps duplex: full mac: 56:c6:53:fd:f5:79 
+           IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global 
+           IF-ID-4: veth0d801e4 state: up speed: 10000 Mbps duplex: full mac: 1e:83:74:ca:52:a1 
            WAN IP: 131.159.102.7 
 RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 738 GiB 
            allocated: 150 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 1.78 TiB used: 898.48 GiB (49.2%) 
+Drives:    Local Storage: total: raw: 1.78 TiB usable: 2.65 TiB used: 859.98 GiB (31.7%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
-           rotation: SSD serial: S4EWNX0R514087T rev: 2B2QEXM7 temp: 28.9 C 
-           SMART: yes health: PASSED on: 68d 13h cycles: 5 read-units: 229 [117 MB] 
-           written-units: 562,568 [288 GB] 
+           rotation: SSD serial: S4EWNX0R514087T rev: 2B2QEXM7 temp: 27.9 C 
+           SMART: yes health: PASSED on: 68d 13h cycles: 5 read-units: 236 [120 MB] 
+           written-units: 562,569 [288 GB] 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
            sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNC0R216725 rev: 904Q temp: 21 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 89d 0h cycles: 20 read: 10.7 TiB 
-           written: 19.26 TiB 
-Partition: ID-1: / raw-size: N/A size: 778.18 GiB used: 68.38 GiB (8.8%) fs: zfs 
+           SMART: yes state: enabled health: PASSED on: 1y 91d 19h cycles: 20 read: 10.85 TiB 
+           written: 19.35 TiB 
+Partition: ID-1: / raw-size: N/A size: 775.35 GiB used: 65.72 GiB (8.5%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 194.4 MiB (38.9%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 194.5 MiB (38.9%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 896.45 GiB used: 368.77 GiB (41.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.17 GiB used: 368.79 GiB (41.2%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 709.81 GiB used: 512 KiB (0.0%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 709.62 GiB used: 512 KiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 36.0 C mobo: 34.3 C 
+           System Temperatures: lm-sensors cpu: 33.2 C mobo: 31.5 C 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 2377 
-           Uptime: 15:18:22  up 31 days  3:40,  0 users,  load average: 37.51, 36.54, 36.01 
+Info:      Processes: 2537 
+           Uptime: 10:26:17  up 1 day 10:09,  0 users,  load average: 9.79, 8.27, 7.72 
            Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 9.3.0 
            Packages: nix-default: 0 nix-sys: 446 lib: 66 nix-usr: 0 Client: Sudo v: 1.9.10 
            inxi: 3.3.04 

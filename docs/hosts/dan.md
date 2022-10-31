@@ -1,16 +1,16 @@
 # dan
 
 ```
-System:    Host: dan Kernel: 5.10.148 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\hbbfl9hq92qynvzlp4jll155c2daav4p-initrd-linux-5.10.148-initrd.efi 
-           init=/nix/store/s1g8qwipmdk439jhr03zn90119w5kwmx-nixos-system-dan-22.05.20221021.22b999f/init 
+System:    Host: dan Kernel: 5.10.150 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\4c7sja1aza9nv2xql1cqymdr1p6d3hh2-initrd-linux-5.10.150-initrd.efi 
+           init=/nix/store/i2gv2x9kb5j1im5lwn9g3d9dvdh3vw6v-nixos-system-dan-22.05.20221028.7269939/init 
            console=ttyS0,115200n8 console=tty0 panic=1 boot.panic_on_fail loglevel=4 
            Console: N/A Distro: NixOS 22.05 (Quokka) 
 Machine:   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 4YBVXK3 Chassis: 
            type: 23 serial: 4YBVXK3 
            Mobo: Dell model: 04JN2K v: A09 serial: .4YBVXK3.CNFCP001B3004W. UEFI: Dell v: 2.12.2 
            date: 07/09/2021 
-Memory:    RAM: total: 125.53 GiB used: 6.25 GiB (5.0%) 
+Memory:    RAM: total: 125.53 GiB used: 8.54 GiB (6.8%) 
            Array-1: capacity: 1024 GiB slots: 16 EC: Multi-bit ECC max-module-size: 64 GiB 
            note: est. 
            Device-1: A1 size: 32 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -51,13 +51,13 @@ PCI Slots: Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length:
 CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 socket: LGA2011 bits: 64 type: MT MCP SMP 
            arch: Cascade Lake family: 6 model-id: 55 (85) stepping: 7 microcode: 5003302 cache: 
            L2: 27.5 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200120 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200130 
            Speed: 1000 MHz min/max: N/A base/boost: 2500/4000 volts: 1.8 V ext-clock: 10400 MHz 
-           Core speeds (MHz): 1: 1000 2: 1000 3: 1001 4: 1000 5: 1000 6: 1000 7: 1001 8: 1001 
-           9: 1000 10: 1000 11: 1000 12: 1000 13: 1000 14: 1000 15: 1000 16: 1000 17: 1001 
-           18: 1000 19: 1000 20: 1000 21: 1001 22: 1001 23: 1000 24: 1000 25: 1000 26: 1001 
-           27: 1000 28: 1000 29: 1000 30: 1000 31: 1001 32: 1001 33: 1001 34: 1000 35: 1000 
-           36: 1000 37: 1001 38: 1001 39: 1001 40: 1001 
+           Core speeds (MHz): 1: 1000 2: 1001 3: 1000 4: 1000 5: 1000 6: 1000 7: 1000 8: 1000 
+           9: 1000 10: 1000 11: 1000 12: 1000 13: 1001 14: 1000 15: 1000 16: 1001 17: 1001 
+           18: 1000 19: 1000 20: 1000 21: 1001 22: 1000 23: 1000 24: 1000 25: 1001 26: 1000 
+           27: 1000 28: 1000 29: 1000 30: 1000 31: 1000 32: 1000 33: 1000 34: 1001 35: 1000 
+           36: 1000 37: 1000 38: 1000 39: 1000 40: 1000 
            Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -91,39 +91,41 @@ Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: De
            Device-4: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell 
            driver: bnxt_en v: kernel port: 2000 bus-ID: 5e:00.1 chip-ID: 14e4:16d8 class-ID: 0200 
            IF: enp94s0f1np1 state: down mac: f4:ee:08:0a:ea:36 
-           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: 92:44:0e:1f:1a:69 
+           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: b6:d8:86:46:cb:6a 
            IP v4: 10.42.3.1/24 scope: global broadcast: 10.42.3.255 
-           IP v6: fe80::9044:eff:fe1f:1a69/64 scope: link 
-           IF-ID-2: docker0 state: down mac: 02:42:45:25:5d:6e 
+           IP v6: fe80::b4d8:86ff:fe46:cb6a/64 scope: link 
+           IF-ID-2: docker0 state: down mac: 02:42:79:d8:ba:aa 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:550c:ec4f:2dbb:3b14:95/16 scope: global 
-           IF-ID-4: veth086b0639 state: up speed: 10000 Mbps duplex: full mac: ba:e1:c7:9b:da:95 
-           IF-ID-5: vethe5d09702 state: up speed: 10000 Mbps duplex: full mac: 06:db:76:02:54:3a 
+           IF-ID-4: veth8dfc3c5f state: up speed: 10000 Mbps duplex: full mac: aa:75:89:c3:01:ff 
+           IF-ID-5: vethee7f5634 state: up speed: 10000 Mbps duplex: full mac: ee:1d:0b:c6:13:cf 
            WAN IP: 131.159.102.12 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas 
            v: 07.714.04.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.43 TiB 
-           allocated: 26.2 GiB 
+           allocated: 26 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 388.75 GiB (13.1%) 
+Drives:    Local Storage: total: raw: 1.46 TiB usable: 2.91 TiB used: 559.78 GiB (18.8%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
            rotation: SSD serial: PHAB1234003F1P9SGN rev: 1.1.5 temp: 25.9 C scheme: GPT 
-           SMART: yes health: PASSED on: 277d 2h cycles: 16 read-units: 2,364,101 [1.21 TB] 
-           written-units: 20,826,702 [10.6 TB] 
-Partition: ID-1: / raw-size: N/A size: 1.4 TiB used: 15.76 GiB (1.1%) fs: zfs 
+           SMART: yes health: PASSED on: 279d 21h cycles: 16 read-units: 2,425,137 [1.24 TB] 
+           written-units: 20,981,425 [10.7 TB] 
+Partition: ID-1: / raw-size: N/A size: 1.4 TiB used: 15.59 GiB (1.1%) fs: zfs 
            logical: zroot/root/nixos 
            ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.5 MiB (7.8%) fs: vfat 
            block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1 
-           ID-3: /home raw-size: N/A size: 896.45 GiB used: 368.77 GiB (41.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.17 GiB used: 368.79 GiB (41.2%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 82.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 83.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 575 Uptime: 5h 27m wakeups: 0 Init: systemd v: 250 target: multi-user.target 
-           tool: systemctl Compilers: gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 468 lib: 71 
-           nix-usr: 0 Client: Sudo v: 1.9.10 inxi: 3.3.04 
+Info:      Processes: 568 
+           Uptime: 10:26:08  up 1 day 10:11,  0 users,  load average: 0.12, 0.20, 0.15 wakeups: 0 
+           Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
+           Packages: nix-default: 0 nix-sys: 468 lib: 71 nix-usr: 0 Client: Sudo v: 1.9.10 
+           inxi: 3.3.04 
 ```
 ![hardware topology](dan.lstopo.svg)

@@ -1,9 +1,9 @@
 # jack
 
 ```
-System:    Host: jack Kernel: 5.10.148 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\17injiv124rlirnnabgfc63x6kj5w3dv-initrd-linux-5.10.148-initrd.efi 
-           init=/nix/store/5fm21nnmw3vg437yixja4blzmsb6mrq7-nixos-system-jack-22.05.20221021.22b999f/init 
+System:    Host: jack Kernel: 5.10.150 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\3a351sr4n7k842y7mwcrkwm2y7qxd2w4-initrd-linux-5.10.150-initrd.efi 
+           init=/nix/store/iyj1gw0pdk5fp75hjdic7d5rm5364k7i-nixos-system-jack-22.05.20221028.7269939/init 
            console=ttyS1,115200n8 console=tty1 default_hugepagesz=2MB hugepagesz=2MB 
            hugepages=1000 panic=1 boot.panic_on_fail loglevel=4 
            Console: N/A Distro: NixOS 22.05 (Quokka) 
@@ -11,7 +11,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-120U-TNR v: 0123456789
            serial: E411764X2300334 Chassis: type: 1 v: 0123456789 serial: C119UAK12P20190 
            Mobo: Supermicro model: X12DPU-6 v: 1.02A serial: HM218S018239 
            UEFI: American Megatrends LLC. v: 1.2 date: 02/15/2022 
-Memory:    RAM: total: 125.52 GiB used: 43.58 GiB (34.7%) 
+Memory:    RAM: total: 125.52 GiB used: 31.76 GiB (25.3%) 
            Array-1: capacity: 12 TiB slots: 32 EC: Single-bit ECC max-module-size: 384 GiB 
            note: est. 
            Device-1: P1-DIMMA1 size: 256 GiB speed: 3200 MT/s type: Logical non-volatile device 
@@ -90,16 +90,16 @@ PCI Slots: Slot: N/A type: x16 <OUT OF SPEC> RSC-W-66G4 SLOT1 PCI-E 4.0 X16 stat
 CPU:       Info: 2x 16-Core model: Intel Xeon Gold 6326 bits: 64 type: MT MCP SMP arch: Ice Lake 
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 5 MiB L2: 48 MiB 
            L3: 96 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 371944 
-           Speed: 3061 MHz min/max: 800/2901 MHz base/boost: 2900/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 3061 2: 2138 3: 1138 4: 2583 5: 1702 6: 1691 
-           7: 1179 8: 1343 9: 801 10: 1500 11: 1884 12: 1833 13: 1686 14: 2463 15: 1282 16: 1861 
-           17: 2904 18: 2754 19: 1527 20: 1864 21: 2488 22: 1817 23: 1773 24: 1848 25: 2419 
-           26: 1970 27: 1336 28: 1415 29: 2259 30: 1897 31: 2003 32: 1895 33: 1049 34: 1541 
-           35: 1871 36: 1294 37: 2946 38: 1911 39: 3161 40: 1092 41: 1145 42: 1545 43: 2252 
-           44: 1849 45: 1654 46: 3265 47: 1858 48: 1980 49: 948 50: 2452 51: 1900 52: 1805 
-           53: 1088 54: 2469 55: 1874 56: 2408 57: 2138 58: 1997 59: 1880 60: 1064 61: 1906 
-           62: 1207 63: 2525 64: 1825 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 372230 
+           Speed: 2766 MHz min/max: 800/2901 MHz base/boost: 2900/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 2766 2: 3242 3: 3223 4: 3215 5: 3130 6: 3004 
+           7: 2985 8: 3073 9: 3020 10: 3075 11: 3074 12: 3104 13: 3228 14: 2952 15: 3036 16: 2712 
+           17: 3227 18: 3206 19: 3206 20: 3043 21: 3071 22: 3332 23: 2946 24: 3205 25: 3056 
+           26: 2860 27: 3124 28: 3100 29: 3110 30: 3124 31: 3148 32: 3208 33: 3214 34: 2942 
+           35: 3224 36: 3247 37: 3234 38: 3232 39: 3245 40: 3009 41: 3216 42: 2800 43: 3092 
+           44: 2981 45: 3024 46: 3100 47: 2933 48: 2851 49: 2930 50: 3050 51: 3024 52: 3049 
+           53: 3188 54: 3138 55: 2936 56: 3082 57: 3012 58: 3096 59: 3024 60: 3158 61: 3034 
+           62: 2959 63: 3208 64: 3213 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -137,44 +137,44 @@ Network:   Device-1: Intel Ethernet X710 for 10GBASE-T vendor: Super Micro drive
            v: kernel port: 3000 bus-ID: 19:00.3 chip-ID: 8086:104e class-ID: 0200 
            IF: enp25s0f3 state: down mac: 3c:ec:ef:fb:5c:7b 
            IF-ID-1: br-e4440d730bbd state: up speed: 10000 Mbps duplex: unknown 
-           mac: 02:42:b8:a7:fb:59 
+           mac: 02:42:b5:a0:59:62 
            IP v4: 172.20.0.1/16 scope: global broadcast: 172.20.255.255 
-           IP v6: fe80::42:b8ff:fea7:fb59/64 scope: link 
-           IF-ID-2: docker0 state: down mac: 02:42:9b:06:61:f9 
+           IP v6: fe80::42:b5ff:fea0:5962/64 scope: link 
+           IF-ID-2: docker0 state: down mac: 02:42:b4:5c:5f:99 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IP v6: fe80::42:9bff:fe06:61f9/64 scope: link 
+           IP v6: fe80::42:b4ff:fe5c:5f99/64 scope: link 
            IF-ID-3: enp0s20f0u7u2c2 state: unknown speed: N/A duplex: N/A mac: c6:59:d7:99:80:1e 
            IP v4: 169.254.3.1/24 type: dynamic scope: global 
            IP v6: fe80::c459:d7ff:fe99:801e/64 scope: link 
            IF-ID-4: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:43ea:3161:1159:e7e6:ff78/16 scope: global 
-           IF-ID-5: veth48cb04f state: up speed: 10000 Mbps duplex: full mac: 4a:84:c8:ab:4c:c7 
+           IF-ID-5: veth98cf650 state: up speed: 10000 Mbps duplex: full mac: f6:a7:66:b4:1a:5b 
            WAN IP: 131.159.102.17 
 Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v: kernel 
            bus-ID: 1-7.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 767 GiB 
-           allocated: 121 GiB 
+RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 768 GiB 
+           allocated: 120 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 894.25 GiB usable: 1.74 TiB used: 710.02 GiB (39.8%) 
+Drives:    Local Storage: total: raw: 894.25 GiB usable: 1.74 TiB used: 709.94 GiB (39.8%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Intel model: SSDSC2KB960G8 
            family: S4510/S4610/S4500/S4600 Series SSDs size: 894.25 GiB block-size: 
            physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s rotation: SSD 
            serial: PHYF152302UG960CGN rev: 0132 temp: 17 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 171d 18h cycles: 24 read: 1.93 TiB 
-           written: 5.89 TiB 
-Partition: ID-1: / raw-size: N/A size: 837.81 GiB used: 98.1 GiB (11.7%) fs: zfs 
+           SMART: yes state: enabled health: PASSED on: 174d 13h cycles: 24 read: 2.06 TiB 
+           written: 6.02 TiB 
+Partition: ID-1: / raw-size: N/A size: 838.91 GiB used: 98.01 GiB (11.7%) fs: zfs 
            logical: zroot/root/nixos 
            ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.2 MiB (7.7%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 896.45 GiB used: 368.77 GiB (41.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 896.17 GiB used: 368.79 GiB (41.2%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 58.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 59.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 843 
-           Uptime: 15:18:11  up 3 days  1:49,  0 users,  load average: 0.00, 0.01, 0.00 wakeups: 0 
+Info:      Processes: 818 
+           Uptime: 10:26:07  up 1 day 10:16,  0 users,  load average: 0.08, 0.02, 0.01 wakeups: 0 
            Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
            Packages: nix-default: 0 nix-sys: 518 lib: 97 nix-usr: 0 Client: Sudo v: 1.9.10 
            inxi: 3.3.04 
