@@ -94,6 +94,23 @@ minutes using zfs replication based on
 In case there are hardware problems with `nardole`, `bill` can take over serving
 the nfs.
 
+## Adding non-nixos hosts to NFS.
+
+Our nfs servers allows connections from the `2a09:80c0:102::/64` network.
+
+Add the following line to `/etc/hosts`:
+
+```
+2a09:80c0:102::f000:0 nfs
+```
+
+And the following lines to `/etc/fstab` to mount a shared `/home` and `/share`
+
+```
+nfs:/export/home /home nfs4 nofail,timeo=14 0 2
+nfs:/export/share /share nfs4 nofail,timeo=14 0 2
+```
+
 # Backups and snapshots
 
 ZFS is used on all machines whenever possible. We enable automatic snapshots of
