@@ -27,11 +27,6 @@
     fsType = "vfat";
   };
 
-  fileSystems."/old-home" = {
-    device = "zroot/root/home";
-    fsType = "zfs";
-  };
-
   fileSystems."/scratch2" = {
     device = "/dev/disk/by-uuid/d45731c3-7b21-41e9-8ef1-a072255a5d2d";
     fsType = "ext4";
