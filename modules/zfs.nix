@@ -1,10 +1,11 @@
-{...}: {
+{lib, pkgs, ...}: {
   services.zfs = {
     autoSnapshot.enable = true;
     autoSnapshot.monthly = 1;
     autoScrub.enable = true;
   };
   networking.hostId = "8425e348";
+  boot.kernelPackages = lib.mkDefault pkgs.zfs.latestCompatibleLinuxPackages;
 
   # ZFS already has its own scheduler. Without this my(@Artturin) computer froze for a second when i nix build something.
   services.udev.extraRules = ''
