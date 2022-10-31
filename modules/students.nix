@@ -65,6 +65,14 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfkMY+WghQqHDM+GmJa/oaH7zQiHHYsZ3cLZtexZDIJn/Vlkj3zEvaLhTL7IpQ7PFiwPdIMeO17csvIqTzqaaoqXkFDD+YZKGlFhPoj14yrHxAOuXuaw0Fxg+RhfW0VyHKQ56ZvBvgRm5IcosTtdjl9jYrUjAQP61KJQXxTWYXH0V4Vhg3CbAf9rs2oevDtYp3AMrWkU3vpvzEamCyn4C9c/TvGORYUlWsqfbT1Y6hEmsZZnpIVNTsD6VVGVAf9TzDM/rb4vozui5A6YWG/JRv2Q/fW49WAOQGOWFD32v3bVhsagE9kG7bIayYCw2Xjalgj6qKJLmK1ZdUHj4ui+StGY+Y/LlAyLgcVmiL51UaXPcMCcZBA5LZFbtBEA2Z4B0sqe0063Hur367f07VhW3vkE6ch983j8rJQPemerciEYCqtMH9lGtk+yNMOAmCD7Je0D/dvYhPUxVaBtJqU4ZnpnZvRXHUasKjYQQ7Jaltw/YMkoXT9ml73sMA90apQSM= wb1@WB1"
   ];
 
+  justusvonderbeekKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZ1fwee0DxjsLZwHQ+sOY40LKaqW3PCRVo0B4QJiRbd9Ka4fHNpuzTyBLup7pylHNg5Ne3iPDLsXEdDJ8Swxvo5vHymVlt62e8QwZ+w+356WxWh3IULre3RaHV+xPcUTGkNNsc5njpoYD+HO+3tFpA8l0iNmAnlY1JsnvheOAEJZjLrL5fOJ7lYB5MKBJXvEdx8bIiMT0nc2lm2BVJ6oAgr50xZcO6dnsirrkibrrF2ybVAs8aZzFA8eysNZR5AEkFvUntb6ofVjpxc/kEd+kR04ZmZ0gzn034XIQltj6rx4ZjKmcyUCngYEKBs/VY7ab6YF1gEAt5f45KeEQXGjxGx0WOyBVho12Qy2tKErIxPsC0Kiar8mws/YzfyHs6e1mLu71CHL+hlqHus2aWB+zYJAq5CTr2Dfac2TZsbRd5MoX6wDnvwkNHXi0YIeWE21zHUSiT0T1GzqPHFciODXnw3xRnjHRXJNm08XNg55L7c57HhR53r9IbkCmnDaF9/30= ifrit@Athirat"
+  ];
+
+  rohanfernandezKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxbfLSRqS1IZ+O0StdQsGicjg80g8+yl/FuOBtiQg/szup7zdh2LSXjYFHyrigPgoEG0Pxy2nPoH2JBdZnUcbNiNBymxE0nvfrHbx0In9L13qay2hNCkhglb7ct+ixFaJA1kI0mOAI1jDhMF4Vt9iVPEVFwlN3Do4L7/vua6qANuZRWQL2o100YP3hL55FtesD48A9wYP1WppW6FeHH2t3X28vJ07U6VAr1C/A5a9CrmjMEn4aT9ehwpZKB3cxLEyApy4c6DZ/UOCfkeSSC2ynVxXRg7TjihTizVyx8ao7CLo6axdK67a3WGj77TTp1HiAlqIfzjOWNEcOOgaIS4bV rohan@rohanpc"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -203,6 +211,29 @@ in {
       allowedHosts = ["ryan"];
       openssh.authorizedKeys.keys = wonbangseoKeys;
     };
+
+    # Justus von der Beek, Sys-lab WS22 (Atsushi's group)
+    justusvonderbeek = {
+      isNormalUser = true;
+      home = "/home/justus";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2010;
+      allowedHosts = ["ryan"];
+      openssh.authorizedKeys.keys = justusvonderbeekKeys;
+    };
+
+    # Rohan Fernandez, Sys-lab WS22 (Atsushi's group)
+    rohanfernandez = {
+      isNormalUser = true;
+      home = "/home/rohan";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2011;
+      allowedHosts = ["ryan"];
+      openssh.authorizedKeys.keys = rohanfernandezKeys;
+    };
+
   };
 
   # DANGER ZONE!
