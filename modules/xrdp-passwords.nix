@@ -1,7 +1,8 @@
 { config, lib, ... }:
 {
   # Instructions to add a new password:
-  # Run: inv generate-password --user <USER>
+  # Run:
+  # $ inv generate-password --user <USER>
   # Send the password in `<USER>-password` to the student
   # and store <USER>-password-hash in `./hosts/ryan.yml` by doing:
   # $ sops ./hosts/ryan.yml
