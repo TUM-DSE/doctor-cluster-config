@@ -11,6 +11,8 @@
     ../modules/dpdk.nix
     # disable home because ryan is used for teaching this semester.
     #../modules/nfs/client.nix
+    ../modules/nfs
+    ../modules/xilinx.nix
   ];
 
   boot.hugepages.size = "1GB";
@@ -32,12 +34,14 @@
   # -  d0:8e:79:ba:1a:22
   system.stateVersion = "21.05";
 
-  # Don't manage tap devices with systemd-networkd
-  systemd.network.networks."06-peter".extraConfig = ''
-    [Match]
-    Name = enp129s0f?
-
-    [Link]
-    Unmanaged = yes
-  '';
+  # manually added to load xilinx from
+  fileSystems."/share" = {
+    device = "nfs:/export/share";
+    fsType = "nfs4";
+    options = [
+      "nofail"
+      "ro"
+      "timeo=14"
+    ];
+  };
 }

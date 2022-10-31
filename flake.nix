@@ -54,6 +54,7 @@
         imports = [
           ./configurations.nix
           ./modules/monitoring/flake-module.nix
+          ./pkgs/flake-module.nix
           ./templates
         ];
         perSystem = {system, self', inputs', pkgs, ...}: {
