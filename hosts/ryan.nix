@@ -8,9 +8,9 @@
     ../modules/xilinx.nix
     ../modules/xrdp.nix
     ../modules/hardware/poweredge7515.nix
-    ../modules/nfs/client.nix
     ../modules/dpdk.nix
-    ../modules/buildbot/worker.nix
+    # disable home because ryan is used for teaching this semester.
+    #../modules/nfs/client.nix
   ];
 
   boot.hugepages.size = "1GB";

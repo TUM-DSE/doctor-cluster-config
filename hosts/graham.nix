@@ -9,6 +9,7 @@
     ../modules/xrdp.nix
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
+    ../modules/buildbot/worker.nix
   ];
 
   networking.hostName = "graham";
