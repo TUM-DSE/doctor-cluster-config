@@ -8,13 +8,14 @@
     nur
     flake-registry
     nixos-hardware
-    nix-ld
+    envfs
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
 
   commonModules = [
     {_module.args.inputs = self.inputs;}
     {_module.args.self = self;}
+    envfs.nixosModules.envfs
     ./modules/packages.nix
     ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
@@ -24,10 +25,10 @@
     ./modules/users.nix
     ./modules/hosts.nix
     ./modules/network.nix
+    ./modules/nix-ld.nix
     ./modules/mosh.nix
     ./modules/promtail.nix
     ./modules/zsh.nix
-    ./modules/binbash.nix
     ./modules/systemd.nix
     ./modules/cleanup-usr.nix
     ./modules/qemu-bridge.nix
@@ -114,7 +115,6 @@ in {
         computeNodeModules
         ++ [
           ./hosts/graham.nix
-          nix-ld.nixosModules.nix-ld
           nixos-hardware.nixosModules.dell-poweredge-r7515
         ];
     };

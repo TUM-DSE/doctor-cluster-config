@@ -33,12 +33,14 @@
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
 
-    nix-ld.url = "github:Mic92/nix-ld";
-    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
-
     deploykit.url = "github:numtide/deploykit";
     deploykit.inputs.nixpkgs.follows = "nixpkgs";
     deploykit.inputs.flake-parts.follows = "flake-parts";
+
+    flake-utils.url = "github:numtide/flake-utils";
+    envfs.url = "github:Mic92/envfs";
+    envfs.inputs.nixpkgs.follows = "nixpkgs";
+    envfs.inputs.utils.follows = "flake-utils";
   };
 
   outputs = {
