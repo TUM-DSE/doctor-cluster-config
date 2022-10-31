@@ -118,16 +118,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1666940097,
-        "narHash": "sha256-spcDvKqQU9iSMAjh5uj9gfu8Gu7vIFFkOKH2CCWvOVY=",
-        "owner": "NixOS",
+        "lastModified": 1667220348,
+        "narHash": "sha256-IVZYS9hbkbPk/O6Uxi2ia9Doe4cLiiXSJvkKeQ/d464=",
+        "owner": "TUM-DSE",
         "repo": "nixpkgs",
-        "rev": "7269939a5d5610f2eec933607dc4d646394b29b8",
+        "rev": "214d7a4d090c95b985dac2e9b6960ddb7808baa0",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "release-22.05",
+        "owner": "TUM-DSE",
+        "ref": "release-22.05-backports",
         "repo": "nixpkgs",
         "type": "github"
       }
