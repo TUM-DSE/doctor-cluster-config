@@ -139,6 +139,9 @@ Our chair currently has three networks:
   - 6x 100Gbit/s QSFP
   - many 10Gbit/s SFP+
   - ip: to be configured
+  - vlan example config (layer2->static vlan config)
+    - vlan id: 1; untagged ports: Fx0/1-48,Cx0/1-2,Cx0/4; forbidden ports: Cx0/3,Cx0/5;
+    - vlan id: 2; vlan name: vlan2; untagged ports: Cx0/3,Cx0/5; forbidden ports: Fx0/1-48,Cx0/1-2,Cx0/4;
 
 To add a new machine send the MAC address of your host interface and your IPMI/management interface to `ls1.admin@in.tum.de`.
 If the RGB group asks which networks to connect your machine to, tell them `il01_16` for the machine and `il01_15` for IPMI/BMC.
