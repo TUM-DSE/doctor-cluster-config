@@ -72,15 +72,6 @@
   rohanfernandezKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxbfLSRqS1IZ+O0StdQsGicjg80g8+yl/FuOBtiQg/szup7zdh2LSXjYFHyrigPgoEG0Pxy2nPoH2JBdZnUcbNiNBymxE0nvfrHbx0In9L13qay2hNCkhglb7ct+ixFaJA1kI0mOAI1jDhMF4Vt9iVPEVFwlN3Do4L7/vua6qANuZRWQL2o100YP3hL55FtesD48A9wYP1WppW6FeHH2t3X28vJ07U6VAr1C/A5a9CrmjMEn4aT9ehwpZKB3cxLEyApy4c6DZ/UOCfkeSSC2ynVxXRg7TjihTizVyx8ao7CLo6axdK67a3WGj77TTp1HiAlqIfzjOWNEcOOgaIS4bV rohan@rohanpc"
   ];
-  
-  alexandermaslewKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+MkgMHv3xj3XbUNqJELn+XZldVZkbGuhvO6kRRGLxJYJ5W+te3rPxlmOQuSQfR+05HNVufjS8ECt7d+DZGtNDViHl/AoY+0DDhMypqyM1KOsaWHwVBH2+wrLvHrT42Z7EmUShQN1HJXYWZ3wF7qTgvt4DxjTLD2UKZti+tKvXGHx+xtfGIBncei4rgU/jia2p9yrExXeoa+KBs0bdGCdfA3ZYsDaYTrcD0adQibp3sf3iu+q7Hq33+91up5uAKDyG2wCDpkSug/Vr4uzkn9v7glQGaJHqOcDDVi92qIoa4yev4b7K7H9f8ryi98YRpo2kJj+W/GC2lnUEf9IVbClWcgwYmmMzG+1Xw8a4BFhL7Hng2cgTMUiOGKJCUo5a18cdWJVkOyipETGehR/g3RrtVIdBmbz/AK37ey91f1MEbp5+fbs/m6DXBVeM4FIkV0Tp3JjXjQKCaO/AHLewUCbmDXZg5CSkBjLkiiGdcSFz7QDXqi2ZRku7PatKXahMb1U= alexander@alexanderpc"
-  ];
-
-  zixuanliKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTmd2gn+3gkDc6kSJIO80Ud9FZlC8tMDtvKQx/KNmsPPk9pPtD0Dlgkvbus1pqSD4ijDGefm7sqr6LzAuD1160sADMI7+1iIRDiamrJo2NXCv1UYxihR16WPnM+2Kn0SCOx+mzclAJGaLMEik1+ASaCnaWVr/EovksDiUP/Ii+q863O9wBQ5VULKbOtbQXr7X4V4McBXPW7GT8n2dybbRdt1t3NPDCxxtDidD5D17mN63NS2cVLKnKp7TV5bH9OLe2DAzeQTs5B1vIdkiIpA7nVWGx+km560DrWvU5L68UJirI9vS6vHwhta6C5EONHusgaDZpM5CiIDhyDmIcEaa/dz7u3lnzpbZhq01OpPM+/lsDhSyJh5LxNTHWZAAQrEudgi0iJ9zdUjRdo7MyrpgsiTFoyFN5CVnq0Q5ZqWiREHfr5SKZxz6DpHMvoHgpn6TX206dzMeqquRgNz0mpInPEMKjIfVbh6EHz+1VJj1pjqWX7YFAxm3JsstaVyY6HrU= zixli@Zixuans-MBP.fritz.box"
-  ];
-  
 
 in {
   # for new students please use a uid in the range between 2000-3000
@@ -241,28 +232,6 @@ in {
       uid = 2011;
       allowedHosts = ["ryan"];
       openssh.authorizedKeys.keys = rohanfernandezKeys;
-    };
-
-    # Alexander Maslew, Sys-lab WS22 (Atsushi's group)
-    alexandermaslew = {
-      isNormalUser = true;
-      home = "/home/alexander";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2012;
-      allowedHosts = ["ryan"];
-      openssh.authorizedKeys.keys = alexandermaslewKeys;
-    };
-
-    # Zixuan Li, Sys-lab WS22 (Atsushi's group)
-    zixuanli = {
-      isNormalUser = true;
-      home = "/home/zixuan";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2013;
-      allowedHosts = ["ryan"];
-      openssh.authorizedKeys.keys = zixuanliKeys;
     };
 
   };
