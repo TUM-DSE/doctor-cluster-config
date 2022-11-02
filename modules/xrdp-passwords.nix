@@ -25,7 +25,7 @@
 
     # add all users here that should have xrdp access.
     users.xrdpUsers = [
-      "yihe"
+      "yihe" # TODO comment needed. He is not part of sys-lab
       "joerg"
     ];
   };

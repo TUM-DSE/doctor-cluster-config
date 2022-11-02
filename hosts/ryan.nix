@@ -45,4 +45,6 @@
       "timeo=14"
     ];
   };
+
+  users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" ];
 }
