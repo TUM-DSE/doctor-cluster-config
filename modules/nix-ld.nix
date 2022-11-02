@@ -58,6 +58,8 @@
             xorg.libXft
             xorg.libxcb
             zlib
+            (lib.lowPrio ncurses5) # xgdb from xilinx vitis
+            ncurses
           ];
 
           ignoreCollisions = true;
