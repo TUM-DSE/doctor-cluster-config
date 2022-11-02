@@ -267,6 +267,16 @@ in {
       allowedHosts = ["ryan"];
       openssh.authorizedKeys.keys = zixuanliKeys;
     };
+
+    # Jonas Zöschg, Harsha's student (End-to-end on-chip encryption)
+    jonas = {
+      isNormalUser = true;
+      home = "/home/jonas";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2014;
+      openssh.authorizedKeys.keys = jonasKeys;
+    };
   };
 
   # DANGER ZONE!
