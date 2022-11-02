@@ -48,6 +48,6 @@ buildFHSUserEnv {
     ];
   multiPkgs = null;
   profile = ''
-    source /opt/xilinx/Vitis/*/settings64.sh
+    source /share/xilinx/Vitis/2021.2/settings64.sh
   '';
 }
