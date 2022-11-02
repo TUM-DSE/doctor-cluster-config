@@ -81,6 +81,10 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTmd2gn+3gkDc6kSJIO80Ud9FZlC8tMDtvKQx/KNmsPPk9pPtD0Dlgkvbus1pqSD4ijDGefm7sqr6LzAuD1160sADMI7+1iIRDiamrJo2NXCv1UYxihR16WPnM+2Kn0SCOx+mzclAJGaLMEik1+ASaCnaWVr/EovksDiUP/Ii+q863O9wBQ5VULKbOtbQXr7X4V4McBXPW7GT8n2dybbRdt1t3NPDCxxtDidD5D17mN63NS2cVLKnKp7TV5bH9OLe2DAzeQTs5B1vIdkiIpA7nVWGx+km560DrWvU5L68UJirI9vS6vHwhta6C5EONHusgaDZpM5CiIDhyDmIcEaa/dz7u3lnzpbZhq01OpPM+/lsDhSyJh5LxNTHWZAAQrEudgi0iJ9zdUjRdo7MyrpgsiTFoyFN5CVnq0Q5ZqWiREHfr5SKZxz6DpHMvoHgpn6TX206dzMeqquRgNz0mpInPEMKjIfVbh6EHz+1VJj1pjqWX7YFAxm3JsstaVyY6HrU= zixli@Zixuans-MBP.fritz.box"
   ];
 
+  jonasKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCklke4DPtQ3FaOyEF7bFncskfGayXfTOoP5LRbwP0L+J33h5iZGWrP8ejL2NpAgt/TAbt6G6e/hAkraShcW8XaiN3woPyhY9fuKLjf8JGQGFX6Vh33KHDWxa/v70pyai8iWS6XgTzcdymcQLypRSDgpAlEYmG8tc4sHFKsQX+e/2a5PHG19+6MgPcn1ipYyj/I3EV3WlHcf7TZvANBtW7pNQJUeZ4zMibvl2kHrzJJyLQhowBJqLp8D9z/MTmyPbQYzUTE+4DFDiV2O2enax8lgTsiuP4HDfmIzv4qXxbZZoxiLhw4N+OiVSRbUkC5nWBW7e9k6gIpT0QR5+JAXPD6E4wzKq7pviAASj/hirRgSz64GBjHZMGbmXCOXvsV3pEF1dfibHBA9dnNHkSNcfpKqcvsOSJwSjq+CfEwyAUwPOgM1bn49ozpdGMMstYbn+u25NfMLdfPVb2Ney42WeG7uncVGDDccp4V8AmSIPi1sNs6P7kwAmZpH6+w83wvG10= jonas@pop-os"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
