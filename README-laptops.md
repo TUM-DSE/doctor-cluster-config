@@ -4,7 +4,7 @@
 
 | Name | Items   |
 | :---:   | :---: |
-| Redha Gouicem | xxx |
+| Redha Gouicem | Lenovo ThinkPad X13 (laptop), Lenovo ThinkVision P27u-20 (monitor) |
 | Martin Kleppmann  | xxx |
 | Atsushi Koshiba  | xxx |
 | Masanori Misono | xxx |
