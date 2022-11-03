@@ -18,7 +18,7 @@
 | Sebastian Reimers | xxx |
 | Francisco Romão  | xxx |
 | Patrick Sabanic | xxx |
-| Dimitrios Stavrakakis | xxx |
+| Dimitrios Stavrakakis | Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station), Lenovo ThinkVision P27u-20 (monitor), Acer (monitor) |
 | Myron Tsatsarakis | xxx |
 | Harshavardhan Unnibhavi | xxx |
 | Jörg Thalheim | xxx |
