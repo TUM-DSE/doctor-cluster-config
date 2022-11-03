@@ -78,7 +78,7 @@ that means that accounts/ssh keys added to this repos won't appear on those
 machines.  Those machines also are not backed up.
 
 - [hinoki](hinoki.md)
-- sakura
+- [sakura](sakura.md)
 - momiji
 
 # Storage
