@@ -1,2 +1,2 @@
 
-# Record of laptops, tablets, monitors, and docking stations at the chair. 
+# Inventory of laptops, tablets, monitors, and docking stations
