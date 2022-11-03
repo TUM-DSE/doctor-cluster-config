@@ -4,7 +4,7 @@
 
 | Name | Items   |
 | :---:   | :---: |
-| Redha Gouicem | Lenovo ThinkPad X13 (laptop), Lenovo ThinkVision P27u-20 (monitor) |
+| Redha Gouicem | Lenovo ThinkPad X13 (laptop), Lenovo ThinkVision P27u-20 (monitor), Samsung Galaxy Tab S8 Ultra (tablet) |
 | Martin Kleppmann  | xxx |
 | Atsushi Koshiba  | xxx |
 | Masanori Misono | Lenovo ThinkPad (laptop), Dell OptiPlex 5000 Tower (desktop), **2x** Lenovo ThinkVision (monitor) |
