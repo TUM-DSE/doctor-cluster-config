@@ -1,3 +1,6 @@
+# sakura
+
+```
 System:    Host: sakura Kernel: 5.8.0-55-generic x86_64 bits: 64 compiler: N/A 
            parameters: BOOT_IMAGE=/boot/vmlinuz-5.8.0-55-generic root=UUID=8ccd9c9c-af0f-4239-944c-8c8ed36d7868 ro 
            intel_iommu=igfx_off quiet splash vt.handoff=7 
@@ -80,3 +83,5 @@ Sensors:   System Temperatures: ipmi cpu: 44 C mobo: 19 C
            Fan Speeds (RPM): lm-sensors N/A 
 Info:      Processes: 960 Uptime: 1d 20h 46m Init: systemd v: 245 runlevel: 5 Compilers: gcc: 9.4.0 alt: 8/9 
            clang: 10.0.0-4ubuntu1 Shell: bash (sudo) v: 5.0.17 running in: sshd (SSH) inxi: 3.0.38 
+```
+
