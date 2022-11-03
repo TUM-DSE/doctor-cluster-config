@@ -4,16 +4,15 @@
 
 | Name | Items   |
 | :---:   | :---: |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
+| Redha Gouicem | xxx |
+| Martin Kleppmann  | xxx |
+| Atsushi Koshiba  | xxx |
+| Masanori Misono | xxx |
+| Myoung Jin Nam | xxx |
+| Maurice Bailleu | xxx |
+| Jiyang Chen | xxx |
+| Dimitra Giantsidi  | xxx |
+| Emmanouil (Manos) Giortamis | xxx |
 | Peter | xxx |
 | Peter | xxx |
 | Peter | xxx |
