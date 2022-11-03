@@ -13,19 +13,12 @@
 | Jiyang Chen | xxx |
 | Dimitra Giantsidi  | xxx |
 | Emmanouil (Manos) Giortamis | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
-| Peter | xxx |
+| Charalampos (Babis) Mainas  | xxx |
+| Peter Okelmann | xxx |
+| Sebastian Reimers | xxx |
+| Francisco Romão  | xxx |
+| Patrick Sabanic | xxx |
+| Dimitrios Stavrakakis | xxx |
+| Myron Tsatsarakis | xxx |
+| Harshavardhan Unnibhavi | xxx |
+| Jörg Thalheim | xxx |
