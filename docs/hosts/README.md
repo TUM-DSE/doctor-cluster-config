@@ -79,6 +79,7 @@ machines.  Those machines also are not backed up.
 
 - [hinoki](hinoki.md)
 - sakura
+- momiji
 
 # Storage
 
