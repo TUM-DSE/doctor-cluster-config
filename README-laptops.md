@@ -1,5 +1,5 @@
 
-# Inventory of laptops, tablets, monitors, and docking stations
+# Inventory of laptops, tablets, desktop, monitors, and docking stations
 
 
 | Name | Items   |
