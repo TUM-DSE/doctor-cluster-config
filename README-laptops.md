@@ -1,2 +1,2 @@
 
-# Add the details of laptops, tablets, monitors, and docking stations. 
+# Record of laptops, tablets, monitors, and docking stations at the chair. 
