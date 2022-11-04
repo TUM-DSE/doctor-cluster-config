@@ -10,7 +10,7 @@
 | Masanori Misono | Lenovo ThinkPad (laptop), Dell OptiPlex 5000 Tower (desktop), **2x** Lenovo ThinkVision (monitor), Lenovo Thunderbolt Dock (docking station) |
 | Myoung Jin Nam | Lenovo ThinkPad X13 (laptop: to be returned to RBP next week), Lenovo Thunderbolt Dock (docking station), Acer (monitor) |
 | Maurice Bailleu | xxx |
-| Jiyang Chen | xxx |
+| Jiyang Chen | Lenovo ThinkPad T14s (laptop), 2x Lenovo ThinkVision P27u-20 (monitor) |
 | Dimitra Giantsidi  | xxx |
 | Emmanouil (Manos) Giortamis | xxx |
 | Charalampos (Babis) Mainas  | xxx |
