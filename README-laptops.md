@@ -7,7 +7,7 @@
 | Redha Gouicem | Lenovo ThinkPad X13 (laptop), Lenovo ThinkVision P27u-20 (monitor), Lenovo Thunderbolt 3 Dock Gen 2 (docking station), Samsung Galaxy Tab S8 Ultra (tablet), Dell XPS (laptop, gateway for tablet) |
 | Martin Kleppmann  | xxx |
 | Atsushi Koshiba  | Macbook Pro (laptop) |
-| Masanori Misono | Lenovo ThinkPad (laptop), Dell OptiPlex 5000 Tower (desktop), **2x** Lenovo ThinkVision (monitor) |
+| Masanori Misono | Lenovo ThinkPad (laptop), Dell OptiPlex 5000 Tower (desktop), **2x** Lenovo ThinkVision (monitor), Lenovo Thunderbolt Dock (docking station) |
 | Myoung Jin Nam | Lenovo ThinkPad X13 (laptop: to be returned to RBP next week), Lenovo Thunderbolt Dock (docking station), Acer (monitor) |
 | Maurice Bailleu | xxx |
 | Jiyang Chen | xxx |
