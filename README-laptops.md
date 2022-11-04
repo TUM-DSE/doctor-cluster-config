@@ -8,7 +8,7 @@
 | Martin Kleppmann  | xxx |
 | Atsushi Koshiba  | Macbook Pro (laptop) |
 | Masanori Misono | Lenovo ThinkPad (laptop), Dell OptiPlex 5000 Tower (desktop), **2x** Lenovo ThinkVision (monitor) |
-| Myoung Jin Nam | xxx |
+| Myoung Jin Nam | Lenovo ThinkPad X13 (laptop: to be returned to RBP next week), Lenovo Thunderbolt Dock (docking station), Acer (monitor) |
 | Maurice Bailleu | xxx |
 | Jiyang Chen | xxx |
 | Dimitra Giantsidi  | xxx |
