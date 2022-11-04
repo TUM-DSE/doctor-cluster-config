@@ -17,7 +17,6 @@
 | Francisco Romão             | Lenovo ThinkPad T14s Gen 2 (laptop), **2x** AOC 2790PQU (monitor), **2x** Lenovo Thunderbolt Dock Gen 2 (docking station)                                                           |
 | Patrick Sabanic             | xxx                                                                                                                                                                                                |
 | Dimitrios Stavrakakis       | Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Thunderbolt Dock (docking station), Lenovo ThinkVision P27u-20 (monitor), Acer B277Kbmiipprzx (monitor)                                                      |
-| Myron Tsatsarakis           | Lenovo ThinkPad xxx (laptop, ordered), Lenovo ThinkPad Universal USB-C Dock (docking station, ordered) 
-                                                          |
-| Harshavardhan Unnibhavi     | LG 27UL850 display, Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station)
+| Myron Tsatsarakis           | Lenovo ThinkPad xxx (laptop, ordered), Lenovo ThinkPad Universal USB-C Dock (docking station, ordered) |
+| Harshavardhan Unnibhavi     | LG 27UL850 display, Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station) |
 | Jörg Thalheim               | xxx                                                                                                                                                                                                |
