@@ -18,5 +18,5 @@
 | Patrick Sabanic             | xxx                                                                                                                                                                                                |
 | Dimitrios Stavrakakis       | Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station), Lenovo ThinkVision P27u-20 (monitor), Acer (monitor)                                                      |
 | Myron Tsatsarakis           | xxx                                                                                                                                                                                                |
-| Harshavardhan Unnibhavi     | xxx                                                                                                                                                                                                |
+| Harshavardhan Unnibhavi     | LG 27UL850 display, Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station)
 | Jörg Thalheim               | xxx                                                                                                                                                                                                |
