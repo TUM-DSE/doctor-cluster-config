@@ -19,10 +19,11 @@ in {
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_5_10;
-  # The XRT drivers are not required for Coyote. 
-  boot.extraModulePackages = [
-    xrt-drivers
-  ];
+  ### Comment out here to unload XRT drivers 
+  ### if you want to test custom hardware designs other than XRT apps (e.g., Coyote). 
+  # boot.extraModulePackages = [
+  #   xrt-drivers
+  # ];
 
   hardware.opengl.extraPackages = [
     packages.xrt
