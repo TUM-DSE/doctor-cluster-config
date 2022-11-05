@@ -431,7 +431,7 @@ def update_sops_files(c):
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
-
+    c.run("nix2yaml sops.yaml.nix > .sops.yaml")
     c.run(
         """
 find . \

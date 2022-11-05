@@ -20,6 +20,7 @@ let
     cmainas    = "age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4";
     simon      = "age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe";
     dimitrios  = "age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8";
+    atsushi    = "age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv";
 
     # machines
     nardole   = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
@@ -45,6 +46,7 @@ let
       simon
       cmainas
       dimitrios
+      atsushi
     ]; 
     all = builtins.attrValues keys;
   };
@@ -53,9 +55,6 @@ let
   # for all files. Amy.yml additionally can be decrytped by amy.
   sopsPermissions = with keys; {
     "modules/sshd/[^/]+\\.yaml$" = [];
-    "hosts/doctor.yml$" = [
-      doctor
-    ];
     "hosts/bill.yml$" = [
       bill
     ];
