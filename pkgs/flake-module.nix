@@ -12,5 +12,6 @@
     };
     packages.xilinx-env = pkgs.callPackage ../pkgs/xilinx/fhs-env.nix {};
     packages.xilinx-firmware = pkgs.callPackage ../pkgs/xilinx/firmware.nix {};
+    packages.xilinx-cable-drivers = pkgs.callPackage ../pkgs/xilinx/cable-drivers {};
   };
 }

@@ -18,6 +18,8 @@ in {
     })
   ];
 
+  services.udev.packages = [ packages.xilinx-cable-drivers ];
+
   boot.kernelPackages = pkgs.linuxPackages_5_10;
   ### Comment out here to unload XRT drivers 
   ### if you want to test custom hardware designs other than XRT apps (e.g., Coyote). 
