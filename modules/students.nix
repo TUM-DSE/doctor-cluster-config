@@ -284,7 +284,7 @@ in {
 
 
     # Robert Schambach, Dimitra MSc student (Opentitan -- t-nic project)
-    paul = {
+    robert = {
       isNormalUser = true;
       home = "/home/robert";
       inherit (config.users.users.joerg) extraGroups;
