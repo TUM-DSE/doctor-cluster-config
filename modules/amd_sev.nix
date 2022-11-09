@@ -14,6 +14,7 @@
         patch = null;
         extraConfig = ''
           AMD_MEM_ENCRYPT y
+	  CRYPTO_DEV_CCP y
           CRYPTO_DEV_CCP_DD y
           CRYPTO_DEV_SP_PSP y
           KVM_AMD_SEV y
