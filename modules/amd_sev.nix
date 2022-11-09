@@ -6,6 +6,9 @@
 }: {
   # This is used to enable AMD-SEV
   config = {
+    # enable libvirtd service
+    virtualisation.libvirtd.enable = true;
+    
     # enable AMD-SME
     # https://cateee.net/lkddb/web-lkddb/KVM_AMD.html
     boot.kernelPatches = [
