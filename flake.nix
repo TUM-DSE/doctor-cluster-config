@@ -33,10 +33,6 @@
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
 
-    deploykit.url = "github:numtide/deploykit";
-    deploykit.inputs.nixpkgs.follows = "nixpkgs";
-    deploykit.inputs.flake-parts.follows = "flake-parts";
-
     flake-utils.url = "github:numtide/flake-utils";
     envfs.url = "github:Mic92/envfs";
     envfs.inputs.nixpkgs.follows = "nixpkgs";
@@ -63,10 +59,10 @@
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.python3.pkgs.invoke
+              pkgs.python3.pkgs.deploykit
               pkgs.ipmitool
               pkgs.age
               pkgs.sops
-              inputs'.deploykit.packages.deploykit
               (pkgs.writeScriptBin "nix2yaml" ''
                 echo "# AUTOMATICALLY GENERATED WITH:"
                 echo "# nix2yaml $*"
