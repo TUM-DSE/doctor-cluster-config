@@ -103,6 +103,7 @@ in stdenv.mkDerivation rec {
     ln -s $out/opt/xilinx/xrt $out/include/xrt
     ln -s $out/opt/xilinx/xrt/lib/* $out/lib
     ln -s /opt/xilinx/firmware $out/opt/xilinx/firmware
+    ln -s $out/lib/firmware/xilinx $out/opt/xilinx/xrt/share/fw
   '';
 
   meta = with lib; {
