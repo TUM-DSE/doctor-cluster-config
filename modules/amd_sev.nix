@@ -6,13 +6,15 @@
 }: {
   # This is used to enable AMD-SEV
   config = {
-    # enable AMD-SME
+    # enable KVM_AMD and AMD-SME
+    # https://cateee.net/lkddb/web-lkddb/KVM_AMD.html
     # https://cateee.net/lkddb/web-lkddb/AMD_MEM_ENCRYPT.html
     boot.kernelPatches = [
       {
         name = "amd_sme-config";
         patch = null;
         extraConfig = ''
+          KVM_AMD y
           AMD_MEM_ENCRYPT y
         '';
       }
