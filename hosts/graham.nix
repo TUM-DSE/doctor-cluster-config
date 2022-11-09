@@ -10,6 +10,7 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/worker.nix
+    ../modules/amd_sev.nix
   ];
 
   networking.hostName = "graham";
