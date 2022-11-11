@@ -29,4 +29,12 @@
   # - d0:8e:79:ba:02:1a
 
   system.stateVersion = "21.05";
+
+  # Don't manage vnet interface with systemd-networkd
+  systemd.network.networks."05-vnet".extraConfig = ''
+    [Match]
+    Name = vnet*
+    [Link]
+    Unmanaged = yes
+  '';
 }
