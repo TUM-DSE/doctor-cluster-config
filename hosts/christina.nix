@@ -8,6 +8,7 @@
     ../modules/nfs/client.nix
     ../modules/dax.nix
     ../modules/dpdk.nix
+    ../modules/iommu-intel.nix
   ];
 
   networking.hostName = "christina";

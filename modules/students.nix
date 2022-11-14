@@ -200,7 +200,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2006;
-      allowedHosts = ["ryan"];
+      allowedHosts = ["ryan" "adelaide"];
       openssh.authorizedKeys.keys = yiheKeys;
     };
 
@@ -211,7 +211,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2007;
-      allowedHosts = ["ryan"];
+      allowedHosts = ["ryan" "adelaide"];
       openssh.authorizedKeys.keys = yiwenliuKeys;
     };
 
@@ -222,7 +222,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2008;
-      allowedHosts = ["ryan"];
+      allowedHosts = ["ryan" "adelaide"];
       openssh.authorizedKeys.keys = hanwenliuKeys;
     };
 
@@ -233,7 +233,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2009;
-      allowedHosts = ["ryan"];
+      allowedHosts = ["ryan" "adelaide"];
       openssh.authorizedKeys.keys = wonbangseoKeys;
     };
 
