@@ -10,7 +10,7 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/worker.nix
-    ../modules/amd_sev.nix
+    #../modules/amd_sev.nix
   ];
 
   networking.hostName = "graham";
@@ -29,4 +29,12 @@
   # - d0:8e:79:ba:02:1a
 
   system.stateVersion = "21.05";
+
+  # Don't manage vnet interface with systemd-networkd
+  #systemd.network.networks."05-vnet".extraConfig = ''
+  #  [Match]
+  #  Name = vnet*
+  #  [Link]
+  #  Unmanaged = yes
+  #'';
 }
