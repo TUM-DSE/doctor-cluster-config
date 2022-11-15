@@ -6,8 +6,8 @@ with import (builtins.getFlake (toString ../.)).inputs.nixpkgs-unstable {};
       gnupg
       (pkgs.terraform.withPlugins (
         p: [
-          p.gitlab
           p.github
+          (pkgs.callPackage ./gitlab.nix {})
           p.sops
         ]
       ))
