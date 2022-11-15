@@ -6,12 +6,12 @@ System:    Host: river Kernel: 5.12.14 x86_64 bits: 64 compiler: gcc v: 11.3.0
            init=/nix/store/8xvlbkqkxx7s3bnvji0qppwx42h1i83h-nixos-system-river-22.05.20221028.7269939/init 
            console=ttyS1,115200n8 console=tty1 default_hugepagesz=1GB hugepagesz=1GB hugepages=8 
            panic=1 boot.panic_on_fail loglevel=4 
-           Console: N/A Distro: NixOS 22.05 (Quokka) 
+           Console: tty pts/4 Distro: NixOS 22.05 (Quokka) 
 Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789 
            serial: E424030X2100639 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50425 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002408 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 16.98 GiB (1.7%) 
+Memory:    RAM: total: 995.21 GiB used: 25 GiB (2.5%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -53,10 +53,10 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch:
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 960 KiB 
            L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 2216 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 2216 2: 3492 3: 2069 4: 1877 5: 1376 6: 2116 
-           7: 3565 8: 3591 9: 3537 10: 3533 11: 2089 12: 3118 13: 3539 14: 1980 15: 2023 16: 2167 
-           17: 1408 18: 3603 19: 3561 20: 3569 21: 2119 22: 2016 23: 1988 24: 2179 
+           Speed: 3600 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 3600 2: 3600 3: 3593 4: 3503 5: 3508 6: 3586 
+           7: 3541 8: 3593 9: 3353 10: 3546 11: 3528 12: 3574 13: 3556 14: 3461 15: 3500 16: 3581 
+           17: 3537 18: 3600 19: 3484 20: 3524 21: 3500 22: 3596 23: 3528 24: 3500 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -69,7 +69,7 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch:
            Type: tsx_async_abort status: Not affected 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
-           Display: server: No display server data found. Headless machine? tty: N/A 
+           Display: server: No display server data found. Headless machine? tty: 177x44 
            Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
 Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe v: kernel 
@@ -91,13 +91,19 @@ Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe 
            Device-4: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel port: 7000 
            bus-ID: 18:00.1 chip-ID: 8086:10fb class-ID: 0200 
            IF: enp24s0f1 state: down mac: 00:1b:21:c3:82:da 
-           Device-5: Intel Ethernet E810-C for QSFP driver: N/A modules: ice port: 7000 
-           bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 
-           IF-ID-1: docker0 state: down mac: 02:42:ae:89:2d:a6 
+           Device-5: Intel Ethernet E810-C for QSFP driver: igb_uio v: kernel modules: ice 
+           port: 7000 bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 
+           IF-ID-1: br-gierens0 state: down mac: 3a:08:34:7b:eb:a2 
+           IP v4: 192.168.56.1/24 scope: global 
+           IF-ID-2: br-gierens1 state: down mac: 4e:2b:5a:f7:62:ef 
+           IP v6: fe80::4c2b:5aff:fef7:62ef/64 scope: link 
+           IF-ID-3: docker0 state: down mac: 02:42:ae:89:2d:a6 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
+           IF-ID-4: tap-gierens0 state: down mac: 96:b0:91:aa:93:bc 
+           IF-ID-5: tap-gierens1 state: down mac: 8e:e3:cd:56:06:ce 
+           IF-ID-6: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:f7cf:5f5a:8ed8:f139:be6d/16 scope: global 
-           IF-ID-3: usb0 state: unknown speed: N/A duplex: N/A mac: 7a:38:1e:58:99:0d 
+           IF-ID-7: usb0 state: unknown speed: N/A duplex: N/A mac: 7a:38:1e:58:99:0d 
            IP v4: 169.254.3.1/24 type: dynamic scope: global 
            IP v6: fe80::7838:1eff:fe58:990d/64 scope: link 
            WAN IP: 131.159.102.16 
@@ -108,31 +114,31 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.714.04.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.7 TiB 
-           allocated: 36 GiB 
+           allocated: 37.8 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 575.96 GiB (10.8%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 857.43 GiB (16.0%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 31 C 
+           temp: 30 C 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 31 C scheme: GPT 
+           temp: 30 C scheme: GPT 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 35.93 GiB (2.1%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 37.77 GiB (2.2%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 52.5 MiB (5.1%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 45.5 MiB (4.5%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 896.17 GiB used: 368.79 GiB (41.2%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 891.67 GiB used: 411.97 GiB (46.2%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 53.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 52.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 382 
-           Uptime: 10:26:07  up 1 day 10:18,  0 users,  load average: 0.12, 0.11, 0.09 wakeups: 0 
-           Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
-           Packages: nix-default: 0 nix-sys: 455 lib: 68 nix-usr: 0 Client: Sudo v: 1.9.10 
-           inxi: 3.3.04 
+Info:      Processes: 396 
+           Uptime: 15:07:23  up 15 days 14:59,  0 users,  load average: 1.05, 1.10, 1.09 
+           wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
+           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 456 lib: 68 nix-usr: 0 Client: Sudo 
+           v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](river.lstopo.svg)

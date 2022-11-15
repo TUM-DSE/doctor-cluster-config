@@ -11,7 +11,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789
            serial: E424030X2100628 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50530 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002397 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 995.21 GiB used: 16.81 GiB (1.7%) 
+Memory:    RAM: total: 995.21 GiB used: 25.71 GiB (2.6%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -53,10 +53,10 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 bits: 64 type: MT MCP arch:
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 960 KiB 
            L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
-           Speed: 3044 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 3044 2: 3022 3: 1738 4: 1671 5: 2120 6: 2801 
-           7: 2415 8: 2931 9: 3013 10: 2677 11: 1679 12: 3174 13: 2659 14: 2508 15: 2947 16: 2685 
-           17: 1939 18: 3045 19: 1548 20: 2173 21: 2044 22: 1473 23: 2690 24: 1304 
+           Speed: 2883 MHz min/max: 800/3600 MHz base/boost: 3000/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 2883 2: 2689 3: 1959 4: 2401 5: 1888 6: 1667 
+           7: 2612 8: 1964 9: 3020 10: 2115 11: 2876 12: 1451 13: 1795 14: 2578 15: 2076 16: 1886 
+           17: 3008 18: 1996 19: 2026 20: 3130 21: 2577 22: 1524 23: 1955 24: 2236 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -94,8 +94,8 @@ Network:   Device-1: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe 
            Device-4: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel port: 7000 
            bus-ID: 18:00.1 chip-ID: 8086:10fb class-ID: 0200 
            IF: enp24s0f1 state: down mac: 00:1b:21:c3:82:2e 
-           Device-5: Intel Ethernet E810-C for QSFP driver: N/A modules: ice port: 7000 
-           bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 
+           Device-5: Intel Ethernet E810-C for QSFP driver: igb_uio v: kernel modules: ice 
+           port: 7000 bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 
            IF-ID-1: docker0 state: down mac: 02:42:fd:5f:4a:22 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
@@ -111,31 +111,31 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.714.04.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.41 TiB 
-           allocated: 328 GiB 
+           allocated: 330 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 866.08 GiB (16.2%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 1.12 TiB (21.5%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
            temp: 28 C scheme: GPT 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 27 C 
+           temp: 28 C 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 326.03 GiB (19.0%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.68 TiB used: 328.34 GiB (19.1%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 79.3 MiB (7.8%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 81 MiB (7.9%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 896.17 GiB used: 368.79 GiB (41.2%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 891.67 GiB used: 411.97 GiB (46.2%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 45.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 380 
-           Uptime: 10:26:07  up 1 day 10:22,  0 users,  load average: 0.10, 0.10, 0.09 wakeups: 0 
-           Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
-           Packages: nix-default: 0 nix-sys: 455 lib: 68 nix-usr: 0 Client: Sudo v: 1.9.10 
-           inxi: 3.3.04 
+Info:      Processes: 399 
+           Uptime: 15:07:23  up 15 days 15:03,  0 users,  load average: 0.13, 0.09, 0.09 
+           wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
+           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 456 lib: 68 nix-usr: 0 Client: Sudo 
+           v: 1.9.10 inxi: 3.3.04 
 ```
 ![hardware topology](wilfred.lstopo.svg)
