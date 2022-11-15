@@ -77,15 +77,19 @@ Parameters to consider for matching cards to slots:
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (Jackson-craig,) Cx0/1, vlan1
     - christina: dual port. (christina,christina)
-    - adelaide: single port. (adelaide-craig) vlan1
     - wilfred: single port. (wilfred-river)
     - river: single port. (river-wilfred)
+    - unassinged: single port. former: (adelaide-craig) vlan1
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,ryan-ryan)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
+- 4x PCI Samsung PM173X NVMe drive (high profile, low profile mod, x4?)
+    - 2x graham: (boot, experiments)
+    - 1x ryan: (boot)
+    - 1x adelaide: (experiments)
 
 Furthermore, there are some onboard 2 port 10G RJ-45 NICs connected pairwise (christina-adelaide, wilfred-river)
 
