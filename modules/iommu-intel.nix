@@ -10,7 +10,7 @@
       name = "iommu_debug_files";
       patch = null;
       extraConfig = ''
-        AMD_MEM_ENCRYPT y
+        IOMMU_DEBUGFS y
       '';
     }
   ];
