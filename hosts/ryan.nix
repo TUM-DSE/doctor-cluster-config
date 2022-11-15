@@ -16,9 +16,6 @@
     ../modules/xrdp-passwords.nix
   ];
 
-  boot.hugepages.size = "1GB";
-  boot.hugepages.number = 8;
-
   networking.hostName = "ryan";
 
   # 10GbE NICs for network benchmarks:
