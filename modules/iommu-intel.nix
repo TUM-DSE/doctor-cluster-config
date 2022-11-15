@@ -11,6 +11,7 @@
       patch = null;
       extraConfig = ''
         IOMMU_DEBUGFS y
+        INTEL_IOMMU_DEBUGFS y
       '';
     }
   ];
