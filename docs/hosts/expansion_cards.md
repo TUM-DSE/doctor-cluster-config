@@ -26,7 +26,7 @@ Parameters to consider for matching cards to slots:
     - unassinged: single port. former: (adelaide-craig) vlan1
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
-    - ryan: dual port. RJ-45 (ryan-ryan,ryan-ryan)
+    - ryan: dual port. RJ-45 (ryan-ryan,none)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
@@ -35,7 +35,15 @@ Parameters to consider for matching cards to slots:
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
 
-Furthermore, there are some onboard 2 port 10G RJ-45 NICs connected pairwise (christina-adelaide, wilfred-river)
+Onboard:
+    - Intel X720
+        - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
+    - Intel X550: 2 port RJ-45
+        - christina: (chistina-adelaide, none)
+        - adelaide: (adelaide-chistina, none)
+        - wilfred: (wilfred-river, none)
+        - river: (river-wilfred, none)
+        - probably jackson: (none-none)
 
 Most of the 10G NICs are in use to provider internet.
 
@@ -234,7 +242,7 @@ PCI Slots:
 - ❌  Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: Long    
 c4:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01, Broadcom Inc. and subsidiaries, Device 4161  
 - ❌  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: In Use length: Long    
-81:00.0, Processing accelerators, Xilinx Corporation, Device d020, Xilinx Corporation, Device 000e  
+81:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
 - ❌  Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long    
 03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ✅  Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 4 status: Available length: Long    

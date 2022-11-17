@@ -11,7 +11,7 @@ Machine:   Type: Kvm System: Supermicro product: SYS-120U-TNR v: 0123456789
            serial: E411764X2300334 Chassis: type: 1 v: 0123456789 serial: C119UAK12P20190 
            Mobo: Supermicro model: X12DPU-6 v: 1.02A serial: HM218S018239 
            UEFI: American Megatrends LLC. v: 1.2 date: 02/15/2022 
-Memory:    RAM: total: 125.52 GiB used: 69.74 GiB (55.6%) 
+Memory:    RAM: total: 125.52 GiB used: 71.45 GiB (56.9%) 
            Array-1: capacity: 12 TiB slots: 32 EC: Single-bit ECC max-module-size: 384 GiB 
            note: est. 
            Device-1: P1-DIMMA1 size: 256 GiB speed: 3200 MT/s type: Logical non-volatile device 
@@ -91,15 +91,15 @@ CPU:       Info: 2x 16-Core model: Intel Xeon Gold 6326 bits: 64 type: MT MCP SM
            family: 6 model-id: 6A (106) stepping: 6 microcode: D000375 cache: L1: 5 MiB L2: 48 MiB 
            L3: 96 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 372230 
-           Speed: 1949 MHz min/max: 800/2901 MHz base/boost: 2900/4500 boost: enabled volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 1949 2: 1050 3: 1279 4: 1322 5: 1340 6: 1622 
-           7: 1854 8: 2601 9: 801 10: 1963 11: 1533 12: 2468 13: 1842 14: 2310 15: 3234 16: 2049 
-           17: 2648 18: 3339 19: 2115 20: 2394 21: 3396 22: 1901 23: 2152 24: 3425 25: 2135 
-           26: 1611 27: 1978 28: 1420 29: 1601 30: 2933 31: 1607 32: 1806 33: 1786 34: 2116 
-           35: 3471 36: 1905 37: 3239 38: 2964 39: 1775 40: 3155 41: 1869 42: 3066 43: 1692 
-           44: 861 45: 2093 46: 1792 47: 2005 48: 1686 49: 1108 50: 2348 51: 1860 52: 1403 
-           53: 1238 54: 1438 55: 1972 56: 3385 57: 1661 58: 1709 59: 1582 60: 3232 61: 1222 
-           62: 3447 63: 1242 64: 1257 
+           Speed: 3118 MHz min/max: 800/2901 MHz base/boost: 2900/4500 boost: enabled volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 3118 2: 1657 3: 2285 4: 1685 5: 1784 6: 2175 
+           7: 3098 8: 1858 9: 1309 10: 1360 11: 1704 12: 2096 13: 2753 14: 1750 15: 2659 16: 1433 
+           17: 1431 18: 1442 19: 1786 20: 2065 21: 1775 22: 3400 23: 3486 24: 2788 25: 1824 
+           26: 2386 27: 1535 28: 1739 29: 1165 30: 1561 31: 2931 32: 1955 33: 1782 34: 1875 
+           35: 1569 36: 2000 37: 3205 38: 1495 39: 1512 40: 1448 41: 2402 42: 2316 43: 1993 
+           44: 2239 45: 2784 46: 1377 47: 2627 48: 1180 49: 1891 50: 2257 51: 2269 52: 2206 
+           53: 1872 54: 1854 55: 1567 56: 1933 57: 1286 58: 3335 59: 3417 60: 1890 61: 2529 
+           62: 1368 63: 1824 64: 1389 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -123,10 +123,14 @@ Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: k
 Audio:     Message: No device data found. 
 Network:   Device-1: Intel Ethernet X710 for 10GBASE-T vendor: Super Micro driver: i40e v: kernel 
            port: 3000 bus-ID: 19:00.0 chip-ID: 8086:15ff class-ID: 0200 
-           IF: enp25s0f0 state: down mac: 3c:ec:ef:fb:5c:78 
+           IF: enp25s0f0 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:fb:5c:78 
+           IP v4: 169.254.11.8/16 scope: link 
+           IP v6: fe80::3eec:efff:fefb:5c78/64 scope: link 
            Device-2: Intel Ethernet X710 for 10GBASE-T vendor: Super Micro driver: i40e v: kernel 
            port: 3000 bus-ID: 19:00.1 chip-ID: 8086:15ff class-ID: 0200 
-           IF: enp25s0f1 state: down mac: 3c:ec:ef:fb:5c:79 
+           IF: enp25s0f1 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:fb:5c:79 
+           IP v4: 169.254.132.85/16 scope: link 
+           IP v6: fe80::3eec:efff:fefb:5c79/64 scope: link 
            Device-3: Intel Ethernet X710 for 10 Gigabit SFP+ vendor: Super Micro driver: i40e 
            v: kernel port: 3000 bus-ID: 19:00.2 chip-ID: 8086:104e class-ID: 0200 
            IF: enp25s0f2 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:fb:5c:7a 
@@ -156,25 +160,25 @@ Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v
 RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 767 GiB 
            allocated: 121 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 894.25 GiB used: 990.84 GiB (110.8%) 
+Drives:    Local Storage: total: 894.25 GiB used: 1.01 TiB (115.6%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Intel model: SSDSC2KB960G8 
            family: S4510/S4610/S4500/S4600 Series SSDs size: 894.25 GiB block-size: 
            physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s rotation: SSD 
-           serial: PHYF152302UG960CGN rev: 0132 temp: 17 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 188d 18h cycles: 24 read: 2.3 TiB 
-           written: 6.31 TiB 
-Partition: ID-1: / raw-size: N/A size: 838.91 GiB used: 99.26 GiB (11.8%) fs: zfs 
+           serial: PHYF152302UG960CGN rev: 0132 temp: 16 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 191d 16h cycles: 24 read: 2.3 TiB 
+           written: 6.36 TiB 
+Partition: ID-1: / raw-size: N/A size: 838.91 GiB used: 99.15 GiB (11.8%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 80.8 MiB (7.9%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 54.5 MiB (5.3%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 891.67 GiB used: 411.97 GiB (46.2%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 861.84 GiB used: 454.85 GiB (52.8%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 59.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 56.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 837 
-           Uptime: 15:07:23  up 15 days 14:58,  0 users,  load average: 0.00, 0.01, 0.00 
+Info:      Processes: 813 
+           Uptime: 12:35:24  up 18 days 12:26,  0 users,  load average: 0.24, 0.05, 0.02 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
            gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 519 lib: 97 nix-usr: 0 Client: Sudo 
            v: 1.9.10 inxi: 3.3.04 

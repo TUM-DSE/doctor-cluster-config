@@ -11,7 +11,7 @@ Machine:   Type: Server System: GIGABYTE product: R181-T90-00 v: 0100 serial: GL
            Chassis: type: 23 v: 1.0 serial: 01234567890123456789AB 
            Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 UEFI: GIGABYTE v: F34 
            date: 08/13/2020 
-Memory:    RAM: total: 251.27 GiB used: 22.29 GiB (8.9%) 
+Memory:    RAM: total: 251.27 GiB used: 33.78 GiB (13.4%) 
            Array-1: capacity: 2 TiB slots: 12 EC: Multi-bit ECC max-module-size: 170.67 GiB 
            note: est. 
            Device-1: DIMM_P0_A0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -46,33 +46,33 @@ CPU:       Info: 224-Core (2-Die) model: N/A bits: 64 type: MCP MCM arch: ARMv8 
            model-id: 1 stepping: 2 
            features: Use -f option to see features bogomips: 89600 
            Speed: 1850 MHz min/max: 1000/2000 MHz base/boost: 2000/2500 boost: disabled 
-           volts: 0.8 V ext-clock: 33 MHz Core speeds (MHz): 1: 1140 2: 1040 3: 1000 4: 1000 
-           5: 1650 6: 1020 7: 1120 8: 1240 9: 1510 10: 1280 11: 1030 12: 1010 13: 1000 14: 1010 
-           15: 1000 16: 1000 17: 1410 18: 1000 19: 1180 20: 1010 21: 1170 22: 1010 23: 1000 
-           24: 1120 25: 1070 26: 1020 27: 1000 28: 1000 29: 1010 30: 1110 31: 1080 32: 1080 
-           33: 1190 34: 1040 35: 1400 36: 1200 37: 1000 38: 1020 39: 1080 40: 1000 41: 1000 
-           42: 1000 43: 1000 44: 1130 45: 1210 46: 1100 47: 1540 48: 1410 49: 1000 50: 1180 
-           51: 1010 52: 1170 53: 1010 54: 1000 55: 1120 56: 1020 57: 1000 58: 1010 59: 1000 
-           60: 1010 61: 1110 62: 1080 63: 1080 64: 1190 65: 1040 66: 1400 67: 1000 68: 1020 
-           69: 1000 70: 1080 71: 1000 72: 1000 73: 1000 74: 1000 75: 1130 76: 1210 77: 1100 
-           78: 1410 79: 1000 80: 1650 81: 1180 82: 1010 83: 1170 84: 1010 85: 1000 86: 1120 
-           87: 1020 88: 1000 89: 1000 90: 1010 91: 1020 92: 1110 93: 1080 94: 1080 95: 1190 
-           96: 1040 97: 1400 98: 1000 99: 1020 100: 1080 101: 1000 102: 1120 103: 1000 104: 1000 
-           105: 1000 106: 1130 107: 1210 108: 1100 109: 1410 110: 1000 111: 1180 112: 1010 
+           volts: 0.8 V ext-clock: 33 MHz Core speeds (MHz): 1: 1140 2: 1040 3: 1000 4: 1060 
+           5: 1100 6: 1070 7: 1320 8: 1240 9: 1090 10: 1010 11: 1030 12: 1010 13: 1000 14: 1010 
+           15: 1000 16: 1000 17: 1410 18: 1000 19: 1030 20: 1020 21: 1170 22: 1010 23: 1000 
+           24: 1120 25: 1100 26: 1020 27: 1000 28: 1000 29: 1050 30: 1110 31: 1090 32: 1110 
+           33: 1190 34: 1040 35: 1400 36: 1200 37: 1000 38: 1020 39: 1000 40: 1000 41: 1490 
+           42: 1000 43: 1000 44: 1050 45: 1010 46: 1030 47: 1540 48: 1410 49: 1000 50: 1030 
+           51: 1020 52: 1170 53: 1010 54: 1000 55: 1120 56: 1020 57: 1000 58: 1010 59: 1000 
+           60: 1050 61: 1110 62: 1090 63: 1110 64: 1190 65: 1040 66: 1400 67: 1000 68: 1020 
+           69: 1060 70: 1000 71: 1000 72: 1490 73: 1000 74: 1000 75: 1050 76: 1010 77: 1030 
+           78: 1410 79: 1000 80: 1100 81: 1030 82: 1020 83: 1170 84: 1010 85: 1000 86: 1120 
+           87: 1020 88: 1000 89: 1000 90: 1050 91: 1070 92: 1110 93: 1090 94: 1110 95: 1190 
+           96: 1040 97: 1400 98: 1000 99: 1020 100: 1000 101: 1000 102: 1320 103: 1490 104: 1000 
+           105: 1000 106: 1050 107: 1010 108: 1030 109: 1410 110: 1000 111: 1030 112: 1020 
            113: 1410 114: 1240 115: 1170 116: 1010 117: 1000 118: 1120 119: 1020 120: 1000 
-           121: 1000 122: 1010 123: 1110 124: 1000 125: 1510 126: 1080 127: 1190 128: 1040 
-           129: 1400 130: 1000 131: 1020 132: 1080 133: 1000 134: 1000 135: 1000 136: 1280 
-           137: 1000 138: 1130 139: 1210 140: 1100 141: 1030 142: 1010 143: 1000 144: 1000 
+           121: 1000 122: 1050 123: 1110 124: 1090 125: 1090 126: 1110 127: 1190 128: 1040 
+           129: 1400 130: 1000 131: 1020 132: 1000 133: 1000 134: 1490 135: 1000 136: 1010 
+           137: 1000 138: 1050 139: 1010 140: 1030 141: 1030 142: 1010 143: 1000 144: 1000 
            145: 1000 146: 1140 147: 1040 148: 1020 149: 1410 150: 1020 151: 1850 152: 1200 
-           153: 1190 154: 1000 155: 1000 156: 1610 157: 1000 158: 1010 159: 1850 160: 1070 
-           161: 1200 162: 1540 163: 1010 164: 1000 165: 1650 166: 1020 167: 1120 168: 1240 
-           169: 1510 170: 1200 171: 1280 172: 1030 173: 1010 174: 1000 175: 1000 176: 1000 
+           153: 1190 154: 1000 155: 1000 156: 1610 157: 1000 158: 1010 159: 1850 160: 1100 
+           161: 1200 162: 1540 163: 1010 164: 1060 165: 1100 166: 1070 167: 1320 168: 1240 
+           169: 1090 170: 1200 171: 1010 172: 1030 173: 1010 174: 1000 175: 1000 176: 1000 
            177: 1140 178: 1040 179: 1410 180: 1020 181: 1190 182: 1850 183: 1200 184: 1190 
-           185: 1000 186: 1000 187: 1610 188: 1000 189: 1010 190: 1070 191: 1200 192: 1000 
-           193: 1540 194: 1010 195: 1000 196: 1650 197: 1020 198: 1120 199: 1240 200: 1510 
-           201: 1280 202: 1030 203: 1000 204: 1010 205: 1000 206: 1000 207: 1000 208: 1140 
+           185: 1000 186: 1000 187: 1610 188: 1000 189: 1010 190: 1100 191: 1200 192: 1000 
+           193: 1540 194: 1010 195: 1060 196: 1100 197: 1070 198: 1320 199: 1240 200: 1090 
+           201: 1010 202: 1030 203: 1000 204: 1010 205: 1000 206: 1000 207: 1000 208: 1140 
            209: 1040 210: 1410 211: 1020 212: 1850 213: 1200 214: 1610 215: 1190 216: 1000 
-           217: 1000 218: 1610 219: 1000 220: 1010 221: 1070 222: 1200 223: 1540 224: 1010 
+           217: 1000 218: 1610 219: 1000 220: 1010 221: 1100 222: 1200 223: 1540 224: 1010 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -115,10 +115,10 @@ Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigab
            IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global 
            IF-ID-4: veth0d801e4 state: up speed: 10000 Mbps duplex: full mac: 1e:83:74:ca:52:a1 
            WAN IP: 131.159.102.7 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 741 GiB 
-           allocated: 147 GiB 
+RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 734 GiB 
+           allocated: 154 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 1.78 TiB used: 1.11 TiB (62.4%) 
+Drives:    Local Storage: total: 1.78 TiB used: 1.16 TiB (64.9%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
            rotation: SSD serial: S4EWNX0R514087T rev: 2B2QEXM7 temp: 28.9 C 
@@ -126,24 +126,24 @@ Drives:    Local Storage: total: 1.78 TiB used: 1.11 TiB (62.4%)
            written-units: 562,569 [288 GB] 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
-           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNC0R216725 rev: 904Q temp: 21 C 
+           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNC0R216725 rev: 904Q temp: 20 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 105d 23h cycles: 20 read: 11.15 TiB 
-           written: 19.88 TiB 
-Partition: ID-1: / raw-size: N/A size: 777.98 GiB used: 65.71 GiB (8.4%) fs: zfs 
+           SMART: yes state: enabled health: PASSED on: 1y 108d 21h cycles: 20 read: 11.15 TiB 
+           written: 20.11 TiB 
+Partition: ID-1: / raw-size: N/A size: 772.67 GiB used: 67.21 GiB (8.7%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 202.6 MiB (40.5%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 142.1 MiB (28.4%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 891.67 GiB used: 411.97 GiB (46.2%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 861.84 GiB used: 454.85 GiB (52.8%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 712.27 GiB used: 512 KiB (0.0%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 705.73 GiB used: 277.5 MiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 34.3 C mobo: 33.2 C 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 2534 
-           Uptime: 15:07:35  up 15 days 14:50,  0 users,  load average: 32.11, 28.18, 27.04 
+Info:      Processes: 2685 
+           Uptime: 12:35:37  up 18 days 12:18,  0 users,  load average: 32.75, 29.10, 27.81 
            Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 9.3.0 
            Packages: nix-default: 0 nix-sys: 447 lib: 66 nix-usr: 0 Client: Sudo v: 1.9.10 
            inxi: 3.3.04 

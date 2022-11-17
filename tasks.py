@@ -82,7 +82,7 @@ Parameters to consider for matching cards to slots:
     - unassinged: single port. former: (adelaide-craig) vlan1
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
-    - ryan: dual port. RJ-45 (ryan-ryan,ryan-ryan)
+    - ryan: dual port. RJ-45 (ryan-ryan,none)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
@@ -91,7 +91,15 @@ Parameters to consider for matching cards to slots:
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
 
-Furthermore, there are some onboard 2 port 10G RJ-45 NICs connected pairwise (christina-adelaide, wilfred-river)
+Onboard:
+    - Intel X720
+        - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
+    - Intel X550: 2 port RJ-45
+        - christina: (chistina-adelaide, none)
+        - adelaide: (adelaide-chistina, none)
+        - wilfred: (wilfred-river, none)
+        - river: (river-wilfred, none)
+        - probably jackson: (none-none)
 
 Most of the 10G NICs are in use to provider internet.
 
