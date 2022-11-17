@@ -16,10 +16,6 @@
     ../modules/xrdp-passwords.nix
   ];
 
-  # To test: https://github.com/besser82/libxcrypt/issues/152#issuecomment-1317426860
-  boot.hugepages.size = "1GB";
-  boot.hugepages.number = 8;
-
   networking.hostName = "ryan";
 
   # 10GbE NICs for network benchmarks:
