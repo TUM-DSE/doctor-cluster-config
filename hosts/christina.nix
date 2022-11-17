@@ -11,6 +11,9 @@
     ../modules/iommu-intel.nix
   ];
 
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 8;
+
   networking.hostName = "christina";
 
   system.stateVersion = "21.11";

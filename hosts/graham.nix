@@ -11,7 +11,12 @@
     ../modules/nfs/client.nix
     ../modules/buildbot/worker.nix
     #../modules/amd_sev.nix
+    ../modules/dpdk.nix
+    ../modules/iommu-intel.nix
   ];
+
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 8;
 
   networking.hostName = "graham";
 
