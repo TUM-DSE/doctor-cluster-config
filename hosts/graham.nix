@@ -10,7 +10,7 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/worker.nix
-    #../modules/amd_sev.nix
+    ../modules/amd_sev.nix
     ../modules/dpdk.nix
     ../modules/iommu-intel.nix
   ];
@@ -36,10 +36,10 @@
   system.stateVersion = "21.05";
 
   # Don't manage vnet interface with systemd-networkd
-  #systemd.network.networks."05-vnet".extraConfig = ''
-  #  [Match]
-  #  Name = vnet*
-  #  [Link]
-  #  Unmanaged = yes
-  #'';
+  systemd.network.networks."05-vnet".extraConfig = ''
+    [Match]
+    Name = vnet*
+    [Link]
+    Unmanaged = yes
+  '';
 }
