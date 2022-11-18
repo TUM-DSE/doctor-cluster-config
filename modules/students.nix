@@ -98,6 +98,10 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrdEe2/aOcUzaPtkDLJQ8VrcfiF8tNpk02SPLIVrsTywSHrBueOMz/cVR/Dkk7HREkI8iPshIefYogGgXNrwXp4ogu7DFA/5FS58QgrUS/il/LYT1pIcC4URFt0s5UHxvXbVP/zPVVpDZ7AqXLzz0H95csR9mO5eY2CgZh5+haC1dNhBEZK7v2pcsp+TrDzcxKjo5ZjqFAUNRBAT/lMJy2t0Zdm9cnkNFYymC2n57mgve2W9L8mRsMTYdQbwT7S7PgV3605e7bphnvGVl09iSkwkbQZ9oiqvZFdVn9id6tPxlf6wnnMo2YU9fuqRJoF6kKGN5Mvqvmm6bIUW5y9cFjpAniJg7lPY2Dc/em/q5jpdYirnkPnjnjpqdNBKnroRbsNL8bUWPyyZM4seSAIaw61OUQLhJHClUx9sAb3nyWRq6k2PAB1HcBeY9dVgv3b+0ZzNsR52IqEzs3VOZGAS174Kd8FFk7oyV15a1qfyhCzKxNJIbW8AHXh+S7EcVnyYyJguJ/hblUOwsc4Un/3UQkmhTTOkZOb3zZklHM62isA4yA6uAUkCxASgaG0UMtvzeJiynYLr1x4YR2jTKU2VD79n8pcKienJmBH0d80FtnPMiJPZA4EiVSXYAZ1PKbVsSBk47Ia7SmgZr46VX4ha5frAY/kQNzFk9qyImuyPyIyw== kammerme ge35tem"
   ];
 
+  emilKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDgvbY6SooSd15IeR4TO2xrbqL9NrUKdxRk0EmUy4nF1xy8gTVb6fzjbeFer7ECgWE3YgUQ2ejWXtveT8jLcJmMAgGrfspfzI2uA5ijYtVlqUqL0Acxra6DMvYDhQkOG66ri5uCah2u9HUGLt56gLsjEALsDK2cJjh8Km5fRk8vxdtESSx/pd5fK0J7x5J2b3SAPtLnF9j5s1JfMxAqxYgIgwaghF5+z1IEDGRKEOsXDFNOE2AhLChf1ALtqpF6p9FigLYDXRNO2LOWAZBDbeTNq0WQJlN3BPwPfgLJKBTgLdZ/RREiYf8DEmx+c7PTjushyAYnCM/YlzCfeLBwnFXNk2XsSZUH99pZy0scjOuDtHu0uY4NTfBo9H1mmznOOjgovXwgmgdujTzl4prciRl4feKbOR5lmQV4ziwAbvLOdVoP0ABri3pFumkgjNiv91kvAOgILGvMfeeiuVxiVjLbDxBRuL5hlqq/t6wGnGlP4xCqN9f87qz8kfc5ls80TK7Nh1yi4USQIsfaZkBM/sCARIj1CSu9emcI3Oo856jz+l2SlB9r0urqbuSNoUxh14uQ35uYqcqhjXc+AI0acBVmDH1lHurgvVAQdceYGdVPW9iV4sQNoFnFqoMgbblA+y9ujZu3a3XEGv8HzKL7wT17YXc0V2y30DeFSEiqxcEJmw== emil@sssemil"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -320,6 +324,17 @@ in {
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
       openssh.authorizedKeys.keys = simonkKeys;
+    };
+
+    # Emil Suleymanov, secure-reliable seminar student WS22
+    emil = {
+      isNormalUser = true;
+      home = "/home/emil";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2018;
+      allowedHosts = ["jack"];
+      openssh.authorizedKeys.keys = emilKeys;
     };
   };
 
