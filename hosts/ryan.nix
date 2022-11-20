@@ -43,7 +43,5 @@
     ];
   };
 
-  boot.binfmt.emulatedSystems = [ "riscv64-linux" ];
-
   users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" ];
 }

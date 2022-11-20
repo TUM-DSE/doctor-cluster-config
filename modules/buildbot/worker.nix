@@ -38,6 +38,8 @@ in
       ];
     }
   ];
+  # for working around cross-compiling quirks when building ruby
+  boot.binfmt.emulatedSystems = [ "riscv64-linux" ];
 
   systemd.services.buildbot-worker = {
     description = "Buildbot Worker.";
