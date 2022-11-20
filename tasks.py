@@ -42,7 +42,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
         if flake_attr:
             flake_path += "#" + flake_attr
         target_host = h.meta.get("target_host", "localhost")
-        cmd = f"nixos-rebuild switch --option accept-flake-config true --build-host localhost --target-host {target_host} --flake {flake_path} --option keep-going true"
+        cmd = f"nixos-rebuild switch --fast --option accept-flake-config true --build-host localhost --target-host {target_host} --flake {flake_path} --option keep-going true"
         ret = h.run(cmd, check=False)
         # re-retry switch if the first time fails
         if ret.returncode != 0:
