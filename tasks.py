@@ -32,11 +32,12 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     g = DeployGroup(hosts)
 
     def deploy(h: DeployHost) -> None:
+        config_dir = h.meta.get("config_dir", "/etc/nixos")
         h.run_local(
-            f"rsync {' --exclude '.join([''] + RSYNC_EXCLUDES)} -vaF --delete -e ssh . {h.user}@{h.host}:/etc/nixos"
+            f"rsync {' --exclude '.join([''] + RSYNC_EXCLUDES)} -vaF --delete -e ssh . {h.user}@{h.host}:{config_dir}"
         )
 
-        flake_path = "/etc/nixos"
+        flake_path = config_dir
         flake_attr = h.meta.get("flake_attr")
         if flake_attr:
             flake_path += "#" + flake_attr
@@ -286,6 +287,22 @@ def deploy(c):
     Deploy to servers
     """
     deploy_nixos([DeployHost(h, user="root") for h in HOSTS])
+
+
+@task
+def deploy_ruby(c):
+    """
+    Deploy to riscv server
+    """
+    host = DeployHost(
+        #"ryan.dse.in.tum.de",
+        "localhost",
+        user="root",
+        forward_agent=True,
+        command_prefix="ruby",
+        meta=dict(target_user="root", target_host="ruby", flake_attr="ruby", config_dir="/var/lib/nixos-config"),
+    )
+    deploy_nixos([host])
 
 
 @task
@@ -569,13 +586,6 @@ def ipmi_powercycle(c, host=""):
     c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
     )
-
-
-@task
-def random_password(c, host=""):
-    """
-    Generate password
-    """
 
 
 @task

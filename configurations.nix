@@ -9,8 +9,10 @@
     flake-registry
     nixos-hardware
     envfs
+    nixpkgs-unstable
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
+
 
   commonModules = [
     {_module.args.inputs = self.inputs;}
@@ -206,6 +208,21 @@ in {
         computeNodeModules
         ++ [
           ./hosts/jack.nix
+        ];
+    };
+
+    ruby = (nixpkgs-unstable.lib.makeOverridable nixpkgs-unstable.lib.nixosSystem) {
+      # when compiling cross, we actually need to specify the build system as `system`
+      #system = "riscv64-linux";
+      system = "x86_64-linux";
+      modules =
+        #computeNodeModules
+         [
+          ./hosts/ruby.nix
+          ./modules/hosts.nix
+          ./modules/network.nix
+          ./modules/packages.nix
+          #retiolum.nixosModules.retiolum
         ];
     };
   };

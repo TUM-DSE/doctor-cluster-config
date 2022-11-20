@@ -97,6 +97,9 @@ let
     "hosts/jack.yml$" = [
       jack
     ];
+    "hosts/ruby.yml$" = [
+      # TODO:
+    ];
     "modules/nfs/secrets.yml$" = [
       bill
       nardole

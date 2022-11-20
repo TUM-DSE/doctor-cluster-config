@@ -22,7 +22,6 @@
     tig
     python3
     strace
-    bandwhich
     iotop
     man-pages
     dnsutils
@@ -32,6 +31,10 @@
     ripgrep
     pciutils
 
+    # tries to default to soft-float due to out-dated cc-rs
+  ] ++ lib.optional (!stdenv.hostPlatform.isRiscV) bandwhich
+    # avoid compiling desktop stuff when doing cross nixos
+    ++ lib.optionals (stdenv.hostPlatform == stdenv.buildPlatform) [
     # various terminfo packages
     termite.terminfo
     wezterm.terminfo
