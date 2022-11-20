@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 {
   # Enable nix ld
-  programs.nix-ld.enable = true;
+  programs.nix-ld.enable = !pkgs.stdenv.hostPlatform.isRiscV;
 
-  environment.variables = with pkgs;  {
+  environment.variables = lib.mkIf (config.programs.nix-ld.enable) {
      NIX_LD = toString (pkgs.runCommand "ld.so" {} ''
        ln -s "$(cat '${pkgs.stdenv.cc}/nix-support/dynamic-linker')" $out
      '');
@@ -11,7 +11,7 @@
       let
         ld_library_path = pkgs.buildEnv {
           name = "lb-library-path";
-          paths = map lib.getLib [
+          paths = with pkgs; map lib.getLib [
             stdenv.cc.cc
             zlib
             fuse3

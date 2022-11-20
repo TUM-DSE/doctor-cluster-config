@@ -13,7 +13,6 @@
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
 
-
   commonModules = [
     {_module.args.inputs = self.inputs;}
     {_module.args.self = self;}
@@ -43,7 +42,7 @@
     }: {
       nix.nixPath = [
         "home-manager=${home-manager}"
-        "nixpkgs=${nixpkgs}"
+        "nixpkgs=${pkgs.path}"
         "nur=${nur}"
       ];
       # TODO: share nixpkgs for each machine to speed up local evaluation.
@@ -216,13 +215,9 @@ in {
       #system = "riscv64-linux";
       system = "x86_64-linux";
       modules =
-        #computeNodeModules
-         [
+        computeNodeModules
+        ++ [
           ./hosts/ruby.nix
-          ./modules/hosts.nix
-          ./modules/network.nix
-          ./modules/packages.nix
-          #retiolum.nixosModules.retiolum
         ];
     };
   };
