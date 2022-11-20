@@ -37,6 +37,7 @@ let
     wilfred   = "age14esukks86hdswm9tjpjpjwxquset7407ffahxk6tc3t2ayanta4swyvw5f";
     river     = "age1kkace98a960arj2qlzuuzpxxgm5r6ktw902ak6qydejdx6kxrs9q79vl4a";
     jack      = "age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y";
+    ruby      = "age1q2t8w6qta7v6mhwv3qlfq6un60mj0u8k5j8qp7v37kjkd6008ycs4ecxmt";
   };
 
   groups = with keys; {
@@ -98,7 +99,7 @@ let
       jack
     ];
     "hosts/ruby.yml$" = [
-      # TODO:
+      ruby
     ];
     "modules/nfs/secrets.yml$" = [
       bill
