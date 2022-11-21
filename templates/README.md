@@ -9,7 +9,7 @@ Initialize a nix flake project
 ```console
 $ mkdir myproject
 $ cd myproject
-$ nix flake init --template github:TUM-DSE/doctor-cluster-config#project-template
+$ nix flake init --template github:TUM-DSE/doctor-cluster-config#project
 ```
 
 It is good practice to versionate this folder with git!
