@@ -38,3 +38,5 @@ Switch to your home configuration:
 $ ls ./flake.nix
 $ nix run .#switch-jdoe-hm
 ```
+
+The example home-manager configuration will install `htop`.
