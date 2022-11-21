@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake project";
+  description = "A generic development shell";
 
   # update flake.lock to latest nixos: `nix flake update`
   inputs = {
