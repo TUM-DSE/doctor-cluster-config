@@ -295,12 +295,11 @@ def deploy_ruby(c):
     Deploy to riscv server
     """
     host = DeployHost(
-        #"ryan.dse.in.tum.de",
-        "localhost",
+        "graham.dse.in.tum.de",
         user="root",
         forward_agent=True,
         command_prefix="ruby",
-        meta=dict(target_user="root", target_host="ruby", flake_attr="ruby", config_dir="/var/lib/nixos-config"),
+        meta=dict(target_user="root", target_host="ruby.r", flake_attr="ruby", config_dir="/var/lib/nixos-config"),
     )
     deploy_nixos([host])
 

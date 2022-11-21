@@ -7,6 +7,7 @@
 {
   # Include the results of the hardware scan.
   imports = [
+    ../modules/nfs/client.nix
     ../modules/riscv-unleashed
     # less libraries to cross compile
     "${modulesPath}/profiles/minimal.nix"
@@ -18,6 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    lm_sensors
   ];
 
   services.openssh.enable = true;
