@@ -28,7 +28,7 @@
     # enable AMD-SEV
     # https://libvirt.org/kbase/launch_security_sev.html#enabling-sev-on-the-host
     boot.kernelParams = [
-      "mem_encrypt=on"
+      #"mem_encrypt=on"
       "kvm_amd.sev=1"
     ];
   };
