@@ -1,9 +1,9 @@
 {
   description = "A very basic flake project";
 
-  # update flake.lock to latest nixos-22.05: `nix flake update`
+  # update flake.lock to latest nixos: `nix flake update`
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.05;
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   # output format guide https://nixos.wiki/wiki/Flakes#Output_schema
@@ -18,24 +18,34 @@
     };
 
     devShells.${system} = {
-      default = self.devShells.${system}.pinnedcc;
+      default = self.devShells.${system}.pinned-gcc;
 
       # is updated to the latest gcc on `nix flake update`
       # doc: https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-mkShell
-      rollingcc = pkgs.mkShell {
-        depsBuildHost = with pkgs; [ # also called nativeBuildInputs
-          gnumake
+      rolling-gcc = pkgs.mkShell {
+        depsBuildHost = with pkgs; [ # also called `nativeBuildInputs`
+          cmake pkg-config
         ];
-        depsHostTarget = with pkgs; [ # also called buildInputs
+        depsHostTarget = with pkgs; [ # also called `buildInputs`
           zlib # whatever libraries and runtime apps your application needs
+          # Find more packages on https://search.nixos.org/packages
         ];
         SOME_ENV_VAR = "bar";
       };
 
       # remain on gcc10 even after `nix flake update`
-      pinnedcc = pkgs.mkShell.override {stdenv = pkgs.gcc10Stdenv; } {
+      pinned-gcc = pkgs.mkShell.override { stdenv = pkgs.gcc10Stdenv; } {
         depsBuildHost = with pkgs; [
-          gnumake
+          cmake pkg-config
+        ];
+        depsHostTarget = with pkgs; [
+          zlib
+        ];
+      };
+
+      clang = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
+        depsBuildHost = with pkgs; [
+          cmake pkg-config
         ];
         depsHostTarget = with pkgs; [
           zlib
