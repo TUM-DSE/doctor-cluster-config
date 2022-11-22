@@ -12,7 +12,7 @@
     ../modules/buildbot/worker.nix
     ../modules/amd_sev.nix
     ../modules/dpdk.nix
-    ../modules/iommu-intel.nix
+    ../modules/graham-config.nix
   ];
 
   boot.hugepages.size = "1GB";
