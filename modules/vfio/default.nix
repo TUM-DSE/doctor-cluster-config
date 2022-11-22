@@ -5,7 +5,7 @@ let
 in {
   options.virtualisation.vfio = {
     enable = mkEnableOption "VFIO Configuration";
-    IOMMUType = mkOption {
+    iommuType = mkOption {
       type = types.enum [ "intel" "amd" ];
       example = "intel";
       description = "Type of the IOMMU used";
@@ -16,7 +16,7 @@ in {
       example = [ "10de:1b80" "10de:10f0" ];
       description = "PCI IDs of devices to bind to vfio-pci";
     };
-    disableEFIfb = mkOption {
+    disableEfiFb = mkOption {
       type = types.bool;
       default = false;
       example = true;
@@ -34,16 +34,6 @@ in {
       description =
         "Enables or disables kvm guest access to model-specific registers";
     };
-    applyACSpatch = mkOption {
-      type = types.bool;
-      default = false;
-      description = ''
-        If set, the following things will happen:
-          - The ACS override patch is applied
-          - Applies the i915-vga-arbiter patch
-          - Adds pcie_acs_override=downstream to the command line
-      '';
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -51,16 +41,13 @@ in {
       SUBSYSTEM=="vfio", OWNER="root", GROUP="kvm"
     '';
 
-    boot.kernelParams = (if cfg.IOMMUType == "intel" then [
+    boot.kernelParams = (if cfg.iommuType == "intel" then [
       "intel_iommu=on"
       "intel_iommu=igfx_off"
     ] else
       [ "amd_iommu=on" ]) ++ (optional (builtins.length cfg.devices > 0)
         ("vfio-pci.ids=" + builtins.concatStringsSep "," cfg.devices))
-      ++ (optionals cfg.applyACSpatch [
-        "pcie_acs_override=downstream,multifunction"
-        "pci=nomsi"
-      ]) ++ (optional cfg.disableEFIfb "video=efifb:off")
+      ++ (optional cfg.disableEfiFb "video=efifb:off")
       ++ (optionals cfg.ignoreMSRs [
         "kvm.ignore_msrs=1"
         "kvm.report_ignored_msrs=0"
@@ -72,26 +59,5 @@ in {
       [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
     boot.blacklistedKernelModules =
       optionals cfg.blacklistNvidia [ "nvidia" "nouveau" ];
-
-    boot.kernelPatches = optionals cfg.applyACSpatch [
-      {
-        name = "add-acs-overrides";
-        patch = pkgs.fetchurl {
-          name = "add-acs-overrides.patch";
-          url =
-            "https://raw.githubusercontent.com/slowbro/linux-vfio/v5.5.4-arch1/add-acs-overrides.patch";
-          sha256 = "0nbmc5bwv7pl84l1mfhacvyp8vnzwhar0ahqgckvmzlhgf1n1bii";
-        };
-      }
-      {
-        name = "i915-vga-arbiter";
-        patch = pkgs.fetchurl {
-          name = "i915-vga-arbiter.patch";
-          url =
-            "https://raw.githubusercontent.com/slowbro/linux-vfio/v5.5.4-arch1/i915-vga-arbiter.patch";
-          sha256 = "1m5nn9pfkf685g31y31ip70jv61sblvxgskqn8a0ca60mmr38krk";
-        };
-      }
-    ];
   };
 }

@@ -1,10 +1,12 @@
-{...}: {
-  imports = [./vfio.nix];
+{
+  imports = [
+    ./.
+  ];
 
   virtualisation = {
     vfio = {
       enable = true;
-      IOMMUType = "amd";
+      iommuType = "amd";
       devices = [ "8086:1592"];
     };
   };
