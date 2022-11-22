@@ -13,31 +13,28 @@
     # should be enough?
     nrBuildUsers = lib.mkDefault 32;
 
-    # re-add soon
-    #daemonIOSchedClass = "idle";
-    #daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+    daemonCPUSchedPolicy = "idle";
 
     # https://github.com/NixOS/nix/issues/719
-    extraOptions = ''
-      builders-use-substitutes = true
-      keep-outputs = true
-      keep-derivations = true
+
+    settings = {
+      # https://github.com/NixOS/nix/issues/719
+      builders-use-substitutes = true;
+      keep-outputs = true;
+      keep-derivations = true;
       # in zfs we trust
-      fsync-metadata = ${lib.boolToString (config.fileSystems."/".fsType != "zfs")}
-      experimental-features = nix-command flakes
-    '';
-
-    autoOptimiseStore = true;
-
-    binaryCaches = [
-      "https://nix-community.cachix.org"
-      "https://tum-dse.cachix.org"
-    ];
-
-    binaryCachePublicKeys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
-    ];
+      fsync-metadata = lib.boolToString (!config.boot.isContainer or config.fileSystems."/".fsType != "zfs");
+      experimental-features = "nix-command flakes";
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://tum-dse.cachix.org"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
+      ];
+    };
   };
 
   # inputs == flake inputs in configurations.nix
