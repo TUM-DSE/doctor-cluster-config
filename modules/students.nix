@@ -102,6 +102,10 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDgvbY6SooSd15IeR4TO2xrbqL9NrUKdxRk0EmUy4nF1xy8gTVb6fzjbeFer7ECgWE3YgUQ2ejWXtveT8jLcJmMAgGrfspfzI2uA5ijYtVlqUqL0Acxra6DMvYDhQkOG66ri5uCah2u9HUGLt56gLsjEALsDK2cJjh8Km5fRk8vxdtESSx/pd5fK0J7x5J2b3SAPtLnF9j5s1JfMxAqxYgIgwaghF5+z1IEDGRKEOsXDFNOE2AhLChf1ALtqpF6p9FigLYDXRNO2LOWAZBDbeTNq0WQJlN3BPwPfgLJKBTgLdZ/RREiYf8DEmx+c7PTjushyAYnCM/YlzCfeLBwnFXNk2XsSZUH99pZy0scjOuDtHu0uY4NTfBo9H1mmznOOjgovXwgmgdujTzl4prciRl4feKbOR5lmQV4ziwAbvLOdVoP0ABri3pFumkgjNiv91kvAOgILGvMfeeiuVxiVjLbDxBRuL5hlqq/t6wGnGlP4xCqN9f87qz8kfc5ls80TK7Nh1yi4USQIsfaZkBM/sCARIj1CSu9emcI3Oo856jz+l2SlB9r0urqbuSNoUxh14uQ35uYqcqhjXc+AI0acBVmDH1lHurgvVAQdceYGdVPW9iV4sQNoFnFqoMgbblA+y9ujZu3a3XEGv8HzKL7wT17YXc0V2y30DeFSEiqxcEJmw== emil@sssemil"
   ];
 
+  shuKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDdNJJX/Y6xOkSKwrHubpZNti5Gk9VFycn9hLzP2x9fo/ZbqrSfNNSAmj2OMHjXKpXHkyVuD2V4Yw/N7ulIX070o05ljn3zbZO4z6upg1czjXys//LvGevCm6cItg5i4bk/XVz+1Q+iaQgPQbkQJ0cM9h1kIwq1p9S+mh37yj4JVmSb6w+hVD6kWOTrE9UL88HEPmBClr/syqQ9KJt9/KvnoeBV5GE58swYvCNCenUdSHYzhpE4WUKeJhqO38i1Oux6aXSJbjdQaR+YaHTXPHkHLOpkY6lHleRj2M9ooEwYzAjIoU9zGgjoj1fxOp9IGdlS/BhnFVaPh/z2Hu1KPpOmY+Cby9hIUf13KCUnp3eLGf5HB3IUBRTf6t12A65cPHeVISBOLO+6gcrOWKHnNAOq8RJaNBvNQ+N0AZejXYdojqvSod2+0ATT57bSlUiL3E+u5KN7gG7/dohY4OdxSMqt+Hvi3fsMYt2FKVUFWK4AqvgaXzDj4mjIZ44DAHdS408= gedatsu@fedora"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -335,6 +339,16 @@ in {
       uid = 2018;
       allowedHosts = ["jack"];
       openssh.authorizedKeys.keys = emilKeys;
+    };
+
+    # Shi Anzai, former intern (Atsushi)
+    shu = {
+      isNormalUser = true;
+      home = "/home/shu";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2019;
+      openssh.authorizedKeys.keys = shuKeys;
     };
   };
 
