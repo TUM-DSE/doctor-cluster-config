@@ -17,6 +17,7 @@ Parameters to consider for matching cards to slots:
     - 1x available
     - 3x bought, on the way
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
+    - ryan: dual port (,)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (Jackson-craig,) Cx0/1, vlan1
@@ -240,9 +241,9 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c, Intel Corporation, D
 
 PCI Slots:   
 - ❌  Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 3 status: In Use length: Long    
-c4:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01, Broadcom Inc. and subsidiaries, Device 4161  
+c4:00.0, PCI bridge, Xilinx Corporation, Device 913f, ,   
 - ❌  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: In Use length: Long    
-81:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
+81:00.0, Processing accelerators, Xilinx Corporation, Device d020, Xilinx Corporation, Device 000e  
 - ❌  Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long    
 03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ✅  Slot: N/A type: x16 <OUT OF SPEC> PCIe Slot 4 status: Available length: Long    

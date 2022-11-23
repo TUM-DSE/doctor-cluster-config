@@ -10,7 +10,7 @@ Machine:   Type: Desktop System: sysGen www.sysgen.de product: Super Server v: 0
            serial: 0123456789 Chassis: type: 3 v: 0123456789 serial: 0123456789 
            Mobo: Supermicro model: X12SCZ-TLN4F v: 1.01A serial: UM20BS000427 
            UEFI: American Megatrends v: 1.0a date: 01/11/2021 
-Memory:    RAM: total: 125.69 GiB used: 89.46 GiB (71.2%) 
+Memory:    RAM: total: 125.69 GiB used: 89.53 GiB (71.2%) 
            Array-1: capacity: 128 GiB note: est. slots: 4 EC: None max-module-size: 32 GiB 
            note: est. 
            Device-1: DIMMA1 size: 32 GiB speed: 2400 MT/s type: DDR4 
@@ -36,10 +36,10 @@ CPU:       Info: 10-Core model: Intel Core i9-10900K bits: 64 type: MT MCP arch:
            family: 6 model-id: A5 (165) stepping: 5 microcode: E0 cache: L1: 640 KiB L2: 20 MiB 
            L3: 20 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 147994 
-           Speed: 5113 MHz min/max: 800/5300 MHz base/boost: 3600/3700 volts: 1.0 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 5113 2: 5105 3: 5103 4: 2537 5: 4371 6: 4011 
-           7: 5091 8: 5112 9: 4945 10: 3984 11: 4935 12: 5099 13: 5061 14: 5050 15: 5036 16: 5098 
-           17: 5095 18: 5105 19: 5111 20: 5095 
+           Speed: 5103 MHz min/max: 800/5300 MHz base/boost: 3600/3700 volts: 1.0 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 5103 2: 4997 3: 5100 4: 5102 5: 5117 6: 5101 
+           7: 5103 8: 5061 9: 3534 10: 5095 11: 5096 12: 4737 13: 5108 14: 5000 15: 5084 16: 5093 
+           17: 5096 18: 5057 19: 3124 20: 5006 
            Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -95,51 +95,51 @@ Network:   Device-1: Intel Ethernet I219-LM vendor: Super Micro driver: e1000e v
 Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v: kernel 
            bus-ID: 1-13.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
-RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB free: 436 GiB 
-           allocated: 492 GiB 
+RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB free: 389 GiB 
+           allocated: 539 GiB 
            Components: Online: N/A 
            Device-2: zpool2 type: zfs status: ONLINE level: linear size: 14.5 TiB free: 14.1 TiB 
-           allocated: 408 GiB 
+           allocated: 409 GiB 
            Components: Online: N/A 
-           Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 790 GiB 
-           allocated: 98.1 GiB 
+           Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 791 GiB 
+           allocated: 97.4 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 23.62 TiB usable: 39.89 TiB used: 941.7 GiB (2.3%) 
+Drives:    Local Storage: total: raw: 23.62 TiB usable: 39.89 TiB used: 1005.91 GiB (2.5%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
            rotation: SSD serial: S4EWNX0R410276D rev: 2B2QEXM7 temp: 27 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 47d 11h cycles: 3 read-units: 34,082,211 [17.4 TB] 
-           written-units: 10,761,901 [5.51 TB] 
+           SMART: yes health: PASSED on: 47d 18h cycles: 3 read-units: 35,688,971 [18.2 TB] 
+           written-units: 11,409,236 [5.84 TB] 
            ID-2: /dev/sda maj-min: 8:0 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRHZGW5K rev: 0A85 temp: 30 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 371d 23h cycles: 1 
+           rotation: 7200 rpm serial: VRHZGW5K rev: 0A85 temp: 32 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 1y 13d 4h cycles: 1 
            ID-3: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
            sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNA0N900985 rev: 404Q temp: 24 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 250d 14h cycles: 42 read: 13.69 TiB 
-           written: 25.19 TiB 
+           SMART: yes state: enabled health: PASSED on: 1y 256d 20h cycles: 42 read: 13.79 TiB 
+           written: 25.31 TiB 
            ID-4: /dev/sdc maj-min: 8:32 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRJ0RM2K rev: 0A85 temp: 29 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 371d 23h cycles: 1 
+           rotation: 7200 rpm serial: VRJ0RM2K rev: 0A85 temp: 30 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 1y 13d 4h cycles: 1 
            ID-5: /dev/sdd maj-min: 8:48 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRJ0HPEK rev: 0A85 temp: 28 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 371d 23h cycles: 1 
-Partition: ID-1: / raw-size: N/A size: 840.52 GiB used: 79.1 GiB (9.4%) fs: zfs 
+           rotation: 7200 rpm serial: VRJ0HPEK rev: 0A85 temp: 29 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 1y 13d 4h cycles: 1 
+Partition: ID-1: / raw-size: N/A size: 842.53 GiB used: 80.38 GiB (9.5%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 45.1 MiB (9.0%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 67.1 MiB (13.4%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /tmp raw-size: N/A size: 761.5 GiB used: 75.6 MiB (0.0%) fs: zfs 
+           ID-3: /tmp raw-size: N/A size: 762.22 GiB used: 74.9 MiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 37.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 537 
-           Uptime: 12:35:24  up 18 days 12:15,  0 users,  load average: 0.16, 0.04, 0.01 
+Info:      Processes: 547 
+           Uptime: 17:49:29  up 24 days 17:29,  0 users,  load average: 0.08, 0.02, 0.01 
            wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
            gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 475 lib: 68 nix-usr: 0 Client: Sudo 
            v: 1.9.10 inxi: 3.3.04 
