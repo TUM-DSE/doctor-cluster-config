@@ -10,6 +10,12 @@ in {
       example = "intel";
       description = "Type of the IOMMU used";
     };
+    iommuDebugFs = mkOption {
+      type = types.bool;
+      default = false;
+      example = true;
+      description = "make available iommu mappings via /sys/kernel/debug/iommu";
+    };
     devices = mkOption {
       type = types.listOf (types.strMatching "[0-9a-f]{4}:[0-9a-f]{4}");
       default = [ ];
@@ -43,7 +49,7 @@ in {
 
     boot.kernelParams = (if cfg.iommuType == "intel" then [
       "intel_iommu=on"
-      "intel_iommu=igfx_off"
+      # "intel_iommu=igfx_off" # turns off integrated graphics
     ] else
       [ "amd_iommu=on" ]) ++ (optional (builtins.length cfg.devices > 0)
         ("vfio-pci.ids=" + builtins.concatStringsSep "," cfg.devices))
@@ -59,5 +65,19 @@ in {
       [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
     boot.blacklistedKernelModules =
       optionals cfg.blacklistNvidia [ "nvidia" "nouveau" ];
+
+    boot.kernelPatches = (optionals cfg.iommuDebugFs [
+      {
+        name = "iommu_debug_files";
+        patch = null;
+        extraConfig = (if cfg.iommuType == "intel" then ''
+          IOMMU_DEBUGFS y
+          INTEL_IOMMU_DEBUGFS y
+        '' else ''
+          IOMMU_DEBUGFS y
+          AMD_IOMMU_DEBUGFS y
+        '');
+      }
+    ]);
   };
 }

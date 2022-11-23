@@ -7,7 +7,7 @@
     vfio = {
       enable = true;
       iommuType = "amd";
-      devices = [ "8086:1592"];
+      iommuDebugFs = true;
     };
   };
 }

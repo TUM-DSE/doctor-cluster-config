@@ -8,7 +8,7 @@
     ../modules/nfs/client.nix
     ../modules/dax.nix
     ../modules/dpdk.nix
-    ../modules/iommu-intel.nix
+    ../modules/vfio/iommu-intel.nix
   ];
 
   boot.hugepages.size = "1GB";
