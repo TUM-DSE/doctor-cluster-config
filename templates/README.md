@@ -10,6 +10,7 @@ Initialize a nix flake project
 $ mkdir myproject
 $ cd myproject
 $ nix flake init --template github:TUM-DSE/doctor-cluster-config#project
+$ git add flake.nix flake.lock # important or else nix won't find those files
 ```
 
 It is good practice to versionate this folder with git!
@@ -27,7 +28,10 @@ Note that `gcc` is wrapped by nixos of which you can inspect additional paramete
 ## Home-manager template
 
 ```console
+$ mkdir -p $HOME/.config/home-manager
+$ cd $HOME/.config/home-manager
 $ nix flake init --template github:TUM-DSE/doctor-cluster-config#home-manager
+# edit home.nix
 ```
 
 With this newly initialized flake.nix you can define user-global packages (, config files, user services and environment) in `home.nix`. 
@@ -36,7 +40,7 @@ Switch to your home configuration:
 
 ```console
 $ ls ./flake.nix
-$ nix run .#switch-jdoe-hm
+$ nix run $HOME/.config/home-manager#switch-jdoe-hm
 ```
 
 The example home-manager configuration will install `htop`.
