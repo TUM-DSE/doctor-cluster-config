@@ -1,6 +1,6 @@
 {
   stdenv,
-  fetchFromGitHub,
+  fetchurl,
   libndctl,
   systemd,
   cmake,
@@ -8,22 +8,31 @@
   pkg-config,
   asciidoctor,
   asciidoc,
-  lib
+  lib,
+  rpmextract
 }:
-stdenv.mkDerivation rec {
+
+let
+
+in stdenv.mkDerivation rec {
   pname = "ipmctl";
-  version = "2022-05-30";
-  #version = "03.00.00.0438";
-  src = fetchFromGitHub {
-    repo = "ipmctl";
-    owner = "intel";
-    rev = "b1e79d7e04eeac3a656e09a3bda76784b1e132a5";
-    #rev = "v${version}";
-    sha256 = "sha256-0MbWucezbLaHvQ5uENnj5u2wG1BwRIzWFdfrQrT+dHs=";
+  version = "03.00.00.0468";
+  src = fetchurl {
+    url = "https://github.com/intel/ipmctl/releases/download/v${version}/ipmctl-${version}-1.fc27.src.rpm";
+    sha256 = "sha256-aEnLIGzC06LxnZXxwUbGC85MYqm6ycVMRMp8tWsxd78=";
   };
   buildInputs = [libndctl systemd];
-  nativeBuildInputs = [cmake python3 pkg-config asciidoctor asciidoc];
-  cmakeFlags = ["-DBUILDNUM=1"];
+  unpackPhase = ''
+    rpmextract $src
+    tar -xf ipmctl-${version}.tar.gz
+    cd ipmctl-${version}
+  '';
+  nativeBuildInputs = [cmake python3 pkg-config asciidoctor asciidoc rpmextract];
+  cmakeFlags = [
+    "-DBUILDNUM=1"
+    "-DLINUX_PRODUCT_NAME=ipmctl"
+    "-DRELEASE=ON"
+  ];
 
   meta = with lib; {
     description = "Utility for configuring and managing Intel Optane Persistent Memory modules";
