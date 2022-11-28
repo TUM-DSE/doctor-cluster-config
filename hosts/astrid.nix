@@ -13,5 +13,7 @@
 
   networking.hostName = "astrid";
 
+  simd.arch = "cascadelake";
+
   system.stateVersion = "21.11";
 }

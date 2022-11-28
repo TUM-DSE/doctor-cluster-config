@@ -30,6 +30,9 @@
   #
   # IPMI/BMC:
   # -  d0:8e:79:ba:1a:22
+
+  simd.arch = "znver3";
+
   system.stateVersion = "21.05";
 
   # manually added to load xilinx from

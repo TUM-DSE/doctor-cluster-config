@@ -12,5 +12,7 @@
 
   networking.hostName = "dan";
 
+  simd.arch = "cascadelake";
+
   system.stateVersion = "21.11";
 }

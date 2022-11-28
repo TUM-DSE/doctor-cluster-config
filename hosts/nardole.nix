@@ -28,5 +28,7 @@
     "b8:ce:f6:0b:ee:75"
   ];
 
+  simd.arch = "skylake";
+
   system.stateVersion = "20.09";
 }

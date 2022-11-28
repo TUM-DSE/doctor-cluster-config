@@ -16,5 +16,7 @@
 
   networking.hostName = "jack";
 
+  simd.arch = "icelake-server";
+
   system.stateVersion = "21.11";
 }
