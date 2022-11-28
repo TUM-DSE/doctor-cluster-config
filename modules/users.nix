@@ -156,7 +156,7 @@ in {
         isNormalUser = true;
         home = "/home/dimitrios";
         inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
+        shell = "/run/current-system/sw/bin/zsh";
         uid = 1004;
         openssh.authorizedKeys.keys = dimitriosKeys;
       };
