@@ -13,12 +13,13 @@
       # is updated to the latest gcc on `nix flake update`
       # doc: https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-mkShell
       default = pkgs.mkShell {
-        depsBuildHost = with pkgs; [ # also called `nativeBuildInputs`
+        nativeBuildInputs = with pkgs; [ # sometimes called `depsBuildHost`
           cmake pkg-config
         ];
-        depsHostTarget = with pkgs; [ # also called `buildInputs`
-          zlib # whatever libraries and runtime apps your application needs
+        buildInputs = with pkgs; [ # sometimes called `depsHostTarget`
+          # if you dont know where to put a required package, put it here
           # Find more packages on https://search.nixos.org/packages
+          zlib
         ];
 
         # All assignments become environments variable in the development shell.
