@@ -24,7 +24,7 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 # Hosts
 
-- [Expansion cards and slots](expansion_cards.md)
+- [Expansion cards and slots](../expansion_cards.md)
 - [Network graph](graph.md) (see also networking notes in "Expansion cards and slots")
 
 
