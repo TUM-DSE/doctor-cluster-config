@@ -42,7 +42,7 @@
       Type = "oneshot";
       ExecStart = [
         # we use the client/key for authentication and hence leave the kubernetes token empty
-        "${pkgs.coreutils}/bin/touch /run/telegraf-kubernetes-token"
+        "${pkgs.coreutils}/bin/install -o telegraf -m400 /var/lib/rancher/k3s/server/token /run/telegraf-kubernetes-token"
         "${pkgs.coreutils}/bin/install -o telegraf -m400 /var/lib/rancher/k3s/server/tls/client-admin.crt /run/telegraf-kubernetes-cert"
         "${pkgs.coreutils}/bin/install -o telegraf -m400 /var/lib/rancher/k3s/server/tls/client-admin.key /run/telegraf-kubernetes-key"
       ];
