@@ -1,7 +1,7 @@
 {...}: {
   flake.templates = {
     project = {
-      path = ./project;
+      path = ./project-template;
       description = "A basic make project with gcc";
     };
     home-manager = {
