@@ -74,10 +74,10 @@ Parameters to consider for matching cards to slots:
     - 1x available
     - 3x bought, on the way
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - ryan: dual port (,)
+    - ryan: dual port (ryan-craig,)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
-    - jackson: dual port. (Jackson-craig,) Cx0/1, vlan1
+    - jackson: dual port. (Jackson-craig,)
     - christina: dual port. (christina,christina)
     - wilfred: single port. (wilfred-river)
     - river: single port. (river-wilfred)
