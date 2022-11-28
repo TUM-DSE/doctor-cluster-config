@@ -184,21 +184,16 @@ def document_nixos(_hosts: List[str]) -> None:
     """
     hosts = DeployGroup([DeployHost(h, user="root") for h in _hosts])
 
-    pwd = os.getcwd()
-    os.chdir("docs/hosts")
-
     # generate per-host docs
-    def doc_host(h: DeployHost) -> None:
-        h.run_local(f"../generate-host-info.sh {h.host}")
+    #def doc_host(h: DeployHost) -> None:
+    #    h.run_local(f"cd ./docs/hosts && ../generate-host-info.sh {h.host}")
 
-    hosts.run_function(doc_host)
+    #hosts.run_function(doc_host)
 
     # generate expansion cards docs
     cards = document_cards(hosts)
-    with open("expansion_cards.md", "w") as file:
+    with open("docs/expansion_cards.md", "w") as file:
         file.write(cards)
-
-    os.chdir(pwd)
 
 
 def get_lldp_neighbors(hosts: List[str]) -> None:
