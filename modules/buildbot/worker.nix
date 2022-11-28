@@ -29,7 +29,8 @@ in
       hostName = "yasmin.dse.in.tum.de";
       maxJobs = 96;
       sshKey = config.sops.secrets.buildbot-builder-ssh-key.path;
-      sshUser = "ssh-ng://buildbot-worker";
+      sshUser = "buildbot-worker";
+      protocol = "ssh-ng";
       system = "aarch64-linux";
       supportedFeatures = [
         "big-parallel"
