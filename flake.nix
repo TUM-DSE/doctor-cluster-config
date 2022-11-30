@@ -14,9 +14,9 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    # nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
     # In case we need backports, we can use our fork
-    # nixpkgs.url = "github:TUM-DSE/nixpkgs/release-22.05-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/release-22.11-backports";
 
     nixpkgs-unstable.url = "github:Mic92/nixpkgs/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
