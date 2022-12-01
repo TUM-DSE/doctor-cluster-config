@@ -25,15 +25,4 @@
   services.openssh.enable = true;
 
   system.stateVersion = "22.05";
-
-  # TODO: publish the mac address to the admins
-  systemd.network.links."00-docking-station".extraConfig = ''
-    [Match]
-    MACAddress = 70:b3:d5:92:f7:f8
-
-    [Link]
-    MACAddress = f4:6b:8c:4a:7d:82
-    Name = eth0
-  '';
-
 }
