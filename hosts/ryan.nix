@@ -46,5 +46,5 @@
     ];
   };
 
-  users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" ];
+  users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" "francisco" ];
 }
