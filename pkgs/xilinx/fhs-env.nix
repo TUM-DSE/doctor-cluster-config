@@ -27,6 +27,7 @@ buildFHSUserEnv {
       freetype
       fontconfig
       glib
+      libxcrypt
       gtk2
       gtk3
 
