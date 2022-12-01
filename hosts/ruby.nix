@@ -26,11 +26,6 @@
 
   system.stateVersion = "22.05";
 
-  nixpkgs.crossSystem = {
-    config = "riscv64-unknown-linux-gnu";
-    system = "riscv64-linux";
-  };
-
   # TODO: publish the mac address to the admins
   systemd.network.links."00-docking-station".extraConfig = ''
     [Match]

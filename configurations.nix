@@ -211,13 +211,14 @@ in {
     };
 
     ruby = (nixpkgs-unstable.lib.makeOverridable nixpkgs-unstable.lib.nixosSystem) {
-      # when compiling cross, we actually need to specify the build system as `system`
-      #system = "riscv64-linux";
-      system = "x86_64-linux";
       modules =
         computeNodeModules
         ++ [
           ./hosts/ruby.nix
+          {
+            nixpkgs.hostPlatform = "riscv64-linux";
+            nixpkgs.buildPlatform = "x86_64-linux";
+          }
         ];
     };
   };
