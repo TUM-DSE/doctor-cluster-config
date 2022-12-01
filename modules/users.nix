@@ -95,6 +95,10 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvQLwToitv9b0cZK2UNUh26BYJ8/ie8oexCyye+BpXP martin@kleppmann.com"
   ];
 
+  myronKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDNypOvfeaLL8eNSyKKB8If0AfFQTC9XDHeNiNWX/mjntWhd6ZLjlTdnuGAc2rwGIu0HtmaOPIO9sRi69GZY4CNRHK1HYa645vXsQhHyBo80NP838O5kNWX2dBQ3Go0LatV/v1o0a9QP1qwLL99STmTK7lLI1IIE3xtAnj8QSqnedVZoJQyxzqURkig/aWsVY1niyrEbGlfP6Z694t6IM7Nr6Ge5bK0C6vGZMBifhczNZ+0mTGctlcnXLjOKeMnJyIEVsN0EkaysCwFlwXf68VA/3XVbBFUx3Xqi52V4cfGShTdD9lFzzkJnlYplxepn63FVfBdPyGWU+ejYzx+udFAz/97EV7cf6fu++Cgd26kv8ZucQ2+aRqXEaKJU3yWzd/BDAl9V5GTfqabAa37toKq/0PrWxaX78ozmI9+7cWxWtHNJMI5toW9AraA5Yf1fvR8e39+8Ehg2BX1Yf8Gd4p1WwizEhHYIMqZWr8YMGJG6VxQbcbnqbBHPHyu26I5sB8= myron@lifebook"
+  ];
+
   extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
 in {
   options = {
@@ -313,6 +317,17 @@ in {
         shell = "/run/current-system/sw/bin/bash";
         uid = 1024;
         openssh.authorizedKeys.keys = martinklKeys;
+      };
+
+      # Myron Tsatsarakis
+      # tum
+      myron = {
+       isNormalUser = true;
+       home = "/home/myron";
+       inherit (config.users.users.joerg) extraGroups;
+       shell = "/run/current-system/sw/bin/bash";
+       uid = 1025;
+       openssh.authorizedKeys.keys = myronKeys;
       };
 
       root = {
