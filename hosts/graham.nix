@@ -33,6 +33,8 @@
   # IPMI/BMC:
   # - d0:8e:79:ba:02:1a
 
+  simd.arch = "znver3";
+
   system.stateVersion = "21.05";
 
   # Don't manage vnet interface with systemd-networkd

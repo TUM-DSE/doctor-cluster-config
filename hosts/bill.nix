@@ -21,6 +21,8 @@
     "b8:ce:f6:0b:ee:65"
   ];
 
+  simd.arch = "skylake";
+
   # unused 1Gbit/s port, messes up k3s networking
   systemd.network.networks."05-unmanaged".extraConfig = ''
     [Match]
