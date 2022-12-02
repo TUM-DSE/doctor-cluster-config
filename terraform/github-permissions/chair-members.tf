@@ -15,6 +15,7 @@ locals {
     "rgouicem",       # Redha Gouicem
     "jedichen121",    # Jiyang Chen
     "mmisono",        # Masanori Misono
+    "myronfirst"      # Myron Tsatsarakis
   ])
 }
 
