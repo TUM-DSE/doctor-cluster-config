@@ -6,12 +6,12 @@ System:    Host: yasmin Kernel: 5.15.79 aarch64 bits: 64 compiler: gcc v: 9.3.0
            init=/nix/store/81djs8vafmamnz2hry2hgdsknn8w6399-nixos-system-yasmin-22.05.20221121.41c6fb2/init 
            console=ttyS0,115200n8 console=tty0 console=ttyS0,115200n8 console=ttyAMA0,115200n8 
            console=tty0 panic=1 boot.panic_on_fail loglevel=4 
-           Console: N/A Distro: NixOS 22.05 (Quokka) 
+           Console: N/A Distro: NixOS 22.11 (Raccoon) 
 Machine:   Type: Server System: GIGABYTE product: R181-T90-00 v: 0100 serial: GLG4NN012A0002 
            Chassis: type: 23 v: 1.0 serial: 01234567890123456789AB 
            Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 UEFI: GIGABYTE v: F34 
            date: 08/13/2020 
-Memory:    RAM: total: 251.27 GiB used: 15.29 GiB (6.1%) 
+Memory:    RAM: total: 251.27 GiB used: 34.78 GiB (13.8%) 
            Array-1: capacity: 2 TiB slots: 12 EC: Multi-bit ECC max-module-size: 170.67 GiB 
            note: est. 
            Device-1: DIMM_P0_A0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -45,34 +45,34 @@ PCI Slots: Slot: 0 type: x16 PCI Express 3 OCP_1_x16 status: Available length: S
 CPU:       Info: 224-Core (2-Die) model: N/A bits: 64 type: MCP MCM arch: ARMv8 family: 8 
            model-id: 1 stepping: 2 
            features: Use -f option to see features bogomips: 89600 
-           Speed: 2000 MHz min/max: 1000/2000 MHz base/boost: 2000/2500 boost: disabled 
-           volts: 0.8 V ext-clock: 33 MHz Core speeds (MHz): 1: 1000 2: 1010 3: 2000 4: 2000 
-           5: 2000 6: 2000 7: 2000 8: 2000 9: 2000 10: 2000 11: 2000 12: 2000 13: 2000 14: 2000 
-           15: 2000 16: 2000 17: 2000 18: 2000 19: 2000 20: 2000 21: 2000 22: 2000 23: 2000 
-           24: 2000 25: 2000 26: 2000 27: 2000 28: 2000 29: 2000 30: 2000 31: 2000 32: 2000 
-           33: 2000 34: 2000 35: 2000 36: 2000 37: 2000 38: 2000 39: 2000 40: 2000 41: 2000 
-           42: 2000 43: 2000 44: 2000 45: 2000 46: 2000 47: 2000 48: 2000 49: 2000 50: 2000 
-           51: 2000 52: 2000 53: 2000 54: 2000 55: 2000 56: 2000 57: 2000 58: 2000 59: 2000 
-           60: 2000 61: 2000 62: 2000 63: 2000 64: 2000 65: 2000 66: 2000 67: 2000 68: 2000 
-           69: 2000 70: 2000 71: 2000 72: 2000 73: 2000 74: 2000 75: 2000 76: 2000 77: 2000 
-           78: 2000 79: 2000 80: 2000 81: 2000 82: 2000 83: 2000 84: 2000 85: 2000 86: 2000 
-           87: 2000 88: 2000 89: 2000 90: 2000 91: 2000 92: 2000 93: 2000 94: 2000 95: 2000 
-           96: 2000 97: 2000 98: 2000 99: 2000 100: 2000 101: 2000 102: 2000 103: 2000 104: 2000 
-           105: 2000 106: 2000 107: 2000 108: 2000 109: 2000 110: 2000 111: 2000 112: 2000 
-           113: 2000 114: 2000 115: 2000 116: 2000 117: 2000 118: 2000 119: 2000 120: 2000 
-           121: 2000 122: 2000 123: 2000 124: 2000 125: 2000 126: 2000 127: 2000 128: 2000 
-           129: 2000 130: 2000 131: 2000 132: 2000 133: 2000 134: 2000 135: 2000 136: 2000 
-           137: 2000 138: 2000 139: 2000 140: 2000 141: 2000 142: 2000 143: 2000 144: 2000 
-           145: 2000 146: 1360 147: 1100 148: 2000 149: 2000 150: 2000 151: 2000 152: 2000 
-           153: 2000 154: 2000 155: 2000 156: 2000 157: 2000 158: 2000 159: 2000 160: 2000 
-           161: 2000 162: 2000 163: 2000 164: 2000 165: 2000 166: 2000 167: 2000 168: 2000 
-           169: 2000 170: 2000 171: 2000 172: 2000 173: 2000 174: 2000 175: 2000 176: 2000 
-           177: 1360 178: 1100 179: 2000 180: 2000 181: 2000 182: 2000 183: 2000 184: 2000 
-           185: 2000 186: 2000 187: 2000 188: 2000 189: 2000 190: 2000 191: 2000 192: 2000 
-           193: 2000 194: 2000 195: 2000 196: 2000 197: 2000 198: 2000 199: 2000 200: 2000 
-           201: 2000 202: 2000 203: 2000 204: 2000 205: 2000 206: 2000 207: 2000 208: 1360 
-           209: 1100 210: 2000 211: 2000 212: 2000 213: 2000 214: 2000 215: 2000 216: 2000 
-           217: 2000 218: 2000 219: 2000 220: 2000 221: 2000 222: 2000 223: 2000 224: 2000 
+           Speed: 1950 MHz min/max: 1000/2000 MHz base/boost: 2000/2500 boost: disabled 
+           volts: 0.8 V ext-clock: 33 MHz Core speeds (MHz): 1: 1230 2: 1050 3: 1900 4: 1120 
+           5: 1000 6: 1150 7: 1130 8: 1000 9: 1130 10: 1190 11: 1380 12: 1160 13: 1060 14: 1350 
+           15: 1220 16: 1140 17: 1510 18: 1030 19: 1040 20: 1460 21: 1890 22: 1030 23: 1780 
+           24: 1100 25: 1070 26: 1000 27: 1950 28: 1070 29: 1700 30: 1940 31: 1010 32: 1610 
+           33: 1190 34: 1080 35: 1610 36: 1920 37: 1630 38: 1000 39: 1660 40: 1330 41: 1010 
+           42: 1110 43: 1580 44: 1950 45: 1000 46: 1000 47: 1900 48: 1510 49: 1030 50: 1040 
+           51: 1460 52: 1890 53: 1030 54: 1780 55: 1100 56: 1000 57: 1950 58: 1200 59: 1070 
+           60: 1700 61: 1940 62: 1010 63: 1610 64: 1190 65: 1080 66: 1610 67: 1630 68: 1000 
+           69: 1120 70: 1660 71: 1330 72: 1010 73: 1110 74: 1580 75: 1950 76: 1000 77: 1000 
+           78: 1510 79: 1030 80: 1000 81: 1040 82: 1460 83: 1890 84: 1030 85: 1780 86: 1100 
+           87: 1000 88: 1950 89: 1070 90: 1700 91: 1280 92: 1940 93: 1010 94: 1610 95: 1190 
+           96: 1080 97: 1610 98: 1630 99: 1000 100: 1660 101: 1330 102: 1130 103: 1010 104: 1110 
+           105: 1580 106: 1950 107: 1000 108: 1000 109: 1510 110: 1030 111: 1040 112: 1460 
+           113: 1840 114: 1000 115: 1890 116: 1030 117: 1780 118: 1100 119: 1000 120: 1950 
+           121: 1070 122: 1700 123: 1940 124: 1010 125: 1130 126: 1610 127: 1190 128: 1080 
+           129: 1610 130: 1630 131: 1000 132: 1660 133: 1330 134: 1010 135: 1110 136: 1190 
+           137: 1580 138: 1950 139: 1000 140: 1000 141: 1380 142: 1160 143: 1060 144: 1220 
+           145: 1140 146: 1230 147: 1050 148: 1130 149: 1840 150: 1130 151: 1150 152: 1040 
+           153: 1400 154: 1110 155: 1260 156: 1090 157: 1900 158: 1350 159: 1150 160: 1070 
+           161: 1920 162: 1900 163: 1200 164: 1120 165: 1000 166: 1280 167: 1130 168: 1000 
+           169: 1130 170: 1040 171: 1190 172: 1380 173: 1160 174: 1060 175: 1220 176: 1140 
+           177: 1230 178: 1050 179: 1840 180: 1130 181: 1400 182: 1150 183: 1040 184: 1400 
+           185: 1110 186: 1260 187: 1090 188: 1900 189: 1350 190: 1070 191: 1920 192: 1110 
+           193: 1900 194: 1200 195: 1120 196: 1000 197: 1280 198: 1130 199: 1000 200: 1130 
+           201: 1190 202: 1380 203: 1260 204: 1160 205: 1060 206: 1220 207: 1140 208: 1230 
+           209: 1050 210: 1840 211: 1130 212: 1150 213: 1040 214: 1090 215: 1400 216: 1110 
+           217: 1260 218: 1090 219: 1900 220: 1350 221: 1070 222: 1920 223: 1900 224: 1200 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -107,44 +107,45 @@ Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigab
            IF: enp0s15f1u1u3c2 state: unknown speed: -1 duplex: half mac: 16:d4:72:2c:21:77 
            IP v4: 169.254.252.174/16 scope: link 
            IP v6: fe80::14d4:72ff:fe2c:2177/64 scope: link 
-           IF-ID-1: docker0 state: down mac: 02:42:ed:14:01:af 
+           IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:ed:14:01:af 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IP v6: fe80::42:edff:fe14:1af/64 scope: link 
            IF-ID-2: eno2 state: down mac: b4:2e:99:3f:74:7d 
            IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global 
+           IF-ID-4: vethd3a5080 state: up speed: 10000 Mbps duplex: full mac: f6:8e:53:d3:dd:49 
            WAN IP: 131.159.102.7 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 737 GiB 
-           allocated: 151 GiB 
+RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 733 GiB 
+           allocated: 155 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 1.78 TiB usable: 2.65 TiB used: 838.74 GiB (30.9%) 
+Drives:    Local Storage: total: 1.78 TiB used: 1.26 TiB (70.6%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
            rotation: SSD serial: S4EWNX0R514087T rev: 2B2QEXM7 temp: 29 Celsius C 
-           SMART: yes health: PASSED on: 68d 13h cycles: 6 read-units: 245 [125 MB] 
+           SMART: yes health: PASSED on: 68d 13h cycles: 6 read-units: 246 [125 MB] 
            written-units: 562,571 [288 GB] 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
            sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNC0R216725 rev: 904Q temp: 20 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 115d 2h cycles: 21 read: 11.31 TiB 
-           written: 20.41 TiB 
-Partition: ID-1: / raw-size: N/A size: 777.56 GiB used: 68.67 GiB (8.8%) fs: zfs 
+           SMART: yes state: enabled health: PASSED on: 1y 126d 22h cycles: 21 read: 11.63 TiB 
+           written: 21.01 TiB 
+Partition: ID-1: / raw-size: N/A size: 776.43 GiB used: 71.88 GiB (9.3%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 205.2 MiB (41.1%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 267.1 MiB (53.5%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 876.88 GiB used: 516.95 GiB (59.0%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 880.51 GiB used: 538.51 GiB (61.2%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 709.16 GiB used: 275.9 MiB (0.0%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 704.58 GiB used: 28.6 MiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 34.3 C mobo: 33.8 C 
+           System Temperatures: lm-sensors cpu: 34.9 C mobo: 33.8 C 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 2385 
-           Uptime: 17:49:32  up 1 day  4:50,  1 user,  load average: 0.68, 0.36, 0.25 
-           Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: gcc: 9.3.0 
-           Packages: nix-default: 0 nix-sys: 447 lib: 66 nix-usr: 0 Client: Sudo v: 1.9.10 
+Info:      Processes: 2738 
+           Uptime: 13:51:23  up 13 days  0:51,  1 user,  load average: 35.23, 31.74, 31.40 
+           Init: systemd v: 251 target: multi-user.target tool: systemctl Compilers: gcc: 9.5.0 
+           Packages: nix-default: 0 nix-sys: 427 lib: 60 nix-usr: 0 Client: Sudo v: 1.9.12p1 
            inxi: 3.3.04 
 ```
 ![hardware topology](yasmin.lstopo.svg)

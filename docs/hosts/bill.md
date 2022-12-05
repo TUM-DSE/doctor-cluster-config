@@ -1,16 +1,16 @@
 # bill
 
 ```
-System:    Host: bill Kernel: 5.15.75 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\ll5rinh634lv8ny3in3lk91rss4bnyrh-initrd-linux-5.15.75-initrd.efi 
-           init=/nix/store/rv6knx1rb9dcrkds1k6vghy4hrcgvaym-nixos-system-bill-22.05.20221028.7269939/init 
+System:    Host: bill Kernel: 5.15.79 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\5slpq5my029c6byirqa2dzps3khghdbs-initrd-linux-5.15.79-initrd.efi 
+           init=/nix/store/jf1cw4gh2jf8f9k05bna4yglpyws57c9-nixos-system-bill-22.05.20221121.41c6fb2/init 
            console=ttyS1,115200n8 console=tty1 panic=1 boot.panic_on_fail loglevel=4 
-           Console: N/A Distro: NixOS 22.05 (Quokka) 
+           Console: N/A Distro: NixOS 22.11 (Raccoon) 
 Machine:   Type: Desktop System: sysGen www.sysgen.de product: Super Server v: 0123456789 
            serial: 0123456789 Chassis: type: 3 v: 0123456789 serial: 0123456789 
            Mobo: Supermicro model: X12SCZ-TLN4F v: 1.01A serial: UM20BS000421 
            UEFI: American Megatrends v: 1.0a date: 01/11/2021 
-Memory:    RAM: total: 125.68 GiB used: 26.33 GiB (21.0%) 
+Memory:    RAM: total: 125.68 GiB used: 64.64 GiB (51.4%) 
            Array-1: capacity: 128 GiB note: est. slots: 4 EC: None max-module-size: 32 GiB 
            note: est. 
            Device-1: DIMMA1 size: 32 GiB speed: 2400 MT/s type: DDR4 
@@ -36,10 +36,10 @@ CPU:       Info: 10-Core model: Intel Core i9-10900K bits: 64 type: MT MCP arch:
            family: 6 model-id: A5 (165) stepping: 5 microcode: E0 cache: L1: 640 KiB L2: 20 MiB 
            L3: 20 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 147994 
-           Speed: 5106 MHz min/max: 800/5300 MHz base/boost: 3600/3700 volts: 1.0 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 5106 2: 5124 3: 4231 4: 1717 5: 5104 6: 5101 
-           7: 5249 8: 5107 9: 5102 10: 5103 11: 5092 12: 5032 13: 5100 14: 5106 15: 5109 16: 5104 
-           17: 5097 18: 5109 19: 5101 20: 5097 
+           Speed: 5110 MHz min/max: 800/5300 MHz base/boost: 3600/3700 volts: 1.0 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 5110 2: 5103 3: 5103 4: 5115 5: 5100 6: 5088 
+           7: 5114 8: 5105 9: 5098 10: 5119 11: 5087 12: 5104 13: 5102 14: 5099 15: 5107 16: 5129 
+           17: 5104 18: 5115 19: 5040 20: 5103 
            Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -61,7 +61,7 @@ Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: k
 Audio:     Device-1: Intel Comet Lake PCH cAVS vendor: Super Micro driver: snd_hda_intel v: kernel 
            alternate: snd_soc_skl,snd_sof_pci_intel_cnl bus-ID: 00:1f.3 chip-ID: 8086:06c8 
            class-ID: 0403 
-           Sound Server-1: ALSA v: k5.15.75 running: yes 
+           Sound Server-1: ALSA v: k5.15.79 running: yes 
 Network:   Device-1: Intel Ethernet I219-LM vendor: Super Micro driver: e1000e v: kernel 
            port: efa0 bus-ID: 00:1f.6 chip-ID: 8086:0d4c class-ID: 0200 
            IF: eno1 state: down mac: 3c:ec:ef:2c:f5:54 
@@ -74,11 +74,11 @@ Network:   Device-1: Intel Ethernet I219-LM vendor: Super Micro driver: e1000e v
            Device-4: Intel I210 Gigabit Network vendor: Super Micro driver: igb v: kernel 
            port: 4000 bus-ID: 03:00.0 chip-ID: 8086:1533 class-ID: 0200 
            IF: eno2 state: down mac: 3c:ec:ef:2c:f5:55 
-           Device-5: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe v: kernel 
-           port: 3000 bus-ID: 06:00.0 chip-ID: 8086:1563 class-ID: 0200 
+           Device-5: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: kernel port: 3000 
+           bus-ID: 06:00.0 chip-ID: 8086:1563 class-ID: 0200 
            IF: eno3 state: down mac: 3c:ec:ef:30:36:5a 
-           Device-6: Intel Ethernet 10G X550T vendor: Super Micro driver: ixgbe v: kernel 
-           port: 3000 bus-ID: 06:00.1 chip-ID: 8086:1563 class-ID: 0200 
+           Device-6: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: kernel port: 3000 
+           bus-ID: 06:00.1 chip-ID: 8086:1563 class-ID: 0200 
            IF: eno4 state: down mac: 3c:ec:ef:30:36:5b 
            IF-ID-1: bond1 state: up speed: 20000 Mbps duplex: full mac: b8:ce:f6:0b:ee:64 
            IP v4: 131.159.102.1/24 type: dynamic scope: global 
@@ -86,60 +86,60 @@ Network:   Device-1: Intel Ethernet I219-LM vendor: Super Micro driver: e1000e v
            IP v6: 2a09:80c0:102::f000:1/64 scope: global 
            IP v6: fe80::bace:f6ff:fe0b:ee64/64 scope: link 
            IF-ID-2: bonding_masters state: N/A speed: N/A duplex: N/A mac: N/A 
-           IF-ID-3: br-9445ed3d463d state: down mac: 02:42:84:42:e6:d4 
+           IF-ID-3: br-9445ed3d463d state: down mac: 02:42:0b:bf:c4:ab 
            IP v4: 192.168.49.1/24 scope: global broadcast: 192.168.49.255 
-           IF-ID-4: docker0 state: down mac: 02:42:05:5f:7c:79 
+           IF-ID-4: docker0 state: down mac: 02:42:ef:f1:d6:43 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IF-ID-5: eth0 state: down mac: b0:3a:f2:b6:05:9f 
+           IF-ID-5: eth1 state: down mac: b0:3a:f2:b6:05:9f 
            IF-ID-6: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:87ed:6232:1016:7553:939c/16 scope: global 
            WAN IP: 131.159.102.1 
 Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v: kernel 
            bus-ID: 1-13.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
-RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB free: 108 GiB 
-           allocated: 820 GiB 
+RAID:      Device-1: zpool1 type: zfs status: ONLINE level: linear size: 928 GiB free: 264 GiB 
+           allocated: 664 GiB 
            Components: Online: N/A 
            Device-2: zpool2 type: zfs status: ONLINE level: linear size: 14.5 TiB free: 14 TiB 
-           allocated: 495 GiB 
+           allocated: 520 GiB 
            Components: Online: N/A 
-           Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 757 GiB 
-           allocated: 131 GiB 
+           Device-3: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 693 GiB 
+           allocated: 195 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 94.17 GiB (0.3%) 
+Drives:    Local Storage: total: raw: 16.34 TiB usable: 32.61 TiB used: 115.46 GiB (0.3%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
            rotation: SSD serial: S4EWNX0R513894H rev: 2B2QEXM7 temp: 25 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 72d 12h cycles: 2 read-units: 54,596,430 [27.9 TB] 
-           written-units: 4,632,677 [2.37 TB] 
+           SMART: yes health: PASSED on: 72d 13h cycles: 2 read-units: 57,482,212 [29.4 TB] 
+           written-units: 4,752,323 [2.43 TB] 
            ID-2: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
-           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNA0N901002 rev: 404Q temp: 26 C 
+           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNA0N901002 rev: 404Q temp: 25 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 240d 17h cycles: 36 read: 20.96 TiB 
-           written: 48.84 TiB 
+           SMART: yes state: enabled health: PASSED on: 1y 252d 13h cycles: 36 read: 21.27 TiB 
+           written: 49.27 TiB 
            ID-3: /dev/sdb maj-min: 8:16 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRJXEZ3K rev: 0A85 temp: 30 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 13d 4h cycles: 1 
+           rotation: 7200 rpm serial: VRJ0MZ7K rev: 0A85 temp: 28 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 1y 25d 0h cycles: 1 
            ID-4: /dev/sdc maj-min: 8:32 vendor: Western Digital model: WD80EFBX-68AZZN0 
            size: 7.28 TiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s 
-           rotation: 7200 rpm serial: VRJ0MZ7K rev: 0A85 temp: 30 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 1y 13d 4h cycles: 1 
-Partition: ID-1: / raw-size: N/A size: 822.5 GiB used: 94.03 GiB (11.4%) fs: zfs 
+           rotation: 7200 rpm serial: VRJXEZ3K rev: 0A85 temp: 28 C scheme: GPT 
+           SMART: yes state: enabled health: PASSED on: 1y 25d 0h cycles: 1 
+Partition: ID-1: / raw-size: N/A size: 779.75 GiB used: 115.29 GiB (14.8%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 67.1 MiB (13.4%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 90 MiB (18.0%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /tmp raw-size: N/A size: 728.54 GiB used: 75.6 MiB (0.0%) fs: zfs 
+           ID-3: /tmp raw-size: N/A size: 664.53 GiB used: 75.6 MiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 34.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 546 
-           Uptime: 17:49:29  up 24 days 17:45,  0 users,  load average: 0.01, 0.01, 0.00 
-           wakeups: 0 Init: systemd v: 250 target: multi-user.target tool: systemctl Compilers: 
-           gcc: 10.3.0 Packages: nix-default: 0 nix-sys: 470 lib: 72 nix-usr: 0 Client: Sudo 
-           v: 1.9.10 inxi: 3.3.04 
+Info:      Processes: 543 
+           Uptime: 13:51:09  up 8 days 13:38,  0 users,  load average: 0.08, 0.46, 4.42 wakeups: 0 
+           Init: systemd v: 251 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
+           Packages: nix-default: 0 nix-sys: 452 lib: 66 nix-usr: 0 Client: Sudo v: 1.9.12p1 
+           inxi: 3.3.04 
 ```
 ![hardware topology](bill.lstopo.svg)
