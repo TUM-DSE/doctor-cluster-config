@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "kernel drivers for xrt runtime";
-    platforms = platforms.unix;
+    description = "SFC kernel drivers";
+    platforms = platforms.linux;
   };
 }

@@ -33,6 +33,6 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "kernel drivers for xrt runtime";
-    platforms = platforms.unix;
+    platforms = platforms.linux;
   };
 }
