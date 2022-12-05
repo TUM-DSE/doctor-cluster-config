@@ -77,7 +77,7 @@ Parameters to consider for matching cards to slots:
     - ryan: dual port (ryan-craig,)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
-    - jackson: dual port. (Jackson-craig,)
+    - jackson: dual port. (,)
     - christina: dual port. (christina,christina)
     - wilfred: single port. (wilfred-river)
     - river: single port. (river-wilfred)
