@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import List, Any
 from deploykit import DeployHost, DeployGroup
 from typing import IO, Any, Callable, List, Dict, Optional, Text
+from string import Template
 
 ROOT = Path(__file__).parent.resolve()
 os.chdir(ROOT)
@@ -55,64 +56,6 @@ def document_cards(hosts: DeployGroup) -> str:
     """
     Documents PCI expansion cards and returns a markdown string.
     """
-    cards = """
-# Expansion cards and slots
-
-This file is generated through `inv update-docs` by `tasks.py`.
-
-Parameters to consider for matching cards to slots: 
-
-    - long or short: size of slot
-    - height: how many pci slots does the card take up? Is it a fat FPGA?
-    - internal/external: does the slot need to be accessible from the outside (to plug cables in)
-
-## List of cards
-
-- 1x Nvidia A40 GPU (high profile, dual slot)
-- 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-- 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
-    - 1x available
-    - 3x bought, on the way
-- 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - ryan: dual port (ryan-craig,)
-- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
-    - graham: dual port. (graham-graham,graham-graham)
-    - jackson: dual port. (,)
-    - christina: dual port. (christina,christina)
-    - wilfred: single port. (wilfred-river)
-    - river: single port. (river-wilfred)
-    - unassinged: single port. former: (adelaide-craig) vlan1
-- 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
-    - graham: dual port. RJ-45 (graham-graham,graham-graham)
-    - ryan: dual port. RJ-45 (ryan-ryan,none)
-- 5x Intel X520-2 10G NIC (SFI/SFP+)
-- 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
-- 1x Intel X710 10G NIC (SFI/SFP+?)
-- 4x PCI Samsung PM173X NVMe drive (high profile, low profile mod, x4?)
-    - 2x graham: (boot, experiments)
-    - 1x ryan: (boot)
-    - 1x adelaide: (experiments)
-
-Onboard:
-    - Intel X720
-        - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
-    - Intel X550: 2 port RJ-45
-        - christina: (chistina-adelaide, none)
-        - adelaide: (adelaide-chistina, none)
-        - wilfred: (wilfred-river, none)
-        - river: (river-wilfred, none)
-        - probably jackson: (none-none)
-
-Most of the 10G NICs are in use to provider internet.
-
-(^ list last updated 28.10.22)
-
-
-## List of slots
-
-Note that ubuntu workstations and servers don't appear in this list. 
-
-"""
 
     def get_slots(h: DeployHost) -> List[str]:
         ret = []
@@ -174,8 +117,7 @@ Note that ubuntu workstations and servers don't appear in this list.
             list(sorted(results, key=lambda i: i.host.host)),
         )
     )
-    cards += "".join(results2)
-    return cards
+    return "".join(results2)
 
 
 def document_nixos(_hosts: List[str]) -> None:
@@ -185,15 +127,15 @@ def document_nixos(_hosts: List[str]) -> None:
     hosts = DeployGroup([DeployHost(h, user="root") for h in _hosts])
 
     # generate per-host docs
-    #def doc_host(h: DeployHost) -> None:
-    #    h.run_local(f"cd ./docs/hosts && ../generate-host-info.sh {h.host}")
+    def doc_host(h: DeployHost) -> None:
+        h.run_local(f"cd ./docs/hosts && ../generate-host-info.sh {h.host}")
 
-    #hosts.run_function(doc_host)
-
+    hosts.run_function(doc_host)
     # generate expansion cards docs
     cards = document_cards(hosts)
-    with open("docs/expansion_cards.md", "w") as file:
-        file.write(cards)
+    template = (ROOT / "docs" / "expansion_cards.md.template").read_text()
+    content = Template(template).substitute(dict(PCI_SLOT_ALLOCATION=cards))
+    (ROOT / "docs" / "expansion_cards.md").write_text(content)
 
 
 def get_lldp_neighbors(hosts: List[str]) -> None:

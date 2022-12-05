@@ -1,9 +1,8 @@
-
 # Expansion cards and slots
 
-This file is generated through `inv update-docs` by `tasks.py`.
+This file is generated through `inv update-docs` by `tasks.py` from this [template](expansion_cards.md.template)
 
-Parameters to consider for matching cards to slots: 
+Parameters to consider for matching cards to slots:
 
     - long or short: size of slot
     - height: how many pci slots does the card take up? Is it a fat FPGA?
@@ -20,7 +19,7 @@ Parameters to consider for matching cards to slots:
     - ryan: dual port (ryan-craig,)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
-    - jackson: dual port. (Jackson-craig,)
+    - jackson: dual port. (,)
     - christina: dual port. (christina,christina)
     - wilfred: single port. (wilfred-river)
     - river: single port. (river-wilfred)
@@ -53,7 +52,7 @@ Most of the 10G NICs are in use to provider internet.
 
 ## List of slots
 
-Note that ubuntu workstations and servers don't appear in this list. 
+Note that ubuntu workstations and servers don't appear in this list.
 
 ### adelaide.dse.in.tum.de 
 
@@ -292,4 +291,5 @@ No device/PCI ID.
 - ✅  Slot: 22 type: x16 PCI Express 3 PCIE SLOT4_x16 status: Available length: Long    
 No device/PCI ID.  
  
+
 
