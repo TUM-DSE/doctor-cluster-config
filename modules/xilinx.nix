@@ -7,6 +7,7 @@
 }: let
   packages = self.packages.${pkgs.system};
   xrt-drivers = packages.xrt-drivers.override { inherit (config.boot.kernelPackages) kernel; };
+  sfc-drivers = packages.sfc-drivers.override { inherit (config.boot.kernelPackages) kernel; };
 in {
 
   options = {
@@ -29,7 +30,8 @@ in {
 
     boot.kernelPackages =
       lib.mkIf (config.hardware.xilinx.xrt-drivers.enable) pkgs.linuxPackages_5_10;
-    boot.extraModulePackages = lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
+    boot.extraModulePackages = [ sfc-drivers ]
+                               ++ lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
 
     hardware.opengl.extraPackages = [
       packages.xrt

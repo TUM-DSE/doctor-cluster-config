@@ -5,13 +5,18 @@
     ...
   }: let
   in {
-    packages.xrt = pkgs.callPackage ../pkgs/xilinx/xrt.nix {};
-    packages.xrt-drivers = pkgs.callPackage ../pkgs/xilinx/xrt-drivers.nix {
-      inherit (self'.packages) xrt;
-      inherit (pkgs.linuxPackages_5_10) kernel;
+    packages = {
+      xrt = pkgs.callPackage ./xilinx/xrt.nix {};
+      xrt-drivers = pkgs.callPackage ./xilinx/xrt-drivers.nix {
+        inherit (self'.packages) xrt;
+        inherit (pkgs.linuxPackages_5_10) kernel;
+      };
+      sfc-drivers = pkgs.callPackage ./xilinx/sfc-driver.nix {
+        inherit (pkgs.linuxPackages) kernel;
+      };
+      xilinx-env = pkgs.callPackage ./xilinx/fhs-env.nix {};
+      xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix {};
+      xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers {};
     };
-    packages.xilinx-env = pkgs.callPackage ../pkgs/xilinx/fhs-env.nix {};
-    packages.xilinx-firmware = pkgs.callPackage ../pkgs/xilinx/firmware.nix {};
-    packages.xilinx-cable-drivers = pkgs.callPackage ../pkgs/xilinx/cable-drivers {};
   };
 }

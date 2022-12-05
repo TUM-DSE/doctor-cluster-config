@@ -1,0 +1,62 @@
+From bcefe726c71dda3890db880cf0c159ab6456ce3b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=C3=B6rg=20Thalheim?= <joerg@thalheim.io>
+Date: Mon, 5 Dec 2022 13:27:41 +0100
+Subject: [PATCH] port to linux 5.15
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Jörg Thalheim <joerg@thalheim.io>
+---
+ usr/src/sfc-5.3.11.1000/drivers/bus/virtual_bus.c        | 5 +++--
+ .../sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c   | 9 +++++++--
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/bus/virtual_bus.c b/usr/src/sfc-5.3.11.1000/drivers/bus/virtual_bus.c
+index dd5a991..22cd7eb 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/bus/virtual_bus.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/bus/virtual_bus.c
+@@ -59,9 +59,10 @@ static int virtbus_probe(struct device *dev)
+ 	return dev->driver->probe(dev);
+ }
+ 
+-static int virtbus_remove(struct device *dev)
++static void virtbus_remove(struct device *dev)
+ {
+-	return dev->driver->remove(dev);
++	dev->driver->remove(dev);
++	return;
+ }
+ 
+ static void virtbus_shutdown(struct device *dev)
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c
+index 9fefcea..8728ae4 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c
+@@ -187,7 +187,9 @@ static u32 efx_ethtool_get_link(struct net_device *net_dev)
+  */
+ 
+ static int efx_ethtool_get_coalesce(struct net_device *net_dev,
+-				    struct ethtool_coalesce *coalesce)
++									struct ethtool_coalesce *coalesce,
++									struct kernel_ethtool_coalesce *kernel_coal,
++									struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	unsigned int tx_usecs, rx_usecs;
+@@ -205,8 +207,11 @@ static int efx_ethtool_get_coalesce(struct net_device *net_dev,
+ 	return 0;
+ }
+ 
++
+ static int efx_ethtool_set_coalesce(struct net_device *net_dev,
+-				    struct ethtool_coalesce *coalesce)
++									struct ethtool_coalesce *coalesce,
++									struct kernel_ethtool_coalesce *kernel_coal,
++									struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	struct efx_channel *channel;
+-- 
+2.38.1
+
