@@ -30,6 +30,7 @@
     (neovim.override {vimAlias = true;})
     ripgrep
     pciutils
+    ethtool
 
     # tries to default to soft-float due to out-dated cc-rs
   ] ++ lib.optional (!stdenv.hostPlatform.isRiscV) bandwhich
