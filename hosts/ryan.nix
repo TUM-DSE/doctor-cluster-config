@@ -46,5 +46,13 @@
     ];
   };
 
+  # Don't manage vnet interface with systemd-networkd
+  systemd.network.networks."05-tmp".extraConfig = ''
+    [Match]
+    Name = enp198s0f1
+    [Link]
+    Unmanaged = yes
+  '';
+
   users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" "francisco" ];
 }
