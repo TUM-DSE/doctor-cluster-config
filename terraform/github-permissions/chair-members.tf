@@ -11,7 +11,6 @@ locals {
     "Mic92",          # Jörg Thalheim
     "PBHDK",          # Paul Heidekrüger
     "pogobanane",     # Peter Okelmann
-    "mjntum",         # Myoung Jin Nam
     "rgouicem",       # Redha Gouicem
     "jedichen121",    # Jiyang Chen
     "mmisono",        # Masanori Misono
