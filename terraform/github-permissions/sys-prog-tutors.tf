@@ -30,10 +30,11 @@ resource "github_team_membership" "sys_prog_tutors_membership" {
   role = "member"
 }
 
-resource "github_team_repository" "ls1_courses" {
-  provider = github.ls1-courses
-  team_id = github_team.sys_prog_tutors_team.id
-  for_each = local.sys-prog-upstreams
-  repository = each.value
-  permission = "push"
-}
+# broken just now?
+#resource "github_team_repository" "ls1_courses" {
+#  provider = github.ls1-courses
+#  team_id = github_team.sys_prog_tutors_team.id
+#  for_each = local.sys-prog-upstreams
+#  repository = each.value
+#  permission = "push"
+#}
