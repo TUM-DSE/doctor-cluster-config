@@ -13,7 +13,7 @@
   # Don't manage vnet interface with systemd-networkd
   systemd.network.networks."05-tmp".extraConfig = ''
     [Match]
-    Name = enp81s0f0
+    Name = enp81s0f*
     [Link]
     Unmanaged = yes
   '';
