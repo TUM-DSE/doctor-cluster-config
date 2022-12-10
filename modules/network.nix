@@ -9,7 +9,7 @@
   systemd.network.enable = true;
 
   # often hangs
-  systemd.services.systemd-networkd-wait-online.enable = false;
+  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
   # sometimes cannot be restarted -> breaks system upgrade
   systemd.services.systemd-networkd.restartIfChanged = false;
   # fails to delete some chain on upgrade...
