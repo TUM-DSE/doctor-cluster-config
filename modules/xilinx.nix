@@ -24,18 +24,19 @@ in {
         xilinxName = "vitis";
         runScript = "vitis";
       })
+      packages.xntools-core
     ];
 
     services.udev.packages = [ packages.xilinx-cable-drivers ];
 
     boot.kernelPackages =
       lib.mkIf (config.hardware.xilinx.xrt-drivers.enable) pkgs.linuxPackages_5_10;
-    boot.extraModulePackages = [ sfc-drivers ]
-                               ++ lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
+    boot.extraModulePackages = lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
+    #boot.extraModulePackages = [ sfc-drivers ]
+    #                           ++ lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
 
     hardware.opengl.extraPackages = [
       packages.xrt
-      packages.xntools-core
     ];
 
     systemd.tmpfiles.rules = [
