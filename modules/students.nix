@@ -106,6 +106,14 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDdNJJX/Y6xOkSKwrHubpZNti5Gk9VFycn9hLzP2x9fo/ZbqrSfNNSAmj2OMHjXKpXHkyVuD2V4Yw/N7ulIX070o05ljn3zbZO4z6upg1czjXys//LvGevCm6cItg5i4bk/XVz+1Q+iaQgPQbkQJ0cM9h1kIwq1p9S+mh37yj4JVmSb6w+hVD6kWOTrE9UL88HEPmBClr/syqQ9KJt9/KvnoeBV5GE58swYvCNCenUdSHYzhpE4WUKeJhqO38i1Oux6aXSJbjdQaR+YaHTXPHkHLOpkY6lHleRj2M9ooEwYzAjIoU9zGgjoj1fxOp9IGdlS/BhnFVaPh/z2Hu1KPpOmY+Cby9hIUf13KCUnp3eLGf5HB3IUBRTf6t12A65cPHeVISBOLO+6gcrOWKHnNAOq8RJaNBvNQ+N0AZejXYdojqvSod2+0ATT57bSlUiL3E+u5KN7gG7/dohY4OdxSMqt+Hvi3fsMYt2FKVUFWK4AqvgaXzDj4mjIZ44DAHdS408= gedatsu@fedora"
   ];
 
+  turkmenKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsA5EhZL7JyoctqOzc2Sc/uNq2viAIwFQ6YUqlSdlKCqPonnNGxyGiW+/voNPvmo8ZsZwth9PPTvPwrXjxofpypDtzuiIAQCiOEGLWJmProYVydF2TjurtIFTPmMJELQ9qWVZrCbBaL0ekdDLpqHV8SrAdF/weaVyfBGl+RFO6rZfAwW9c3fLFLd7o9U0hUOSMWOjI1OStGXhoYXB4kdXHqV31WnHwSKitoAfEXGtjqqOqX1ulheuQ36by5VKnieX8scFZuqlxRCZYlTZRSC1jPpaYOL1zuu1uY9qNIEEwr0taXyWXp/dGZiYr7WO3109CYdBVdgG0WddKLH6QCug9grXuyJhiagC8OzCBQNg+n97pPmoP1GboUstEAkikKvzgU/udLRr4he046vnczgXNe4r4VUeCNaHJnDp17VFxveX0ANz1jde9NcMUD4X70eTUO9lGjFZHPYqMTcF06m1qvm6Jri3tsXXrkAFatPw448tD9awh7atPaEJYqKT59yoglCmyrmjxWDfdf4beCVyZ2WMPjlqgmTw3u8l7rt1flBd4z3cKEJHmyakmlPVLClnSWc70PdisfW7PeqAHNFJ5zkV92y9B9RKJrTtTyIdmxx4ESiUsFbfLUrBQgv6uLOtRIV4JzJ2bUT4lHDvkQHPWib04hzt51pSHl4mAN5BADw=="
+  ];
+
+  saracKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4e7BZ5ip9KVu7oY0x7nuWIcZIK+FGLk4pZPrua0sfF"
+  ];
+
 in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
@@ -349,6 +357,28 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2019;
       openssh.authorizedKeys.keys = shuKeys;
+    };
+
+    # Ahmet Turkmen, secure-reliable seminar student WS22
+    turkmen = {
+      isNormalUser = true;
+      home = "/home/turkmen";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2020;
+      allowedHosts = ["jack" "graham"];
+      openssh.authorizedKeys.keys = turkmenKeys;
+    };
+
+    # Mert Saraç, secure-reliable seminar student WS22
+    sarac = {
+      isNormalUser = true;
+      home = "/home/sarac";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2021;
+      allowedHosts = ["jack" "graham"];
+      openssh.authorizedKeys.keys = saracKeys;
     };
   };
 
