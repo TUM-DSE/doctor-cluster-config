@@ -1,4 +1,4 @@
-{ pkgs, lib, linuxPackages_5_15, ... } @ args:
+{ pkgs, lib, linuxPackages_6_0, ... } @ args:
 
 let
   meta-sifive = pkgs.callPackage ./meta-sifive.nix {};
@@ -7,7 +7,7 @@ let
     inherit patch;
   }) meta-sifive.kernelPatches;
 in
-linuxPackages_5_15.kernel.override({
+linuxPackages_6_0.kernel.override({
   kernelPatches = lib.lists.unique (sifivePatches ++ [
     {
       name = "unmatched-config";
