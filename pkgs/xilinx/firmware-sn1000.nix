@@ -26,8 +26,8 @@ stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/lib
-    cp -r firmware-config/lib $out/lib
-    cp -r firmware/lib $out/lib
+    cp -r firmware-config/lib/* $out/lib
+    cp -r firmware/lib/* $out/lib
   '';
 
   meta = {

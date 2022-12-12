@@ -35,6 +35,7 @@ in {
 
     hardware.opengl.extraPackages = [
       packages.xrt
+      packages.xntools-core
     ];
 
     systemd.tmpfiles.rules = [
@@ -47,6 +48,8 @@ in {
         rm -rf /lib/firmware/xilinx /opt/xilinx/firmware
         mkdir -p /lib/firmware/xilinx /opt/xilinx/firmware
         cp -r ${packages.xilinx-firmware}/lib/firmware/xilinx/* /lib/firmware/xilinx/
+        cp -r ${packages.firmware-sn1000}/lib/firmware/xilinx/sn1000 /lib/firmware/xilinx/
+
         cp -r ${packages.xilinx-firmware}/opt/xilinx/firmware/* /opt/xilinx/firmware/
         for p in ${packages.xilinx-firmware}/share/xilinx-firmware/*; do
            echo $p
