@@ -20,3 +20,4 @@
 | Myron Tsatsarakis           | Lenovo ThinkPad xxx (laptop, ordered), Lenovo ThinkPad Universal USB-C Dock (docking station, ordered) |
 | Harshavardhan Unnibhavi     | LG 27UL850 display, Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station) |
 | Jörg Thalheim               | xxx                                                                                                                                                                                                |
+| Martin Fink                 | MacBook Pro 13" M1 Pro (laptop) |
