@@ -47,12 +47,14 @@
   };
 
   # Don't manage vnet interface with systemd-networkd
-  systemd.network.networks."05-tmp".extraConfig = ''
+ systemd.network.networks."05-ryan_experiments".extraConfig = ''
     [Match]
-    Name = enp198s0f* eth*
+    Name=enp198s0f0np0
+    [Network]
+    Address=192.168.1.10/24
     [Link]
-    Unmanaged = yes
-  '';
-
+    Description=SN1000 Ethernet Adapter
+ '';
+#    Unmanaged=yes
   users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" "francisco" ];
 }
