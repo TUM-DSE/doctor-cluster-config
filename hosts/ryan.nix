@@ -49,7 +49,7 @@
   # Don't manage vnet interface with systemd-networkd
  systemd.network.networks."05-ryan_experiments".extraConfig = ''
     [Match]
-    Name=enp198s0f0np0
+    Name=enp198s0f0
     [Network]
     Address=192.168.1.10/24
     [Link]
