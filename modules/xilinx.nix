@@ -29,12 +29,17 @@ in {
 
     services.udev.packages = [ packages.xilinx-cable-drivers ];
 
-    boot.kernelPackages = pkgs.linuxPackages_5_15;
-    #boot.kernelPackages =
+    # 6.0 kernel
+    boot.kernelPackages = pkgs.linuxPackages_6_0;
+    boot.extraModulePackages = lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
+
+    # 5.15 kernel
+    # boot.extraModulePackages = [ sfc-drivers ]
+    #                            ++ lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
+
+    # 5.10 kernel
+    # boot.kernelPackages =
     #  lib.mkIf (config.hardware.xilinx.xrt-drivers.enable) pkgs.linuxPackages_5_10;
-    #boot.extraModulePackages = lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
-    boot.extraModulePackages = [ sfc-drivers ]
-                               ++ lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
 
     hardware.opengl.extraPackages = [
       packages.xrt
