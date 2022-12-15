@@ -55,6 +55,14 @@
     [Link]
     Description=SN1000 Host Interface
  '';
+  systemd.network.networks."05-ryan_sn1000_host_alt".extraConfig = ''
+    [Match]
+    Name=enp198s0f0np0
+    [Network]
+    Address=192.168.1.10/24
+    [Link]
+    Description=SN1000 Host Interface
+ '';
   systemd.network.networks."05-ryan_sn1000_arm".extraConfig = ''
     [Match]
     Name=eth5
