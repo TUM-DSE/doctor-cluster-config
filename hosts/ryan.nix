@@ -55,6 +55,14 @@
     [Link]
     Description=SN1000 Host Interface
  '';
+  systemd.network.networks."05-ryan_sn1000_arm".extraConfig = ''
+    [Match]
+    Name=eth5
+    [Network]
+    Address=192.168.1.20/24
+    [Link]
+    Description=SN1000 Arm Representor Interface
+ '';
 #    Unmanaged=yes
   users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" "francisco" ];
 }
