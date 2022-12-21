@@ -2,10 +2,7 @@
 
 buildLinux (args // rec {
   version = "5.15";
-  modDirVersion = if (modDirVersionArg == null) then
-    builtins.replaceStrings [ "-" ] [ ".0-" ] version
-      else
-    modDirVersionArg;
+  modDirVersion = "5.15.0";
   src = fetchFromGitHub {
     owner = "vmuxIO";
     repo = "linux";
