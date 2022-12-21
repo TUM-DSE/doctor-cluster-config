@@ -40,14 +40,12 @@
   };
 
   outputs = {
-    self,
-    nixpkgs,
     flake-parts,
     ...
   } @ inputs:
     (flake-parts.lib.evalFlakeModule
-      { inherit self; }
-      {
+      { inherit inputs; }
+      ({ self, inputs, ... }: {
         systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
         imports = [
           ./configurations.nix
@@ -73,8 +71,8 @@
           packages = {
             netboot = pkgs.callPackage ./modules/netboot/netboot.nix {
               # this nixosSystem is built for x86_64 machines regardless of the host machine
-              pkgs = nixpkgs.legacyPackages.x86_64-linux;
-              inherit (nixpkgs.lib) nixosSystem;
+              pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+              inherit (inputs.nixpkgs.lib) nixosSystem;
               extraModules = [
                 self.inputs.nur.nixosModules.nur
                 {_module.args.inputs = self.inputs;}
@@ -87,10 +85,10 @@
           };
         };
         flake = {
-          hydraJobs = nixpkgs.lib.mapAttrs' (name: config: nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations // {
+          hydraJobs = inputs.nixpkgs.lib.mapAttrs' (name: config: inputs.nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations // {
             devShells = self.devShells.x86_64-linux.default;
           };
         };
-      }).config.flake;
+      })).config.flake;
 
 }
