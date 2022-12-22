@@ -2,12 +2,12 @@
 
 buildLinux (args // rec {
   version = "5.15";
-  modDirVersion = "5.15.0";
+  modDirVersion = "5.15.84";
   src = fetchFromGitHub {
-    owner = "vmuxIO";
+    owner = "gierens";
     repo = "linux";
-    rev = "4442a5e9a8f2f31646011c75dfcbe74cc699092f"; # branch ioregion-5.15
-    sha256 = "sha256-PfjtFwvVMBks+5JWwsIX5jqhWgso13rscAqQ1C1ONfg=";
+    rev = "669ce309ca5572e66ab5a2df30207c7a48cc75f3"; # branch v5.15.84-ioregionfd
+    sha256 = "sha256-HrfndxdkIto6NrYKcX0oI4XQvHO5axsrWrV15UYm2ho=";
   };
 
   kernelPatches = [{
