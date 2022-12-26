@@ -36,10 +36,10 @@
   # fsid is necessary so that we can failover to the backup nfs, without getting
   # stale mounts on our clients.
   #
-  # 2a09:80c0:38::47/128 is our riscv board in the hardware lab
+  # 2a09:80c0:38::101/128 is our riscv board in the hardware lab
   services.nfs.server.exports = ''
-    /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25) 2a09:80c0:38::47/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=27)
-    /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) 2a09:80c0:38::47/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=28)
+    /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25) 2a09:80c0:38::101/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=27)
+    /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) 2a09:80c0:38::101/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=28)
   '';
 
   systemd.tmpfiles.rules = let
