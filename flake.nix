@@ -32,11 +32,6 @@
 
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
-
-    flake-utils.url = "github:numtide/flake-utils";
-    envfs.url = "github:Mic92/envfs";
-    envfs.inputs.nixpkgs.follows = "nixpkgs";
-    envfs.inputs.utils.follows = "flake-utils";
   };
 
   outputs = {
