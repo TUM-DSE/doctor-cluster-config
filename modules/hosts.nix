@@ -15,13 +15,6 @@ let
         own ipv4 address
       '';
     };
-
-    location = mkOption {
-      type = types.str;
-      description = ''
-        Where the server physcally is installed
-      '';
-    };
   };
 in
 {
@@ -42,110 +35,61 @@ in
         "no network configuration for ${config.networking.hostName} found in ${./hosts.nix}";
 
     networking.doctorwho.hosts = {
-      amy = {
-        ipv4 = "129.215.165.57";
-        ipv6 = "2001:630:3c1:164:b62e:99ff:fe3e:d369";
-        location = "edinburgh";
-      };
       astrid = {
         ipv4 = "131.159.102.11";
         ipv6 = "2a09:80c0:102::11";
-        location = "munich";
-      };
-      clara = {
-        ipv4 = "129.215.165.58";
-        ipv6 = "2001:630:3c1:164:b62e:99ff:fe3d:70f2";
-        location = "edinburgh";
-      };
-      dan = {
-        ipv4 = "131.159.102.12";
-        ipv6 = "2a09:80c0:102::12";
-        location = "munich";
-      };
-      donna = {
-        ipv4 = "129.215.165.54";
-        ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4ab8";
-        location = "edinburgh";
-      };
-      martha = {
-        ipv4 = "129.215.165.53";
-        ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4aba";
-        location = "edinburgh";
-      };
-      rose = {
-        ipv4 = "129.215.165.52";
-        ipv6 = "2001:630:3c1:164:6d4:c4ff:fe04:4e4b";
-        location = "edinburgh";
-      };
-      doctor = {
-        ipv4 = "129.215.165.108";
-        ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
-        location = "edinburgh";
-      };
-      sauron = {
-        ipv4 = "129.215.165.75";
-        #ipv6 = "2001:630:3c1:164:dea6:32ff:fe42:4f99";
-        location = "edinburgh";
       };
       bill = {
         ipv4 = "131.159.102.1";
         ipv6 = "2a09:80c0:102::1";
-        location = "munich";
+      };
+      dan = {
+        ipv4 = "131.159.102.12";
+        ipv6 = "2a09:80c0:102::12";
       };
       mickey = {
         ipv4 = "131.159.102.10";
         ipv6 = "2a09:80c0:102::10";
-        location = "munich";
       };
       nardole = {
         ipv4 = "131.159.102.2";
         ipv6 = "2a09:80c0:102::2";
-        location = "munich";
       };
       yasmin = {
         ipv4 = "131.159.102.7";
         ipv6 = "2a09:80c0:102::7";
-        location = "munich";
       };
       ryan = {
         ipv4 = "131.159.102.8";
         ipv6 = "2a09:80c0:102::8";
-        location = "munich";
       };
       graham = {
         ipv4 = "131.159.102.9";
         ipv6 = "2a09:80c0:102::9";
-        location = "munich";
       };
       christina = {
         ipv4 = "131.159.102.14";
         ipv6 = "2a09:80c0:102::14";
-        location = "munich";
       };
       jackson = {
         ipv4 = "131.159.102.3";
         ipv6 = "2a09:80c0:102::3";
-        location = "munich";
       };
       adelaide = {
         ipv4 = "131.159.102.13";
         ipv6 = "2a09:80c0:102::13";
-        location = "munich";
       };
       wilfred = {
         ipv4 = "131.159.102.15";
         ipv6 = "2a09:80c0:102::15";
-        location = "munich";
       };
       river = {
         ipv4 = "131.159.102.16";
         ipv6 = "2a09:80c0:102::16";
-        location = "munich";
       };
       jack = {
         ipv4 = "131.159.102.17";
         ipv6 = "2a09:80c0:102::17";
-        location = "munich";
       };
     };
   };
