@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ../modules/ipmi.nix
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
     ../modules/nfs/client.nix

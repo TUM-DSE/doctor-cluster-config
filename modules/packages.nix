@@ -31,6 +31,7 @@
     ripgrep
     pciutils
     ethtool
+    ipmitool
 
     # tries to default to soft-float due to out-dated cc-rs
   ] ++ lib.optional (!stdenv.hostPlatform.isRiscV) bandwhich
