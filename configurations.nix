@@ -39,7 +39,7 @@ let
 
     srvos.nixosModules.server
 
-    srvos.nixosModules.telegraf
+    srvos.nixosModules.mixins-telegraf
     { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
 
     sops-nix.nixosModules.sops

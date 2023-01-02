@@ -48,7 +48,7 @@
   # rules. It was also an issue when working with kubernetes as their internal
   # firewall is insane. In Edinburgh it might become an issue, but than we
   # don't really run any public services on their except for ssh and k3s, which
-  # are safe to run without a firewall. On amy we still have an NFS share however
+  # are safe to run without a firewall. On bill we still have an NFS share however
   # this one has our nodes whitelisted, which should make it an non issue as well.
-  networking.firewall.enable = false;
+  networking.firewall.enable = lib.mkForce false;
 }
