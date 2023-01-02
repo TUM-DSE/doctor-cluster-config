@@ -353,12 +353,9 @@ in {
       "mjnam"
     ];
 
-    # needed so that we can set a root password
-    users.mutableUsers = false;
     nix.settings.trusted-users = ["joerg" "harshanavkis" "sandro" "redha"];
 
     # we cannot use this since we no longer have the database
     programs.command-not-found.enable = false;
-    security.sudo.wheelNeedsPassword = false;
   };
 }

@@ -160,7 +160,8 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "retiolum": "retiolum",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "srvos": "srvos"
       }
     },
     "sops-nix": {
@@ -181,6 +182,26 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "srvos": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1672603492,
+        "narHash": "sha256-2ihfON0EhEeL8yO8IbnD38QUAC+NmpLKQw2y6Y4+47E=",
+        "owner": "numtide",
+        "repo": "srvos",
+        "rev": "791e64c72c6c1b878654ff36bc95d64ae6b4b41e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "srvos",
         "type": "github"
       }
     }

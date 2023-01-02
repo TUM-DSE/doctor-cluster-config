@@ -30,6 +30,10 @@
 
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
+    srvos.url = "github:numtide/srvos";
+    # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
+    srvos.inputs.nixpkgs.follows = "nixpkgs";
+
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
   };

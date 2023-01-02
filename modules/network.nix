@@ -8,13 +8,6 @@
   networking.dhcpcd.enable = false;
   systemd.network.enable = true;
 
-  # often hangs
-  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
-  # sometimes cannot be restarted -> breaks system upgrade
-  systemd.services.systemd-networkd.restartIfChanged = false;
-  # fails to delete some chain on upgrade...
-  systemd.services.firewall.restartIfChanged = false;
-
   # add an entry to /etc/hosts for each host
   networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
     (name: host: ''
