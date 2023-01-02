@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  # this extends the list from:
+  # https://github.com/numtide/srvos/blob/master/server.nix#L10
   environment.systemPackages = with pkgs; [
     socat
     whois
@@ -13,34 +15,25 @@
     file
     wget
     htop
-    silver-searcher
+    ripgrep
     lsof
     tcpdump
-    tmux
     rsync
     git
     tig
+    lazygit
     python3
-    strace
     iotop
     man-pages
-    dnsutils
     netcat
     mtr
     (neovim.override { vimAlias = true; })
-    ripgrep
+
     pciutils
     ethtool
-    ipmitool
+    usbutils
 
+    ipmitool
     # tries to default to soft-float due to out-dated cc-rs
-  ] ++ lib.optional (!stdenv.hostPlatform.isRiscV) bandwhich
-  # avoid compiling desktop stuff when doing cross nixos
-  ++ lib.optionals (stdenv.hostPlatform == stdenv.buildPlatform) [
-    # various terminfo packages
-    termite.terminfo
-    wezterm.terminfo
-    kitty.terminfo
-    foot.terminfo
-  ];
+  ] ++ lib.optional (!stdenv.hostPlatform.isRiscV) bandwhich;
 }
