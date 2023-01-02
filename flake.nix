@@ -52,7 +52,7 @@
           ./pkgs/flake-module.nix
           ./templates
         ];
-        perSystem = {system, self', inputs', pkgs, ...}: {
+        perSystem = { self', pkgs, ...}: {
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.python3.pkgs.invoke

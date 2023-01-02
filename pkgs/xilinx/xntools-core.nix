@@ -1,4 +1,4 @@
-{ stdenv, callPackage, lib, fetchurl, dpkg, autoPatchelfHook }:
+{ stdenv, lib, fetchurl, dpkg, autoPatchelfHook }:
 stdenv.mkDerivation rec {
   pname = "xntools-core";
   version = "1.0.0.0-2";

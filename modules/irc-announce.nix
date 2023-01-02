@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{config, ...}: {
   systemd.services.ssh-announce = {
     description = "irc announce ssh";
     after = ["network-online.target"];

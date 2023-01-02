@@ -1,4 +1,4 @@
-{ stdenv, callPackage, lib, fetchurl, dpkg, autoPatchelfHook }:
+{ stdenv, fetchurl, dpkg, autoPatchelfHook }:
 
 let
   firmware = fetchurl {

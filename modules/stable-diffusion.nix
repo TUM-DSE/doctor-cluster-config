@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }: let
   directory = "/var/lib/stable-diffusion";

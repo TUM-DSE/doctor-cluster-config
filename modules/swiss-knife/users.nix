@@ -1,6 +1,4 @@
-{config, ...}: let
-  # add ssh keys here
-in {
+{config, ...}: {
   #OS management course users
   users.users = {
     # TeamA

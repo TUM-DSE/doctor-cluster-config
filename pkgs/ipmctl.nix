@@ -12,9 +12,7 @@
   rpmextract
 }:
 
-let
-
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "ipmctl";
   version = "03.00.00.0468";
   src = fetchurl {

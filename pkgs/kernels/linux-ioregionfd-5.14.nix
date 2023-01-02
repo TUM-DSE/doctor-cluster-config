@@ -1,4 +1,4 @@
-{ buildLinux, fetchFromGitHub, linuxPackages_5_19, fetchurl, modDirVersionArg ? null, ... }@args:
+{ buildLinux, fetchFromGitHub, modDirVersionArg ? null, ... }@args:
 
 buildLinux (args // rec {
   version = "5.12.14";

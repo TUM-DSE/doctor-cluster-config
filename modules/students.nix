@@ -1,7 +1,4 @@
 {config, ...}: let
-  m00wlKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de"
-  ];
 
   paulKeys = [
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local"
@@ -14,10 +11,6 @@
   mfKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
-  ];
-
-  alexaKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmhBDhr9rXPSzt9xi29btIYlpBqePI3JGWYrR7EJc3BBSChIHBkWfaseannbSn4rFG7YV6kVdW7Kx7n1q5bXVOllCC1IeEDBIJg9mdW9nUw8pyG0o2gI8jcgitLSgB6M+dEAHHGh+OSkQXDdRN1RpnRslfPvVAGWpqWcmLxSK8PCI389yXsXTe605OC1wEtFe3dsYqHmA/C960AH0RJXGquM82Vw64/4ORySWRPjNlHHgvYUBuWaQFaM3JoouWQA5LhpIdNLP3HyWISXuEgOMEgCbmw9EEx2EQwD9OaWivQ7W65neNu1NgcFZBAegRAI9ATNl5bW8UiUmrNyZQm4WNuvNsBJbepRIPH25YqTWLZf8kMk0L8+VSa2Rb/9Jyf15qexme1KuaSfJUX2kFRlrW2ADEM+cT99gzh3EJPhu73Ev0N4ibJd4tdjY3mHlSrIXIkN2VbiBV4xss99ebMvkNjpLhHZvkM4a25arQfj/ROdevMbzVu5sxsKRkaMd0/mc= alexandrina@DESKTOP-8HD3TSS"
   ];
 
   julianKeys = [
@@ -36,10 +29,6 @@
 
   gierensKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
-  ];
-
-  heKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
   ];
 
   vandaKeys = [

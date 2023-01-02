@@ -28,9 +28,9 @@
     ];
     # Create a directory for every user on every device
     systemd.tmpfiles.rules = let
-      loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
+      loginUsers = lib.filterAttrs (_n: v: v.isNormalUser) config.users.users;
       forDevice = device:
-        (lib.mapAttrsToList (n: v: "d /mnt/${device}/${n} 0755 ${n} users -") loginUsers)
+        (lib.mapAttrsToList (n: _v: "d /mnt/${device}/${n} 0755 ${n} users -") loginUsers)
         ++ (builtins.map (n: "R /mnt/${device}/${n} - - - - -") config.users.deletedUsers);
     in
       lib.flatten (builtins.map forDevice config.doctorwho.pmem.devices);

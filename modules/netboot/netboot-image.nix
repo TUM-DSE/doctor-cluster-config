@@ -6,8 +6,6 @@ let
   lib = pkgs.lib;
   nixos = import (pkgs.path + "/nixos") {
     configuration = {
-      config,
-      pkgs,
       lib,
       modulesPath,
       ...

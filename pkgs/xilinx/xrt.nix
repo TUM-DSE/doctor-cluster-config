@@ -2,7 +2,6 @@
 , lib
 , fetchFromGitHub
 , cmake
-, mesa
 , libdrm
 , pkg-config
 , opencl-headers
@@ -23,7 +22,6 @@
 , udev
 , dpkg
 , rapidjson
-, glibc
 , libxcrypt
 }:
 let

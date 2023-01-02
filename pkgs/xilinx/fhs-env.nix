@@ -1,5 +1,4 @@
 {
-  callPackage,
   buildFHSUserEnv,
   runScript ? "bash -c",
   xilinxName ? "xilinx-env",

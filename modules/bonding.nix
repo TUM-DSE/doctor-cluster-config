@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: let
   cfg = config.networking.doctowho.bonding;
@@ -20,7 +19,7 @@
     })
     cfg.macs);
 
-  slaveNetworks = concatAttrs (lib.imap0 (num: mac: {
+  slaveNetworks = concatAttrs (lib.imap0 (num: _mac: {
       "05-slave${toString num}".extraConfig = ''
         [Match]
         Name = slave${toString num}
@@ -31,9 +30,7 @@
     })
     cfg.macs);
 
-  carrier = lib.imap0 (num: mac: "slave${toString num}") cfg.macs;
-
-  cfg2 = config.services.getty;
+  carrier = lib.imap0 (num: _mac: "slave${toString num}") cfg.macs;
 in {
   options = {
     networking.doctowho.bonding.macs = lib.mkOption {

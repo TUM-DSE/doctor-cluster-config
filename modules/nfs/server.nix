@@ -43,9 +43,9 @@
   '';
 
   systemd.tmpfiles.rules = let
-    loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
+    loginUsers = lib.filterAttrs (_n: v: v.isNormalUser) config.users.users;
   in
-    (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
+    (lib.mapAttrsToList (n: _v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
     ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers);
 
   boot.zfs.extraPools = ["zpool1" "zpool2"];

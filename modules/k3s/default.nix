@@ -1,10 +1,8 @@
 {
   config,
-  lib,
   pkgs,
   ...
-}: let
-in {
+}: {
   config = {
     services.k3s.enable = true;
     virtualisation.containerd.enable = true;
