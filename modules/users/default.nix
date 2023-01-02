@@ -9,6 +9,8 @@ in {
     ./students.nix
     # when we need to give external reviewers access for paper evaluation
     ./reviewers.nix
+    # admins also have access to the monitoring / backup infrastructure
+    ./admins.nix
   ];
 
   options = {

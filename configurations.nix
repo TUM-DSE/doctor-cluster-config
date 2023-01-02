@@ -20,6 +20,8 @@ let
       _module.args.inputs = self.inputs;
       srvos.flake = self;
     }
+    # only include admins here for monitoring/backup infrastructure
+    ./modules/users/admins.nix
     ./modules/packages.nix
     ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
@@ -35,6 +37,7 @@ let
     srvos.nixosModules.server
 
     srvos.nixosModules.mixins-telegraf
+    # allow to access telegraf on vpn interface
     { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
 
     sops-nix.nixosModules.sops

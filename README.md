@@ -50,14 +50,14 @@ $ inv deploy
 
 # Add new users
 
-Add chair members to [./modules/users.nix](./modules/users.nix) and students to [./modules/students.nix](./modules/students.nix).
+Add chair members to [./modules/chair-members.nix](./modules/users/chair-members.nix) and students to [./modules/users/students.nix](./modules/users/students.nix).
 
 For chair members use a uid in the 1000-2000. For new students use a uid in the
 2000-3000 range. Check that the uid is unique across both files and in the
 range between to avoid conflicts.
 
 If you need to give reviewers access i.e. for artifact evaluation, add them to
-[./modules/reviewer-accounts.nix](./modules/reviewer-accounts.nix).  We use the
+[./modules/users/reviewers.nix](./modules/users/reviewers.nix).  We use the
 uid range 4000-5000 there. By using `users.users.<username>.allowedHosts` it's
 possible to limit the hosts these users can access. To access the machine, they
 can use the ssh tunnel as described in
