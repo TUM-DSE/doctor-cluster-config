@@ -397,7 +397,11 @@ def update_sops_files(c):
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
-    c.run("nix2yaml sops.yaml.nix > .sops.yaml")
+    with open(".sops.yaml", "w") as f:
+        print("# AUTOMATICALLY GENERATED WITH:", file=f)
+        print("# $ inv update-sops-files", file=f)
+
+    c.run("nix eval --json -f sops.yaml.nix | yq e -P - >> .sops.yaml")
     c.run(
         """
 find . \
