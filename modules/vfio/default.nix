@@ -1,8 +1,9 @@
-{ lib, pkgs, config, ... }:
+{ lib, config, ... }:
 with lib;
 let
   cfg = config.virtualisation.vfio;
-in {
+in
+{
   options.virtualisation.vfio = {
     enable = mkEnableOption "VFIO Configuration";
     iommuType = mkOption {
@@ -52,12 +53,12 @@ in {
       # "intel_iommu=igfx_off" # turns off integrated graphics
     ] else
       [ "amd_iommu=on" ]) ++ (optional (builtins.length cfg.devices > 0)
-        ("vfio-pci.ids=" + builtins.concatStringsSep "," cfg.devices))
-      ++ (optional cfg.disableEfiFb "video=efifb:off")
-      ++ (optionals cfg.ignoreMSRs [
-        "kvm.ignore_msrs=1"
-        "kvm.report_ignored_msrs=0"
-      ]);
+      ("vfio-pci.ids=" + builtins.concatStringsSep "," cfg.devices))
+    ++ (optional cfg.disableEfiFb "video=efifb:off")
+    ++ (optionals cfg.ignoreMSRs [
+      "kvm.ignore_msrs=1"
+      "kvm.report_ignored_msrs=0"
+    ]);
 
     boot.kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
 

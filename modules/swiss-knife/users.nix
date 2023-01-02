@@ -1,6 +1,4 @@
-{config, ...}: let
-  # add ssh keys here
-in {
+{ config, ... }: {
   #OS management course users
   users.users = {
     # TeamA
@@ -10,7 +8,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4000;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
     };
 
     # TeamB
@@ -20,7 +18,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4001;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
     };
 
     # TeamC
@@ -30,7 +28,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4002;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
     };
 
     # TeamD
@@ -40,7 +38,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4003;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
     };
 
     # TeamE
@@ -50,7 +48,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4004;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
     };
 
     # TeamF
@@ -60,7 +58,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4005;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
     };
   };
 

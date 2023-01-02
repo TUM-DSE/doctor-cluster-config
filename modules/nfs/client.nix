@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  imports = [./.];
+{ ... }: {
+  imports = [ ./. ];
 
   fileSystems."/home" = {
     device = "nfs:/export/home";

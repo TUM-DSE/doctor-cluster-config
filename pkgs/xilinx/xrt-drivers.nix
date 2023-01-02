@@ -1,4 +1,4 @@
-{ stdenv, kernel, callPackage, xrt, lib }:
+{ stdenv, kernel, xrt, lib }:
 let
   KERNELDIR = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
 in

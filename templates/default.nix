@@ -1,4 +1,4 @@
-{...}: {
+{
   flake.templates = {
     project = {
       path = ./project-template;

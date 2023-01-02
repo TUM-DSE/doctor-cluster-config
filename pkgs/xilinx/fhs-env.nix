@@ -1,8 +1,7 @@
-{
-  callPackage,
-  buildFHSUserEnv,
-  runScript ? "bash -c",
-  xilinxName ? "xilinx-env",
+{ buildFHSUserEnv
+, runScript ? "bash -c"
+, xilinxName ? "xilinx-env"
+,
 }:
 buildFHSUserEnv {
   name = xilinxName;
@@ -36,7 +35,7 @@ buildFHSUserEnv {
       ocl-icd
       opencl-headers
 
-      (pkgs.runCommand "firmware" {} ''
+      (pkgs.runCommand "firmware" { } ''
         mkdir -p $out/lib/firmware
         ln -s /host/lib/firmware/xilinx $out/lib/firmware/xilinx
       '')

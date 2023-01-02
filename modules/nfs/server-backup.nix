@@ -1,12 +1,11 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
-  imports = [./.];
+  imports = [ ./. ];
 
   systemd.services.syncoid-setup = {
-    wantedBy = ["multi-user.target"];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = [
@@ -25,7 +24,7 @@
     };
   };
 
-  boot.zfs.extraPools = ["zpool1" "zpool2"];
+  boot.zfs.extraPools = [ "zpool1" "zpool2" ];
 
   # speedup syncoid
   environment.systemPackages = [ pkgs.mbuffer ];
@@ -38,7 +37,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIORiUPbKrKzb55DrqDK4YXmqM5L1Qo8mDhmbdvKu+nIi"
     ];
   };
-  users.groups.syncoid = {};
+  users.groups.syncoid = { };
 
   # Syncoid leaves zfs-auto-snap behind, that we cleanup simply like this.
   systemd.services.prune-auto-snaps = {

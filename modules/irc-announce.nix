@@ -1,8 +1,8 @@
-{config, pkgs, ...}: {
+{ config, ... }: {
   systemd.services.ssh-announce = {
     description = "irc announce ssh";
-    after = ["network-online.target"];
-    wantedBy = ["multi-user.target"];
+    after = [ "network-online.target" ];
+    wantedBy = [ "multi-user.target" ];
     script = ''
       set -efu
       ${config.nur.repos.mic92.untilport}/bin/untilport irc.freenode.org 6667 && \

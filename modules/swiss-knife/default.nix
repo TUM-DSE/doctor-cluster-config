@@ -1,8 +1,6 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ lib
+, pkgs
+, ...
 }: {
   imports = [
     ./users.nix

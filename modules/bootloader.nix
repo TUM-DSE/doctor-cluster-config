@@ -1,8 +1,6 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ lib
+, pkgs
+, ...
 }: {
   # Enable this when you install NixOS on a new machine!
   boot.loader.efi.canTouchEfiVariables = false;

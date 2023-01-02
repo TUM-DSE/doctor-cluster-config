@@ -1,8 +1,4 @@
 {
-  pkgs,
-  lib,
-  ...
-}: {
   imports = [
     ../modules/bonding.nix
     ../modules/ipmi-supermicro.nix

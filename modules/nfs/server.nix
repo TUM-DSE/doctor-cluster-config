@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 # NFS failover setup based on syncoid.
 #
@@ -22,7 +21,7 @@
 #
 # Than swap the imports for `nfs/server.nix` and `nfs/server-backup.nix` in both nixos configurations.
 {
-  imports = [./.];
+  imports = [ ./. ];
 
   sops.secrets.syncoid.sopsFile = ./secrets.yml;
   sops.secrets.syncoid.owner = "syncoid";
@@ -42,29 +41,30 @@
     /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) 2a09:80c0:38::101/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=28)
   '';
 
-  systemd.tmpfiles.rules = let
-    loginUsers = lib.filterAttrs (n: v: v.isNormalUser) config.users.users;
-  in
-    (lib.mapAttrsToList (n: v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
+  systemd.tmpfiles.rules =
+    let
+      loginUsers = lib.filterAttrs (_n: v: v.isNormalUser) config.users.users;
+    in
+    (lib.mapAttrsToList (n: _v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
     ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers);
 
-  boot.zfs.extraPools = ["zpool1" "zpool2"];
+  boot.zfs.extraPools = [ "zpool1" "zpool2" ];
 
   fileSystems."/export/home" = {
     device = "zpool1/home";
     fsType = "zfs";
-    options = ["nofail"];
+    options = [ "nofail" ];
   };
 
   fileSystems."/export/share" = {
     device = "zpool2/share";
     fsType = "zfs";
-    options = ["nofail"];
+    options = [ "nofail" ];
   };
 
   systemd.services.syncoid-setup = {
-    wantedBy = ["multi-user.target"];
-    before = ["syncoid.service"];
+    wantedBy = [ "multi-user.target" ];
+    before = [ "syncoid.service" ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = [
@@ -91,21 +91,29 @@
   };
 
   systemd.services.syncoid-zpool1-home = {
-    serviceConfig.ExecStopPost = [("+${pkgs.writeShellScript "telegraf" ''
+    serviceConfig.ExecStopPost = [
+      (
+        "+${pkgs.writeShellScript "telegraf" ''
       umask 022
       cat > /var/log/telegraf/syncoid-home <<EOF
       task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
       EOF
-    ''}")];
+    ''}"
+      )
+    ];
   };
 
   systemd.services.syncoid-zpool2-share = {
-    serviceConfig.ExecStopPost = [("+${pkgs.writeShellScript "telegraf" ''
+    serviceConfig.ExecStopPost = [
+      (
+        "+${pkgs.writeShellScript "telegraf" ''
       umask 022
       cat > /var/log/telegraf/syncoid-share <<EOF
       task,frequency=tenminutes last_run=$(date +%s)i,state="ok"
       EOF
-    ''}")];
+    ''}"
+      )
+    ];
   };
 
   sops.secrets.tum-borgbackup-password.sopsFile = ./secrets.yml;

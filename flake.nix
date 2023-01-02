@@ -30,25 +30,29 @@
 
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
+    srvos.url = "github:numtide/srvos";
+    # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
+    srvos.inputs.nixpkgs.follows = "nixpkgs";
+
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
   };
 
-  outputs = {
-    flake-parts,
-    ...
-  } @ inputs:
+  outputs =
+    { flake-parts
+    , ...
+    } @ inputs:
     (flake-parts.lib.evalFlakeModule
       { inherit inputs; }
       ({ self, inputs, ... }: {
-        systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
+        systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
         imports = [
           ./configurations.nix
           ./modules/monitoring/flake-module.nix
           ./pkgs/flake-module.nix
           ./templates
         ];
-        perSystem = {system, self', inputs', pkgs, ...}: {
+        perSystem = { self', pkgs, ... }: {
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.python3.pkgs.invoke
@@ -70,7 +74,7 @@
               inherit (inputs.nixpkgs.lib) nixosSystem;
               extraModules = [
                 self.inputs.nur.nixosModules.nur
-                {_module.args.inputs = self.inputs;}
+                { _module.args.inputs = self.inputs; }
               ];
             };
 

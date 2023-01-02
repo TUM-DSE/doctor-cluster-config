@@ -1,9 +1,9 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  joergsKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine"];
+{ config
+, lib
+, ...
+}:
+let
+  joergsKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine" ];
 
   redhaKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOb4/IcT/Ly2VjmhO8PhSlsBSziL3Yn7nTqoPrzRJ/FHHUfEZhUj0cx8h++wKas8Y6FELP0a121Hkki4L/QIhzd6zcTlqVQ19EX98KMmD9PsGlK5tdPV7+bjNLCtEXjqPIEYUi/cL/kvuKpMwLyzkVTyl5AFRvR9TQkITfHChWCV9KfKTFjM+h/FBQvH3zrjbpGbMiS7bclRL5Gvih3eOHSuQSrJurgkPr8cH1z47L8rqTlEwJ+9x54fQo2wbJm41BFcdY7qONSmtMI45EfFB3K7MdpH1ztg25l7K4ctgHayRASNI7IMIzijibd1acf08OutRec0XLLNGvCcKyW1EV redha@redha-Lenovo-U41-70"
@@ -83,7 +83,7 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDg/MON5ETxrOAcmxbnphJao1MxxeRIDDn7M6tMqERThU5gPumc2W/eAkWqXs/ZdgmMV9vBVdmZS4J++L2yLwWdcZcSeUC7lMdRMRW8i56ME6tOMymZIk0Z6p+BFFzgncOa+IFtx1QZ8Pl4Z8wfVNU9L5XY6lrfgoDjR40KgIpa4XZE1SiO2BbCsa2zhA1ZNCeOa6FEpK80BlA7Jw4pJ0w+Bl7UfGiOTkQ9idoygy7/B8Z48jSXgHPlOzxR1HyvG8QoNEGThK0o441DxVPfy4p9Q5HFqj2Wf1Vrxktoco6dpdNkuU89z5L/JsKfkbo9dBNRW6ICVus84rLUr6uFFyU39FahRtfJ7xsZjt2IVd2eY2nZWdJ2Pd7ytzzD+djJKsnDJXm96fh6qpjYHzDGPqLUkd86FGSpr3gbFvCprXkUDi8J5z/GkdAwNeqk9kUdYBEcGS5E3jciAxz4fmDGYhJ8O6gs9MRT947mWG1Q6+vOqcglxBUX+5w7LIb9bhUNLTs= mhille@mhilleWork"
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFbOAoiGH2iTed3lz9DGJu/+rDJnVrbuKGX741qsCu4XWvlbrzCugffFugPTfRyykTT0SWRyhWe2bVjAWP4k1OsDQB9d5JI3b0dETHYByksUs0SQyjg5JPMZnVtfxrtQhaPsrHc+bie+sUjC4FObn0YD1tQeY6RMK7gmN8F6X8rjoRvSQ== mhille@mhilleWork"
   ];
-  
+
   martinklKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvQLwToitv9b0cZK2UNUh26BYJ8/ie8oexCyye+BpXP martin@kleppmann.com"
   ];
@@ -96,8 +96,9 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCbtiYJVC8KwmoNxBH9O65JgGsCUIfXLWNmAe6ec8Wyzu3XJr4vNVRSLEFHaI6eXc+ynuS87l+CM4QDXSiA2/g2vSKGS+il+yQq9F0WJ6jJZpkQs1hciGakCiPoUCxodqBxDQ6RYZmeE0ZYmD0eXHHU5KRt0HTK33FgjTVEgNdT8cPckJ5v0qLtxOyRfi3N1QhQssxiVf+FQBoMloe+BtzF9bIaXTylojV6I9V7pGTqqnQITZ31uKfRLoLGpWScFDhhFU7rmBO4mBk4q4aUva7KqhDMHSRv3lZeSGGlMRO8EXkhoriy6wAwG9okPo/LM6+mnnuTlhu6TMy5+Eye0YovaayYpSCWiAa5vx0uh8lxdM3Ttxb2MxB3nBlWXyvEI1aYeYDNNQVaUmg483hdho++19xS7aKd0VORQBlNURfMSZ5wSIlmohMXvgi0lzjqLGOSkewWuQKDG4+G+VlDQMPJpX+AcNR2JVw6mIciSK0fx5zCoDVX8MhMCeEQ2IUjZg0= romano@dockingstation03"
   ];
 
-  extraGroups = ["wheel" "docker" "plugdev" "vboxusers" "adbusers" "input"];
-in {
+  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+in
+{
   options = {
     users.withSops = lib.mkOption {
       type = lib.types.bool;
@@ -308,23 +309,23 @@ in {
       # Myron Tsatsarakis
       # tum
       myron = {
-       isNormalUser = true;
-       home = "/home/myron";
-       inherit (config.users.users.joerg) extraGroups;
-       shell = "/run/current-system/sw/bin/bash";
-       uid = 1025;
-       openssh.authorizedKeys.keys = myronKeys;
+        isNormalUser = true;
+        home = "/home/myron";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1025;
+        openssh.authorizedKeys.keys = myronKeys;
       };
 
       # Francisco Romao 
       # tum
       francisco = {
-       isNormalUser = true;
-       home = "/home/francisco";
-       inherit (config.users.users.joerg) extraGroups;
-       shell = "/run/current-system/sw/bin/bash";
-       uid = 1026;
-       openssh.authorizedKeys.keys = franciscoKeys;
+        isNormalUser = true;
+        home = "/home/francisco";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1026;
+        openssh.authorizedKeys.keys = franciscoKeys;
       };
 
       root = {
@@ -353,12 +354,9 @@ in {
       "mjnam"
     ];
 
-    # needed so that we can set a root password
-    users.mutableUsers = false;
-    nix.settings.trusted-users = ["joerg" "harshanavkis" "sandro" "redha"];
+    nix.settings.trusted-users = [ "joerg" "harshanavkis" "sandro" "redha" ];
 
     # we cannot use this since we no longer have the database
     programs.command-not-found.enable = false;
-    security.sudo.wheelNeedsPassword = false;
   };
 }

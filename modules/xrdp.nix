@@ -1,5 +1,5 @@
 {
-  networking.firewall.allowedTCPPorts = [3389];
+  networking.firewall.allowedTCPPorts = [ 3389 ];
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "xfce4-session";
   services.xserver = {

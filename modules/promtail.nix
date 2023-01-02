@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, ... }: {
   sops.secrets.promtail-password.owner = "promtail";
   sops.secrets.promtail-password.sopsFile = ./secrets.yml;
   services.promtail = {
@@ -81,16 +81,16 @@
             }
             # silence kernel on yasmin:
             # [1707104.162310] ACPI CPPC: PCC check channel failed for ss: 11. ret=-110
-            {drop.expression = "PCC check channel failed for ss";}
+            { drop.expression = "PCC check channel failed for ss"; }
             # messages from rpi3
-            {drop.expression = "hwmon hwmon1: Undervoltage detected!";}
-            {drop.expression = "hwmon hwmon1: Voltage normalised";}
+            { drop.expression = "hwmon hwmon1: Undervoltage detected!"; }
+            { drop.expression = "hwmon hwmon1: Voltage normalised"; }
             # ignore random portscans on the internet
-            {drop.expression = "refused connection: IN=";}
+            { drop.expression = "refused connection: IN="; }
           ];
           relabel_configs = [
             {
-              source_labels = ["__journal__hostname"];
+              source_labels = [ "__journal__hostname" ];
               target_label = "host";
             }
           ];

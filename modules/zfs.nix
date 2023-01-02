@@ -1,4 +1,4 @@
-{lib, pkgs, ...}: {
+{ lib, pkgs, ... }: {
   services.zfs = {
     autoSnapshot.enable = true;
     autoSnapshot.monthly = 1;

@@ -1,4 +1,5 @@
-{self, ...}: let
+{ self, ... }:
+let
   inherit
     (self.inputs)
     nixpkgs
@@ -9,18 +10,21 @@
     flake-registry
     nixos-hardware
     nixpkgs-unstable
+    srvos
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
 
   commonModules = [
-    {_module.args.inputs = self.inputs;}
-    {_module.args.self = self;}
+    {
+      _module.args.self = self;
+      _module.args.inputs = self.inputs;
+      srvos.flake = self;
+    }
     ./modules/packages.nix
     ./modules/envfs.nix
     ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
-    ./modules/telegraf.nix
     ./modules/tor-ssh.nix
     ./modules/users.nix
     ./modules/hosts.nix
@@ -33,12 +37,16 @@
     ./modules/cleanup-usr.nix
     ./modules/qemu-bridge.nix
 
+    srvos.nixosModules.server
+
+    srvos.nixosModules.mixins-telegraf
+    { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
+
     sops-nix.nixosModules.sops
-    ({
-      pkgs,
-      config,
-      ...
-    }: {
+    ({ pkgs
+     , config
+     , ...
+     }: {
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${pkgs.path}"
@@ -49,9 +57,10 @@
 
       #sops.withSops = true;
       sops.secrets.root-password-hash.neededForUsers = true;
-      sops.defaultSopsFile = let
-        sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
-      in
+      sops.defaultSopsFile =
+        let
+          sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
+        in
         if builtins.pathExists sopsFile
         then sopsFile
         else null;
@@ -75,12 +84,12 @@
     ++ [
       ./modules/tracing.nix
       ./modules/scratch-space.nix
-      ./modules/watchdog.nix
       ./modules/docker.nix
       ./modules/zfs.nix
       ./modules/bootloader.nix
     ];
-in {
+in
+{
   flake.nixosConfigurations = {
     bill = nixosSystem {
       system = "x86_64-linux";

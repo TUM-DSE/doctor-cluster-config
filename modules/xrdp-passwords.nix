@@ -15,13 +15,17 @@
     };
   };
   config = {
-    sops.secrets = lib.listToAttrs (map (user: lib.nameValuePair "${user}-password-hash" {
-      neededForUsers = true;
-    }) config.users.xrdpUsers);
+    sops.secrets = lib.listToAttrs (map
+      (user: lib.nameValuePair "${user}-password-hash" {
+        neededForUsers = true;
+      })
+      config.users.xrdpUsers);
 
-    users.users = lib.listToAttrs (map (user: lib.nameValuePair user {
-      passwordFile = config.sops.secrets."${user}-password-hash".path;
-    }) config.users.xrdpUsers);
+    users.users = lib.listToAttrs (map
+      (user: lib.nameValuePair user {
+        passwordFile = config.sops.secrets."${user}-password-hash".path;
+      })
+      config.users.xrdpUsers);
 
     # add all users here that should have xrdp access.
     users.xrdpUsers = [

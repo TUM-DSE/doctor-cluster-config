@@ -1,19 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, ...
 }: {
   # use networkd
   networking.dhcpcd.enable = false;
   systemd.network.enable = true;
-
-  # often hangs
-  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
-  # sometimes cannot be restarted -> breaks system upgrade
-  systemd.services.systemd-networkd.restartIfChanged = false;
-  # fails to delete some chain on upgrade...
-  systemd.services.firewall.restartIfChanged = false;
 
   # add an entry to /etc/hosts for each host
   networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList
@@ -57,7 +48,7 @@
   # rules. It was also an issue when working with kubernetes as their internal
   # firewall is insane. In Edinburgh it might become an issue, but than we
   # don't really run any public services on their except for ssh and k3s, which
-  # are safe to run without a firewall. On amy we still have an NFS share however
+  # are safe to run without a firewall. On bill we still have an NFS share however
   # this one has our nodes whitelisted, which should make it an non issue as well.
-  networking.firewall.enable = false;
+  networking.firewall.enable = lib.mkForce false;
 }

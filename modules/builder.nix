@@ -9,5 +9,5 @@
     ];
     uid = 5001;
   };
-  nix.settings.trusted-users = ["nix"];
+  nix.settings.trusted-users = [ "nix" ];
 }
