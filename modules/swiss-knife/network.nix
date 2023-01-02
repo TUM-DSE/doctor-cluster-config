@@ -1,10 +1,11 @@
+{ lib
+, config
+, ...
+}:
+let
+  concatAttrs = attrList: lib.fold (x: y: x // y) { } attrList;
+in
 {
-  lib,
-  config,
-  ...
-}: let
-  concatAttrs = attrList: lib.fold (x: y: x // y) {} attrList;
-in {
   options = {
     networking.doctorwho.swissknife.macs = lib.mkOption {
       type = with lib.types; listOf str;
@@ -15,7 +16,8 @@ in {
     };
   };
   config = {
-    systemd.network.links = concatAttrs (lib.imap0 (num: mac: {
+    systemd.network.links = concatAttrs (lib.imap0
+      (num: mac: {
         "05-swissknife${toString num}".extraConfig = ''
           [Match]
           MACAddress = ${mac}
@@ -27,7 +29,8 @@ in {
       })
       config.networking.doctorwho.swissknife.macs);
 
-    systemd.network.networks = concatAttrs (lib.imap0 (num: mac: {
+    systemd.network.networks = concatAttrs (lib.imap0
+      (num: mac: {
         "05-swissknife${toString num}".extraConfig = ''
           [Match]
           MACAddress = ${mac}
@@ -44,7 +47,7 @@ in {
         '';
       })
       config.networking.doctorwho.swissknife.macs);
-    networking.firewall.trustedInterfaces = ["swissknife0" "swissknife1"];
+    networking.firewall.trustedInterfaces = [ "swissknife0" "swissknife1" ];
   };
   # Example usage on ryan:
   #networking.doctorwho.swissknife.macs = [

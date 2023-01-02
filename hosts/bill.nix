@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/bonding.nix

@@ -1,4 +1,5 @@
-{config, ...}: let
+{ config, ... }:
+let
 
   paulKeys = [
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local"
@@ -21,7 +22,7 @@
   mwerndleKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsZ8xTt0Ti6evYqvLBMXLaExS0SP0KZB7oSA7RO3tQinlVT62KIxJ5NXxrKgCOy3evCtN+fqYFvshGHZ6/FPcOj3i3PfJRHaj6WjQicIIfVFEbfLtzh2QxDDVXBkfh747fBmPHrfXJwxCRjRpSwYBmDBcJVjH3weHLqVm6f4SioDWMZ8arCYipZSPlfCFvcqR532ipiKQH3pHinjtopLMLmZnZQeXOsK1lsIDLs7/onkK1cNhCeX7Hq69N7gp/2AYUoXjnZ2/vvDq6QAofz5jASDjPfZz1eHdz4owc6I+LoAc76QxE/37mV6PCiGO4YiQji8byvjuIq94moOMfIDkj teppichseite@DESKTOP-NRKB54G"
   ];
-  
+
   mfaltusKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCk/FU+8EXhfm16DuOuC/9WJT8O2zkRscjVUVZNqjcYhelJbnzcYcnLdkwcnTik8qwrgj5DKI2N0I+RuoZuqGo9q5FlRuvv+GHDuaB8UVjhJrmm9vpTy8Eng52AlttJAOLKhnJQ1BidqvKXD93RGba5S2a0AK0Pdqm7z029RkGNo2zUp5rnuLQmmeitIej7vdZmxx1sk5cYiYBLScwOl7whK7O7ymFQtGQjRB8OC2apAAJ6GVNtoCYbZ71vsHoVKYRD2laHfWpJ3zcE89MWtRxtAjNxSNTB9ZkJLND73NBQtBUt9et4R54hCPbiJgMnWV00LQbfWl9+FrE1yJQA3pJsV8ceqNFC6z4Get6XCOHr4sK129Ww2vTgORHXr+QCMwV0ejeTYOk+ypQG4pFjzM1b2c8RXIT4V9jE16FdGzss2z7Ic9lxtzCJdsA7lg3jrvSpr8zAzoUez+Z2pP9QUAMMb6Q4EqU3sWQn6pHUqP4Lpzb5WGWAn9AMd2qB0sVuJQheYDRsuo4OidLtiOEj+IHkrRGNuAAtbLvFinaouqhYdHKiizX+ddTTl3hGtoD2cX3MixhHCy1LypL08VmORL/yUI90uHkqajWCwNnOLABx/Sa+ZSkTHsAilEkU1TvO9aox2iMbsc1nZwilaBR+onvHP2x0d94BTGHRV3al34BhJw== marcel@Desktop-17"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBK37Hp7Tjuqjm9iGBJL6/GIqNZRN6NSQD4SKomAAL+Zjx7UV+HXX19hruvRdkjz/RNeU27vYthrKwtfqIggzEiI= marcel@Desktop-17"
@@ -51,7 +52,7 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCg4q6+mU1KxqSVKSV4aI3AS4OY13l5nCoNIpo6ZKdgsZHbTtu00+fdQod7RBbDGRuNuVcwnCDgSvwo+BZDNw0txk/jnewoBKWJYOsoidLatMcoL2KL2hNBpUDXFaMd1IdC3bT8PRF0mvms3DMovKgAcFdgDz49KXyd/Djtm44v+Ck5yl4EZLUDg871yuWCzeQEqEiECxcoIceRAng1SomE3KM5ew+rbkHnVIusieQwTFWvbeE8tisVFg/zl6WlH9rybV61LbTHHci0NaY7hN0cDP8XrYkFbCfoHVkgQ0aYm5bH6a41IwVuoyJtLHBH8TP/KwHAhlVmKMix62jkjL94it9vf3EBCZWcfD42RZIWMcbd9PkQKuuYMwyHEeE0+oXfAVppS1noyVub9DAh2oKEwKbQ1Zw2EHs4ooMm3HeaE4k2xB5cZzeIA1MmdEwknD8cwC43+QeZu8rq5YDe2Bo3djGLB/SGFwx2wiwsKsAPxbwRIAer/S2Iy5bKtsiyLL8= hanwen.liu@tum.de"
   ];
 
-   wonbangseoKeys = [
+  wonbangseoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfkMY+WghQqHDM+GmJa/oaH7zQiHHYsZ3cLZtexZDIJn/Vlkj3zEvaLhTL7IpQ7PFiwPdIMeO17csvIqTzqaaoqXkFDD+YZKGlFhPoj14yrHxAOuXuaw0Fxg+RhfW0VyHKQ56ZvBvgRm5IcosTtdjl9jYrUjAQP61KJQXxTWYXH0V4Vhg3CbAf9rs2oevDtYp3AMrWkU3vpvzEamCyn4C9c/TvGORYUlWsqfbT1Y6hEmsZZnpIVNTsD6VVGVAf9TzDM/rb4vozui5A6YWG/JRv2Q/fW49WAOQGOWFD32v3bVhsagE9kG7bIayYCw2Xjalgj6qKJLmK1ZdUHj4ui+StGY+Y/LlAyLgcVmiL51UaXPcMCcZBA5LZFbtBEA2Z4B0sqe0063Hur367f07VhW3vkE6ch983j8rJQPemerciEYCqtMH9lGtk+yNMOAmCD7Je0D/dvYhPUxVaBtJqU4ZnpnZvRXHUasKjYQQ7Jaltw/YMkoXT9ml73sMA90apQSM= wb1@WB1"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDi+2LI5v/Z8LxMPyT7hg9cZSOzJuFLSRpTz0f1YSdYpR+2M8Tsqdnx49q19o+zEGman5uQnwoBhwYW6nZE/trL07wnA0YL4i/j+Ze6cDrzc50GluHuwFr7pffI8tDS0x3twme+qUaDeWYiT6M6D69XS11lJ6hiORSXy60usmr2+7r03vpFGCh39Mbj9xy4+PHnqUJ7EQAHsCOvTLUPlTPwcmAY4pk0MUq4DF0Xqrcgwh+nU6GxCz23vobIv6jnlWsOCWYhZoDy+aSPy+iVTv9z9WqFnMVrVTrsPpeM6pEJUA9I89iSWkcS/YIaFiZNCjPoARRwDQ0nSQga6is6EbSkBvCo2i0r5uEYWRm9lJlXiyyTtpow34TobDzOLkOOAHi7yYMkDyms0N4kpACpz+C7vbthFwgm3Pa+2QNuvyQhnxzVSJFSLFWgMhL8ridY42kEMvRVkXmZOerTne6rMMCNGO+BKH0mat4SPJppdeWfUlEwViCOtBvl6ftGAYPpsSh3Z66FZfbRfckBZeID44LAtXoCjyNUOURnXTVykuCnF8A5sI7wEo+LSEaE29Dp5XRmWO1AkcuHzXxQwqQh1ufyLYs2wQJA89ZqruZjxRrMUPERBoaTRMq7waAF9OYGNpBfvAFmj4QNGJC8GRVCo94hCy7X/Ob6Ple8CUDq/pQKgQ== ge59lal@mytum.de"
   ];
@@ -63,7 +64,7 @@
   rohanfernandezKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxbfLSRqS1IZ+O0StdQsGicjg80g8+yl/FuOBtiQg/szup7zdh2LSXjYFHyrigPgoEG0Pxy2nPoH2JBdZnUcbNiNBymxE0nvfrHbx0In9L13qay2hNCkhglb7ct+ixFaJA1kI0mOAI1jDhMF4Vt9iVPEVFwlN3Do4L7/vua6qANuZRWQL2o100YP3hL55FtesD48A9wYP1WppW6FeHH2t3X28vJ07U6VAr1C/A5a9CrmjMEn4aT9ehwpZKB3cxLEyApy4c6DZ/UOCfkeSSC2ynVxXRg7TjihTizVyx8ao7CLo6axdK67a3WGj77TTp1HiAlqIfzjOWNEcOOgaIS4bV rohan@rohanpc"
   ];
-  
+
   alexandermaslewKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+MkgMHv3xj3XbUNqJELn+XZldVZkbGuhvO6kRRGLxJYJ5W+te3rPxlmOQuSQfR+05HNVufjS8ECt7d+DZGtNDViHl/AoY+0DDhMypqyM1KOsaWHwVBH2+wrLvHrT42Z7EmUShQN1HJXYWZ3wF7qTgvt4DxjTLD2UKZti+tKvXGHx+xtfGIBncei4rgU/jia2p9yrExXeoa+KBs0bdGCdfA3ZYsDaYTrcD0adQibp3sf3iu+q7Hq33+91up5uAKDyG2wCDpkSug/Vr4uzkn9v7glQGaJHqOcDDVi92qIoa4yev4b7K7H9f8ryi98YRpo2kJj+W/GC2lnUEf9IVbClWcgwYmmMzG+1Xw8a4BFhL7Hng2cgTMUiOGKJCUo5a18cdWJVkOyipETGehR/g3RrtVIdBmbz/AK37ey91f1MEbp5+fbs/m6DXBVeM4FIkV0Tp3JjXjQKCaO/AHLewUCbmDXZg5CSkBjLkiiGdcSFz7QDXqi2ZRku7PatKXahMb1U= alexander@alexanderpc"
   ];
@@ -104,7 +105,8 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4e7BZ5ip9KVu7oY0x7nuWIcZIK+FGLk4pZPrua0sfF"
   ];
 
-in {
+in
+{
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
@@ -158,7 +160,7 @@ in {
       uid = 2001;
       openssh.authorizedKeys.keys = mwerndleKeys;
     };
-    
+
     # Marcel Faltus, Redha's BSc student (Porting QEMU for Apple M1)
     mfaltus = {
       isNormalUser = true;
@@ -206,7 +208,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2006;
-      allowedHosts = ["ryan" "adelaide"];
+      allowedHosts = [ "ryan" "adelaide" ];
       openssh.authorizedKeys.keys = yiheKeys;
     };
 
@@ -217,7 +219,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2007;
-      allowedHosts = ["ryan" "adelaide"];
+      allowedHosts = [ "ryan" "adelaide" ];
       openssh.authorizedKeys.keys = yiwenliuKeys;
     };
 
@@ -228,7 +230,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2008;
-      allowedHosts = ["ryan" "adelaide"];
+      allowedHosts = [ "ryan" "adelaide" ];
       openssh.authorizedKeys.keys = hanwenliuKeys;
     };
 
@@ -239,7 +241,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2009;
-      allowedHosts = ["ryan" "adelaide"];
+      allowedHosts = [ "ryan" "adelaide" ];
       openssh.authorizedKeys.keys = wonbangseoKeys;
     };
 
@@ -250,7 +252,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2010;
-      allowedHosts = ["ryan"];
+      allowedHosts = [ "ryan" ];
       openssh.authorizedKeys.keys = justusvonderbeekKeys;
     };
 
@@ -261,7 +263,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2011;
-      allowedHosts = ["ryan"];
+      allowedHosts = [ "ryan" ];
       openssh.authorizedKeys.keys = rohanfernandezKeys;
     };
 
@@ -272,7 +274,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2012;
-      allowedHosts = ["ryan"];
+      allowedHosts = [ "ryan" ];
       openssh.authorizedKeys.keys = alexandermaslewKeys;
     };
 
@@ -283,7 +285,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2013;
-      allowedHosts = ["ryan"];
+      allowedHosts = [ "ryan" ];
       openssh.authorizedKeys.keys = zixuanliKeys;
     };
 
@@ -335,7 +337,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2018;
-      allowedHosts = ["jack"];
+      allowedHosts = [ "jack" ];
       openssh.authorizedKeys.keys = emilKeys;
     };
 
@@ -356,7 +358,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2020;
-      allowedHosts = ["jack" "graham"];
+      allowedHosts = [ "jack" "graham" ];
       openssh.authorizedKeys.keys = turkmenKeys;
     };
 
@@ -367,7 +369,7 @@ in {
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2021;
-      allowedHosts = ["jack" "graham"];
+      allowedHosts = [ "jack" "graham" ];
       openssh.authorizedKeys.keys = saracKeys;
     };
   };

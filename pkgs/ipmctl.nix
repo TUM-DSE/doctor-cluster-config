@@ -1,15 +1,14 @@
-{
-  stdenv,
-  fetchurl,
-  libndctl,
-  systemd,
-  cmake,
-  python3,
-  pkg-config,
-  asciidoctor,
-  asciidoc,
-  lib,
-  rpmextract
+{ stdenv
+, fetchurl
+, libndctl
+, systemd
+, cmake
+, python3
+, pkg-config
+, asciidoctor
+, asciidoc
+, lib
+, rpmextract
 }:
 
 stdenv.mkDerivation rec {
@@ -19,13 +18,13 @@ stdenv.mkDerivation rec {
     url = "https://github.com/intel/ipmctl/releases/download/v${version}/ipmctl-${version}-1.fc27.src.rpm";
     sha256 = "sha256-aEnLIGzC06LxnZXxwUbGC85MYqm6ycVMRMp8tWsxd78=";
   };
-  buildInputs = [libndctl systemd];
+  buildInputs = [ libndctl systemd ];
   unpackPhase = ''
     rpmextract $src
     tar -xf ipmctl-${version}.tar.gz
     cd ipmctl-${version}
   '';
-  nativeBuildInputs = [cmake python3 pkg-config asciidoctor asciidoc rpmextract];
+  nativeBuildInputs = [ cmake python3 pkg-config asciidoctor asciidoc rpmextract ];
   cmakeFlags = [
     "-DBUILDNUM=1"
     "-DLINUX_PRODUCT_NAME=ipmctl"
@@ -36,7 +35,7 @@ stdenv.mkDerivation rec {
     description = "Utility for configuring and managing Intel Optane Persistent Memory modules";
     homepage = "https://github.com/intel/ipmctl";
     license = licenses.mit;
-    maintainers = with maintainers; [mic92];
+    maintainers = with maintainers; [ mic92 ];
     platforms = platforms.unix;
   };
 }

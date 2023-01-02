@@ -19,7 +19,7 @@ in
     ./hostfile.nix
   ];
   users.groups.buildbot-worker = { };
-  sops.secrets.buildbot-builder-ssh-key = {};
+  sops.secrets.buildbot-builder-ssh-key = { };
   sops.secrets.buildbot-nix-worker-password.owner = "buildbot-worker";
   users.groups.buildbot-worker = { };
 

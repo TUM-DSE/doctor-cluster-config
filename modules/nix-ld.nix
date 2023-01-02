@@ -4,10 +4,10 @@
   programs.nix-ld.enable = !pkgs.stdenv.hostPlatform.isRiscV;
 
   environment.variables = lib.mkIf (config.programs.nix-ld.enable) {
-     NIX_LD = toString (pkgs.runCommand "ld.so" {} ''
-       ln -s "$(cat '${pkgs.stdenv.cc}/nix-support/dynamic-linker')" $out
-     '');
-     NIX_LD_LIBRARY_PATH =
+    NIX_LD = toString (pkgs.runCommand "ld.so" { } ''
+      ln -s "$(cat '${pkgs.stdenv.cc}/nix-support/dynamic-linker')" $out
+    '');
+    NIX_LD_LIBRARY_PATH =
       let
         ld_library_path = pkgs.buildEnv {
           name = "lb-library-path";

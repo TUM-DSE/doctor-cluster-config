@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
       ../ipmi-supermicro.nix
     ];
 
@@ -22,7 +23,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/NIXOS_BOOT";
     fsType = "vfat";
-    options = ["nofail"];
+    options = [ "nofail" ];
   };
 
   swapDevices = [ ];

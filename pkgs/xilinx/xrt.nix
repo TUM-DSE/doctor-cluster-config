@@ -31,7 +31,8 @@ let
     url = "https://www.xilinx.com/bin/public/openDownload?filename=xrt_${version}_20.04-amd64-xrt.deb";
     sha256 = "sha256-56oftTwApQ/H8S9mLti1Ga3zLAxILwWvZQr60RoPo3A=";
   };
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   pname = "xrt";
   inherit version;
   src = fetchFromGitHub {

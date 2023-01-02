@@ -1,14 +1,15 @@
-{
-  pkgs,
-  config,
-  self,
-  lib,
-  ...
-}: let
+{ pkgs
+, config
+, self
+, lib
+, ...
+}:
+let
   packages = self.packages.${pkgs.system};
   xrt-drivers = packages.xrt-drivers.override { inherit (config.boot.kernelPackages) kernel; };
   sfc-drivers = packages.sfc-drivers.override { inherit (config.boot.kernelPackages) kernel; };
-in {
+in
+{
 
   options = {
     hardware.xilinx.xrt-drivers.enable = lib.mkEnableOption "Propritary kernel drivers for flashing firmware";
@@ -50,7 +51,7 @@ in {
     ];
 
     systemd.services.setup-xilinx-firmware = {
-      wantedBy = ["multi-user.target"];
+      wantedBy = [ "multi-user.target" ];
       script = ''
         rm -rf /lib/firmware/xilinx /opt/xilinx/firmware
         mkdir -p /lib/firmware/xilinx /opt/xilinx/firmware
@@ -70,7 +71,7 @@ in {
     users.extraUsers.xilinx = {
       isNormalUser = true;
       passwordFile = config.sops.secrets.xilinx-password-hash.path;
-      extraGroups = ["wheel" "docker" "plugdev" "input"];
+      extraGroups = [ "wheel" "docker" "plugdev" "input" ];
       uid = 5002;
     };
   };

@@ -1,12 +1,11 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }:
 with lib; {
   options = {
     boot.hugepages.size = mkOption {
-      type = types.enum ["1GB" "2MB"];
+      type = types.enum [ "1GB" "2MB" ];
       description = ''
         Size of one hugetable
       '';
@@ -30,7 +29,7 @@ with lib; {
     boot.extraModulePackages = [
       config.boot.kernelPackages.dpdk-kmods
     ];
-    boot.kernelModules = ["igb_uio"];
+    boot.kernelModules = [ "igb_uio" ];
     boot.extraModprobeConfig = ''
       blacklist ice
     '';

@@ -1,4 +1,5 @@
-{self, ...}: let
+{ self, ... }:
+let
   inherit
     (self.inputs)
     nixpkgs
@@ -39,14 +40,13 @@
     srvos.nixosModules.server
 
     srvos.nixosModules.telegraf
-    { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [9273]; }
+    { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
 
     sops-nix.nixosModules.sops
-    ({
-      pkgs,
-      config,
-      ...
-    }: {
+    ({ pkgs
+     , config
+     , ...
+     }: {
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${pkgs.path}"
@@ -57,9 +57,10 @@
 
       #sops.withSops = true;
       sops.secrets.root-password-hash.neededForUsers = true;
-      sops.defaultSopsFile = let
-        sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
-      in
+      sops.defaultSopsFile =
+        let
+          sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
+        in
         if builtins.pathExists sopsFile
         then sopsFile
         else null;
@@ -87,7 +88,8 @@
       ./modules/zfs.nix
       ./modules/bootloader.nix
     ];
-in {
+in
+{
   flake.nixosConfigurations = {
     bill = nixosSystem {
       system = "x86_64-linux";

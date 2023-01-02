@@ -4,9 +4,9 @@
 { pkgs, modulesPath, ... }:
 
 {
-  imports = [ 
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "mmc_spi" ];
 
@@ -19,7 +19,7 @@
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.callPackage ./kernel.nix {});
+  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.callPackage ./kernel.nix { });
   boot.kernelParams = [ "console=tty0" "console=ttySIF0,115200" "earlycon=sbi" ];
   boot.initrd.kernelModules = [ "nvme" "mmc_block" "mmc_spi" "spi_sifive" "spi_nor" ];
 
@@ -31,7 +31,7 @@
     mtdutils
   ];
 
-  fileSystems."/" =  { 
+  fileSystems."/" = {
     device = "/dev/disk/by-uuid/18a3df38-55d0-419c-9e5a-0a0a6c56893e";
     fsType = "ext4";
   };

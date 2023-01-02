@@ -7,5 +7,5 @@
     ];
     uid = 5003;
   };
-  nix.settings.trusted-users = ["buildbot-worker"];
+  nix.settings.trusted-users = [ "buildbot-worker" ];
 }

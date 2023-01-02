@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
     make -C "${KERNELDIR}" M=$(pwd)/drivers/bus -j$NIX_BUILD_CORES
     make -C "${KERNELDIR}" M=$(pwd)/drivers/net/ethernet/sfc -j$NIX_BUILD_CORES
   '';
-  makeFlags = [];
+  makeFlags = [ ];
 
   installPhase = ''
     make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)/drivers/bus modules_install

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     socat
     whois
@@ -27,7 +27,7 @@
     dnsutils
     netcat
     mtr
-    (neovim.override {vimAlias = true;})
+    (neovim.override { vimAlias = true; })
     ripgrep
     pciutils
     ethtool
@@ -35,8 +35,8 @@
 
     # tries to default to soft-float due to out-dated cc-rs
   ] ++ lib.optional (!stdenv.hostPlatform.isRiscV) bandwhich
-    # avoid compiling desktop stuff when doing cross nixos
-    ++ lib.optionals (stdenv.hostPlatform == stdenv.buildPlatform) [
+  # avoid compiling desktop stuff when doing cross nixos
+  ++ lib.optionals (stdenv.hostPlatform == stdenv.buildPlatform) [
     # various terminfo packages
     termite.terminfo
     wezterm.terminfo

@@ -1,7 +1,6 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }: {
   # use networkd
   networking.dhcpcd.enable = false;

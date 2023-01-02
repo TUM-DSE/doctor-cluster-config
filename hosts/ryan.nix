@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ../modules/xilinx.nix
     ../modules/xrdp.nix
@@ -44,14 +42,14 @@
   };
 
   # Don't manage vnet interface with systemd-networkd
- systemd.network.networks."05-ryan_sn1000_host".extraConfig = ''
+  systemd.network.networks."05-ryan_sn1000_host".extraConfig = ''
     [Match]
     Name=enp198s0f0
     [Network]
     Address=192.168.1.10/24
     [Link]
     Description=SN1000 Host Interface
- '';
+  '';
   systemd.network.networks."05-ryan_sn1000_host_alt".extraConfig = ''
     [Match]
     Name=enp198s0f0np0
@@ -59,7 +57,7 @@
     Address=192.168.1.10/24
     [Link]
     Description=SN1000 Host Interface
- '';
+  '';
   systemd.network.networks."05-ryan_sn1000_arm".extraConfig = ''
     [Match]
     Name=eth5
@@ -67,7 +65,7 @@
     Address=192.168.1.20/24
     [Link]
     Description=SN1000 Arm Representor Interface
- '';
-#    Unmanaged=yes
+  '';
+  #    Unmanaged=yes
   users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" "francisco" ];
 }

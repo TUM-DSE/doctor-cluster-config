@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, dpkg }: 
+{ stdenv, fetchurl, dpkg }:
 stdenv.mkDerivation rec {
   pname = "xilinx-firmware";
   version = "201920_3-3";

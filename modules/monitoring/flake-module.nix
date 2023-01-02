@@ -1,5 +1,5 @@
 {
-  perSystem = { pkgs, ...}: {
+  perSystem = { pkgs, ... }: {
     devShells.ansible = pkgs.mkShellNoCC {
       buildInputs = [
         pkgs.bashInteractive

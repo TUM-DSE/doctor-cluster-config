@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ../modules/k3s/server.nix
     ../modules/k3s/runner-monitoring.nix

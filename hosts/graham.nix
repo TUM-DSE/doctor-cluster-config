@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ../modules/xilinx.nix
     ../modules/xrdp.nix

@@ -59,12 +59,12 @@ in
 
   sops.secrets = {
     # doctor-cluster-bot-token
-    github-token = {};
-    github-webhook-secret = {};
-    github-oauth-secret = {};
-    buildbot-nix-workers = {};
-    cachix-name = {};
-    cachix-auth-token = {};
+    github-token = { };
+    github-webhook-secret = { };
+    github-oauth-secret = { };
+    buildbot-nix-workers = { };
+    cachix-name = { };
+    cachix-auth-token = { };
   };
 
   imports = [

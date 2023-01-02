@@ -1,13 +1,14 @@
-{
-  config,
-  lib,
-  ...
-}: let
+{ config
+, lib
+, ...
+}:
+let
   cfg = config.networking.doctowho.bonding;
 
-  concatAttrs = attrList: lib.fold (x: y: x // y) {} attrList;
+  concatAttrs = attrList: lib.fold (x: y: x // y) { } attrList;
 
-  slaveLinks = concatAttrs (lib.imap0 (num: mac: {
+  slaveLinks = concatAttrs (lib.imap0
+    (num: mac: {
       "05-slave${toString num}".extraConfig = ''
         [Match]
         MACAddress = ${mac}
@@ -19,7 +20,8 @@
     })
     cfg.macs);
 
-  slaveNetworks = concatAttrs (lib.imap0 (num: _mac: {
+  slaveNetworks = concatAttrs (lib.imap0
+    (num: _mac: {
       "05-slave${toString num}".extraConfig = ''
         [Match]
         Name = slave${toString num}
@@ -31,7 +33,8 @@
     cfg.macs);
 
   carrier = lib.imap0 (num: _mac: "slave${toString num}") cfg.macs;
-in {
+in
+{
   options = {
     networking.doctowho.bonding.macs = lib.mkOption {
       type = with lib.types; listOf str;

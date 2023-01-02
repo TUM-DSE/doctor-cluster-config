@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   config = {
     services.k3s.enable = true;
@@ -23,8 +22,8 @@
     ];
 
     systemd.services.k3s = {
-      wants = ["containerd.service"];
-      after = ["containerd.service"];
+      wants = [ "containerd.service" ];
+      after = [ "containerd.service" ];
     };
 
     systemd.services.containerd.serviceConfig = {

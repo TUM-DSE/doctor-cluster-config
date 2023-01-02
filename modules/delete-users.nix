@@ -1,7 +1,6 @@
-{
-  lib,
-  config,
-  ...
+{ lib
+, config
+, ...
 }: {
   options = {
     users.deletedUsers = lib.mkOption {

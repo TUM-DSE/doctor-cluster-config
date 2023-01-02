@@ -2,10 +2,11 @@
 
 buildLinux (args // rec {
   version = "5.19";
-  modDirVersion = if (modDirVersionArg == null) then
-    builtins.replaceStrings [ "-" ] [ ".0-" ] version
-      else
-    modDirVersionArg;
+  modDirVersion =
+    if (modDirVersionArg == null) then
+      builtins.replaceStrings [ "-" ] [ ".0-" ] version
+    else
+      modDirVersionArg;
   src = fetchFromGitHub {
     owner = "Mic92";
     repo = "linux";

@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ../modules/k3s/agent.nix
     ../modules/hardware/poweredge-r440.nix
