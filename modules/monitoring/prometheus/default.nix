@@ -73,7 +73,7 @@
   services.prometheus.alertmanager = {
     enable = true;
     environmentFile = config.sops.secrets.alertmanager.path;
-    webExternalUrl = "https://alertmanager.thalheim.io";
+    webExternalUrl = "https://alertmanager.dse.tum.de";
     listenAddress = "[::1]";
     configuration = {
       route = {
@@ -88,21 +88,7 @@
           }
         ];
       };
-      receivers = [
-        {
-          name = "all";
-          pushover_configs = [
-            {
-              user_key = "$PUSHOVER_USER_KEY";
-              token = "$PUSHOVER_TOKEN";
-              priority = "0";
-            }
-          ];
-        }
-        {
-          name = "default";
-        }
-      ];
+      receivers = [{ name = "default"; }];
     };
   };
 }

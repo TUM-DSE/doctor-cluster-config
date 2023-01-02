@@ -84,6 +84,9 @@ let
     "hosts/dan.yml$" = [
       dan
     ];
+    "hosts/doctor.yml$" = [
+      doctor
+    ];
     "hosts/christina.yml$" = [
       christina
     ];

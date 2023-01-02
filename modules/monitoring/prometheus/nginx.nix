@@ -11,6 +11,9 @@ let
   '';
 in
 {
+  security.acme.defaults.email = "joerg.letsencrypt@thalheim.io";
+  security.acme.acceptTerms = true;
+
   services.nginx = {
     commonHttpConfig = ''
       add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload' always;

@@ -22,6 +22,7 @@ let
     }
     # only include admins here for monitoring/backup infrastructure
     ./modules/users/admins.nix
+    ./modules/users/extra-user-options.nix
     ./modules/packages.nix
     ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix

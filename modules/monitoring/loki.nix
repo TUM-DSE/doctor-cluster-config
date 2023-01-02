@@ -103,11 +103,10 @@ in
 
   sops.secrets.promtail-nginx-password.owner = "nginx";
 
-  security.acme.certs."loki.r".server = config.retiolum.ca.acmeURL;
   services.nginx = {
     enable = true;
     virtualHosts.loki = {
-      serverName = "loki.r";
+      serverName = "loki.dse.in.tum.de";
       enableACME = true;
       addSSL = true;
       locations."/" = {
