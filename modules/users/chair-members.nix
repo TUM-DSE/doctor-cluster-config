@@ -100,24 +100,6 @@ let
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
-  options = {
-    users.withSops = lib.mkOption {
-      type = lib.types.bool;
-      description = ''
-        Wether to use sops to populate user secrets
-      '';
-      default = true;
-    };
-  };
-
-  ## we put all bachelor/master students here
-  imports = [
-    ./students.nix
-    ./reviewer-accounts.nix
-    ./delete-users.nix
-    ./whitelist-hosts.nix
-  ];
-
   config = {
     users.users = {
       # Jörg Thalheim
@@ -346,8 +328,5 @@ in
     ];
 
     nix.settings.trusted-users = [ "joerg" "harshanavkis" "sandro" "redha" ];
-
-    # we cannot use this since we no longer have the database
-    programs.command-not-found.enable = false;
   };
 }

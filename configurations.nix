@@ -77,7 +77,7 @@ let
   computeNodeModules =
     commonModules
     ++ [
-      ./modules/users.nix
+      ./modules/users
       ./modules/tracing.nix
       ./modules/scratch-space.nix
       ./modules/docker.nix
