@@ -121,7 +121,7 @@ in
   config = {
     users.users = {
       # Jörg Thalheim
-      # tum/edinburgh
+      # tum
       joerg = {
         isNormalUser = true;
         home = "/home/joerg";
@@ -173,17 +173,6 @@ in
         shell = "/run/current-system/sw/bin/zsh";
         uid = 1005;
         openssh.authorizedKeys.keys = harshanavkisKeys;
-      };
-
-      # edinburgh
-      # delete once we are finished with edinburgh...
-      # uses edinburgh server as a ssh jump host
-      iris = {
-        isNormalUser = true;
-        home = "/home/iris";
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1006;
-        openssh.authorizedKeys.keys = irisKeys;
       };
 
       # Dresden
@@ -353,6 +342,7 @@ in
       "michio"
       # Jin
       "mjnam"
+      "iris"
     ];
 
     nix.settings.trusted-users = [ "joerg" "harshanavkis" "sandro" "redha" ];
