@@ -21,21 +21,16 @@ let
       srvos.flake = self;
     }
     ./modules/packages.nix
-    ./modules/envfs.nix
     ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
     ./modules/tor-ssh.nix
-    ./modules/users.nix
     ./modules/hosts.nix
     ./modules/network.nix
-    ./modules/nix-ld.nix
-    ./modules/mosh.nix
     ./modules/promtail.nix
     ./modules/zsh.nix
     ./modules/systemd.nix
     ./modules/cleanup-usr.nix
-    ./modules/qemu-bridge.nix
 
     srvos.nixosModules.server
 
@@ -82,15 +77,29 @@ let
   computeNodeModules =
     commonModules
     ++ [
+      ./modules/users.nix
       ./modules/tracing.nix
       ./modules/scratch-space.nix
       ./modules/docker.nix
       ./modules/zfs.nix
       ./modules/bootloader.nix
+      ./modules/nix-ld.nix
+      ./modules/envfs.nix
+      ./modules/mosh.nix
+      ./modules/qemu-bridge.nix
     ];
 in
 {
   flake.nixosConfigurations = {
+    doctor = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        commonModules
+        ++ [
+          ./hosts/doctor.nix
+        ];
+    };
+
     bill = nixosSystem {
       system = "x86_64-linux";
       modules =
