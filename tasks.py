@@ -51,6 +51,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
 
     g.run_function(deploy)
 
+
 @task
 def build_local(c, hosts=""):
     """
@@ -66,12 +67,16 @@ def build_local(c, hosts=""):
                 "--option",
                 "accept-flake-config",
                 "true",
+                "--option",
+                "keep-going",
+                "true",
                 "--flake",
                 f".#{h.host}",
             ]
         )
 
     g.run_function(build_local)
+
 
 def document_cards(hosts: DeployGroup) -> str:
     """
@@ -258,7 +263,12 @@ def deploy_ruby(c):
         user="root",
         forward_agent=True,
         command_prefix="ruby",
-        meta=dict(target_user="root", target_host="ruby.r", flake_attr="ruby", config_dir="/var/lib/nixos-config"),
+        meta=dict(
+            target_user="root",
+            target_host="ruby.r",
+            flake_attr="ruby",
+            config_dir="/var/lib/nixos-config",
+        ),
     )
     deploy_nixos([host])
 
