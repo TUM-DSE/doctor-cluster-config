@@ -1,12 +1,22 @@
-{ lib
-, config
-, ...
-}:
+{ config, lib, pkgs, ... }:
 let
   globalConfig = config;
 in
 {
   options = {
+    users.withSops = lib.mkOption {
+      type = lib.types.bool;
+      description = ''
+        Wether to use sops to populate user secrets
+      '';
+      default = true;
+    };
+    users.deletedUsers = lib.mkOption {
+      type = with lib.types; listOf str;
+      description = "List of user names whose home directories, scratchspaces, and shares are to be deleted. Make sure you have backups before using this option!";
+    };
+
+    # whitelist users only for selected hosts
     users.users = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule ({ config, ... }: {
         options.allowedHosts = lib.mkOption {

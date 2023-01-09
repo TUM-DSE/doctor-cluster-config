@@ -385,7 +385,4 @@ in
     "m00wl"
     "he"
   ];
-
-  # only used by jasper atm
-  programs.fish.enable = true;
 }

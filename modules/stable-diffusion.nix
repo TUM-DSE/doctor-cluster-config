@@ -30,6 +30,7 @@ in
     virtualHosts."stable-diffusion.thalheim.io" = vhost;
     virtualHosts."stable-confusion.thalheim.io" = vhost;
     virtualHosts."stable-confusion.r" = vhost;
+    virtualHosts."jack.r".locations."/".proxyPass = "http://localhost:59125";
   };
 
   systemd.services.stable-diffusion-ui-output-generator = {

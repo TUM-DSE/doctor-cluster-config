@@ -3,8 +3,6 @@
 , ...
 }:
 let
-  joergsKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE joerg@turingmachine" ];
-
   redhaKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOb4/IcT/Ly2VjmhO8PhSlsBSziL3Yn7nTqoPrzRJ/FHHUfEZhUj0cx8h++wKas8Y6FELP0a121Hkki4L/QIhzd6zcTlqVQ19EX98KMmD9PsGlK5tdPV7+bjNLCtEXjqPIEYUi/cL/kvuKpMwLyzkVTyl5AFRvR9TQkITfHChWCV9KfKTFjM+h/FBQvH3zrjbpGbMiS7bclRL5Gvih3eOHSuQSrJurgkPr8cH1z47L8rqTlEwJ+9x54fQo2wbJm41BFcdY7qONSmtMI45EfFB3K7MdpH1ztg25l7K4ctgHayRASNI7IMIzijibd1acf08OutRec0XLLNGvCcKyW1EV redha@redha-Lenovo-U41-70"
   ];
@@ -51,9 +49,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos"
   ];
 
-  okelmannKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITBcN9iw5Fn7yyfgiWFet3QWDoMcUNtzLi+PNoYS7jksvcKZy5pLOjE6wCpkbYx+Tcb4MyvoWPXvwdo5FfL4XdhZRO+JlZ66p/rGssq/wEr2BBUwohP7o39JLtiyXGXSsK6MO2aceOFLQr4KAdaeD8ST0XumGcV6bGqIbjFsK5FCxFhO8NkCFtavBjDwKUm3uyOnVCWMp12abUphzxrVtWhcsnw5GapohATP03mCNxmrn/L7x393HutxgjyduScX7++MjwVE6J7wCnztPUtJbh9jYemr/K9fBMBbLhQagOjrlQYGU5frgmLrPCRZusyg5HjWx6gJIxs/DskfgmW+V"
-  ];
 
   ackxolotlKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIa2YRaVvN0qZ1OD1x1zHQMW7RZ5dBCCenHbb/AUV46H ackxolotl"
@@ -100,37 +95,9 @@ let
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
 in
 {
-  options = {
-    users.withSops = lib.mkOption {
-      type = lib.types.bool;
-      description = ''
-        Wether to use sops to populate user secrets
-      '';
-      default = true;
-    };
-  };
-
-  ## we put all bachelor/master students here
-  imports = [
-    ./students.nix
-    ./reviewer-accounts.nix
-    ./delete-users.nix
-    ./whitelist-hosts.nix
-  ];
-
   config = {
+    # admin uids in this range (1000 and 1008) but not in this file
     users.users = {
-      # Jörg Thalheim
-      # tum/edinburgh
-      joerg = {
-        isNormalUser = true;
-        home = "/home/joerg";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1000;
-        openssh.authorizedKeys.keys = joergsKeys;
-      };
-
       # Dimitra Giantsidi
       # edinburgh
       dimitra = {
@@ -175,17 +142,6 @@ in
         openssh.authorizedKeys.keys = harshanavkisKeys;
       };
 
-      # edinburgh
-      # delete once we are finished with edinburgh...
-      # uses edinburgh server as a ssh jump host
-      iris = {
-        isNormalUser = true;
-        home = "/home/iris";
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1006;
-        openssh.authorizedKeys.keys = irisKeys;
-      };
-
       # Dresden
       # tests nixpkgs on our infra
       sandro = {
@@ -217,17 +173,6 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1012;
         openssh.authorizedKeys.keys = atsushiKeys;
-      };
-
-      # Peter Okelmann
-      # tum
-      okelmann = {
-        isNormalUser = true;
-        home = "/home/okelmann";
-        inherit (config.users.users.joerg) extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1008;
-        openssh.authorizedKeys.keys = okelmannKeys;
       };
 
       # Simon Ellmann
@@ -330,15 +275,11 @@ in
       };
 
       root = {
-        passwordFile = lib.optionalString config.users.withSops config.sops.secrets.root-password-hash.path;
-        openssh.authorizedKeys.keys =
-          joergsKeys
-          ++ harshanavkisKeys
+        openssh.authorizedKeys.keys = harshanavkisKeys
           ++ mauriceKeys
           ++ dimitraKeys
           ++ dimitriosKeys
           ++ redhaKeys
-          ++ okelmannKeys
           ++ ackxolotlKeys;
       };
     };
@@ -353,11 +294,9 @@ in
       "michio"
       # Jin
       "mjnam"
+      "iris"
     ];
 
     nix.settings.trusted-users = [ "joerg" "harshanavkis" "sandro" "redha" ];
-
-    # we cannot use this since we no longer have the database
-    programs.command-not-found.enable = false;
   };
 }

@@ -1,5 +1,5 @@
 # To update .sops.yaml:
-# nix2yaml sops.yaml.nix > .sops.yaml
+# $ inv update-sops-files
 let
   mapAttrsToList = f: attrs:
     map (name: f name attrs.${name}) (builtins.attrNames attrs);
@@ -27,6 +27,7 @@ let
     # machines
     nardole = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
     bill = "age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq";
+    doctor = "age14zazj8nmx0crelhrjqthqp4g9k6p6w6hpk3wqngavy6870zczpvqlr5yt2";
     yasmin = "age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6";
     graham = "age1qnz850jesp6l4968vqdp40mqenmtx3czhy5l8hsz4kym3aj8c56srs5dkk";
     ryan = "age1cxtzg79g4ueqawa2hwstkkyeyq6e53q6r4te527lnjvzhujjc5ns96qehp";
@@ -82,6 +83,9 @@ let
     ];
     "hosts/dan.yml$" = [
       dan
+    ];
+    "hosts/doctor.yml$" = [
+      doctor
     ];
     "hosts/christina.yml$" = [
       christina

@@ -55,16 +55,15 @@
         perSystem = { self', pkgs, ... }: {
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
+              pkgs.ipmitool
+
               pkgs.python3.pkgs.invoke
               pkgs.python3.pkgs.deploykit
-              pkgs.ipmitool
+
+              # sops dependencies
               pkgs.age
               pkgs.sops
-              (pkgs.writeScriptBin "nix2yaml" ''
-                echo "# AUTOMATICALLY GENERATED WITH:"
-                echo "# nix2yaml $*"
-                nix eval --json -f "$@" | ${pkgs.yq-go}/bin/yq e -P -
-              '')
+              pkgs.yq-go
             ] ++ pkgs.lib.optional (pkgs.stdenv.isLinux) pkgs.mkpasswd;
           };
           packages = {

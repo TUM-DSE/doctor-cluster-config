@@ -52,6 +52,32 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     g.run_function(deploy)
 
 
+@task
+def build_local(c, hosts=""):
+    """
+    Build nixos configurations locally. Use `inv build-local --hosts ryan` to build a single server
+    """
+    g = DeployGroup(get_hosts(hosts))
+
+    def build_local(h: DeployHost) -> None:
+        h.run_local(
+            [
+                "nixos-rebuild",
+                "build",
+                "--option",
+                "accept-flake-config",
+                "true",
+                "--option",
+                "keep-going",
+                "true",
+                "--flake",
+                f".#{h.host}",
+            ]
+        )
+
+    g.run_function(build_local)
+
+
 def document_cards(hosts: DeployGroup) -> str:
     """
     Documents PCI expansion cards and returns a markdown string.
@@ -237,7 +263,12 @@ def deploy_ruby(c):
         user="root",
         forward_agent=True,
         command_prefix="ruby",
-        meta=dict(target_user="root", target_host="ruby.r", flake_attr="ruby", config_dir="/var/lib/nixos-config"),
+        meta=dict(
+            target_user="root",
+            target_host="ruby.r",
+            flake_attr="ruby",
+            config_dir="/var/lib/nixos-config",
+        ),
     )
     deploy_nixos([host])
 
@@ -397,7 +428,11 @@ def update_sops_files(c):
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
-    c.run("nix2yaml sops.yaml.nix > .sops.yaml")
+    with open(".sops.yaml", "w") as f:
+        print("# AUTOMATICALLY GENERATED WITH:", file=f)
+        print("# $ inv update-sops-files", file=f)
+
+    c.run("nix eval --json -f sops.yaml.nix | yq e -P - >> .sops.yaml")
     c.run(
         """
 find . \
