@@ -51,6 +51,27 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
 
     g.run_function(deploy)
 
+@task
+def build_local(c, hosts=""):
+    """
+    Build nixos configurations locally. Use `inv build-local --hosts ryan` to build a single server
+    """
+    g = DeployGroup(get_hosts(hosts))
+
+    def build_local(h: DeployHost) -> None:
+        h.run_local(
+            [
+                "nixos-rebuild",
+                "build",
+                "--option",
+                "accept-flake-config",
+                "true",
+                "--flake",
+                f".#{h.host}",
+            ]
+        )
+
+    g.run_function(build_local)
 
 def document_cards(hosts: DeployGroup) -> str:
     """
