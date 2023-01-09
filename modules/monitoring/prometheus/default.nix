@@ -84,7 +84,7 @@
             group_wait = "30s";
             group_interval = "2m";
             repeat_interval = "2h";
-            receiver = "all";
+            receiver = "default";
           }
         ];
       };

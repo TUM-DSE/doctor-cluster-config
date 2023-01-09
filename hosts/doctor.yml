@@ -1,5 +1,7 @@
 alertmanager: ENC[AES256_GCM,data:Zuv2zgY9/KI=,iv:7/JMHPQM7BDLseeDui9P7Qaw3J/loaEvEb9puNsEhL0=,tag:5wk79oaE9oA+aymo+vTBDg==,type:str]
 promtail-nginx-password: ENC[AES256_GCM,data:LQReredb3o+xQKKEbpRvWbwc5gDYo0JMiQzcnz41kG969Y9tK5JRqtmhW97ntCw=,iv:/zRPqlOiyPhyhF54G3H1QWokwz4XRZeFIxa6mFHvHO8=,tag:zAeZYbq0tK5aEltyRtERlQ==,type:str]
+root-password: ENC[AES256_GCM,data:3fp9NzN5RgYV42BV,iv:6Rn21xkDA8UzG7AlIDoVjgSoRzu+M2IwDHK1U52TQe0=,tag:J4PFFXUfqjU5ohtglwipXw==,type:str]
+root-password-hash: ENC[AES256_GCM,data:lvzEgVJWQ9obQNt5f5fSMVdyIwFx43cZbidZWVQPUZDR/mV+OMPN/b6MVYENipA5pmI7mLrROxIgO6vsxlyUS1m7yjZk45tnaXKtbfyoUvx+p6013DLQYvGvUVIYteo0/KO/k/NRQAgDyA==,iv:3X64Ag/gpeuIXXBT4K6Cj2TBpy8PhdHY+Yq/q3ATK0s=,tag:pNX6K8NP+mGkLRLAAlTLYQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -69,8 +71,8 @@ sops:
             Qlg5R1A2T2Z1ajVuTTFtdDhYbHhlQ2cKcbCr6Msc2URVh3m28V1RPu365FVjx1Qx
             4+bm50IM9BRVOW7Vs6kfBhEr5mpwW9PNrV9X1oyOag/c87EkHr81fg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-01-02T16:34:59Z"
-    mac: ENC[AES256_GCM,data:/tL1vQXqqYX/pRXcCxanH1D01uLaUW+SgFDobMIslQu3SevogF2nqzfX5TqfUUSnjY7av6YvgcqfjICKdZGb0kXhuoJGmF64Jh7rq1Pg+93ccxlyT2jeb8najL+swaiYihtgcOrij3aahkfqDJvsIwfmGEhawlLdbETK3cxvu+Q=,iv:pO6se3jqX3z1ZLN/aTxmZ1JuwFMTFY1ADzn12oX/PSY=,tag:iz/Tdvr3Vixd3Dqdj4dvAw==,type:str]
+    lastmodified: "2023-01-09T21:34:42Z"
+    mac: ENC[AES256_GCM,data:ouBP29y397Z7TcSPhFLc3BIgQjGXDCA1dFWT3TentKwH1QlcgmtLz2g/ljua4xqjg6GRoECnqvZwHwRYHfvDBqBhY+h9+9xOFD9ZmkTnXfOp81xDsedvP51IkL+7SQ/bg12oNFwO5udlJqipQnqsrSILI+qNec117ekWP6lKo8Q=,iv:ehxfO4pYSeObHj2GWnuNlyE7ZvtiQcSxYGlUpe+ShsI=,tag:DQdLOoQDq8imZhSvGeT7Tw==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.7.3

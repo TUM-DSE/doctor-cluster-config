@@ -34,6 +34,9 @@
   '';
   services.openssh.startWhenNeeded = false;
 
+  # our container profile seems to set this, but it is broken.
+  environment.noXlibs = false;
+
   networking.hostName = "doctor";
 
   # let the host manage these
