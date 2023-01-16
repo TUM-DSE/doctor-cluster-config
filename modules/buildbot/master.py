@@ -53,6 +53,14 @@ def build_config() -> dict[str, Any]:
             ),
             builderNames=["nix-eval"],
         ),
+        # this is compatible with bors or github's merge queue
+        schedulers.SingleBranchScheduler(
+            name="merge-queue",
+            change_filter=util.ChangeFilter(
+                branch_re="(gh-readonly-queue/.*|staging|trying)",
+            ),
+            builderNames=["nix-eval"],
+        ),
         # build all pull requests
         schedulers.SingleBranchScheduler(
             name="prs",
