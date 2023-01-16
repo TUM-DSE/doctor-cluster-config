@@ -400,16 +400,24 @@ def print_tinc_key(c, hosts):
     for h in get_hosts(hosts):
         h.run("tinc.retiolum export")
 
-
 @task
-def print_age_key(c, hosts):
+def scan_age_keys(c, host):
     """
-    Print age key for sops, inv print-age-key --hosts "host1,host2"
+    Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <ip>
     """
-    for h in get_hosts(hosts):
-        h.run(
-            "nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'"
-        )
+    import subprocess
+
+    proc = subprocess.run(
+        ["ssh-keyscan", host], text=True, stdout=subprocess.PIPE, check=True
+    )
+    print("###### Age keys ######")
+    subprocess.run(
+        ["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],
+        input=proc.stdout,
+        check=True,
+        text=True,
+    )
+
 
 
 @task
