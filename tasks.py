@@ -561,6 +561,19 @@ def ipmi_powercycle(c, host=""):
 
 
 @task
+def ipmi_boot_bios(c, host=""):
+    """
+    Set the next boot to bios and reboot
+    """
+    c.run(
+        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' chassis bootdev bios"""
+    )
+    c.run(
+        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
+    )
+
+
+@task
 def run(c, command, hosts=""):
     """
     Run provided command on the given hosts, if no host list is provided, than the command is run on all hosts.
