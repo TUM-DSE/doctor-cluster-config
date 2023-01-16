@@ -108,20 +108,26 @@ vpn](https://vpn.rbg.tum.de/) for il1 to access them.
 You can also retrieve the IP addresses assigned to the IPMI/BMC firmware by
 running:
 
-```
-ipmitool lan print
+```console
+$ ipmitool lan print
 ```
 
 on the machine. On the other host (i.e. your laptop) you can run the following command to get a serial console:
 
-```
-$ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(sops -d --extract '["ipmi-passwords"]' secrets.yml)" sol activate
+```console
+$ inv impi-serial --host <ipmi-ip-address>
 ```
 
 The following will reboot the machine:
 
+```console
+$ inv impi-powercycle --host <ipmi-ip-address>
 ```
-$ ipmitool -I lanplus -H <ipmi-ip-address> -U ADMIN -P "$(sops -d --extract '["ipmi-passwords"]' secrets.yml)" power cycle 
+
+To boot the a machine into bios, use:
+
+```console
+$ inv ipmi-boot-bios --host <ipmi-ip-address>
 ```
 
 The IPMI password here is encrypted with
@@ -142,3 +148,4 @@ All machines are build by [gitlab ci](https://gitlab.com/TUM-DSE/doctor-cluster-
 self-hosted runner. Gitlab will also propagate the build status to the github repository eventually. 
 The resulting builds are uploaded to https://tum-dse.cachix.org from where
 machines can download them while upgrading.
+
