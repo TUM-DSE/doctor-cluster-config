@@ -1,22 +1,20 @@
-{ modulesPath, ... }:
+{ modulesPath, lib, pkgs, config, ... }:
 
 # To deploy as a systemd-nspawn container on a new host:
-# $ nix run github:nix-community/nixos-generators -- --format lxc --flake '.#eva'
-# $ cat /etc/systemd/nspawn/eva.nspawn
+# $ nix run github:nix-community/nixos-generators -- --format lxc --flake '.#doctor'
+# $ cat /etc/systemd/nspawn/doctor.nspawn
 # [Exec]
 # Capability = all
 # PrivateUsers = no
 #
 # [Network]
 # VirtualEthernet = no
-# $ mkdir -p /var/lib/machines/eva
-# $ tar -C /var/lib/machines/eva -xf nixos-system-x86_64-linux.tar
-# # provision /etc/os-release, the command will fail but systemd-nspawn will be
-# # able to boot our directory afterwards
-# $ unshare --mount -- chroot /var/lib/machines/eva /sbin/init
-# $ systemd-nspawn --capability=CAP_NET_ADMIN -D /var/lib/machines/eva -b
-# or
-# $ machinectl start eva
+# $ mkdir -p /var/lib/machines/doctor
+# $ tar -C /var/lib/machines/doctor -xvf nixos-system-x86_64-linux.tar.xz
+# # boot like this:
+# $ systemd-nspawn --capability=CAP_NET_ADMIN -D /var/lib/machines/doctor -b
+# # or this:
+# $ machinectl start doctor
 
 {
   imports = [
@@ -28,9 +26,33 @@
     ../modules/monitoring/telegraf.nix
   ];
 
+  # This also adds `/etc/os-release` to the lxc tarball
+  system.build.tarball = lib.mkForce (pkgs.callPackage (pkgs.path + "/nixos/lib/make-system-tarball.nix") {
+    extraArgs = "--owner=0";
+
+    storeContents = [
+      {
+        object = config.system.build.toplevel;
+        symlink = "none";
+      }
+    ];
+
+    contents = [
+      {
+        source = config.system.build.toplevel + "/init";
+        target = "/sbin/init";
+      }
+      {
+        source = config.system.build.toplevel + "/etc/os-release";
+        target = "/etc/os-release";
+      }
+    ];
+
+    extraCommands = "mkdir -p proc sys dev";
+  });
+
   services.openssh.extraConfig = ''
-    ListenAddress 10.243.29.185
-    ListenAddress [42:0:3c46:8a42:2b1:5ef8:7562:676a]
+    ListenAddress [42:0:3c46:96e2:72f4:be89:d6eb:ab14]
   '';
   services.openssh.startWhenNeeded = false;
 
