@@ -376,7 +376,6 @@ in
       allowedHosts = [ "jack" "graham" ];
       openssh.authorizedKeys.keys = saracKeys;
     };
-  };
 
     # Felix Gust, Atsushi's Master student (Trustworthy disaggregation)
     felix = {
@@ -387,6 +386,7 @@ in
       uid = 2022;
       openssh.authorizedKeys.keys = felixKeys;
     };
+  };
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
