@@ -105,6 +105,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4e7BZ5ip9KVu7oY0x7nuWIcZIK+FGLk4pZPrua0sfF"
   ];
 
+  felixKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtPYKJOWfanR0dTkoQuYWA7XtiiPiVTYqpldjIuEk4w"
+  ];
+
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -373,6 +377,16 @@ in
       openssh.authorizedKeys.keys = saracKeys;
     };
   };
+
+    # Felix Gust, Atsushi's Master student (Trustworthy disaggregation)
+    felix = {
+      isNormalUser = true;
+      home = "/home/felix";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2022;
+      openssh.authorizedKeys.keys = felixKeys;
+    };
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
