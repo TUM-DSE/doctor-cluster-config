@@ -73,7 +73,7 @@
   services.prometheus.alertmanager = {
     enable = true;
     environmentFile = config.sops.secrets.alertmanager.path;
-    webExternalUrl = "https://alertmanager.dse.tum.de";
+    webExternalUrl = "https://alertmanager.dse.in.tum.de";
     listenAddress = "[::1]";
     configuration = {
       route = {

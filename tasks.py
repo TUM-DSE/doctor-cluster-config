@@ -43,7 +43,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
         if flake_attr:
             flake_path += "#" + flake_attr
         target_host = h.meta.get("target_host", "localhost")
-        cmd = f"nixos-rebuild switch --fast --option accept-flake-config true --build-host localhost --target-host {target_host} --flake {flake_path} --option keep-going true"
+        cmd = f"nixos-rebuild switch --fast --option accept-flake-config true --target-host {target_host} --flake {flake_path} --option keep-going true"
         ret = h.run(cmd, check=False)
         # re-retry switch if the first time fails
         if ret.returncode != 0:
@@ -272,6 +272,25 @@ def deploy_ruby(c):
     )
     deploy_nixos([host])
 
+@task
+def deploy_doctor(c):
+    """
+    Deploy to doctor
+    """
+    host = DeployHost(
+        "localhost",
+        user="root",
+        forward_agent=True,
+        command_prefix="doctor",
+        meta=dict(
+            target_user="root",
+            target_host="doctor.r",
+            flake_attr="doctor",
+            config_dir="/var/lib/nixos-config",
+        ),
+    )
+    deploy_nixos([host])
+
 
 @task
 def deploy_host(c, host):
@@ -400,16 +419,24 @@ def print_tinc_key(c, hosts):
     for h in get_hosts(hosts):
         h.run("tinc.retiolum export")
 
-
 @task
-def print_age_key(c, hosts):
+def scan_age_keys(c, host):
     """
-    Print age key for sops, inv print-age-key --hosts "host1,host2"
+    Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <ip>
     """
-    for h in get_hosts(hosts):
-        h.run(
-            "nix-shell -p ssh-to-age --run 'ssh-to-age < /etc/ssh/ssh_host_ed25519_key.pub'"
-        )
+    import subprocess
+
+    proc = subprocess.run(
+        ["ssh-keyscan", host], text=True, stdout=subprocess.PIPE, check=True
+    )
+    print("###### Age keys ######")
+    subprocess.run(
+        ["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],
+        input=proc.stdout,
+        check=True,
+        text=True,
+    )
+
 
 
 @task
