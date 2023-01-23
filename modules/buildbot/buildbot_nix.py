@@ -390,10 +390,16 @@ def nix_eval_config(
             command=[
                 "nix",
                 "run",
+                "--option",
+                "accept-flake-config",
+                "true",
                 "github:nix-community/nix-eval-jobs",
                 "--",
                 "--workers",
                 multiprocessing.cpu_count(),
+                "--option",
+                "accept-flake-config",
+                "true",
                 "--gc-roots-dir",
                 # FIXME: don't hardcode this
                 "/var/lib/buildbot-worker/gcroot",
