@@ -89,6 +89,12 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDNypOvfeaLL8eNSyKKB8If0AfFQTC9XDHeNiNWX/mjntWhd6ZLjlTdnuGAc2rwGIu0HtmaOPIO9sRi69GZY4CNRHK1HYa645vXsQhHyBo80NP838O5kNWX2dBQ3Go0LatV/v1o0a9QP1qwLL99STmTK7lLI1IIE3xtAnj8QSqnedVZoJQyxzqURkig/aWsVY1niyrEbGlfP6Z694t6IM7Nr6Ge5bK0C6vGZMBifhczNZ+0mTGctlcnXLjOKeMnJyIEVsN0EkaysCwFlwXf68VA/3XVbBFUx3Xqi52V4cfGShTdD9lFzzkJnlYplxepn63FVfBdPyGWU+ejYzx+udFAz/97EV7cf6fu++Cgd26kv8ZucQ2+aRqXEaKJU3yWzd/BDAl9V5GTfqabAa37toKq/0PrWxaX78ozmI9+7cWxWtHNJMI5toW9AraA5Yf1fvR8e39+8Ehg2BX1Yf8Gd4p1WwizEhHYIMqZWr8YMGJG6VxQbcbnqbBHPHyu26I5sB8= myron@lifebook"
   ];
 
+  patrickKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBzLGDgXaT6+pWNDa5UazUO2RAvlWwkrGLNiWHSy+dkp"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBovteXjmdsqJ432B4rZillIjnfe7Sx2LhfMg2WtkAks"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAIW6vfXtJDp7/ZehGQbjOfMXio4Ojjr7xU5YkN31PSi"
+  ];
+
   franciscoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCbtiYJVC8KwmoNxBH9O65JgGsCUIfXLWNmAe6ec8Wyzu3XJr4vNVRSLEFHaI6eXc+ynuS87l+CM4QDXSiA2/g2vSKGS+il+yQq9F0WJ6jJZpkQs1hciGakCiPoUCxodqBxDQ6RYZmeE0ZYmD0eXHHU5KRt0HTK33FgjTVEgNdT8cPckJ5v0qLtxOyRfi3N1QhQssxiVf+FQBoMloe+BtzF9bIaXTylojV6I9V7pGTqqnQITZ31uKfRLoLGpWScFDhhFU7rmBO4mBk4q4aUva7KqhDMHSRv3lZeSGGlMRO8EXkhoriy6wAwG9okPo/LM6+mnnuTlhu6TMy5+Eye0YovaayYpSCWiAa5vx0uh8lxdM3Ttxb2MxB3nBlWXyvEI1aYeYDNNQVaUmg483hdho++19xS7aKd0VORQBlNURfMSZ5wSIlmohMXvgi0lzjqLGOSkewWuQKDG4+G+VlDQMPJpX+AcNR2JVw6mIciSK0fx5zCoDVX8MhMCeEQ2IUjZg0= romano@dockingstation03"
   ];
@@ -273,6 +279,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1026;
         openssh.authorizedKeys.keys = franciscoKeys;
+      };
+
+      # Patrick Sabanic
+      # tum
+      patrick = {
+        isNormalUser = true;
+        home = "/home/patrick";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1027;
+        openssh.authorizedKeys.keys = patrickKeys;
       };
 
       root = {
