@@ -38,6 +38,7 @@ let
     srvos.nixosModules.server
 
     srvos.nixosModules.mixins-telegraf
+    srvos.nixosModules.mixins-terminfo
     # allow to access telegraf on vpn interface
     { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
 
