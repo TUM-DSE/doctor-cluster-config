@@ -30,8 +30,7 @@ in
 
     services.udev.packages = [ packages.xilinx-cable-drivers ];
 
-    # 6.0 kernel
-    boot.kernelPackages = pkgs.linuxPackages_6_0;
+    # 6.0+ kernel
     boot.extraModulePackages = lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
 
     # 5.15 kernel
