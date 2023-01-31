@@ -3,6 +3,11 @@
 , ...
 }:
 let
+
+  manosKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDM2v+i/htewdNuABRqzG2dURVgogpi7i4HclT0PABKHw4mLnSAfbCLrWGx3vs/bfPekGEZWyyWA/Bkq2rhBqnN3x3b1XHH7PUy7tJUHDHzvt8KGGav+w9EUdfhHTx44mcOoKMd33fBICOCRt5CwR4v72rg0Nel8ps9PzPBALBJ0/8pvP4eTjM6D9d1ugKtobFOOyGvsV1ipcR+Ao6KPfRl2K498xeZY2wHclVeUXQh9WIGUD/Sr2+bo0ub5GSQR4FR79CvTuOPAskKJcLZvfyCSKxkNbnDI6oI7TVk3ITObR3Of+1jJuvxb7bdu1VhVgH4LQQcpKiAv/tSQTgx/tR1GSjIWITi4Z4AKggpLeVrVFkL5TbmuHX0HcMw5GzQEl2XoRdLCemv8QBy9W/aIKQRr6H3SDzluQGGmCFnpKljXE0WRBjMAgWOiHkX5zW6U2KkjJzG0V9RTEQj/h91UDzok0SCX+EK8auvy+ptk+AICG3elji5UI9qNQdh+tb4utk= manosgior@DESKTOP-N9JDD19"
+  ];
+
   redhaKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOb4/IcT/Ly2VjmhO8PhSlsBSziL3Yn7nTqoPrzRJ/FHHUfEZhUj0cx8h++wKas8Y6FELP0a121Hkki4L/QIhzd6zcTlqVQ19EX98KMmD9PsGlK5tdPV7+bjNLCtEXjqPIEYUi/cL/kvuKpMwLyzkVTyl5AFRvR9TQkITfHChWCV9KfKTFjM+h/FBQvH3zrjbpGbMiS7bclRL5Gvih3eOHSuQSrJurgkPr8cH1z47L8rqTlEwJ+9x54fQo2wbJm41BFcdY7qONSmtMI45EfFB3K7MdpH1ztg25l7K4ctgHayRASNI7IMIzijibd1acf08OutRec0XLLNGvCcKyW1EV redha@redha-Lenovo-U41-70"
   ];
@@ -290,6 +295,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1027;
         openssh.authorizedKeys.keys = patrickKeys;
+      };
+      
+      # Manos Giortamis
+      # tum
+      myron = {
+        isNormalUser = true;
+        home = "/home/manosgior";
+        inherit (config.users.users.joerg) extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1028;
+        openssh.authorizedKeys.keys = manosKeys;
       };
 
       root = {
