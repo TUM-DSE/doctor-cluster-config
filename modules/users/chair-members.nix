@@ -299,7 +299,7 @@ in
       
       # Manos Giortamis
       # tum
-      myron = {
+      manos = {
         isNormalUser = true;
         home = "/home/manosgior";
         inherit (config.users.users.joerg) extraGroups;
