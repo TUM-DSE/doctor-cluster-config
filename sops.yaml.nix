@@ -25,6 +25,7 @@ let
     atsushi = "age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv";
 
     # machines
+    amy = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
     nardole = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
     bill = "age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq";
     doctor = "age1vfq3px0tw8uflvyuvtw9k7yf0j8gsh06claxk9pqqwujj0vt9dtqyqhx9d";
@@ -60,6 +61,9 @@ let
   # for all files. Amy.yml additionally can be decrytped by amy.
   sopsPermissions = with keys; {
     "modules/sshd/[^/]+\\.yaml$" = [ ];
+    "hosts/amy.yml$" = [
+      amy
+    ];
     "hosts/bill.yml$" = [
       bill
     ];

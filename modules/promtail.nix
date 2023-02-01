@@ -1,8 +1,10 @@
-{ config, ... }: {
-  sops.secrets.promtail-password.owner = "promtail";
-  sops.secrets.promtail-password.sopsFile = ./secrets.yml;
+{ config, lib, ... }: {
+  sops.secrets = lib.mkIf (config.users.withSops) {
+    promtail-password.owner = "promtail";
+    promtail-password.sopsFile = ./secrets.yml;
+  };
   services.promtail = {
-    enable = true;
+    enable = config.users.withSops;
     configuration = {
       server.http_listen_port = 9080;
       server.grpc_listen_port = 0;
