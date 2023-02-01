@@ -4,8 +4,9 @@ The corresponding nixos configuration is in [./hosts](./hosts).
 # New admins: getting started
 
 1. Install [nix](https://nixos.org/download.html#download-nix) (the recommended Multi-user installation is not NixOS, but only a package manager)
-2. Clone the `doctor-cluster-config` repo, `cd` into it and run: `nix develop`. This opens a shell with additional packages available such as `inv --list`, `sops` and `age`.
-3. To generate new admin key, run (requires [age](https://github.com/FiloSottile/age)):
+2. [Enable flake support in nix](https://nixos.wiki/wiki/Flakes#Non-NixOS). This effectively adds the following flags to all your `nix <flags> develop`-like commands: `--extra-experimental-features nix-command --extra-experimental-features flakes`
+3. Clone the `doctor-cluster-config` repo, `cd` into it and run: `nix develop`. This opens a shell with additional packages available such as `inv --list`, `sops` and `age`.
+4. To generate new admin key, run (requires [age](https://github.com/FiloSottile/age)):
 ```
 mkdir -p ~/.config/sops/age/
 age-keygen -o ~/.config/sops/age/keys.txt
