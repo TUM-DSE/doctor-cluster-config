@@ -23,6 +23,8 @@ let
     simon = "age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe";
     dimitrios = "age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8";
     atsushi = "age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv";
+    patrick = "age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0";
+    myron = "age1e4lgkn5zm4yuyeraunkamy4xq9z7kjgu3k22eca5u3zw89e5zfqq2mgtk3";
 
     # machines
     amy = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
@@ -53,6 +55,8 @@ let
       cmainas
       dimitrios
       atsushi
+      patrick
+      myron
     ];
     all = builtins.attrValues keys;
   };
