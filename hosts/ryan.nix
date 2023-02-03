@@ -67,5 +67,5 @@
     Description=SN1000 Arm Representor Interface
   '';
   #    Unmanaged=yes
-  users.xrdpUsers = [ "justusvonderbeek" "rohanfernandez" "alexandermaslew" "zixuanli" "francisco" ];
+  users.xrdpUsers = [ "francisco" ];
 }

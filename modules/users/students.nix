@@ -216,7 +216,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2006;
-      allowedHosts = [ "ryan" "adelaide" ];
+      allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = yiheKeys;
     };
 
@@ -227,7 +227,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2007;
-      allowedHosts = [ "ryan" "adelaide" ];
+      allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = yiwenliuKeys;
     };
 
@@ -238,7 +238,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2008;
-      allowedHosts = [ "ryan" "adelaide" ];
+      allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = hanwenliuKeys;
     };
 
@@ -249,7 +249,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2009;
-      allowedHosts = [ "ryan" "adelaide" ];
+      allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = wonbangseoKeys;
     };
 
@@ -260,7 +260,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2010;
-      allowedHosts = [ "ryan" ];
+      allowedHosts = [ ];
       openssh.authorizedKeys.keys = justusvonderbeekKeys;
     };
 
@@ -271,7 +271,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2011;
-      allowedHosts = [ "ryan" ];
+      allowedHosts = [ ];
       openssh.authorizedKeys.keys = rohanfernandezKeys;
     };
 
@@ -282,7 +282,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2012;
-      allowedHosts = [ "ryan" ];
+      allowedHosts = [ ];
       openssh.authorizedKeys.keys = alexandermaslewKeys;
     };
 
@@ -293,7 +293,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2013;
-      allowedHosts = [ "ryan" ];
+      allowedHosts = [ ];
       openssh.authorizedKeys.keys = zixuanliKeys;
     };
 
