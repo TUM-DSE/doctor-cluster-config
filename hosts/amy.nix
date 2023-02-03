@@ -1,7 +1,7 @@
 {
   imports = [
     ../modules/ipmi-supermicro.nix
-    ../modules/hardware/supermicro-foo.nix
+    ../modules/hardware/supermicro-418G.nix
   ];
 
   networking.hostName = "amy";

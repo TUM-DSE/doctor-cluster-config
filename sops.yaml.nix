@@ -27,7 +27,7 @@ let
     myron = "age1e4lgkn5zm4yuyeraunkamy4xq9z7kjgu3k22eca5u3zw89e5zfqq2mgtk3";
 
     # machines
-    amy = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
+    amy = "age1mfmce7qjr4y43tmgy86dy3l55js2zwhqveddev2ea898vl58a36qvaguyj";
     nardole = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
     bill = "age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq";
     doctor = "age1vfq3px0tw8uflvyuvtw9k7yf0j8gsh06claxk9pqqwujj0vt9dtqyqhx9d";
