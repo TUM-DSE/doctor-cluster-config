@@ -9,6 +9,7 @@
     ../modules/nfs
     ../modules/xilinx.nix
     ../modules/xrdp-passwords.nix
+    ../modules/amd_sev.nix
   ];
 
   networking.hostName = "ryan";
@@ -42,6 +43,12 @@
   };
 
   # Don't manage vnet interface with systemd-networkd
+  systemd.network.networks."05-ryan_vnet".extraConfig = ''
+    [Match]
+    Name = vnet*
+    [Link]
+    Unmanaged = yes
+  '';
   systemd.network.networks."05-ryan_sn1000_host".extraConfig = ''
     [Match]
     Name=enp198s0f0
