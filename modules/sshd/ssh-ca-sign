@@ -26,7 +26,7 @@ trap "{ rm -rf "$workdir"; }" EXIT
 
 cd $workdir
 pubkey="${ip}.pub"
-ssh-keyscan -t ed25519 "$ip" | awk '{$1=""; print $0}' > "$pubkey"
+cat /home/patrick/key/etc/ssh/ssh_host_ed25519_key.pub > "$pubkey"
 
 ssh-keygen -h -s "$workdir/ssh-ca" -n "$hosts" -I "$(basename "$pubkey" .pub)" "$pubkey"
 mv "${ip}-cert.pub" "${dir}/certs/$(echo "$hosts" | grep -o '^[^,]\+')-cert.pub"
