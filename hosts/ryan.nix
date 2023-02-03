@@ -4,8 +4,7 @@
     ../modules/xrdp.nix
     ../modules/hardware/poweredge7515.nix
     ../modules/dpdk.nix
-    # disable home because ryan is used for teaching this semester.
-    #../modules/nfs/client.nix
+    ../modules/nfs/client.nix
     ../modules/nfs
     ../modules/xilinx.nix
     ../modules/xrdp-passwords.nix
