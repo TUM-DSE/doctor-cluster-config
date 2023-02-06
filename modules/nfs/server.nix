@@ -128,7 +128,7 @@
     paths = [
       "/export/share"
     ];
-    repo = "il1dsenixosbk@eva.r:/mnt/backup/nfs-share";
+    repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-share";
     exclude = [
       # large memory traces
       "/export/share/redha/traces"
@@ -167,7 +167,7 @@
     paths = [
       "/export/home"
     ];
-    repo = "il1dsenixosbk@eva.r:/mnt/backup/nfs-home";
+    repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-home";
     encryption = {
       mode = "repokey";
       passCommand = "cat ${config.sops.secrets.tum-borgbackup-password.path}";
