@@ -253,50 +253,6 @@ in
       openssh.authorizedKeys.keys = wonbangseoKeys;
     };
 
-    # Justus von der Beek, Sys-lab WS22 (Atsushi's group)
-    justusvonderbeek = {
-      isNormalUser = true;
-      home = "/home/justus";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2010;
-      allowedHosts = [ ];
-      openssh.authorizedKeys.keys = justusvonderbeekKeys;
-    };
-
-    # Rohan Fernandez, Sys-lab WS22 (Atsushi's group)
-    rohanfernandez = {
-      isNormalUser = true;
-      home = "/home/rohan";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2011;
-      allowedHosts = [ ];
-      openssh.authorizedKeys.keys = rohanfernandezKeys;
-    };
-
-    # Alexander Maslew, Sys-lab WS22 (Atsushi's group)
-    alexandermaslew = {
-      isNormalUser = true;
-      home = "/home/alexander";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2012;
-      allowedHosts = [ ];
-      openssh.authorizedKeys.keys = alexandermaslewKeys;
-    };
-
-    # Zixuan Li, Sys-lab WS22 (Atsushi's group)
-    zixuanli = {
-      isNormalUser = true;
-      home = "/home/zixuan";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2013;
-      allowedHosts = [ ];
-      openssh.authorizedKeys.keys = zixuanliKeys;
-    };
-
     # Jonas Zöschg, Harsha's student (End-to-end on-chip encryption)
     jonas = {
       isNormalUser = true;
@@ -412,5 +368,9 @@ in
     "philip"
     "m00wl"
     "he"
+    "justusvonderbeek"
+    "rohanfernandez"
+    "alexandermaslew"
+    "zixuanli"
   ];
 }
