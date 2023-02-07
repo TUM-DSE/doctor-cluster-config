@@ -393,7 +393,7 @@ def mount_disks(c, hosts, disk=""):
         _mount_disks(h, disk)
 
 
-def decrypt_host_keys(host, tmpdir):
+def decrypt_host_keys(c,host, tmpdir):
     os.mkdir(f"{tmpdir}/etc")
     os.mkdir(f"{tmpdir}/etc/ssh")
     for keyname in [ "ssh_host_rsa_key", "ssh_host_rsa_key.pub", "ssh_host_ed25519_key", "ssh_host_ed25519_key.pub" ]:
@@ -401,7 +401,7 @@ def decrypt_host_keys(host, tmpdir):
             os.umask(0o644)
         else:
             os.umask(0o600)
-        print(f"sops --extract '[\"{keyname}\"]' -d {ROOT}/hosts/{host}.yml > {tmpdir}/etc/ssh/{keyname}")
+        c.run(f"sops --extract '[\"{keyname}\"]' -d {ROOT}/hosts/{host}.yml > {tmpdir}/etc/ssh/{keyname}")
 
 
 @task
@@ -410,19 +410,20 @@ def reformat_install_nixos(c, host, dhcp_interface):
     format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
     """
     with tempfile.TemporaryDirectory() as tmpdir:
-        decrypt_host_keys(host, tmpdir)
+        decrypt_host_keys(c,host, tmpdir)
+        breakpoint()
         # nixos_remote_pxe = "sudo nixos-remote-pxe"
-        nixos_remote_pxe = "sudo PYTHONPATH=$PYTHONPATH python3 ~/dev/nix/nixos-anywhere/nixos-remote-pxe.py" # TODO nixos-remote-pxe needs packaging
+        nixos_remote_pxe = "sudo PYTHONPATH=$PYTHONPATH python3 /home/patrick/anywhere/nixos-anywhere/nixos-remote-pxe.py" # TODO nixos-remote-pxe needs packaging
         c.run(f"{nixos_remote_pxe} --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --no-reboot --extra-files {tmpdir}")
     info("Device information:")
     info(
         "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
     )
-    h.run("nix-shell -p inxi --command 'inxi -F'")
-    h.run("nix-shell -p inxi --command 'inxi -FZ'")
-    h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
-    h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
-    h.run("reboot")
+    #h.run("nix-shell -p inxi --command 'inxi -F'")
+    #h.run("nix-shell -p inxi --command 'inxi -FZ'")
+    #h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
+    #h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
+    #h.run("reboot")
 
 
 @task
