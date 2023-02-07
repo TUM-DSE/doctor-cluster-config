@@ -106,6 +106,15 @@ in
         ];
     };
 
+    rose = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/rose.nix
+        ];
+    };
+
     amy = nixosSystem {
       system = "x86_64-linux";
       modules =
