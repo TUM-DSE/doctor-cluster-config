@@ -156,4 +156,4 @@ A graph of how the servers are connected right now can be found [here](graph.md)
 
 - donna
 - martha
-- rose
+

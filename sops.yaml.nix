@@ -27,6 +27,7 @@ let
     myron = "age1e4lgkn5zm4yuyeraunkamy4xq9z7kjgu3k22eca5u3zw89e5zfqq2mgtk3";
 
     # machines
+    rose = "age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx";
     amy = "age1t60q35wlu8rjk8k4trf7jg9q2kt0r44d66c5ezqpuw468jg5fs0q05qfwj";
     nardole = "age17ye252kv8u3qp0lkgknyl3jlaj8c0z92z65evaj8ss7q6axcud9s8prv32";
     bill = "age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq";
@@ -67,6 +68,9 @@ let
     "modules/sshd/[^/]+\\.yaml$" = [ ];
     "hosts/amy.yml$" = [
       amy
+    ];
+    "hosts/rose.yml$" = [
+      rose
     ];
     "hosts/bill.yml$" = [
       bill

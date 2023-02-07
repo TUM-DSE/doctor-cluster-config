@@ -159,6 +159,18 @@ creation_rules:
     path_regex: hosts/river.yml$
   - key_groups:
       - age:
+          - age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+          - age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv
+          - age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0
+          - age1e4lgkn5zm4yuyeraunkamy4xq9z7kjgu3k22eca5u3zw89e5zfqq2mgtk3
+    path_regex: hosts/rose.yml$
+  - key_groups:
+      - age:
           - age1q2t8w6qta7v6mhwv3qlfq6un60mj0u8k5j8qp7v37kjkd6008ycs4ecxmt
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
@@ -254,6 +266,7 @@ creation_rules:
           - age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
           - age1kkace98a960arj2qlzuuzpxxgm5r6ktw902ak6qydejdx6kxrs9q79vl4a
+          - age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx
           - age1q2t8w6qta7v6mhwv3qlfq6un60mj0u8k5j8qp7v37kjkd6008ycs4ecxmt
           - age1cxtzg79g4ueqawa2hwstkkyeyq6e53q6r4te527lnjvzhujjc5ns96qehp
           - age1llrudzm3dayvgcq79xq7wzynthdz4r4p4yy8rdamrsq03saukd0qqszppe
