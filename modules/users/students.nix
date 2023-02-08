@@ -40,6 +40,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZAI0TEuR1dVXq214bv6mn6QLNfYMPJWh5HwfpzM8YRGJSaHUvPadi8IvcLgN3CtXcsEkTPt36VgWX49L0V59uJ8K4CpH/Ry7gEqU4uHZlBySUercvLyrqM7Eq5YcHkntFsbB/xqrhharkxtv3vYbvYhQpgOlcdA1g2cxG2wtNA5icg6vV1UDsyiAyibHgIIVZ9fvCqWhf9bZz6wjrLmmklTF3SqByteil2BpS57mv5JvRQx+RFIXeg3ciuT35uY7v5TAuRkRC0yoTVjpEDISHKOc8JNAZSgUXHdFj5XYQ/APULDa71hmSZNq2A2Gkf+sRwU5Evou5MqWGQ55jaiZ9r2Hedbd33BP97/MzH1OPDdHK/R9vrJX7+ZSsncUjO0sSkUTKajk5H2jB1gq8c+SeldZGLSBPl6mzk3a1aPgV5MpPXm7EvPa1dQccWZTZZKUuuA2gPyVMO9f7XBZRcYCdColS6Kj/fbq7Lg+XhgRVz53BShBQuP0Qtvcf3XWyEQ0= mikilio@nubara"
   ];
 
+  yiheKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
+  ];
+
   jonasKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCklke4DPtQ3FaOyEF7bFncskfGayXfTOoP5LRbwP0L+J33h5iZGWrP8ejL2NpAgt/TAbt6G6e/hAkraShcW8XaiN3woPyhY9fuKLjf8JGQGFX6Vh33KHDWxa/v70pyai8iWS6XgTzcdymcQLypRSDgpAlEYmG8tc4sHFKsQX+e/2a5PHG19+6MgPcn1ipYyj/I3EV3WlHcf7TZvANBtW7pNQJUeZ4zMibvl2kHrzJJyLQhowBJqLp8D9z/MTmyPbQYzUTE+4DFDiV2O2enax8lgTsiuP4HDfmIzv4qXxbZZoxiLhw4N+OiVSRbUkC5nWBW7e9k6gIpT0QR5+JAXPD6E4wzKq7pviAASj/hirRgSz64GBjHZMGbmXCOXvsV3pEF1dfibHBA9dnNHkSNcfpKqcvsOSJwSjq+CfEwyAUwPOgM1bn49ozpdGMMstYbn+u25NfMLdfPVb2Ney42WeG7uncVGDDccp4V8AmSIPi1sNs6P7kwAmZpH6+w83wvG10= jonas@pop-os"
   ];
@@ -176,6 +180,17 @@ in
       openssh.authorizedKeys.keys = mikilioKeys;
     };
 
+    # Yi He, Sys-lab WS22 (Sebastian's group), and now a HiWi
+    yihe = {
+      isNormalUser = true;
+      home = "/home/yihe";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2006;
+      allowedHosts = [ "adelaide" ];
+      openssh.authorizedKeys.keys = yiheKeys;
+    };
+
     # Jonas Zöschg, Harsha's student (End-to-end on-chip encryption)
     jonas = {
       isNormalUser = true;
@@ -295,7 +310,6 @@ in
     "rohanfernandez"
     "alexandermaslew"
     "zixuanli"
-    "yihe"
     "yiwenliu"
     "hanwenliu"
     "wonbangseo"
