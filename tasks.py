@@ -393,14 +393,14 @@ def mount_disks(c, hosts, disk=""):
         _mount_disks(h, disk)
 
 
-def decrypt_host_keys(c,host, tmpdir):
+def decrypt_host_keys(c, host, tmpdir):
     os.mkdir(f"{tmpdir}/etc")
     os.mkdir(f"{tmpdir}/etc/ssh")
     for keyname in [ "ssh_host_rsa_key", "ssh_host_rsa_key.pub", "ssh_host_ed25519_key", "ssh_host_ed25519_key.pub" ]:
         if keyname.endswith(".pub"):
-            os.umask(0o644)
+            os.umask(0o133)
         else:
-            os.umask(0o600)
+            os.umask(0o177)
         c.run(f"sops --extract '[\"{keyname}\"]' -d {ROOT}/hosts/{host}.yml > {tmpdir}/etc/ssh/{keyname}")
 
 
@@ -410,15 +410,16 @@ def reformat_install_nixos(c, host, dhcp_interface):
     format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
     """
     with tempfile.TemporaryDirectory() as tmpdir:
-        decrypt_host_keys(c,host, tmpdir)
-        breakpoint()
+        decrypt_host_keys(c, host, tmpdir)
         # nixos_remote_pxe = "sudo nixos-remote-pxe"
-        nixos_remote_pxe = "sudo PYTHONPATH=$PYTHONPATH python3 /home/patrick/anywhere/nixos-anywhere/nixos-remote-pxe.py" # TODO nixos-remote-pxe needs packaging
-        c.run(f"{nixos_remote_pxe} --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --no-reboot --extra-files {tmpdir}")
+        nixos_remote_pxe = "sudo PYTHONPATH=$PYTHONPATH python3 ~/dev/nix/nixos-anywhere/nixos-remote-pxe.py" # TODO nixos-remote-pxe needs packaging
+        c.run(f"{nixos_remote_pxe} --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --extra-files {tmpdir} --no-reboot --pause-after-completion")
     info("Device information:")
     info(
         "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
     )
+    # TODO after starting nixos-remote-pxe, but before running nixos-remote (or
+    # afterwards), we want to check if booted into uefi and:
     #h.run("nix-shell -p inxi --command 'inxi -F'")
     #h.run("nix-shell -p inxi --command 'inxi -FZ'")
     #h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
@@ -461,7 +462,7 @@ def generate_ssh_cert(c, host):
     with tempfile.TemporaryDirectory() as tmpdir:
         # should we use ssh-keygen -A (Generate host keys of all default key tpyes) here?
         c.run(f"mkdir -p {tmpdir}/etc/ssh")
-        c.run(f"ssh-keygen -A -f {tmpdir}")
+        c.run(f"ssh-keygen -A -C '{host}_host_key' -f {tmpdir}")
         for keytype in [ "rsa", "ed25519" ]:
             # c.run(f"ssh-keygen -f {tmpdir}/ssh_host_{keytype}_key -t {keytype}")
             privkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key").read_text()
