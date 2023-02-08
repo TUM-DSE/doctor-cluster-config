@@ -4,17 +4,18 @@ Here we assume `$hostname` to be the hostname (such as yasmin) and `$host` a res
 
 To open a shell with required tools installed (such as sops) you can use the nix package manager `nix develop`.
 
-## SSH CA
 
 ## Prepare sops-nix secrets
 
 define new secrets file for new `$hostname` in `sops.yaml.nix`
 
 ```nix
-sops_permissions = with keys; {
-  "hosts/$hostname.yml$" = [ ];
-  ...
-};
+{...}: {
+  sops_permissions = with keys; {
+    "hosts/$hostname.yml$" = [ ];
+    ...
+  };
+}
 ```
 
 Changes in sops.yaml.nix have to be applied with
@@ -34,7 +35,7 @@ root-password: tePO3QGAhAil
 root-password-hash: $6$PPHuMAbzR8hdWmoz$yNKoHqY0GGoXm65AzS4h/VuJVJkORMc68WFk/e3cZ5foJsfxw9LeFBP5s/L5muRZF4/RVn3xYVYPbBGEYo3Xq0
 ```
 
-Use sops than to add the generated secrets above to the host:
+Use sops then to add the generated secrets above to the host:
 
 ```
 sops hosts/$hostname.yml
@@ -42,15 +43,16 @@ sops hosts/$hostname.yml
 
 Note that if a rule wasn't created but only changed, run `sops updatekeys path/to.yml` to re-encrypt it.
 
+
 ## Create host keys: SSH and sops/age
 
-Create ssh ca certificate, so that hosts automatically trust each other.
+Create ssh certificate singed by our CA, so that hosts automatically trust each other.
 
 ```console
 inv generate-ssh-cert <HOSTNAME>
 ```
 
-Generate a sops key for `$hostname` (from the ssh identity of the pxebooted OS)
+Generate a sops key for `$hostname` (from the ssh identity we generated in the previous step)
 
 ```
 inv print-age-key $host
@@ -59,14 +61,16 @@ inv print-age-key $host
 in `sops.yaml.nix`, add the printed key to `keys` and add `sops_permissions` for `hosts/$hostname.yml`:
 
 ```nix
-keys = {
-  $hostname = "ageKEYGIBBERISH";
-  ...
-};
-sops_permissions = with keys; {
-  "hosts/$hostname.yml$" = [ $hostname ];
-  ...
-};
+{...}: {
+  keys = {
+    $hostname = "ageKEYGIBBERISH";
+    ...
+  };
+  sops_permissions = with keys; {
+    "hosts/$hostname.yml$" = [ $hostname ];
+    ...
+  };
+}
 ```
 
 Changes in sops.yaml.nix have to be applied with
@@ -75,11 +79,12 @@ Changes in sops.yaml.nix have to be applied with
 inv update-sops-files
 ```
 
+
 ## Prepare NixOS config
 
 Prepare a config for a new host:
 
-Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`.
+If there is no hardware configuratoin yet for your mainboard/server type: Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`.
 
 Write a sane, simple configuration to `hosts/$hostname.nix`:
 
@@ -103,7 +108,7 @@ Add `hosts/$hostname.nix` in `configurations.nix`.
 
 ## Install NixOS
 
-We boot the `github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable` where you can log in via ssh to `root` and `nixos` users with empty passwords.
+We boot the `github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable`.
 The following script expects the server to be connected to your physical LAN port `$eth0` which will act as a router. 
 The script will also print the ip of the server you can connect to via ssh. 
 
