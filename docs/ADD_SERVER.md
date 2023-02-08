@@ -6,33 +6,13 @@ To open a shell with required tools installed (such as sops) you can use the nix
 
 ## SSH CA
 
-Create ssh ca certificate, so that hosts automatically trust each other.
+## Prepare sops-nix secrets
 
-```console
-inv generate-ssh-cert <HOSTNAME>
-```
-
-then commit the generated certificate: `modules/sshd/certs/<HOSTNAME>-cert.pub` and host key files encrypted in `hosts/<HOSTNAME>.yml`.
-
-## Prepare NixOS config
-
-Prepare a config for a new host:
-
-Generate a sops key for `$hostname` (from the ssh identity of the pxebooted OS)
-
-```
-inv print-age-key $host
-```
-
-in `sops.yaml.nix`, add the printed key to `keys` and add `sops_permissions` for `hosts/$hostname.yml`:
+define new secrets file for new `$hostname` in `sops.yaml.nix`
 
 ```nix
-keys = {
-  $hostname = "ageKEYGIBBERISH";
-  ...
-};
 sops_permissions = with keys; {
-  "hosts/$hostname.yml$" = [ $hostname ];
+  "hosts/$hostname.yml$" = [ ];
   ...
 };
 ```
@@ -62,6 +42,43 @@ sops hosts/$hostname.yml
 
 Note that if a rule wasn't created but only changed, run `sops updatekeys path/to.yml` to re-encrypt it.
 
+## Create host keys: SSH and sops/age
+
+Create ssh ca certificate, so that hosts automatically trust each other.
+
+```console
+inv generate-ssh-cert <HOSTNAME>
+```
+
+Generate a sops key for `$hostname` (from the ssh identity of the pxebooted OS)
+
+```
+inv print-age-key $host
+```
+
+in `sops.yaml.nix`, add the printed key to `keys` and add `sops_permissions` for `hosts/$hostname.yml`:
+
+```nix
+keys = {
+  $hostname = "ageKEYGIBBERISH";
+  ...
+};
+sops_permissions = with keys; {
+  "hosts/$hostname.yml$" = [ $hostname ];
+  ...
+};
+```
+
+Changes in sops.yaml.nix have to be applied with
+
+```
+inv update-sops-files
+```
+
+## Prepare NixOS config
+
+Prepare a config for a new host:
+
 Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`.
 
 Write a sane, simple configuration to `hosts/$hostname.nix`:
@@ -83,8 +100,6 @@ Write a sane, simple configuration to `hosts/$hostname.nix`:
 ```
 
 Add `hosts/$hostname.nix` in `configurations.nix`.
-
-Push config to github master branch (becuase the server will pull the commit from there during installation).
 
 ## Install NixOS
 
