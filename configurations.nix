@@ -123,6 +123,15 @@ in
           ./hosts/amy.nix
         ];
     };
+    
+    clara = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/clara.nix
+        ];
+    };
 
     bill = nixosSystem {
       system = "x86_64-linux";
