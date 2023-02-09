@@ -25,6 +25,7 @@ let
     atsushi = "age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv";
     patrick = "age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0";
     myron = "age1e4lgkn5zm4yuyeraunkamy4xq9z7kjgu3k22eca5u3zw89e5zfqq2mgtk3";
+    francisco = "age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd";
 
     # machines
     rose = "age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx";
@@ -58,6 +59,7 @@ let
       atsushi
       patrick
       myron
+      francisco
     ];
     all = builtins.attrValues keys;
   };
