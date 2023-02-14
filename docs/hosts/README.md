@@ -32,8 +32,13 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 Our epyc servers are shared devices on which many users usually work concurrently.
 
-- [graham](graham.md)
-- [ryan](ryan.md)
+- single NUMA node (EPYC 7713P):
+  - [graham](graham.md)
+  - [ryan](ryan.md)
+- dual NUMA node (EPYC 7413, for many expansion cards)
+  - [amy](amy.md)
+  - [clara](clara.md)
+  - [rose](rose.md)
 
 ## Intel Xeon servers
 
