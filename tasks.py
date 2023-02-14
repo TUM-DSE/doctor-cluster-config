@@ -201,6 +201,9 @@ HOSTS = [
     "wilfred.dse.in.tum.de",
     "river.dse.in.tum.de",
     "jack.dse.in.tum.de",
+    "clara.dse.in.tum.de",
+    "amy.dse.in.tum.de",
+    "rose.dse.in.tum.de",
 ]
 
 # used for different IPMI power readings
