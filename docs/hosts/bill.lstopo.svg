@@ -34,9 +34,9 @@
 	<rect id='PU_3_rect' class='PU' x='102' y='265' width='56' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PU_3_text' class='PU' font-family='Monospace' x='112' y='282' fill='rgb(0,0,0)' font-size='10px'>PU L#3</text>
 	<text id='PU_3_text_1' class='PU' font-family='Monospace' x='118' y='296' fill='rgb(0,0,0)' font-size='10px'>P#11</text>
-	<rect id='L2_2_rect' class='L2' x='176' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='L2_2_rect' class='L2' x='190' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='L2_2_rect' class='L2' x='204' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='L2_2_rect' class='L2' x='185' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='L2_2_rect' class='L2' x='199' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='L2_2_rect' class='L2' x='213' y='117' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='L2_2_text' class='L2' font-family='Monospace' x='176' y='138' fill='rgb(0,0,0)' font-size='10px'>10x total</text>
 	<rect id='L2_9_rect' class='L2' x='237' y='110' width='74' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='L2_9_text' class='L2' font-family='Monospace' x='244' y='127' fill='rgb(0,0,0)' font-size='10px'>L2 (256KB)</text>
@@ -83,13 +83,13 @@
 	<text id='PCI_1_text' class='PCI' font-family='Monospace' x='370' y='117' fill='rgb(0,0,0)' font-size='10px'>PCI 00:17.0</text>
 	<rect id='Block_1_rect' class='Block' x='370' y='124' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Block_1_text' class='Block' font-family='Monospace' x='377' y='141' fill='rgb(0,0,0)' font-size='10px'>Block sdb</text>
-	<text id='Block_1_text_1' class='Block' font-family='Monospace' x='377' y='155' fill='rgb(0,0,0)' font-size='10px'>7452 GB</text>
+	<text id='Block_1_text_1' class='Block' font-family='Monospace' x='377' y='155' fill='rgb(0,0,0)' font-size='10px'>894 GB</text>
 	<rect id='Block_2_rect' class='Block' x='445' y='124' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Block_2_text' class='Block' font-family='Monospace' x='452' y='141' fill='rgb(0,0,0)' font-size='10px'>Block sdc</text>
 	<text id='Block_2_text_1' class='Block' font-family='Monospace' x='452' y='155' fill='rgb(0,0,0)' font-size='10px'>7452 GB</text>
 	<rect id='Block_3_rect' class='Block' x='370' y='169' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Block_3_text' class='Block' font-family='Monospace' x='377' y='186' fill='rgb(0,0,0)' font-size='10px'>Block sda</text>
-	<text id='Block_3_text_1' class='Block' font-family='Monospace' x='377' y='200' fill='rgb(0,0,0)' font-size='10px'>894 GB</text>
+	<text id='Block_3_text_1' class='Block' font-family='Monospace' x='377' y='200' fill='rgb(0,0,0)' font-size='10px'>7452 GB</text>
 	<rect id='PCIBridge_2_rect' class='PCIBridge' x='363' y='221' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_2_line' class='PCIBridge' x1='370' y1='224' x2='377' y2='224' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_2_line_2' class='PCIBridge' x1='377' y1='224' x2='401' y2='224' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -148,5 +148,5 @@
 	<text id='Net_10_text' class='Net' font-family='Monospace' x='377' y='634' fill='rgb(0,0,0)' font-size='10px'>Net eno1</text>
 	<rect id='anon_rect' x='0' y='655' width='574' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='672' fill='rgb(0,0,0)' font-size='10px'>Host: bill</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='686' fill='rgb(0,0,0)' font-size='10px'>Date: Mon 05 Dec 2022 01:51:11 PM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='686' fill='rgb(0,0,0)' font-size='10px'>Date: Tue 14 Feb 2023 02:25:38 PM UTC</text>
 </svg>
