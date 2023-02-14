@@ -11,22 +11,34 @@ Parameters to consider for matching cards to slots:
 ## List of cards
 
 - 1x Nvidia A40 GPU (high profile, dual slot)
+    - jack
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
+    - clara
+    - ?
+    - ?
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
-    - 1x available
-    - 3x bought, on the way
+    - clara
+    - rose
+    - amy
+    - ?
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - ryan: dual port (ryan-craig,)
+    - clara: dual port ()
+    - rose
+    - amy
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (,)
     - christina: dual port. (christina,christina)
     - wilfred: single port. (wilfred-river)
     - river: single port. (river-wilfred)
-    - unassinged: single port. former: (adelaide-craig) vlan1
+    - clara: single port. former: (adelaide-craig) vlan1
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,none)
+- 3x BCM57412 10G NIC (SFP+)
+    - clara (internet/uplink, none)
+    - rose (internet/uplink, none)
+    - amy (internet/uplink, none)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
@@ -47,7 +59,7 @@ Onboard:
 
 Most of the 10G NICs are in use to provider internet.
 
-(^ list last updated 28.10.22)
+(^ list last updated 14.02.23)
 
 
 ## List of slots
@@ -65,6 +77,31 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 51:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 RSC-WR-6 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
+ 
+
+### amy.dse.in.tum.de 
+
+PCI Slots:   
+- ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
+e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
+- ❌  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: In Use length: Long    
+c1:00.0, Processing accelerators, Xilinx Corporation, Alveo U50 Golden Image -p00, Xilinx Corporation, Device 000e  
+- ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 4 type: x16 PCI Express 4 x16 SLOT4 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ❌  Slot: 5 type: x16 PCI Express 4 x16 SLOT5 PCI-E 4.0 X16 status: In Use length: Long    
+c3:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ❌  Slot: 6 type: x16 PCI Express 4 x16 SLOT6 PCI-E 4.0 X16 status: In Use length: Long    
+c3:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ✅  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
+25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
  
 
 ### astrid.dse.in.tum.de 
@@ -116,6 +153,31 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 51:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 RSC-WR-6 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
 18:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
+ 
+
+### clara.dse.in.tum.de 
+
+PCI Slots:   
+- ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
+e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
+- ✅  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 4 type: x16 PCI Express 4 x16 SLOT4 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ❌  Slot: 5 type: x16 PCI Express 4 x16 SLOT5 PCI-E 4.0 X16 status: In Use length: Long    
+c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ❌  Slot: 6 type: x16 PCI Express 4 x16 SLOT6 PCI-E 4.0 X16 status: In Use length: Long    
+c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ✅  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ❌  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: In Use length: Long    
+01:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
+- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
+25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
  
 
 ### dan.dse.in.tum.de 
@@ -237,13 +299,38 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
  
 
+### rose.dse.in.tum.de 
+
+PCI Slots:   
+- ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
+e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
+- ✅  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 4 type: x16 PCI Express 4 x16 SLOT4 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ❌  Slot: 5 type: x16 PCI Express 4 x16 SLOT5 PCI-E 4.0 X16 status: In Use length: Long    
+c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ❌  Slot: 6 type: x16 PCI Express 4 x16 SLOT6 PCI-E 4.0 X16 status: In Use length: Long    
+c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ✅  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
+- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
+25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
+ 
+
 ### ryan.dse.in.tum.de 
 
 PCI Slots:   
-- ❌  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Long    
-c4:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
-- ❌  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: In Use length: Long    
-81:00.0, Processing accelerators, Xilinx Corporation, Alveo U50 Golden Image -p00, Xilinx Corporation, Device 000e  
+- ✅  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: Available length: Long    
+No device/PCI ID.  
+- ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Long    
+No device/PCI ID.  
 - ❌  Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long    
 03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ✅  Slot: 4 type: x16 PCI Express 4 PCIe Slot 4 status: Available length: Long    
