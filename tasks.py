@@ -548,6 +548,73 @@ def generate_password(c, user="root"):
     print(f"{user}-password: {passw}")
     print(f"{user}-password-hash: {out.stdout}")
 
+@task
+def add_server(c, hostname):
+    """
+    Generate new server keys and configurations for a given hostname and hardware config
+    """
+
+    import subprocess
+
+    print(f"Adding {hostname}")
+
+    sopsPermissions = None
+    with open("sopsPermissions.json","r") as f:
+        sopsPermissions = f.read()
+    sopsPermissions = json.loads(sopsPermissions)
+    if(sopsPermissions.get(f"hosts/{hostname}.yml$",None)):
+       print("Configuration already exists")
+       exit(-1)
+    sopsPermissions[f"hosts/{hostname}.yml$"] = []
+    
+    
+    with open("sopsPermissions.json","w") as f:
+        json.dump(sopsPermissions,f)
+    update_sops_files(c)
+
+    sops_file = f"{ROOT}/hosts/{hostname}.yml"
+
+    #Generate the password
+    print("Generating Password")
+    size = 12
+    chars = string.ascii_letters + string.digits
+    passwd = "".join(random.choice(chars) for x in range(size))
+    passwd_str = subprocess.Popen(["echo",f"{passwd}"],stdout=subprocess.PIPE,text=True)
+    passwd_hash = subprocess.check_output(["mkpasswd", "-m", "sha-512", "-s"], stdin=passwd_str.stdout,text=True)
+    with open(sops_file,"w") as hosts:
+        hosts.write(f"root-password: {passwd}\n")
+        hosts.write(f"root-password-hash: {passwd_hash}")
+    enc_out = subprocess.check_output(["sops", "-e", f"{sops_file}"],text=True)
+    with open(sops_file,"w") as hosts:
+        hosts.write(enc_out)
+
+    print("Generating SSH certificate")
+    generate_ssh_cert(c,hostname)
+
+    print("Generating age key")
+    key_ed = subprocess.Popen(["sops", "--extract", '["ssh_host_ed25519_key.pub"]', "-d", sops_file], stdout=subprocess.PIPE)
+    
+    age = subprocess.check_output(["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],text=True, stdin=key_ed.stdout)
+    age = age.rstrip()
+    def update_json(file,key,value):
+        json_data = None
+        with open(file,"r") as v:
+            json_data = json.load(v)
+
+        json_data[key] = value
+        
+        with open(file,"w") as v:
+            json.dump(json_data,v)
+
+    print("Updating keys.json")
+    update_json("keys.json",hostname,age)
+    print("Updating sopsPermissions.json")
+    update_json("sopsPermissions.json",f"hosts/{hostname}.yml$",[hostname])
+
+    print("Updating sops files")
+    update_sops_files(c) 
+
+
 
 @task
 def ipmi_serial(c, host=""):
