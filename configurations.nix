@@ -11,6 +11,7 @@ let
     nixos-hardware
     nixpkgs-unstable
     srvos
+    disko
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
 
@@ -35,18 +36,23 @@ let
     ./modules/systemd.nix
     ./modules/cleanup-usr.nix
 
+    disko.nixosModules.disko
+
     srvos.nixosModules.server
 
     srvos.nixosModules.mixins-telegraf
     srvos.nixosModules.mixins-terminfo
-    # allow to access telegraf on vpn interface
-    { networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
+    ## allow to access telegraf on vpn interface
+    #{ networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
 
     sops-nix.nixosModules.sops
     ({ pkgs
      , config
+     , lib
      , ...
-     }: {
+     }: let
+       sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
+    in {
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${pkgs.path}"
@@ -55,15 +61,11 @@ let
       # TODO: share nixpkgs for each machine to speed up local evaluation.
       #nixpkgs.pkgs = self.inputs.nixpkgs.legacyPackages.${system};
 
-      #sops.withSops = true;
-      sops.secrets.root-password-hash.neededForUsers = true;
-      sops.defaultSopsFile =
-        let
-          sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
-        in
-        if builtins.pathExists sopsFile
-        then sopsFile
-        else null;
+      users.withSops = builtins.pathExists sopsFile;
+      sops.secrets = lib.mkIf (config.users.withSops) {
+        root-password-hash.neededForUsers = true;
+      };
+      sops.defaultSopsFile = lib.mkIf (builtins.pathExists sopsFile) sopsFile;
 
       nix.extraOptions = ''
         flake-registry = ${flake-registry}/flake-registry.json
@@ -80,8 +82,7 @@ let
   ];
 
   computeNodeModules =
-    commonModules
-    ++ [
+    commonModules ++ [
       ./modules/users
       ./modules/tracing.nix
       ./modules/scratch-space.nix
@@ -102,6 +103,33 @@ in
         commonModules
         ++ [
           ./hosts/doctor.nix
+        ];
+    };
+
+    rose = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/rose.nix
+        ];
+    };
+
+    amy = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/amy.nix
+        ];
+    };
+    
+    clara = nixosSystem {
+      system = "x86_64-linux";
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/clara.nix
         ];
     };
 

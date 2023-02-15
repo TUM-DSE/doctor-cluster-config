@@ -1,17 +1,17 @@
 # graham
 
 ```
-System:    Host: graham Kernel: 5.15.79 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\9vm8y6k50c0r6miymwki39lm451c0l7c-initrd-linux-5.15.79-initrd.efi 
-           init=/nix/store/5c16p6jcwapl7q3gfp7ip1bh1hn6vy9c-nixos-system-graham-22.05.20221121.41c6fb2/init 
-           amd_iommu=on console=ttyS0,115200n8 console=tty0 default_hugepagesz=1GB hugepagesz=1GB 
-           hugepages=8 kvm_amd.sev=1 panic=1 boot.panic_on_fail loglevel=4 
+System:    Host: graham Kernel: 6.0.19 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\2m8s3lmi6naxhdp9cm182brzmd0ihlhz-initrd-linux-6.0.19-initrd.efi 
+           init=/nix/store/im6nbhrg2bs3388cmk19r6lxxdsqd0ks-nixos-system-graham-22.11.20230120.aaa0f4f/init 
+           amd_iommu=on console=tty0 console=ttyS0,115200 default_hugepagesz=1GB hugepagesz=1GB 
+           hugepages=8 kvm_amd.sev=1 nohibernate loglevel=4 
            Console: N/A DM: LightDM 1.32.0 Distro: NixOS 22.11 (Raccoon) 
 Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: BP0PSH3 Chassis: 
            type: 23 serial: BP0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .BP0PSH3.CNCMS0016O00V8. UEFI: Dell v: 2.5.5 
            date: 10/07/2021 
-Memory:    RAM: total: 503.18 GiB used: 299.55 GiB (59.5%) 
+Memory:    RAM: total: 503.18 GiB used: 316.77 GiB (63.0%) 
            Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
            note: est. 
            Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
@@ -52,32 +52,31 @@ PCI Slots: Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Lo
            Slot: 4 type: x16 PCI Express 4 PCIe Slot 4 status: In Use length: Long 
            Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long 
 CPU:       Info: 64-Core model: AMD EPYC 7713P socket: SP3 bits: 64 type: MT MCP arch: Zen 3 
-           family: 19 (25) model-id: 1 stepping: 1 microcode: A001173 cache: L2: 32 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511063 
-           Speed: 1656 MHz min/max: 1500/2000 MHz base/boost: 2000/3900 boost: enabled 
-           volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 1656 2: 3057 3: 2948 4: 1793 
-           5: 1791 6: 1792 7: 1792 8: 1791 9: 2667 10: 2176 11: 1793 12: 2338 13: 2176 14: 2949 
-           15: 2226 16: 1793 17: 1759 18: 1625 19: 3253 20: 2186 21: 1792 22: 1790 23: 1791 
-           24: 1793 25: 2351 26: 1791 27: 1793 28: 1793 29: 1794 30: 1792 31: 1792 32: 1795 
-           33: 1793 34: 2357 35: 2156 36: 3684 37: 2934 38: 1992 39: 1914 40: 1912 41: 3401 
-           42: 3280 43: 1913 44: 1915 45: 1912 46: 2958 47: 2954 48: 2949 49: 2949 50: 3693 
-           51: 2947 52: 1794 53: 2945 54: 2952 55: 1799 56: 1797 57: 1794 58: 1795 59: 1794 
-           60: 1794 61: 1793 62: 1795 63: 2142 64: 1794 65: 1795 66: 2333 67: 3215 68: 2295 
-           69: 1793 70: 1796 71: 1795 72: 1794 73: 1795 74: 2167 75: 2954 76: 2263 77: 2442 
-           78: 1943 79: 2947 80: 2269 81: 1792 82: 1793 83: 1795 84: 1792 85: 1793 86: 1795 
-           87: 1796 88: 1792 89: 1791 90: 2173 91: 1794 92: 1854 93: 1842 94: 2729 95: 2174 
-           96: 1791 97: 1794 98: 1792 99: 2773 100: 2947 101: 2179 102: 1791 103: 1794 104: 1792 
-           105: 1791 106: 1791 107: 1791 108: 1910 109: 2444 110: 2408 111: 2228 112: 2393 
-           113: 1915 114: 1911 115: 1911 116: 2956 117: 2985 118: 1792 119: 2952 120: 2953 
-           121: 3689 122: 2950 123: 2951 124: 2957 125: 1796 126: 1794 127: 1793 128: 1791 
+           family: 19 (25) model-id: 1 stepping: 1 microcode: A0011A8 cache: L2: 32 MiB 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 511042 
+           Speed: 2000 MHz min/max: 1500/2000 MHz base/boost: 2000/3900 boost: enabled 
+           volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 2000 2: 2000 3: 2000 4: 2000 
+           5: 2000 6: 2000 7: 2000 8: 2000 9: 2000 10: 2000 11: 2000 12: 2000 13: 2000 14: 2000 
+           15: 2000 16: 2000 17: 2000 18: 2000 19: 2000 20: 2000 21: 2000 22: 2000 23: 2000 
+           24: 2000 25: 2000 26: 2000 27: 2000 28: 2000 29: 1867 30: 2000 31: 2000 32: 2000 
+           33: 2000 34: 2000 35: 2000 36: 2000 37: 2000 38: 2000 39: 2000 40: 2000 41: 2136 
+           42: 2000 43: 2000 44: 2000 45: 2000 46: 2000 47: 2000 48: 2000 49: 2000 50: 2000 
+           51: 2000 52: 2000 53: 2000 54: 2000 55: 2000 56: 2000 57: 2000 58: 2000 59: 2000 
+           60: 2000 61: 2000 62: 2000 63: 2000 64: 2000 65: 2000 66: 2000 67: 2000 68: 2000 
+           69: 2000 70: 2000 71: 2000 72: 2000 73: 2000 74: 2000 75: 2000 76: 3536 77: 2000 
+           78: 2000 79: 2000 80: 2000 81: 1796 82: 2000 83: 2000 84: 2000 85: 2000 86: 2000 
+           87: 2000 88: 2000 89: 2000 90: 2000 91: 2000 92: 2000 93: 2000 94: 2000 95: 2000 
+           96: 2000 97: 2000 98: 2000 99: 2000 100: 2000 101: 2000 102: 2000 103: 1671 104: 2000 
+           105: 2000 106: 2000 107: 2000 108: 2000 109: 2000 110: 2000 111: 2000 112: 2000 
+           113: 2000 114: 2000 115: 2000 116: 2000 117: 2000 118: 2000 119: 2000 120: 2000 
+           121: 2000 122: 2000 123: 2000 124: 2000 125: 2000 126: 2000 127: 2000 128: 2000 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
            Type: meltdown status: Not affected 
            Type: mmio_stale_data status: Not affected 
            Type: retbleed status: Not affected 
-           Type: spec_store_bypass 
-           mitigation: Speculative Store Bypass disabled via prctl and seccomp 
+           Type: spec_store_bypass mitigation: Speculative Store Bypass disabled via prctl 
            Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization 
            Type: spectre_v2 mitigation: Retpolines, IBPB: conditional, IBRS_FW, STIBP: always-on, 
            RSB filling, PBRSB-eIBRS: Not affected 
@@ -120,59 +119,63 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
            IF: enp196s0f1np1 state: up speed: 10000 Mbps duplex: full mac: e4:3d:1a:71:d6:b1 
            IP v4: 169.254.246.133/16 scope: link 
            IP v6: fe80::e63d:1aff:fe71:d6b1/64 scope: link 
-           IF-ID-1: br-3050ab4aecf2 state: down mac: 02:42:58:35:86:3d 
+           IF-ID-1: br-3050ab4aecf2 state: down mac: 02:42:7b:6c:7c:f0 
            IP v4: 172.20.0.1/16 scope: global broadcast: 172.20.255.255 
-           IF-ID-2: br-4b6eeb1e3fb5 state: down mac: 02:42:7e:0a:18:14 
+           IF-ID-2: br-4b6eeb1e3fb5 state: down mac: 02:42:5e:f3:25:42 
            IP v4: 172.18.0.1/16 scope: global broadcast: 172.18.255.255 
-           IF-ID-3: br-73bd5d65cf4a state: down mac: 02:42:80:71:e2:2a 
+           IF-ID-3: br-73bd5d65cf4a state: down mac: 02:42:f5:c9:d8:5f 
            IP v4: 172.21.0.1/16 scope: global broadcast: 172.21.255.255 
-           IF-ID-4: br-cf2cd8ea9ee9 state: down mac: 02:42:49:e3:88:ba 
+           IF-ID-4: br-cf2cd8ea9ee9 state: down mac: 02:42:c1:17:af:7a 
            IP v4: 172.19.0.1/16 scope: global broadcast: 172.19.255.255 
-           IF-ID-5: br-db48a1acaae7 state: down mac: 02:42:89:0b:48:62 
+           IF-ID-5: br-db48a1acaae7 state: down mac: 02:42:80:4f:41:75 
            IP v4: 172.22.0.1/16 scope: global broadcast: 172.22.255.255 
-           IF-ID-6: docker0 state: down mac: 02:42:da:a9:72:80 
+           IF-ID-6: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:fb:61:1c:6d 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
+           IP v6: fe80::42:fbff:fe61:1c6d/64 scope: link 
            IF-ID-7: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:ab64:fa7c:171a:c94a:ac19/16 scope: global 
-           IF-ID-8: virbr0 state: down mac: 52:54:00:08:20:72 
+           IF-ID-8: veth37c4d09 state: up speed: 10000 Mbps duplex: full mac: e2:ea:67:e2:9b:ad 
+           IF-ID-9: virbr0 state: up speed: 10 Mbps duplex: unknown mac: 52:54:00:08:20:72 
            IP v4: 192.168.122.1/24 scope: global broadcast: 192.168.122.255 
+           IF-ID-10: vnet0 state: unknown speed: 10 Mbps duplex: full mac: fe:54:00:3a:f7:9d 
+           IP v6: fe80::fc54:ff:fe3a:f79d/64 scope: link 
            WAN IP: 131.159.102.9 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID SAS-3 3008 [Fury] driver: megaraid_sas 
-           v: 07.717.02.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
+           v: 07.719.03.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 386 GiB 
-           allocated: 1.08 TiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 500 GiB 
+           allocated: 988 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 3.46 TiB used: 1.77 TiB (51.1%) 
-           ID-1: /dev/nvme0n1 maj-min: 259:3 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
+Drives:    Local Storage: total: 3.46 TiB used: 1.71 TiB (49.4%) 
+           ID-1: /dev/nvme0n1 maj-min: 259:2 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
            serial: S61ANA0R501400 rev: 2.0.2 temp: 13 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 1y 52d 20h cycles: 20 read-units: 114,125,847 [58.4 TB] 
-           written-units: 138,152,228 [70.7 TB] 
-           ID-2: /dev/nvme1n1 maj-min: 259:1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
+           SMART: yes health: PASSED on: 1y 123d 20h cycles: 20 read-units: 138,148,860 [70.7 TB] 
+           written-units: 161,459,328 [82.6 TB] 
+           ID-2: /dev/nvme1n1 maj-min: 259:3 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
            serial: S61ANA0R501120 rev: 2.0.2 temp: 13 Celsius C 
-           SMART: yes health: PASSED on: 1y 52d 20h cycles: 21 read-units: 572 [292 MB] 
+           SMART: yes health: PASSED on: 1y 123d 20h cycles: 21 read-units: 616 [315 MB] 
            ID-3: /dev/sda maj-min: 8:0 model: AL15SEB060NY size: 558.91 GiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: 10000 rpm serial: N/A 
            rev: EF06 temp: 15 C scheme: MBR 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.15 TiB used: 842.48 GiB (71.3%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.09 TiB used: 662.23 GiB (59.4%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 136.4 MiB (27.3%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 77.8 MiB (15.6%) fs: vfat 
            block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:4 
-           ID-3: /home raw-size: N/A size: 880.51 GiB used: 538.51 GiB (61.2%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 833.48 GiB used: 501.31 GiB (60.1%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 341.69 GiB used: 3.35 GiB (1.0%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 453.92 GiB used: 921 MiB (0.2%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 37.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 36.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 1488 
-           Uptime: 13:51:11  up 8 days 13:30,  10 users,  load average: 14.92, 19.67, 45.04 
+Info:      Processes: 1465 
+           Uptime: 14:25:38  up 16 days 14:04,  20 users,  load average: 0.11, 0.10, 0.14 
            wakeups: 0 Init: systemd v: 251 target: graphical.target tool: systemctl Compilers: 
-           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 870 lib: 204 nix-usr: 0 Client: Sudo 
-           v: 1.9.12p1 inxi: 3.3.04 
+           gcc: 11.3.0 Packages: 871 nix-default: 6 nix-sys: 859 lib: 204 nix-usr: 6 lib: 2 
+           Client: Sudo v: 1.9.12p2 inxi: 3.3.04 
 ```
 ![hardware topology](graham.lstopo.svg)

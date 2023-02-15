@@ -69,7 +69,7 @@ in
 
     users.extraUsers.xilinx = {
       isNormalUser = true;
-      passwordFile = config.sops.secrets.xilinx-password-hash.path;
+      passwordFile = lib.mkIf config.users.withSops config.sops.secrets.xilinx-password-hash.path;
       extraGroups = [ "wheel" "docker" "plugdev" "input" ];
       uid = 5002;
     };

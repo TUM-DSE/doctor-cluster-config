@@ -9,6 +9,7 @@ import json
 import random
 import string
 import shutil
+import tempfile
 from pathlib import Path
 from typing import List, Any
 from deploykit import DeployHost, DeployGroup
@@ -200,6 +201,9 @@ HOSTS = [
     "wilfred.dse.in.tum.de",
     "river.dse.in.tum.de",
     "jack.dse.in.tum.de",
+    "clara.dse.in.tum.de",
+    "amy.dse.in.tum.de",
+    "rose.dse.in.tum.de",
 ]
 
 # used for different IPMI power readings
@@ -392,26 +396,38 @@ def mount_disks(c, hosts, disk=""):
         _mount_disks(h, disk)
 
 
+def decrypt_host_keys(c, host, tmpdir):
+    os.mkdir(f"{tmpdir}/etc")
+    os.mkdir(f"{tmpdir}/etc/ssh")
+    for keyname in [ "ssh_host_rsa_key", "ssh_host_rsa_key.pub", "ssh_host_ed25519_key", "ssh_host_ed25519_key.pub" ]:
+        if keyname.endswith(".pub"):
+            os.umask(0o133)
+        else:
+            os.umask(0o177)
+        c.run(f"sops --extract '[\"{keyname}\"]' -d {ROOT}/hosts/{host}.yml > {tmpdir}/etc/ssh/{keyname}")
+
+
 @task
-def install_nixos(c, hosts, flakeattr):
+def reformat_install_nixos(c, host, dhcp_interface):
     """
-    install nixos, i.e.: inv install-nixos --hosts new-hostname --flakeattr
+    format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
     """
-    for h in get_hosts(hosts):
-        h.run("install -m400 --target /mnt/etc/ssh -D /etc/ssh/ssh_host_*")
-        h.run("chmod 444 /mnt/etc/ssh/ssh_host_*.pub")
-        h.run(
-            f"nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git -c nixos-install --flake github:Mic92/doctor-cluster-config#{flakeattr} && sync"
-        )
-        info("Device information:")
-        info(
-            "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
-        )
-        h.run("nix-shell -p inxi --command 'inxi -F'")
-        h.run("nix-shell -p inxi --command 'inxi -FZ'")
-        h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
-        h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
-        h.run("reboot")
+    with tempfile.TemporaryDirectory() as tmpdir:
+        decrypt_host_keys(c, host, tmpdir)
+        # nixos_remote_pxe = "sudo nixos-remote-pxe"
+        nixos_remote_pxe = "sudo -E PYTHONPATH=$PYTHONPATH PATH=$PATH python3 /home/romano/Documents/tmp/nixos-anywhere/nixos-remote-pxe.py" # TODO nixos-remote-pxe needs packaging
+        c.run(f"{nixos_remote_pxe} --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --extra-files {tmpdir} --no-reboot --pause-after-completion")
+    info("Device information:")
+    info(
+        "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
+    )
+    # TODO after starting nixos-remote-pxe, but before running nixos-remote (or
+    # afterwards), we want to check if booted into uefi and:
+    #h.run("nix-shell -p inxi --command 'inxi -F'")
+    #h.run("nix-shell -p inxi --command 'inxi -FZ'")
+    #h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
+    #h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
+    #h.run("reboot")
 
 
 @task
@@ -420,16 +436,16 @@ def print_tinc_key(c, hosts):
         h.run("tinc.retiolum export")
 
 @task
-def scan_age_keys(c, host):
+def print_age_key(c, host):
     """
-    Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <ip>
+    Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <hostname>
     """
     import subprocess
 
     proc = subprocess.run(
-        ["ssh-keyscan", host], text=True, stdout=subprocess.PIPE, check=True
+        ["sops", "--extract", '["ssh_host_ed25519_key.pub"]', "-d", f"{ROOT}/hosts/{host}.yml"], text=True, stdout=subprocess.PIPE, check=True
     )
-    print("###### Age keys ######")
+    print("###### Age key ######")
     subprocess.run(
         ["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],
         input=proc.stdout,
@@ -440,14 +456,31 @@ def scan_age_keys(c, host):
 
 
 @task
-def generate_ssh_cert(c, host, ip_or_host):
+def generate_ssh_cert(c, host):
     """
-    Generate ssh cert for host, i.e. inv generate-ssh-cert bill 131.159.102.1
+    Generate ssh cert for host, i.e. inv generate-ssh-cert bill
     """
     h = host
-    c.run(
-        f"{ROOT}/modules/sshd/ssh-ca-sign {h} {h}.r,{h}.dse.in.tum.de,{h}.thalheim.io {ip_or_host}"
-    )
+    sops_file = f"{ROOT}/hosts/{host}.yml"
+    with tempfile.TemporaryDirectory() as tmpdir:
+        # should we use ssh-keygen -A (Generate host keys of all default key tpyes) here?
+        c.run(f"mkdir -p {tmpdir}/etc/ssh")
+        c.run(f"ssh-keygen -A -C '{host}_host_key' -f {tmpdir}")
+        for keytype in [ "rsa", "ed25519" ]:
+            # c.run(f"ssh-keygen -f {tmpdir}/ssh_host_{keytype}_key -t {keytype}")
+            privkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key").read_text()
+            c.run(f"sops --set '[\"ssh_host_{keytype}_key\"] {json.dumps(privkey)}' {sops_file}")
+            pubkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key.pub").read_text()
+            c.run(f"sops --set '[\"ssh_host_{keytype}_key.pub\"] {json.dumps(pubkey)}' {sops_file}")
+
+        os.umask(0o077)
+        c.run(f"sops --extract '[\"ssh-ca\"]' -d {ROOT}/modules/sshd/ca-keys.yml > {tmpdir}/ssh-ca")
+        valid_hostnames = "{h}.r,{h}.dse.in.tum.de,{h}.thalheim.io"
+        pubkey_path = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key.pub"
+        c.run(f"ssh-keygen -h -s {tmpdir}/ssh-ca -n {valid_hostnames} -I {h} {pubkey_path}")
+        signed_key_src = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key-cert.pub"
+        signed_key_dst = f"{ROOT}/modules/sshd/certs/{host}-cert.pub"
+        c.run(f"mv {signed_key_src} {signed_key_dst}")
 
 
 @task

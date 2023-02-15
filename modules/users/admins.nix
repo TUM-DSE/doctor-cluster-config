@@ -38,7 +38,7 @@ in
 
 
       root = {
-        passwordFile = lib.optionalString config.users.withSops config.sops.secrets.root-password-hash.path;
+        passwordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
         openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys;
       };
     };
