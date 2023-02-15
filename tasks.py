@@ -475,7 +475,7 @@ def generate_ssh_cert(c, host):
 
         os.umask(0o077)
         c.run(f"sops --extract '[\"ssh-ca\"]' -d {ROOT}/modules/sshd/ca-keys.yml > {tmpdir}/ssh-ca")
-        valid_hostnames = "{h}.r,{h}.dse.in.tum.de,{h}.thalheim.io"
+        valid_hostnames = f"{h}.r,{h}.dse.in.tum.de,{h}.thalheim.io"
         pubkey_path = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key.pub"
         c.run(f"ssh-keygen -h -s {tmpdir}/ssh-ca -n {valid_hostnames} -I {h} {pubkey_path}")
         signed_key_src = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key-cert.pub"
