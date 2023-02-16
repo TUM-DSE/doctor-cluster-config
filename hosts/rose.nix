@@ -24,5 +24,8 @@
       "timeo=14"
     ];
   };
-  users.xrdpUsers = [ "atsushi" ];
+  users.xrdpUsers = [ 
+    "xilinx"
+    "atsushi" 
+  ];
 }
