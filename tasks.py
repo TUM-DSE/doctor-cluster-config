@@ -465,17 +465,21 @@ def generate_ssh_cert(c, host):
     with tempfile.TemporaryDirectory() as tmpdir:
         # should we use ssh-keygen -A (Generate host keys of all default key tpyes) here?
         c.run(f"mkdir -p {tmpdir}/etc/ssh")
-        c.run(f"ssh-keygen -A -C '{host}_host_key' -f {tmpdir}")
         for keytype in [ "rsa", "ed25519" ]:
-            # c.run(f"ssh-keygen -f {tmpdir}/ssh_host_{keytype}_key -t {keytype}")
-            privkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key").read_text()
-            c.run(f"sops --set '[\"ssh_host_{keytype}_key\"] {json.dumps(privkey)}' {sops_file}")
-            pubkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key.pub").read_text()
-            c.run(f"sops --set '[\"ssh_host_{keytype}_key.pub\"] {json.dumps(pubkey)}' {sops_file}")
+             res = c.run(f"sops --extract '[\"ssh_host_{keytype}_key.pub\"]' -d {sops_file}", warn=True)
+             privkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key")
+             pubkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key.pub")
+             if len(res.stdout) == 0:
+                 c.run(f"ssh-keygen -f {tmpdir}/ssh_host_{keytype}_key -t {keytype}")
+                 c.run(f"sops --set '[\"ssh_host_{keytype}_key\"] {json.dumps(privkey.read_text())}' {sops_file}")
+                 c.run(f"sops --set '[\"ssh_host_{keytype}_key.pub\"] {json.dumps(pubkey.read_text())}' {sops_file}")
+             else:
+                 # save existing cert so we can generate an ssh certificate
+                 pubkey.write_text(res.stdout)
 
         os.umask(0o077)
         c.run(f"sops --extract '[\"ssh-ca\"]' -d {ROOT}/modules/sshd/ca-keys.yml > {tmpdir}/ssh-ca")
-        valid_hostnames = "{h}.r,{h}.dse.in.tum.de,{h}.thalheim.io"
+        valid_hostnames = f"{h}.r,{h}.dse.in.tum.de,{h}.thalheim.io"
         pubkey_path = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key.pub"
         c.run(f"ssh-keygen -h -s {tmpdir}/ssh-ca -n {valid_hostnames} -I {h} {pubkey_path}")
         signed_key_src = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key-cert.pub"
