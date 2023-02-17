@@ -44,35 +44,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
   ];
 
-  yiwenliuKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRyucUSzY0R13Aykigj6quuV4iV2qcwKv3A21HtOiqxZZtmk0mb555EvteqkIE7xSuFMQza+Y9ccJ6iQb0NZlCFCnq99r+9rEiCjzE6V7jcOeAJnqJabbSWo/4KbrQCoRF8Tdvp1ghf47mzyoLFfZy4hGjCJabIcE3lIjhiVUqDVYR6yjROGF11aHcDbloQnj8QIBujl+s/JE849tEW4bNvRmZJlmY0vAwH0OE8JTjcDSiBZlTINhw+VDN8MsKFitrtc/Nc9tgN1lDsMLn9kZo3p7ySKCFYb5X/iYDWejfKhedFsjpEUSCfc/LNevFkd9/BuLForjlLqKLNr5q2EbP yiwen@liu-HP-Pavilion-Notebook"
-  ];
-
-  hanwenliuKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCg4q6+mU1KxqSVKSV4aI3AS4OY13l5nCoNIpo6ZKdgsZHbTtu00+fdQod7RBbDGRuNuVcwnCDgSvwo+BZDNw0txk/jnewoBKWJYOsoidLatMcoL2KL2hNBpUDXFaMd1IdC3bT8PRF0mvms3DMovKgAcFdgDz49KXyd/Djtm44v+Ck5yl4EZLUDg871yuWCzeQEqEiECxcoIceRAng1SomE3KM5ew+rbkHnVIusieQwTFWvbeE8tisVFg/zl6WlH9rybV61LbTHHci0NaY7hN0cDP8XrYkFbCfoHVkgQ0aYm5bH6a41IwVuoyJtLHBH8TP/KwHAhlVmKMix62jkjL94it9vf3EBCZWcfD42RZIWMcbd9PkQKuuYMwyHEeE0+oXfAVppS1noyVub9DAh2oKEwKbQ1Zw2EHs4ooMm3HeaE4k2xB5cZzeIA1MmdEwknD8cwC43+QeZu8rq5YDe2Bo3djGLB/SGFwx2wiwsKsAPxbwRIAer/S2Iy5bKtsiyLL8= hanwen.liu@tum.de"
-  ];
-
-  wonbangseoKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfkMY+WghQqHDM+GmJa/oaH7zQiHHYsZ3cLZtexZDIJn/Vlkj3zEvaLhTL7IpQ7PFiwPdIMeO17csvIqTzqaaoqXkFDD+YZKGlFhPoj14yrHxAOuXuaw0Fxg+RhfW0VyHKQ56ZvBvgRm5IcosTtdjl9jYrUjAQP61KJQXxTWYXH0V4Vhg3CbAf9rs2oevDtYp3AMrWkU3vpvzEamCyn4C9c/TvGORYUlWsqfbT1Y6hEmsZZnpIVNTsD6VVGVAf9TzDM/rb4vozui5A6YWG/JRv2Q/fW49WAOQGOWFD32v3bVhsagE9kG7bIayYCw2Xjalgj6qKJLmK1ZdUHj4ui+StGY+Y/LlAyLgcVmiL51UaXPcMCcZBA5LZFbtBEA2Z4B0sqe0063Hur367f07VhW3vkE6ch983j8rJQPemerciEYCqtMH9lGtk+yNMOAmCD7Je0D/dvYhPUxVaBtJqU4ZnpnZvRXHUasKjYQQ7Jaltw/YMkoXT9ml73sMA90apQSM= wb1@WB1"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDi+2LI5v/Z8LxMPyT7hg9cZSOzJuFLSRpTz0f1YSdYpR+2M8Tsqdnx49q19o+zEGman5uQnwoBhwYW6nZE/trL07wnA0YL4i/j+Ze6cDrzc50GluHuwFr7pffI8tDS0x3twme+qUaDeWYiT6M6D69XS11lJ6hiORSXy60usmr2+7r03vpFGCh39Mbj9xy4+PHnqUJ7EQAHsCOvTLUPlTPwcmAY4pk0MUq4DF0Xqrcgwh+nU6GxCz23vobIv6jnlWsOCWYhZoDy+aSPy+iVTv9z9WqFnMVrVTrsPpeM6pEJUA9I89iSWkcS/YIaFiZNCjPoARRwDQ0nSQga6is6EbSkBvCo2i0r5uEYWRm9lJlXiyyTtpow34TobDzOLkOOAHi7yYMkDyms0N4kpACpz+C7vbthFwgm3Pa+2QNuvyQhnxzVSJFSLFWgMhL8ridY42kEMvRVkXmZOerTne6rMMCNGO+BKH0mat4SPJppdeWfUlEwViCOtBvl6ftGAYPpsSh3Z66FZfbRfckBZeID44LAtXoCjyNUOURnXTVykuCnF8A5sI7wEo+LSEaE29Dp5XRmWO1AkcuHzXxQwqQh1ufyLYs2wQJA89ZqruZjxRrMUPERBoaTRMq7waAF9OYGNpBfvAFmj4QNGJC8GRVCo94hCy7X/Ob6Ple8CUDq/pQKgQ== ge59lal@mytum.de"
-  ];
-
-  justusvonderbeekKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZ1fwee0DxjsLZwHQ+sOY40LKaqW3PCRVo0B4QJiRbd9Ka4fHNpuzTyBLup7pylHNg5Ne3iPDLsXEdDJ8Swxvo5vHymVlt62e8QwZ+w+356WxWh3IULre3RaHV+xPcUTGkNNsc5njpoYD+HO+3tFpA8l0iNmAnlY1JsnvheOAEJZjLrL5fOJ7lYB5MKBJXvEdx8bIiMT0nc2lm2BVJ6oAgr50xZcO6dnsirrkibrrF2ybVAs8aZzFA8eysNZR5AEkFvUntb6ofVjpxc/kEd+kR04ZmZ0gzn034XIQltj6rx4ZjKmcyUCngYEKBs/VY7ab6YF1gEAt5f45KeEQXGjxGx0WOyBVho12Qy2tKErIxPsC0Kiar8mws/YzfyHs6e1mLu71CHL+hlqHus2aWB+zYJAq5CTr2Dfac2TZsbRd5MoX6wDnvwkNHXi0YIeWE21zHUSiT0T1GzqPHFciODXnw3xRnjHRXJNm08XNg55L7c57HhR53r9IbkCmnDaF9/30= ifrit@Athirat"
-  ];
-
-  rohanfernandezKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxbfLSRqS1IZ+O0StdQsGicjg80g8+yl/FuOBtiQg/szup7zdh2LSXjYFHyrigPgoEG0Pxy2nPoH2JBdZnUcbNiNBymxE0nvfrHbx0In9L13qay2hNCkhglb7ct+ixFaJA1kI0mOAI1jDhMF4Vt9iVPEVFwlN3Do4L7/vua6qANuZRWQL2o100YP3hL55FtesD48A9wYP1WppW6FeHH2t3X28vJ07U6VAr1C/A5a9CrmjMEn4aT9ehwpZKB3cxLEyApy4c6DZ/UOCfkeSSC2ynVxXRg7TjihTizVyx8ao7CLo6axdK67a3WGj77TTp1HiAlqIfzjOWNEcOOgaIS4bV rohan@rohanpc"
-  ];
-
-  alexandermaslewKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+MkgMHv3xj3XbUNqJELn+XZldVZkbGuhvO6kRRGLxJYJ5W+te3rPxlmOQuSQfR+05HNVufjS8ECt7d+DZGtNDViHl/AoY+0DDhMypqyM1KOsaWHwVBH2+wrLvHrT42Z7EmUShQN1HJXYWZ3wF7qTgvt4DxjTLD2UKZti+tKvXGHx+xtfGIBncei4rgU/jia2p9yrExXeoa+KBs0bdGCdfA3ZYsDaYTrcD0adQibp3sf3iu+q7Hq33+91up5uAKDyG2wCDpkSug/Vr4uzkn9v7glQGaJHqOcDDVi92qIoa4yev4b7K7H9f8ryi98YRpo2kJj+W/GC2lnUEf9IVbClWcgwYmmMzG+1Xw8a4BFhL7Hng2cgTMUiOGKJCUo5a18cdWJVkOyipETGehR/g3RrtVIdBmbz/AK37ey91f1MEbp5+fbs/m6DXBVeM4FIkV0Tp3JjXjQKCaO/AHLewUCbmDXZg5CSkBjLkiiGdcSFz7QDXqi2ZRku7PatKXahMb1U= alexander@alexanderpc"
-  ];
-
-  zixuanliKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTmd2gn+3gkDc6kSJIO80Ud9FZlC8tMDtvKQx/KNmsPPk9pPtD0Dlgkvbus1pqSD4ijDGefm7sqr6LzAuD1160sADMI7+1iIRDiamrJo2NXCv1UYxihR16WPnM+2Kn0SCOx+mzclAJGaLMEik1+ASaCnaWVr/EovksDiUP/Ii+q863O9wBQ5VULKbOtbQXr7X4V4McBXPW7GT8n2dybbRdt1t3NPDCxxtDidD5D17mN63NS2cVLKnKp7TV5bH9OLe2DAzeQTs5B1vIdkiIpA7nVWGx+km560DrWvU5L68UJirI9vS6vHwhta6C5EONHusgaDZpM5CiIDhyDmIcEaa/dz7u3lnzpbZhq01OpPM+/lsDhSyJh5LxNTHWZAAQrEudgi0iJ9zdUjRdo7MyrpgsiTFoyFN5CVnq0Q5ZqWiREHfr5SKZxz6DpHMvoHgpn6TX206dzMeqquRgNz0mpInPEMKjIfVbh6EHz+1VJj1pjqWX7YFAxm3JsstaVyY6HrU= zixli@Zixuans-MBP.fritz.box"
-  ];
-
   jonasKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCklke4DPtQ3FaOyEF7bFncskfGayXfTOoP5LRbwP0L+J33h5iZGWrP8ejL2NpAgt/TAbt6G6e/hAkraShcW8XaiN3woPyhY9fuKLjf8JGQGFX6Vh33KHDWxa/v70pyai8iWS6XgTzcdymcQLypRSDgpAlEYmG8tc4sHFKsQX+e/2a5PHG19+6MgPcn1ipYyj/I3EV3WlHcf7TZvANBtW7pNQJUeZ4zMibvl2kHrzJJyLQhowBJqLp8D9z/MTmyPbQYzUTE+4DFDiV2O2enax8lgTsiuP4HDfmIzv4qXxbZZoxiLhw4N+OiVSRbUkC5nWBW7e9k6gIpT0QR5+JAXPD6E4wzKq7pviAASj/hirRgSz64GBjHZMGbmXCOXvsV3pEF1dfibHBA9dnNHkSNcfpKqcvsOSJwSjq+CfEwyAUwPOgM1bn49ozpdGMMstYbn+u25NfMLdfPVb2Ney42WeG7uncVGDDccp4V8AmSIPi1sNs6P7kwAmZpH6+w83wvG10= jonas@pop-os"
   ];
@@ -209,7 +180,7 @@ in
       openssh.authorizedKeys.keys = mikilioKeys;
     };
 
-    # Yi He, Sys-lab WS22 (Sebastian's group)
+    # Yi He, Sys-lab WS22 (Sebastian's group), and now a HiWi
     yihe = {
       isNormalUser = true;
       home = "/home/yihe";
@@ -218,39 +189,6 @@ in
       uid = 2006;
       allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = yiheKeys;
-    };
-
-    # Yiwen Liu, Sys-lab WS22 (Sebastian's group)
-    yiwenliu = {
-      isNormalUser = true;
-      home = "/home/yiwenliu";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2007;
-      allowedHosts = [ "adelaide" ];
-      openssh.authorizedKeys.keys = yiwenliuKeys;
-    };
-
-    # Hanwen Liu, Sys-lab WS22 (Sebastian's group)
-    hanwenliu = {
-      isNormalUser = true;
-      home = "/home/hanwenliu";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2008;
-      allowedHosts = [ "adelaide" ];
-      openssh.authorizedKeys.keys = hanwenliuKeys;
-    };
-
-    # Wonbang Seo, Sys-lab WS22 (Sebastian's group)
-    wonbangseo = {
-      isNormalUser = true;
-      home = "/home/wonbangseo";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2009;
-      allowedHosts = [ "adelaide" ];
-      openssh.authorizedKeys.keys = wonbangseoKeys;
     };
 
     # Jonas Zöschg, Harsha's student (End-to-end on-chip encryption)
@@ -372,5 +310,8 @@ in
     "rohanfernandez"
     "alexandermaslew"
     "zixuanli"
+    "yiwenliu"
+    "hanwenliu"
+    "wonbangseo"
   ];
 }

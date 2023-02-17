@@ -12,15 +12,17 @@ Parameters to consider for matching cards to slots:
 
 - 1x Nvidia A40 GPU (high profile, dual slot)
     - jack
+- 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
+    - momiji
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-    - clara
-    - ?
-    - ?
+    - sakura
+    - hinoki
+    - amy
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
+    - momiji
     - clara
     - rose
     - amy
-    - ?
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
     - clara: dual port ()
     - rose
