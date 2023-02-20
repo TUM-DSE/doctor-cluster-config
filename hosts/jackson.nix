@@ -2,9 +2,13 @@
   imports = [
     ../modules/hardware/supermicro-x12spw-tf.nix
     ../modules/nfs/client.nix
+    ../modules/dpdk.nix
   ];
 
   networking.hostName = "jackson";
+
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 8;
 
   # Don't manage vnet interface with systemd-networkd
   systemd.network.networks."05-jackson_sn1000_host".extraConfig = ''
