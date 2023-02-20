@@ -86,6 +86,14 @@ machines.  Those machines also are not backed up.
 - [sakura](sakura.md)
 - momiji
 
+## Others
+
+- RBG VMs:
+  - doctor.r [doctor.nix](doctor.nix): borg backup target
+  - login.dse.in.tum.de [README](/modules/jumphost/README.md): ssh jumphost and grafana
+- RISC-V:
+  - ruby.r [ruby.nix](ruby.nix)
+
 # Storage
 
 We have a shared nfs-based `/home` mounted. The nfs for /home is based on a NVME
