@@ -61,7 +61,7 @@ For information on how to setup the PM in App-Direct mode, please see [here](../
 - [bill](bill.md)
 - [nardole](nardole.md)
 
-# CI servers
+## CI servers
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab
 
