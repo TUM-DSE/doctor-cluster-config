@@ -27,5 +27,6 @@
   users.xrdpUsers = [ 
     "xilinx"
     "atsushi" 
+    "chenjiyang"
   ];
 }
