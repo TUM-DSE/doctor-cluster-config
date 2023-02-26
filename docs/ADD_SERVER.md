@@ -4,8 +4,18 @@ Here we assume `$hostname` to be the hostname (such as yasmin) and `$host` a res
 
 To open a shell with required tools installed (such as sops) you can use the nix package manager `nix develop`.
 
+## Secrete Generation
+### Automatic Setup 
 
-## Prepare sops-nix secrets
+Generate the configuration and keys for the host 
+
+```
+inv add-server $host
+```
+
+### Manual Setup 
+
+#### Prepare sops-nix secrets
 
 define new secrets file for new `$hostname` in `sops.yaml.nix`
 
@@ -44,7 +54,7 @@ sops hosts/$hostname.yml
 Note that if a rule wasn't created but only changed, run `sops updatekeys path/to.yml` to re-encrypt it.
 
 
-## Create host keys: SSH and sops/age
+#### Create host keys: SSH and sops/age
 
 Create ssh certificate singed by our CA, so that hosts automatically trust each other.
 
