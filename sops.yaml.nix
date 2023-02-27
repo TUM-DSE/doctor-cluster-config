@@ -16,7 +16,7 @@ let
   # command to add a new age key for a new host
   # inv print-age-key --hosts "host1,host2"
   keys = builtins.fromJSON (builtins.readFile ./keys.json);
-  groups = with keys; {
+  groups = with keys.admins; {
     admin = [
       # admins may access all secrets
       joerg
@@ -29,19 +29,25 @@ let
       myron
       francisco
     ];
-    all = builtins.attrValues keys;
+    all = builtins.attrValues (keys.admins // keys.machines);
   };
 
   # This is the list of permissions per file. The admin group has permissions
   # for all files. Amy.yml additionally can be decrytped by amy.
-  sopsPermissions =  builtins.mapAttrs (name: value: (map (x: keys.${x}) value) ) (builtins.fromJSON (builtins.readFile ./sopsPermissions.json)) //
+  sopsPermissions =  builtins.listToAttrs (mapAttrsToList (hostname: key: {name = "hosts/${hostname}.yml$"; value = [key];}) keys.machines) //
 	{
+  "modules/sshd/[^/]+\\.yaml$" = [];
 	"modules/secrets.yml$" = groups.all;
 	"secrets.yml$" = [ ];
 	"modules/sshd/ca-keys.yml$" = [ ];
  	"terraform/secrets.enc.json$" = [ ];
 	"terraform/github-permissions/secrets.enc.json$" = [ ]; # is a symlink to terraform/secrets
-	};      
+	} //
+  builtins.mapAttrs (name: value:  (map (x: keys.machines.${x}) value)) {
+    "modules/nfs/secrets.yml$" =  ["bill" "nardole"];
+	  "modules/k3s/secrets.yml$" = ["astrid" "mickey" "dan"];
+  };
+        
 in
 {
   creation_rules = [

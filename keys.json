@@ -1,4 +1,6 @@
 {
+    
+    "admins" : {
 	"joerg" : "age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz",
 	"peter" : "age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd",
     "cmainas" : "age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4",
@@ -7,7 +9,11 @@
     "atsushi" : "age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv",
     "patrick" : "age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0",
     "myron" : "age1e4lgkn5zm4yuyeraunkamy4xq9z7kjgu3k22eca5u3zw89e5zfqq2mgtk3",
-    "francisco" : "age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd",
+    "francisco" : "age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd"
+
+},
+"machines" : {
+
 
     "rose" : "age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx",
     "amy" : "age1t60q35wlu8rjk8k4trf7jg9q2kt0r44d66c5ezqpuw468jg5fs0q05qfwj",
@@ -29,5 +35,5 @@
     "ruby" : "age1q2t8w6qta7v6mhwv3qlfq6un60mj0u8k5j8qp7v37kjkd6008ycs4ecxmt",
     "clara" : "age1qcnx7r0dk56jjrm2rt4duh0m7qjw5hf0a7gwvkghhkaj6v668y6sqp5y3e"
 
-
+}
 }

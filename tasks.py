@@ -558,18 +558,18 @@ def add_server(c, hostname):
 
     print(f"Adding {hostname}")
 
-    sopsPermissions = None
-    with open("sopsPermissions.json","r") as f:
-        sopsPermissions = f.read()
-    sopsPermissions = json.loads(sopsPermissions)
-    if(sopsPermissions.get(f"hosts/{hostname}.yml$",None)):
-       print("Configuration already exists")
-       exit(-1)
-    sopsPermissions[f"hosts/{hostname}.yml$"] = []
-    
-    
-    with open("sopsPermissions.json","w") as f:
-        json.dump(sopsPermissions,f)
+
+    keys = None
+    with open("keys.json","r") as f:
+        keys = f.read()
+    keys = json.loads(keys)
+    if(keys["machines"].get(hostnamem,None)):
+        print("Configuration already exists")
+        exit(-1)
+    keys["machines"][hostname] = ""
+    with open("keys.json","w") as f:
+        json.dump(keys,f)
+
     update_sops_files(c)
 
     sops_file = f"{ROOT}/hosts/{hostname}.yml"
@@ -579,8 +579,7 @@ def add_server(c, hostname):
     size = 12
     chars = string.ascii_letters + string.digits
     passwd = "".join(random.choice(chars) for x in range(size))
-    passwd_str = subprocess.Popen(["echo",f"{passwd}"],stdout=subprocess.PIPE,text=True)
-    passwd_hash = subprocess.check_output(["mkpasswd", "-m", "sha-512", "-s"], stdin=passwd_str.stdout,text=True)
+    passwd_hash = subprocess.check_output(["mkpasswd", "-m", "sha-512", "-s"], input==passwd,text=True)
     with open(sops_file,"w") as hosts:
         hosts.write(f"root-password: {passwd}\n")
         hosts.write(f"root-password-hash: {passwd_hash}")
@@ -608,11 +607,25 @@ def add_server(c, hostname):
 
     print("Updating keys.json")
     update_json("keys.json",hostname,age)
-    print("Updating sopsPermissions.json")
-    update_json("sopsPermissions.json",f"hosts/{hostname}.yml$",[hostname])
 
     print("Updating sops files")
     update_sops_files(c) 
+
+    example_host_config = f"""
+{{
+  imports = [
+    ../modules/ipmi-supermicro.nix
+    ../modules/hardware/supermicro-AS-4124GS.nix
+  ];
+
+  networking.hostName = "{hostname}";
+
+  system.stateVersion = "22.11";
+}}"""
+    with open(f"hosts/{hostname}.nix","w") as f:
+        f.write(example_host_config)
+
+    #c.run(f"git add hosts/{hostname}.nix hosts/{hostname}.yml keys.json")
 
 
 
