@@ -563,7 +563,7 @@ def add_server(c, hostname):
     with open("keys.json","r") as f:
         keys = f.read()
     keys = json.loads(keys)
-    if(keys["machines"].get(hostnamem,None)):
+    if(keys["machines"].get(hostname,None)):
         print("Configuration already exists")
         exit(-1)
     keys["machines"][hostname] = ""
@@ -574,12 +574,11 @@ def add_server(c, hostname):
 
     sops_file = f"{ROOT}/hosts/{hostname}.yml"
 
-    #Generate the password
     print("Generating Password")
     size = 12
     chars = string.ascii_letters + string.digits
     passwd = "".join(random.choice(chars) for x in range(size))
-    passwd_hash = subprocess.check_output(["mkpasswd", "-m", "sha-512", "-s"], input==passwd,text=True)
+    passwd_hash = subprocess.check_output(["mkpasswd", "-m", "sha-512", "-s"], input=passwd,text=True)
     with open(sops_file,"w") as hosts:
         hosts.write(f"root-password: {passwd}\n")
         hosts.write(f"root-password-hash: {passwd_hash}")
@@ -595,18 +594,14 @@ def add_server(c, hostname):
     
     age = subprocess.check_output(["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],text=True, stdin=key_ed.stdout)
     age = age.rstrip()
-    def update_json(file,key,value):
-        json_data = None
-        with open(file,"r") as v:
-            json_data = json.load(v)
-
-        json_data[key] = value
-        
-        with open(file,"w") as v:
-            json.dump(json_data,v)
 
     print("Updating keys.json")
-    update_json("keys.json",hostname,age)
+    keys = None 
+    with open("keys.json","r") as f:
+        keys = json.load(f)
+    keys["machines"][hostname] = age
+    with open("keys.json","w") as f:
+        json.dump(keys,f)
 
     print("Updating sops files")
     update_sops_files(c) 
@@ -622,10 +617,11 @@ def add_server(c, hostname):
 
   system.stateVersion = "22.11";
 }}"""
+    print(f"Writing example hosts/{hostname}.nix")
     with open(f"hosts/{hostname}.nix","w") as f:
         f.write(example_host_config)
 
-    #c.run(f"git add hosts/{hostname}.nix hosts/{hostname}.yml keys.json")
+    c.run(f"git add hosts/{hostname}.nix hosts/{hostname}.yml keys.json .sops.yaml modules/secrets.yml")
 
 
 
