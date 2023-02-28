@@ -3,6 +3,7 @@
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-AS-4124GS.nix
     ../modules/nfs/client.nix
+    ../modules/dpdk.nix
 
     ../modules/xilinx.nix
     ../modules/xrdp.nix
@@ -10,6 +11,9 @@
   ];
 
   networking.hostName = "clara";
+
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 8;
 
   simd.arch = "znver3";
   system.stateVersion = "22.11";
