@@ -3,12 +3,33 @@
   mkNfsMounter = nfsUrl: mountpoint: {
     description = "Mount ${mountpoint}";
     after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
+    # 1. Mount nfs before making shells available to users:
+    before = [ "multi-user.target" ];
+    wantedBy = [ "network.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.util-linux}/bin/mount -t nfs4 -o nofail,timeo=14 ${nfsUrl} ${mountpoint}";
+      # 2. Retry try a few times on failure, before continuing with boot (1.)
+      ExecStart = pkgs.writeShellScript "nfs-mount-wrapper" ''
+        mountcmd="${pkgs.util-linux}/bin/mount -t nfs4 -o nofail,timeo=14 ${nfsUrl} ${mountpoint}"
+        restartsec="5"
+
+        for i in {1..10}; do
+          echo "Mounting nfs. Attempt $i/10"
+          echo "> $mountcmd"
+          $mountcmd
+          ret=$?
+          if [[ $ret == 0 ]]; then
+            exit 0
+          else
+            echo "Mounting nfs failed. Retrying in $restartsec sec"
+            sleep $restartsec
+          fi
+        done
+        exit $ret
+      '';
       ExecStop = "${pkgs.util-linux}/bin/umount ${mountpoint}";
+      # 3. If (2.) does not suffice, or nfs breaks during runtime, you shall still restart.
       Restart = "on-failure";
       RestartSec = 10;
     };
