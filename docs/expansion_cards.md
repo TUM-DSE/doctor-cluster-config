@@ -12,15 +12,17 @@ Parameters to consider for matching cards to slots:
 
 - 1x Nvidia A40 GPU (high profile, dual slot)
     - jack
+- 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
+    - momiji
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-    - clara
-    - ?
-    - ?
+    - sakura
+    - hinoki
+    - amy
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
+    - momiji
     - clara
     - rose
     - amy
-    - ?
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
     - clara: dual port ()
     - rose
@@ -31,35 +33,42 @@ Parameters to consider for matching cards to slots:
     - christina: dual port. (christina,christina)
     - wilfred: single port. (wilfred-river)
     - river: single port. (river-wilfred)
-    - clara: single port. former: (adelaide-craig) vlan1
+    - clara: single port. (clara-craig1)
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,none)
 - 3x BCM57412 10G NIC (SFP+)
-    - clara (internet/uplink, none)
+    - clara (internet/uplink, clara-craig2)
     - rose (internet/uplink, none)
-    - amy (internet/uplink, none)
+    - amy (internet/uplink, amy-craig1)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
+    - adelaide (maybe internet/uplink?)
+    - christina (maybe internet/uplink?)
+    - jackson (maybe internet/uplink?)
+    - river (maybe internet/uplink?)
+    - wilfred (maybe internet/uplink?)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
+    - bill (internet/uplink)
+    - nardole (internet/uplink)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
+    - jack
 - 4x PCI Samsung PM173X NVMe drive (high profile, low profile mod, x4?)
     - 2x graham: (boot, experiments)
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
 
-Onboard:
+Onboard (not listed by [List of slots](#List of slots)):
+
     - Intel X720
         - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
     - Intel X550: 2 port RJ-45
-        - christina: (chistina-adelaide, none)
-        - adelaide: (adelaide-chistina, none)
-        - wilfred: (wilfred-river, none)
-        - river: (river-wilfred, none)
+        - christina: (chistina-adelaide, christina-adelaide)
+        - adelaide: (adelaide-chistina, adelaide-christina)
+        - wilfred: (wilfred-river, wilfred-river)
+        - river: (river-wilfred, river-wilfred)
         - probably jackson: (none-none)
 
-Most of the 10G NICs are in use to provider internet.
-
-(^ list last updated 14.02.23)
+(^ list last updated 06.03.23)
 
 
 ## List of slots
