@@ -1,9 +1,9 @@
 # ryan
 
 ```
-System:    Host: ryan Kernel: 5.19.0-rc5-next-20220706 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\rny3ladp0f6cjgavksd25dkajd5wkm8r-initrd-linux-5.19-initrd.efi 
-           init=/nix/store/0gj3nll28yi24hdmypqrnxwswjg7gfbj-nixos-system-ryan-22.11.20230128.0945db2/init 
+System:    Host: ryan Kernel: 5.19.0-rc6 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\28i7r1lyzhhwrjvr6562zvb03zzb7ci4-initrd-linux-5.19-initrd.efi 
+           init=/nix/store/2gp5n657ywic6l5cd58pgrvzakmacqk7-nixos-system-ryan-22.11.20230128.0945db2/init 
            console=tty0 console=ttyS0,115200 kvm_amd.sev=1 kvm_amd.sev_es=1 kvm_amd.sev_snp=1 
            sp5100_tco.blacklist=yes default_hugepagesz=2MB hugepagesz=2MB hugepages=1000 
            nohibernate loglevel=4 
@@ -12,7 +12,7 @@ Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: 9P0
            type: 23 serial: 9P0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .9P0PSH3.CNCMS0016O01PE. UEFI: Dell v: 2.9.3 
            date: 08/05/2022 
-Memory:    RAM: total: 501.22 GiB used: 10.71 GiB (2.1%) 
+Memory:    RAM: total: 501.22 GiB used: 13.67 GiB (2.7%) 
            Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
            note: est. 
            Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
@@ -54,15 +54,15 @@ PCI Slots: Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: Available length:
            Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long 
 CPU:       Info: 64-Core model: AMD EPYC 7713P socket: SP3 bits: 64 type: MCP arch: Zen 3 
            family: 19 (25) model-id: 1 stepping: 1 microcode: A001173 cache: L2: 32 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 255523 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 255520 
            Speed: 2000 MHz min/max: 1500/2000 MHz base/boost: 2000/3900 boost: enabled 
            volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 2000 2: 2000 3: 2000 4: 2000 
-           5: 2000 6: 2000 7: 2000 8: 2000 9: 2000 10: 2000 11: 2000 12: 2000 13: 3693 14: 2000 
-           15: 2000 16: 2000 17: 2000 18: 2000 19: 2000 20: 2000 21: 2000 22: 3694 23: 2000 
-           24: 2000 25: 2000 26: 2000 27: 2000 28: 2000 29: 2000 30: 2000 31: 2000 32: 2000 
+           5: 2000 6: 2000 7: 2000 8: 2000 9: 2000 10: 2000 11: 2000 12: 2000 13: 2000 14: 2000 
+           15: 2000 16: 2000 17: 2000 18: 3690 19: 2000 20: 2000 21: 2000 22: 2000 23: 2000 
+           24: 2000 25: 2000 26: 2000 27: 2000 28: 2000 29: 2000 30: 2000 31: 1970 32: 2000 
            33: 2000 34: 2000 35: 2000 36: 2000 37: 2000 38: 2000 39: 2000 40: 2000 41: 2000 
-           42: 2000 43: 2000 44: 2000 45: 2000 46: 2000 47: 2000 48: 1796 49: 2000 50: 2000 
-           51: 2000 52: 2000 53: 1738 54: 2000 55: 2000 56: 2000 57: 2000 58: 2000 59: 2000 
+           42: 2000 43: 2000 44: 2000 45: 2000 46: 2000 47: 2000 48: 2000 49: 2000 50: 2000 
+           51: 2000 52: 2000 53: 2000 54: 2000 55: 2000 56: 2000 57: 2000 58: 2000 59: 2000 
            60: 2000 61: 2000 62: 2000 63: 2000 64: 2000 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
@@ -98,15 +98,15 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
            vendor: Dell PowerEdge R6515/R7515 LOM driver: tg3 v: kernel port: 1000 bus-ID: c1:00.1 
            chip-ID: 14e4:165f class-ID: 0200 
            IF: eno8403 state: down mac: d0:8e:79:ba:1a:29 
-           IF-ID-1: br-2443cf1dc11a state: down mac: 02:42:3e:dd:bd:ec 
+           IF-ID-1: br-2443cf1dc11a state: down mac: 02:42:80:62:ff:b2 
            IP v4: 192.168.0.1/24 scope: global broadcast: 192.168.0.255 
-           IF-ID-2: br-5ef571064773 state: down mac: 02:42:84:95:d5:12 
+           IF-ID-2: br-5ef571064773 state: down mac: 02:42:a1:6a:d5:87 
            IP v4: 192.168.94.1/24 scope: global broadcast: 192.168.94.255 
-           IF-ID-3: br-b64ed8ed8f30 state: down mac: 02:42:df:7a:19:8e 
+           IF-ID-3: br-b64ed8ed8f30 state: down mac: 02:42:3c:e1:74:92 
            IP v4: 192.168.23.1/24 scope: global broadcast: 192.168.23.255 
-           IF-ID-4: br-b6a8b5be58e3 state: down mac: 02:42:c5:cf:63:14 
+           IF-ID-4: br-b6a8b5be58e3 state: down mac: 02:42:ae:8b:3c:fa 
            IP v4: 192.168.5.1/24 scope: global broadcast: 192.168.5.255 
-           IF-ID-5: docker0 state: down mac: 02:42:69:73:81:89 
+           IF-ID-5: docker0 state: down mac: 02:42:75:db:d5:78 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-6: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:53a7:e0e3:a2b6:471d:44a/16 scope: global 
@@ -116,32 +116,32 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID SAS-3 3008 [Fury] driver: megaraid_sas 
            v: 07.719.03.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 675 GiB 
-           allocated: 813 GiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 811 GiB 
+           allocated: 677 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 2 TiB usable: 3.45 TiB used: 1.04 TiB (30.1%) 
+Drives:    Local Storage: total: raw: 2 TiB usable: 3.45 TiB used: 1.03 TiB (29.7%) 
            ID-1: /dev/nvme0n1 maj-min: 259:1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
-           serial: S61ANA0R501358 rev: 2.0.2 temp: 15 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 1y 123d 15h cycles: 63 read-units: 102,749,243 [52.6 TB] 
-           written-units: 305,732,924 [156 TB] 
+           serial: S61ANA0R501358 rev: 2.0.2 temp: 17 Celsius C scheme: GPT 
+           SMART: yes health: PASSED on: 1y 143d 13h cycles: 63 read-units: 107,440,610 [55.0 TB] 
+           written-units: 307,498,454 [157 TB] 
            ID-2: /dev/sda maj-min: 8:0 model: AL15SEB060NY size: 558.91 GiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: 10000 rpm serial: N/A 
            rev: EF06 temp: 19 C 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.16 TiB used: 562.26 GiB (47.2%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.3 TiB used: 566.11 GiB (42.6%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 133.4 MiB (26.7%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 105.3 MiB (21.1%) fs: vfat 
            block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:2 
-           ID-3: /home raw-size: N/A size: 833.48 GiB used: 501.31 GiB (60.1%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 787.99 GiB used: 481.85 GiB (61.1%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 629.45 GiB used: 1.39 GiB (0.2%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 764.97 GiB used: 1.59 GiB (0.2%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 54.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 56.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 814 Uptime: N/A wakeups: 0 Init: systemd v: 251 target: graphical.target 
+Info:      Processes: 800 Uptime: 3h 03m wakeups: 0 Init: systemd v: 251 target: graphical.target 
            tool: systemctl Compilers: gcc: 11.3.0 Packages: 1287 nix-default: 214 lib: 1 
            nix-sys: 859 lib: 204 nix-usr: 214 lib: 68 Client: Sudo v: 1.9.12p2 inxi: 3.3.04 
 ```
