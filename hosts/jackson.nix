@@ -3,6 +3,7 @@
     ../modules/hardware/supermicro-x12spw-tf.nix
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
+    ../modules/vfio/iommu-intel.nix
   ];
 
   networking.hostName = "jackson";
