@@ -42,26 +42,33 @@ Parameters to consider for matching cards to slots:
     - rose (internet/uplink, none)
     - amy (internet/uplink, none)
 - 5x Intel X520-2 10G NIC (SFI/SFP+)
+    - adelaide (maybe internet/uplink?)
+    - christina (maybe internet/uplink?)
+    - jackson (maybe internet/uplink?)
+    - river (maybe internet/uplink?)
+    - wilfred (maybe internet/uplink?)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
+    - bill (internet/uplink)
+    - nardole (internet/uplink)
 - 1x Intel X710 10G NIC (SFI/SFP+?)
+    - jack
 - 4x PCI Samsung PM173X NVMe drive (high profile, low profile mod, x4?)
     - 2x graham: (boot, experiments)
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
 
-Onboard:
+Onboard (not listed by [List of slots](#List of slots)):
+
     - Intel X720
         - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
     - Intel X550: 2 port RJ-45
-        - christina: (chistina-adelaide, none)
-        - adelaide: (adelaide-chistina, none)
-        - wilfred: (wilfred-river, none)
-        - river: (river-wilfred, none)
+        - christina: (chistina-adelaide, christina-adelaide)
+        - adelaide: (adelaide-chistina, adelaide-christina)
+        - wilfred: (wilfred-river, wilfred-river)
+        - river: (river-wilfred, river-wilfred)
         - probably jackson: (none-none)
 
-Most of the 10G NICs are in use to provider internet.
-
-(^ list last updated 14.02.23)
+(^ list last updated 06.03.23)
 
 
 ## List of slots
