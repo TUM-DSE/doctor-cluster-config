@@ -4,6 +4,7 @@
     ../modules/nfs/client.nix
     ../modules/dax.nix # just to disable PM as RAM
     ../modules/dpdk.nix
+    ../modules/vfio/iommu-intel.nix
     ../modules/linux-ioregionfd.nix
   ];
 
