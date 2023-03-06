@@ -7,6 +7,7 @@
   # and store <USER>-password-hash in `./hosts/ryan.yml` by doing:
   # $ sops ./hosts/ryan.yml
   # Than add the user to the `users.xrdpUsers` list
+  # You may have to restart xrdp-sesman.service for the changes to apply.
 
   options = {
     users.xrdpUsers = lib.mkOption {
