@@ -4,8 +4,7 @@
     description = "Mount ${mountpoint}";
     after = [ "network.target" ];
     # 1. Mount nfs before making shells available to users:
-    before = [ "multi-user.target" ];
-    wantedBy = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
@@ -52,6 +51,7 @@ in {
   # Instead we just add a retry to the NFS mount. However:
   # Neither NFS nor systemd.mount has an option for retries. See https://github.com/systemd/systemd/issues/4468
 
+  boot.supportedFilesystems = [ "nfs" ];
   systemd.services = {
     nfs-home = mkNfsMounter "nfs:/export/home" "/home";
     nfs-share = mkNfsMounter "nfs:/export/share" "/share";
