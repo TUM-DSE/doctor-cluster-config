@@ -470,7 +470,8 @@ def generate_ssh_cert(c, host):
              privkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key")
              pubkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key.pub")
              if len(res.stdout) == 0:
-                 c.run(f"ssh-keygen -f {tmpdir}/ssh_host_{keytype}_key -t {keytype}")
+                 # create host key with comment -c and empty passphrase -N ''
+                 c.run(f"ssh-keygen -f {privkey} -t {keytype} -C 'host key for host {host}' -N ''")
                  c.run(f"sops --set '[\"ssh_host_{keytype}_key\"] {json.dumps(privkey.read_text())}' {sops_file}")
                  c.run(f"sops --set '[\"ssh_host_{keytype}_key.pub\"] {json.dumps(pubkey.read_text())}' {sops_file}")
              else:
