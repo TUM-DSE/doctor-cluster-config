@@ -470,7 +470,8 @@ def generate_ssh_cert(c, host):
              privkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key")
              pubkey = Path(f"{tmpdir}/etc/ssh/ssh_host_{keytype}_key.pub")
              if len(res.stdout) == 0:
-                 c.run(f"ssh-keygen -f {tmpdir}/ssh_host_{keytype}_key -t {keytype}")
+                 # create host key with comment -c and empty passphrase -N ''
+                 c.run(f"ssh-keygen -f {privkey} -t {keytype} -C 'host key for host {host}' -N ''")
                  c.run(f"sops --set '[\"ssh_host_{keytype}_key\"] {json.dumps(privkey.read_text())}' {sops_file}")
                  c.run(f"sops --set '[\"ssh_host_{keytype}_key.pub\"] {json.dumps(pubkey.read_text())}' {sops_file}")
              else:
@@ -492,17 +493,17 @@ def update_sops_files(c):
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
-    with open(".sops.yaml", "w") as f:
+    with open(f"{ROOT}/.sops.yaml", "w") as f:
         print("# AUTOMATICALLY GENERATED WITH:", file=f)
         print("# $ inv update-sops-files", file=f)
 
-    c.run("nix eval --json -f sops.yaml.nix | yq e -P - >> .sops.yaml")
+    c.run(f"nix eval --json -f {ROOT}/sops.yaml.nix | yq e -P - >> {ROOT}/.sops.yaml")
     c.run(
-        """
-find . \
-        -not -path "./.github/*" \
-        -not -path "./modules/jumphost/*.yml" \
-        -not -path "./modules/monitoring/*.yml" \
+        f"""
+find {ROOT} \
+        -not -path "{ROOT}/.github/*" \
+        -not -path "{ROOT}/modules/jumphost/*.yml" \
+        -not -path "{ROOT}/modules/monitoring/*.yml" \
         -type f \
         \( -iname '*.enc.json' -o -iname '*.yml' \) \
         -print0 | \
@@ -547,6 +548,86 @@ def generate_password(c, user="root"):
     print("# Add the following secrets")
     print(f"{user}-password: {passw}")
     print(f"{user}-password-hash: {out.stdout}")
+
+@task
+def add_server(c, hostname):
+    """
+    Generate new server keys and configurations for a given hostname and hardware config
+    """
+
+    import subprocess
+
+    print(f"Adding {hostname}")
+
+
+    keys = None
+    with open(f"{ROOT}/pubkeys.json","r") as f:
+        keys = f.read()
+    keys = json.loads(keys)
+    if(keys["machines"].get(hostname,None)):
+        print("Configuration already exists")
+        exit(-1)
+    keys["machines"][hostname] = ""
+    with open(f"{ROOT}/pubkeys.json","w") as f:
+        json.dump(keys, f, indent=2)
+
+    update_sops_files(c)
+
+    sops_file = f"{ROOT}/hosts/{hostname}.yml"
+
+    print("Generating Password")
+    size = 12
+    chars = string.ascii_letters + string.digits
+    passwd = "".join(random.choice(chars) for x in range(size))
+    passwd_hash = subprocess.check_output(["mkpasswd", "-m", "sha-512", "-s"], input=passwd,text=True)
+    with open(sops_file,"w") as hosts:
+        hosts.write(f"root-password: {passwd}\n")
+        hosts.write(f"root-password-hash: {passwd_hash}")
+    enc_out = subprocess.check_output(["sops", "-e", f"{sops_file}"],text=True)
+    with open(sops_file,"w") as hosts:
+        hosts.write(enc_out)
+
+    print("Generating SSH certificate")
+    generate_ssh_cert(c,hostname)
+
+    print("Generating age key")
+    key_ed = subprocess.Popen(["sops", "--extract", '["ssh_host_ed25519_key.pub"]', "-d", sops_file], stdout=subprocess.PIPE)
+    
+    age = subprocess.check_output(["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],text=True, stdin=key_ed.stdout)
+    age = age.rstrip()
+
+    print("Updating pubkeys.json")
+    keys = None 
+    with open(f"{ROOT}/pubkeys.json","r") as f:
+        keys = json.load(f)
+    keys["machines"][hostname] = age
+    with open(f"{ROOT}/pubkeys.json","w") as f:
+        json.dump(keys, f, indent=2)
+
+    print("Updating sops files")
+    update_sops_files(c) 
+
+    example_host_config = f"""
+{{
+  imports = [
+    ../modules/hardware/placeholder.nix
+  ];
+
+  networking.hostName = "{hostname}";
+
+  system.stateVersion = "22.11";
+}}"""
+    print(f"Writing example hosts/{hostname}.nix")
+    with open(f"{ROOT}/hosts/{hostname}.nix","w") as f:
+        f.write(example_host_config)
+
+    c.run(f"git add " + 
+          f"{ROOT}/hosts/{hostname}.nix " +
+          f"{ROOT}/hosts/{hostname}.yml " + 
+          f"{ROOT}/pubkeys.json " +
+          f"{ROOT}/.sops.yaml " +
+          f"{ROOT}/modules/secrets.yml " + 
+          f"{ROOT}/modules/sshd/certs/{hostname}-cert.pub")
 
 
 @task
