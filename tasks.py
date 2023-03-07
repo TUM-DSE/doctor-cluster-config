@@ -609,8 +609,7 @@ def add_server(c, hostname):
     example_host_config = f"""
 {{
   imports = [
-    ../modules/ipmi-supermicro.nix
-    ../modules/hardware/supermicro-AS-4124GS.nix
+    ../modules/hardware/placeholder.nix
   ];
 
   networking.hostName = "{hostname}";
