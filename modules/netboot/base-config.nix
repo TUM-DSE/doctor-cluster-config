@@ -47,7 +47,7 @@
   imports = [
     ../tor-ssh.nix
     ../nix-daemon.nix
-    ../users.nix
+    ../users
     ({ ... }: {
       users.withSops = false;
     })

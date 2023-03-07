@@ -30,7 +30,7 @@ let
             "${modulesPath}/profiles/all-hardware.nix"
             "${modulesPath}/installer/netboot/netboot.nix"
             ../sshd
-            ../users.nix
+            ../users
             ({ ... }: {
               users.withSops = false;
             })

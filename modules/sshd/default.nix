@@ -23,7 +23,9 @@ in
   };
 
   warnings =
-    lib.optional (! builtins.pathExists cert)
+    lib.optional (! builtins.pathExists cert &&
+        config.networking.hostName != "nixos" # we dont care about nixos netboot/installer images
+    )
       "No ssh certificate found at ${toString cert}";
 
   programs.ssh.knownHosts."github.com" = {
