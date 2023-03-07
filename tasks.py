@@ -568,7 +568,7 @@ def add_server(c, hostname):
         exit(-1)
     keys["machines"][hostname] = ""
     with open(f"{ROOT}/pubkeys.json","w") as f:
-        json.dump(keys,f)
+        json.dump(keys, f, indent=2)
 
     update_sops_files(c)
 
@@ -601,7 +601,7 @@ def add_server(c, hostname):
         keys = json.load(f)
     keys["machines"][hostname] = age
     with open(f"{ROOT}/pubkeys.json","w") as f:
-        json.dump(keys,f)
+        json.dump(keys, f, indent=2)
 
     print("Updating sops files")
     update_sops_files(c) 
