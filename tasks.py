@@ -492,17 +492,17 @@ def update_sops_files(c):
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
-    with open(".sops.yaml", "w") as f:
+    with open(f"{ROOT}/.sops.yaml", "w") as f:
         print("# AUTOMATICALLY GENERATED WITH:", file=f)
         print("# $ inv update-sops-files", file=f)
 
-    c.run("nix eval --json -f sops.yaml.nix | yq e -P - >> .sops.yaml")
+    c.run(f"nix eval --json -f {ROOT}/sops.yaml.nix | yq e -P - >> {ROOT}/.sops.yaml")
     c.run(
-        """
-find . \
-        -not -path "./.github/*" \
-        -not -path "./modules/jumphost/*.yml" \
-        -not -path "./modules/monitoring/*.yml" \
+        f"""
+find {ROOT} \
+        -not -path "{ROOT}/.github/*" \
+        -not -path "{ROOT}/modules/jumphost/*.yml" \
+        -not -path "{ROOT}/modules/monitoring/*.yml" \
         -type f \
         \( -iname '*.enc.json' -o -iname '*.yml' \) \
         -print0 | \
@@ -560,14 +560,14 @@ def add_server(c, hostname):
 
 
     keys = None
-    with open("pubkeys.json","r") as f:
+    with open(f"{ROOT}/pubkeys.json","r") as f:
         keys = f.read()
     keys = json.loads(keys)
     if(keys["machines"].get(hostname,None)):
         print("Configuration already exists")
         exit(-1)
     keys["machines"][hostname] = ""
-    with open("pubkeys.json","w") as f:
+    with open(f"{ROOT}/pubkeys.json","w") as f:
         json.dump(keys,f)
 
     update_sops_files(c)
@@ -597,10 +597,10 @@ def add_server(c, hostname):
 
     print("Updating pubkeys.json")
     keys = None 
-    with open("pubkeys.json","r") as f:
+    with open(f"{ROOT}/pubkeys.json","r") as f:
         keys = json.load(f)
     keys["machines"][hostname] = age
-    with open("pubkeys.json","w") as f:
+    with open(f"{ROOT}/pubkeys.json","w") as f:
         json.dump(keys,f)
 
     print("Updating sops files")
@@ -618,11 +618,16 @@ def add_server(c, hostname):
   system.stateVersion = "22.11";
 }}"""
     print(f"Writing example hosts/{hostname}.nix")
-    with open(f"hosts/{hostname}.nix","w") as f:
+    with open(f"{ROOT}/hosts/{hostname}.nix","w") as f:
         f.write(example_host_config)
 
-    c.run(f"git add hosts/{hostname}.nix hosts/{hostname}.yml pubkeys.json .sops.yaml modules/secrets.yml {ROOT}/modules/sshd/certs/{host}-cert.pub")
-
+    c.run(f"git add " + 
+          f"{ROOT}/hosts/{hostname}.nix " +
+          f"{ROOT}/hosts/{hostname}.yml " + 
+          f"{ROOT}/pubkeys.json " +
+          f"{ROOT}/.sops.yaml " +
+          f"{ROOT}/modules/secrets.yml " + 
+          f"{ROOT}/modules/sshd/certs/{hostname}-cert.pub")
 
 
 @task
