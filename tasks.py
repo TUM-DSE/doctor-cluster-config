@@ -560,14 +560,14 @@ def add_server(c, hostname):
 
 
     keys = None
-    with open("keys.json","r") as f:
+    with open("pubkeys.json","r") as f:
         keys = f.read()
     keys = json.loads(keys)
     if(keys["machines"].get(hostname,None)):
         print("Configuration already exists")
         exit(-1)
     keys["machines"][hostname] = ""
-    with open("keys.json","w") as f:
+    with open("pubkeys.json","w") as f:
         json.dump(keys,f)
 
     update_sops_files(c)
@@ -595,12 +595,12 @@ def add_server(c, hostname):
     age = subprocess.check_output(["nix", "run", "--inputs-from", ".#", "nixpkgs#ssh-to-age"],text=True, stdin=key_ed.stdout)
     age = age.rstrip()
 
-    print("Updating keys.json")
+    print("Updating pubkeys.json")
     keys = None 
-    with open("keys.json","r") as f:
+    with open("pubkeys.json","r") as f:
         keys = json.load(f)
     keys["machines"][hostname] = age
-    with open("keys.json","w") as f:
+    with open("pubkeys.json","w") as f:
         json.dump(keys,f)
 
     print("Updating sops files")
@@ -621,7 +621,7 @@ def add_server(c, hostname):
     with open(f"hosts/{hostname}.nix","w") as f:
         f.write(example_host_config)
 
-    c.run(f"git add hosts/{hostname}.nix hosts/{hostname}.yml keys.json .sops.yaml modules/secrets.yml")
+    c.run(f"git add hosts/{hostname}.nix hosts/{hostname}.yml pubkeys.json .sops.yaml modules/secrets.yml {ROOT}/modules/sshd/certs/{host}-cert.pub")
 
 
 

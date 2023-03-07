@@ -15,7 +15,7 @@ let
 
   # command to add a new age key for a new host
   # inv print-age-key --hosts "host1,host2"
-  keys = builtins.fromJSON (builtins.readFile ./keys.json);
+  keys = builtins.fromJSON (builtins.readFile ./pubkeys.json);
   groups = with keys.admins; {
     admin = [
       # admins may access all secrets

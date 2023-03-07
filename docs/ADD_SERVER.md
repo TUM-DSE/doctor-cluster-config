@@ -4,7 +4,7 @@ Here we assume `$hostname` to be the hostname (such as yasmin) and `$host` a res
 
 To open a shell with required tools installed (such as sops) you can use the nix package manager `nix develop`.
 
-## Secrete Generation
+## Secret Generation
 
 Generate the configuration and keys for the host: 
 
