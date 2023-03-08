@@ -160,10 +160,10 @@ Our chair currently has three networks:
 - `il01_15` for management
   - usually 1Gbit/s RJ-45
   - ipv4: 172.24.90.0/24
-- L3 Switch "Craig" `craig-mgmt.dse.in.tum.de`
+- L3 Switch "Craig" `craig-mgmt.dse.in.tum.de` (sops encrypted (config)[./craig.sops])
   - 6x 100Gbit/s QSFP
   - many 10Gbit/s SFP+
-  - ip: to be configured
+  - ip: 172.24.90.18
   - vlan example config (layer2->static vlan config)
     - vlan id: 1; untagged ports: Fx0/1-48,Cx0/1-2,Cx0/4; forbidden ports: Cx0/3,Cx0/5;
     - vlan id: 2; vlan name: vlan2; untagged ports: Cx0/3,Cx0/5; forbidden ports: Fx0/1-48,Cx0/1-2,Cx0/4;

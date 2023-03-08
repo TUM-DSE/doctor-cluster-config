@@ -31,8 +31,8 @@ Parameters to consider for matching cards to slots:
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (,)
     - christina: dual port. (christina,christina)
-    - wilfred: single port. (wilfred-river)
-    - river: single port. (river-wilfred)
+    - wilfred: single port. (wilfred-craig3)
+    - river: single port. (river-craig2)
     - clara: single port. (clara-craig1)
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
@@ -92,7 +92,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
-e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
+e1:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
 - ❌  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: In Use length: Long    
 c1:00.0, Processing accelerators, Xilinx Corporation, Alveo U50 Golden Image -p00, Xilinx Corporation, Device 000e  
 - ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
