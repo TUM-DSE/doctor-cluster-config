@@ -30,6 +30,14 @@ buildFHSUserEnv {
       gtk2
       gtk3
 
+      (libidn.overrideAttrs (old: {
+        # we need libidn.so.11 but nixpkgs has libidn.so.12
+        src = fetchurl {
+          url = "mirror://gnu/libidn/libidn-1.34.tar.gz";
+          sha256 = "sha256-Nxnil18vsoYF3zR5w4CvLPSrTpGeFQZSfkx2cK//bjw=";
+        };
+      }))
+
       # to compile some xilinx examples
       opencl-clhpp
       ocl-icd
