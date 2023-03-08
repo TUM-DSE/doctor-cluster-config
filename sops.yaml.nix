@@ -39,6 +39,7 @@ let
   "modules/sshd/[^/]+\\.yaml$" = [];
 	"modules/secrets.yml$" = groups.all;
 	"secrets.yml$" = [ ];
+	"docs/hosts/craig.sops$" = [ ];
 	"modules/sshd/ca-keys.yml$" = [ ];
  	"terraform/secrets.enc.json$" = [ ];
 	"terraform/github-permissions/secrets.enc.json$" = [ ]; # is a symlink to terraform/secrets

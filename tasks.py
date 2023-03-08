@@ -324,6 +324,23 @@ def update_docs(c, hosts=""):
         host_list = HOSTS
     document_nixos(host_list)
 
+@task
+def document_craig(c):
+    """
+    Dump craigs (switch) config to encrypted docs/hosts/craig.sops
+    """
+    # needs encryption because i dont trust the "encryption" used by the admin password found in that file
+    craig_sops = f"{ROOT}/docs/hosts/craig.sops"
+    with tempfile.TemporaryDirectory() as tmpdir:
+        c.run(f"ssh ADMIN@craig-mgmt.dse.in.tum.de 'no cli pagination; show startup-config; exit' > {tmpdir}/craig.txt || true") # ssh always terminates with 255
+        print("Diff old <> new config:")
+        c.run(f"diff <(sops -d {craig_sops}) {tmpdir}/craig.txt || true")
+        print("Diff end.")
+        c.run(f"mv {tmpdir}/craig.txt {craig_sops}")
+        c.run(f"sops -e {craig_sops} > {tmpdir}/craig.sops")
+        c.run(f"mv {tmpdir}/craig.sops {craig_sops}")
+        print(f"Wrote and encrypted {craig_sops}")
+
 
 @task
 def update_lldp_info(c, hosts=""):
