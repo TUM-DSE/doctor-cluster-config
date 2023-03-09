@@ -6,6 +6,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF48CsASF4l2oVA9GNNi0LCd4ONOtf0zkQx1tUbhSW3S joerg@turingmachine"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPS4sLGbDPZ4UDT3Rhy8uAz5vduRUAr0uEvdnUBP0cm4 nix@eve"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKs8JnEt7KgZBND3bHURoaxfDy3l0sMb0S07O165ySv2 doctorBuilder:peter@aenderpad"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAZpEtSfB0GDwcELc5/AKNiBZJV9OVfQ0BMFzBlF+8Yd raito@everywhere"
     ];
     uid = 5001;
   };
