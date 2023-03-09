@@ -87,6 +87,7 @@ let
   raitoKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaw9ihTG7ucB8P38XdalEWev8+q96e2yNm4B+/I9IJp raito@paris-laptop"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKiXXYkhRh+s7ixZ8rvG8ntIqd6FELQ9hh7HoaHQJRPU raito@munich-laptop"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAZpEtSfB0GDwcELc5/AKNiBZJV9OVfQ0BMFzBlF+8Yd TUM Nix remote builder key"
   ];
 
   kaiKeys = [
@@ -337,6 +338,9 @@ in
       openssh.authorizedKeys.keys = kamilKeys;
     };
   };
+
+  # Discussed with Jörg, wheels already give you somewhat trusted-user, necessary for remote builders setup.
+  nix.settings.trusted-users = [ "raito" ];
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
