@@ -336,6 +336,8 @@ in
       uid = 2026;
       openssh.authorizedKeys.keys = kamilKeys;
     };
+
+    root.openssh.authorizedKeys.keys = raitoKeys;
   };
 
   # DANGER ZONE!
