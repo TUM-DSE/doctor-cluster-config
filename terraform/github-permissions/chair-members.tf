@@ -17,10 +17,13 @@ locals {
     "myronfirst",     # Myron Tsatsarakis
     "Sabanic-P",      # Patrick Sabanic
   ])
+  internship = toset([
+    "RaitoBezarius" # Raito Bezarius (Internship)
+  ])
 }
 
 resource "github_membership" "TUM-DSE" {
-  for_each = local.chair_members
+  for_each = setunion(local.chair_members,local.internship)
   username = each.value
   role     = "admin"
   provider = github.TUM-DSE
