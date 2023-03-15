@@ -8,7 +8,9 @@
     ../modules/nfs
     ../modules/xilinx.nix
     ../modules/xrdp-passwords.nix
-    ../modules/amd_sev.nix
+    #../modules/amd_sev.nix
+    ../modules/amd_sev_svsm.nix
+    # ../modules/amd_sev_snp.nix
   ];
 
   networking.hostName = "ryan";
