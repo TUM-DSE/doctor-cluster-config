@@ -26,6 +26,8 @@
     ../modules/monitoring/telegraf.nix
   ];
 
+  simd.arch = "broadwell";
+
   # This also adds `/etc/os-release` to the lxc tarball
   system.build.tarball = lib.mkForce (pkgs.callPackage (pkgs.path + "/nixos/lib/make-system-tarball.nix") {
     extraArgs = "--owner=0";
