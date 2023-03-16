@@ -26,7 +26,7 @@ i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
 Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI webinterfaces.
 
-- use il1 VPN (see Accessing the server)
+- use il1 VPN (see Accessing the server, only for staff)
 - goto `https://$hostname-mgmt.dse.in.tum.de`
 - login credentials are encrypted in the doctor cluster repo `sops secrets.yaml`
 
