@@ -22,6 +22,17 @@ All servers in TUM have public ipv6/ipv4 addresses and dns record following the 
 
 i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
 
+# Management Interfaces
+
+Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI webinterfaces.
+
+- use il1 VPN (see Accessing the server)
+- goto `https://$hostname-mgmt.dse.in.tum.de`
+- login credentials are encrypted in the doctor cluster repo `sops secrets.yaml`
+
+To be able to accept self signed certificates in firefox: Go to the website `about:config` and set `network.stricttransportsecurity.preloadlist` to false.
+
+
 # Hosts
 
 - [Expansion cards and slots](../expansion_cards.md)
