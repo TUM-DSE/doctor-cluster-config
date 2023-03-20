@@ -30,7 +30,7 @@ let
       francisco
       mmisono
     ];
-    all = builtins.attrValues (keys.admins // keys.machines);
+    all = builtins.attrValues (keys.users // keys.machines);
   };
 
   # This is the list of permissions per file. The admin group has permissions
