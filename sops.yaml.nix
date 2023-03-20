@@ -28,6 +28,7 @@ let
       patrick
       myron
       francisco
+      mmisono
     ];
     all = builtins.attrValues (keys.admins // keys.machines);
   };
