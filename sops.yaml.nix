@@ -21,12 +21,10 @@ let
       # admins may access all secrets
       joerg
       peter
-      simon
       cmainas
       dimitrios
       atsushi
       patrick
-      myron
       francisco
       mmisono
     ];
