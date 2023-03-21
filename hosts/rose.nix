@@ -7,6 +7,9 @@
     ../modules/xilinx.nix
     ../modules/xrdp.nix
     ../modules/xrdp-passwords.nix
+
+    ../modules/amd_sev_snp.nix
+    #../modules/amd_sev_svsm.nix
   ];
 
   networking.hostName = "rose";
@@ -28,4 +31,12 @@
     "xilinx"
     "atsushi" 
   ];
+
+  # Don't manage vnet interface with systemd-networkd
+  systemd.network.networks."05-rose_vnet".extraConfig = ''
+    [Match]
+    Name = vnet*
+    [Link]
+    Unmanaged = yes
+  '';
 }
