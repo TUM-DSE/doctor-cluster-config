@@ -21,12 +21,10 @@ let
       # admins may access all secrets
       joerg
       peter
-      simon
       cmainas
       dimitrios
       atsushi
       patrick
-      myron
       francisco
       mmisono
     ];
@@ -35,20 +33,20 @@ let
 
   # This is the list of permissions per file. The admin group has permissions
   # for all files. Amy.yml additionally can be decrytped by amy.
-  sopsPermissions =  builtins.listToAttrs (mapAttrsToList (hostname: key: {name = "hosts/${hostname}.yml$"; value = [key];}) keys.machines) //
-	{
-  "modules/sshd/[^/]+\\.yaml$" = [];
-  "modules/secrets.yml$" = groups.all;
-	"secrets.yml$" = [ ];
-	"docs/hosts/craig.sops$" = [ ];
-	"modules/sshd/ca-keys.yml$" = [ ];
- 	"terraform/secrets.enc.json$" = [ ];
-	"terraform/github-permissions/secrets.enc.json$" = [ ]; # is a symlink to terraform/secrets
-	} //
-  builtins.mapAttrs (name: value:  (map (x: keys.machines.${x}) value)) {
-    "modules/nfs/secrets.yml$" =  ["bill" "nardole"];
-	  "modules/k3s/secrets.yml$" = ["astrid" "mickey" "dan"];
-  };
+  sopsPermissions = builtins.listToAttrs (mapAttrsToList (hostname: key: { name = "hosts/${hostname}.yml$"; value = [ key ]; }) keys.machines) //
+    {
+      "modules/sshd/[^/]+\\.yaml$" = [ ];
+      "modules/secrets.yml$" = groups.all;
+      "secrets.yml$" = [ ];
+      "docs/hosts/craig.sops$" = [ ];
+      "modules/sshd/ca-keys.yml$" = [ ];
+      "terraform/secrets.enc.json$" = [ ];
+      "terraform/github-permissions/secrets.enc.json$" = [ ]; # is a symlink to terraform/secrets
+    } //
+    builtins.mapAttrs (name: value: (map (x: keys.machines.${x}) value)) {
+      "modules/nfs/secrets.yml$" = [ "bill" "nardole" ];
+      "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
+    };
 
 in
 {
