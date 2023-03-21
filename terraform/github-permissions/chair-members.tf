@@ -1,6 +1,5 @@
 locals {
   chair_members = toset([
-    "ackxolotl",      # Simon Ellmann
     "AtsushiKoshiba", # Atsushi Koshiba
     "bhatotia",       # Pramod Bhatotia
     "dgiantsidi",     # Dimitra Giantsidi
@@ -14,7 +13,6 @@ locals {
     "rgouicem",       # Redha Gouicem
     "jedichen121",    # Jiyang Chen
     "mmisono",        # Masanori Misono
-    "myronfirst",     # Myron Tsatsarakis
     "Sabanic-P",      # Patrick Sabanic
   ])
   internship = toset([
