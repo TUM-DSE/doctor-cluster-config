@@ -96,6 +96,11 @@ let
   kamilKeys = [
   "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPCKEUYZMotuVIMsFnwgTeSfv3oqfazkmpfrahmL0xqt2TLRvNpiNs1OE5JS3loPPefQ5OmskItTovgm5uo2ZoR+6aJmaKnbYhIT3C9TOWO/WbPL+XpN+Go49MK2P92h0TgMQ+Ilff99BvNWIn/rbkmO6tWJByXpuQnCMYpCDO3rgeNBxYKYN1asEij18TgPSOxbgNq9Fy0zxNXwU+raozbx3/t6FQpMkKPcZ5uwlER8RidZOakZa9gioQKZmN6pGnEN4oQUhuQA8V5g+RrPaJcJhUGC5ZOQaOyr0sGH/s4la/rbTSMh5imcoC/74ZeRg44t34XSDP0XapS0ePWiY9WuQDn7elbNU4m188f3G41ZOnIBOkfle1mtfao8gO7zzJd1tbi056HkB9KGj9v96rN4LtG5CF6n8mQsyHIgeP91HWAkqdKwFC2LX3m7urzWvaA9JjejgFqOMMDlGSYrZ5MYfZaeRQPxukT4LlDyYnluOy08MpgQ7fvviY2PwvHfjdrVGDusBAiKSfbOB77qFr8WE1Xh0SQteJ9mADNqTeJG/aYw33a/HEaRs/gDlco4mRF9mw/RsPC/t5O7lb9GHIB0OfKPlGv2EbahHxbiWbsE7nFmzbG69GEL+9zVC3rbQ1fzjIkGHYlfLZ8ygrOVPGdtNeskDBx+kkjiHNwIptuw== kamilkozakowski@Kamils-MacBook-Air.local"
   ];
+
+  robertoKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcpGTfG8vzYCdGGeJ3YnO3W7kjN+r7tdRbV4ybDCUH3PJMxUap587HIvSDs1Y3xvMZme6Wb8NjEm7HWxd3/aRd1iwzzC+lCVQ/jAfrqnAbeGfx1v+e3zBTsXrUCe1rn9bDJ7ZJnvG1ZFtEbgnTTxtHao87VAQacxPJzkkXUu/ngWyQ7QMGarbs1BjVXFjWoOuWKDPFwjLeW8qiECSAJREyyN7AqMh4i9UzQDcc1Kms5k7iZA4HbGHlxwqcaRG5fluv1a/onlPwrU6rytgdgCn6V7rFUbO77aWwvK4F7y+H1JatzWYkWQvFZSZ8JbNyAsq46weOch+qOGgUeKr1r9Gp70/H3YbIDPzfIkZGY9prCoEv/9uUVus4wG7wcUtH43+3ehg7T00/4gzVhV+lwtpYyECti1X39AZHvFSCaE0PnYqQneF0XC78YySSG3UnaQU1uN5ct+JyI26f5H3Ayw1a4ItdgfxkdJBgzVpjE3cYlyxmYeEmRb9MnmR+MdThc9E= rc@w203-1y-v4.eduroam.dynamic.rbg.tum.de"
+  ];
+
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -335,6 +340,16 @@ in
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2026;
       openssh.authorizedKeys.keys = kamilKeys;
+    };
+
+    # Roberto Castellotti, MSc student (guided research) with Masa (unik)
+    roberto = {
+      isNormalUser = true;
+      home = "/home/roberto";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2027;
+      openssh.authorizedKeys.keys = robertoKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys;
