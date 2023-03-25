@@ -351,7 +351,7 @@ in
       home = "/home/nate";
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
-      uid = 2027;
+      uid = 2028;
       openssh.authorizedKeys.keys = nateKeys;
     };
 
