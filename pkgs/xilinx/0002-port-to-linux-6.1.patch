@@ -1,0 +1,938 @@
+From e4f7088ebad538e8422df58c753a2ce6a65eded9 Mon Sep 17 00:00:00 2001
+From: HE7086 <me@heyi7086.com>
+Date: Tue, 28 Mar 2023 16:48:40 +0200
+Subject: [PATCH] port to linux 6.1
+
+Signed-off-by: HE7086 <me@heyi7086.com>
+---
+ .../drivers/net/ethernet/sfc/ef10.c           |  8 +++---
+ .../drivers/net/ethernet/sfc/ef100_ethtool.c  |  8 ++++--
+ .../drivers/net/ethernet/sfc/ef100_netdev.c   |  2 +-
+ .../drivers/net/ethernet/sfc/ef100_rep.c      | 18 +++++++-----
+ .../drivers/net/ethernet/sfc/ef100_vdpa.c     | 28 +++++++++++--------
+ .../drivers/net/ethernet/sfc/ef100_vdpa_ops.c | 10 ++++---
+ .../drivers/net/ethernet/sfc/ef10_sriov.c     | 10 +++----
+ .../drivers/net/ethernet/sfc/efx.c            |  2 +-
+ .../drivers/net/ethernet/sfc/efx_channels.c   |  3 +-
+ .../drivers/net/ethernet/sfc/efx_common.c     |  4 +--
+ .../drivers/net/ethernet/sfc/efx_devlink.c    |  5 ++--
+ .../drivers/net/ethernet/sfc/ethtool.c        |  8 ++++--
+ .../drivers/net/ethernet/sfc/kernel_compat.c  |  3 ++
+ .../drivers/net/ethernet/sfc/mcdi_port.c      | 14 +++++++---
+ .../drivers/net/ethernet/sfc/ptp.c            |  4 ++-
+ .../drivers/net/ethernet/sfc/siena/efx.c      |  2 +-
+ .../net/ethernet/sfc/siena/efx_channels.c     |  3 +-
+ .../net/ethernet/sfc/siena/efx_common.c       |  4 +--
+ .../net/ethernet/sfc/siena/efx_devlink.c      |  5 ++--
+ .../drivers/net/ethernet/sfc/siena/ethtool.c  | 16 ++++++++---
+ .../net/ethernet/sfc/siena/ethtool_common.c   |  2 ++
+ .../drivers/net/ethernet/sfc/siena/farch.c    |  7 +++++
+ .../net/ethernet/sfc/siena/ioctl_common.c     |  1 +
+ .../net/ethernet/sfc/siena/kernel_compat.c    |  2 ++
+ .../drivers/net/ethernet/sfc/siena/mcdi.c     |  1 +
+ .../net/ethernet/sfc/siena/mcdi_filters.c     |  1 +
+ .../net/ethernet/sfc/siena/mcdi_port.c        | 14 +++++++---
+ .../net/ethernet/sfc/siena/mcdi_port_common.c |  2 ++
+ .../net/ethernet/sfc/siena/net_driver.h       |  1 +
+ .../drivers/net/ethernet/sfc/siena/ptp.c      |  4 ++-
+ .../drivers/net/ethernet/sfc/siena/xdp.c      |  4 ++-
+ .../drivers/net/ethernet/sfc/tc.c             |  4 ++-
+ .../net/ethernet/sfc/unittest_filters/afta.c  |  1 +
+ .../unittest_filters/arb_filter_test_mod.c    |  1 +
+ .../drivers/net/ethernet/sfc/xdp.c            |  3 +-
+ 35 files changed, 140 insertions(+), 65 deletions(-)
+
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10.c
+index a74f641..1a6908f 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10.c
+@@ -3951,7 +3951,7 @@ static int efx_ef10_vport_set_mac_address(struct efx_nic *efx)
+ 		goto restore_vadaptor;
+ 
+ 	rc = efx_ef10_vport_add_mac(efx, efx->vport.vport_id,
+-				    efx->net_dev->dev_addr);
++				    (u8 *)efx->net_dev->dev_addr);
+ 	if (!rc) {
+ 		ether_addr_copy(nic_data->vport_mac, efx->net_dev->dev_addr);
+ 	} else {
+@@ -4056,7 +4056,7 @@ static int efx_ef10_set_mac_address(struct efx_nic *efx)
+ 
+ 			rc = efx_ef10_sriov_set_vf_mac(efx_pf,
+ 						       nic_data->vf_index,
+-						       efx->net_dev->dev_addr);
++						       (u8 *)efx->net_dev->dev_addr);
+ 		} else if (!rc) {
+ 			struct efx_nic *efx_pf = pci_get_drvdata(pci_dev_pf);
+ 			unsigned int i;
+@@ -4070,7 +4070,7 @@ static int efx_ef10_set_mac_address(struct efx_nic *efx)
+ 
+ 				if (vf->efx == efx) {
+ 					/* Add new MAC to list */
+-					rc = efx_ef10_vport_add_mac(efx, vf->vport_id, efx->net_dev->dev_addr);
++					rc = efx_ef10_vport_add_mac(efx, vf->vport_id, (u8 *)efx->net_dev->dev_addr);
+ 					if (rc)
+ 						break;
+ 
+@@ -4078,7 +4078,7 @@ static int efx_ef10_set_mac_address(struct efx_nic *efx)
+ 					rc = efx_ef10_vport_del_mac(efx, vf->vport_id, vf->mac);
+ 					if (rc) {
+ 						/* If that failed, attempt to remove new MAC too */
+-						efx_ef10_vport_del_mac(efx, vf->vport_id, efx->net_dev->dev_addr);
++						efx_ef10_vport_del_mac(efx, vf->vport_id, (u8 *)efx->net_dev->dev_addr);
+ 						break;
+ 					}
+ 
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_ethtool.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_ethtool.c
+index a875656..52d0de4 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_ethtool.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_ethtool.c
+@@ -19,7 +19,9 @@
+ #define EFX_EF100_MAX_DMAQ_SIZE 16384UL
+ 
+ static void ef100_ethtool_get_ringparam(struct net_device *net_dev,
+-					struct ethtool_ringparam *ring)
++					struct ethtool_ringparam *ring,
++                    struct kernel_ethtool_ringparam *kernel_ring,
++                    struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	unsigned long driver_bitmap;
+@@ -37,7 +39,9 @@ static void ef100_ethtool_get_ringparam(struct net_device *net_dev,
+ }
+ 
+ static int ef100_ethtool_set_ringparam(struct net_device *net_dev,
+-				       struct ethtool_ringparam *ring)
++				       struct ethtool_ringparam *ring,
++                       struct kernel_ethtool_ringparam *kernel_ring,
++                       struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	int rc = 0;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_netdev.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_netdev.c
+index 94ad9ef..7acfbb2 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_netdev.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_netdev.c
+@@ -936,7 +936,7 @@ int ef100_probe_netdev(struct efx_probe_data *probe_data)
+ 	if (rc)
+ 		return rc;
+ 	/* Assign MAC address */
+-	memcpy(net_dev->dev_addr, net_dev->perm_addr, ETH_ALEN);
++	memcpy((void *)net_dev->dev_addr, net_dev->perm_addr, ETH_ALEN);
+ 	memcpy(nic_data->port_id, net_dev->perm_addr, ETH_ALEN);
+ 
+ 	if (!efx->type->is_vf) {
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_rep.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_rep.c
+index e9871a0..c26e645 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_rep.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_rep.c
+@@ -45,8 +45,8 @@ static int efx_ef100_rep_open(struct net_device *net_dev)
+ {
+ 	struct efx_rep *efv = netdev_priv(net_dev);
+ 
+-	netif_napi_add(net_dev, &efv->napi, efx_ef100_rep_poll,
+-		       NAPI_POLL_WEIGHT);
++	netif_napi_add(net_dev, &efv->napi, efx_ef100_rep_poll
++                /*, NAPI_POLL_WEIGHT*/ );
+ 	napi_enable(&efv->napi);
+ 	return 0;
+ }
+@@ -148,7 +148,7 @@ static int efx_ef100_rep_set_mac_address(struct net_device *net_dev, void *data)
+ 			return rc;
+ 	}
+ 
+-	ether_addr_copy(net_dev->dev_addr, new_addr);
++	ether_addr_copy((u8 *)net_dev->dev_addr, new_addr);
+ 	return 0;
+ }
+ 
+@@ -215,7 +215,9 @@ static void efx_ef100_rep_ethtool_set_msglevel(struct net_device *net_dev,
+ }
+ 
+ static void efx_ef100_rep_ethtool_get_ringparam(struct net_device *net_dev,
+-						struct ethtool_ringparam *ring)
++						struct ethtool_ringparam *ring,
++                        struct kernel_ethtool_ringparam *kernel_ring,
++                        struct netlink_ext_ack *extack)
+ {
+ 	struct efx_rep *efv = netdev_priv(net_dev);
+ 
+@@ -224,7 +226,9 @@ static void efx_ef100_rep_ethtool_get_ringparam(struct net_device *net_dev,
+ }
+ 
+ static int efx_ef100_rep_ethtool_set_ringparam(struct net_device *net_dev,
+-					       struct ethtool_ringparam *ring)
++					       struct ethtool_ringparam *ring,
++                           struct kernel_ethtool_ringparam *kernel_ring,
++                           struct netlink_ext_ack *extack)
+ {
+ 	struct efx_rep *efv = netdev_priv(net_dev);
+ 
+@@ -346,7 +350,7 @@ static int efx_ef100_configure_rep(struct efx_rep *efv)
+ 		/* Get the assigned MAC address */
+ 		(void)ef100_get_mac_address(efx, net_dev->perm_addr, efv->clid,
+ 					    true);
+-		memcpy(net_dev->dev_addr, net_dev->perm_addr, ETH_ALEN);
++		memcpy((void *)net_dev->dev_addr, net_dev->perm_addr, ETH_ALEN);
+ 	}
+ 
+ 	mutex_lock(&efx->tc->mutex);
+@@ -399,7 +403,7 @@ static int efx_ef100_configure_remote_rep(struct efx_rep *efv,
+ 		/* Get the assigned MAC address */
+ 		(void)ef100_get_mac_address(efx, net_dev->perm_addr, efv->clid,
+ 					    true);
+-		memcpy(net_dev->dev_addr, net_dev->perm_addr, ETH_ALEN);
++		memcpy((void *)net_dev->dev_addr, net_dev->perm_addr, ETH_ALEN);
+ 	}
+ 
+ 	mutex_lock(&efx->tc->mutex);
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa.c
+index d6c2744..c23061a 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa.c
+@@ -408,8 +408,10 @@ static int vdpa_update_domain(struct ef100_vdpa_nic *vdpa_nic)
+ 	if (!bus)
+ 		return -EFAULT;
+ 
+-	if (!iommu_capable(bus, IOMMU_CAP_CACHE_COHERENCY))
+-		return -ENOTSUPP;
++	/* if (!iommu_capable(bus, IOMMU_CAP_CACHE_COHERENCY)) */
++    if (!device_iommu_capable(dma_dev, IOMMU_CAP_CACHE_COHERENCY)) {
++        return -ENOTSUPP;
++    }
+ 
+ 	vdpa_nic->domain = iommu_get_domain_for_dev(dma_dev);
+ 	if (!vdpa_nic->domain)
+@@ -715,9 +717,9 @@ struct ef100_vdpa_nic *ef100_vdpa_create(struct efx_nic *efx)
+ {
+ 	struct ef100_nic_data *nic_data = efx->nic_data;
+ 	struct ef100_vdpa_nic *vdpa_nic;
+-#if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_VDPA_ALLOC_NAME_PARAM)
++/* #if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_VDPA_ALLOC_NAME_PARAM) */
+ 	char name[EFX_VDPA_NAME_LEN];
+-#endif
++/* #endif */
+ 	unsigned int allocated_vis;
+ 	struct device *dev;
+ 	int rc;
+@@ -731,18 +733,20 @@ struct ef100_vdpa_nic *ef100_vdpa_create(struct efx_nic *efx)
+ 		return ERR_PTR(rc);
+ 	}
+ 
+-#if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_VDPA_ALLOC_NAME_PARAM)
++/* #if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_VDPA_ALLOC_NAME_PARAM) */
+ 	snprintf(name, sizeof(name), EFX_VDPA_NAME(nic_data));
+-#endif
++/* #endif */
+ 	vdpa_nic = vdpa_alloc_device(struct ef100_vdpa_nic,
+ 				     vdpa_dev, &efx->pci_dev->dev,
+ 				     &ef100_vdpa_config_ops
+-#if defined(EFX_USE_KCOMPAT) && !defined(EFX_HAVE_VDPA_REGISTER_NVQS_PARAM) && defined(EFX_HAVE_VDPA_ALLOC_NVQS_PARAM)
++/* #if defined(EFX_USE_KCOMPAT) && !defined(EFX_HAVE_VDPA_REGISTER_NVQS_PARAM) && defined(EFX_HAVE_VDPA_ALLOC_NVQS_PARAM) */
+ 				     , (allocated_vis - 1) * 2
+-#endif
+-#if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_VDPA_ALLOC_NAME_PARAM)
++/* #endif */
++                     , 1 /* TODO: number of address spaces */
++/* #if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_VDPA_ALLOC_NAME_PARAM) */
+ 				     , name
+-#endif
++/* #endif */
++                     , false
+ 				     );
+ 	if (!vdpa_nic) {
+ 		pci_err(efx->pci_dev,
+@@ -821,7 +825,9 @@ struct ef100_vdpa_nic *ef100_vdpa_create(struct efx_nic *efx)
+ 	rc = vdpa_register_device(&vdpa_nic->vdpa_dev,
+ 				  (allocated_vis - 1) * 2);
+ #else
+-	rc = vdpa_register_device(&vdpa_nic->vdpa_dev);
++	/* rc = vdpa_register_device(&vdpa_nic->vdpa_dev); */
++	rc = vdpa_register_device(&vdpa_nic->vdpa_dev,
++				  (allocated_vis - 1) * 2);
+ #endif
+ 	if (rc) {
+ 		pci_err(efx->pci_dev,
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa_ops.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa_ops.c
+index 9d2945d..0fdb209 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa_ops.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef100_vdpa_ops.c
+@@ -1013,8 +1013,9 @@ static bool is_iova_overlap(u64 iova1, u64 size1, u64 iova2, u64 size2)
+ }
+ 
+ static int ef100_vdpa_dma_map(struct vdpa_device *vdev,
++                  unsigned int asid,
+ 			      u64 iova, u64 size,
+-			      u64 pa, u32 perm)
++			      u64 pa, u32 perm, void *opaque)
+ {
+ 	struct ef100_vdpa_nic *vdpa_nic;
+ 	struct ef100_nic_data *nic_data;
+@@ -1088,7 +1089,7 @@ fail:
+         return rc;
+ }
+ 
+-static int ef100_vdpa_dma_unmap(struct vdpa_device *vdev, u64 iova, u64 size)
++static int ef100_vdpa_dma_unmap(struct vdpa_device *vdev, unsigned int asid, u64 iova, u64 size)
+ {
+ 	struct ef100_vdpa_nic *vdpa_nic = NULL;
+ 	int rc;
+@@ -1151,8 +1152,9 @@ const struct vdpa_config_ops ef100_vdpa_config_ops = {
+ 	.get_vq_irq          = ef100_get_vq_irq,
+ #endif
+ 	.get_vq_align	     = ef100_vdpa_get_vq_align,
+-	.get_features	     = ef100_vdpa_get_features,
+-	.set_features	     = ef100_vdpa_set_features,
++	.get_device_features = ef100_vdpa_get_features,
++	.get_driver_features = ef100_vdpa_get_features, /* TODO: get features*/
++	.set_driver_features = ef100_vdpa_set_features,
+ 	.set_config_cb	     = ef100_vdpa_set_config_cb,
+ 	.get_vq_num_max      = ef100_vdpa_get_vq_num_max,
+ 	.get_device_id	     = ef100_vdpa_get_device_id,
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10_sriov.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10_sriov.c
+index 7967660..d4f8151 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10_sriov.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ef10_sriov.c
+@@ -223,7 +223,7 @@ int efx_ef10_vswitching_probe_pf(struct efx_nic *efx)
+ 	if (rc)
+ 		goto fail2;
+ 
+-	rc = efx_ef10_vport_add_mac(efx, efx->vport.vport_id, net_dev->dev_addr);
++	rc = efx_ef10_vport_add_mac(efx, efx->vport.vport_id, (u8 *)net_dev->dev_addr);
+ 	if (rc)
+ 		goto fail3;
+ 	ether_addr_copy(nic_data->vport_mac, net_dev->dev_addr);
+@@ -299,7 +299,7 @@ int efx_ef10_vswitching_restore_vf(struct efx_nic *efx)
+ 			   "PF has changed my MAC to %pM\n",
+ 			   new_addr);
+ 		ether_addr_copy(perm_addr, new_addr);
+-		ether_addr_copy(efx->net_dev->dev_addr, new_addr);
++		ether_addr_copy((u8 *)efx->net_dev->dev_addr, new_addr);
+ 	}
+ 
+ 	if (!nic_data->must_probe_vswitching)
+@@ -328,7 +328,7 @@ void efx_ef10_vswitching_remove_pf(struct efx_nic *efx)
+ 
+ 	if (!is_zero_ether_addr(nic_data->vport_mac)) {
+ 		efx_ef10_vport_del_mac(efx, efx->vport.vport_id,
+-				       efx->net_dev->dev_addr);
++				       (u8 *)efx->net_dev->dev_addr);
+ 		eth_zero_addr(nic_data->vport_mac);
+ 	}
+ 
+@@ -708,7 +708,7 @@ int efx_ef10_sriov_set_vf_mac(struct efx_nic *efx, int vf_i, u8 *mac)
+ 			goto restore_evb_port;
+ 		eth_zero_addr(vf->mac);
+ 		if (vf->efx)
+-			eth_zero_addr(vf->efx->net_dev->dev_addr);
++			eth_zero_addr((u8 *)vf->efx->net_dev->dev_addr);
+ 	}
+ 
+ 	if (!is_zero_ether_addr(mac)) {
+@@ -717,7 +717,7 @@ int efx_ef10_sriov_set_vf_mac(struct efx_nic *efx, int vf_i, u8 *mac)
+ 			goto reset_nic;
+ 		ether_addr_copy(vf->mac, mac);
+ 		if (vf->efx)
+-			ether_addr_copy(vf->efx->net_dev->dev_addr, mac);
++			ether_addr_copy((u8 *)vf->efx->net_dev->dev_addr, mac);
+ 	}
+ 
+ restore_evb_port:
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx.c
+index 63c2f23..5e961c5 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx.c
+@@ -1120,7 +1120,7 @@ int efx_pci_probe_post_io(struct efx_nic *efx,
+ 		return rc;
+ 
+ 	/* Initialise MAC address to permanent address */
+-	ether_addr_copy(efx->net_dev->dev_addr, efx->net_dev->perm_addr);
++	ether_addr_copy((u8 *)efx->net_dev->dev_addr, efx->net_dev->perm_addr);
+ 
+ 	rc = efx_check_queue_size(efx, &rx_ring,
+ 				  EFX_RXQ_MIN_ENT, efx_max_dmaq_size(efx),
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_channels.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_channels.c
+index dca0984..6aebba3 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_channels.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_channels.c
+@@ -9,6 +9,7 @@
+ 
+ #include "net_driver.h"
+ #include <linux/module.h>
++#include <linux/filter.h>
+ #ifndef EFX_USE_KCOMPAT
+ #include <xen/xen.h>
+ #endif
+@@ -2181,7 +2182,7 @@ static int efx_init_napi_channel(struct efx_channel *channel)
+ 
+ 	channel->napi_dev = efx->net_dev;
+ 	netif_napi_add(channel->napi_dev, &channel->napi_str,
+-		       efx_poll, napi_weight);
++		       efx_poll /*, napi_weight */);
+ #if defined(EFX_USE_KCOMPAT) && defined(EFX_WANT_DRIVER_BUSY_POLL)
+ 	efx_channel_busy_poll_init(channel);
+ #endif
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_common.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_common.c
+index f889757..dba7091 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_common.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_common.c
+@@ -216,12 +216,12 @@ int efx_set_mac_address(struct net_device *net_dev, void *data)
+ 	}
+ 
+ 	ether_addr_copy(old_addr, net_dev->dev_addr); /* save old address */
+-	ether_addr_copy(net_dev->dev_addr, new_addr);
++	ether_addr_copy((u8 *)net_dev->dev_addr, new_addr);
+ 
+ 	if (efx->type->set_mac_address) {
+ 		rc = efx->type->set_mac_address(efx);
+ 		if (rc) {
+-			ether_addr_copy(net_dev->dev_addr, old_addr);
++			ether_addr_copy((u8 *)net_dev->dev_addr, old_addr);
+ 			return rc;
+ 		}
+ 	}
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_devlink.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_devlink.c
+index 0bffe5a..cc6649b 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_devlink.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/efx_devlink.c
+@@ -486,7 +486,8 @@ int efx_probe_devlink(struct efx_nic *efx)
+ 				     sizeof(struct efx_devlink),
+ 				     &efx->pci_dev->dev);
+ #else
+-				     sizeof(struct efx_devlink));
++				     sizeof(struct efx_devlink),
++				     &efx->pci_dev->dev);
+ #endif
+ 	if (!efx->devlink)
+ 		return -ENOMEM;
+@@ -496,7 +497,7 @@ int efx_probe_devlink(struct efx_nic *efx)
+ #if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_DEVLINK_ALLOC_DEV)
+ 	rc = devlink_register(efx->devlink);
+ #else
+-	rc = devlink_register(efx->devlink, &efx->pci_dev->dev);
++	/* rc = */ devlink_register(efx->devlink /*, &efx->pci_dev->dev */);
+ #endif
+ 	if (rc)
+ 		goto out_free;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c
+index 8728ae4..be27ee1 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ethtool.c
+@@ -276,7 +276,9 @@ static int efx_ethtool_set_coalesce(struct net_device *net_dev,
+ }
+ 
+ static void efx_ethtool_get_ringparam(struct net_device *net_dev,
+-				      struct ethtool_ringparam *ring)
++				      struct ethtool_ringparam *ring,
++				      struct kernel_ethtool_ringparam *kernel_ring,
++				      struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 
+@@ -287,7 +289,9 @@ static void efx_ethtool_get_ringparam(struct net_device *net_dev,
+ }
+ 
+ static int efx_ethtool_set_ringparam(struct net_device *net_dev,
+-				     struct ethtool_ringparam *ring)
++				     struct ethtool_ringparam *ring,
++				      struct kernel_ethtool_ringparam *kernel_ring,
++				      struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	int rc;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/kernel_compat.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/kernel_compat.c
+index f11e7d4..673216a 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/kernel_compat.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/kernel_compat.c
+@@ -233,10 +233,13 @@ int pci_wake_from_d3(struct pci_dev *dev, bool enable)
+ #define  PCI_MSIX_BIR          0x7
+ 
+ #define PCI_MSIX_ENTRY_SIZE		16
++
++#ifndef PCI_MSIX_ENTRY_LOWER_ADDR
+ #define  PCI_MSIX_ENTRY_LOWER_ADDR	0
+ #define  PCI_MSIX_ENTRY_UPPER_ADDR	4
+ #define  PCI_MSIX_ENTRY_DATA		8
+ #define  PCI_MSIX_ENTRY_VECTOR_CTRL	12
++#endif
+ 
+ static void
+ efx_for_each_msix_vector(struct efx_nic *efx,
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/mcdi_port.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/mcdi_port.c
+index 4052b64..98170c5 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/mcdi_port.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/mcdi_port.c
+@@ -146,8 +146,10 @@ static int efx_mcdi_phy_stats_init(struct efx_nic *efx)
+ 	BUILD_BUG_ON(ARRAY_SIZE(debug_entries) != MC_CMD_PHY_NSTATS + 1);
+ 
+ 	/* Allocata a DMA buffer for phy stats */
+-	phy_data->stats = pci_alloc_consistent(efx->pci_dev, EFX_PAGE_SIZE,
+-					       &phy_data->stats_addr);
++	/* phy_data->stats = pci_alloc_consistent(efx->pci_dev, EFX_PAGE_SIZE,
++					       &phy_data->stats_addr); */
++	phy_data->stats = dma_alloc_coherent(&efx->pci_dev->dev, EFX_PAGE_SIZE,
++					       &phy_data->stats_addr, GFP_KERNEL);
+ 	if (phy_data->stats == NULL)
+ 		return -ENOMEM;
+ 
+@@ -162,7 +164,9 @@ static int efx_mcdi_phy_stats_init(struct efx_nic *efx)
+ 	return 0;
+ 
+ fail:
+-	pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE, phy_data->stats,
++	/* pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE, phy_data->stats,
++			    phy_data->stats_addr); */
++	dma_free_coherent(&efx->pci_dev->dev, EFX_PAGE_SIZE, phy_data->stats,
+ 			    phy_data->stats_addr);
+ 
+ 	return rc;
+@@ -174,7 +178,9 @@ static void efx_mcdi_phy_stats_fini(struct efx_nic *efx)
+ 
+ 	efx_trim_debugfs_port(efx, debug_entries);
+ 	if (phy_data)
+-		pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE,
++		/* pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE,
++				    phy_data->stats, phy_data->stats_addr); */
++		dma_free_coherent(&efx->pci_dev->dev, EFX_PAGE_SIZE,
+ 				    phy_data->stats, phy_data->stats_addr);
+ }
+ 
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ptp.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ptp.c
+index 3e1752f..7e62bb1 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ptp.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/ptp.c
+@@ -773,6 +773,7 @@ static struct attribute *efx_pps_device_attrs[] = {
+ 	EFX_PPS_ATTR_PTR(pps_off_mean),
+ 	NULL,
+ };
++ATTRIBUTE_GROUPS(efx_pps_device);
+ 
+ 
+ /* Expose maximum PPB freq adjustment as a device attribute, allowing
+@@ -811,7 +812,8 @@ static struct kobj_type efx_sysfs_ktype = {
+ 	.release = ptp_boardattr_release,
+ 	/* May need to cast away const */
+ 	.sysfs_ops = (struct sysfs_ops *)&efx_sysfs_ops,
+-	.default_attrs = efx_pps_device_attrs,
++	/* .default_attrs = efx_pps_device_attrs, */
++	.default_groups = efx_pps_device_groups,
+ };
+ 
+ #endif
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx.c
+index deb668f..1974a6e 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx.c
+@@ -1079,7 +1079,7 @@ int efx_pci_probe_post_io(struct efx_nic *efx,
+ 		return rc;
+ 
+ 	/* Initialise MAC address to permanent address */
+-	ether_addr_copy(efx->net_dev->dev_addr, efx->net_dev->perm_addr);
++	ether_addr_copy((u8 *)efx->net_dev->dev_addr, efx->net_dev->perm_addr);
+ 
+ 	rc = efx_check_queue_size(efx, &rx_ring,
+ 				  EFX_RXQ_MIN_ENT, efx_max_dmaq_size(efx),
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_channels.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_channels.c
+index 7a3e447..9004672 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_channels.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_channels.c
+@@ -9,6 +9,7 @@
+ 
+ #include "net_driver.h"
+ #include <linux/module.h>
++#include <linux/filter.h>
+ #ifndef EFX_USE_KCOMPAT
+ #include <xen/xen.h>
+ #endif
+@@ -2320,7 +2321,7 @@ static int efx_init_napi_channel(struct efx_channel *channel)
+ 
+ 	channel->napi_dev = efx->net_dev;
+ 	netif_napi_add(channel->napi_dev, &channel->napi_str,
+-		       efx_poll, napi_weight);
++		       efx_poll /*, napi_weight */);
+ #if defined(EFX_NOT_UPSTREAM) && defined(EFX_USE_SFC_LRO)
+ 	{
+ 		int rc = efx_ssr_init(channel, efx);
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_common.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_common.c
+index 16820ef..3cd0488 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_common.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_common.c
+@@ -213,12 +213,12 @@ int efx_set_mac_address(struct net_device *net_dev, void *data)
+ 	}
+ 
+ 	ether_addr_copy(old_addr, net_dev->dev_addr); /* save old address */
+-	ether_addr_copy(net_dev->dev_addr, new_addr);
++	ether_addr_copy((u8 *)net_dev->dev_addr, new_addr);
+ 
+ 	if (efx->type->set_mac_address) {
+ 		rc = efx->type->set_mac_address(efx);
+ 		if (rc) {
+-			ether_addr_copy(net_dev->dev_addr, old_addr);
++			ether_addr_copy((u8 *)net_dev->dev_addr, old_addr);
+ 			return rc;
+ 		}
+ 	}
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_devlink.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_devlink.c
+index 27ab588..da42588 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_devlink.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/efx_devlink.c
+@@ -436,7 +436,8 @@ int efx_probe_devlink(struct efx_nic *efx)
+ 				     sizeof(struct efx_devlink),
+ 				     &efx->pci_dev->dev);
+ #else
+-				     sizeof(struct efx_devlink));
++				     sizeof(struct efx_devlink),
++				     &efx->pci_dev->dev);
+ #endif
+ 	if (!efx->devlink)
+ 		return -ENOMEM;
+@@ -446,7 +447,7 @@ int efx_probe_devlink(struct efx_nic *efx)
+ #if !defined(EFX_USE_KCOMPAT) || defined(EFX_HAVE_DEVLINK_ALLOC_DEV)
+ 	rc = devlink_register(efx->devlink);
+ #else
+-	rc = devlink_register(efx->devlink, &efx->pci_dev->dev);
++	/* rc = */ devlink_register(efx->devlink /*, &efx->pci_dev->dev */);
+ #endif
+ 	if (rc)
+ 		goto out_free;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool.c
+index cdb6adb..f8ee289 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool.c
+@@ -236,7 +236,9 @@ static u32 efx_ethtool_get_link(struct net_device *net_dev)
+  */
+ 
+ static int efx_ethtool_get_coalesce(struct net_device *net_dev,
+-				    struct ethtool_coalesce *coalesce)
++				    struct ethtool_coalesce *coalesce,
++				    struct kernel_ethtool_coalesce *kernel_coal,
++				    struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	unsigned int tx_usecs, rx_usecs;
+@@ -255,7 +257,9 @@ static int efx_ethtool_get_coalesce(struct net_device *net_dev,
+ }
+ 
+ static int efx_ethtool_set_coalesce(struct net_device *net_dev,
+-				    struct ethtool_coalesce *coalesce)
++				    struct ethtool_coalesce *coalesce,
++				    struct kernel_ethtool_coalesce *kernel_coal,
++				    struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	struct efx_channel *channel;
+@@ -320,7 +324,9 @@ static int efx_ethtool_set_coalesce(struct net_device *net_dev,
+ }
+ 
+ static void efx_ethtool_get_ringparam(struct net_device *net_dev,
+-				      struct ethtool_ringparam *ring)
++				      struct ethtool_ringparam *ring,
++				      struct kernel_ethtool_ringparam *kernel_ring,
++				      struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 
+@@ -331,7 +337,9 @@ static void efx_ethtool_get_ringparam(struct net_device *net_dev,
+ }
+ 
+ static int efx_ethtool_set_ringparam(struct net_device *net_dev,
+-				     struct ethtool_ringparam *ring)
++				     struct ethtool_ringparam *ring,
++				     struct kernel_ethtool_ringparam *kernel_ring,
++				     struct netlink_ext_ack *extack)
+ {
+ 	struct efx_nic *efx = efx_netdev_priv(net_dev);
+ 	int rc;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool_common.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool_common.c
+index 4be2882..489b671 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool_common.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ethtool_common.c
+@@ -1267,6 +1267,7 @@ int efx_ethtool_get_rxnfc(struct net_device *net_dev,
+ 			case TCP_V4_FLOW:
+ 				info->data |= RXH_L4_B_0_1 | RXH_L4_B_2_3;
+ 				/* fall through */
++				__attribute__((__fallthrough__));
+ 			case UDP_V4_FLOW:
+ 			case SCTP_V4_FLOW:
+ 			case AH_ESP_V4_FLOW:
+@@ -1276,6 +1277,7 @@ int efx_ethtool_get_rxnfc(struct net_device *net_dev,
+ 			case TCP_V6_FLOW:
+ 				info->data |= RXH_L4_B_0_1 | RXH_L4_B_2_3;
+ 				/* fall through */
++				__attribute__((__fallthrough__));
+ 			case UDP_V6_FLOW:
+ 			case SCTP_V6_FLOW:
+ 			case AH_ESP_V6_FLOW:
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/farch.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/farch.c
+index 0bff38e..1c04761 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/farch.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/farch.c
+@@ -1146,9 +1146,11 @@ efx_farch_handle_rx_event(struct efx_channel *channel, const efx_qword_t *event)
+ 		case FSE_CZ_RX_EV_HDR_TYPE_IPV4V6_TCP:
+ 			flags |= EFX_RX_PKT_TCP;
+ 			/* fall through */
++            __attribute__((__fallthrough__));
+ 		case FSE_CZ_RX_EV_HDR_TYPE_IPV4V6_UDP:
+ 			flags |= EFX_RX_PKT_CSUMMED;
+ 			/* fall through */
++            __attribute__((__fallthrough__));
+ 		case FSE_CZ_RX_EV_HDR_TYPE_IPV4V6_OTHER:
+ 			flags |= EFX_QWORD_FIELD(*event, FSF_CZ_RX_EV_IPV6_PKT)
+ 				? EFX_RX_PKT_IPV6 : EFX_RX_PKT_IPV4;
+@@ -1448,6 +1450,7 @@ int efx_farch_ev_process(struct efx_channel *channel, int budget)
+ 			    efx->type->handle_global_event(channel, &event))
+ 				break;
+ 			/* else fall through */
++            __attribute__((__fallthrough__));
+ 		default:
+ 			netif_err(efx, hw, efx->net_dev,
+ 				  "channel %d unknown event type %d"
+@@ -2258,6 +2261,7 @@ efx_farch_filter_from_gen_spec(struct efx_farch_filter_spec *spec,
+ 	      EFX_FILTER_MATCH_REM_HOST | EFX_FILTER_MATCH_REM_PORT):
+ 		is_full = true;
+ 		/* fall through */
++        __attribute__((__fallthrough__));
+ 	case (EFX_FILTER_MATCH_ETHER_TYPE | EFX_FILTER_MATCH_IP_PROTO |
+ 	      EFX_FILTER_MATCH_LOC_HOST | EFX_FILTER_MATCH_LOC_PORT): {
+ 		__be32 rhost, host1, host2;
+@@ -2313,6 +2317,7 @@ efx_farch_filter_from_gen_spec(struct efx_farch_filter_spec *spec,
+ 	case EFX_FILTER_MATCH_LOC_MAC | EFX_FILTER_MATCH_OUTER_VID:
+ 		is_full = true;
+ 		/* fall through */
++        __attribute__((__fallthrough__));
+ 	case EFX_FILTER_MATCH_LOC_MAC:
+ 		spec->type = (is_full ? EFX_FARCH_FILTER_MAC_FULL :
+ 			      EFX_FARCH_FILTER_MAC_WILD);
+@@ -2360,6 +2365,7 @@ efx_farch_filter_to_gen_spec(struct efx_filter_spec *gen_spec,
+ 	case EFX_FARCH_FILTER_UDP_FULL:
+ 		is_full = true;
+ 		/* fall through */
++        __attribute__((__fallthrough__));
+ 	case EFX_FARCH_FILTER_TCP_WILD:
+ 	case EFX_FARCH_FILTER_UDP_WILD: {
+ 		__be32 host1, host2;
+@@ -2404,6 +2410,7 @@ efx_farch_filter_to_gen_spec(struct efx_filter_spec *gen_spec,
+ 	case EFX_FARCH_FILTER_MAC_FULL:
+ 		is_full = true;
+ 		/* fall through */
++        __attribute__((__fallthrough__));
+ 	case EFX_FARCH_FILTER_MAC_WILD:
+ 		gen_spec->match_flags = EFX_FILTER_MATCH_LOC_MAC;
+ 		if (is_full)
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ioctl_common.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ioctl_common.c
+index a4549a4..149b841 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ioctl_common.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ioctl_common.c
+@@ -414,6 +414,7 @@ int efx_ioctl_rxnfc(struct efx_nic *efx, void __user *useraddr)
+ 				return -ENOMEM;
+ 		}
+ 		/* fall through */
++		__attribute__((__fallthrough__));
+ 	case ETHTOOL_GRXFH:
+ 	case ETHTOOL_GRXRINGS:
+ 	case ETHTOOL_GRXCLSRLCNT:
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/kernel_compat.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/kernel_compat.c
+index f11e7d4..82a4b83 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/kernel_compat.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/kernel_compat.c
+@@ -233,10 +233,12 @@ int pci_wake_from_d3(struct pci_dev *dev, bool enable)
+ #define  PCI_MSIX_BIR          0x7
+ 
+ #define PCI_MSIX_ENTRY_SIZE		16
++#ifndef PCI_MSIX_ENTRY_LOWER_ADDR
+ #define  PCI_MSIX_ENTRY_LOWER_ADDR	0
+ #define  PCI_MSIX_ENTRY_UPPER_ADDR	4
+ #define  PCI_MSIX_ENTRY_DATA		8
+ #define  PCI_MSIX_ENTRY_VECTOR_CTRL	12
++#endif
+ 
+ static void
+ efx_for_each_msix_vector(struct efx_nic *efx,
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi.c
+index 669deaf..379af36 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi.c
+@@ -463,6 +463,7 @@ static int efx_mcdi_errno(struct efx_nic *efx, unsigned int mcdi_err)
+ 		if (efx->type->is_vf)
+ 			return -EAGAIN;
+ 		/* Fall through */
++		__attribute__((__fallthrough__));
+ 	default:
+ 		return -EPROTO;
+ 	}
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_filters.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_filters.c
+index afffcdf..aef298c 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_filters.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_filters.c
+@@ -358,6 +358,7 @@ efx_mcdi_filter_push_prep_set_match_fields(struct efx_nic *efx,
+ 		case EFX_ENCAP_TYPE_VXLAN:
+ 			vxlan = true;
+ 			/* fallthrough */
++			__attribute__((__fallthrough__));
+ 		case EFX_ENCAP_TYPE_GENEVE:
+ 			COPY_VALUE(false, ether_type, ETHER_TYPE);
+ 			outer_ip_proto = IPPROTO_UDP;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port.c
+index c6c4b98..0530210 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port.c
+@@ -152,8 +152,10 @@ static int efx_mcdi_phy_stats_init(struct efx_nic *efx)
+ 	BUILD_BUG_ON(ARRAY_SIZE(debug_entries) != MC_CMD_PHY_NSTATS + 1);
+ 
+ 	/* Allocata a DMA buffer for phy stats */
+-	phy_data->stats = pci_alloc_consistent(efx->pci_dev, EFX_PAGE_SIZE,
+-					       &phy_data->stats_addr);
++	/* phy_data->stats = pci_alloc_consistent(efx->pci_dev, EFX_PAGE_SIZE,
++					       &phy_data->stats_addr); */
++	phy_data->stats = dma_alloc_coherent(&efx->pci_dev->dev, EFX_PAGE_SIZE,
++					&phy_data->stats_addr, GFP_KERNEL);
+ 	if (phy_data->stats == NULL)
+ 		return -ENOMEM;
+ 
+@@ -168,7 +170,9 @@ static int efx_mcdi_phy_stats_init(struct efx_nic *efx)
+ 	return 0;
+ 
+ fail:
+-	pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE, phy_data->stats,
++	/* pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE, phy_data->stats,
++			    phy_data->stats_addr); */
++	dma_free_coherent(&efx->pci_dev->dev, EFX_PAGE_SIZE, phy_data->stats,
+ 			    phy_data->stats_addr);
+ 
+ 	return rc;
+@@ -180,7 +184,9 @@ static void efx_mcdi_phy_stats_fini(struct efx_nic *efx)
+ 
+ 	efx_trim_debugfs_port(efx, debug_entries);
+ 	if (phy_data)
+-		pci_free_consistent(efx->pci_dev, EFX_PAGE_SIZE,
++		/* pci_free_consistent(efx->pci_dev->dev, EFX_PAGE_SIZE,
++				    phy_data->stats, phy_data->stats_addr); */
++		dma_free_coherent(&efx->pci_dev->dev, EFX_PAGE_SIZE,
+ 				    phy_data->stats, phy_data->stats_addr);
+ }
+ 
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port_common.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port_common.c
+index ee54149..c566e5c 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port_common.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/mcdi_port_common.c
+@@ -34,6 +34,7 @@ static u8 efx_mcdi_link_state_fcntl(struct efx_link_state *link_state)
+ 	default:
+ 		WARN_ON_ONCE(1);
+ 		/* fall through */
++		__attribute__((__fallthrough__));
+ 	case 0:
+ 		return MC_CMD_FCNTL_OFF;
+ 	}
+@@ -482,6 +483,7 @@ void efx_mcdi_phy_decode_link(struct efx_nic *efx,
+ 	default:
+ 		WARN_ON(1);
+ 		/* fall through */
++		__attribute__((__fallthrough__));
+ 	case MC_CMD_FCNTL_OFF:
+ 		link_state->fc = 0;
+ 		break;
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/net_driver.h b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/net_driver.h
+index 67546b7..52f8046 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/net_driver.h
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/net_driver.h
+@@ -955,6 +955,7 @@ static inline bool efx_channel_lock_napi(struct efx_channel *channel)
+ 			set_bit(EFX_CHANNEL_STATE_NAPI_REQ_BIT,
+ 				&channel->busy_poll_state);
+ 			/* fallthrough */
++			__attribute__((__fallthrough__));
+ 		case EFX_CHANNEL_STATE_POLL | EFX_CHANNEL_STATE_NAPI_REQ:
+ 			return false;
+ 		default:
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ptp.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ptp.c
+index 69d75bf..28e12eb 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ptp.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/ptp.c
+@@ -811,6 +811,7 @@ static struct attribute *efx_pps_device_attrs[] = {
+ 	EFX_PPS_ATTR_PTR(pps_off_mean),
+ 	NULL,
+ };
++ATTRIBUTE_GROUPS(efx_pps_device);
+ 
+ 
+ /* Expose maximum PPB freq adjustment as a device attribute, allowing
+@@ -849,7 +850,8 @@ static struct kobj_type efx_sysfs_ktype = {
+ 	.release = ptp_boardattr_release,
+ 	/* May need to cast away const */
+ 	.sysfs_ops = (struct sysfs_ops *)&efx_sysfs_ops,
+-	.default_attrs = efx_pps_device_attrs,
++	/* .default_attrs = efx_pps_device_attrs, */
++	.default_groups = efx_pps_device_groups,
+ };
+ 
+ #endif
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/xdp.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/xdp.c
+index 4cd3954..c193dee 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/xdp.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/siena/xdp.c
+@@ -748,8 +748,10 @@ int efx_xdp_rx(struct efx_nic *efx, struct efx_channel *channel,
+ #endif
+ 
+ 	default:
+-		bpf_warn_invalid_xdp_action(xdp_act);
++		/* bpf_warn_invalid_xdp_action(xdp_act); */
++		bpf_warn_invalid_xdp_action(efx->net_dev, xdp_prog, xdp_act);
+ 		/* Fall through */
++		__attribute__((__fallthrough__));
+ 	case XDP_ABORTED:
+ 		trace_xdp_exception(efx->net_dev, xdp_prog, xdp_act);
+ 		if (free_buf_on_fail)
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/tc.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/tc.c
+index 232890a..aa8e8e2 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/tc.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/tc.c
+@@ -371,7 +371,9 @@ static int efx_bind_neigh(struct efx_nic *efx,
+ 							      NULL);
+ 			rc = PTR_ERR_OR_ZERO(dst);
+ #else
+-			rc = ipv6_stub->ipv6_dst_lookup(net, NULL, &dst, &flow6);
++			/* rc = ipv6_stub->ipv6_dst_lookup(net, NULL, &dst, &flow6); */
++			dst = ipv6_stub->ipv6_dst_lookup_flow(net, NULL, &flow6, NULL);
++			rc = PTR_ERR_OR_ZERO(dst);
+ #endif
+ 			if (rc) {
+ 				EFX_TC_ERR_MSG(efx, extack, "Failed to lookup route for encap");
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/afta.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/afta.c
+index b99cab1..52d466e 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/afta.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/afta.c
+@@ -225,6 +225,7 @@ int main(int argc, char *argv[])
+ 	case ACTION_REINSERT:
+ 		iins = SFC_AFTM_IOCSREINSERT;
+ 		/* fallthrough */
++		__attribute__((__fallthrough__));
+ 	case ACTION_INSERT:
+ 		efx_filter_init_rx(&filter_spec, priority, 0, rxq_id);
+ 		if (local_mac_addr) {
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/arb_filter_test_mod.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/arb_filter_test_mod.c
+index abd4a9a..1d7e378 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/arb_filter_test_mod.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/unittest_filters/arb_filter_test_mod.c
+@@ -104,6 +104,7 @@ static long sfc_aftm_ioctl(struct file *filp, unsigned int cmd, unsigned long ar
+ 	case SFC_AFTM_IOCSUCBLK:
+ 		block = EFX_DL_FILTER_BLOCK_KERNEL_UCAST;
+ 		/* fallthrough */
++		__attribute__((__fallthrough__));
+ 	case SFC_AFTM_IOCSMCBLK:
+ 		switch (arg) {
+ 		case SFC_AFTM_BLOCK_ADD:
+diff --git a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/xdp.c b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/xdp.c
+index cc430fb..9c39321 100644
+--- a/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/xdp.c
++++ b/usr/src/sfc-5.3.11.1000/drivers/net/ethernet/sfc/xdp.c
+@@ -746,7 +746,8 @@ int efx_xdp_rx(struct efx_nic *efx, struct efx_rx_queue *rx_queue,
+ #endif
+ 
+ 	default:
+-		bpf_warn_invalid_xdp_action(xdp_act);
++		/* bpf_warn_invalid_xdp_action(xdp_act); */
++		bpf_warn_invalid_xdp_action(efx->net_dev, xdp_prog, xdp_act);
+ 		fallthrough;
+ 	case XDP_ABORTED:
+ 		trace_xdp_exception(efx->net_dev, xdp_prog, xdp_act);
+-- 
+2.40.0
+
