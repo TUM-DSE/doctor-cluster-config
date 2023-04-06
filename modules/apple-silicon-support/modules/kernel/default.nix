@@ -19,7 +19,7 @@
 
     boot.supportedFilesystems = [ "zfs" ];
     boot.zfs.enableUnstable = true;
-    networking.hostId = "bb5b017d";
+    networking.hostId = lib.mkDefault ("bb5b017d");
 
     boot.initrd.includeDefaultModules = false;
     boot.initrd.availableKernelModules = [
