@@ -104,6 +104,10 @@ let
   robertoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcpGTfG8vzYCdGGeJ3YnO3W7kjN+r7tdRbV4ybDCUH3PJMxUap587HIvSDs1Y3xvMZme6Wb8NjEm7HWxd3/aRd1iwzzC+lCVQ/jAfrqnAbeGfx1v+e3zBTsXrUCe1rn9bDJ7ZJnvG1ZFtEbgnTTxtHao87VAQacxPJzkkXUu/ngWyQ7QMGarbs1BjVXFjWoOuWKDPFwjLeW8qiECSAJREyyN7AqMh4i9UzQDcc1Kms5k7iZA4HbGHlxwqcaRG5fluv1a/onlPwrU6rytgdgCn6V7rFUbO77aWwvK4F7y+H1JatzWYkWQvFZSZ8JbNyAsq46weOch+qOGgUeKr1r9Gp70/H3YbIDPzfIkZGY9prCoEv/9uUVus4wG7wcUtH43+3ehg7T00/4gzVhV+lwtpYyECti1X39AZHvFSCaE0PnYqQneF0XC78YySSG3UnaQU1uN5ct+JyI26f5H3Ayw1a4ItdgfxkdJBgzVpjE3cYlyxmYeEmRb9MnmR+MdThc9E= rc@w203-1y-v4.eduroam.dynamic.rbg.tum.de"
   ];
+
+  fritzKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/RJrLS8Wjy5mTP+9c0Qg17SSjEytq5fdRBlXuz4GFKyr1rD064hIWeEP2mRiprbME2smiLl8jJG8d/WJKcK6xIPYs1qExCn4gt39kYPUmRnOwtcepfkdNTjIBvYAnPPjA+9t+m31wr2NUO6ns43SyDlkcz0YxXM1JuYpf77EDQ3HCHg3c+pn9MGXXaBrLqqP+7MNiIHHyygwASPxx5c4f98Me06DDlyZjGsriZB/X+W4eKum8AZsQAUpo9u1Njsb7BB2V4Y+WXnzJewyWUQNONeJVgzxB47k3PlVUvjWn4ZJ63uCVm8kDrfLM92RCSmDwVkd6SDHCefmh6L0g1cdl fritz.rehde@tum.de"
+  ];
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -363,6 +367,18 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2027;
       openssh.authorizedKeys.keys = robertoKeys;
+    };
+
+    # Ritz Rehde, Bsc student with Martin (memory safety for wasm)
+    # Remove after SS23
+    fritz = {
+      isNormalUser = true;
+      home = "/home/fritz";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2029;
+      allowedHosts = [ "rose" "graham" ];
+      openssh.authorizedKeys.keys = fritzKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys;
