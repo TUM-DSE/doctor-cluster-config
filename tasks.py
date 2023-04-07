@@ -24,19 +24,25 @@ def get_hosts(hosts: str) -> List[DeployHost]:
     return [DeployHost(h, user="root") for h in hosts.split(",")]
 
 
-RSYNC_EXCLUDES = ["gdb", "zsh", ".terraform", ".direnv", ".mypy-cache", ".git"]
-
-
 def deploy_nixos(hosts: List[DeployHost]) -> None:
     """
     Deploy to all hosts in parallel
     """
     g = DeployGroup(hosts)
 
+    res = subprocess.run(
+        ["nix", "flake", "metadata", "--json"],
+        check=True,
+        text=True,
+        stdout=subprocess.PIPE,
+    )
+    data = json.loads(res.stdout)
+    path = data["path"]
+
     def deploy(h: DeployHost) -> None:
         config_dir = h.meta.get("config_dir", "/etc/nixos")
         h.run_local(
-            f"rsync {' --exclude '.join([''] + RSYNC_EXCLUDES)} -vaF --delete -e ssh . {h.user}@{h.host}:{config_dir}"
+            f"rsync --checksum -vaF --delete -e ssh {path}/ {h.user}@{h.host}:{config_dir}"
         )
 
         flake_path = config_dir
