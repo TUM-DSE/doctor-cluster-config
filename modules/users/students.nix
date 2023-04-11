@@ -211,7 +211,6 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2006;
-      allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = yiheKeys;
     };
 
