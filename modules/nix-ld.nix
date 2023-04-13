@@ -60,6 +60,7 @@
             zlib
             (lib.lowPrio ncurses5) # xgdb from xilinx vitis
             ncurses
+            libxcrypt
           ];
 
           ignoreCollisions = true;
