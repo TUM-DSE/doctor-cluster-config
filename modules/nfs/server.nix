@@ -174,6 +174,18 @@
     };
     compression = "auto,zstd";
     startAt = "daily";
+    exclude = [
+      "/export/home/*/.direnv"
+
+      # these users have qemu images in their home directories, which causes borgbackup to fail
+      # /export/home/gierens/images/guest.qcow2: file changed while we backed it up
+      # /export/home/simonk/ubuntu-riscv64.img: file changed while we backed it up
+      # /export/home/patrick/vmuxio/VMs/.nfs00000000000ec37a00000003: file changed while we backed it up
+      # /export/home/patrick/vmuxio/VMs/.nfs00000000000ec7e900000004: file changed while we backed it up
+      "/export/home/gierens/"
+      "/export/home/simonk/"
+      "/export/home/patrick/"
+    ];
     preHook = ''
       set -x
       eval $(ssh-agent)
