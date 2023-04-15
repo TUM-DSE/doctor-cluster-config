@@ -1,62 +1,72 @@
-{ disk ? "/dev/nvme0n1", ... }: {
-  disk = {
-    disk0 = {
-      type = "disk";
-      device = disk;
-      content = {
-        type = "table";
-        format = "gpt";
-        partitions = [
-          {
-            type = "partition";
-            name = "ESP";
-            start = "0";
-            end = "1GiB";
-            fs-type = "fat32";
-            bootable = true;
-            content = {
-              type = "filesystem";
-              format = "vfat";
-              mountpoint = "/boot";
-              mountOptions = [ "nofail" ];
-            };
-          }
-          {
-            type = "partition";
-            name = "zfs";
-            start = "1GiB";
-            end = "100%";
-            content = {
-              type = "zfs";
-              pool = "zroot";
-            };
-          }
-        ];
-      };
+{ lib, config, ... }: {
+
+  options = {
+    disko.rootDisk = lib.mkOption {
+      type = lib.types.str;
+      default = "/dev/nvme0n1";
+      description = "The device to use for the disk";
     };
   };
-  zpool = {
-    zroot = {
-      type = "zpool";
-      rootFsOptions = {
-        compression = "lz4";
-        xattr = "sa";
-        atime = "off";
-        acltype = "posixacl";
-        "com.sun:auto-snapshot" = "false";
-      };
-
-      datasets = {
-        "docker".zfs_type = "filesystem";
-        "root".zfs_type = "filesystem";
-        "root/nixos" = {
-          zfs_type = "filesystem";
-          mountpoint = "/";
-          options."com.sun:auto-snapshot" = "true";
+  config = {
+    disko.devices = {
+      disk = {
+        disk0 = {
+          type = "disk";
+          device = config.disko.rootDisk;
+          content = {
+            type = "table";
+            format = "gpt";
+            partitions = [
+            {
+              name = "ESP";
+              start = "0";
+              end = "1GiB";
+              fs-type = "fat32";
+              bootable = true;
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "nofail" ];
+              };
+            }
+            {
+              name = "zfs";
+              start = "1GiB";
+              end = "100%";
+              content = {
+                type = "zfs";
+                pool = "zroot";
+              };
+            }
+            ];
+          };
         };
-        "root/tmp" = {
-          zfs_type = "filesystem";
-          mountpoint = "/tmp";
+      };
+      zpool = {
+        zroot = {
+          type = "zpool";
+          rootFsOptions = {
+            compression = "lz4";
+            xattr = "sa";
+            atime = "off";
+            acltype = "posixacl";
+            "com.sun:auto-snapshot" = "false";
+          };
+
+          datasets = {
+            "docker".type = "zfs_fs";
+            "root".type = "zfs_fs";
+            "root/nixos" = {
+              type = "zfs_fs";
+              mountpoint = "/";
+              options."com.sun:auto-snapshot" = "true";
+            };
+            "root/tmp" = {
+              type = "zfs_fs";
+              mountpoint = "/tmp";
+            };
+          };
         };
       };
     };
