@@ -12,6 +12,7 @@ let
     nixpkgs-unstable
     srvos
     disko
+    nix-index-database
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
 
@@ -96,6 +97,8 @@ let
       ./modules/envfs.nix
       ./modules/mosh.nix
       ./modules/qemu-bridge.nix
+      nix-index-database.nixosModules.nix-index
+      ./modules/nix-index.nix
     ];
 in
 {
