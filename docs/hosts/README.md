@@ -84,7 +84,9 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
 ## ARM64
 
 - [yasmin](yasmin.md)
-- [sarah](sarah.md): M1 Mac Mini, no ipmi, in Redha's office, accounts are created manually
+- We have an M1 Mac Mini in Patric's office with a dual boot macos/linux
+  - when booted into NixOS/Linux: [donna](donna.md)
+  - when booted into macos: [sarah](sarah.md)
 
 ## FPGA-servers
 
@@ -186,9 +188,4 @@ A graph of how the servers are connected right now can be found [here](graph.md)
 
 ## Names left to pick
 
-- bill
-- clara
-
-- donna
-- martha
-
+- 
