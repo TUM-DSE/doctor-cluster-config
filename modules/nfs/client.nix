@@ -13,6 +13,7 @@
         mountcmd="${pkgs.util-linux}/bin/mount -t nfs4 -o nofail,timeo=14 ${nfsUrl} ${mountpoint}"
         restartsec="5"
 
+        mkdir -p ${mountpoint}
         for i in {1..10}; do
           echo "Mounting nfs. Attempt $i/10"
           echo "> $mountcmd"

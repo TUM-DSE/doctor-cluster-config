@@ -5,6 +5,7 @@
     [ 
       ../modules/hardware/macmini-m1.nix
       ../modules/apple-silicon-support
+      ../modules/nfs/client.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
