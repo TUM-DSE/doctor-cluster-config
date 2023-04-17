@@ -24,9 +24,9 @@ Parameters to consider for matching cards to slots:
     - rose
     - amy
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - clara (old firmware)
-    - rose
-    - amy (firmware bundle_id 1.1.1.1021)
+    - clara (clara-craig4; old firmware)
+    - rose (NIC is actually in tower right now)
+    - amy (amy-craig5; firmware bundle_id 1.1.1.1021)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (,)
@@ -92,7 +92,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
-e1:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
+e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
 - ❌  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: In Use length: Long    
 c1:00.0, Processing accelerators, Xilinx Corporation, Alveo U50 Golden Image -p00, Xilinx Corporation, Device 000e  
 - ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
@@ -329,8 +329,8 @@ No device/PCI ID.
 No device/PCI ID.  
 - ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
-- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
-25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
+- ✅  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
  
 
 ### ryan.dse.in.tum.de 
