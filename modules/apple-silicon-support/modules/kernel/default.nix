@@ -18,7 +18,6 @@
     powerManagement.cpuFreqGovernor = lib.mkOverride 800 "schedutil";
 
     boot.supportedFilesystems = [ "zfs" ];
-    boot.zfs.enableUnstable = true;
     networking.hostId = lib.mkDefault ("bb5b017d");
 
     boot.initrd.includeDefaultModules = false;
