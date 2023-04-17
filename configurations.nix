@@ -265,14 +265,14 @@ in
           ./hosts/jack.nix
         ];
     };
-    #donna = nixosSystem {
-    #  system = "aarch64-linux";
-    #  modules = 
-    #    computeNodeModules
-    #    ++ [
-    #      ./hosts/donna.nix
-    #    ];
-    #};
+    donna = nixosSystem {
+      system = "aarch64-linux";
+      modules = 
+        computeNodeModules
+        ++ [
+          ./hosts/donna.nix
+        ];
+    };
 
     ruby = (nixpkgs-unstable.lib.makeOverridable nixpkgs-unstable.lib.nixosSystem) {
       modules =
