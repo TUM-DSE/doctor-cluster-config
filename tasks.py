@@ -97,7 +97,11 @@ def document_cards(hosts: DeployGroup) -> str:
         dmi_slots = h.run(
             "nix-shell -p 'dmidecode' --run \"sudo dmidecode -t slot\"",
             stdout=subprocess.PIPE,
+            check=False
         )
+        # fails on our m1 aarch64 linux machine
+        if dmi_slots.returncode != 0:
+            return []
         for slot in dmi_slots.stdout.split("System Slot Information")[1:]:
             description = ""
             for line in slot.splitlines():
