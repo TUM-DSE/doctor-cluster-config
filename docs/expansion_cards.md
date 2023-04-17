@@ -24,9 +24,9 @@ Parameters to consider for matching cards to slots:
     - rose
     - amy
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - clara: dual port ()
+    - clara (old firmware)
     - rose
-    - amy
+    - amy (firmware bundle_id 1.1.1.1021)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (,)
