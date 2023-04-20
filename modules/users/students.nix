@@ -210,7 +210,7 @@ in
       isNormalUser = true;
       home = "/home/yihe";
       inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
+      shell = "/run/current-system/sw/bin/zsh";
       uid = 2006;
       openssh.authorizedKeys.keys = yiheKeys;
     };
