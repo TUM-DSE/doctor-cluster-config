@@ -16,15 +16,32 @@ Parameters to consider for matching cards to slots:
     - momiji
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
     - sakura
+        - SN: 501211207MON
+        - MAC1: 00:0A:35:06:AE:13
+        - MAC2: 00:0A:35:06:AE:14
+        - MAC3: 00:0A:35:06:AE:15
+        - MAC4: 00:0A:35:06:AE:16
     - hinoki
+        - MAC: 
     - amy
+        - MAC: 00:0A:35:0E:70:60
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
     - momiji
+        - MAC1: 00:0A:35:0C:EF:30
+        - MAC2: 00:0A:35:0C:EF:31
     - clara
+        - MAC1: 00:0A:35:0E:24:F2
+        - MAC2: 00:0A:35:0E:24:F3
     - rose
+        - MAC1: 00:0A:35:0E:24:E6
+        - MAC2: 00:0A:35:0E:24:E7
     - amy
+        - MAC1: 00:0A:35:0E:24:D6
+        - MAC2: 00:0A:35:0E:24:D7
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
     - clara (clara-craig4; old firmware)
+        - MAC1: 00:0A:35:0B:8B:EA
+        - MAC33: 00:0A:35:0B:8C:0A
     - rose (NIC is actually in tower right now)
     - amy (amy-craig5; firmware bundle_id 1.1.1.1021)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
