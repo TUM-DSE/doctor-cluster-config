@@ -109,6 +109,10 @@ let
   fritzKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/RJrLS8Wjy5mTP+9c0Qg17SSjEytq5fdRBlXuz4GFKyr1rD064hIWeEP2mRiprbME2smiLl8jJG8d/WJKcK6xIPYs1qExCn4gt39kYPUmRnOwtcepfkdNTjIBvYAnPPjA+9t+m31wr2NUO6ns43SyDlkcz0YxXM1JuYpf77EDQ3HCHg3c+pn9MGXXaBrLqqP+7MNiIHHyygwASPxx5c4f98Me06DDlyZjGsriZB/X+W4eKum8AZsQAUpo9u1Njsb7BB2V4Y+WXnzJewyWUQNONeJVgzxB47k3PlVUvjWn4ZJ63uCVm8kDrfLM92RCSmDwVkd6SDHCefmh6L0g1cdl fritz.rehde@tum.de"
   ];
+
+  iuliaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWO997ZygpIs+41KpvcZ9glH+vv/Wz0j59x1owYPyP6 iulia.cornea@tum.de"
+  ];
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -379,6 +383,18 @@ in
       uid = 2029;
       allowedHosts = [ "rose" "graham" ];
       openssh.authorizedKeys.keys = fritzKeys;
+    };
+
+    # Iulia Cornea, Ma Thesis with Evgeny (configurable cloud deploymet w/ openstack and kubernetes)
+    # Remove after SS23
+    iulia = {
+      isNormalUser = true;
+      home = "/home/iulia";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2030;
+      allowedHosts = [ "clara" ];
+      openssh.authorizedKeys.keys = iuliaKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys;
