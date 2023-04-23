@@ -19,6 +19,10 @@ in
     enable = true;
     recommendedProxySettings = true;
     virtualHosts."vicuna.r" = {
+      # api
+      locations."/v1".proxyPass = "http://127.0.0.1:7862";
+
+      # web
       locations."/" = {
         proxyPass = "http://127.0.0.1:7861";
         proxyWebsockets = true;
@@ -115,7 +119,6 @@ in
   };
 
   systemd.services.fastchat-web = {
-    enable = true;
     wantedBy = [ "multi-user.target" ];
     after = [ "fastchat-direnv-allow.service" ];
     path = [ config.nix.package pkgs.git ];
@@ -124,6 +127,18 @@ in
 
     serviceConfig = commonServiceConfig // {
       ExecStart = "${lib.getExe pkgs.direnv} exec ${dir} python3 -m fastchat.serve.gradio_web_server --port 7861";
+    };
+  };
+
+  systemd.services.fastchat-api = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "fastchat-direnv-allow.service" ];
+    path = [ config.nix.package pkgs.git ];
+    # for direnv to work
+    environment.HOME = dir;
+
+    serviceConfig = commonServiceConfig // {
+      ExecStart = "${lib.getExe pkgs.direnv} exec ${dir} python3 -m fastchat.serve.api --port 7862";
     };
   };
 }
