@@ -15,6 +15,7 @@ locals {
     "mmisono",        # Masanori Misono
     "Sabanic-P",      # Patrick Sabanic
     "HE7086",         # Yi He (HiWi, tech support)
+	"Meandres",       # Ilya Meignan--Masson
   ])
   internship = toset([
     "RaitoBezarius" # Raito Bezarius (Internship)
