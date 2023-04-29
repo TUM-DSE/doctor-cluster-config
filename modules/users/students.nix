@@ -113,6 +113,11 @@ let
   iuliaKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWO997ZygpIs+41KpvcZ9glH+vv/Wz0j59x1owYPyP6 iulia.cornea@tum.de"
   ];
+  
+  
+  martinLKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKs9HeN8+UkNXlfYBSFZmF7L+1lG/tckc1UxnI94bOt3 fair"
+  ];
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -395,6 +400,18 @@ in
       uid = 2030;
       allowedHosts = [ "clara" ];
       openssh.authorizedKeys.keys = iuliaKeys;
+    };
+
+    # Martin Lambeck, Ma Thesis with Jiyang (FAIR)
+    # Remove after SS23
+    martinL = {
+      isNormalUser = true;
+      home = "/home/martinL";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2031;
+      allowedHosts = [ "amy" "clara" ];
+      openssh.authorizedKeys.keys = martinLKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys;
