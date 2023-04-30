@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
+import multiprocessing
 import os
-from io import open
 import socket
+from io import open
 
 from buildbot_worker.bot import Worker
 from twisted.application import service
-
-import multiprocessing
 
 
 def require_env(key: str) -> str:
@@ -47,6 +46,8 @@ def setup_worker(application: service.Application, id: int) -> None:
         numcpus=numcpus,
         allow_shutdown=allow_shutdown,
     )
+    # defaults to 4096, bump to 10MB for nix-eval-jobs
+    s.bot.max_line_length = 10485760
     s.setServiceParent(application)
 
 
