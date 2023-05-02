@@ -12,6 +12,12 @@
 
   networking.hostName = "clara";
 
+  # for some reason the disk naming/usage of /dev/nvme{0,1}n1 is
+  # inconsistent on this server compared to others. Lets now be
+  # super explicit, in case this is due to inconsistent device
+  # naming by kernels. 
+  disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_S64GNA0T724988";
+
   boot.hugepages.size = "1GB";
   boot.hugepages.number = 8;
 
