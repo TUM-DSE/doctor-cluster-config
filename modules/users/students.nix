@@ -118,6 +118,10 @@ let
   martinLKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKs9HeN8+UkNXlfYBSFZmF7L+1lG/tckc1UxnI94bOt3 fair"
   ];
+
+  elizaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKva0ESsYg2pmkK5b7t0FbwZLk/ObmDJk07E9x5EdWH7 liza@w196-3i-v4.eduroam.dynamic.rbg.tum.de"
+  ];
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -412,6 +416,18 @@ in
       uid = 2031;
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = martinLKeys;
+    };
+
+    # Elizaveta Boriskova, Thesis with Babis/Atsushi (FPGA serverless porting)
+    # Remove after WS23
+    eliza = {
+      isNormalUser = true;
+      home = "/home/eliza";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2032;
+      allowedHosts = [ "clara" ];
+      openssh.authorizedKeys.keys = elizaKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys;
