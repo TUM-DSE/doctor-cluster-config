@@ -73,16 +73,7 @@ let
         hash = "sha256-5ns8ilv+Kee2BHhpWm7CnNHf3+mcXCywkLhx4oh9rZk=";
       };
 
-      kernelPatches = [
-             {
-          name = "export-neon-symbols-as-gpl";
-          patch = fetchpatch {
-            url = "https://github.com/torvalds/linux/commit/aaeca98456431a8d9382ecf48ac4843e252c07b3.patch";
-            hash = "sha256-L2g4G1tlWPIi/QRckMuHDcdWBcKpObSWSRTvbHRIwIk=";
-            revert = true;
-          };
-        }
-      ] ++ lib.optionals _4KBuild [
+      kernelPatches = [] ++ lib.optionals _4KBuild [
         # thanks to Sven Peter
         # https://lore.kernel.org/linux-iommu/20211019163737.46269-1-sven@svenpeter.dev/
         { name = "sven-iommu-4k";
