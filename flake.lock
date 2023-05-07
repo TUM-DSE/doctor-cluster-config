@@ -146,16 +146,16 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1674482358,
-        "narHash": "sha256-hrFnZgOkAbL7rk4AZzZ5Ysa5tyzrb863XoFB8DQDUhs=",
-        "owner": "Mic92",
+        "lastModified": 1683392273,
+        "narHash": "sha256-pZTuxvcuDeBG+vvE1zczNyEUzlPbzXVh8Ed45Fzo+tQ=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c5d3ce111505f0c2e3b3bdd05120f7dcae25c1b7",
+        "rev": "16b3b0c53b1ee8936739f8c588544e7fcec3fc60",
         "type": "github"
       },
       "original": {
-        "owner": "Mic92",
-        "ref": "riscv-fixes",
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
