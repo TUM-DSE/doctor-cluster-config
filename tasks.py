@@ -59,7 +59,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
 
 
 @task
-def build_local(c, hosts=""):
+def build_local(c: Any, hosts="") -> None:
     """
     Build nixos configurations locally. Use `inv build-local --hosts ryan` to build a single server
     """
@@ -287,7 +287,7 @@ def deploy_ruby(c: Any) -> None:
 
 
 @task
-def deploy_doctor(c):
+def deploy_doctor(c: Any) -> None:
     """
     Deploy to doctor
     """
@@ -307,7 +307,7 @@ def deploy_doctor(c):
 
 
 @task
-def deploy_host(c, host):
+def deploy_host(c: Any, host: str) -> None:
     """
     Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
     """
@@ -315,7 +315,7 @@ def deploy_host(c, host):
 
 
 @task
-def deploy_local(c):
+def deploy_local(c: Any) -> None:
     """
     Deploy NixOS configuration on the same machine. The NixOS configuration is
     selected based on the hostname.
@@ -324,7 +324,7 @@ def deploy_local(c):
 
 
 @task
-def update_docs(c, hosts=""):
+def update_docs(c: Any, hosts: str = "") -> None:
     """
     Regenerate docs for all servers
     """
@@ -336,7 +336,7 @@ def update_docs(c, hosts=""):
 
 
 @task
-def document_craig(c):
+def document_craig(c: Any) -> None:
     """
     Dump craigs (switch) config to encrypted docs/hosts/craig.sops
     """
@@ -356,7 +356,7 @@ def document_craig(c):
 
 
 @task
-def update_lldp_info(c, hosts=""):
+def update_lldp_info(c: Any, hosts: str = "") -> None:
     """
     Regenerate lldp info for all servers
     """
@@ -367,66 +367,7 @@ def update_lldp_info(c, hosts=""):
     get_lldp_neighbors(host_list)
 
 
-def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
-    out = host.run(f"sfdisk --json {dev}", stdout=subprocess.PIPE)
-    data = json.loads(out.stdout)
-    return data["partitiontable"]["partitions"]
-
-
-def _format_disks(host: DeployHost, device: str) -> None:
-    # format disk with as follow:
-    # - partition 1 will be the boot partition
-    # - partition 2 takes up the rest of the space and is for the system
-    host.run(f"blkdiscard -f {device}")
-    host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef00 -t 2:8304 {device}")
-
-    partitions = sfdisk_json(host, device)
-    boot = partitions[0]["node"]
-    uuid = partitions[1]["uuid"].lower()
-    root_part = f"/dev/disk/by-partuuid/{uuid}"
-    host.run(
-        f"zpool create zroot -O acltype=posixacl -O xattr=sa -O compression=lz4 -O atime=off {root_part}"
-    )
-
-    host.run("partprobe")
-    host.run(f"mkfs.vfat {boot} -n NIXOS_BOOT")
-
-    # setup zfs dataset
-    host.run("zfs create -o mountpoint=none zroot/root")
-    host.run("zfs create -o mountpoint=none zroot/docker")
-    host.run("zfs create -o mountpoint=legacy zroot/root/nixos")
-    host.run("zfs create -o mountpoint=legacy zroot/root/home")
-
-
-def _mount_disks(host: DeployHost, device: str) -> None:
-    host.run("zpool import -af")
-    # and finally mount
-    host.run("mount -t zfs zroot/root/nixos /mnt")
-    host.run("mkdir -p /mnt/home /mnt/boot")
-    host.run("mount -t zfs zroot/root/home /mnt/home")
-    host.run("mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
-
-
-@task
-def format_disks(c, hosts, disk=""):
-    """
-    Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
-    """
-    for h in get_hosts(hosts):
-        _format_disks(h, disk)
-        _mount_disks(h, disk)
-
-
-@task
-def mount_disks(c, hosts, disk=""):
-    """
-    Mount disks from the installer, i.e.: inv mount-disks --hosts new-hostname --disk /dev/nvme0n1
-    """
-    for h in get_hosts(hosts):
-        _mount_disks(h, disk)
-
-
-def decrypt_host_keys(c, host, tmpdir):
+def decrypt_host_keys(c: Any, host: str, tmpdir: str) -> None:
     os.mkdir(f"{tmpdir}/etc")
     os.mkdir(f"{tmpdir}/etc/ssh")
     for keyname in [
@@ -445,7 +386,7 @@ def decrypt_host_keys(c, host, tmpdir):
 
 
 @task
-def reformat_install_nixos(c, host, dhcp_interface):
+def reformat_install_nixos(c: Any, host: str, dhcp_interface: str) -> None:
     """
     format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
     """
@@ -470,13 +411,13 @@ def reformat_install_nixos(c, host, dhcp_interface):
 
 
 @task
-def print_tinc_key(c, hosts):
+def print_tinc_key(c: Any, hosts: str) -> None:
     for h in get_hosts(hosts):
         h.run("tinc.retiolum export")
 
 
 @task
-def print_age_key(c, host):
+def print_age_key(c: Any, host: str) -> None:
     """
     Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <hostname>
     """
@@ -504,7 +445,7 @@ def print_age_key(c, host):
 
 
 @task
-def generate_ssh_cert(c, host):
+def generate_ssh_cert(c: Any, host: str) -> None:
     """
     Generate ssh cert for host, i.e. inv generate-ssh-cert bill
     """
@@ -550,7 +491,7 @@ def generate_ssh_cert(c, host):
 
 
 @task
-def update_sops_files(c):
+def update_sops_files(c: Any) -> None:
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
@@ -591,14 +532,14 @@ def wait_for_host(host: str, shutdown: bool = False) -> None:
         sys.stdout.flush()
 
 
-def ipmi_password(c) -> str:
+def ipmi_password(c: Any) -> str:
     return c.run(
         """sops -d --extract '["ipmi-passwords"]' secrets.yml""", hide=True
     ).stdout
 
 
 @task
-def generate_password(c, user="root"):
+def generate_password(c: Any, user: str = "root") -> None:
     """
     Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
     """
@@ -612,7 +553,7 @@ def generate_password(c, user="root"):
 
 
 @task
-def add_server(c, hostname):
+def add_server(c: Any, hostname: str) -> None:
     """
     Generate new server keys and configurations for a given hostname and hardware config
     """
@@ -703,7 +644,7 @@ def add_server(c, hostname):
 
 
 @task
-def ipmi_serial(c, host=""):
+def ipmi_serial(c: Any, host: str = "") -> None:
     c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol info""",
     )
@@ -714,7 +655,7 @@ def ipmi_serial(c, host=""):
 
 
 @task
-def ipmi_powerconsumption(c):
+def ipmi_powerconsumption(c: Any) -> None:
     """
     Measure the power consumption of our servers via IPMI. Note that this does not include all servers.
     """
@@ -735,7 +676,7 @@ def ipmi_powerconsumption(c):
         hostname = mgmt_hostname(hostname)
         print(hostname)
         res = c.run(
-            f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' sensor get Pwr\ Consumption"
+            f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' sensor get Pwr\\ Consumption"
         )
         reading = [
             line for line in res.stdout.splitlines() if "Sensor Reading" in line
@@ -771,14 +712,14 @@ def ipmi_powerconsumption(c):
 
 
 @task
-def ipmi_powercycle(c, host=""):
+def ipmi_powercycle(c: Any, host: str = "") -> None:
     c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
     )
 
 
 @task
-def ipmi_boot_bios(c, host=""):
+def ipmi_boot_bios(c: Any, host: str = "") -> None:
     """
     Set the next boot to bios and reboot
     """
@@ -791,7 +732,7 @@ def ipmi_boot_bios(c, host=""):
 
 
 @task
-def run(c, command, hosts=""):
+def run(c: Any, command: str, hosts: str = "") -> None:
     """
     Run provided command on the given hosts, if no host list is provided, than the command is run on all hosts.
     """
@@ -803,7 +744,7 @@ def run(c, command, hosts=""):
 
 
 @task
-def reboot(c, hosts=""):
+def reboot(c: Any, hosts: str = "") -> None:
     """
     Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
     """
@@ -824,7 +765,7 @@ def reboot(c, hosts=""):
 
 
 @task
-def cleanup_gcroots(c, hosts=""):
+def cleanup_gcroots(c: Any, hosts: str = "") -> None:
     deploy_hosts = [DeployHost(h, user="root") for h in hosts.split(",")]
     for h in deploy_hosts:
         g = DeployGroup([h])
