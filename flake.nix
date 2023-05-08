@@ -24,7 +24,9 @@
     # In case we need backports, we can use our fork
     nixpkgs.url = "github:TUM-DSE/nixpkgs/release-22.11-backports";
 
-    nixpkgs-unstable.url = "github:Mic92/nixpkgs/riscv-fixes";
+    #nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # needs a zfs fix that only exist in our backports branch or mine
+    nixpkgs-unstable.url = "github:Mic92/nixpkgs/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
