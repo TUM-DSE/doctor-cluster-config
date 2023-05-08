@@ -15,7 +15,7 @@ Parameters to consider for matching cards to slots:
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
     - momiji
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-    - sakura
+    - sakura (sakura-sakura, loopback)
         - SN: 501211207MON
         - MAC1: 00:0A:35:06:AE:13
         - MAC2: 00:0A:35:06:AE:14
@@ -39,11 +39,11 @@ Parameters to consider for matching cards to slots:
         - MAC1: 00:0A:35:0E:24:D6
         - MAC2: 00:0A:35:0E:24:D7
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - clara (clara-craig4; old firmware)
+    - rose (rose1-craig4, rose2-craig5; old firmware)
         - MAC1: 00:0A:35:0B:8B:EA
         - MAC33: 00:0A:35:0B:8C:0A
-    - rose (NIC is actually in tower right now)
-    - amy (amy-craig5; firmware bundle_id 1.1.1.1021)
+    - (not installed; firmware bundle_id 1.1.1.1021)
+    - (not installed; firmware bundle_id 1.1.1.1021)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (,)
