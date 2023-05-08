@@ -33,7 +33,8 @@
     home-manager.url = "github:rycee/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    sops-nix.url = "github:Mic92/sops-nix";
+    # FIXME: I saw weird crashes on the latest HEAD... try upgrading later
+    sops-nix.url = "github:Mic92/sops-nix/7c8e9727a2ecf9994d4a63d577ad5327e933b6a4";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
