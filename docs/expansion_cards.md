@@ -15,7 +15,7 @@ Parameters to consider for matching cards to slots:
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
     - momiji
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-    - sakura
+    - sakura (sakura-sakura, loopback)
         - SN: 501211207MON
         - MAC1: 00:0A:35:06:AE:13
         - MAC2: 00:0A:35:06:AE:14
@@ -39,11 +39,11 @@ Parameters to consider for matching cards to slots:
         - MAC1: 00:0A:35:0E:24:D6
         - MAC2: 00:0A:35:0E:24:D7
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - clara (clara-craig4; old firmware)
+    - rose (rose1-craig4, rose2-craig5; old firmware)
         - MAC1: 00:0A:35:0B:8B:EA
         - MAC33: 00:0A:35:0B:8C:0A
-    - rose (NIC is actually in tower right now)
-    - amy (amy-craig5; firmware bundle_id 1.1.1.1021)
+    - (not installed; firmware bundle_id 1.1.1.1021)
+    - (not installed; firmware bundle_id 1.1.1.1021)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-graham,graham-graham)
     - jackson: dual port. (,)
@@ -109,7 +109,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
-e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
+e1:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
 - ❌  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: In Use length: Long    
 c1:00.0, Processing accelerators, Xilinx Corporation, Alveo U50 Golden Image -p00, Xilinx Corporation, Device 000e  
 - ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
@@ -126,8 +126,8 @@ No device/PCI ID.
 No device/PCI ID.  
 - ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
-- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
-25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
+- ✅  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
  
 
 ### astrid.dse.in.tum.de 
@@ -185,7 +185,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
-e1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
+e1:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
 - ✅  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
@@ -202,8 +202,8 @@ No device/PCI ID.
 No device/PCI ID.  
 - ❌  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: In Use length: Long    
 01:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
-- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
-25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
+- ✅  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
  
 
 ### dan.dse.in.tum.de 
@@ -346,8 +346,8 @@ No device/PCI ID.
 No device/PCI ID.  
 - ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
-- ✅  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
+25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
  
 
 ### ryan.dse.in.tum.de 

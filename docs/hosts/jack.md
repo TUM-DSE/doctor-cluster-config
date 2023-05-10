@@ -1,17 +1,17 @@
 # jack
 
 ```
-System:    Host: jack Kernel: 6.2.11 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: init=/nix/store/8qdcgg11h70mnlrmzrwcssigyq3xdm36-nixos-system-jack-22.11.20230417.a52af07/init 
+System:    Host: jack Kernel: 5.15.110 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: init=/nix/store/f3w7f0xcmpfg4aqh7iigbgycv88a74v1-nixos-system-jack-22.11.20230508.af3e6da/init 
            console=ttyS1,115200n8 console=tty1 console=tty0 console=ttyS0,115200 
            default_hugepagesz=2MB hugepagesz=2MB hugepages=1000 nohibernate loglevel=4 
            nvidia.NVreg_OpenRmEnableUnsupportedGpus=1 
-           Console: N/A Distro: NixOS 22.11 (Raccoon) 
+           Console: tty pts/1 Distro: NixOS 22.11 (Raccoon) 
 Machine:   Type: Kvm System: Supermicro product: SYS-120U-TNR v: 0123456789 
            serial: E411764X2300334 Chassis: type: 1 v: 0123456789 serial: C119UAK12P20190 
            Mobo: Supermicro model: X12DPU-6 v: 1.02A serial: HM218S018239 
            UEFI: American Megatrends LLC. v: 1.2 date: 02/15/2022 
-Memory:    RAM: total: 125.51 GiB used: 83 GiB (66.1%) 
+Memory:    RAM: total: 125.52 GiB used: 55.46 GiB (44.2%) 
            Array-1: capacity: 12 TiB slots: 32 EC: Single-bit ECC max-module-size: 384 GiB 
            note: est. 
            Device-1: P1-DIMMA1 size: 256 GiB speed: 3200 MT/s type: Logical non-volatile device 
@@ -90,23 +90,24 @@ PCI Slots: Slot: 1 type: x16 PCI Express 4 x16 RSC-W-66G4 SLOT1 PCI-E 4.0 X16 st
 CPU:       Info: 2x 16-Core model: Intel Xeon Gold 6326 socket: LGA4189 bits: 64 type: MT MCP SMP 
            arch: Ice Lake family: 6 model-id: 6A (106) stepping: 6 microcode: D000389 cache: 
            L1: 5 MiB L2: 48 MiB L3: 96 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 371439 
-           Speed: 3500 MHz min/max: 800/3500 MHz base/boost: 2900/4500 volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 3500 2: 3500 3: 3500 4: 3500 5: 3500 6: 3500 
-           7: 3500 8: 3500 9: 3500 10: 3500 11: 3500 12: 3500 13: 3500 14: 3500 15: 3500 16: 3500 
-           17: 3500 18: 3500 19: 2853 20: 3500 21: 3500 22: 3500 23: 3500 24: 3500 25: 3500 
-           26: 3500 27: 3500 28: 3500 29: 3500 30: 3500 31: 3500 32: 3500 33: 3500 34: 3500 
-           35: 3500 36: 3500 37: 3500 38: 3500 39: 3500 40: 3500 41: 3500 42: 3500 43: 3500 
-           44: 3500 45: 3500 46: 3500 47: 3500 48: 3500 49: 3500 50: 3500 51: 3500 52: 3500 
-           53: 3500 54: 3500 55: 3500 56: 3500 57: 3500 58: 2321 59: 3500 60: 3500 61: 3500 
-           62: 3500 63: 3500 64: 3500 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 371435 
+           Speed: 2065 MHz min/max: 800/3500 MHz base/boost: 2900/4500 volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 2065 2: 2038 3: 3500 4: 3503 5: 3498 6: 3502 
+           7: 3502 8: 3500 9: 3500 10: 3498 11: 3500 12: 2548 13: 1823 14: 3503 15: 3502 16: 3505 
+           17: 3502 18: 3500 19: 3500 20: 3500 21: 3500 22: 3502 23: 3496 24: 3500 25: 3503 
+           26: 3502 27: 2040 28: 3500 29: 3500 30: 2159 31: 3500 32: 2039 33: 2288 34: 2164 
+           35: 3505 36: 2158 37: 1958 38: 2274 39: 3500 40: 3503 41: 2232 42: 3500 43: 3500 
+           44: 801 45: 1668 46: 907 47: 2405 48: 2017 49: 2069 50: 1300 51: 1371 52: 2120 53: 2266 
+           54: 2158 55: 2183 56: 3503 57: 2542 58: 1675 59: 3500 60: 1999 61: 2027 62: 1440 
+           63: 3500 64: 1443 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
            Type: meltdown status: Not affected 
            Type: mmio_stale_data mitigation: Clear CPU buffers; SMT vulnerable 
            Type: retbleed status: Not affected 
-           Type: spec_store_bypass mitigation: Speculative Store Bypass disabled via prctl 
+           Type: spec_store_bypass 
+           mitigation: Speculative Store Bypass disabled via prctl and seccomp 
            Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization 
            Type: spectre_v2 
            mitigation: Enhanced IBRS, IBPB: conditional, RSB filling, PBRSB-eIBRS: SW sequence 
@@ -114,10 +115,10 @@ CPU:       Info: 2x 16-Core model: Intel Xeon Gold 6326 socket: LGA4189 bits: 64
            Type: tsx_async_abort status: Not affected 
 Graphics:  Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel 
            bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300 
-           Device-2: NVIDIA GA102GL [A40] driver: nvidia v: 525.105.17 
+           Device-2: NVIDIA GA102GL [A40] driver: nvidia v: 515.86.01 
            alternate: nvidiafb,nouveau,nvidia_drm bus-ID: ca:00.0 chip-ID: 10de:2235 
            class-ID: 0302 
-           Display: server: No display server data found. Headless machine? tty: N/A 
+           Display: server: No display server data found. Headless machine? tty: 295x75 
            Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
 Network:   Device-1: Intel Ethernet X710 for 10GBASE-T vendor: Super Micro driver: i40e v: kernel 
@@ -140,43 +141,45 @@ Network:   Device-1: Intel Ethernet X710 for 10GBASE-T vendor: Super Micro drive
            v: kernel port: 3000 bus-ID: 19:00.3 chip-ID: 8086:104e class-ID: 0200 
            IF: enp25s0f3 state: down mac: 3c:ec:ef:fb:5c:7b 
            IF-ID-1: br-e4440d730bbd state: up speed: 10000 Mbps duplex: unknown 
-           mac: 02:42:e4:c3:39:bd 
+           mac: 02:42:5a:49:78:f6 
            IP v4: 172.20.0.1/16 scope: global broadcast: 172.20.255.255 
-           IP v6: fe80::42:e4ff:fec3:39bd/64 scope: link 
-           IF-ID-2: docker0 state: down mac: 02:42:67:7d:62:96 
+           IP v6: fe80::42:5aff:fe49:78f6/64 scope: link 
+           IF-ID-2: docker0 state: down mac: 02:42:c4:49:d8:a1 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IF-ID-3: enp0s20f0u7u2c2 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f 
+           IF-ID-3: enp0s20f0u7u2c2 state: unknown speed: -1 duplex: half mac: c6:59:d7:99:80:1e 
            IP v4: 169.254.3.1/24 type: dynamic scope: global 
-           IP v6: fe80::bc3a:f2ff:feb6:59f/64 scope: link 
-           IF-ID-4: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
+           IP v6: fe80::c459:d7ff:fe99:801e/64 scope: link 
+           IF-ID-4: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:43ea:3161:1159:e7e6:ff78/16 scope: global 
-           IF-ID-5: veth73a211d state: up speed: 10000 Mbps duplex: full mac: 96:a6:ad:8d:c0:ae 
+           IF-ID-5: veth3ef367a state: up speed: 10000 Mbps duplex: full mac: de:34:a2:37:82:95 
            WAN IP: 131.159.102.17 
-Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v: kernel 
-           bus-ID: 1-7.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
+Bluetooth: Device-1: Linux 5.4.62 with aspeed_vhub RNDIS/Ethernet Gadget type: USB 
+           driver: rndis_host v: kernel bus-ID: 1-7.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 593 GiB 
-           allocated: 295 GiB 
+RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 405 GiB 
+           allocated: 483 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 894.25 GiB used: 1.33 TiB (152.7%) 
+Drives:    Local Storage: total: 894.25 GiB used: 1.63 TiB (187.0%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Intel model: SSDSC2KB960G8 
            family: S4510/S4610/S4500/S4600 Series SSDs size: 894.25 GiB block-size: 
            physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s rotation: SSD 
            serial: PHYF152302UG960CGN rev: 0132 temp: 18 C scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 342d 18h cycles: 24 read: 7.05 TiB 
-           written: 9.72 TiB 
-Partition: ID-1: / raw-size: N/A size: 799.88 GiB used: 234.69 GiB (29.3%) fs: zfs 
+           SMART: yes state: enabled health: PASSED on: 365d 12h cycles: 24 read: 8.85 TiB 
+           written: 10.42 TiB 
+Partition: ID-1: / raw-size: N/A size: 799.88 GiB used: 422.77 GiB (52.9%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 163.9 MiB (16.0%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 130.7 MiB (12.8%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 860.78 GiB used: 504.95 GiB (58.7%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 862.32 GiB used: 595.99 GiB (69.1%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 42.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 825 Uptime: 1h 42m wakeups: 0 Init: systemd v: 251 target: multi-user.target 
-           tool: systemctl Compilers: gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 497 lib: 94 
-           nix-usr: 0 Client: Sudo v: 1.9.13p3 inxi: 3.3.04 
+Info:      Processes: 833 
+           Uptime: 08:46:53  up 2 days  0:01,  1 user,  load average: 1.19, 1.47, 1.13 wakeups: 0 
+           Init: systemd v: 251 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
+           Packages: nix-default: 0 nix-sys: 442 lib: 91 nix-usr: 0 Client: Sudo v: 1.9.13p3 
+           inxi: 3.3.04 
 ```
 ![hardware topology](jack.lstopo.svg)
