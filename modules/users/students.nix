@@ -430,7 +430,7 @@ in
       openssh.authorizedKeys.keys = elizaKeys;
     };
 
-    root.openssh.authorizedKeys.keys = raitoKeys + yiheKeys;
+    root.openssh.authorizedKeys.keys = raitoKeys ++ yiheKeys;
   };
 
   # DANGER ZONE!
