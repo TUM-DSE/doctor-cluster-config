@@ -59,7 +59,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
 
 
 @task
-def build_local(c: Any, hosts="") -> None:
+def build_local(c: Any, hosts: str = "") -> None:
     """
     Build nixos configurations locally. Use `inv build-local --hosts ryan` to build a single server
     """
