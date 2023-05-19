@@ -122,6 +122,12 @@ let
   elizaKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKva0ESsYg2pmkK5b7t0FbwZLk/ObmDJk07E9x5EdWH7 liza@w196-3i-v4.eduroam.dynamic.rbg.tum.de"
   ];
+
+  florianKeys = [
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIK4f12ldfJGJhMUbAYOz5E3aXc+F6SScLb2n2KdVfqu4AAAAC3NzaDp0ZXJtaXVz"
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIOJpaI1Zb1R9gcipR71Ulh1SNxJj1frEK9XfzRFe/uJmAAAAC3NzaDp0ZXJtaXVz"
+  ];
+  
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -428,6 +434,18 @@ in
       uid = 2032;
       allowedHosts = [ "clara" ];
       openssh.authorizedKeys.keys = elizaKeys;
+    };
+
+    # Florian Freudiger, Thesis with Peter (NIC queue multiplexing)
+    # Remove after WS23
+    florian = {
+      isNormalUser = true;
+      home = "/home/florian";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2033;
+      allowedHosts = [ "graham" "jackson" "christina" "wilfred" "river" "clara" ];
+      openssh.authorizedKeys.keys = florianKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys ++ yiheKeys;
