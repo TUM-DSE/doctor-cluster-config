@@ -720,6 +720,7 @@ def ipmi_powercycle(c: Any, host: str = "") -> None:
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
     )
 
+
 @task
 def ipmi_reboot_bmc(c: Any, host: str = "") -> None:
     """
@@ -728,6 +729,7 @@ def ipmi_reboot_bmc(c: Any, host: str = "") -> None:
     c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' bmc reset cold"""
     )
+
 
 @task
 def ipmi_boot_bios(c: Any, host: str = "") -> None:
