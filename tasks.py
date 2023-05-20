@@ -643,15 +643,20 @@ def add_server(c: Any, hostname: str) -> None:
     )
 
 
-@task
-def ipmi_serial(c: Any, host: str = "") -> None:
-    c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol info""",
-    )
-    c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' sol activate""",
+def ipmitool(c: Any, host: str, cmd: str) -> subprocess.CompletedProcess:
+    return c.run(
+        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' {cmd}""",
         pty=True,
     )
+
+
+@task
+def ipmi_serial(c: Any, host: str = "") -> None:
+    """
+    Connect to the serial console of a server via IPMI
+    """
+    ipmitool(c, host, "sol info")
+    ipmitool(c, host, "sol activate")
 
 
 @task
@@ -675,9 +680,7 @@ def ipmi_powerconsumption(c: Any) -> None:
         hosts += [hostname.split(".")[0]]
         hostname = mgmt_hostname(hostname)
         print(hostname)
-        res = c.run(
-            f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' sensor get Pwr\\ Consumption"
-        )
+        res = ipmitool(c, hostname, "sensor get Pwr\\ Consumption")
         reading = [
             line for line in res.stdout.splitlines() if "Sensor Reading" in line
         ][0]
@@ -692,9 +695,7 @@ def ipmi_powerconsumption(c: Any) -> None:
         hosts += [hostname.split(".")[0]]
         hostname = mgmt_hostname(hostname)
         print(hostname)
-        res = c.run(
-            f"ipmitool -I lanplus -H {hostname} -U ADMIN -P '{ipmi_password(c)}' dcmi power reading"
-        )
+        res = ipmitool(c, hostname, "dcmi power reading")
         reading = [
             line
             for line in res.stdout.splitlines()
@@ -716,9 +717,7 @@ def ipmi_powercycle(c: Any, host: str = "") -> None:
     """
     Power cycle a host via IPMI
     """
-    c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
-    )
+    ipmitool(c, host, "power cycle")
 
 
 @task
@@ -726,9 +725,7 @@ def ipmi_reboot_bmc(c: Any, host: str = "") -> None:
     """
     Reboot the BMC (IPMI firmware)
     """
-    c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' bmc reset cold"""
-    )
+    ipmitool(c, host, "bmc reset cold")
 
 
 @task
@@ -736,12 +733,8 @@ def ipmi_boot_bios(c: Any, host: str = "") -> None:
     """
     Set the next boot to bios and reboot
     """
-    c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' chassis bootdev bios"""
-    )
-    c.run(
-        f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' power cycle"""
-    )
+    ipmitool(c, host, "chassis bootdev bios")
+    ipmitool(c, host, "power cycle")
 
 
 @task
