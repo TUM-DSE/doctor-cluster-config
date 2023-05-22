@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -28,6 +29,9 @@ in
       gc.automatic = true;
       gc.dates = "03:15";
       gc.options = "--delete-older-than 14d";
+
+      # 2.11 suffers from a bug with remote builders…
+      package = pkgs.nixVersions.nix_2_12;
 
       # should be enough?
       nrBuildUsers = lib.mkDefault 32;
