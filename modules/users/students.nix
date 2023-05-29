@@ -127,6 +127,10 @@ let
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIK4f12ldfJGJhMUbAYOz5E3aXc+F6SScLb2n2KdVfqu4AAAAC3NzaDp0ZXJtaXVz"
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIOJpaI1Zb1R9gcipR71Ulh1SNxJj1frEK9XfzRFe/uJmAAAAC3NzaDp0ZXJtaXVz"
   ];
+
+  m00wlKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de"
+  ];
   
 in
 {
@@ -448,6 +452,17 @@ in
       openssh.authorizedKeys.keys = florianKeys;
     };
 
+    # Moritz Lumme (fix gnugrep/musl on ARM)
+    m00wl = {
+      isNormalUser = true;
+      home = "/home/m00wl";
+      inherit (config.users.users.joerg) extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 1014;
+      openssh.authorizedKeys.keys = m00wlKeys;
+      allowedHosts = [ "yasmin" ];
+    };
+
     root.openssh.authorizedKeys.keys = raitoKeys ++ yiheKeys;
   };
 
@@ -459,7 +474,6 @@ in
     "vincent"
     "ml"
     "philip"
-    "m00wl"
     "he"
     "justusvonderbeek"
     "rohanfernandez"
