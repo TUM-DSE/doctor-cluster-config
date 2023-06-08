@@ -43,6 +43,13 @@
         [Link]
         Unmanaged = yes
       '';
+      # leave libvirt interfaces alone
+      "05-vnet".extraConfig = ''
+        [Match]
+        Name = vnet*
+        [Link]
+        Unmanaged = yes
+      '';
     } // optionalAttrs doctor-bridge.enable {
       "06-bind".extraConfig = ''
         [Match]
