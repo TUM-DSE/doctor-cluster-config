@@ -15,6 +15,14 @@ let
         own ipv4 address
       '';
     };
+
+    mac = mkOption {
+      type = types.nullOr types.str;
+      default = null;
+      description = ''
+        MAC address of the NIC port used as a gateway
+      '';
+    };
   };
 in
 {
@@ -37,6 +45,7 @@ in
         "Please add network configuration for ${config.networking.hostName}. None found in ${./hosts.nix}";
 
     # usually, for each host there is a hostname.dse.in.tum.de and hostname.r domain
+    # TODO add all macs:
     networking.doctorwho.hosts = {
       astrid = {
         ipv4 = "131.159.102.11";
@@ -85,6 +94,7 @@ in
       wilfred = {
         ipv4 = "131.159.102.15";
         ipv6 = "2a09:80c0:102::15";
+        mac = "00:1b:21:c3:82:2c";
       };
       river = {
         ipv4 = "131.159.102.16";
