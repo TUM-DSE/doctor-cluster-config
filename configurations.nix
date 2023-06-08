@@ -97,6 +97,7 @@ let
       ./modules/envfs.nix
       ./modules/mosh.nix
       ./modules/qemu-bridge.nix
+      ./modules/doctor-VMs.nix
       nix-index-database.nixosModules.nix-index
       ./modules/nix-index.nix
     ];
