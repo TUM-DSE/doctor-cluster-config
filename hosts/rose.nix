@@ -1,4 +1,4 @@
-{
+{ config, ...}: {
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-AS-4124GS.nix
@@ -10,6 +10,8 @@
 
     ../modules/amd_sev_snp.nix
     #../modules/amd_sev_svsm.nix
+    ../modules/vfio/iommu-amd.nix
+    ../modules/dpdk.nix
   ];
 
   boot.hugepages.size = "1GB";
