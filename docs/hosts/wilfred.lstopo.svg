@@ -125,8 +125,8 @@
 	<line id='PCIBridge_7_line_1' class='PCIBridge' x1='395' y1='244' x2='395' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<rect id='PCI_7_rect' class='PCI' x='419' y='241' width='136' height='86' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PCI_7_text' class='PCI' font-family='Monospace' x='426' y='258' fill='rgb(0,0,0)' font-size='10px'>PCI 51:00.0</text>
-	<rect id='Net_4_rect' class='Net' x='426' y='265' width='98' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_4_text' class='Net' font-family='Monospace' x='433' y='282' fill='rgb(0,0,0)' font-size='10px'>Net enp81s0np0</text>
+	<rect id='Net_4_rect' class='Net' x='426' y='265' width='80' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Net_4_text' class='Net' font-family='Monospace' x='433' y='282' fill='rgb(0,0,0)' font-size='10px'>Net enp81s0</text>
 	<rect id='OpenFabrics_5_rect' class='OpenFabrics' x='426' y='296' width='122' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='OpenFabrics_5_text' class='OpenFabrics' font-family='Monospace' x='433' y='313' fill='rgb(0,0,0)' font-size='10px'>OpenFabrics irdma0</text>
 	<rect id='HostBridge_8_rect' class='HostBridge' x='562' y='241' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -149,5 +149,5 @@
 	<text id='Block_7_text_1' class='Block' font-family='Monospace' x='652' y='341' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
 	<rect id='anon_rect' x='0' y='362' width='733' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='379' fill='rgb(0,0,0)' font-size='10px'>Host: wilfred</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='393' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 10 May 2023 08:46:52 AM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='393' fill='rgb(0,0,0)' font-size='10px'>Date: Fri 09 Jun 2023 03:02:07 PM UTC</text>
 </svg>
