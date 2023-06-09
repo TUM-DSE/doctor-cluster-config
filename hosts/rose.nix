@@ -12,6 +12,9 @@
     #../modules/amd_sev_svsm.nix
   ];
 
+  boot.hugepages.size = "1GB";
+  boot.hugepages.number = 8;
+
   networking.hostName = "rose";
 
   simd.arch = "znver3";
