@@ -65,7 +65,8 @@
 
   systemd.services.syncoid-setup = {
     wantedBy = [ "multi-user.target" ];
-    before = [ "syncoid.service" ];
+    before = [ "syncoid.service"  ];
+    after = [ "network.target" ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = [
