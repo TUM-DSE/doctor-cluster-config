@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }: let 
   VMs = {
-    wilfred = [
+    graham = [
       rec { 
         name = "qemu1"; 
         mac = "96:83:AA:A0:06:34"; 
@@ -14,7 +14,26 @@
             -m 32G \
             -device virtio-serial \
             -drive file=/scratch/doctor-VMs/qemu1.qcow2 \
-            -drive file=/scratch/doctor-VMs/user-data.img \
+            -drive file=/scratch/doctor-VMs/user-data1.img \
+            -net nic,macaddr=${mac},netdev=user.0,model=virtio \
+            -netdev bridge,id=user.0,br=doctor-bridge \
+            -nographic
+        '';
+      }
+      rec { 
+        name = "qemu2"; 
+        mac = "96:83:AA:A1:06:34"; 
+        autostart = false;
+        uses-doctor-bridge = true;
+        execStart = pkgs.writeShellScriptBin "doctor-vm-${name}" ''
+          ${pkgs.qemu}/bin/qemu-system-x86_64 \
+            -cpu host \
+            -smp 8 \
+            -enable-kvm \
+            -m 32G \
+            -device virtio-serial \
+            -drive file=/scratch/doctor-VMs/qemu2.qcow2 \
+            -drive file=/scratch/doctor-VMs/user-data2.img \
             -net nic,macaddr=${mac},netdev=user.0,model=virtio \
             -netdev bridge,id=user.0,br=doctor-bridge \
             -nographic
