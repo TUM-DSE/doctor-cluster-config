@@ -51,8 +51,11 @@ in {
   ] ++ lib.forEach currentHostsVMs (vm: vm.execStart);
 
   assertions = [{
-    assertion = config.networking.doctor-bridge.enable == lib.any (vm: vm.uses-doctor-bridge) currentHostsVMs;
-    message = "config.networking.doctor-bridge must be enabled because there is a VM using it";
+    assertion = !(
+      !config.networking.doctor-bridge.enable && 
+      (lib.any (vm: vm.uses-doctor-bridge) currentHostsVMs)
+    );
+    message = "config.networking.doctor-bridge must be enabled for ${config.networking.hostName} because there is a VM using it";
   }];
 
   # add all services from the services list to the systemd.services attrset

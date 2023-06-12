@@ -17,8 +17,5 @@
 
   system.stateVersion = "21.11";
 
-  networking.doctor-bridge = {
-    enable = true;
-    port = "enp24s0f0";
-  };
+  networking.doctor-bridge.enable = true;
 }

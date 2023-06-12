@@ -4,11 +4,6 @@
 }: with lib; {
   options = {
     networking.doctor-bridge.enable = mkEnableOption "Use a linux bridge for networking by default to fully expose VMs to our network";
-    networking.doctor-bridge.port = mkOption {
-      type = types.str;
-      example = "eth0";
-      description = "The upstream/gateway NIC port to use for the bridge. ";
-    };
   };
 
   config = let 
@@ -50,10 +45,11 @@
         [Link]
         Unmanaged = yes
       '';
-    } // optionalAttrs doctor-bridge.enable {
+    } // optionalAttrs doctor-bridge.enable { # TODO use mac instead of port
       "06-bind".extraConfig = ''
         [Match]
-        Name=${doctor-bridge.port}
+        MACAddress = ${config.networking.doctorwho.currentHost.mac}
+        Type = ether
         [Network]
         Bridge=doctor-bridge
       '';
