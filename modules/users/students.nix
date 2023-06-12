@@ -412,7 +412,7 @@ in
       inherit (config.users.users.joerg) extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2030;
-      allowedHosts = [ "clara" ];
+      allowedHosts = [ "clara" "graham" ];
       openssh.authorizedKeys.keys = iuliaKeys;
     };
 
