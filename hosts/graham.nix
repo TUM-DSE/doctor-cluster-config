@@ -32,4 +32,6 @@
 
   system.stateVersion = "21.05";
 
+  networking.doctor-bridge.enable = true;
+
 }

@@ -27,7 +27,15 @@ Insecure example for `./user-data`:
 
 ```
 #cloud-config
+# default username: ubuntu
 password: ubuntu
 chpasswd: { expire: False }
 ssh_pwauth: True
 ```
+
+# Notes for doing the same with containers:
+
+- `docker run --mac-address=*`
+- but docker really does not want to use bridges managed by the host OS
+- ubuntu lxc images https://us.lxd.images.canonical.com/
+- use host bridge with lxc container (lxc.net.0.{type, link, hwaddr}): https://wiki.archlinux.org/title/Linux_Containers#Host_network_configuration
