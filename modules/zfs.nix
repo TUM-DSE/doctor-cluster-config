@@ -5,7 +5,9 @@
     autoScrub.enable = true;
   };
   networking.hostId = "8425e348";
-  boot.kernelPackages = lib.mkDefault pkgs.zfs.latestCompatibleLinuxPackages;
+  boot.kernelPackages = lib.mkDefault (pkgs.zfs.override {
+    removeLinuxDRM = pkgs.hostPlatform.isAarch64;
+  }).latestCompatibleLinuxPackages;
 
   boot.zfs.removeLinuxDRM = pkgs.hostPlatform.isAarch64;
 
