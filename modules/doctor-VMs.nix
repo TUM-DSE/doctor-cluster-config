@@ -3,7 +3,8 @@
     graham = [
       rec { 
         name = "qemu1"; 
-        mac = "96:83:AA:A0:06:34"; 
+        mac = "96:83:AA:A0:06:34"; # il01_16, qemu1.dos.cit.tum.de
+        macB = "96:83:AA:A2:06:34"; # il01_14, qemu1b.dos.cit.tum.de
         autostart = false;
         uses-doctor-bridge = true;
         execStart = pkgs.writeShellScriptBin "doctor-vm-${name}" ''
@@ -17,12 +18,15 @@
             -drive file=/scratch/doctor-VMs/user-data1.img \
             -net nic,macaddr=${mac},netdev=user.0,model=virtio \
             -netdev bridge,id=user.0,br=doctor-bridge \
+            -net nic,macaddr=${macB},netdev=user.1,model=virtio \
+            -netdev bridge,id=user.1,br=doctor-bridge \
             -nographic
         '';
       }
       rec { 
         name = "qemu2"; 
-        mac = "96:83:AA:A1:06:34"; 
+        mac = "96:83:AA:A1:06:34"; # il01_16, qemu2.dos.cit.tum.de
+        macB = "96:83:AA:A3:06:34"; # il01_14, qemu2b.dos.cit.tum.de
         autostart = false;
         uses-doctor-bridge = true;
         execStart = pkgs.writeShellScriptBin "doctor-vm-${name}" ''
@@ -36,6 +40,8 @@
             -drive file=/scratch/doctor-VMs/user-data2.img \
             -net nic,macaddr=${mac},netdev=user.0,model=virtio \
             -netdev bridge,id=user.0,br=doctor-bridge \
+            -net nic,macaddr=${macB},netdev=user.1,model=virtio \
+            -netdev bridge,id=user.1,br=doctor-bridge \
             -nographic
         '';
       }

@@ -32,12 +32,10 @@ Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI
 
 To be able to accept self signed certificates in firefox: Go to the website `about:config` and set `network.stricttransportsecurity.preloadlist` to false.
 
-
 # Hosts
 
 - [Expansion cards and slots](../expansion_cards.md)
 - [Network graph](graph.md) (see also networking notes in "Expansion cards and slots")
-
 
 ## AMD-Epyc servers
 
@@ -53,9 +51,9 @@ Our epyc servers are shared devices on which many users usually work concurrentl
 
 ## Intel Xeon servers
 
-Those servers (or individual devices) are sometimes used exclusively by a single user to conduct benchmarks. 
+Those servers (or individual devices) are sometimes used exclusively by a single user to conduct benchmarks.
 
-- single socket Xeon Gold 5317  
+- single socket Xeon Gold 5317
   - [jackson](jackson.md)
   - [christina](christina.md)
   - [adelaide](adelaide.md)
@@ -64,7 +62,7 @@ Those servers (or individual devices) are sometimes used exclusively by a single
 - dual socket Xeon Gold 6326, GPU
   - [jack](jack.md)
 
-**Note**: these servers are equipped with Persistent Memory (PM). 
+**Note**: these servers are equipped with Persistent Memory (PM).
 For information on how to setup the PM in App-Direct mode, please see [here](../SETUP_PM.md)
 
 ## Servers used for NFS/Services
@@ -80,7 +78,6 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
 - [dan](dan.md)
 - [mickey](mickey.md)
 
-
 ## ARM64
 
 - [yasmin](yasmin.md)
@@ -90,10 +87,10 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
 
 ## FPGA-servers
 
-Each of these machines is equipped with an Alveo U50 FPGA card.  Those servers
+Each of these machines is equipped with an Alveo U50 FPGA card. Those servers
 are manually managed by [@atsushikoshiba](@atsushikoshiba). They run ubuntu -
 that means that accounts/ssh keys added to this repos won't appear on those
-machines.  Those machines also are not backed up.
+machines. Those machines also are not backed up.
 
 - [hinoki](hinoki.md)
 - [sakura](sakura.md)
@@ -166,13 +163,18 @@ nardole-eva-home-2023-02-15T00:00:00 Wed, 2023-02-15 00:00:07 [85aac6717e3f1835c
 
 Our chair currently has three networks:
 
-- `il01_16` for the machines:
+- `il01`: for devices in the office
+- `il01_16`: for the servers
+  - open to Müncher Wissenschaftnetz (and VPN)
   - order 10Gbit/s SFP+ connectors for fiber!
   - ipv4: 131.159.102.0/24
   - ipv6: 2a09:80c0:102::/64
 - `il01_15` for management
+  - open only to il01 VPN provided by RBG
   - usually 1Gbit/s RJ-45
   - ipv4: 172.24.90.0/24
+- `il01_14` for internal connections
+  - closed, internal network, private ips
 - L3 Switch "Craig" `craig-mgmt.dse.in.tum.de` (sops encrypted (config)[./craig.sops])
   - 6x 100Gbit/s QSFP
   - many 10Gbit/s SFP+
@@ -188,4 +190,4 @@ A graph of how the servers are connected right now can be found [here](graph.md)
 
 ## Names left to pick
 
-- 
+-
