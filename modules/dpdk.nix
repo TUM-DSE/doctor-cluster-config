@@ -43,5 +43,15 @@ with lib; {
     users.groups.kvm.members = lib.optionals config.users.addAllToKvm (
       builtins.attrNames (lib.filterAttrs (_userName: user: user.isNormalUser) config.users.users)
     );
+    systemd.network.networks = {
+      # leave container interfaces alone
+      "09-ignore-e810".extraConfig = ''
+        [Match]
+        Driver = ice
+
+        [Link]
+        Unmanaged = yes
+      '';
+    };
   };
 }
