@@ -32,10 +32,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
-  mikilioKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCZAI0TEuR1dVXq214bv6mn6QLNfYMPJWh5HwfpzM8YRGJSaHUvPadi8IvcLgN3CtXcsEkTPt36VgWX49L0V59uJ8K4CpH/Ry7gEqU4uHZlBySUercvLyrqM7Eq5YcHkntFsbB/xqrhharkxtv3vYbvYhQpgOlcdA1g2cxG2wtNA5icg6vV1UDsyiAyibHgIIVZ9fvCqWhf9bZz6wjrLmmklTF3SqByteil2BpS57mv5JvRQx+RFIXeg3ciuT35uY7v5TAuRkRC0yoTVjpEDISHKOc8JNAZSgUXHdFj5XYQ/APULDa71hmSZNq2A2Gkf+sRwU5Evou5MqWGQ55jaiZ9r2Hedbd33BP97/MzH1OPDdHK/R9vrJX7+ZSsncUjO0sSkUTKajk5H2jB1gq8c+SeldZGLSBPl6mzk3a1aPgV5MpPXm7EvPa1dQccWZTZZKUuuA2gPyVMO9f7XBZRcYCdColS6Kj/fbq7Lg+XhgRVz53BShBQuP0Qtvcf3XWyEQ0= mikilio@nubara"
-  ];
-
   yiheKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
   ];
@@ -91,7 +87,7 @@ let
   ];
 
   kamilKeys = [
-  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPCKEUYZMotuVIMsFnwgTeSfv3oqfazkmpfrahmL0xqt2TLRvNpiNs1OE5JS3loPPefQ5OmskItTovgm5uo2ZoR+6aJmaKnbYhIT3C9TOWO/WbPL+XpN+Go49MK2P92h0TgMQ+Ilff99BvNWIn/rbkmO6tWJByXpuQnCMYpCDO3rgeNBxYKYN1asEij18TgPSOxbgNq9Fy0zxNXwU+raozbx3/t6FQpMkKPcZ5uwlER8RidZOakZa9gioQKZmN6pGnEN4oQUhuQA8V5g+RrPaJcJhUGC5ZOQaOyr0sGH/s4la/rbTSMh5imcoC/74ZeRg44t34XSDP0XapS0ePWiY9WuQDn7elbNU4m188f3G41ZOnIBOkfle1mtfao8gO7zzJd1tbi056HkB9KGj9v96rN4LtG5CF6n8mQsyHIgeP91HWAkqdKwFC2LX3m7urzWvaA9JjejgFqOMMDlGSYrZ5MYfZaeRQPxukT4LlDyYnluOy08MpgQ7fvviY2PwvHfjdrVGDusBAiKSfbOB77qFr8WE1Xh0SQteJ9mADNqTeJG/aYw33a/HEaRs/gDlco4mRF9mw/RsPC/t5O7lb9GHIB0OfKPlGv2EbahHxbiWbsE7nFmzbG69GEL+9zVC3rbQ1fzjIkGHYlfLZ8ygrOVPGdtNeskDBx+kkjiHNwIptuw== kamilkozakowski@Kamils-MacBook-Air.local"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPCKEUYZMotuVIMsFnwgTeSfv3oqfazkmpfrahmL0xqt2TLRvNpiNs1OE5JS3loPPefQ5OmskItTovgm5uo2ZoR+6aJmaKnbYhIT3C9TOWO/WbPL+XpN+Go49MK2P92h0TgMQ+Ilff99BvNWIn/rbkmO6tWJByXpuQnCMYpCDO3rgeNBxYKYN1asEij18TgPSOxbgNq9Fy0zxNXwU+raozbx3/t6FQpMkKPcZ5uwlER8RidZOakZa9gioQKZmN6pGnEN4oQUhuQA8V5g+RrPaJcJhUGC5ZOQaOyr0sGH/s4la/rbTSMh5imcoC/74ZeRg44t34XSDP0XapS0ePWiY9WuQDn7elbNU4m188f3G41ZOnIBOkfle1mtfao8gO7zzJd1tbi056HkB9KGj9v96rN4LtG5CF6n8mQsyHIgeP91HWAkqdKwFC2LX3m7urzWvaA9JjejgFqOMMDlGSYrZ5MYfZaeRQPxukT4LlDyYnluOy08MpgQ7fvviY2PwvHfjdrVGDusBAiKSfbOB77qFr8WE1Xh0SQteJ9mADNqTeJG/aYw33a/HEaRs/gDlco4mRF9mw/RsPC/t5O7lb9GHIB0OfKPlGv2EbahHxbiWbsE7nFmzbG69GEL+9zVC3rbQ1fzjIkGHYlfLZ8ygrOVPGdtNeskDBx+kkjiHNwIptuw== kamilkozakowski@Kamils-MacBook-Air.local"
   ];
 
   nateKeys = [
@@ -109,8 +105,8 @@ let
   iuliaKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWO997ZygpIs+41KpvcZ9glH+vv/Wz0j59x1owYPyP6 iulia.cornea@tum.de"
   ];
-  
-  
+
+
   martinLKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKs9HeN8+UkNXlfYBSFZmF7L+1lG/tckc1UxnI94bOt3 fair"
   ];
@@ -127,7 +123,7 @@ let
   m00wlKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de"
   ];
-  
+
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -202,16 +198,6 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2003;
       openssh.authorizedKeys.keys = gierensKeys;
-    };
-
-    # Kilian Mio, Peters's BSc student (NIC mediation/passthrough)
-    mikilio = {
-      isNormalUser = true;
-      home = "/home/mikilio";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2005;
-      openssh.authorizedKeys.keys = mikilioKeys;
     };
 
     # Yi He, Sys-lab WS22 (Sebastian's group), and now a HiWi
@@ -357,7 +343,7 @@ in
       uid = 2026;
       openssh.authorizedKeys.keys = kamilKeys;
     };
-    
+
     #  Nathaniel Tornow, working on the Quantum project + tutor
     nate = {
       isNormalUser = true;
@@ -469,5 +455,6 @@ in
     "hanwenliu"
     "wonbangseo"
     "vanda"
+    "mikilio"
   ];
 }
