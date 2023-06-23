@@ -29,6 +29,10 @@ buildFHSUserEnv {
       libxcrypt
       gtk2
       gtk3
+      cmake
+      gnumake
+      binutils
+      nasm
 
       (libidn.overrideAttrs (old: {
         # we need libidn.so.11 but nixpkgs has libidn.so.12
