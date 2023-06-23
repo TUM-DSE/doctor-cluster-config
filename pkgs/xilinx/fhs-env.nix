@@ -35,7 +35,7 @@ buildFHSUserEnv {
       nasm
 
       python3
-      python3Packages.jinja2
+      (python3.withPackages (ps: with ps; [ jinja2 ]))
 
       (libidn.overrideAttrs (old: {
         # we need libidn.so.11 but nixpkgs has libidn.so.12
