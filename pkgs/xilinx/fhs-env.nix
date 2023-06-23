@@ -34,6 +34,9 @@ buildFHSUserEnv {
       binutils
       nasm
 
+      python3
+      python3Packages.jinja2
+
       (libidn.overrideAttrs (old: {
         # we need libidn.so.11 but nixpkgs has libidn.so.12
         src = fetchurl {
