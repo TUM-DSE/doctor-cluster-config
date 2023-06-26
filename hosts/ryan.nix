@@ -11,9 +11,13 @@
     #../modules/amd_sev.nix
     ../modules/amd_sev_svsm.nix
     # ../modules/amd_sev_snp.nix
+
+    # since the disk failure, ryan is partitioned with disko
+    ../modules/zfs-partitioning.nix
   ];
 
   networking.hostName = "ryan";
+  disko.rootDisk = "/dev/nvme1n1";
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media
