@@ -1,9 +1,9 @@
 # clara
 
 ```
-System:    Host: clara Kernel: 6.1.29 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\684r5nfjmw3k1ssi5abimgy4klfy43i8-initrd-linux-6.1.29-initrd.efi 
-           init=/nix/store/bxn8qaxz0lhnscdbqy6md7i7p1rg6kn8-nixos-system-clara-22.11.20230523.fc06fd7/init 
+System:    Host: clara Kernel: 6.3.5 x86_64 bits: 64 compiler: gcc v: 11.3.0 
+           parameters: initrd=\efi\nixos\alx1vk7bph37ng70zfnrrafjwxc0g8g3-initrd-linux-6.3.5-initrd.efi 
+           init=/nix/store/zfx6g849q712gqfsnmc7nza1gcl9hn5a-nixos-system-clara-22.11.20230613.14ff5cd/init 
            console=tty0 console=ttyS0,115200 default_hugepagesz=1GB hugepagesz=1GB hugepages=8 
            console=ttyS1,115200n8 console=tty1 nohibernate loglevel=4 
            Console: N/A DM: LightDM 1.32.0 Distro: NixOS 22.11 (Raccoon) 
@@ -11,7 +11,7 @@ Machine:   Type: Server System: sysGen www.sysgen.de product: AS -4124GS-TNR v: 
            serial: E404070X2C04650 Chassis: type: 17 v: 0123456789 serial: C4180AK50A60934 
            Mobo: Supermicro model: H12DSG-O-CPU v: 1.01A serial: VM227S600618 
            UEFI: American Megatrends v: 2.4 date: 04/22/2022 
-Memory:    RAM: total: 251.75 GiB used: 13.44 GiB (5.3%) 
+Memory:    RAM: total: 251.74 GiB used: 15.09 GiB (6.0%) 
            Array-1: capacity: 8 TiB note: check slots: 32 EC: Multi-bit ECC 
            max-module-size: 256 GiB note: est. 
            Device-1: P1-DIMMA1 size: No Module Installed 
@@ -92,12 +92,12 @@ PCI Slots: Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Us
 CPU:       Info: 2x 24-Core model: AMD EPYC 7413 socket: SP3 bits: 64 type: MT MCP SMP arch: Zen 3 
            family: 19 (25) model-id: 1 stepping: 1 microcode: A0011A8 cache: L1: 6 MiB L2: 24 MiB 
            L3: 512 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 508050 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 508047 
            Speed: 2650 MHz min/max: 1500/2650 MHz base/boost: 2650/3625 boost: enabled 
            volts: 1.1 V ext-clock: 100 MHz Core speeds (MHz): 1: 2650 2: 2650 3: 2650 4: 2650 
-           5: 2650 6: 3619 7: 2650 8: 2650 9: 2650 10: 2650 11: 2650 12: 2650 13: 3623 14: 2650 
-           15: 2650 16: 2650 17: 2650 18: 2650 19: 2650 20: 2650 21: 2650 22: 2650 23: 2650 
-           24: 3379 25: 2650 26: 2650 27: 2650 28: 2650 29: 2650 30: 2650 31: 2650 32: 2650 
+           5: 2650 6: 2650 7: 2650 8: 2650 9: 2650 10: 2650 11: 2650 12: 2650 13: 2650 14: 2650 
+           15: 2650 16: 2650 17: 3623 18: 2650 19: 2650 20: 2650 21: 2650 22: 2650 23: 2650 
+           24: 2650 25: 1799 26: 2650 27: 2650 28: 2650 29: 2650 30: 2650 31: 2650 32: 2650 
            33: 2650 34: 2650 35: 2650 36: 2650 37: 2650 38: 2650 39: 2650 40: 2650 41: 2650 
            42: 2650 43: 2650 44: 2650 45: 2650 46: 2650 47: 2650 48: 2650 49: 2650 50: 2650 
            51: 2650 52: 2650 53: 2650 54: 2650 55: 2650 56: 2650 57: 2650 58: 2650 59: 2650 
@@ -141,45 +141,46 @@ Network:   Device-1: Broadcom BCM57412 NetXtreme-E 10Gb RDMA Ethernet driver: bn
            Device-4: Intel I350 Gigabit Network vendor: Super Micro driver: igb v: kernel 
            port: f000 bus-ID: e5:00.1 chip-ID: 8086:1521 class-ID: 0200 
            IF: eno2 state: down mac: 3c:ec:ef:ea:4b:b1 
-           IF-ID-1: docker0 state: down mac: 02:42:f2:45:93:5f 
+           IF-ID-1: docker0 state: down mac: 02:42:13:15:52:2e 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: enp38s0f3u1u2c2 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f 
            IP v4: 169.254.3.1/24 type: dynamic scope: global 
            IP v6: fe80::bc3a:f2ff:feb6:59f/64 scope: link 
-           IF-ID-3: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A 
+           IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:e4e9:7814:459b:3f23:f455/16 scope: global 
            WAN IP: 131.159.102.22 
 Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v: kernel 
            bus-ID: 3-1.2:4 chip-ID: 0b1f:03ee class-ID: 0a00 
            Report: This feature requires one of these tools: hciconfig/bt-adapter 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.49 TiB 
-           allocated: 249 GiB 
+RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.52 TiB 
+           allocated: 221 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 1.44 TiB (27.5%) 
+Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 1.37 TiB (26.3%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL21T9HCJR-00A07 
            size: 1.75 TiB block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
-           rotation: SSD serial: S64GNA0T724988 rev: GDC5602Q temp: 30 Celsius C scheme: GPT 
-           SMART: yes health: PASSED on: 115d 8h cycles: 42 read-units: 5,064,734 [2.59 TB] 
-           written-units: 12,544,701 [6.42 TB] 
+           rotation: SSD serial: S64GNA0T724991 rev: GDC5602Q temp: 29° (302 Kelvin) C 
+           SMART: yes health: PASSED on: 133d 6h cycles: 42 read-units: 4,044 [2.07 GB] 
+           written-units: 2,107,208 [1.07 TB] 
            ID-2: /dev/nvme1n1 maj-min: 259:1 vendor: Samsung model: MZQL21T9HCJR-00A07 
            size: 1.75 TiB block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
-           rotation: SSD serial: S64GNA0T724991 rev: GDC5602Q temp: 31 Celsius C 
-           SMART: yes health: PASSED on: 115d 8h cycles: 42 read-units: 3,878 [1.98 GB] 
-           written-units: 2,107,208 [1.07 TB] 
-Partition: ID-1: / raw-size: N/A size: 1.48 TiB used: 41.8 GiB (2.8%) fs: zfs 
+           rotation: SSD serial: S64GNA0T724988 rev: GDC5602Q temp: 31° (304 Kelvin) C 
+           scheme: GPT 
+           SMART: yes health: PASSED on: 133d 6h cycles: 42 read-units: 6,493,370 [3.32 TB] 
+           written-units: 14,727,549 [7.54 TB] 
+Partition: ID-1: / raw-size: N/A size: 1.5 TiB used: 39.55 GiB (2.6%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 27.3 MiB (2.7%) fs: vfat 
-           block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:2 
-           ID-3: /home raw-size: N/A size: 680.07 GiB used: 529.25 GiB (77.8%) fs: nfs4 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 82.5 MiB (8.1%) fs: vfat 
+           block-size: 512 B dev: /dev/nvme1n1p1 maj-min: 259:2 
+           ID-3: /home raw-size: N/A size: 667.57 GiB used: 516.52 GiB (77.4%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 1.45 TiB used: 9.16 GiB (0.6%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 1.47 TiB used: 38.1 MiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
            System Temperatures: lm-sensors cpu: 49.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 1095 Uptime: 3h 11m wakeups: 0 Init: systemd v: 251 target: graphical.target 
-           tool: systemctl Compilers: gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 818 lib: 206 
+Info:      Processes: 1145 Uptime: 2h 18m wakeups: 0 Init: systemd v: 251 target: graphical.target 
+           tool: systemctl Compilers: gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 852 lib: 214 
            nix-usr: 0 Client: Sudo v: 1.9.13p3 inxi: 3.3.04 
 ```
 ![hardware topology](clara.lstopo.svg)
