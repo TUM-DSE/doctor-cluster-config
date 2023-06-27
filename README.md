@@ -1,5 +1,5 @@
-The documenation for all hosts lives in [here](docs/hosts). 
-The corresponding nixos configuration is in [./hosts](./hosts). 
+The documenation for all hosts lives in [docs/](docs/). 
+The corresponding nixos configuration is in [hosts/](hosts/). 
 
 # New admins: getting started
 
