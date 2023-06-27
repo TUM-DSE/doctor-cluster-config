@@ -32,6 +32,8 @@
     pciutils
     ethtool
     usbutils
+    smartmontools # smartctl
+    nvme-cli # nvmectl
 
     ipmitool
     # tries to default to soft-float due to out-dated cc-rs
