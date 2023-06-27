@@ -2,6 +2,8 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { modulesPath
+, lib
+, config
 , ...
 }: {
   imports = [
@@ -20,7 +22,7 @@
     fsType = "zfs";
   };
 
-  fileSystems."/boot" = {
+  fileSystems."/boot" = lib.optionalAttrs (config.networking.hostName != "ryan") {
     # set with: dosfslabel /dev/nvme0n1p1 boot
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";

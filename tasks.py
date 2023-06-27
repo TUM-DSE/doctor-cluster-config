@@ -393,9 +393,9 @@ def reformat_install_nixos(c: Any, host: str, dhcp_interface: str) -> None:
     with tempfile.TemporaryDirectory() as tmpdir:
         decrypt_host_keys(c, host, tmpdir)
         # nixos_remote_pxe = "sudo nixos-remote-pxe"
-        nixos_remote_pxe = "sudo -E PYTHONPATH=$PYTHONPATH PATH=$PATH python3 /home/romano/Documents/tmp/nixos-anywhere/nixos-remote-pxe.py"  # TODO nixos-remote-pxe needs packaging
+        nixos_remote_pxe = "sudo -E PYTHONPATH=$PYTHONPATH PATH=$PATH python3 /home/okelmann/nixos-anywhere/nixos-anywhere-pxe.py"  # TODO nixos-remote-pxe needs packaging
         c.run(
-            f"{nixos_remote_pxe} --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --extra-files {tmpdir} --no-reboot --pause-after-completion"
+            f"{nixos_remote_pxe} --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --extra-files {tmpdir} --no-reboot --pause-after-completion"
         )
     info("Device information:")
     info(
