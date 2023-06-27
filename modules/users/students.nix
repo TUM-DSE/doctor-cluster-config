@@ -5,10 +5,6 @@ let
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local"
   ];
 
-  jrKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYva//qGT0//ljbMjZjX1ugxQjHJir8/Qp1yxy8ZDFCY7rwLi15M69/ZQ8NplU53bkW4ezqkf9CON80NpzfGTuyi7FO28JeWbHovyyHymkUM2wcFjAXOjQKgXz7NRKswZSDAdjZcX7nxHoqY4yI5fBy/9yYNrcdvKZ8NcCGFyhHQijdLUwo4hfOWKIHp4j4tLjQ0T7nKHmcuE+o5xr54EZpAvhQgyPFxrxYiLxX08ksDCykWocgJIiEDVBpw58vTQJxWzRMab/AnWs2FesKOKOfzy9wXa3ze++kb0WVzairhxj5lI2MUAZiE8nCEGBy7jiIDsQ3CaWMFpfvQHnvkd5 jasper@debianj"
-  ];
-
   mfKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
@@ -21,11 +17,6 @@ let
 
   mwerndleKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsZ8xTt0Ti6evYqvLBMXLaExS0SP0KZB7oSA7RO3tQinlVT62KIxJ5NXxrKgCOy3evCtN+fqYFvshGHZ6/FPcOj3i3PfJRHaj6WjQicIIfVFEbfLtzh2QxDDVXBkfh747fBmPHrfXJwxCRjRpSwYBmDBcJVjH3weHLqVm6f4SioDWMZ8arCYipZSPlfCFvcqR532ipiKQH3pHinjtopLMLmZnZQeXOsK1lsIDLs7/onkK1cNhCeX7Hq69N7gp/2AYUoXjnZ2/vvDq6QAofz5jASDjPfZz1eHdz4owc6I+LoAc76QxE/37mV6PCiGO4YiQji8byvjuIq94moOMfIDkj teppichseite@DESKTOP-NRKB54G"
-  ];
-
-  mfaltusKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCk/FU+8EXhfm16DuOuC/9WJT8O2zkRscjVUVZNqjcYhelJbnzcYcnLdkwcnTik8qwrgj5DKI2N0I+RuoZuqGo9q5FlRuvv+GHDuaB8UVjhJrmm9vpTy8Eng52AlttJAOLKhnJQ1BidqvKXD93RGba5S2a0AK0Pdqm7z029RkGNo2zUp5rnuLQmmeitIej7vdZmxx1sk5cYiYBLScwOl7whK7O7ymFQtGQjRB8OC2apAAJ6GVNtoCYbZ71vsHoVKYRD2laHfWpJ3zcE89MWtRxtAjNxSNTB9ZkJLND73NBQtBUt9et4R54hCPbiJgMnWV00LQbfWl9+FrE1yJQA3pJsV8ceqNFC6z4Get6XCOHr4sK129Ww2vTgORHXr+QCMwV0ejeTYOk+ypQG4pFjzM1b2c8RXIT4V9jE16FdGzss2z7Ic9lxtzCJdsA7lg3jrvSpr8zAzoUez+Z2pP9QUAMMb6Q4EqU3sWQn6pHUqP4Lpzb5WGWAn9AMd2qB0sVuJQheYDRsuo4OidLtiOEj+IHkrRGNuAAtbLvFinaouqhYdHKiizX+ddTTl3hGtoD2cX3MixhHCy1LypL08VmORL/yUI90uHkqajWCwNnOLABx/Sa+ZSkTHsAilEkU1TvO9aox2iMbsc1nZwilaBR+onvHP2x0d94BTGHRV3al34BhJw== marcel@Desktop-17"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBK37Hp7Tjuqjm9iGBJL6/GIqNZRN6NSQD4SKomAAL+Zjx7UV+HXX19hruvRdkjz/RNeU27vYthrKwtfqIggzEiI= marcel@Desktop-17"
   ];
 
   gierensKeys = [
@@ -52,20 +43,8 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrdEe2/aOcUzaPtkDLJQ8VrcfiF8tNpk02SPLIVrsTywSHrBueOMz/cVR/Dkk7HREkI8iPshIefYogGgXNrwXp4ogu7DFA/5FS58QgrUS/il/LYT1pIcC4URFt0s5UHxvXbVP/zPVVpDZ7AqXLzz0H95csR9mO5eY2CgZh5+haC1dNhBEZK7v2pcsp+TrDzcxKjo5ZjqFAUNRBAT/lMJy2t0Zdm9cnkNFYymC2n57mgve2W9L8mRsMTYdQbwT7S7PgV3605e7bphnvGVl09iSkwkbQZ9oiqvZFdVn9id6tPxlf6wnnMo2YU9fuqRJoF6kKGN5Mvqvmm6bIUW5y9cFjpAniJg7lPY2Dc/em/q5jpdYirnkPnjnjpqdNBKnroRbsNL8bUWPyyZM4seSAIaw61OUQLhJHClUx9sAb3nyWRq6k2PAB1HcBeY9dVgv3b+0ZzNsR52IqEzs3VOZGAS174Kd8FFk7oyV15a1qfyhCzKxNJIbW8AHXh+S7EcVnyYyJguJ/hblUOwsc4Un/3UQkmhTTOkZOb3zZklHM62isA4yA6uAUkCxASgaG0UMtvzeJiynYLr1x4YR2jTKU2VD79n8pcKienJmBH0d80FtnPMiJPZA4EiVSXYAZ1PKbVsSBk47Ia7SmgZr46VX4ha5frAY/kQNzFk9qyImuyPyIyw== kammerme ge35tem"
   ];
 
-  emilKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDgvbY6SooSd15IeR4TO2xrbqL9NrUKdxRk0EmUy4nF1xy8gTVb6fzjbeFer7ECgWE3YgUQ2ejWXtveT8jLcJmMAgGrfspfzI2uA5ijYtVlqUqL0Acxra6DMvYDhQkOG66ri5uCah2u9HUGLt56gLsjEALsDK2cJjh8Km5fRk8vxdtESSx/pd5fK0J7x5J2b3SAPtLnF9j5s1JfMxAqxYgIgwaghF5+z1IEDGRKEOsXDFNOE2AhLChf1ALtqpF6p9FigLYDXRNO2LOWAZBDbeTNq0WQJlN3BPwPfgLJKBTgLdZ/RREiYf8DEmx+c7PTjushyAYnCM/YlzCfeLBwnFXNk2XsSZUH99pZy0scjOuDtHu0uY4NTfBo9H1mmznOOjgovXwgmgdujTzl4prciRl4feKbOR5lmQV4ziwAbvLOdVoP0ABri3pFumkgjNiv91kvAOgILGvMfeeiuVxiVjLbDxBRuL5hlqq/t6wGnGlP4xCqN9f87qz8kfc5ls80TK7Nh1yi4USQIsfaZkBM/sCARIj1CSu9emcI3Oo856jz+l2SlB9r0urqbuSNoUxh14uQ35uYqcqhjXc+AI0acBVmDH1lHurgvVAQdceYGdVPW9iV4sQNoFnFqoMgbblA+y9ujZu3a3XEGv8HzKL7wT17YXc0V2y30DeFSEiqxcEJmw== emil@sssemil"
-  ];
-
   shuKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDdNJJX/Y6xOkSKwrHubpZNti5Gk9VFycn9hLzP2x9fo/ZbqrSfNNSAmj2OMHjXKpXHkyVuD2V4Yw/N7ulIX070o05ljn3zbZO4z6upg1czjXys//LvGevCm6cItg5i4bk/XVz+1Q+iaQgPQbkQJ0cM9h1kIwq1p9S+mh37yj4JVmSb6w+hVD6kWOTrE9UL88HEPmBClr/syqQ9KJt9/KvnoeBV5GE58swYvCNCenUdSHYzhpE4WUKeJhqO38i1Oux6aXSJbjdQaR+YaHTXPHkHLOpkY6lHleRj2M9ooEwYzAjIoU9zGgjoj1fxOp9IGdlS/BhnFVaPh/z2Hu1KPpOmY+Cby9hIUf13KCUnp3eLGf5HB3IUBRTf6t12A65cPHeVISBOLO+6gcrOWKHnNAOq8RJaNBvNQ+N0AZejXYdojqvSod2+0ATT57bSlUiL3E+u5KN7gG7/dohY4OdxSMqt+Hvi3fsMYt2FKVUFWK4AqvgaXzDj4mjIZ44DAHdS408= gedatsu@fedora"
-  ];
-
-  turkmenKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsA5EhZL7JyoctqOzc2Sc/uNq2viAIwFQ6YUqlSdlKCqPonnNGxyGiW+/voNPvmo8ZsZwth9PPTvPwrXjxofpypDtzuiIAQCiOEGLWJmProYVydF2TjurtIFTPmMJELQ9qWVZrCbBaL0ekdDLpqHV8SrAdF/weaVyfBGl+RFO6rZfAwW9c3fLFLd7o9U0hUOSMWOjI1OStGXhoYXB4kdXHqV31WnHwSKitoAfEXGtjqqOqX1ulheuQ36by5VKnieX8scFZuqlxRCZYlTZRSC1jPpaYOL1zuu1uY9qNIEEwr0taXyWXp/dGZiYr7WO3109CYdBVdgG0WddKLH6QCug9grXuyJhiagC8OzCBQNg+n97pPmoP1GboUstEAkikKvzgU/udLRr4he046vnczgXNe4r4VUeCNaHJnDp17VFxveX0ANz1jde9NcMUD4X70eTUO9lGjFZHPYqMTcF06m1qvm6Jri3tsXXrkAFatPw448tD9awh7atPaEJYqKT59yoglCmyrmjxWDfdf4beCVyZ2WMPjlqgmTw3u8l7rt1flBd4z3cKEJHmyakmlPVLClnSWc70PdisfW7PeqAHNFJ5zkV92y9B9RKJrTtTyIdmxx4ESiUsFbfLUrBQgv6uLOtRIV4JzJ2bUT4lHDvkQHPWib04hzt51pSHl4mAN5BADw=="
-  ];
-
-  saracKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4e7BZ5ip9KVu7oY0x7nuWIcZIK+FGLk4pZPrua0sfF"
   ];
 
   felixKeys = [
@@ -139,18 +118,7 @@ in
       openssh.authorizedKeys.keys = paulKeys;
     };
 
-    # Jasper Ruhl (guided research) with Redha
-    jasper = {
-      isNormalUser = true;
-      home = "/home/jasper";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/fish";
-      uid = 1015;
-      openssh.authorizedKeys.keys = jrKeys;
-    };
-
-    # Martin Fink (guided research) with Redha/Rodrigo
-    # maybe remove after winter semester 2021/2022
+    # Martin Fink (HiWi)
     martin = {
       isNormalUser = true;
       home = "/home/martin";
@@ -178,16 +146,6 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2001;
       openssh.authorizedKeys.keys = mwerndleKeys;
-    };
-
-    # Marcel Faltus, Redha's BSc student (Porting QEMU for Apple M1)
-    mfaltus = {
-      isNormalUser = true;
-      home = "/home/mfaltus";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2002;
-      openssh.authorizedKeys.keys = mfaltusKeys;
     };
 
     # Sandro Gierens, Peter's BSc student (applying ioregionfd to KVM/qemu devices)
@@ -251,17 +209,6 @@ in
       openssh.authorizedKeys.keys = simonkKeys;
     };
 
-    # Emil Suleymanov, secure-reliable seminar student WS22
-    emil = {
-      isNormalUser = true;
-      home = "/home/emil";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2018;
-      allowedHosts = [ "jack" ];
-      openssh.authorizedKeys.keys = emilKeys;
-    };
-
     # Shi Anzai, former intern (Atsushi)
     shu = {
       isNormalUser = true;
@@ -270,28 +217,6 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2019;
       openssh.authorizedKeys.keys = shuKeys;
-    };
-
-    # Ahmet Turkmen, secure-reliable seminar student WS22
-    turkmen = {
-      isNormalUser = true;
-      home = "/home/turkmen";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2020;
-      allowedHosts = [ "jack" "graham" ];
-      openssh.authorizedKeys.keys = turkmenKeys;
-    };
-
-    # Mert Saraç, secure-reliable seminar student WS22
-    sarac = {
-      isNormalUser = true;
-      home = "/home/sarac";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2021;
-      allowedHosts = [ "jack" "graham" ];
-      openssh.authorizedKeys.keys = saracKeys;
     };
 
     # Felix Gust, Atsushi's Master student (Trustworthy disaggregation)
@@ -324,7 +249,7 @@ in
       openssh.authorizedKeys.keys = raitoKeys;
     };
 
-    # Kai-Chun Hsieh, MSc student with Masa/Redha (unik-multiprocessing)
+    # Kai-Chun Hsieh, MSc student with Masa (unikernel bpf verif)
     kai = {
       isNormalUser = true;
       home = "/home/kai";
@@ -364,7 +289,7 @@ in
       openssh.authorizedKeys.keys = robertoKeys;
     };
 
-    # Ritz Rehde, Bsc student with Martin (memory safety for wasm)
+    # Fritz Rehde, Bsc student with Martin (memory safety for wasm)
     # Remove after SS23
     fritz = {
       isNormalUser = true;
@@ -456,5 +381,10 @@ in
     "wonbangseo"
     "vanda"
     "mikilio"
+    "jasper"
+    "mflatus"
+    "emil"
+    "turkmen"
+    "sarac"
   ];
 }
