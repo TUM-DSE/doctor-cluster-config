@@ -13,7 +13,7 @@ There are several ways to access the servers:
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dse.in.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dse.in.tum.de`
   - Keys are uploaded via the machine bill whenever nixos configuration is updated.
-  - You can generate an SSH config file for all TUM hosts with [this script](../gen-ssh-config.sh), providing your username as an argument
+  - You can generate an SSH config file for all TUM hosts with [this script](./gen-ssh-config.sh), providing your username as an argument
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
@@ -34,36 +34,36 @@ To be able to accept self signed certificates in firefox: Go to the website `abo
 
 # Hosts
 
-- [Expansion cards and slots](../expansion_cards.md)
-- [Network graph](graph.md) (see also networking notes in "Expansion cards and slots")
+- [Expansion cards and slots](./expansion_cards.md)
+- [Network graph](./hosts/graph.md) (see also networking notes in "Expansion cards and slots")
 
 ## AMD-Epyc servers
 
 Our epyc servers are shared devices on which many users usually work concurrently.
 
 - single NUMA node (EPYC 7713P):
-  - [graham](graham.md)
-  - [ryan](ryan.md)
+  - [graham](./hosts/graham.md)
+  - [ryan](./hosts/ryan.md)
 - dual NUMA node (EPYC 7413, for many expansion cards)
-  - [amy](amy.md)
-  - [clara](clara.md)
-  - [rose](rose.md)
+  - [amy](./hosts/amy.md)
+  - [clara](./hosts/clara.md)
+  - [rose](./hosts/rose.md)
 
 ## Intel Xeon servers
 
 Those servers (or individual devices) are sometimes used exclusively by a single user to conduct benchmarks.
 
 - single socket Xeon Gold 5317
-  - [jackson](jackson.md)
-  - [christina](christina.md)
-  - [adelaide](adelaide.md)
-  - [wilfred](wilfred.md)
-  - [river](river.md)
+  - [jackson](./hosts/jackson.md)
+  - [christina](./hosts/christina.md)
+  - [adelaide](./hosts/adelaide.md)
+  - [wilfred](./hosts/wilfred.md)
+  - [river](./hosts/river.md)
 - dual socket Xeon Gold 6326, GPU
-  - [jack](jack.md)
+  - [jack](./hosts/jack.md)
 
 **Note**: these servers are equipped with Persistent Memory (PM).
-For information on how to setup the PM in App-Direct mode, please see [here](../SETUP_PM.md)
+For information on how to setup the PM in App-Direct mode, please see [here](./SETUP_PM.md)
 
 ## Servers used for NFS/Services
 
@@ -74,16 +74,16 @@ For information on how to setup the PM in App-Direct mode, please see [here](../
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab
 
-- [astrid](astrid.md)
-- [dan](dan.md)
-- [mickey](mickey.md)
+- [astrid](./hosts/astrid.md)
+- [dan](./hosts/dan.md)
+- [mickey](./hosts/mickey.md)
 
 ## ARM64
 
-- [yasmin](yasmin.md)
+- [yasmin](./hosts/yasmin.md)
 - We have an M1 Mac Mini in Patric's office with a dual boot macos/linux
-  - when booted into NixOS/Linux: [donna](donna.md)
-  - when booted into macos: [sarah](sarah.md)
+  - when booted into NixOS/Linux: [donna](./hosts/donna.md)
+  - when booted into macos: [sarah](./hosts/sarah.md)
 
 ## FPGA-servers
 
@@ -92,17 +92,17 @@ are manually managed by [@atsushikoshiba](@atsushikoshiba). They run ubuntu -
 that means that accounts/ssh keys added to this repos won't appear on those
 machines. Those machines also are not backed up.
 
-- [hinoki](hinoki.md)
-- [sakura](sakura.md)
+- [hinoki](./hosts/hinoki.md)
+- [sakura](./hosts/sakura.md)
 - momiji
 
 ## Others
 
 - RBG VMs:
-  - doctor.r [doctor.nix](doctor.nix): borg backup target
-  - login.dse.in.tum.de [README](/modules/jumphost/README.md): ssh jumphost and grafana
+  - doctor.r [doctor.nix](../hosts/doctor.nix): borg backup target
+  - login.dse.in.tum.de [README](../modules/jumphost/README.md): ssh jumphost and grafana
 - RISC-V:
-  - ruby.r [ruby.nix](ruby.nix)
+  - ruby.r [ruby.nix](./hosts/ruby.nix)
 
 # Storage
 
@@ -186,7 +186,7 @@ Our chair currently has three networks:
 To add a new machine send the MAC address of your host interface and your IPMI/management interface to `ls1.admin@in.tum.de`.
 If the RGB group asks which networks to connect your machine to, tell them `il01_16` for the machine and `il01_15` for IPMI/BMC.
 
-A graph of how the servers are connected right now can be found [here](graph.md).
+A graph of how the servers are connected right now can be found [here](./hosts/graph.md).
 
 ## Names left to pick
 
