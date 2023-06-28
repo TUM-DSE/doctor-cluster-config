@@ -33,6 +33,7 @@ buildFHSUserEnv {
       gnumake
       binutils
       nasm
+      glibc.dev
 
       (python3.withPackages (ps: with ps; [ jinja2 ]))
 
