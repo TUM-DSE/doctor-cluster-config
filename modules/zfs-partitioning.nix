@@ -6,8 +6,34 @@
       default = "/dev/nvme0n1";
       description = "The device to use for the disk";
     };
+    disko.noZfs = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "If true, use ext4 instead of zfs";
+    };
   };
-  config = {
+  config = let 
+    zfs-partition = {
+      name = "zfs";
+      start = "1GiB";
+      end = "100%";
+      content = {
+        type = "zfs";
+        pool = "zroot";
+      };
+    };
+    ext4-partition = {
+      name = "root";
+      start = "1GiB";
+      end = "100%";
+      content = {
+        type = "filesystem";
+        format = "ext4";
+        mountpoint = "/";
+        mountOptions = [ "nofail" ];
+      };
+      };
+  in {
     disko.devices = {
       disk = {
         disk0 = {
@@ -30,20 +56,12 @@
                 mountOptions = [ "nofail" ];
               };
             }
-            {
-              name = "zfs";
-              start = "1GiB";
-              end = "100%";
-              content = {
-                type = "zfs";
-                pool = "zroot";
-              };
-            }
-            ];
+            ] ++ (lib.optionals (!config.disko.noZfs) [zfs-partition])
+            ++ (lib.optionals config.disko.noZfs [ext4-partition]);
           };
         };
       };
-      zpool = {
+      zpool = lib.optionalAttrs (!config.disko.noZfs) {
         zroot = {
           type = "zpool";
           rootFsOptions = {
