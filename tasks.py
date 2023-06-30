@@ -83,6 +83,15 @@ def build_local(c: Any, hosts: str = "") -> None:
 
     g.run_function(build_local)
 
+@task
+def flake_check(c: Any) -> None:
+    """
+    Run nix checks on this repo (may need a aarch64 remote builder configured)
+    """
+    cmd = "nix flake check --option allow-import-from-derivation true"
+    print(f"$ {cmd}")
+    os.system(cmd)
+
 
 def document_cards(hosts: DeployGroup) -> str:
     """
