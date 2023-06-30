@@ -9,7 +9,7 @@
     disko.noZfs = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "If true, use ext4 instead of zfs";
+      description = "[WATCH OUT: last time i used this, it did not work (boot).] If true, use ext4 instead of zfs";
     };
   };
   config = let 

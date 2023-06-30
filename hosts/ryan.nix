@@ -17,8 +17,8 @@
   ];
 
   networking.hostName = "ryan";
-  disko.rootDisk = "/dev/disk/by-id/nvme-Dell_Ent_NVMe_AGN_MU_AIC_1.6TB_S61ANA0R501123";
-  disko.noZfs = true;
+  disko.rootDisk = "/dev/sda";
+  # disko.noZfs = true;
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media
