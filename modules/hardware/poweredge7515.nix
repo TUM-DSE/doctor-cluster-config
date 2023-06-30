@@ -17,7 +17,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
+  fileSystems."/" = lib.optionalAttrs (config.networking.hostName != "ryan") {
     device = "zroot/root/nixos";
     fsType = "zfs";
   };
@@ -28,7 +28,7 @@
     fsType = "vfat";
   };
 
-  fileSystems."/tmp" = {
+  fileSystems."/tmp" = lib.optionalAttrs (config.networking.hostName != "ryan") {
     device = "zroot/root/tmp";
     fsType = "zfs";
   };
