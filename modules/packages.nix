@@ -34,6 +34,7 @@
     usbutils
     smartmontools # smartctl
     nvme-cli # nvmectl
+    edac-utils # edac-util: memory/pci errors
 
     ipmitool
     # tries to default to soft-float due to out-dated cc-rs
