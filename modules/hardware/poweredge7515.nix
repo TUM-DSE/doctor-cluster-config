@@ -17,19 +17,22 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = lib.optionalAttrs (config.networking.hostName != "ryan") {
-    device = "zroot/root/nixos";
-    fsType = "zfs";
-  };
+  fileSystems = { 
+    "/" = lib.optionalAttrs (config.networking.hostName != "ryan") {
+      device = "zroot/root/nixos";
+      fsType = "zfs";
+    };
 
-  fileSystems."/boot" = lib.optionalAttrs (config.networking.hostName != "ryan") {
-    # set with: dosfslabel /dev/nvme0n1p1 boot
-    device = "/dev/disk/by-label/boot";
-    fsType = "vfat";
-  };
-
-  fileSystems."/tmp" = lib.optionalAttrs (config.networking.hostName != "ryan") {
-    device = "zroot/root/tmp";
-    fsType = "zfs";
+    "/boot" = lib.optionalAttrs (config.networking.hostName != "ryan") {
+      # set with: dosfslabel /dev/nvme0n1p1 boot
+      device = "/dev/disk/by-label/boot";
+      fsType = "vfat";
+    };
+  } // lib.optionalAttrs (config.networking.hostName != "ryan") {
+    # we may not have a tmp mountpoint - but then we must not even create a null value for the "/tmp" attribute (which we do for / and /boot)
+    "/tmp" = {
+      device = "zroot/root/tmp";
+      fsType = "zfs";
+    };
   };
 }
