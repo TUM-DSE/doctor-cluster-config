@@ -13,10 +13,10 @@
 
 stdenv.mkDerivation rec {
   pname = "ipmctl";
-  version = "03.00.00.0468";
+  version = "03.00.00.0485";
   src = fetchurl {
-    url = "https://github.com/intel/ipmctl/releases/download/v${version}/ipmctl-${version}-1.fc27.src.rpm";
-    sha256 = "sha256-aEnLIGzC06LxnZXxwUbGC85MYqm6ycVMRMp8tWsxd78=";
+    url = "https://github.com/intel/ipmctl/releases/download/v${version}-2/ipmctl-${version}-1.fc27.src.rpm";
+    sha256 = "sha256-mtKe9iTxavmM17NISwysnPWaFvA5mj6TZwNtBrx8s9U=";
   };
   buildInputs = [ libndctl systemd ];
   unpackPhase = ''
@@ -24,6 +24,7 @@ stdenv.mkDerivation rec {
     tar -xf ipmctl-${version}.tar.gz
     cd ipmctl-${version}
   '';
+  NIX_CFLAGS_COMPILE = "-Wno-error";
   nativeBuildInputs = [ cmake python3 pkg-config asciidoctor asciidoc rpmextract ];
   cmakeFlags = [
     "-DBUILDNUM=1"

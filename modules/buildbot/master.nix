@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   # TODO: make this an option
@@ -21,7 +21,7 @@ in
       ps.requests
       ps.treq
       ps.psycopg2
-      ps.buildbot-worker
+      (ps.toPythonModule pkgs.buildbot-worker)
     ];
     home = "/var/lib/buildbot-master";
   };
