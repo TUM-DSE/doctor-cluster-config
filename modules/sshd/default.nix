@@ -15,11 +15,11 @@ in
       ''}
       StreamLocalBindUnlink yes
     '';
-    # forwardX11 requires setXAuthLocation which in turn brings in X11
+    # X11Forwarding requires setXAuthLocation which in turn brings in X11
     # dependencies which i am not confident with bringing onto our servers.
     # see
     # https://github.com/NixOS/nixpkgs/blob/a664d2a42c26b5bf2bb214135502d66632e8f975/nixos/modules/services/networking/ssh/sshd.nix#L562W
-    forwardX11 = false;
+    settings.X11Forwarding = false;
   };
 
   warnings =
