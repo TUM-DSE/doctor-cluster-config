@@ -39,17 +39,35 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
     path = data["path"]
 
     def deploy(h: DeployHost) -> None:
-        config_dir = h.meta.get("config_dir", "/etc/nixos")
+        target = f"{h.user or 'root'}@{h.host}"
+        flake_path = h.meta.get("flake_path", "/etc/nixos")
         h.run_local(
-            f"rsync --checksum -vaF --delete -e ssh {path}/ {h.user}@{h.host}:{config_dir}"
+            f"rsync --checksum -vaF --delete -e ssh {path}/ {target}:{flake_path}"
         )
 
-        flake_path = config_dir
         flake_attr = h.meta.get("flake_attr")
         if flake_attr:
             flake_path += "#" + flake_attr
-        target_host = h.meta.get("target_host", "localhost")
-        cmd = f"nixos-rebuild switch --fast --option accept-flake-config true --target-host {target_host} --flake {flake_path} --option keep-going true"
+        cmd = [
+            "nixos-rebuild",
+            "switch",
+            "--fast",
+            "--option",
+            "accept-flake-config",
+            "true",
+            "--flake",
+            flake_path,
+            "--option",
+            "keep-going",
+            "true",
+        ]
+        target_host = h.meta.get("target_host")
+        if target_host:
+            target_user = h.meta.get("target_user")
+            if target_user:
+                target_host = f"{target_user}@{target_host}"
+            cmd.extend(["--target-host", target_host])
+        
         ret = h.run(cmd, check=False)
         # re-retry switch if the first time fails
         if ret.returncode != 0:
@@ -82,6 +100,7 @@ def build_local(c: Any, hosts: str = "") -> None:
         )
 
     g.run_function(build_local)
+
 
 @task
 def flake_check(c: Any) -> None:
