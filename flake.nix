@@ -22,7 +22,7 @@
 
     # nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
     # In case we need backports, we can use our fork
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/release-22.11-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/release-23.05-backports";
 
     #nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # needs a zfs fix that only exist in our backports branch or mine
