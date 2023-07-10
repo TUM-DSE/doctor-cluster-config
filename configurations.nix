@@ -275,7 +275,7 @@ in
         ];
     };
 
-    ruby = (nixpkgs-unstable.lib.makeOverridable nixpkgs-unstable.lib.nixosSystem) {
+    ruby = nixosSystem {
       modules =
         computeNodeModules
         ++ [
