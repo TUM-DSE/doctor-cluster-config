@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  package = pkgs.python3Packages.buildbot-worker;
+  package = pkgs.buildbot-worker;
   python = package.pythonModule;
   home = "/var/lib/buildbot-worker";
   buildbotDir = "${home}/worker";
