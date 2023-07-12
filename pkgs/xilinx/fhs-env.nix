@@ -26,7 +26,7 @@ buildFHSUserEnv {
       freetype
       fontconfig
       glib
-      libxcrypt
+      libxcrypt-legacy
       gtk2
       gtk3
       cmake
