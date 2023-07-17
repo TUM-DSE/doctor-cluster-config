@@ -75,6 +75,8 @@
     environmentFile = config.sops.secrets.alertmanager.path;
     webExternalUrl = "https://alertmanager.dse.in.tum.de";
     listenAddress = "[::1]";
+    # FIXME: can be dropped when upgrading to 23.11
+    extraFlags = [ "--cluster.listen-address= " ];
     configuration = {
       route = {
         receiver = "default";
