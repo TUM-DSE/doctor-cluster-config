@@ -144,22 +144,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-unstable": {
-      "locked": {
-        "lastModified": 1688544817,
-        "narHash": "sha256-E12/5zTEDP1e7AssXmky5cYq4qMnUIV5GBfP2iRC240=",
-        "owner": "Mic92",
-        "repo": "nixpkgs",
-        "rev": "e18e2207121ccc8f09830a3045248abbd58c46c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "ref": "main",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
         "lastModified": 1688982359,
@@ -199,7 +183,6 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
