@@ -1,4 +1,4 @@
-with import (builtins.getFlake (toString ../.)).inputs.nixpkgs-unstable { };
+with import (builtins.getFlake (toString ../.)).inputs.nixpkgs { };
 mkShellNoCC {
   nativeBuildInputs = [
     bashInteractive

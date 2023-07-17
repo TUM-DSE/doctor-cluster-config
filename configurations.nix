@@ -9,7 +9,6 @@ let
     nur
     flake-registry
     nixos-hardware
-    nixpkgs-unstable
     srvos
     disko
     nix-index-database
