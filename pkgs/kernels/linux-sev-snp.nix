@@ -60,13 +60,23 @@ let
 
   # snp host latest branch
   # https://github.com/AMDESE/linux/tree/snp-host-latest
-  snp_latest = {
+  snp_latest_6_1 = {
     owner = "AMDESE";
     repo = "linux";
     rev = "db73108c4fd62c03ad57e0c7118e5623750898ee";
     sha256 = "sha256-HP2U6xtwqZQgzJd/RH2I3Ph5wKVkhXtVajNALf4R4HQ=";
     version = "6.1";
     modDirVersionArg = "6.1.0-rc4";
+    extraPatches = [ ];
+  };
+
+  snp_latest = {
+    owner = "AMDESE";
+    repo = "linux";
+    rev = "fea9b785bfa90e015c7d81526e36060da1bf01d1";
+    sha256 = "sha256-AacpCzV0NtraPG4e/L/QDzKwUYveJA1YAaGRapnN/yg=";
+    version = "6.3";
+    modDirVersionArg = "6.3.0-rc2";
     extraPatches = [ ];
   };
 
