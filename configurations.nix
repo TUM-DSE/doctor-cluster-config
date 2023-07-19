@@ -104,7 +104,7 @@ in
 {
   flake.nixosConfigurations = {
     doctor = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         commonModules
         ++ [
@@ -113,7 +113,7 @@ in
     };
 
     rose = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -122,7 +122,7 @@ in
     };
 
     amy = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -131,7 +131,7 @@ in
     };
     
     clara = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -140,7 +140,7 @@ in
     };
 
     bill = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -149,7 +149,7 @@ in
     };
 
     nardole = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -158,7 +158,7 @@ in
     };
 
     yasmin = nixosSystem {
-      system = "aarch64-linux";
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -167,7 +167,7 @@ in
     };
 
     graham = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -177,7 +177,7 @@ in
     };
 
     ryan = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -186,7 +186,7 @@ in
     };
 
     mickey = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -195,7 +195,7 @@ in
     };
 
     astrid = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -204,7 +204,7 @@ in
     };
 
     dan = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -213,7 +213,7 @@ in
     };
 
     christina = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -222,7 +222,7 @@ in
     };
 
     jackson = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -231,7 +231,7 @@ in
     };
 
     adelaide = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -240,7 +240,7 @@ in
     };
 
     wilfred = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -249,7 +249,7 @@ in
     };
 
     river = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -258,7 +258,7 @@ in
     };
 
     jack = nixosSystem {
-      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -266,7 +266,7 @@ in
         ];
     };
     donna = nixosSystem {
-      system = "aarch64-linux";
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules = 
         computeNodeModules
         ++ [

@@ -4,9 +4,9 @@
 {
   config = {
     boot.kernelPackages = let
-      pkgs' = config.hardware.asahi.pkgs;
+      asahi = import ../../packages/overlay.nix pkgs pkgs;
     in
-      pkgs'.linux-asahi.override {
+      asahi.linux-asahi.override {
         inherit (config.boot) kernelPatches;
         _4KBuild = config.hardware.asahi.use4KPages;
         withRust = config.hardware.asahi.withRust;
