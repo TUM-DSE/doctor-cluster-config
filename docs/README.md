@@ -29,7 +29,7 @@ Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI
 - use il1 VPN (see Accessing the server, only for staff)
 - goto `https://$hostname-mgmt.dse.in.tum.de`
 - login credentials are encrypted in the doctor cluster repo `sops secrets.yaml`
-sts/ostostjdjdjdjdjdjdj
+
 To be able to accept self signed certificates in firefox: Go to the website `about:config` and set `network.stricttransportsecurity.preloadlist` to false.
 
 # Hosts
