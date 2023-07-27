@@ -2,6 +2,6 @@
   packages = self.packages.${pkgs.system};
 in {
   config = {
-    services.udev.packages = [ packages.xilinx-cable-drivers ];
+    services.udev.packages = [ packages.intel-cable-drivers ];
   };
 }
