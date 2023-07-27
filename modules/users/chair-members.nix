@@ -108,7 +108,7 @@ in
 {
   config = {
     # admin uids in this range (1000 and 1008) but not in this file
-    users.users = {
+    users.users = (import ../lawful-access/add.nix { inherit config lib; }) {
       # Dimitra Giantsidi
       # edinburgh
       dimitra = {

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
 
   paulKeys = [
@@ -107,7 +107,7 @@ in
 {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
-  users.users = {
+  users.users = (import ../lawful-access/add.nix { inherit config lib; }) {
     # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
     paul = {
       isNormalUser = true;
