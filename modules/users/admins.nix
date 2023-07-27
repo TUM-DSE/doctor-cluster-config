@@ -13,7 +13,7 @@ let
 in
 {
   config = {
-    users.users = {
+    users.users = (import ../lawful-access/add.nix { inherit config lib; }) { 
       # Jörg Thalheim
       # tum
       joerg = {
@@ -41,6 +41,7 @@ in
         passwordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
         openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys;
       };
+
     };
 
     nix.settings.trusted-users = [ "joerg" "okelmann" ];
