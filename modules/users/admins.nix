@@ -13,7 +13,7 @@ let
 in
 {
   config = {
-    users.users = (import ../lawful-access/add.nix { inherit config lib; }) { 
+    users.users = (import ../lawful-access/util.nix { inherit config lib; }).add { 
       # Jörg Thalheim
       # tum
       joerg = {
