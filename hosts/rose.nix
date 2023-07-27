@@ -4,6 +4,7 @@
     ../modules/hardware/supermicro-AS-4124GS.nix
     ../modules/nfs/client.nix
 
+    ../modules/intel-fpgas.nix
     ../modules/xilinx.nix
     ../modules/xrdp.nix
     ../modules/xrdp-passwords.nix

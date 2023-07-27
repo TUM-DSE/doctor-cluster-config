@@ -1,6 +1,6 @@
 { inputs, self, ... }: {
 
-  # packages for x85 only
+  # packages for x86 only
   flake.packages.x86_64-linux = let 
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
@@ -29,6 +29,7 @@
       packages = {
         xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix { };
         xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers { };
+        intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers.nix { };
       };
     };
 }
