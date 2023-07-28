@@ -280,14 +280,15 @@ in
     };
 
     # Roberto Castellotti, MSc student (guided research) with Masa (unik)
-    roberto = {
-      isNormalUser = true;
-      home = "/home/roberto";
-      inherit (config.users.users.joerg) extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2027;
-      openssh.authorizedKeys.keys = robertoKeys;
-    };
+    # disabled for now
+    #roberto = {
+    #  isNormalUser = true;
+    #  home = "/home/roberto";
+    #  inherit (config.users.users.joerg) extraGroups;
+    #  shell = "/run/current-system/sw/bin/bash";
+    #  uid = 2027;
+    #  openssh.authorizedKeys.keys = robertoKeys;
+    #};
 
     # Fritz Rehde, Bsc student with Martin (memory safety for wasm)
     # Remove after SS23
