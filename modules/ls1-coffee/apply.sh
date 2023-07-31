@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ansible-playbook -i inventory backup.yml
+ansible-playbook -i inventory backup.yaml
