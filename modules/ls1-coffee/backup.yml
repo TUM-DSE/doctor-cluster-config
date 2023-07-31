@@ -1,0 +1,42 @@
+---
+- name: Create backup job
+  hosts: all
+  become: yes
+  tasks:
+  - name: "Create systemd timer"
+    ansible.builtin.copy:
+      content: |
+        [Unit]
+        Description=Run daily at 4am
+
+        [Timer]
+        OnCalendar=*-*-* 4:00:00
+        Persistent=true
+
+        [Install]
+        WantedBy=timers.target
+      dest:
+        /etc/systemd/system/postgres-backup.timer
+      mode: '0644'
+      owner: root
+      group: root
+  - name: Create systemd service
+    copy:
+      content: |
+        [Unit]
+        Description=Backup postgresql database
+  
+        [Service]
+        Type=oneshot
+        RemainAfterExit=true
+        ExecStart=/bin/sh -c "docker exec -i ls1-coffee-accounting-db-1 pg_dumpall -U drinks-api | gzip > /var/backups/postgresl-backup.sql.gz"
+      dest:
+        /etc/systemd/system/postgres-backup.service
+      mode: '0644'
+      owner: root
+      group: root
+  - name: Enable backup timer unit
+    ansible.builtin.systemd:
+      name: postgres-backup.timer
+      state: started
+      enabled: true
