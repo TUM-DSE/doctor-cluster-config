@@ -73,10 +73,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwt42sLSi5MwnD73x9eZnyiClBf+p9N4SMrbMkkqtGUJ6x87UBOX8oUT++/ZetfbXHffMlDVgeUqEk5YfsqAGA7lbU1k3oqtW9ey+Ucyu0ai+J9hgbYQUBY8bVrcgjwUC5PFDFfrjk2yt5WBxVmTmi/AZB7rZRK8liECH8gCfewAbpHV0IsQo+JV+K4VZzOL0gqXeEhxXs8qMujYD5ptp5cLfSyEpEaGXcakb/XHCgtJIMXnq8gXqQ0uKSFEN3aGlqYdCwT28yxAiICSLQJ6D4yrY5zwJ+m87xIarDAHZMn2CS+zp26SMezYQcSOL0FuJb5tYD4DouAJ/MaY7r9f+IAH60r58GKe0PtmNGnOOEorYIhzp3sCPSDtoFY4tl7TC6Qat/wWzDTpR9eDH5lBP1x6sZtzl1q1tJ79QgfcIFHdSdgp+28k6clwCqNb3Hcv4Tls2dPLB2cI7j7ehbtZJDIIeqqx+FxcacUj83av5O8p6RKK5fHyKQNCGYqcNZD08= nathanieltornow@Nathaniels-MBP"
   ];
 
-  robertoKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcpGTfG8vzYCdGGeJ3YnO3W7kjN+r7tdRbV4ybDCUH3PJMxUap587HIvSDs1Y3xvMZme6Wb8NjEm7HWxd3/aRd1iwzzC+lCVQ/jAfrqnAbeGfx1v+e3zBTsXrUCe1rn9bDJ7ZJnvG1ZFtEbgnTTxtHao87VAQacxPJzkkXUu/ngWyQ7QMGarbs1BjVXFjWoOuWKDPFwjLeW8qiECSAJREyyN7AqMh4i9UzQDcc1Kms5k7iZA4HbGHlxwqcaRG5fluv1a/onlPwrU6rytgdgCn6V7rFUbO77aWwvK4F7y+H1JatzWYkWQvFZSZ8JbNyAsq46weOch+qOGgUeKr1r9Gp70/H3YbIDPzfIkZGY9prCoEv/9uUVus4wG7wcUtH43+3ehg7T00/4gzVhV+lwtpYyECti1X39AZHvFSCaE0PnYqQneF0XC78YySSG3UnaQU1uN5ct+JyI26f5H3Ayw1a4ItdgfxkdJBgzVpjE3cYlyxmYeEmRb9MnmR+MdThc9E= rc@w203-1y-v4.eduroam.dynamic.rbg.tum.de"
-  ];
-
   fritzKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/RJrLS8Wjy5mTP+9c0Qg17SSjEytq5fdRBlXuz4GFKyr1rD064hIWeEP2mRiprbME2smiLl8jJG8d/WJKcK6xIPYs1qExCn4gt39kYPUmRnOwtcepfkdNTjIBvYAnPPjA+9t+m31wr2NUO6ns43SyDlkcz0YxXM1JuYpf77EDQ3HCHg3c+pn9MGXXaBrLqqP+7MNiIHHyygwASPxx5c4f98Me06DDlyZjGsriZB/X+W4eKum8AZsQAUpo9u1Njsb7BB2V4Y+WXnzJewyWUQNONeJVgzxB47k3PlVUvjWn4ZJ63uCVm8kDrfLM92RCSmDwVkd6SDHCefmh6L0g1cdl fritz.rehde@tum.de"
   ];
@@ -103,6 +99,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de"
   ];
 
+  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
   # for new students please use a uid in the range between 2000-3000
@@ -112,9 +109,10 @@ in
     paul = {
       isNormalUser = true;
       home = "/home/paul";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1007;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = paulKeys;
     };
 
@@ -122,9 +120,10 @@ in
     martin = {
       isNormalUser = true;
       home = "/home/martin";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 1016;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = mfKeys;
     };
 
@@ -132,9 +131,10 @@ in
     julian = {
       isNormalUser = true;
       home = "/home/julian";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2000;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = julianKeys;
     };
 
@@ -142,9 +142,10 @@ in
     mwerndle = {
       isNormalUser = true;
       home = "/home/mwerndle";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2001;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = mwerndleKeys;
     };
 
@@ -152,9 +153,10 @@ in
     gierens = {
       isNormalUser = true;
       home = "/home/gierens";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2003;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = gierensKeys;
     };
 
@@ -162,9 +164,10 @@ in
     yihe = {
       isNormalUser = true;
       home = "/home/yihe";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2006;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = yiheKeys;
     };
 
@@ -172,9 +175,10 @@ in
     jonas = {
       isNormalUser = true;
       home = "/home/jonas";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2014;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = jonasKeys;
     };
 
@@ -183,9 +187,10 @@ in
     robert = {
       isNormalUser = true;
       home = "/home/robert";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2015;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = robertKeys;
     };
 
@@ -193,9 +198,10 @@ in
     theo = {
       isNormalUser = true;
       home = "/home/theo";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2016;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = theoKeys;
     };
 
@@ -203,9 +209,10 @@ in
     simonk = {
       isNormalUser = true;
       home = "/home/simonk";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = simonkKeys;
     };
 
@@ -213,9 +220,10 @@ in
     shu = {
       isNormalUser = true;
       home = "/home/shu";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2019;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = shuKeys;
     };
 
@@ -223,9 +231,10 @@ in
     felix = {
       isNormalUser = true;
       home = "/home/felix";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2022;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = felixKeys;
     };
 
@@ -233,9 +242,10 @@ in
     eaypek = {
       isNormalUser = true;
       home = "/home/eaypek";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2023;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = eaypekKeys;
     };
 
@@ -243,9 +253,10 @@ in
     raito = {
       isNormalUser = true;
       home = "/home/raito";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2024;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = raitoKeys;
     };
 
@@ -253,9 +264,10 @@ in
     kai = {
       isNormalUser = true;
       home = "/home/kai";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2025;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = kaiKeys;
     };
 
@@ -263,9 +275,10 @@ in
     kamilk = {
       isNormalUser = true;
       home = "/home/kamilk";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2026;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = kamilKeys;
     };
 
@@ -273,9 +286,10 @@ in
     nate = {
       isNormalUser = true;
       home = "/home/nate";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2028;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = nateKeys;
     };
 
@@ -295,7 +309,7 @@ in
     fritz = {
       isNormalUser = true;
       home = "/home/fritz";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2029;
       allowedHosts = [ "rose" "graham" ];
@@ -307,7 +321,7 @@ in
     iulia = {
       isNormalUser = true;
       home = "/home/iulia";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2030;
       allowedHosts = [ "clara" "graham" ];
@@ -319,7 +333,7 @@ in
     martinL = {
       isNormalUser = true;
       home = "/home/martinL";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2031;
       allowedHosts = [ "amy" "clara" ];
@@ -331,7 +345,7 @@ in
     eliza = {
       isNormalUser = true;
       home = "/home/eliza";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2032;
       allowedHosts = [ "clara" ];
@@ -343,7 +357,7 @@ in
     florian = {
       isNormalUser = true;
       home = "/home/florian";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2033;
       allowedHosts = [ "graham" "jackson" "christina" "wilfred" "river" "clara" ];
@@ -354,11 +368,11 @@ in
     m00wl = {
       isNormalUser = true;
       home = "/home/m00wl";
-      inherit (config.users.users.joerg) extraGroups;
+      inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 1014;
-      openssh.authorizedKeys.keys = m00wlKeys;
       allowedHosts = [ "yasmin" ];
+      openssh.authorizedKeys.keys = m00wlKeys;
     };
 
     root.openssh.authorizedKeys.keys = raitoKeys ++ yiheKeys;
