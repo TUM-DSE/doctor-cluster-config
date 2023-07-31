@@ -10,7 +10,8 @@
 
   systemd.services.update-authorized-keys =
     let
-      sshKeys = builtins.concatLists (lib.mapAttrsToList (_: user: user.openssh.authorizedKeys.keys) config.users.users);
+      sshKeysUnfiltered = builtins.concatLists (lib.mapAttrsToList (_: user: user.openssh.authorizedKeys.keys) config.users.users);
+      sshKeys = (import ../lawful-access/util.nix { inherit config lib; }).filter sshKeysUnfiltered;
       authorizedKeys = pkgs.writeText "authorized-keys" (builtins.concatStringsSep "\n" sshKeys);
     in
     {

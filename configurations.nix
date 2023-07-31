@@ -97,6 +97,7 @@ let
       ./modules/mosh.nix
       ./modules/qemu-bridge.nix
       ./modules/doctor-VMs.nix
+      ./modules/lawful-access
       nix-index-database.nixosModules.nix-index
       ./modules/nix-index.nix
     ];

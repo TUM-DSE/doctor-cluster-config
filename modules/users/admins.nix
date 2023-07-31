@@ -36,7 +36,6 @@ in
         openssh.authorizedKeys.keys = okelmannKeys;
       };
 
-
       root = {
         passwordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
         openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys;
