@@ -4,7 +4,7 @@
     ../modules/bonding.nix
     ../modules/jumphost
     ../modules/sys-prog/users.nix
-    ../modules/nfs/server-backup.nix
+    ../modules/nfs/server.nix
     ../modules/buildbot/master.nix
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
     #../modules/nfs/server.nix
