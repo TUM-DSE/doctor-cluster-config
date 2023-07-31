@@ -27,6 +27,7 @@ let
       patrick
       francisco
       mmisono
+      yihe
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
