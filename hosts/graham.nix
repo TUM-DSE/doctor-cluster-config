@@ -8,6 +8,7 @@
     ../modules/amd_sev.nix
     ../modules/dpdk.nix
     ../modules/vfio/iommu-amd.nix
+    ../modules/backup-pauls-repo.nix
   ];
 
   boot.hugepages.size = "1GB";
