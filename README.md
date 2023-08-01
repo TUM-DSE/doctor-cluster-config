@@ -23,21 +23,30 @@ Choose a deployment target:
 $ inv -l
 Available tasks:
 
+  add-server               Generate new server keys and configurations for a given hostname and hardware config
+  build-local              Build nixos configurations locally. Use `inv build-local --hosts ryan` to build a single server
   cleanup-gcroots
   deploy                   Deploy to servers
+  deploy-doctor            Deploy to doctor
   deploy-host              Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
   deploy-local             Deploy NixOS configuration on the same machine. The NixOS configuration is
-  format-disks             Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
-  generate-root-password   Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
-  generate-ssh-cert        Generate ssh cert for host, i.e. inv generate-ssh-cert bill 131.159.102.1
-  install-nixos            install nixos, i.e.: inv install-nixos --hosts new-hostname --flakeattr
-  ipmi-powercycle
-  ipmi-serial
-  mount-disks              Mount disks from the installer, i.e.: inv mount-disks --hosts new-hostname --disk /dev/nvme0n1
-  print-age-key            Print age key for sops, inv print-age-key --hosts "host1,host2"
+  deploy-ruby              Deploy to riscv server
+  document-craig           Dump craigs (switch) config to encrypted docs/hosts/craig.sops
+  flake-check              Run nix checks on this repo (may need a aarch64 remote builder configured)
+  generate-password        Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
+  generate-ssh-cert        Generate ssh cert for host, i.e. inv generate-ssh-cert bill
+  ipmi-boot-bios           Set the next boot to bios and reboot
+  ipmi-powerconsumption    Measure the power consumption of our servers via IPMI. Note that this does not include all servers.
+  ipmi-powercycle          Power cycle a host via IPMI
+  ipmi-reboot-bmc          Reboot the BMC (IPMI firmware)
+  ipmi-serial              Connect to the serial console of a server via IPMI
+  print-age-key            Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <hostname>
   print-tinc-key
   reboot                   Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
+  reformat-install-nixos   format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
+  run                      Run provided command on the given hosts, if no host list is provided, than the command is run on all hosts.
   update-docs              Regenerate docs for all servers
+  update-host-keys          Update host ssh keys in corresponding host.yml
   update-lldp-info         Regenerate lldp info for all servers
   update-sops-files        Update all sops yaml and json files according to .sops.yaml rules
 ```

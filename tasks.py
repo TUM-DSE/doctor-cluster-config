@@ -808,3 +808,26 @@ def cleanup_gcroots(c: Any, hosts: str = "") -> None:
         g = DeployGroup([h])
         g.run("find /nix/var/nix/gcroots/auto -type s -delete")
         g.run("systemctl restart nix-gc")
+
+
+@task 
+def update_host_keys(c: Any, hosts: str = "") -> None: 
+    """
+    Update host ssh keys in corresponding host.yml
+    """
+    key_files = [
+        "ssh_host_ed25519_key",
+        "ssh_host_ed25519_key.pub",
+        "ssh_host_rsa_key",
+        "ssh_host_rsa_key.pub"
+    ]
+    if hosts == "":
+        g = DeployGroup([DeployHost(h, user="root") for h in HOSTS])
+    else:
+        g = DeployGroup(get_hosts(hosts))
+    for key in key_files:
+        results = g.run(f"cat /etc/ssh/{key}", stdout=subprocess.PIPE)
+        for result in results:
+            hostname = result.host.host.split(".")[0]
+            sops_file = f"{ROOT}/hosts/{hostname}.yml"
+            c.run(f"sops --set '[\"{key}\"] {json.dumps(result.result.stdout)}' {sops_file}")
