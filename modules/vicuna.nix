@@ -138,7 +138,7 @@ in
     environment.HOME = dir;
 
     serviceConfig = commonServiceConfig // {
-      ExecStart = "${lib.getExe pkgs.direnv} exec ${dir} python3 -m fastchat.serve.api --port 7862";
+      ExecStart = "${lib.getExe pkgs.direnv} exec ${dir} python3 -m fastchat.serve.openai_api_server --port 7862";
     };
   };
 }
