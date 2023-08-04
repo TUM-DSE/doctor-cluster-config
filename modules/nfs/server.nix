@@ -178,6 +178,7 @@
     startAt = "daily";
     exclude = [
       "/export/home/*/.direnv"
+      "/export/share/cmainas/serverless/hope/*.img"
 
       # these users have qemu images in their home directories, which causes borgbackup to fail
       # /export/home/gierens/images/guest.qcow2: file changed while we backed it up
