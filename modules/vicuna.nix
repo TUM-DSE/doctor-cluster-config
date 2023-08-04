@@ -102,7 +102,7 @@ in
     environment.LD_LIBRARY_PATH = "${pkgs.cudatoolkit_11}/lib64";
 
     serviceConfig = commonServiceConfig // {
-      ExecStart = "${lib.getExe pkgs.direnv} exec ${dir} python3 -m fastchat.serve.model_worker --model-path ${dir}/models/vicuna-13b";
+      ExecStart = "${lib.getExe pkgs.direnv} exec ${dir} python3 -m fastchat.serve.model_worker --model-path ${dir}/models/vicuna-13b-v1.5-16k";
     };
   };
 
