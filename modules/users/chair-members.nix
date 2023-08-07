@@ -1,7 +1,3 @@
-{ config
-, lib
-, ...
-}:
 let
 
   manosKeys = [
@@ -56,11 +52,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCY1+b1HIuJ4hy+NMst9qjJmBCY9Zyk8rrZlUyXGy0ll06kLwUiDNzcKUuKFH1y3zsn+1yGZFFjZUWi4mnpyNWSkSsQ1HJcuz2bFLw+5UyF42K+HPyeq6SE7xZcZ/cEE508Mqms/hIjl+tffRtoA2jxDZNdEjk9Qq/gzuYJo0b13bqpDRnrU1vUIk7egw4XOU29Wl7tpdKiESf6fow+Hi71BoLUeBjtJp6lRr/oqmpxPcFgI4BQD61VuPH3BeQIlZl8TWmqiZ+XjOHxxqkDCH+f4ZdM++P1p8kIkhz8wZ3ajNIbJFnqCxOBkd/zTNLnKCmZafW0SlIm1rLh8W1na97wKJCGCPjTVzrq5dVTG6sEApuBx1kTk3Ir44V78CwkN2X0bTJmWyj/5QxF5cEbKlkP9UKmSFiDlk5/nnxPsWkNhIzyaEMTP/pZFWgAK1aWXwh9/kLn/YSTjKs5BhIjEw4EuFybWgiNzn2Cy38Ir5oR1XA+vmS0flti4K9eHWGzjxGcSb53jOcqWdILiTV0iPq+0H1mUCr5ZIUGF06FBjdEkpxlmg9PsTdf/uIkvkicYVQLUsG25oNZg+oOa0eJEuAqR48VSDvNwUn2sbaX22J22eQFEkaqgr+W6oGOny87Ig6fFglNNWQeLOS/mJ8HKnRS2rkxu2i6VYwLZIulVGpS7Q== hvub@TUM-Thinkpad"
   ];
 
-  irisKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5MBL3BDvTOlO0baxN9sXeo0fjhCA8U71sSMLwWCNx6Y/L+aMXRQrimnu7K1x7oM/BuV7IzAosV2lZe7mnD2Lvs9kzWe8KwNR9m9fUV54PTqR6Yjg+f13JB1/KGWd1SmyCOGXXZCG5K3HJqK5Rju4VhlJUEGRQ3dl2bV1l9E8hyHNL0CQWKbIMDbHv19vMtAqEfIHCDqFkf7+gO7Fx5/EJ+2Tt3s6xTx4tse+0k6R2KcwOB/ArlUEN8ye4jO4/sNcyAzY7z8OukuDB4ky2TxJp2C0ljWpkUIcAk4eOS8MXKMy5OSfA7ev+PdpI2lYw3VhH112bZZ3XqW16YNCj6Xf iriditsa@trypokarydos"
-  ];
-
-
   chenjiyangKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDV7fuUwU8Ox3QvTIBioAtVX7iJomrcxzvbiBccv6W+G3slUFOy4fii+K/ERC5RPeBM1sKy2If9pWptHozJh9YpJiinSYm/c97SVlAGEHR01RNhD9IixGppFgfeuqgjrMuYAHqLBkNlAlIa2CZB16+sIXx7GP8pgowMVrl8PfTW2xjIiZhGwbd1dVrIx5VkIl/sf4WC22kBPnqxnfQows6W9OlCSAi/V9IKCGNPwZHOv/63qbFhpS5AHyRe48EQIcdjTgCwXeLTeIfa69tUADF372hCZxEUjb/r1B6xTbv4P312d6DJ6NHpFNBpELeZaDJuDus4hk+Ej4q1dHp6mkqGolhKbwLAfNcPoiIOs1XipLOxoQwoXDQ69gfszLddWUGme2uv9UHF+yYkYPYXpiSGy1n00tYOBpKwCCCJAEpGILtj9AmyTzf+TfFX8tL9bH6WiXYHMDRBdFlJzic7XLwFAuvbWSFQhTEHyqbTtcqQuktm76vPtL+XowAzB33QRJR7ev7+9dOnnmGa1CikQdiJBXmkfMwhaSAQRZU+FroD2LxuMAsemaOvlVwItgOrLftt+v5tHg716lXf1CcmYIsz4m0T6uL8wvyV/PrAXkI2SXrgSC28z+h0+LCdrNxlTlZK0vYrAOV01ma0fPAYTSLxbSqx6/37m/nnrubTkRiHMw== chenjiyang1991@gmail.com"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQKfHPI48+W3BKOeotOcAVLDh1TMWCqEy6Ltq2te/NPgoommDqqfnTDBf1lt6ShUG44H8V3VEJapyC/JhA6l3MfJPBCGqdHgBx+ECEn2lsUX3NY4n5fhNph4L/cZpI4JyI+mbRJFAXMMvSV52OXKgx8/Sp+BIthZ7CpwOVpTFEfu/5j7NFE7c2T/iXL8NwmzoV7b9EfLGd+Y5MBtQSxwLGoHIv7+aan/boj65mY0x99exJN/MSDjQe1bjxE9hUD4xYC5XRnUl6XSrPWtQWFfwXnuYLxT177L6V7TEsfZ6EV/GeVuoJpizVxIiN/oImrf1PWPCucr5DFXcWkVQ+QClN chenjiyang@victus"
@@ -103,7 +94,7 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLczJN6THjOvvhQ1a61GKPgHAp3+eQohG5oPUzFtyyxK0IvPKOn9nULVhV7iJCmBPX5ZLikKqgWh+C+kvyw/QJID5UKcQxpqFaUnDmuOyS4T3QHYA4+aoBheYiaKiwoD8rgmyoJJ+7CY6Y8a62OLHCosYHemg0QhgOeeZC45mMgbFtECXhpbngq5fRx1D2Y23ddBBIIwkePh8SsJfu86VF9UXqsKn/Lbecx04SjRTtO+zClTKznvNZIkQx2ZKBuDyZ2tmg1kKh0oO0UnplJtM3gJiDWhQMx/Yn9/qSIIHbhff1xdkP2oVRCFqEzX2KKfDesOYkhTrfkyTg1Iw+i/a6ER1sJBSDcK6EsXpap50tIjHjqKu2NBOWR/wMJJy0Sxu8vSuBPD8/h0b/mIlHaLGZWOAp+XLDhBH5iPlaj9OSppQSEEJUDv1ba8p/rzL6FfiFDLKm5JgdV2vWEyyMBAu1GMsYmQNuOAGt5gXpIwP9mklpr3x6tCuZP53RtogCyeU= evgen@LAPTOP-565G8RJ0"
   ];
 
-  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" ];
+  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "staff" ];
 in
 {
   config = {
@@ -191,7 +182,7 @@ in
       chenjiyang = {
         isNormalUser = true;
         home = "/home/chenjiyang";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1019;
         openssh.authorizedKeys.keys = chenjiyangKeys;
@@ -202,7 +193,7 @@ in
       cmainas = {
         isNormalUser = true;
         home = "/home/cmainas";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1020;
         openssh.authorizedKeys.keys = cmainasKeys;
@@ -213,7 +204,7 @@ in
       masa = {
         isNormalUser = true;
         home = "/home/masa";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1021;
         openssh.authorizedKeys.keys = masaKeys;
@@ -224,7 +215,7 @@ in
       sebastian = {
         isNormalUser = true;
         home = "/home/sebastian";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1022;
         openssh.authorizedKeys.keys = sebastianKeys;
@@ -235,7 +226,7 @@ in
       matthias = {
         isNormalUser = true;
         home = "/home/matthias";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1023;
         openssh.authorizedKeys.keys = matthiasKeys;
@@ -246,7 +237,7 @@ in
       martinkl = {
         isNormalUser = true;
         home = "/home/martinkl";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1024;
         openssh.authorizedKeys.keys = martinklKeys;
@@ -257,7 +248,7 @@ in
       francisco = {
         isNormalUser = true;
         home = "/home/francisco";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1026;
         openssh.authorizedKeys.keys = franciscoKeys;
@@ -268,18 +259,18 @@ in
       patrick = {
         isNormalUser = true;
         home = "/home/patrick";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1027;
         openssh.authorizedKeys.keys = patrickKeys;
       };
-      
+
       # Manos Giortamis
       # tum
       manos = {
         isNormalUser = true;
         home = "/home/manosgior";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1028;
         openssh.authorizedKeys.keys = manosKeys;
@@ -290,7 +281,7 @@ in
       evgeny = {
         isNormalUser = true;
         home = "/home/evgeny";
-        inherit (config.users.users.joerg) extraGroups;
+        inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
         uid = 1029;
         openssh.authorizedKeys.keys = evgenyKeys;
