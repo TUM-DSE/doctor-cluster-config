@@ -201,7 +201,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2016;
-      allowedHosts = [ "all" ];
+      allowedHosts = [ "graham" "ruby" "yasmin" ];
       openssh.authorizedKeys.keys = theoKeys;
     };
 
@@ -212,7 +212,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
-      allowedHosts = [ "all" ];
+      allowedHosts = [ "graham" "ruby" "yasmin" ];
       openssh.authorizedKeys.keys = simonkKeys;
     };
 
