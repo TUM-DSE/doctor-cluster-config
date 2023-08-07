@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, modulesPath, ... }:
+{ pkgs, modulesPath, lib, ... }:
 
 {
   # Include the results of the hardware scan.
@@ -16,6 +16,9 @@
   networking.hostName = "ruby";
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
+
+  # we cross-compile so we cannot auto upgrade
+  system.autoUpgrade.enable = false;
 
   environment.systemPackages = with pkgs; [
     vim

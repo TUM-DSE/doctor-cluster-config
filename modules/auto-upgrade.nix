@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  system.autoUpgrade.enable = true;
+{ pkgs, lib, ... }: {
+  system.autoUpgrade.enable = lib.mkDefault true;
   system.autoUpgrade.flake = "github:TUM-DSE/doctor-cluster-config";
   system.autoUpgrade.flags = [ "--option" "accept-flake-config" "true" ];
 
