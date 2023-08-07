@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   # Enable nix ld
   programs.nix-ld.enable = !pkgs.stdenv.hostPlatform.isRiscV;

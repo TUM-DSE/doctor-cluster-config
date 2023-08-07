@@ -22,8 +22,7 @@
 
   # packages for many targets:
   perSystem =
-    { self'
-    , pkgs
+    { pkgs
     , ...
     }: {
       packages = {
