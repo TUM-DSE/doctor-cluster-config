@@ -15,10 +15,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCkHALCUCursw1AvmYaQLfYBee1lGR4sqqlTEHfatyAqQrCxFnWNnO03ScEfNsDQKDZPRQ/RZYOOHlNxoKQzYaHlpbFafePKNH+lKZWibabp4HT3ho0mi56i2sqXLSMP+y3nz4S7vx678CVgyK1/gW9wB0ORNh1Ss1NqPhi/DFxHVxcLig3mjCVoC6QzIzTLq8uVP/bOD2jtED/PSdAFQQNd2RjKWea7UjjH7IiQvvJHwl1OB8X1x7mxwuQuHCMj7kwwKfEEvqOy3NiDzY9Ewc7HihFLkROMK3obbYLoQjYf/tP9SYpekWx4Q8CpgmvAblwDcv8unmnYAN2Cj5PQ4YulBPCOwNfmVCvsp3gX8eLG6XNYjnHt7DIEm8Yj4EeSCuB6DLOR2Em5eKH57qzQFHyubdIwVoY1xzfdd1wzaKuL+ahoLKmZ23Q6bK795BwZBogyoceREg9surF9P8l9mJi2Yn8aGMtCF9ecIySNGYwI1AqKGYX14Vo9HA3nfADCI1wCND5LyqD6UDGfM1iBV38gGl05jyywcTgpctI4ryQy6SUDf9x+CZuDwHXihR6Rj9Oj1Vy6zFdCKq4xt76xCsIPuy+6CY4RdOkCNmQn3NKeRnttLmyYIpLbHkTdYs8GIyLsf1mz6uHZNcWg5fwPTabgT8PJ5yJRQo9IoXGawf+vQ== julian.pritzi@gmail.com"
   ];
 
-  mwerndleKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsZ8xTt0Ti6evYqvLBMXLaExS0SP0KZB7oSA7RO3tQinlVT62KIxJ5NXxrKgCOy3evCtN+fqYFvshGHZ6/FPcOj3i3PfJRHaj6WjQicIIfVFEbfLtzh2QxDDVXBkfh747fBmPHrfXJwxCRjRpSwYBmDBcJVjH3weHLqVm6f4SioDWMZ8arCYipZSPlfCFvcqR532ipiKQH3pHinjtopLMLmZnZQeXOsK1lsIDLs7/onkK1cNhCeX7Hq69N7gp/2AYUoXjnZ2/vvDq6QAofz5jASDjPfZz1eHdz4owc6I+LoAc76QxE/37mV6PCiGO4YiQji8byvjuIq94moOMfIDkj teppichseite@DESKTOP-NRKB54G"
-  ];
-
   gierensKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
@@ -138,17 +134,6 @@ in
       openssh.authorizedKeys.keys = julianKeys;
     };
 
-    # Matthias Werndle, Dimitris' BSc student (Generic programming model for PM)
-    mwerndle = {
-      isNormalUser = true;
-      home = "/home/mwerndle";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2001;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = mwerndleKeys;
-    };
-
     # Sandro Gierens, Peter's BSc student (applying ioregionfd to KVM/qemu devices)
     gierens = {
       isNormalUser = true;
@@ -245,7 +230,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2023;
-      allowedHosts = [ "all" ];
+      allowedHosts = [ "rose" "ryan" ];
       openssh.authorizedKeys.keys = eaypekKeys;
     };
 
@@ -401,5 +386,6 @@ in
     "emil"
     "turkmen"
     "sarac"
+    "mwerndle"
   ];
 }
