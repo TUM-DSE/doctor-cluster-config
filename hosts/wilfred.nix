@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   imports = [
     ../modules/hardware/supermicro-x12spw-tf.nix
     ../modules/nfs/client.nix

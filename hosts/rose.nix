@@ -1,4 +1,4 @@
-{ config, ...}: {
+{
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-AS-4124GS.nix

@@ -1,7 +1,6 @@
 { lib
 , pkgs
 , callPackage
-, writeShellScriptBin
 , writeText
 , linuxPackagesFor
 , _4KBuild ? false
@@ -38,7 +37,7 @@ let
     echo "{ }" >> $out
   '').outPath;
 
-  linux-asahi-pkg = { stdenv, lib, fetchFromGitHub, fetchpatch, linuxKernel,
+  linux-asahi-pkg = { stdenv, lib, fetchFromGitHub, linuxKernel,
       rustPlatform, rustfmt, rust-bindgen, ... } @ args:
     let
       configfile = if kernelPatches == [ ] then ./config else
@@ -53,10 +52,8 @@ let
 
       # used to (ostensibly) keep compatibility for those running stable versions of nixos
       rustOlder = version: withRust && (lib.versionOlder rustPlatform.rust.rustc.version version);
-      bindgenOlder = version: withRust && (lib.versionOlder rustPlatform.rust.rustc.version version);
 
       # used to fix issues when nixpkgs gets ahead of the kernel
-      rustAtLeast = version: withRust && (lib.versionAtLeast rustPlatform.rust.rustc.version version);
       bindgenAtLeast = version: withRust && (lib.versionAtLeast rust-bindgen.unwrapped.version version);
     in
     (linuxKernel.manualConfig rec {

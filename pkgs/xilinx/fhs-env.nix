@@ -37,7 +37,7 @@ buildFHSUserEnv {
 
       (python3.withPackages (ps: with ps; [ jinja2 ]))
 
-      (libidn.overrideAttrs (old: {
+      (libidn.overrideAttrs (_old: {
         # we need libidn.so.11 but nixpkgs has libidn.so.12
         src = fetchurl {
           url = "mirror://gnu/libidn/libidn-1.34.tar.gz";

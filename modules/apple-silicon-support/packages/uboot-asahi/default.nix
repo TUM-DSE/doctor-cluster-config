@@ -1,5 +1,4 @@
-{ lib
-, fetchFromGitHub
+{ fetchFromGitHub
 , fetchpatch
 , buildUBoot
 , m1n1
@@ -29,7 +28,7 @@
     CONFIG_VIDEO_FONT_TER12X24=n
     CONFIG_VIDEO_FONT_TER16X32=y
   '';
-}).overrideAttrs (o: {
+}).overrideAttrs (_o: {
   # nixos's downstream patches are not applicable
   # however, we add in bigger u-boot fonts because the mac laptop screens are high-res
   patches = [ 

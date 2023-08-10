@@ -26,7 +26,7 @@
       # which requires rebuilding the world but ensures it is done faithfully
       # (and in a way compatible with pure evaluation)
       nixpkgs.overlays = [
-        (final: prev: {
+        (final: _prev: {
           mesa = final.mesa-asahi-edge;
         })
       ];

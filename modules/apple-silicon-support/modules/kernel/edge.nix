@@ -1,6 +1,6 @@
 # the Asahi Linux edge config and options that must go along with it
 
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 {
   config = lib.mkIf config.hardware.asahi.addEdgeKernelConfig {
     boot.kernelPatches = [

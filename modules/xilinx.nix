@@ -7,7 +7,6 @@
 let
   packages = self.packages.${pkgs.system};
   xrt-drivers = packages.xrt-drivers.override { inherit (config.boot.kernelPackages) kernel; };
-  sfc-drivers = packages.sfc-drivers.override { inherit (config.boot.kernelPackages) kernel; };
 in
 {
 
