@@ -135,7 +135,8 @@
       # large memory traces
       "/export/share/redha/traces"
       # vm images
-      "/export/share/cmainas/serverless/hope/*.img"
+      "/export/share/cmainas/**/*.img"
+      "/export/share/martinL/**/*.img"
     ];
     encryption = {
       mode = "repokey";
