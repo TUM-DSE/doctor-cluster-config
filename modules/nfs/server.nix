@@ -122,7 +122,7 @@
   sops.secrets.tum-borgbackup-home-ssh.sopsFile = ./secrets.yml;
   sops.secrets.tum-borgbackup-share-ssh.sopsFile = ./secrets.yml;
 
-  systemd.services.borgbackup-job-eva-share.serviceConfig.ReadWritePaths = [
+  systemd.services.borgbackup-job-nfs-share.serviceConfig.ReadWritePaths = [
     "/var/log/telegraf"
   ];
 
@@ -164,7 +164,7 @@
     };
   };
 
-  systemd.services.borgbackup-job-eva-home.serviceConfig.ReadWritePaths = [
+  systemd.services.borgbackup-job-nfs-home.serviceConfig.ReadWritePaths = [
     "/var/log/telegraf"
   ];
 
