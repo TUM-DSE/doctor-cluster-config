@@ -126,7 +126,7 @@
     "/var/log/telegraf"
   ];
 
-  services.borgbackup.jobs.eva-share = {
+  services.borgbackup.jobs.nfs-share = {
     paths = [
       "/export/share"
     ];
@@ -151,7 +151,7 @@
     '';
 
     postHook = ''
-      cat > /var/log/telegraf/borgbackup-nfs-share <<EOF
+      cat > /var/log/telegraf/borgbackup-job-nfs-share.service <<EOF
       task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
       EOF
     '';
@@ -168,7 +168,7 @@
     "/var/log/telegraf"
   ];
 
-  services.borgbackup.jobs.eva-home = {
+  services.borgbackup.jobs.nfs-home = {
     paths = [
       "/export/home"
     ];
@@ -198,7 +198,7 @@
     '';
 
     postHook = ''
-      cat > /var/log/telegraf/borgbackup-nfs-home <<EOF
+      cat > /var/log/telegraf/borgbackup-job-nfs-home.service <<EOF
       task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
       EOF
     '';
