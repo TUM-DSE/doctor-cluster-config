@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='718px' height='765px' viewBox='0 0 718px 765px' version='1.1'>
-	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='718' height='727' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='904px' height='765px' viewBox='0 0 904px 765px' version='1.1'>
+	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='904' height='727' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Machine_0_text' class='Machine' font-family='Monospace' x='7' y='17' fill='rgb(0,0,0)' font-size='10px'>Machine (251GB total)</text>
 	<rect id='Package_0_rect' class='Package' x='7' y='24' width='704' height='396' fill='rgb(210,231,164)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Package_0_text' class='Package' font-family='Monospace' x='14' y='41' fill='rgb(0,0,0)' font-size='10px'>Package L#0</text>
@@ -203,7 +203,15 @@
 	<text id='PU_223_text_1' class='PU' font-family='Monospace' x='450' y='699' fill='rgb(0,0,0)' font-size='10px'>P#223</text>
 	<rect id='NUMANode_1_rect' class='NUMANode' x='14' y='451' width='489' height='24' fill='rgb(239,223,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='NUMANode_1_text' class='NUMANode' font-family='Monospace' x='21' y='468' fill='rgb(0,0,0)' font-size='10px'>NUMANode L#1 P#1 (125GB)</text>
-	<rect id='anon_rect' x='0' y='727' width='718' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='Misc_0_rect' class='Misc' x='718' y='24' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Misc_0_text' class='Misc' font-family='Monospace' x='725' y='41' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
+	<rect id='Misc_1_rect' class='Misc' x='811' y='24' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Misc_1_text' class='Misc' font-family='Monospace' x='818' y='41' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
+	<rect id='Misc_2_rect' class='Misc' x='718' y='55' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Misc_2_text' class='Misc' font-family='Monospace' x='725' y='72' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
+	<rect id='Misc_3_rect' class='Misc' x='811' y='55' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Misc_3_text' class='Misc' font-family='Monospace' x='818' y='72' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
+	<rect id='anon_rect' x='0' y='727' width='904' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='744' fill='rgb(0,0,0)' font-size='10px'>Host: yasmin</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='758' fill='rgb(0,0,0)' font-size='10px'>Date: Tue 27 Jun 2023 01:11:57 PM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='758' fill='rgb(0,0,0)' font-size='10px'>Date: Thu 17 Aug 2023 07:21:22 AM UTC</text>
 </svg>

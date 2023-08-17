@@ -168,12 +168,12 @@ No device/PCI ID.
 PCI Slots:   
 - ❌  Slot: 4 type: x4 PCI Express 3 x8 PCH SLOT4 PCI-E 3.0 X4 (IN X8) status: In Use length: Short    
 02:00.0, Ethernet controller, Mellanox Technologies, MT27710 Family [ConnectX-4 Lx] -p00, Mellanox Technologies, ConnectX-4 Lx Stand-up dual-port 10GbE MCX4121A-XCAT  
-- ❌  Slot: 6 type: x16 PCI Express 3 x16 CPU SLOT6 PCI-E 3.0 X16 status: In Use length: Long    
-01:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO Plus 1TB  
+- ✅  Slot: 6 type: x16 PCI Express 3 x16 CPU SLOT6 PCI-E 3.0 X16 status: Available length: Long    
+No device/PCI ID.  
 - ✅  Slot: 7 type: x4 PCI Express 3 x4 PCH SLOT7 PCI-E 3.0 X4 status: Available length: Short    
 No device/PCI ID.  
-- ✅  Slot: N/A type: x4 M.2 Socket 3 PCI-E M.2-M1 status: Available length: Short    
-No device/PCI ID.  
+- ❌  Slot: N/A type: x4 M.2 Socket 3 PCI-E M.2-M1 status: In Use length: Short    
+01:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device a812  
 - ✅  Slot: N/A type: x1 M.2 Socket 1-SD PCI-E M.2-E1 status: Available length: Short    
 No device/PCI ID.  
  
@@ -312,12 +312,12 @@ No device/PCI ID.
 PCI Slots:   
 - ❌  Slot: 4 type: x4 PCI Express 3 x8 PCH SLOT4 PCI-E 3.0 X4 (IN X8) status: In Use length: Short    
 02:00.0, Ethernet controller, Mellanox Technologies, MT27710 Family [ConnectX-4 Lx] -p00, Mellanox Technologies, ConnectX-4 Lx Stand-up dual-port 10GbE MCX4121A-XCAT  
-- ❌  Slot: 6 type: x16 PCI Express 3 x16 CPU SLOT6 PCI-E 3.0 X16 status: In Use length: Long    
-01:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO Plus 1TB  
+- ✅  Slot: 6 type: x16 PCI Express 3 x16 CPU SLOT6 PCI-E 3.0 X16 status: Available length: Long    
+No device/PCI ID.  
 - ✅  Slot: 7 type: x4 PCI Express 3 x4 PCH SLOT7 PCI-E 3.0 X4 status: Available length: Short    
 No device/PCI ID.  
-- ✅  Slot: N/A type: x4 M.2 Socket 3 PCI-E M.2-M1 status: Available length: Short    
-No device/PCI ID.  
+- ❌  Slot: N/A type: x4 M.2 Socket 3 PCI-E M.2-M1 status: In Use length: Short    
+01:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device a812  
 - ✅  Slot: N/A type: x1 M.2 Socket 1-SD PCI-E M.2-E1 status: Available length: Short    
 No device/PCI ID.  
  
@@ -340,16 +340,16 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 PCI Slots:   
 - ✅  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
-- ✅  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: In Use length: Long    
+c1:00.0, Processing accelerators, Xilinx Corporation, Alveo U280 Golden Image -p00, Xilinx Corporation, Device 000e  
 - ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ✅  Slot: 4 type: x16 PCI Express 4 x16 SLOT4 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ❌  Slot: 5 type: x16 PCI Express 4 x16 SLOT5 PCI-E 4.0 X16 status: In Use length: Long    
-c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+c3:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
 - ❌  Slot: 6 type: x16 PCI Express 4 x16 SLOT6 PCI-E 4.0 X16 status: In Use length: Long    
-c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+c3:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
 - ✅  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ❌  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: In Use length: Long    
@@ -363,14 +363,14 @@ No device/PCI ID.
 ### ryan.dse.in.tum.de 
 
 PCI Slots:   
-- ✅  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Long    
+c4:00.0, Non-Volatile memory controller, SK hynix, Platinum P41 NVMe Solid State Drive 2TB -p02, SK hynix, Platinum P41 NVMe Solid State Drive 2TB  
 - ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Long    
 No device/PCI ID.  
 - ❌  Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long    
-03:00.0, Non-Volatile memory controller, SK hynix, Device 1959 -p02, SK hynix, Device 1959  
+03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO  
 - ❌  Slot: 4 type: x16 PCI Express 4 PCIe Slot 4 status: In Use length: Long    
-41:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
+41:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Samsung Electronics Co Ltd, Device a812  
 - ❌  Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long    
 02:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
  
@@ -396,7 +396,7 @@ No device/PCI ID.
 - ✅  Slot: 4 type: x8 PCI Express 3 PCIE SLOT2_1 / PCIE SLOT1_x8 status: Available length: Short    
 No device/PCI ID.  
 - ❌  Slot: 6 type: x4 PCI Express 3 PCIE SLOT2_1 / PCIE SLOT1_x4 status: In Use length: Short    
-07:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO Plus 1TB  
+07:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO  
 - ✅  Slot: 7 type: x4 PCI Express 3 PCIE SLOT2_1 / PCIE SLOT1_x4 status: Available length: Short    
 No device/PCI ID.  
 - ✅  Slot: 8 type: x8 PCI Express 3 PCIE SLOT2_2_x8 status: Available length: Short    

@@ -1,17 +1,17 @@
 # wilfred
 
 ```
-System:    Host: wilfred Kernel: 6.3.5 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\4dnp8cm346458ri2pksmlnr3amy70pmk-initrd-linux-6.3.5-initrd.efi 
-           init=/nix/store/g9ki34fdy2awhx88yz90yphbi8y7kgpx-nixos-system-wilfred-22.11.20230613.14ff5cd/init 
+System:    Host: wilfred Kernel: 6.4.6 x86_64 bits: 64 compiler: gcc v: 12.2.0 
+           parameters: initrd=\efi\nixos\8i6pqnwga4l4sqcvjc45qbpddd59kcgz-initrd-linux-6.4.6-initrd.efi 
+           init=/nix/store/s1m0s01i8q7ha7xxan97fw6f1gsmvz01-nixos-system-wilfred-23.05.20230801.d7b628a/init 
            intel_iommu=on console=ttyS1,115200n8 console=tty1 console=tty0 console=ttyS0,115200 
            default_hugepagesz=1GB hugepagesz=1GB hugepages=8 nohibernate loglevel=4 
-           Console: N/A Distro: NixOS 22.11 (Raccoon) 
+           Console: N/A Distro: NixOS 23.05 (Stoat) 
 Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789 
            serial: E424030X2100628 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50530 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002397 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 251.21 GiB used: 64.01 GiB (25.5%) 
+Memory:    RAM: total: 251.21 GiB used: 67.62 GiB (26.9%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -54,8 +54,8 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 socket: LGA4189 bits: 64 ty
            L1: 960 KiB L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 144000 
            Speed: 3600 MHz min/max: 800/3600 MHz base/boost: 3000/4500 volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 3600 2: 3600 3: 3600 4: 3600 5: 3600 6: 3600 
-           7: 3600 8: 3600 9: 3600 10: 3600 11: 3600 12: 3600 13: 3600 14: 3600 15: 3600 16: 3600 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 3500 2: 3500 3: 3600 4: 3600 5: 3600 6: 3600 
+           7: 3600 8: 3600 9: 3600 10: 3600 11: 3563 12: 3600 13: 3500 14: 3500 15: 3600 16: 3600 
            17: 3600 18: 3600 19: 3600 20: 3600 21: 3600 22: 3600 23: 3600 24: 3600 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
@@ -92,7 +92,7 @@ Network:   Device-1: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: ke
            IF: enp24s0f1 state: down mac: 00:1b:21:c3:82:2e 
            Device-5: Intel Ethernet E810-C for QSFP driver: vfio-pci v: N/A modules: ice 
            port: 7000 bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 
-           IF-ID-1: docker0 state: down mac: 02:42:3f:48:ba:c0 
+           IF-ID-1: docker0 state: down mac: 02:42:39:48:1d:3e 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: doctor-bridge state: up speed: 10000 Mbps duplex: unknown 
            mac: 00:1b:21:c3:82:2c 
@@ -111,32 +111,32 @@ Bluetooth: Device-1: Insyde RNDIS/Ethernet Gadget type: USB driver: rndis_host v
 RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid_sas 
            v: 07.725.01.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.35 TiB 
-           allocated: 393 GiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.36 TiB 
+           allocated: 384 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 1.72 TiB (32.8%) 
+Drives:    Local Storage: total: 3.49 TiB used: 2.17 TiB (62.0%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 28 C scheme: GPT 
+           temp: 26 C scheme: GPT 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 28 C 
+           temp: 26 C scheme: GPT 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.66 TiB used: 391.13 GiB (23.0%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.66 TiB used: 381.73 GiB (22.5%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 104.9 MiB (10.3%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 73.4 MiB (7.2%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 667.57 GiB used: 516.52 GiB (77.4%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 3.31 TiB used: 689.4 GiB (20.3%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 52.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 49.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 454 
-           Uptime: 13:11:53  up 7 days  0:46,  28 users,  load average: 0.10, 0.11, 0.09 
-           wakeups: 0 Init: systemd v: 251 target: multi-user.target tool: systemctl Compilers: 
-           gcc: 11.3.0 Packages: nix-default: 0 nix-sys: 406 lib: 70 nix-usr: 0 Client: Sudo 
+Info:      Processes: 451 
+           Uptime: 07:21:15  up 7 days 18:51,  25 users,  load average: 2.69, 2.52, 2.48 
+           wakeups: 0 Init: systemd v: 253 target: multi-user.target tool: systemctl Compilers: 
+           gcc: 12.2.0 Packages: nix-default: 0 nix-sys: 554 lib: 124 nix-usr: 0 Client: Sudo 
            v: 1.9.13p3 inxi: 3.3.04 
 ```
 ![hardware topology](wilfred.lstopo.svg)

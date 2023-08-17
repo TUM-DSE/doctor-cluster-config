@@ -1,17 +1,17 @@
 # adelaide
 
 ```
-System:    Host: adelaide Kernel: 6.3.5 x86_64 bits: 64 compiler: gcc v: 11.3.0 
-           parameters: initrd=\efi\nixos\b82cldvysckb65687dp7mbnly4r8f4ar-initrd-linux-6.3.5-initrd.efi 
-           init=/nix/store/68sw5c588ws7ziyn16h4indi43z3ww9l-nixos-system-adelaide-22.11.20230613.14ff5cd/init 
+System:    Host: adelaide Kernel: 6.3.12 x86_64 bits: 64 compiler: gcc v: 12.2.0 
+           parameters: initrd=\efi\nixos\jqcr301slq0ldb8x8ilahbc0p564n8il-initrd-linux-6.3.12-initrd.efi 
+           init=/nix/store/bhnqzc95mvagfw5p000mi5jr9mpvcbix-nixos-system-adelaide-23.05.20230719.2c7635a/init 
            intel_iommu=on console=ttyS1,115200n8 console=tty1 console=tty0 console=ttyS0,115200 
            nohibernate loglevel=4 
-           Console: N/A Distro: NixOS 22.11 (Raccoon) 
+           Console: N/A Distro: NixOS 23.05 (Stoat) 
 Machine:   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789 
            serial: E424030X2100634 Chassis: type: 1 v: 0123456789 serial: C1160LK21P50540 
            Mobo: Supermicro model: X12SPW-TF v: 2.00 serial: OM21AS002614 
            UEFI: American Megatrends LLC. v: 1.1c date: 11/08/2021 
-Memory:    RAM: total: 251.21 GiB used: 6.07 GiB (2.4%) 
+Memory:    RAM: total: 251.21 GiB used: 13.14 GiB (5.2%) 
            Array-1: capacity: 12 TiB note: check slots: 8 EC: Single-bit ECC 
            max-module-size: 1.50 TiB note: est. 
            Device-1: DIMMA1 size: 64 GiB speed: spec: 3200 MT/s actual: 2933 MT/s type: DDR4 
@@ -53,9 +53,9 @@ CPU:       Info: 12-Core model: Intel Xeon Gold 5317 socket: LGA4189 bits: 64 ty
            arch: Ice Lake family: 6 model-id: 6A (106) stepping: 6 microcode: D000390 cache: 
            L1: 960 KiB L2: 18 MiB L3: 18 MiB 
            flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 72000 
-           Speed: 3000 MHz min/max: 800/3000 MHz base/boost: 3000/4500 volts: 1.6 V 
-           ext-clock: 100 MHz Core speeds (MHz): 1: 3000 2: 3000 3: 3000 4: 3000 5: 3000 6: 1661 
-           7: 1390 8: 3000 9: 3000 10: 3000 11: 3000 12: 3000 
+           Speed: 2080 MHz min/max: 800/3000 MHz base/boost: 3000/4500 volts: 1.6 V 
+           ext-clock: 100 MHz Core speeds (MHz): 1: 2080 2: 2401 3: 3000 4: 3000 5: 1644 6: 3000 
+           7: 3000 8: 3000 9: 1456 10: 1875 11: 3000 12: 3000 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -92,7 +92,7 @@ Network:   Device-1: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: ke
            Device-4: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel port: 7000 
            bus-ID: 18:00.1 chip-ID: 8086:10fb class-ID: 0200 
            IF: enp24s0f1 state: down mac: 00:1b:21:c3:7b:ee 
-           IF-ID-1: docker0 state: down mac: 02:42:c9:27:67:f1 
+           IF-ID-1: docker0 state: down mac: 02:42:2c:f2:41:32 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:b79b:e658:22f8:3a00:fc74/16 scope: global 
@@ -107,31 +107,31 @@ RAID:      Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid
            v: 07.725.01.00-rc1 port: d000 bus-ID: 8a:00.0 chip-ID: 1000.0017 rev: 01 
            class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.73 TiB free: 1.35 TiB 
-           allocated: 396 GiB 
+           allocated: 393 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: raw: 3.49 TiB usable: 5.22 TiB used: 1.71 TiB (32.8%) 
+Drives:    Local Storage: total: 3.49 TiB used: 2.17 TiB (62.2%) 
            ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 31 C scheme: GPT 
+           temp: 30 C scheme: GPT 
            SMART: yes state: enabled 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: SSD serial: N/A rev: 102Q 
-           temp: 27 C 
+           temp: 26 C 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 1.67 TiB used: 389.06 GiB (22.7%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 1.67 TiB used: 386.61 GiB (22.6%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 103.1 MiB (10.1%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 72.2 MiB (7.1%) fs: vfat 
            block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 667.57 GiB used: 516.52 GiB (77.4%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 3.31 TiB used: 689.4 GiB (20.3%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 50.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 51.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 286 
-           Uptime: 13:11:53  up 1 day  0:50,  0 users,  load average: 0.20, 0.29, 0.25 wakeups: 0 
-           Init: systemd v: 251 target: multi-user.target tool: systemctl Compilers: gcc: 11.3.0 
-           Packages: nix-default: 0 nix-sys: 404 lib: 69 nix-usr: 0 Client: Sudo v: 1.9.13p3 
-           inxi: 3.3.04 
+Info:      Processes: 294 
+           Uptime: 07:21:15  up 18 days  7:13,  2 users,  load average: 0.08, 0.10, 0.09 
+           wakeups: 0 Init: systemd v: 253 target: multi-user.target tool: systemctl Compilers: 
+           gcc: 12.2.0 Packages: nix-default: 0 nix-sys: 552 lib: 123 nix-usr: 0 Client: Sudo 
+           v: 1.9.13p3 inxi: 3.3.04 
 ```
 ![hardware topology](adelaide.lstopo.svg)
