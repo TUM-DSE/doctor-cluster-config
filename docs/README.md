@@ -3,17 +3,18 @@
 There are several ways to access the servers:
 
 - eduroam and LAN (All servers in TU munich are accessible from within the TUM network)
-- VPN provided by RBG:
-  - this option only works for ls1 employes
-  - this vpn also gives access to the management network (i.e. for IPMI access)
-  - use the il1 profile from [here](https://vpn.rbg.tum.de)
-- VPN provided by LRZ:
-  - This vpn is also accessible by students, see this [link](https://doku.lrz.de/display/PUBLIC/VPN+-+OpenVPN+Testbetrieb)
-- Via SSH jump host:
+- Via SSH jump host: **recommended for ssh**
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dse.in.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dse.in.tum.de`
   - Keys are uploaded via the machine bill whenever nixos configuration is updated.
   - You can generate an SSH config file for all TUM hosts with [this script](./gen-ssh-config.sh), providing your username as an argument
+- VPN provided by RBG: **recommended for admins**
+  - this option only works for ls1 employes
+  - this vpn also gives access to the management network (i.e. for IPMI access)
+  - use the il1 profile from [here](https://vpn.rbg.tum.de)
+- VPN provided by LRZ:
+  - Via eduvpn client [lrz eduvpn guide](https://doku.lrz.de/vpn-eduvpn-installation-und-konfiguration-11491448.html)
+  - Or via OpenVPN client (certificate expires every few months) [tum.eduvpn.lrz.de](https://tum.eduvpn.lrz.de/vpn-user-portal/configurations)
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
@@ -166,7 +167,7 @@ Our chair currently has three networks:
 - `il01`: for devices in the office
 - `il01_16`: for the servers
   - open to Müncher Wissenschaftnetz (and VPN)
-  - order 10Gbit/s SFP+ connectors for fiber!
+  - usually 10Gbit/s SFP+ connectors for fiber
   - ipv4: 131.159.102.0/24
   - ipv6: 2a09:80c0:102::/64
 - `il01_15` for management
@@ -175,6 +176,21 @@ Our chair currently has three networks:
   - ipv4: 172.24.90.0/24
 - `il01_14` for internal connections
   - closed, internal network, private ips
+  - ipv4: 172.24.89.0/24
+- LRZs eduvpn: 
+  - open to Münchner Wissenschaftsnetz
+  - ipv4: 10.0.0.0/8
+- TUM-ITO dosvpn: 
+  - may access:
+    - 131.159.0.0/16
+    - 192.187.0.0/16
+    - 10.0.0.0/8
+    - 172.24.0.0/17
+  - ipv4: 172.24.238.0(/24 maybe?)
+- LRZ: 192.187.0.0/16
+- TUM-ITO/RBG: 131.159.0.0/16
+- TUM-ITO/RBG private: 172.24.0.0/16
+- TUM-ITO/RBG vlans: 172.24.0.0/17
 - L3 Switch "Craig" `craig-mgmt.dse.in.tum.de` (sops encrypted (config)[./craig.sops])
   - 6x 100Gbit/s QSFP
   - many 10Gbit/s SFP+
