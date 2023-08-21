@@ -759,13 +759,24 @@ def ipmi_reboot_bmc(c: Any, host: str = "") -> None:
     ipmitool(c, host, "bmc reset cold")
 
 
+def ipmi_boot(c: Any, host: str, bootdev: str) -> None:
+    ipmitool(c, host, f"chassis bootdev {bootdev}")
+    ipmitool(c, host, "power cycle")
+
+
 @task
 def ipmi_boot_bios(c: Any, host: str = "") -> None:
     """
     Set the next boot to bios and reboot
     """
-    ipmitool(c, host, "chassis bootdev bios")
-    ipmitool(c, host, "power cycle")
+    ipmi_boot(c, host, "bios")
+
+@task
+def ipmi_boot_pxe(c: Any, host: str = "") -> None:
+    """
+    Set the next boot to bios and reboot
+    """
+    ipmi_boot(c, host, "pxe")
 
 
 @task
