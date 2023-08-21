@@ -44,7 +44,12 @@ class BuildTrigger(Trigger):
 
     def getSchedulersAndProperties(self):
         build_props = self.build.getProperties()
-        repo_name = build_props.getProperty("github.repository.full_name")
+        repo_name = build_props.getProperty(
+            "github.base.repo.full_name",
+            build_props.getProperty("github.repository.full_name"),
+        )
+
+        # parent_buildid
 
         sch = self.schedulerNames[0]
         triggered_schedulers = []
@@ -56,15 +61,19 @@ class BuildTrigger(Trigger):
             drv_path = job.get("drvPath")
             error = job.get("error")
             out_path = job.get("outputs", {}).get("out")
+
+            build_props.setProperty(f"{attr}-out_path", out_path, "nix-eval")
+            build_props.setProperty(f"{attr}-drv_path", drv_path, "nix-eval")
+
             props = Properties()
-            props.setProperty("virtual_builder_name", name, "spawner")
-            props.setProperty("virtual_builder_tags", "", "spawner")
-            props.setProperty("attr", attr, "spawner")
-            props.setProperty("drv_path", drv_path, "spawner")
-            props.setProperty("out_path", out_path, "spawner")
+            props.setProperty("virtual_builder_name", name, "nix-eval")
+            props.setProperty("virtual_builder_tags", "", "nix-eval")
+            props.setProperty("attr", attr, "nix-eval")
+            props.setProperty("drv_path", drv_path, "nix-eval")
+            props.setProperty("out_path", out_path, "nix-eval")
             # we use this to identify builds when running a retry
-            props.setProperty("build_uuid", str(uuid.uuid4()), "spawner")
-            props.setProperty("error", error, "spawner")
+            props.setProperty("build_uuid", str(uuid.uuid4()), "nix-eval")
+            props.setProperty("error", error, "nix-eval")
             triggered_schedulers.append((sch, props))
         return triggered_schedulers
 
@@ -111,7 +120,10 @@ class NixEvalCommand(buildstep.ShellMixin, steps.BuildStep):
 
             for line in self.observer.getStdout().split("\n"):
                 if line != "":
-                    job = json.loads(line)
+                    try:
+                        job = json.loads(line)
+                    except json.JSONDecodeError as e:
+                        raise Exception(f"Failed to parse line: {line}") from e
                     jobs.append(job)
             self.build.addStepsAfterCurrentStep(
                 [BuildTrigger(scheduler="nix-build", name="nix-build", jobs=jobs)]
@@ -194,8 +206,7 @@ class UpdateBuildOutput(steps.BuildStep):
         # XXX don't hardcode this
         p = Path("/var/www/buildbot/nix-outputs/")
         os.makedirs(p, exist_ok=True)
-        with open(p / attr, "w") as f:
-            f.write(out_path)
+        (p / attr).write_text(out_path)
         return util.SUCCESS
 
 
@@ -367,7 +378,7 @@ def nix_update_flake_config(
                 "--base",
                 branch,
             ],
-            doStepIf=util.Interpolate("has_pr") != 'OPEN',
+            doStepIf=util.Interpolate("has_pr") != "OPEN",
         )
     )
     return util.BuilderConfig(
@@ -378,8 +389,89 @@ def nix_update_flake_config(
     )
 
 
+class Machine:
+    def __init__(self, hostname: str, attr_name: str) -> None:
+        self.hostname = hostname
+        self.attr_name = attr_name
+
+
+class DeployTrigger(Trigger):
+    """
+    Dynamic trigger that creates a deploy step for every machine.
+    """
+
+    def __init__(self, scheduler: str, machines: list[Machine], **kwargs):
+        if "name" not in kwargs:
+            kwargs["name"] = "trigger"
+        self.machines = machines
+        self.config = None
+        Trigger.__init__(
+            self,
+            waitForFinish=True,
+            schedulerNames=[scheduler],
+            haltOnFailure=True,
+            flunkOnFailure=True,
+            sourceStamps=[],
+            alwaysUseLatest=False,
+            updateSourceStamp=False,
+            **kwargs,
+        )
+
+    def createTriggerProperties(self, props):
+        return props
+
+    def getSchedulersAndProperties(self):
+        build_props = self.build.getProperties()
+        repo_name = build_props.getProperty(
+            "github.base.repo.full_name",
+            build_props.getProperty("github.repository.full_name"),
+        )
+
+        sch = self.schedulerNames[0]
+
+        triggered_schedulers = []
+        for m in self.machines:
+            out_path = build_props.getProperty(f"nixos-{m.attr_name}-out_path")
+            props = Properties()
+            name = m.attr_name
+            if repo_name is not None:
+                name = f"{repo_name}: Deploy {name}"
+            props.setProperty("virtual_builder_name", name, "deploy")
+            props.setProperty("attr", m.attr_name, "deploy")
+            props.setProperty("out_path", out_path, "deploy")
+            triggered_schedulers.append((sch, props))
+        return triggered_schedulers
+
+    @defer.inlineCallbacks
+    def run(self):
+        props = self.build.getProperties()
+        if props.getProperty("branch") not in self.branches:
+            return util.SKIPPED
+        res = yield super().__init__()
+        return res
+
+    def getCurrentSummary(self):
+        """
+        The original build trigger will the generic builder name `nix-build` in this case, which is not helpful
+        """
+        if not self.triggeredNames:
+            return {"step": "running"}
+        summary = []
+        if self._result_list:
+            for status in ALL_RESULTS:
+                count = self._result_list.count(status)
+                if count:
+                    summary.append(
+                        f"{self._result_list.count(status)} {statusToString(status, count)}"
+                    )
+        return {"step": f"({', '.join(summary)})"}
+
+
 def nix_eval_config(
-    worker_names: list[str], github_token_secret: str, automerge_users: List[str] = []
+    worker_names: list[str],
+    github_token_secret: str,
+    automerge_users: List[str] = [],
+    machines: list[Machine] = [],
 ) -> util.BuilderConfig:
     """
     Uses nix-eval-jobs to evaluate hydraJobs from flake.nix in parallel.
@@ -433,7 +525,7 @@ def nix_eval_config(
             MergePr(
                 name="Merge pull-request",
                 env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
-                base_branches=["master"],
+                base_branches=["master", "main"],
                 owners=automerge_users,
                 command=[
                     "gh",
@@ -471,10 +563,11 @@ def nix_build_config(
             command=[
                 "nix",
                 "build",
+                "-L",
                 "--option",
                 "keep-going",
                 "true",
-                "-L",
+                "--accept-flake-config",
                 "--out-link",
                 util.Interpolate("result-%(prop:attr)s"),
                 util.Property("drv_path"),
@@ -499,7 +592,9 @@ def nix_build_config(
                 ],
             )
         )
-    factory.addStep(UpdateBuildOutput(name="Update build output", branches=["master"]))
+    factory.addStep(
+        UpdateBuildOutput(name="Update build output", branches=["master", "main"])
+    )
     return util.BuilderConfig(
         name="nix-build",
         workernames=worker_names,
