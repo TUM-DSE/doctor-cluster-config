@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 
 import json
+import multiprocessing
 import os
 import re
-import multiprocessing
-from pathlib import Path
 import uuid
 from collections import defaultdict
-
-from buildbot.steps.trigger import Trigger
-from buildbot.plugins import util, steps
+from pathlib import Path
 from typing import Any, Generator, List
+
+from buildbot.plugins import steps, util
 from buildbot.process import buildstep, logobserver
 from buildbot.process.properties import Properties
+from buildbot.process.results import ALL_RESULTS, statusToString
+from buildbot.steps.trigger import Trigger
 from twisted.internet import defer
-from buildbot.process.results import ALL_RESULTS
-from buildbot.process.results import statusToString
 
 
 class BuildTrigger(Trigger):
@@ -280,7 +279,8 @@ def nix_update_flake_config(
     worker_names: list[str],
     projectname: str,
     github_token_secret: str,
-    github_bot_user: str
+    github_bot_user: str,
+    branch: str,
 ) -> util.BuilderConfig:
     """
     Updates the flake an opens a PR for it.
@@ -332,6 +332,23 @@ def nix_update_flake_config(
         )
     )
     factory.addStep(
+        steps.SetPropertyFromCommand(
+            env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
+            command=[
+                "gh",
+                "pr",
+                "view",
+                "--json",
+                "state",
+                "--template",
+                "{{.state}}",
+                "update_flake_lock",
+            ],
+            decodeRC={0: "SUCCESS", 1: "SUCCESS"},
+            property="has_pr",
+        )
+    )
+    factory.addStep(
         CreatePr(
             name="Create pull-request",
             env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
@@ -348,8 +365,9 @@ def nix_update_flake_config(
                 "--head",
                 "refs/heads/update_flake_lock",
                 "--base",
-                "master",
+                branch,
             ],
+            doStepIf=util.Interpolate("has_pr") != 'OPEN',
         )
     )
     return util.BuilderConfig(

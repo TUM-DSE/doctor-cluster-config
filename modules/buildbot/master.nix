@@ -38,6 +38,7 @@ in
       GITHUB_OAUTH_ID = githubOauthId;
       GITHUB_ORG = "TUM-DSE";
       GITHUB_REPO = "doctor-cluster-config";
+      GITHUB_BRANCH = "master";
 
       BUILDBOT_URL = "https://${buildbotDomain}/";
       BUILDBOT_GITHUB_USER = "doctor-cluster-bot";

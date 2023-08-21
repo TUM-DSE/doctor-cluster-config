@@ -29,6 +29,7 @@ def read_secret_file(secret_name: str) -> str:
 
 ORG = os.environ["GITHUB_ORG"]
 REPO = os.environ["GITHUB_REPO"]
+BRANCH = os.environ["GITHUB_BRANCH"]
 BUILDBOT_URL = os.environ["BUILDBOT_URL"]
 BUILDBOT_GITHUB_USER = os.environ["BUILDBOT_GITHUB_USER"]
 
@@ -139,7 +140,8 @@ def build_config() -> dict[str, Any]:
             worker_names,
             f"{ORG}/{REPO}",
             github_token_secret="github-token",
-            github_bot_user=BUILDBOT_GITHUB_USER
+            github_bot_user=BUILDBOT_GITHUB_USER,
+            branch=BRANCH,
         ),
     ]
 
