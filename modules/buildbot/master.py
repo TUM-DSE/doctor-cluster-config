@@ -90,20 +90,12 @@ def build_config() -> dict[str, Any]:
             builderNames=["nix-update-flake"],
             buttonName="Update flakes",
         ),
-        # updates flakes twice a weeek
+        # updates flakes every day
         schedulers.NightlyTriggerable(
-            name="sunday-flake-update",
+            name="daily-flake-update",
             builderNames=["nix-update-flake"],
             hour=3,
             minute=0,
-            dayOfWeek=6,
-        ),
-        schedulers.NightlyTriggerable(
-            name="thursday-flake-update",
-            builderNames=["nix-update-flake"],
-            hour=3,
-            minute=0,
-            dayOfWeek=3,
         ),
     ]
 
