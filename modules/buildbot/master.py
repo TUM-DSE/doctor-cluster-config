@@ -29,6 +29,7 @@ def read_secret_file(secret_name: str) -> str:
 
 ORG = os.environ["GITHUB_ORG"]
 REPO = os.environ["GITHUB_REPO"]
+NIXPKGS_BRANCH = os.environ["NIXPKGS_BRANCH"]
 BUILDBOT_URL = os.environ["BUILDBOT_URL"]
 BUILDBOT_GITHUB_USER = os.environ["BUILDBOT_GITHUB_USER"]
 
@@ -72,7 +73,7 @@ def build_config() -> dict[str, Any]:
         schedulers.SingleBranchScheduler(
             name="flake-sources",
             change_filter=util.ChangeFilter(
-                repository=f"https://github.com/{ORG}/nixpkgs", branch="main"
+                repository=f"https://github.com/{ORG}/nixpkgs", branch=NIXPKGS_BRANCH
             ),
             treeStableTimer=20,
             builderNames=["nix-update-flake"],
