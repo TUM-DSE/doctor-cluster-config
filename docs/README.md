@@ -11,7 +11,7 @@ There are several ways to access the servers:
 - VPN provided by RBG: **recommended for admins**
   - this option only works for ls1 employes
   - this vpn also gives access to the management network (i.e. for IPMI access)
-  - use the il1 profile from [here](https://vpn.rbg.tum.de)
+  - use the `dos` profile from [here](https://vpn.rbg.tum.de)
 - VPN provided by LRZ:
   - Via eduvpn client [lrz eduvpn guide](https://doku.lrz.de/vpn-eduvpn-installation-und-konfiguration-11491448.html)
   - Or via OpenVPN client (certificate expires every few months) [tum.eduvpn.lrz.de](https://tum.eduvpn.lrz.de/vpn-user-portal/configurations)
