@@ -51,11 +51,6 @@ paulKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgvtsWzXcCS8gCXFHZ+7wlgdxWBZETkVytZl33MLgLaYniRaOnPUThS7wuevMKS7cRzX87Sut7Gf3ILIWp5VoTVgHkfJgM8oYhdHMQOMmHhaHlJ7DTlhDAiYdLJKolBnFyy/icXtR6U3SPdZAyf8+aIT1ZyTrkZmFgxNKXDU12CFuX7aVvJXHbgr5GcJpv/cS0Bp8IF42yyRqtx+lSWGGCMA94XJjKIwaJXun55yPVzZotHVUlcs6cB+6eg35EeFLGWpuji/yyUSYW7hux2A7V0v3BZrdI3hWq++zDhM/Ai5WAJUf21VQpFzd8pjrm+WVz7vQK4LulPd3aWLnO5eZ1+iVmdqBYm74gLeiObynZgEhwO/EsUpTglDwfSv9uqcmDfkH/iFR6rrGm+7A79f4KjMANSCTb8A2ppJ+nKAlW+Me4Ut6w+R6WACpqYuj4LRASvAX6Eada/21j15tJ6W07CrI7HpDB7Ay4jhlhyRM2LIqxu0A06hevMbCwHjq6qs0= eaypek@ertugrul"
   ];
 
-  raitoKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaw9ihTG7ucB8P38XdalEWev8+q96e2yNm4B+/I9IJp raito@paris-laptop"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKiXXYkhRh+s7ixZ8rvG8ntIqd6FELQ9hh7HoaHQJRPU raito@munich-laptop"
-  ];
-
   kaiKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDV3oHLMnrwqomwg7mZh43uV4IORsJHpzZQGDlTV5lz2aKlSdnB8UX7abgt5HwGPYqjHb+Q3HL6WRBMIMVqPk18LvITg7fOJxeIhgSOpJolr4UOM0Gb8ITqmKUDRloyr/74bx6JDC27+snaBfTD1vWyrH80t0xepvDlgWMD+Osx68a6lKV/832vRb3EZxOcdQe3oJPb+MEDMP+jQTbRn2US6TAi2zI3z1XgSPnPy4CKeFKmsIhMw0MVDKVKTfVxW0croX3pPk383XwKTe1M7qBH6UtNV7AqTR5imsI+7FCJbEKQBynaYgBjYEoSUKNfNATeBo+p4oKkz8hcLnAEXL+lvym1iEFJXDzh8keNfPYY30yBRV+kNANduFkWbPlKzTXS+l8ICdVJWFtmLLL/kTYTtfS2qR8spNpkbUq9AVpTYVBQHxG4KTI0CqYhmP2N8OIsERNayezc8yhC"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM+ApCfMsWq6WAKeElbZyxH+fve33DB7k5cFzOMo8ic5"
@@ -222,17 +217,6 @@ in
       openssh.authorizedKeys.keys = eaypekKeys;
     };
 
-    #  Ryan Lahfa, intern 2023 (Jörg)
-    raito = {
-      isNormalUser = true;
-      home = "/home/raito";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2024;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = raitoKeys;
-    };
-
     # Kai-Chun Hsieh, MSc student with Masa (unikernel bpf verif)
     kai = {
       isNormalUser = true;
@@ -360,7 +344,7 @@ in
       openssh.authorizedKeys.keys = dmitrylugovoyKeys;
     };
 
-    root.openssh.authorizedKeys.keys = raitoKeys ++ yiheKeys;
+    root.openssh.authorizedKeys.keys = yiheKeys;
   };
 
   # DANGER ZONE!
@@ -385,6 +369,7 @@ in
     "mflatus"
     "emil"
     "turkmen"
+    "raito"
     "sarac"
     "mwerndle"
     "jonas"

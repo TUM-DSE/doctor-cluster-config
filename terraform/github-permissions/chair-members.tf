@@ -18,7 +18,6 @@ locals {
 	"Meandres",       # Ilya Meignan--Masson
   ])
   internship = toset([
-    "RaitoBezarius" # Raito Bezarius (Internship)
   ])
 }
 
