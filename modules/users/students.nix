@@ -336,21 +336,6 @@ in
       openssh.authorizedKeys.keys = m00wlKeys;
     };
 
-  # Dmitry Lugovoy, MSc Thesis with Manos (Quantum Computing Scheduling)
-  # Remove after WS23
-  dmitrylugovoy = {
-      isNormalUser = true;
-      home = "/home/dmitrylugovoy";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2034;
-      allowedHosts = [ "graham" "ryan" "rose" ];
-      openssh.authorizedKeys.keys = dmitrylugovoyKeys;
-    };
-
-    root.openssh.authorizedKeys.keys = yiheKeys;
-  };
-
     # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
     # Remove after SS23
     bruno = {
@@ -362,6 +347,21 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = brunoKeys;
     };
+
+    # Dmitry Lugovoy, MSc Thesis with Manos (Quantum Computing Scheduling)
+    # Remove after WS23
+    dmitrylugovoy = {
+      isNormalUser = true;
+      home = "/home/dmitrylugovoy";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2034;
+      allowedHosts = [ "graham" "ryan" "rose" ];
+      openssh.authorizedKeys.keys = dmitrylugovoyKeys;
+    };
+
+    root.openssh.authorizedKeys.keys = yiheKeys;
+  };
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
