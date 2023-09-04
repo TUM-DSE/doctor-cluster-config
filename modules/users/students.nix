@@ -336,18 +336,6 @@ in
       openssh.authorizedKeys.keys = m00wlKeys;
     };
 
-    # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
-    # Remove after SS23
-    bruno = {
-      isNormalUser = true;
-      home = "/home/bruno";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2035;
-      allowedHosts = [ "amy" "clara" ];
-      openssh.authorizedKeys.keys = brunoKeys;
-    };
-
     # Dmitry Lugovoy, MSc Thesis with Manos (Quantum Computing Scheduling)
     # Remove after WS23
     dmitrylugovoy = {
@@ -358,6 +346,18 @@ in
       uid = 2034;
       allowedHosts = [ "graham" "ryan" "rose" ];
       openssh.authorizedKeys.keys = dmitrylugovoyKeys;
+    };
+
+    # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
+    # Remove after SS23
+    bruno = {
+      isNormalUser = true;
+      home = "/home/bruno";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2035;
+      allowedHosts = [ "amy" "clara" ];
+      openssh.authorizedKeys.keys = brunoKeys;
     };
 
     root.openssh.authorizedKeys.keys = yiheKeys;
