@@ -166,7 +166,7 @@ Our chair currently has three networks:
 
 - `il01`: for devices in the office
 - `il01_16`: for the servers
-  - open to Müncher Wissenschaftnetz (and VPN)
+  - open to `il01` (and VPN)
   - usually 10Gbit/s SFP+ connectors for fiber
   - ipv4: 131.159.102.0/24
   - ipv6: 2a09:80c0:102::/64
