@@ -114,11 +114,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1694368562,
-        "narHash": "sha256-m0O+6jXuGcnwdCukqYI5jpWUbXGHLqlhWk5hn03z9iw=",
+        "lastModified": 1694436498,
+        "narHash": "sha256-iHne5u2R1qoyfTdRHtwMVW/NH1Ik/fqQNkAAUZb2jOw=",
         "owner": "TUM-DSE",
         "repo": "nixpkgs",
-        "rev": "ed79edd93704bf71e0e7f9dc7dccd8927956e298",
+        "rev": "e43572bdf4283a44a511c1884a1200e36128d090",
         "type": "github"
       },
       "original": {
@@ -146,11 +146,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1694434211,
-        "narHash": "sha256-b7lrPk2A77r3xfTVBK1lnzdcssrwWYev01E5gD2xUGw=",
+        "lastModified": 1694435637,
+        "narHash": "sha256-THp+1ijHASSWurcwSCU6w+2tEbIdVrieRoXQS6ZfTD8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d55b14604310f9d10a8f73f3145db5d27b6f0fcf",
+        "rev": "394c8807d7b7d5dac3db92cbb6f522668f848b01",
         "type": "github"
       },
       "original": {
