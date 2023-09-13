@@ -1,6 +1,4 @@
 { config
-, lib
-, pkgs
 , ...
 }:
 {
@@ -8,22 +6,11 @@
 
   imports = [
     ./nginx.nix
+    ./rules.nix
   ];
 
   services.prometheus = {
     enable = true;
-    # checks fail because of missing secrets in the sandbox
-    checkConfig = false;
-    ruleFiles = [
-      (pkgs.writeText "prometheus-rules.yml" (builtins.toJSON {
-        groups = [
-          {
-            name = "alerting-rules";
-            rules = import ./alert-rules.nix { inherit lib; };
-          }
-        ];
-      }))
-    ];
     webExternalUrl = "https://prometheus.dse.in.tum.de";
     scrapeConfigs = [
       {

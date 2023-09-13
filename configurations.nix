@@ -109,6 +109,7 @@ in
       modules =
         commonModules
         ++ [
+          srvos.nixosModules.roles-prometheus
           ./hosts/doctor.nix
         ];
     };
