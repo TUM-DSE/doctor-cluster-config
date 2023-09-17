@@ -6,7 +6,6 @@ locals {
     "dimstav23",      # Dimitris Stavrakakis
     "harshanavkis",   # Harshavardhan Unnibhavi
     "manosgior",      # Emmanouil (Manos) Giortamis
-    "mbailleu",       # Maurice Bailleu
     "Mic92",          # Jörg Thalheim
     "PBHDK",          # Paul Heidekrüger
     "pogobanane",     # Peter Okelmann
