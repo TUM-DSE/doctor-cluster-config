@@ -165,6 +165,7 @@ nardole-eva-home-2023-02-15T00:00:00 Wed, 2023-02-15 00:00:07 [85aac6717e3f1835c
 Our chair currently has three networks:
 
 - `il01`: for devices in the office
+  - `ruby`: firewall port 22 open (only for `login` jumphost)
 - `il01_16`: for the servers
   - open to `il01` (and VPN)
   - usually 10Gbit/s SFP+ connectors for fiber
