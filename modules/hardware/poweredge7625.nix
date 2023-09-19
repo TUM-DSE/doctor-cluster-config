@@ -6,6 +6,7 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
+    ../zfs-partitioning.nix
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "megaraid_sas" "ahci" "usbhid" ];
