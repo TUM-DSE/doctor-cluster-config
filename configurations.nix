@@ -267,12 +267,22 @@ in
           ./hosts/jack.nix
         ];
     };
+
     donna = nixosSystem {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules = 
         computeNodeModules
         ++ [
           ./hosts/donna.nix
+        ];
+    };
+
+    vislor = nixosSystem {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = 
+        computeNodeModules
+        ++ [
+          ./hosts/vislor.nix
         ];
     };
 
