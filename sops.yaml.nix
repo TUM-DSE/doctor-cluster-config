@@ -28,6 +28,7 @@ let
       francisco
       mmisono
       yihe
+      robert
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
