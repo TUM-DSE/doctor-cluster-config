@@ -1,7 +1,7 @@
 
 {
   imports = [
-    ../modules/hardware/placeholder.nix
+    ../modules/hardware/poweredge7625.nix
   ];
 
   networking.hostName = "vislor";
