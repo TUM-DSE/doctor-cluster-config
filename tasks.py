@@ -537,6 +537,7 @@ find {ROOT} \
         -not -path "{ROOT}/.github/*" \
         -not -path "{ROOT}/modules/jumphost/*.yml" \
         -not -path "{ROOT}/modules/monitoring/*.yml" \
+        -not -path "{ROOT}/.mergify.yml" \
         -type f \
         \( -iname '*.enc.json' -o -iname '*.yml' \) \
         -print0 | \
