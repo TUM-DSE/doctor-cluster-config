@@ -34,6 +34,10 @@
     sops-nix.url = "github:Mic92/sops-nix/7c8e9727a2ecf9994d4a63d577ad5327e933b6a4";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-anywhere.url = "github:nix-community/nixos-anywhere/pxe-boot";
+    nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-anywhere.inputs.disko.follows = "disko";
+
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
     srvos.url = "github:numtide/srvos";
@@ -58,13 +62,14 @@
           ./pkgs/flake-module.nix
           ./templates
         ];
-        perSystem = { self', pkgs, ... }: {
+        perSystem = { self', pkgs, system, ... }: {
           devShells.default = pkgs.mkShellNoCC {
             buildInputs = [
               pkgs.ipmitool
 
               pkgs.python3.pkgs.invoke
               #Until nixos-anywhere is packaged
+              inputs.nixos-anywhere.packages.${system}.nixos-anywhere-pxe
               pkgs.python3.pkgs.deploykit
               pkgs.mypy
               pkgs.pixiecore
