@@ -119,7 +119,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
-e1:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
+e1:00.0, Ethernet controller, Vendor 1234, Device 1001 -p00, Xilinx Corporation, Device 9118  
 - ✅  Slot: 2 type: x16 PCI Express 4 x16 SLOT2 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ✅  Slot: 3 type: x16 PCI Express 4 x16 SLOT3 PCI-E 4.0 X16 status: Available length: Long    
@@ -130,8 +130,8 @@ No device/PCI ID.
 c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
 - ❌  Slot: 6 type: x16 PCI Express 4 x16 SLOT6 PCI-E 4.0 X16 status: In Use length: Long    
 c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
-- ✅  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: In Use length: Long    
+61:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
 - ✅  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
@@ -208,8 +208,8 @@ c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme
 c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
 - ✅  Slot: 7 type: x16 PCI Express 4 x16 SLOT7 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
-- ✅  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 8 type: x16 PCI Express 4 x16 SLOT8 PCI-E 4.0 X16 status: In Use length: Long    
+41:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
 - ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
 - ✅  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: Available length: Long    
@@ -356,8 +356,8 @@ No device/PCI ID.
 41:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
 - ✅  Slot: 9 type: x16 PCI Express 4 x16 SLOT9 PCI-E 4.0 X16 status: Available length: Long    
 No device/PCI ID.  
-- ❌  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: In Use length: Long    
-25:00.0, PCI bridge, Xilinx Corporation, Device 913f -p00, ,   
+- ✅  Slot: 10 type: x16 PCI Express 4 x16 SLOT10 PCI-E 4.0 X16 status: Available length: Long    
+No device/PCI ID.  
  
 
 ### ryan.dse.in.tum.de 
@@ -365,12 +365,12 @@ No device/PCI ID.
 PCI Slots:   
 - ❌  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Long    
 c4:00.0, Non-Volatile memory controller, SK hynix, Platinum P41 NVMe Solid State Drive 2TB -p02, SK hynix, Platinum P41 NVMe Solid State Drive 2TB  
-- ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Long    
-No device/PCI ID.  
+- ❌  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: In Use length: Long    
+81:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO  
 - ❌  Slot: 5 type: x16 PCI Express 3 PCIe Slot 5 status: In Use length: Long    
-03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO  
+03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ❌  Slot: 4 type: x16 PCI Express 4 PCIe Slot 4 status: In Use length: Long    
-41:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Samsung Electronics Co Ltd, Device a812  
+41:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ❌  Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long    
 02:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
  

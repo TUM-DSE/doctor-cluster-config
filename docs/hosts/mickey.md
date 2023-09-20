@@ -1,16 +1,16 @@
 # mickey
 
 ```
-System:    Host: mickey Kernel: 6.3.12 x86_64 bits: 64 compiler: gcc v: 12.2.0 
-           parameters: initrd=\efi\nixos\azmdmwhbg26blacynka536w5ics0559g-initrd-linux-6.3.12-initrd.efi 
-           init=/nix/store/i3c1hblmcjq2bvs42mw1hx333dch1kyf-nixos-system-mickey-23.05.20230719.2c7635a/init 
+System:    Host: mickey Kernel: 6.4.12 x86_64 bits: 64 compiler: gcc v: 12.2.0 
+           parameters: initrd=\efi\nixos\z98akgsb599v071ba1dfyifk6jr7bvpl-initrd-linux-6.4.12-initrd.efi 
+           init=/nix/store/2w33fazsxlmkmlggj9in7bir5jj8nc0i-nixos-system-mickey-23.05.20230825.097e3a3/init 
            console=tty0 console=ttyS0,115200 nohibernate loglevel=4 
            Console: N/A Distro: NixOS 23.05 (Stoat) 
 Machine:   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 3YBVXK3 Chassis: 
            type: 23 serial: 3YBVXK3 
            Mobo: Dell model: 04JN2K v: A09 serial: .3YBVXK3.CNFCP001B3002P. UEFI: Dell v: 2.12.2 
            date: 07/09/2021 
-Memory:    RAM: total: 125.52 GiB used: 19.49 GiB (15.5%) 
+Memory:    RAM: total: 125.52 GiB used: 24.78 GiB (19.7%) 
            Array-1: capacity: 1024 GiB slots: 16 EC: Multi-bit ECC max-module-size: 64 GiB 
            note: est. 
            Device-1: A1 size: 32 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -49,21 +49,23 @@ PCI Slots: Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length:
            Slot: 6 type: x4 PCI Express 3 SFF-8639 (U.2) PCIe SSD Slot 6 in Bay 1 
            status: Available length: 2.5" drive form factor 
 CPU:       Info: 2x 10-Core model: Intel Xeon Gold 5215 socket: LGA2011 bits: 64 type: MT MCP SMP 
-           arch: Cascade Lake family: 6 model-id: 55 (85) stepping: 7 microcode: 5003501 cache: 
+           arch: Cascade Lake family: 6 model-id: 55 (85) stepping: 7 microcode: 5003604 cache: 
            L2: 27.5 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200101 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 200110 
            Speed: 2500 MHz min/max: N/A base/boost: 2500/4000 volts: 1.8 V ext-clock: 10400 MHz 
-           Core speeds (MHz): 1: 2500 2: 2500 3: 2500 4: 2500 5: 2500 6: 2500 7: 2500 8: 2500 
-           9: 2500 10: 2500 11: 2500 12: 2500 13: 2500 14: 2500 15: 2500 16: 2500 17: 2500 
-           18: 2500 19: 1000 20: 2500 21: 1000 22: 2500 23: 2500 24: 2500 25: 2500 26: 2500 
-           27: 2500 28: 2500 29: 2500 30: 2500 31: 2500 32: 2500 33: 2500 34: 1000 35: 2500 
-           36: 2500 37: 2500 38: 2500 39: 2500 40: 2500 
-           Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
+           Core speeds (MHz): 1: 2500 2: 2500 3: 2500 4: 2500 5: 2500 6: 2500 7: 1000 8: 2500 
+           9: 2500 10: 2500 11: 2500 12: 2500 13: 2500 14: 2500 15: 1000 16: 2500 17: 2500 
+           18: 2500 19: 2500 20: 2500 21: 2500 22: 2500 23: 2500 24: 2500 25: 2500 26: 2500 
+           27: 2500 28: 2500 29: 2500 30: 2500 31: 2500 32: 2500 33: 1000 34: 2500 35: 2500 
+           36: 2500 37: 999 38: 2500 39: 1000 40: 2500 
+           Vulnerabilities: Type: gather_data_sampling mitigation: Microcode 
+           Type: itlb_multihit status: KVM: VMX disabled 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
            Type: meltdown status: Not affected 
            Type: mmio_stale_data mitigation: Clear CPU buffers; SMT vulnerable 
            Type: retbleed mitigation: Enhanced IBRS 
+           Type: spec_rstack_overflow status: Not affected 
            Type: spec_store_bypass mitigation: Speculative Store Bypass disabled via prctl 
            Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization 
            Type: spectre_v2 mitigation: Enhanced / Automatic IBRS, IBPB: conditional, RSB filling, 
@@ -90,40 +92,43 @@ Network:   Device-1: Broadcom NetXtreme BCM5720 Gigabit Ethernet PCIe vendor: De
            Device-4: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell 
            driver: bnxt_en v: kernel port: 2000 bus-ID: 5e:00.1 chip-ID: 14e4:16d8 class-ID: 0200 
            IF: enp94s0f1np1 state: down mac: f4:ee:08:0a:ea:b6 
-           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: aa:eb:40:29:3e:e9 
+           IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: fe:f6:2f:b4:e7:67 
            IP v4: 10.42.2.1/24 scope: global broadcast: 10.42.2.255 
-           IP v6: fe80::a8eb:40ff:fe29:3ee9/64 scope: link 
-           IF-ID-2: docker0 state: down mac: 02:42:1e:d4:17:77 
+           IP v6: fe80::fcf6:2fff:feb4:e767/64 scope: link 
+           IF-ID-2: docker0 state: down mac: 02:42:e2:a9:29:98 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:a85d:33c6:14ca:3cf7:8827/16 scope: global 
-           IF-ID-4: veth04c243c9 state: up speed: 10000 Mbps duplex: full mac: a2:b7:84:d9:d7:1e 
+           IF-ID-4: veth4836733e state: up speed: 10000 Mbps duplex: full mac: 1e:91:32:4d:12:1c 
+           IF-ID-5: veth665c952b state: up speed: 10000 Mbps duplex: full mac: 62:9d:a9:df:e2:0e 
+           IF-ID-6: veth95d5caff state: up speed: 10000 Mbps duplex: full mac: fe:30:96:a1:cb:9d 
+           IF-ID-7: veth98a3a86b state: up speed: 10000 Mbps duplex: full mac: 52:fc:2e:68:21:ba 
            WAN IP: 131.159.102.10 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas 
            v: 07.725.01.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000.10e2 rev: class-ID: 0104 
            Device-1: zroot type: zfs status: ONLINE level: linear size: 1.45 TiB free: 1.43 TiB 
-           allocated: 22.8 GiB 
+           allocated: 25.2 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 1.46 TiB used: 1.82 TiB (124.8%) 
+Drives:    Local Storage: total: 1.46 TiB used: 1.94 TiB (133.3%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
            rotation: SSD serial: PHAB1233010E1P9SGN rev: 1.1.5 temp: 26 ° (299 K) C scheme: GPT 
-           SMART: yes health: PASSED on: 1y 203d 17h cycles: 17 read-units: 7,881,591 [4.03 TB] 
-           written-units: 57,048,883 [29.2 TB] 
-Partition: ID-1: / raw-size: N/A size: 1.41 TiB used: 19.95 GiB (1.4%) fs: zfs 
+           SMART: yes health: PASSED on: 1y 237d 20h cycles: 17 read-units: 8,165,846 [4.18 TB] 
+           written-units: 59,320,682 [30.3 TB] 
+Partition: ID-1: / raw-size: N/A size: 1.41 TiB used: 22.32 GiB (1.6%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 72.1 MiB (7.1%) fs: vfat 
+           ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 293.9 MiB (28.8%) fs: vfat 
            block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1 
-           ID-3: /home raw-size: N/A size: 3.31 TiB used: 689.4 GiB (20.3%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 3.22 TiB used: 741.33 GiB (22.5%) fs: nfs4 
            remote: nfs:/export/home 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 77.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 76.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 619 
-           Uptime: 07:21:17  up 18 days  7:04,  0 users,  load average: 0.17, 0.05, 0.01 
+Info:      Processes: 626 
+           Uptime: 11:02:06  up 24 days 10:58,  0 users,  load average: 0.16, 0.13, 0.19 
            wakeups: 0 Init: systemd v: 253 target: multi-user.target tool: systemctl Compilers: 
-           gcc: 12.2.0 Packages: nix-default: 0 nix-sys: 565 lib: 126 nix-usr: 0 Client: Sudo 
+           gcc: 12.2.0 Packages: nix-default: 0 nix-sys: 566 lib: 126 nix-usr: 0 Client: Sudo 
            v: 1.9.13p3 inxi: 3.3.04 
 ```
 ![hardware topology](mickey.lstopo.svg)
