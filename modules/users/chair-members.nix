@@ -284,7 +284,7 @@ in
         home = "/home/ilya";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
-        uid = 1030
+        uid = 1030;
         openssh.authorizedKeys.keys = ilyaKeys;
       };
 
