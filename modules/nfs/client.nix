@@ -10,7 +10,8 @@
       RemainAfterExit = true;
       # 2. Retry try a few times on failure, before continuing with boot (1.)
       ExecStart = pkgs.writeShellScript "nfs-mount-wrapper" ''
-        mountcmd="${pkgs.util-linux}/bin/mount -t nfs4 -o nofail,timeo=14 ${nfsUrl} ${mountpoint}"
+        # TODO upgrade to nfs4 again, once linux 6.4 (e.g. clara) has working nfs4 again
+        mountcmd="${pkgs.util-linux}/bin/mount -t nfs -o nofail,timeo=14 ${nfsUrl} ${mountpoint}"
         restartsec="5"
 
         mkdir -p ${mountpoint}
