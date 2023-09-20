@@ -16,7 +16,10 @@ inv add-server $host
 
 Prepare a config for a new host:
 
-If there is no hardware configuratoin yet for your mainboard/server type: Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`.
+> **If** there is no hardware configuration yet for your mainboard/server type: 
+> Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`. 
+> You can use `inv reformat-install-nixos wrongHostname $eth0` with a wrong hostname to netboot the server.
+> It will print an ssh command you can use to ssh into it.
 
 Write a sane, simple configuration to `hosts/$hostname.nix`:
 
@@ -38,11 +41,14 @@ Write a sane, simple configuration to `hosts/$hostname.nix`:
 
 Add `hosts/$hostname.nix` in `configurations.nix`.
 
+For the next section (Install NixOS), you need to set `boot.loader.efi.canTouchEfiVariables = true;` in `modules/bootloader.nix` to install the bootloader into EFI. Don't commit this change though, because outside of fresh installs, we don't want to touch efivars.
+
 ## Install NixOS
 
 We boot the `github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable`.
 The following script expects the server to be connected to your physical LAN port `$eth0` which will act as a router. 
 The script will also print the ip of the server you can connect to via ssh. 
+Tell your network manager not to use `$eth0`. Example for gnome/ubuntus `NetworkManager`: `nmcli dev set $eth0 managed no`
 
 Format the disks and install nixos on the server:
 
@@ -52,6 +58,15 @@ inv reformat-install-nixos $host $eth0
 
 Finally, note down the MAC addresses of the relevant NICs (and the IPMI) which are printed by install-nixos to give them to the chair admins. 
 
+## Finializing
+
+Once the server is installed in the server room:
+
+- fix up warnings in the nixos config
+- ensure hostname labels are on front and back of the server
+- add the nfs client module to the servers config
+- include it to monitoring, backup services and retiolum
+- change PXE boot interface to the one plugged in at the server room
 
 ## Misc: IPMI / UEFI
 
