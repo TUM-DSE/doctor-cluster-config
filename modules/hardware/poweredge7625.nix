@@ -6,10 +6,10 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
-    ../zfs-partitioning.nix
+    ../disko-zfs.nix
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "megaraid_sas" "ahci" "usbhid" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "megaraid_sas" "ahci" "usbhid" "usb_storage" "sd_mod" "nvme" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
