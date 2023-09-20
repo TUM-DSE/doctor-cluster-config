@@ -91,6 +91,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLczJN6THjOvvhQ1a61GKPgHAp3+eQohG5oPUzFtyyxK0IvPKOn9nULVhV7iJCmBPX5ZLikKqgWh+C+kvyw/QJID5UKcQxpqFaUnDmuOyS4T3QHYA4+aoBheYiaKiwoD8rgmyoJJ+7CY6Y8a62OLHCosYHemg0QhgOeeZC45mMgbFtECXhpbngq5fRx1D2Y23ddBBIIwkePh8SsJfu86VF9UXqsKn/Lbecx04SjRTtO+zClTKznvNZIkQx2ZKBuDyZ2tmg1kKh0oO0UnplJtM3gJiDWhQMx/Yn9/qSIIHbhff1xdkP2oVRCFqEzX2KKfDesOYkhTrfkyTg1Iw+i/a6ER1sJBSDcK6EsXpap50tIjHjqKu2NBOWR/wMJJy0Sxu8vSuBPD8/h0b/mIlHaLGZWOAp+XLDhBH5iPlaj9OSppQSEEJUDv1ba8p/rzL6FfiFDLKm5JgdV2vWEyyMBAu1GMsYmQNuOAGt5gXpIwP9mklpr3x6tCuZP53RtogCyeU= evgen@LAPTOP-565G8RJ0"
   ];
 
+  ilyaKeys = [
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFjTHpdkrcZhIU1caiNi1n+NeSWMqhfeW2ookRJzMxaBXZ7CLLJWtzmNl/E76PDUdU97Kok+z49V0xPkNzJOAhc9a3mUjldJZHtqEXTnXMcr6CUqRHRh/0Jo7Q/xmfPn58IKjptLpgBZP9eZQQ4fqhQmuOcFvWF/v/NQV1rdqs4n5FbMd7W0CG7DJhz4Oh2Z8JgTP5g7VpxCK10Q148a9CKDBXB/PoVKHGHLdklCglv8spSCUT/BANymOdAiqpySOVg5QJmbojyHSD73NW3apmo6Ey2YfCsfVaUVuE/VmESOzvNLRW2WBHX6/8+8evUs/kwlTvE4deWBPd2/KPpqpwXT6JwiwXiUwxWs6n15fLd08pqf/5wbNMA0kLtM2xskPGykxMVu+CZBSw4O8tiufFodEaC3BAwBObtEWqaHI+wURQaDfRdZP6uBWvgeyL4LuUwuZzmP3oW38qqjOtlP1h9CNaE7W1iFQSBijnsSAkLVP4rXo6A8+LTBj2qS5R/Ks= meandres@kushana
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "staff" ];
 in
 {
@@ -271,6 +275,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1029;
         openssh.authorizedKeys.keys = evgenyKeys;
+      };
+
+      # Ilya Meignan--Masson
+      # tum
+      ilya = {
+        isNormalUser = true;
+        home = "/home/ilya";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1030
+        openssh.authorizedKeys.keys = ilyaKeys;
       };
 
       root = {
