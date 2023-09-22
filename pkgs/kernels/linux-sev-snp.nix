@@ -70,13 +70,23 @@ let
     extraPatches = [ ];
   };
 
-  snp_latest = {
+  snp_latest_6_3 = {
     owner = "AMDESE";
     repo = "linux";
     rev = "fea9b785bfa90e015c7d81526e36060da1bf01d1";
     sha256 = "sha256-AacpCzV0NtraPG4e/L/QDzKwUYveJA1YAaGRapnN/yg=";
     version = "6.3";
     modDirVersionArg = "6.3.0-rc2";
+    extraPatches = [ ];
+  };
+
+  snp_latest = {
+    owner = "AMDESE";
+    repo = "linux";
+    rev = "ad9c0bf475ecde466a065af44fc94918f109c4c9";
+    sha256 = "sha256-cAgiVA7bKuFteF/GaklTm1M6SkDN61LpPBNhflN1M1o=";
+    version = "6.5";
+    modDirVersion = "6.5.0-rc2";
     extraPatches = [ ];
   };
 
