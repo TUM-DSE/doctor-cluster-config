@@ -3,6 +3,7 @@
   imports = [
     ../modules/hardware/poweredge7625.nix
     ../modules/bonding.nix
+    ../modules/nfs/client.nix
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_1TB_S4EWNX0R410276D";
