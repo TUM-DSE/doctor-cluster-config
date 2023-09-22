@@ -11,7 +11,14 @@ The corresponding nixos configuration is in [hosts/](hosts/).
 mkdir -p ~/.config/sops/age/
 age-keygen -o ~/.config/sops/age/keys.txt
 ```
-Provide the generated key to a pre-existing admin and wait for him to re-encrypt all secrets in this repo with it. After pulling the re-encrypted secrets you can read them with `sops secrets.yml`.
+Provide the generated key to a pre-existing admin and wait for him to re-encrypt all secrets in this repo with it. 
+The admin will now:
+
+- add your key in `pubkeys.json`
+- add your name to the name of admins in `sops.yaml.nix`
+- apply those changes via `inv update-sops-files`
+
+After pulling the re-encrypted secrets you can read them with `sops secrets.yml`.
 
 
 # Apply config to all servers
