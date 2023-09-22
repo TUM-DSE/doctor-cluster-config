@@ -117,6 +117,10 @@ in
         ipv4 = "131.159.102.21";
         ipv6 = "2a09:80c0:102::21";
       };
+      vislor = {
+        ipv4 = "131.159.102.25";
+        ipv6 = "2a09:80c0:102::25";
+      };
       # {loki, grafana, prometheus, alertmanager}.dse.in.tum.de and vmbhatotia43.in.tum.de
       doctor = {
         ipv4 = "131.159.102.4";
