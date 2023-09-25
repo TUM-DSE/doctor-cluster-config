@@ -46,6 +46,9 @@ with lib; {
           #define FOLL_TOUCH	0x02	/* mark page accessed */
           "
         '';
+        patches = [
+          # ./dpdk-kmod.patch # this doesnt seem to actually be required by dpvs
+        ];
       }))
     ];
     boot.kernelModules = [ "igb_uio" ];
