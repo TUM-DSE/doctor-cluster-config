@@ -1,17 +1,32 @@
 { buildLinux, fetchFromGitHub, ... }@args:
 let
-  # the original 5.19-rc5 version (not work)
-  # This failes to build due to binutils update
-  # https://github.com/AMDESE/linux/tree/sev-snp-5.19-rc5-v2
-  # snp_5_19_rc5 = {
-  #   owner = "AMDESE";
-  #   repo = "linux";
-  #   rev = "8e4a0b83a7b0a312efc8a091c0d6d2d920049e5b";
-  #   sha256 = "sha256-A6UYI+Xo0uJh+KfUcVR/2Bi+m269rikoDs0Snvnf0Rg=";
-  #   version = "5.19";
-  #   modDirVersionArg = "5.19.0-rc5-next-20220706";
-  #   extraPatches = [];
-  # };
+  buildSNPKernel = { owner, repo, rev, sha256, version, modDirVersion, extraPatches ? [ ] }:
+    buildLinux
+      (args // rec {
+        inherit version modDirVersion;
+
+        src = fetchFromGitHub {
+          inherit owner repo rev sha256;
+        };
+
+        kernelPatches = [
+          {
+            name = "amd_sme-config";
+            patch = null;
+            extraConfig = ''
+              AMD_MEM_ENCRYPT y
+              CRYPTO_DEV_CCP y
+              CRYPTO_DEV_CCP_DD m
+              CRYPTO_DEV_SP_PSP y
+              KVM_AMD_SEV y
+              MEMORY_FAILURE y
+              EXPERT y
+            '';
+          }
+        ] ++ extraPatches;
+        extraMeta.branch = version;
+        ignoreConfigErrors = true;
+      } // (args.argsOverride or { }));
 
   # 5.19-rc5 version, wich bunitls patches
   # https://github.com/mmisono/linux/tree/sev-snp-5.19-rc5-v2-dev
@@ -86,39 +101,11 @@ let
     rev = "ad9c0bf475ecde466a065af44fc94918f109c4c9";
     sha256 = "sha256-cAgiVA7bKuFteF/GaklTm1M6SkDN61LpPBNhflN1M1o=";
     version = "6.5";
-    modDirVersion= "6.5.0-rc2";
+    modDirVersion = "6.5.0-rc2";
     extraPatches = [ ];
   };
-
-  # change here to change kernel
-  # snp_kernel = snp_5_19_rc6;
-  # snp_kernel = snp_6_1_rfc_v8;
-  snp_kernel = snp_latest;
-
 in
-with snp_kernel;
-buildLinux (args // rec {
-  inherit version modDirVersion;
-
-  src = fetchFromGitHub {
-    inherit owner repo rev sha256;
-  };
-
-  kernelPatches = [
-    {
-      name = "amd_sme-config";
-      patch = null;
-      extraConfig = ''
-        AMD_MEM_ENCRYPT y
-        CRYPTO_DEV_CCP y
-        CRYPTO_DEV_CCP_DD m
-        CRYPTO_DEV_SP_PSP y
-        KVM_AMD_SEV y
-        MEMORY_FAILURE y
-        EXPERT y
-      '';
-    }
-  ] ++ extraPatches;
-  extraMeta.branch = version;
-  ignoreConfigErrors = true;
-} // (args.argsOverride or { }))
+# change here to change kernel
+# buildSNPKernel snp_5_19_rc6;
+# buildSNPKernel snp_6_1_rfc_v8;
+buildSNPKernel snp_latest
