@@ -21,7 +21,7 @@ let
     rev = "671ad6d15cf883ae29e8c9613aa4dbbdd71244d7";
     sha256 = "sha256-XzTXafyv/tIIhBLPp2KsBTYd5otVlWr1fgy736mAZLw=";
     version = "5.19";
-    modDirVersionArg = "5.19.0-rc5-next-20220706";
+    modDirVersion = "5.19.0-rc5-next-20220706";
     extraPatches = [ ];
   };
 
@@ -33,7 +33,7 @@ let
     rev = "92221f6d4d09653d0a6787d0906958e6d884b85c";
     sha256 = "sha256-2gHPMA84dWBnxMvL4Bmky0c5onDizcr48sPpZpDU79g=";
     version = "5.19";
-    modDirVersionArg = "5.19.0-rc6";
+    modDirVersion = "5.19.0-rc6";
     extraPatches = [
       {
         # for some reaon, the BTF build fails, so just disable it
@@ -54,7 +54,7 @@ let
     rev = "90eb54a5140b430f4c20c25deadd59f04485d2b2";
     sha256 = "sha256-M/20L2gS8Mg3iLRq00PrlwXyxGD+IEzgcm8/GXWvIBw=";
     version = "6.1";
-    modDirVersionArg = "6.1.0-rc4";
+    modDirVersion = "6.1.0-rc4";
     extraPatches = [ ];
   };
 
@@ -66,7 +66,7 @@ let
     rev = "db73108c4fd62c03ad57e0c7118e5623750898ee";
     sha256 = "sha256-HP2U6xtwqZQgzJd/RH2I3Ph5wKVkhXtVajNALf4R4HQ=";
     version = "6.1";
-    modDirVersionArg = "6.1.0-rc4";
+    modDirVersion = "6.1.0-rc4";
     extraPatches = [ ];
   };
 
@@ -76,7 +76,7 @@ let
     rev = "fea9b785bfa90e015c7d81526e36060da1bf01d1";
     sha256 = "sha256-AacpCzV0NtraPG4e/L/QDzKwUYveJA1YAaGRapnN/yg=";
     version = "6.3";
-    modDirVersionArg = "6.3.0-rc2";
+    modDirVersion = "6.3.0-rc2";
     extraPatches = [ ];
   };
 
@@ -86,7 +86,7 @@ let
     rev = "ad9c0bf475ecde466a065af44fc94918f109c4c9";
     sha256 = "sha256-cAgiVA7bKuFteF/GaklTm1M6SkDN61LpPBNhflN1M1o=";
     version = "6.5";
-    modDirVersion = "6.5.0-rc2";
+    modDirVersion= "6.5.0-rc2";
     extraPatches = [ ];
   };
 
@@ -98,12 +98,7 @@ let
 in
 with snp_kernel;
 buildLinux (args // rec {
-  inherit version;
-  modDirVersion =
-    if (snp_kernel.modDirVersionArg == null) then
-      builtins.replaceStrings [ "-" ] [ ".0-" ] version
-    else
-      modDirVersionArg;
+  inherit version modDirVersion;
 
   src = fetchFromGitHub {
     inherit owner repo rev sha256;
