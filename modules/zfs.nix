@@ -5,10 +5,10 @@
     autoScrub.enable = true;
   };
   networking.hostId = "8425e348";
-  boot.kernelPackages = lib.mkDefault (pkgs.zfs.override {
+  boot.kernelPackages = lib.mkDefault (pkgs.zfsUnstable.override {
     removeLinuxDRM = pkgs.hostPlatform.isAarch64;
   }).latestCompatibleLinuxPackages;
-
+  boot.zfs.enableUnstable = true;
   boot.zfs.removeLinuxDRM = pkgs.hostPlatform.isAarch64;
 
   # ZFS already has its own scheduler. Without this my(@Artturin) computer froze for a second when i nix build something.
