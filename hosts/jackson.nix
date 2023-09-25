@@ -8,8 +8,7 @@
 
   networking.hostName = "jackson";
 
-  boot.hugepages.size = "1GB";
-  boot.hugepages.number = 8;
+  boot.hugepages1GB.number = 8;
 
   # Don't manage vnet interface with systemd-networkd
   systemd.network.networks."05-jackson_sn1000_host".extraConfig = ''

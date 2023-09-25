@@ -18,8 +18,7 @@
   # naming by kernels. 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_S64GNA0T724988";
 
-  boot.hugepages.size = "1GB";
-  boot.hugepages.number = 8;
+  boot.hugepages1GB.number = 8;
 
   simd.arch = "znver3";
   system.stateVersion = "22.11";

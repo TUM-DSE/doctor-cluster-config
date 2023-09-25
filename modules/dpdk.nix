@@ -4,17 +4,17 @@
 }:
 with lib; {
   options = {
-    boot.hugepages.size = mkOption {
-      type = types.enum [ "1GB" "2MB" ];
-      description = ''
-        Size of one hugetable
-      '';
-      default = "2MB";
-    };
-    boot.hugepages.number = mkOption {
+    boot.hugepages1GB.number = mkOption {
       type = types.int;
       description = ''
-        Nr of hugepages
+        Nr of 1GB hugepages
+      '';
+      default = 0;
+    };
+    boot.hugepages2MB.number = mkOption {
+      type = types.int;
+      description = ''
+        Nr of 2MB hugepages
       '';
       default = 1000;
     };
@@ -29,12 +29,15 @@ with lib; {
   config = {
     boot.kernelParams = [
       # spdk/dpdk hugepages
-      "default_hugepagesz=${config.boot.hugepages.size}"
-      "hugepagesz=${config.boot.hugepages.size}"
-      "hugepages=${toString config.boot.hugepages.number}"
+      "hugepagesz=1GB"
+      "hugepages=${toString config.boot.hugepages1GB.number}"
+      "hugepagesz=2MB"
+      "hugepages=${toString config.boot.hugepages2MB.number}"
     ];
     boot.extraModulePackages = [
+      # provide igb_uio:
       config.boot.kernelPackages.dpdk-kmods
+      # provide rte_kni:
       (config.boot.kernelPackages.dpdk.kmod.overrideAttrs (finalAttrs: previousAttrs: {
         postPatch = previousAttrs.postPatch + ''
           substituteInPlace ./kernel/linux/kni/kni_dev.h \

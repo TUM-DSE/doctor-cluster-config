@@ -11,8 +11,7 @@
     ../modules/backup-pauls-repo.nix
   ];
 
-  boot.hugepages.size = "1GB";
-  boot.hugepages.number = 8;
+  boot.hugepages1GB.number = 8;
 
   networking.hostName = "graham";
 
