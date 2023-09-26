@@ -95,6 +95,18 @@ let
     extraPatches = [ ];
   };
 
+  snp_6_4 = {
+    owner = "AMDESE";
+    repo = "linux";
+    rev = "6995e2de6891c724bfeb2db33d7b87775f913ad1";
+    sha256 = "sha256-Lt/STyls/1A/OvFp6ixRcb1cmwzeEa/vsGBfpZuJdZI=";
+    version = "6.4";
+    modDirVersion = "6.4.0";
+    extraPatches = [ ];
+  };
+
+
+  # currently doesn't build
   snp_latest = {
     owner = "AMDESE";
     repo = "linux";
@@ -108,4 +120,4 @@ in
 # change here to change kernel
 # buildSNPKernel snp_5_19_rc6;
 # buildSNPKernel snp_6_1_rfc_v8;
-buildSNPKernel snp_latest
+buildSNPKernel snp_6_4
