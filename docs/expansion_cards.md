@@ -101,7 +101,7 @@ Onboard (not listed by [List of slots](#List of slots)):
 
 Note that ubuntu workstations and servers don't appear in this list.
 
-### adelaide.dse.in.tum.de 
+### adelaide.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short    
@@ -115,7 +115,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
  
 
-### amy.dse.in.tum.de 
+### amy.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
@@ -140,7 +140,7 @@ No device/PCI ID.
 No device/PCI ID.  
  
 
-### astrid.dse.in.tum.de 
+### astrid.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Short    
@@ -163,7 +163,7 @@ No device/PCI ID.
   length: 2.5" drive form factor    
  
 
-### bill.dse.in.tum.de 
+### bill.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 4 type: x4 PCI Express 3 x8 PCH SLOT4 PCI-E 3.0 X4 (IN X8) status: In Use length: Short    
@@ -178,7 +178,7 @@ No device/PCI ID.
 No device/PCI ID.  
  
 
-### christina.dse.in.tum.de 
+### christina.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short    
@@ -191,7 +191,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 18:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
  
 
-### clara.dse.in.tum.de 
+### clara.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
@@ -216,7 +216,7 @@ No device/PCI ID.
 No device/PCI ID.  
  
 
-### dan.dse.in.tum.de 
+### dan.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Short    
@@ -239,7 +239,7 @@ No device/PCI ID.
   length: 2.5" drive form factor    
  
 
-### graham.dse.in.tum.de 
+### graham.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Long    
@@ -254,7 +254,7 @@ c4:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme
 02:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
  
 
-### jack.dse.in.tum.de 
+### jack.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 1 type: x16 PCI Express 4 x16 RSC-W-66G4 SLOT1 PCI-E 4.0 X16 status: In Use length: Long    
@@ -271,7 +271,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
   length: Long    
  
 
-### jackson.dse.in.tum.de 
+### jackson.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short    
@@ -284,7 +284,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
  
 
-### mickey.dse.in.tum.de 
+### mickey.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: 2 type: x16 PCI Express 3 PCIe Slot 2 status: Available length: Short    
@@ -307,7 +307,7 @@ No device/PCI ID.
   length: 2.5" drive form factor    
  
 
-### nardole.dse.in.tum.de 
+### nardole.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 4 type: x4 PCI Express 3 x8 PCH SLOT4 PCI-E 3.0 X4 (IN X8) status: In Use length: Short    
@@ -322,7 +322,7 @@ No device/PCI ID.
 No device/PCI ID.  
  
 
-### river.dse.in.tum.de 
+### river.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short    
@@ -335,7 +335,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
  
 
-### rose.dse.in.tum.de 
+### rose.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: 1 type: x16 PCI Express 4 x16 SLOT1 PCI-E 4.0 X16 status: Available length: Long    
@@ -360,7 +360,7 @@ No device/PCI ID.
 No device/PCI ID.  
  
 
-### ryan.dse.in.tum.de 
+### ryan.dos.cit.tum.de 
 
 PCI Slots:   
 - ❌  Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Long    
@@ -375,7 +375,7 @@ c4:00.0, Non-Volatile memory controller, SK hynix, Platinum P41 NVMe Solid State
 02:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
  
 
-### wilfred.dse.in.tum.de 
+### wilfred.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: x4 M.2 Socket 3 M.2-H status: Available length: Short    
@@ -388,7 +388,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
  
 
-### yasmin.dse.in.tum.de 
+### yasmin.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: 0 type: x16 PCI Express 3 OCP_1_x16 status: Available length: Short    

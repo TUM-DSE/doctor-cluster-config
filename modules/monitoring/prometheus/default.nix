@@ -11,7 +11,7 @@
 
   services.prometheus = {
     enable = true;
-    webExternalUrl = "https://prometheus.dse.in.tum.de";
+    webExternalUrl = "https://prometheus.dos.cit.tum.de";
     scrapeConfigs = [
       {
         job_name = "telegraf";
@@ -60,7 +60,7 @@
   services.prometheus.alertmanager = {
     enable = true;
     environmentFile = config.sops.secrets.alertmanager.path;
-    webExternalUrl = "https://alertmanager.dse.in.tum.de";
+    webExternalUrl = "https://alertmanager.dos.cit.tum.de";
     listenAddress = "[::1]";
     # FIXME: can be dropped when upgrading to 23.11
     extraFlags = [ "--cluster.listen-address= " ];

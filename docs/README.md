@@ -5,7 +5,7 @@ There are several ways to access the servers:
 - eduroam and LAN (All servers in TU munich are accessible from within the TUM network)
 - Via SSH jump host: **recommended for ssh**
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
-  - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dse.in.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dse.in.tum.de`
+  - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dos.cit.tum.de`
   - Keys are uploaded via the machine bill whenever nixos configuration is updated.
   - You can generate an SSH config file for all TUM hosts with [this script](./gen-ssh-config.sh), providing your username as an argument
 - VPN provided by RBG: **recommended for admins**
@@ -18,17 +18,17 @@ There are several ways to access the servers:
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
-- `$hostname.dse.in.tum.de` for the machine itself.
-- `$hostname-mgmt.dse.in.tum.de` for the IPMI/BMC interface.
+- `$hostname.dos.cit.tum.de` for the machine itself.
+- `$hostname-mgmt.dos.cit.tum.de` for the IPMI/BMC interface.
 
-i.e. bill has the addresses `bill.dse.in.tum.de` and `bill-mgmt.dse.in.tum.de`.
+i.e. bill has the addresses `bill.dos.cit.tum.de` and `bill-mgmt.dos.cit.tum.de`.
 
 # Management Interfaces
 
 Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI webinterfaces.
 
 - use il1 VPN (see Accessing the server, only for staff)
-- goto `https://$hostname-mgmt.dse.in.tum.de`
+- goto `https://$hostname-mgmt.dos.cit.tum.de`
 - login credentials are encrypted in the doctor cluster repo `sops secrets.yaml`
 
 To be able to accept self signed certificates in firefox: Go to the website `about:config` and set `network.stricttransportsecurity.preloadlist` to false.
@@ -101,7 +101,7 @@ machines. Those machines also are not backed up.
 
 - RBG VMs:
   - doctor.r [doctor.nix](../hosts/doctor.nix): borg backup target
-  - login.dse.in.tum.de [README](../modules/jumphost/README.md): ssh jumphost and grafana
+  - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost and grafana
 - RISC-V:
   - ruby.r [ruby.nix](./hosts/ruby.nix)
 
@@ -192,7 +192,7 @@ Our chair currently has three networks:
 - TUM-ITO/RBG: 131.159.0.0/16
 - TUM-ITO/RBG private: 172.24.0.0/16
 - TUM-ITO/RBG vlans: 172.24.0.0/17
-- L3 Switch "Craig" `craig-mgmt.dse.in.tum.de` (sops encrypted (config)[./craig.sops])
+- L3 Switch "Craig" `craig-mgmt.dos.cit.tum.de` (sops encrypted (config)[./craig.sops])
   - 6x 100Gbit/s QSFP
   - many 10Gbit/s SFP+
   - ip: 172.24.90.18

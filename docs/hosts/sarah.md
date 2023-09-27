@@ -1,7 +1,7 @@
 # sarah
 
 ```
-System:    Host: sarah.dse.in.tum.de Kernel: Darwin 20.3.0 arm64 bits: 64 compiler: clang v: 12.0.5 Console: tty s000 
+System:    Host: sarah.dos.cit.tum.de Kernel: Darwin 20.3.0 arm64 bits: 64 compiler: clang v: 12.0.5 Console: tty s000 
            OS: Darwin 20.3.0 
 Machine:   Type: N/A Mobo: N/A model: N/A serial: N/A BIOS: N/A v: N/A date: N/A 
 Memory:    RAM: total: used: 

@@ -116,7 +116,7 @@ An example of the ```home.nix``` configured for VS Code support is shown in ```h
 On our TUM rack machines we have IPMI support.
 
 Generally, you can find the IPMI web interface at
-`https://$HOST-mgmt.dse.in.tum.de/` (i.e. https://bill-mgmt.dse.in.tum.de)
+`https://$HOST-mgmt.dos.cit.tum.de/` (i.e. https://bill-mgmt.dos.cit.tum.de)
 once the device has been installed in the rack.  These addresses are only
 available through the management network, so you must use the [RBG
 vpn](https://vpn.rbg.tum.de/) for il1 to access them.

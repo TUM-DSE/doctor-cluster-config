@@ -9,7 +9,7 @@ let
   # Authorization callback URL: https://buildbot.numtide.com/auth/login
   # oauth_token:  2516248ec6289e4d9818122cce0cbde39e4b788d
 
-  buildbotDomain = "buildbot.dse.in.tum.de";
+  buildbotDomain = "buildbot.dos.cit.tum.de";
   githubOauthId = "1448d1d1a3d84fa023f4";
 in
 {

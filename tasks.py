@@ -224,49 +224,49 @@ def get_lldp_neighbors(hosts: List[str]) -> None:
 
 
 HOSTS = [
-    "astrid.dse.in.tum.de",
-    "dan.dse.in.tum.de",
-    "mickey.dse.in.tum.de",
-    "bill.dse.in.tum.de",
-    "nardole.dse.in.tum.de",
-    "yasmin.dse.in.tum.de",
-    "graham.dse.in.tum.de",
-    "ryan.dse.in.tum.de",
-    "christina.dse.in.tum.de",
-    "jackson.dse.in.tum.de",
-    "adelaide.dse.in.tum.de",
-    "wilfred.dse.in.tum.de",
-    "river.dse.in.tum.de",
-    "jack.dse.in.tum.de",
-    "clara.dse.in.tum.de",
-    "amy.dse.in.tum.de",
-    "rose.dse.in.tum.de",
+    "astrid.dos.cit.tum.de",
+    "dan.dos.cit.tum.de",
+    "mickey.dos.cit.tum.de",
+    "bill.dos.cit.tum.de",
+    "nardole.dos.cit.tum.de",
+    "yasmin.dos.cit.tum.de",
+    "graham.dos.cit.tum.de",
+    "ryan.dos.cit.tum.de",
+    "christina.dos.cit.tum.de",
+    "jackson.dos.cit.tum.de",
+    "adelaide.dos.cit.tum.de",
+    "wilfred.dos.cit.tum.de",
+    "river.dos.cit.tum.de",
+    "jack.dos.cit.tum.de",
+    "clara.dos.cit.tum.de",
+    "amy.dos.cit.tum.de",
+    "rose.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
 MANUFACTURERS = dict(
     {
         "dell": [
-            "ryan.dse.in.tum.de",
-            "graham.dse.in.tum.de",
-            "astrid.dse.in.tum.de",
-            "dan.dse.in.tum.de",
-            "mickey.dse.in.tum.de",
+            "ryan.dos.cit.tum.de",
+            "graham.dos.cit.tum.de",
+            "astrid.dos.cit.tum.de",
+            "dan.dos.cit.tum.de",
+            "mickey.dos.cit.tum.de",
         ],
         "supermicro": [
-            "jackson.dse.in.tum.de",
-            "christina.dse.in.tum.de",
-            "adelaide.dse.in.tum.de",
-            "wilfred.dse.in.tum.de",
-            "river.dse.in.tum.de",
-            "jack.dse.in.tum.de",
-            "clara.dse.in.tum.de",
-            "amy.dse.in.tum.de",
-            "rose.dse.in.tum.de",
+            "jackson.dos.cit.tum.de",
+            "christina.dos.cit.tum.de",
+            "adelaide.dos.cit.tum.de",
+            "wilfred.dos.cit.tum.de",
+            "river.dos.cit.tum.de",
+            "jack.dos.cit.tum.de",
+            "clara.dos.cit.tum.de",
+            "amy.dos.cit.tum.de",
+            "rose.dos.cit.tum.de",
         ],
         "supermicro_broken": [
-            "bill.dse.in.tum.de",
-            "nardole.dse.in.tum.de",
+            "bill.dos.cit.tum.de",
+            "nardole.dos.cit.tum.de",
         ],
     }
 )
@@ -303,7 +303,7 @@ def deploy_ruby(c: Any) -> None:
     Deploy to riscv server
     """
     host = DeployHost(
-        "graham.dse.in.tum.de",
+        "graham.dos.cit.tum.de",
         user="root",
         forward_agent=True,
         command_prefix="ruby",
@@ -375,7 +375,7 @@ def document_craig(c: Any) -> None:
     craig_sops = f"{ROOT}/docs/hosts/craig.sops"
     with tempfile.TemporaryDirectory() as tmpdir:
         c.run(
-            f"ssh ADMIN@craig-mgmt.dse.in.tum.de 'no cli pagination; show startup-config; exit' > {tmpdir}/craig.txt || true"
+            f"ssh ADMIN@craig-mgmt.dos.cit.tum.de 'no cli pagination; show startup-config; exit' > {tmpdir}/craig.txt || true"
         )  # ssh always terminates with 255
         print("Diff old <> new config:")
         c.run(f"diff <(sops -d {craig_sops}) {tmpdir}/craig.txt || true")
@@ -509,7 +509,7 @@ def generate_ssh_cert(c: Any, host: str) -> None:
         c.run(
             f"sops --extract '[\"ssh-ca\"]' -d {ROOT}/modules/sshd/ca-keys.yml > {tmpdir}/ssh-ca"
         )
-        valid_hostnames = f"{h}.r,{h}.dse.in.tum.de,{h}.thalheim.io"
+        valid_hostnames = f"{h}.r,{h}.dos.cit.tum.de,{h}.thalheim.io"
         pubkey_path = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key.pub"
         c.run(
             f"ssh-keygen -h -s {tmpdir}/ssh-ca -n {valid_hostnames} -I {h} {pubkey_path}"

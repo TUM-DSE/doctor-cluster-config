@@ -47,7 +47,7 @@ in
 
     x509_cert = [
       {
-        sources = [ "https://web.dse.in.tum.de:443" ];
+        sources = [ "https://web.dos.cit.tum.de:443" ];
         tags.host = "vmbhatotia19";
         tags.org = "uni";
       }

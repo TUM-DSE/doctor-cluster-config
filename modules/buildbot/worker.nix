@@ -26,7 +26,7 @@ in
   nix.distributedBuilds = true;
   nix.buildMachines = [
     {
-      hostName = "yasmin.dse.in.tum.de";
+      hostName = "yasmin.dos.cit.tum.de";
       maxJobs = 96;
       sshKey = config.sops.secrets.buildbot-builder-ssh-key.path;
       sshUser = "buildbot-worker";

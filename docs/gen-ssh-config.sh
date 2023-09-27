@@ -21,11 +21,11 @@ cat >&1 <<EOF
 ####################################################
 
 Host tunnel
-     HostName login.dse.in.tum.de
+     HostName login.dos.cit.tum.de
      User tunnel
 
 # default rule
-Host *.dse.in.tum.de
+Host *.dos.cit.tum.de
      HostName %h
      User $user
      ForwardAgent yes
@@ -43,7 +43,7 @@ while read m; do
 
     cat >&1<<EOF
 Host $m
-     HostName $m.dse.in.tum.de
+     HostName $m.dos.cit.tum.de
      User $user
      ForwardAgent yes
      ProxyJump tunnel

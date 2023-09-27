@@ -44,7 +44,7 @@ in
       )
         "Please add network configuration for ${config.networking.hostName}. None found in ${./hosts.nix}";
 
-    # usually, for each host there is a hostname.dse.in.tum.de and hostname.r domain
+    # usually, for each host there is a hostname.dos.cit.tum.de and hostname.r domain
     # TODO add all macs:
     networking.doctorwho.hosts = {
       astrid = {
@@ -121,7 +121,7 @@ in
         ipv4 = "131.159.102.25";
         ipv6 = "2a09:80c0:102::25";
       };
-      # {loki, grafana, prometheus, alertmanager}.dse.in.tum.de and vmbhatotia43.in.tum.de
+      # {loki, grafana, prometheus, alertmanager}.dos.cit.tum.de and vmbhatotia43.in.tum.de
       doctor = {
         ipv4 = "131.159.102.4";
         ipv6 = "2a09:80c0:102::4";
