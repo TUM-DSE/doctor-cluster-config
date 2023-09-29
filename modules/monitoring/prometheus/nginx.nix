@@ -24,13 +24,13 @@ in
       "@alertmanager".extraConfig = "server localhost:9093;";
     };
 
-    virtualHosts."prometheus.dos.cit.tum.de" = {
+    virtualHosts."prometheus.dse.in.tum.de" = {
       forceSSL = true;
       enableACME = true;
       locations."/".extraConfig = proxy "prometheus";
     };
 
-    virtualHosts."alertmanager.dos.cit.tum.de" = {
+    virtualHosts."alertmanager.dse.in.tum.de" = {
       forceSSL = true;
       enableACME = true;
       locations."/".extraConfig = proxy "alertmanager";

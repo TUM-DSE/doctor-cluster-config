@@ -3,7 +3,7 @@
     # bills address
     2a09:80c0:102::1 buildbot-master
   '';
-  services.nginx.virtualHosts."buildbot.dos.cit.tum.de" = {
+  services.nginx.virtualHosts."buildbot.dse.in.tum.de" = {
     forceSSL = true;
     enableACME = true;
 

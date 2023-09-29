@@ -106,7 +106,7 @@ in
   services.nginx = {
     enable = true;
     virtualHosts.loki = {
-      serverName = "loki.dos.cit.tum.de";
+      serverName = "loki.dse.in.tum.de";
       enableACME = true;
       addSSL = true;
       locations."/" = {
