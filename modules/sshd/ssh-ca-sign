@@ -24,7 +24,7 @@ trap "{ rm -rf "$workdir"; }" EXIT
   sops --extract '["ssh-ca"]' -d "$dir/ca-keys.yml" > "$workdir/ssh-ca"
 )
 
-cd $workdir
+cd "$workdir"
 pubkey="${ip}.pub"
 ssh-keyscan -t ed25519 "$ip" | awk '{$1=""; print $0}' > "$pubkey"
 

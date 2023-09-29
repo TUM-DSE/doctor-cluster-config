@@ -37,6 +37,8 @@ in
       "*.i"
       "*.thalheim.io"
       "*.dos.cit.tum.de"
+      # deprecated, remove soon
+      "*.dse.in.tum.de"
     ];
     publicKeyFile = ./certs/ssh-ca.pub;
   };
