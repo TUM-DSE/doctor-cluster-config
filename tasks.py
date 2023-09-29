@@ -509,7 +509,8 @@ def generate_ssh_cert(c: Any, host: str) -> None:
         c.run(
             f"sops --extract '[\"ssh-ca\"]' -d {ROOT}/modules/sshd/ca-keys.yml > {tmpdir}/ssh-ca"
         )
-        valid_hostnames = f"{h}.r,{h}.dos.cit.tum.de,{h}.thalheim.io"
+        # .dse.in.tum.de is legacy, remove soon
+        valid_hostnames = f"{h}.r,{h}.dse.in.tum.de,{h}.dos.cit.tum.de,{h}.thalheim.io"
         pubkey_path = f"{tmpdir}/etc/ssh/ssh_host_ed25519_key.pub"
         c.run(
             f"ssh-keygen -h -s {tmpdir}/ssh-ca -n {valid_hostnames} -I {h} {pubkey_path}"
