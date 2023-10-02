@@ -5,6 +5,7 @@
     ../modules/bonding.nix
     ../modules/nfs/client.nix
     ../modules/amd_sev_snp.nix
+    ../modules/dpdk.nix
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_1TB_S4EWNX0R410276D";
