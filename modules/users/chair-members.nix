@@ -95,6 +95,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFjTHpdkrcZhIU1caiNi1n+NeSWMqhfeW2ookRJzMxaBXZ7CLLJWtzmNl/E76PDUdU97Kok+z49V0xPkNzJOAhc9a3mUjldJZHtqEXTnXMcr6CUqRHRh/0Jo7Q/xmfPn58IKjptLpgBZP9eZQQ4fqhQmuOcFvWF/v/NQV1rdqs4n5FbMd7W0CG7DJhz4Oh2Z8JgTP5g7VpxCK10Q148a9CKDBXB/PoVKHGHLdklCglv8spSCUT/BANymOdAiqpySOVg5QJmbojyHSD73NW3apmo6Ey2YfCsfVaUVuE/VmESOzvNLRW2WBHX6/8+8evUs/kwlTvE4deWBPd2/KPpqpwXT6JwiwXiUwxWs6n15fLd08pqf/5wbNMA0kLtM2xskPGykxMVu+CZBSw4O8tiufFodEaC3BAwBObtEWqaHI+wURQaDfRdZP6uBWvgeyL4LuUwuZzmP3oW38qqjOtlP1h9CNaE7W1iFQSBijnsSAkLVP4rXo6A8+LTBj2qS5R/Ks= meandres@kushana"
   ];
 
+  anatoleKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqbnkl4OVgJGhO/CRhPnnMCsHGAE77jnbpWMoCLniKNgqLVwPBpevfJed9gwmrUdUKnAdvKP/+EIUMydjqC1VkYVXB0oNWd372hpxOmu9lYziXwQA7m0R2b8VhKwE3KXg2kZfDq8vW35ZQ5F/jGmMwBVSRuYP2cBo0BBMlEniYhgiPlUT7TzPttx0TmSCDUCj9CaSZ3rAGbyjT7ezcFFAQQEMd0EYvSa04B12EpYNLKf1rIcMrEEOUn7pwwF1kbpSLvVeP+0FnxokxiSlKKCKNMB2igE4ahJI2XH2HMTb20Ce/NKwGU79ZwWnwtsjXJV+qoqmh5VSyzKlwfBvELLNR anatole@MSI_GX740"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "staff" ];
 in
 {
@@ -286,6 +290,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1030;
         openssh.authorizedKeys.keys = ilyaKeys;
+      };
+
+      # Anatole Lefort
+      # tum
+      anatole = {
+        isNormalUser = true;
+        home = "/home/anatole";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1031;
+        openssh.authorizedKeys.keys = anatoleKeys;
       };
 
       root = {
