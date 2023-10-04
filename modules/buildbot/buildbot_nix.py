@@ -443,36 +443,6 @@ def nix_eval_config(
             haltOnFailure=True,
         )
     )
-    if len(automerge_users) > 0:
-        def check_auto_merge(step: steps.BuildStep) -> bool:
-            log = yield step.addLog("merge-check")
-            if step.getProperty("event") != "pull_request":
-                log.addStderr("Not a pull request")
-                return False
-            if step.getProperty("github.repository.default_branch") != step.getProperty("branch"):
-                log.addStderr("Not on default branch")
-                return False
-            if not any(owner in automerge_users for owner in step.getProperty("owners")):
-                log.addStderr(f"PR opened by {step.getProperty('owner')} not in {automerge_users}")
-                return False
-            return True
-
-        factory.addStep(
-            steps.ShellCommand(
-                name="Merge pull-request",
-                env=dict(GITHUB_TOKEN=util.Secret(github_token_secret)),
-                command=[
-                    "gh",
-                    "pr",
-                    "merge",
-                    "--repo",
-                    util.Property("project"),
-                    "--rebase",
-                    util.Property("pullrequesturl"),
-                ],
-                doStepIf=check_auto_merge,
-            )
-        )
 
     return util.BuilderConfig(
         name="nix-eval",
