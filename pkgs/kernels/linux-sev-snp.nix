@@ -106,7 +106,6 @@ let
   };
 
 
-  # currently doesn't build
   snp_latest = {
     owner = "AMDESE";
     repo = "linux";
@@ -120,4 +119,4 @@ in
 # change here to change kernel
 # buildSNPKernel snp_5_19_rc6;
 # buildSNPKernel snp_6_1_rfc_v8;
-buildSNPKernel snp_6_4
+buildSNPKernel snp_latest

@@ -2,6 +2,10 @@
 , lib
 , ...
 }:
+let
+  # see #383
+  currentlyIncompatibleKernelVersion = "6.5";
+in
 with lib; {
   options = {
     boot.hugepages1GB.number = mkOption {
@@ -34,7 +38,7 @@ with lib; {
       "hugepagesz=2MB"
       "hugepages=${toString config.boot.hugepages2MB.number}"
     ];
-    boot.extraModulePackages = [
+    boot.extraModulePackages = lib.mkIf (config.boot.kernelPackages.kernel.version != currentlyIncompatibleKernelVersion) [
       # provide igb_uio:
       config.boot.kernelPackages.dpdk-kmods
       # provide rte_kni:
