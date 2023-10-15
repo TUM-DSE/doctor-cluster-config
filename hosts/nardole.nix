@@ -19,6 +19,11 @@
     ActivationPolicy = down
   '';
 
+  programs.ssh.knownHosts = {
+    bill.hostNames = [ "nfs" "nfs-backup" ];
+    bill.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGurhMZktK5kPgxj8GVPEhjH5aa/ZXrG/FjXnWOIjNrS";
+  };
+
   networking.doctowho.bonding.macs = [
     "b8:ce:f6:0b:ee:74"
     "b8:ce:f6:0b:ee:75"
