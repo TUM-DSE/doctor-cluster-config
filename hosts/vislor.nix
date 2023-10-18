@@ -8,7 +8,7 @@
     ../modules/dpdk.nix
   ];
 
-  disko.rootDisk = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_1TB_S4EWNX0R410276D";
+  disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNS0W800676";
   
   networking.doctowho.bonding.macs = [
     "94:6d:ae:da:eb:42"
