@@ -30,6 +30,11 @@ paulKeys = [
   robertKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAA3PSbVdQzIvsWTNWYhR298oaYDl9ySe/PBUZrlcjPB scha@in.tum.de"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQr4yKAEw1M3n5Dp1gAJ017jyz3aYaty6yAydn7aUAi klamm"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcrd9G2faqKD2cuc1N86R9MdShqUCCK6v8tb8pEPe91 barnabas"
+  ];
+
+  moritzKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAItl6lxQEgoghA4ianfJ9u0aWE+2ZNv32qgN3r7TqIZFKcA9J5CHHCymt/ssQx8Mpu7j6fmSoCMJKjfShPDYAdtdGj/hfeRZgk+t46lRVG14EVU9AmS0zyT7sf4g7Rhdp3k5j7Ey+K+xSnw9LWjzMybrbkUhSpVvmEG1/z5lFkl2hdGUUaKiGdrQdxzMY/zlWPKeODeluayXuIy347HHFCwy/5ksY7pvtMDw3ZrC0FjSgz2HY+tLTCsAEW5PX/XpWuQ2KxzpK4ylhYN0hV5nASWIkHhqINwUTa4WsiTFgR+YyZxp2NGnFYFyf2jgQGGtQ80iKiDukqcSvUYpbLCTaFDEZnWvdXJcD7dYLM/zDEdB1oP08UhkZpJqHrksp3wMXuJwBdjoHuNN8NMpunomKXjrmKkuh5DVp7kLfZsxNEigphCNrwe50reg8DjjqlgkzcGL3WJFJRKM6Mfo7sKfvjcs5bs2CEfAELdNbaRRSaWDGTazoYxnwtQ0utqwQNh8="
   ];
 
   theoKeys = [
@@ -160,7 +165,7 @@ in
       openssh.authorizedKeys.keys = yiheKeys;
     };
 
-    # Robert Schambach, Dimitra MSc student (Opentitan -- t-nic project)
+    # Robert Schambach, Masa's MSc student (cc-vm-io)
     robert = {
       isNormalUser = true;
       home = "/home/robert";
@@ -169,6 +174,18 @@ in
       uid = 2015;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = robertKeys;
+    };
+
+    # Moritz Beckel, Robert's BSc student (cc-vm-io)
+    # Delete after WS23
+    moritz = {
+      isNormalUser = true;
+      home = "/home/moritz";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2037;
+      allowedHosts = [ "vislor" ];
+      openssh.authorizedKeys.keys = moritzKeys;
     };
 
     # Theofilos Augoustis, Redha's MSc student (Arancini project)
