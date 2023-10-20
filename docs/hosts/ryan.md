@@ -1,18 +1,18 @@
 # ryan
 
 ```
-System:    Host: ryan Kernel: 6.3.0-rc2 x86_64 bits: 64 compiler: gcc v: 12.2.0 
-           parameters: initrd=\efi\nixos\2cq22zfl42mca3r925z042f45awnda4y-initrd-linux-6.3-initrd.efi 
-           init=/nix/store/s8i633ij28jlc7z894iwrwmr7yswrx7m-nixos-system-ryan-23.05.20230903.81622cb/init 
+System:    Host: ryan Kernel: 6.5.0-rc2 x86_64 bits: 64 compiler: gcc v: 12.2.0 
+           parameters: initrd=\efi\nixos\fznw8s6qkkb6x6rpir90sb35ypdfn93a-initrd-linux-6.5-initrd.efi 
+           init=/nix/store/m09xbx629kl1mfd79116cc29fshh8npf-nixos-system-ryan-23.05.20230927.3048712/init 
            console=tty0 console=ttyS0,115200 kvm_amd.sev=1 kvm_amd.sev_es=1 kvm_amd.sev_snp=1 
-           sp5100_tco.blacklist=yes default_hugepagesz=2MB hugepagesz=2MB hugepages=1000 
+           sp5100_tco.blacklist=yes hugepagesz=1GB hugepages=0 hugepagesz=2MB hugepages=1000 
            nohibernate loglevel=4 
-           Console: tty pts/2 DM: LightDM 1.32.0 Distro: NixOS 23.05 (Stoat) 
+           Console: N/A DM: LightDM 1.32.0 Distro: NixOS 23.05 (Stoat) 
 Machine:   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: 9P0PSH3 Chassis: 
            type: 23 serial: 9P0PSH3 
            Mobo: Dell model: 07PXPY v: A04 serial: .9P0PSH3.CNCMS0016O01PE. UEFI: Dell v: 2.9.3 
            date: 08/05/2022 
-Memory:    RAM: total: 501.21 GiB used: 125.11 GiB (25.0%) 
+Memory:    RAM: total: 501.21 GiB used: 90.27 GiB (18.0%) 
            Array-1: capacity: 2 TiB slots: 16 EC: Multi-bit ECC max-module-size: 128 GiB 
            note: est. 
            Device-1: A1 size: 64 GiB speed: 3200 MT/s type: DDR4 
@@ -54,16 +54,16 @@ PCI Slots: Slot: 3 type: x16 PCI Express 4 PCIe Slot 3 status: In Use length: Lo
            Slot: 1 type: x8 PCI Express 3 Mezzanine 1 status: In Use length: Long 
 CPU:       Info: 64-Core model: AMD EPYC 7713P socket: SP3 bits: 64 type: MCP arch: Zen 3 
            family: 19 (25) model-id: 1 stepping: 1 microcode: A001173 cache: L2: 32 MiB 
-           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 255532 
-           Speed: 2000 MHz min/max: 1500/2000 MHz base/boost: 2000/3900 boost: enabled 
-           volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 2000 2: 2000 3: 2000 4: 2000 
-           5: 2000 6: 2000 7: 2000 8: 2000 9: 2000 10: 1794 11: 2000 12: 2000 13: 1700 14: 2000 
-           15: 2000 16: 2000 17: 2000 18: 2000 19: 2000 20: 2000 21: 2000 22: 2000 23: 2000 
-           24: 2000 25: 2000 26: 1796 27: 2000 28: 2000 29: 1907 30: 1901 31: 2000 32: 2000 
-           33: 2000 34: 2000 35: 2000 36: 1585 37: 2000 38: 2000 39: 2000 40: 2000 41: 2000 
-           42: 2000 43: 2000 44: 2000 45: 2000 46: 2000 47: 3690 48: 2000 49: 2000 50: 2000 
-           51: 2000 52: 2000 53: 2000 54: 2000 55: 2000 56: 2000 57: 2000 58: 2000 59: 2000 
-           60: 2000 61: 2000 62: 2000 63: 2000 64: 2000 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm bogomips: 255514 
+           Speed: 1492 MHz min/max: 1500/2000 MHz base/boost: 2000/3900 boost: disabled 
+           volts: 1.8 V ext-clock: 2000 MHz Core speeds (MHz): 1: 1490 2: 1494 3: 1500 4: 1500 
+           5: 1500 6: 1500 7: 1500 8: 1500 9: 1497 10: 1500 11: 1500 12: 1500 13: 1500 14: 1500 
+           15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1496 21: 1500 22: 1500 23: 1500 
+           24: 1500 25: 1500 26: 1500 27: 1500 28: 1500 29: 1500 30: 1500 31: 1500 32: 1497 
+           33: 1500 34: 1500 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 
+           42: 1500 43: 1497 44: 1500 45: 1500 46: 1500 47: 1500 48: 1500 49: 1500 50: 1500 
+           51: 1500 52: 1500 53: 1500 54: 1500 55: 1500 56: 1500 57: 1500 58: 1500 59: 1500 
+           60: 1500 61: 1496 62: 1500 63: 1495 64: 1500 
            Vulnerabilities: Type: itlb_multihit status: Not affected 
            Type: l1tf status: Not affected 
            Type: mds status: Not affected 
@@ -79,7 +79,7 @@ CPU:       Info: 64-Core model: AMD EPYC 7713P socket: SP3 bits: 64 type: MCP ar
 Graphics:  Device-1: Matrox Systems Integrated Matrox G200eW3 Graphics driver: mgag200 v: kernel 
            bus-ID: c3:00.0 chip-ID: 102b:0536 class-ID: 0300 
            Display: server: X.org 1.21.1.8 driver: loaded: mgag200 note: n/a (using device driver) 
-           tty: 211x53 
+           tty: N/A 
            Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
 Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell 
@@ -99,7 +99,7 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
            vendor: Dell PowerEdge R6515/R7515 LOM driver: tg3 v: kernel port: 1000 bus-ID: c1:00.1 
            chip-ID: 14e4:165f class-ID: 0200 
            IF: eno8403 state: down mac: d0:8e:79:ba:1a:29 
-           IF-ID-1: docker0 state: down mac: 02:42:3d:15:4c:f0 
+           IF-ID-1: docker0 state: down mac: 02:42:ad:5e:6a:e2 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
            IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:53a7:e0e3:a2b6:471d:44a/16 scope: global 
@@ -107,46 +107,47 @@ Network:   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet 
 RAID:      Hardware-1: Broadcom / LSI MegaRAID SAS-3 3008 [Fury] driver: megaraid_sas 
            v: 07.725.01.00-rc1 port: 1000 bus-ID: 01:00.0 chip-ID: 1000.005f rev: 02 
            class-ID: 0104 
-           Device-1: zroot type: zfs status: ONLINE level: linear size: 556 GiB free: 313 GiB 
-           allocated: 243 GiB 
+           Device-1: zroot type: zfs status: ONLINE level: linear size: 556 GiB free: 340 GiB 
+           allocated: 216 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 5.3 TiB used: 2.08 TiB (39.3%) 
-           ID-1: /dev/nvme0n1 maj-min: 259:5 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
+Drives:    Local Storage: total: 5.3 TiB used: 2.33 TiB (44.0%) 
+           ID-1: /dev/nvme0n1 maj-min: 259:4 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
            size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
            serial: S61ANA0T700017 rev: 2.0.2 temp: 13 ° (286 K) C 
-           SMART: yes health: PASSED on: 16d 0h cycles: 1 read-units: 15 [7.68 MB] 
-           ID-2: /dev/nvme1n1 maj-min: 259:4 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
-           size: 1.46 TiB block-size: physical: 512 B logical: 512 B rotation: SSD 
+           SMART: yes health: PASSED on: 46d 1h cycles: 4 read-units: 87 [44.5 MB] 
+           ID-2: /dev/nvme1n1 maj-min: 259:5 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB 
+           size: 1.46 TiB block-size: physical: 4096 B logical: 4096 B rotation: SSD 
            serial: S61ANA0T700063 rev: 2.0.2 temp: 13 ° (286 K) C 
-           SMART: yes health: PASSED on: 16d 0h cycles: 1 read-units: 20 [10.2 MB] 
+           SMART: yes health: PASSED on: 46d 1h cycles: 4 read-units: 846,795 [433 GB] 
+           written-units: 5,895,420 [3.01 TB] 
            ID-3: /dev/nvme2n1 maj-min: 259:6 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
-           rotation: SSD serial: S4EWNX0R513894H rev: 2B2QEXM7 temp: 22 ° (295 K) C scheme: GPT 
-           SMART: yes health: PASSED on: 74d 5h cycles: 9 read-units: 105,618,354 [54.0 TB] 
-           written-units: 10,593,157 [5.42 TB] 
+           rotation: SSD serial: S4EWNX0R513894H rev: 2B2QEXM7 temp: 23 ° (296 K) C 
+           SMART: yes health: PASSED on: 74d 7h cycles: 12 read-units: 106,284,057 [54.4 TB] 
+           written-units: 14,645,426 [7.49 TB] 
            ID-4: /dev/nvme3n1 maj-min: 259:0 vendor: SK Hynix model: PC801 NVMe 1TB 
            size: 953.87 GiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 
-           rotation: SSD serial: SNB5N744011305V1P rev: 51002141 temp: 24 ° (297 K) C scheme: MBR 
-           SMART: yes health: PASSED on: 86d 14h cycles: 113 read-units: 1,417,774 [725 GB] 
+           rotation: SSD serial: SNB5N744011305V1P rev: 51002141 temp: 25 ° (298 K) C scheme: MBR 
+           SMART: yes health: PASSED on: 116d 17h cycles: 116 read-units: 1,417,887 [725 GB] 
            written-units: 4,728,665 [2.42 TB] 
            ID-5: /dev/sda maj-min: 8:0 model: AL15SEB060NY size: 558.91 GiB block-size: 
            physical: 512 B logical: 512 B speed: <unknown> rotation: 10000 rpm serial: N/A 
            rev: EF06 temp: 16 C scheme: GPT 
            SMART: yes state: enabled 
-Partition: ID-1: / raw-size: N/A size: 468.27 GiB used: 172.85 GiB (36.9%) fs: zfs 
+Partition: ID-1: / raw-size: N/A size: 499.17 GiB used: 176.51 GiB (35.4%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 1024 MiB size: 1021.9 MiB (99.80%) used: 214.7 MiB (21.0%) 
-           fs: vfat block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
-           ID-3: /home raw-size: N/A size: 3.22 TiB used: 741.33 GiB (22.5%) fs: nfs4 
+           ID-2: /boot raw-size: 1024 MiB size: 1021.9 MiB (99.80%) used: 58.6 MiB (5.7%) fs: vfat 
+           block-size: 512 B dev: /dev/sda1 maj-min: 8:1 
+           ID-3: /home raw-size: N/A size: 3.22 TiB used: 787.86 GiB (23.9%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 295.47 GiB used: 58.2 MiB (0.0%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 322.66 GiB used: 128 KiB (0.0%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 43.0 C mobo: N/A 
+           System Temperatures: lm-sensors cpu: 44.0 C mobo: N/A 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 892 
-           Uptime: 11:02:07  up 15 days 23:58,  6 users,  load average: 0.25, 0.22, 0.15 
+Info:      Processes: 1045 
+           Uptime: 13:02:21  up 12 days 23:11,  2 users,  load average: 1.18, 1.14, 1.10 
            wakeups: 0 Init: systemd v: 253 target: graphical.target tool: systemctl Compilers: 
            gcc: 12.2.0 Packages: nix-default: 0 nix-sys: 902 lib: 219 nix-usr: 0 Client: Sudo 
            v: 1.9.13p3 inxi: 3.3.04 

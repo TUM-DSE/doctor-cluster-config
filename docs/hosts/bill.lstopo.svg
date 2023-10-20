@@ -73,13 +73,13 @@
 	<text id='PCI_0_text' class='PCI' font-family='Monospace' x='370' y='41' fill='rgb(0,0,0)' font-size='10px'>PCI 00:17.0</text>
 	<rect id='Block_0_rect' class='Block' x='370' y='48' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Block_0_text' class='Block' font-family='Monospace' x='377' y='65' fill='rgb(0,0,0)' font-size='10px'>Block sdb</text>
-	<text id='Block_0_text_1' class='Block' font-family='Monospace' x='377' y='79' fill='rgb(0,0,0)' font-size='10px'>894 GB</text>
+	<text id='Block_0_text_1' class='Block' font-family='Monospace' x='377' y='79' fill='rgb(0,0,0)' font-size='10px'>7452 GB</text>
 	<rect id='Block_1_rect' class='Block' x='445' y='48' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Block_1_text' class='Block' font-family='Monospace' x='452' y='65' fill='rgb(0,0,0)' font-size='10px'>Block sdc</text>
 	<text id='Block_1_text_1' class='Block' font-family='Monospace' x='452' y='79' fill='rgb(0,0,0)' font-size='10px'>7452 GB</text>
 	<rect id='Block_2_rect' class='Block' x='370' y='93' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Block_2_text' class='Block' font-family='Monospace' x='377' y='110' fill='rgb(0,0,0)' font-size='10px'>Block sda</text>
-	<text id='Block_2_text_1' class='Block' font-family='Monospace' x='377' y='124' fill='rgb(0,0,0)' font-size='10px'>7452 GB</text>
+	<text id='Block_2_text_1' class='Block' font-family='Monospace' x='377' y='124' fill='rgb(0,0,0)' font-size='10px'>894 GB</text>
 	<rect id='PCIBridge_1_rect' class='PCIBridge' x='363' y='145' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_1_line' class='PCIBridge' x1='370' y1='148' x2='377' y2='148' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='PCIBridge_1_line_2' class='PCIBridge' x1='377' y1='148' x2='401' y2='148' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -156,5 +156,5 @@
 	<text id='Misc_3_text' class='Misc' font-family='Monospace' x='200' y='672' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
 	<rect id='anon_rect' x='0' y='686' width='667' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='703' fill='rgb(0,0,0)' font-size='10px'>Host: bill</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='717' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 20 Sep 2023 11:02:10 AM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='717' fill='rgb(0,0,0)' font-size='10px'>Date: Fri 20 Oct 2023 01:02:24 PM UTC</text>
 </svg>
