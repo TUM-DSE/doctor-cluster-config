@@ -46,6 +46,8 @@ Our epyc servers are shared devices on which many users usually work concurrentl
   - [amy](./hosts/amy.md)
   - [clara](./hosts/clara.md)
   - [rose](./hosts/rose.md)
+- dual NUMA node (AMD EPYC 9334)
+  - [vislor](./hosts/vislor.md)
 
 ## Intel Xeon servers
 
