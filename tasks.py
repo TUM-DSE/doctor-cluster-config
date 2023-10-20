@@ -241,6 +241,7 @@ HOSTS = [
     "clara.dos.cit.tum.de",
     "amy.dos.cit.tum.de",
     "rose.dos.cit.tum.de",
+    "vislor.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
@@ -252,6 +253,7 @@ MANUFACTURERS = dict(
             "astrid.dos.cit.tum.de",
             "dan.dos.cit.tum.de",
             "mickey.dos.cit.tum.de",
+            "vislor.dos.cit.tum.de",
         ],
         "supermicro": [
             "jackson.dos.cit.tum.de",
