@@ -178,6 +178,8 @@ Our chair currently has three networks:
 - LRZs eduvpn: 
   - open to Münchner Wissenschaftsnetz
   - ipv4: 10.0.0.0/8
+  - Via eduvpn client [lrz eduvpn guide](https://doku.lrz.de/vpn-eduvpn-installation-und-konfiguration-11491448.html)
+  - Or via OpenVPN client (certificate expires every few months) [tum.eduvpn.lrz.de](https://tum.eduvpn.lrz.de/vpn-user-portal/configurations)
 - TUM-ITO dosvpn: 
   - may access:
     - 131.159.0.0/16
