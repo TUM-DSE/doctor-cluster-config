@@ -3,7 +3,7 @@
 There are several ways to access the servers:
 
 - eduroam and LAN (All servers in TU munich are accessible from within the TUM network)
-- Via SSH jump host: **recommended for ssh**
+- Via SSH jump host: **recommended for ssh**, **required for students**
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dos.cit.tum.de`
   - Keys are uploaded via the machine bill whenever nixos configuration is updated.
@@ -12,9 +12,6 @@ There are several ways to access the servers:
   - this option only works for ls1 employes
   - this vpn also gives access to the management network (i.e. for IPMI access)
   - use the `dos` profile from [here](https://vpn.rbg.tum.de)
-- VPN provided by LRZ:
-  - Via eduvpn client [lrz eduvpn guide](https://doku.lrz.de/vpn-eduvpn-installation-und-konfiguration-11491448.html)
-  - Or via OpenVPN client (certificate expires every few months) [tum.eduvpn.lrz.de](https://tum.eduvpn.lrz.de/vpn-user-portal/configurations)
 
 All servers in TUM have public ipv6/ipv4 addresses and dns record following the format:
 
