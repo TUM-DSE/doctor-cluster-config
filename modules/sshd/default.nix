@@ -31,8 +31,6 @@ in
   programs.ssh.knownHosts.ssh-ca = {
     certAuthority = true;
     hostNames = [
-      "nfs"
-      "nfs-backup"
       "*.r"
       "*.i"
       "*.thalheim.io"

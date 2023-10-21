@@ -28,7 +28,7 @@
   boot.zfs.extraPools = [ "zpool1" "zpool2" ];
 
   # speedup syncoid
-  environment.systemPackages = [ pkgs.mbuffer ];
+  environment.systemPackages =  [ pkgs.mbuffer pkgs.lzop ];
 
   users.users.syncoid = {
     isSystemUser = true;
