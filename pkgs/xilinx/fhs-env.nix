@@ -61,7 +61,7 @@ buildFHSUserEnv {
       unzip
       nettools
     ];
-  multiPkgs = null;
+  multiPkgs = ps: [];
   profile = ''
     source /share/xilinx/Vitis/2022.1/settings64.sh
   '';
