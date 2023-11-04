@@ -7,6 +7,7 @@ dmitrylugovoyKeys = [
   
 paulKeys = [
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBRCSw5/GC9pXvETobJk+//LCHlHTrM6xQaDF2PRv15RXNKQZ/R8XJJTU9C2xR4SI319TD2zd8eMWU8oS3bWu5s= DSOS@secretive.blue.local"
   ];
 
   mfKeys = [
