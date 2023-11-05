@@ -1,34 +1,50 @@
 { inputs, self, ... }: {
 
   # packages for x86 only
-  flake.packages.x86_64-linux = let 
-    pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-  in {
-    sfc-drivers = pkgs.callPackage ./xilinx/sfc-driver.nix {
-      inherit (pkgs.linuxPackages) kernel;
+  flake.packages.x86_64-linux =
+    let
+      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+    in
+    {
+      sfc-drivers = pkgs.callPackage ./xilinx/sfc-driver.nix {
+        inherit (pkgs.linuxPackages) kernel;
+      };
+
+      xrt = pkgs.callPackage ./xilinx/xrt.nix { };
+      xrt-drivers = pkgs.callPackage ./xilinx/xrt-drivers.nix {
+        inherit (self.packages.x86_64-linux) xrt;
+        inherit (pkgs.linuxPackages_5_10) kernel;
+      };
+      xntools-core = pkgs.callPackage ./xilinx/xntools-core.nix { };
+
+      firmware-sn1000 = pkgs.callPackage ./xilinx/firmware-sn1000.nix { };
+
+      xilinx-env = pkgs.callPackage ./xilinx/fhs-env.nix { };
+      xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix { };
+      xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers { };
+      intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers.nix { };
     };
-
-    xrt = pkgs.callPackage ./xilinx/xrt.nix { };
-    xrt-drivers = pkgs.callPackage ./xilinx/xrt-drivers.nix {
-      inherit (self.packages.x86_64-linux) xrt;
-      inherit (pkgs.linuxPackages_5_10) kernel;
-    };
-    xntools-core = pkgs.callPackage ./xilinx/xntools-core.nix { };
-
-    firmware-sn1000 = pkgs.callPackage ./xilinx/firmware-sn1000.nix { };
-
-    xilinx-env = pkgs.callPackage ./xilinx/fhs-env.nix { };
-  };
 
   # packages for many targets:
   perSystem =
     { pkgs
+    , self'
     , ...
     }: {
       packages = {
-        xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix { };
-        xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers { };
-        intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers.nix { };
+        netboot = pkgs.callPackage ./modules/netboot/netboot.nix {
+          # this nixosSystem is built for x86_64 machines regardless of the host machine
+          pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+          inherit (inputs.nixpkgs.lib) nixosSystem;
+          extraModules = [
+            self.inputs.nur.nixosModules.nur
+            { _module.args.inputs = self.inputs; }
+          ];
+        };
+
+        netboot-pixie-core = pkgs.callPackage ./modules/netboot/netboot-pixie-core.nix {
+          inherit (self'.packages) netboot;
+        };
       };
     };
 }
