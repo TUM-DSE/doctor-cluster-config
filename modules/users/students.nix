@@ -1,11 +1,14 @@
 { ... }:
 let
+  thangKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFjpAcawhrQfHbjj9jf+tmM1/1XMeKxhemX6XnTWX0Ak"
+  ];
 
-dmitrylugovoyKeys = [
+  dmitrylugovoyKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdbSlGlXXxUTL6ARkf1wlzOuCikGkdkle0s3ltav6CZEl+hdqbgRhpThR7fYL/ZYwciR2x71rfC1eoHa2LDy8YhFEZgfTPAanEAGmV+IF2+G5g3LudpifJUJcLjHZj8TF/bvoIr6wTVI4EqZ2SAO+152fbOLTmGimVihRPAadSimCym+IJHVAb/Avp+i6PxTM5k8VWBU+gf0m6M5qMv74KimaGWiMIG2CBhwvVby7uAOUKZ9ztSTKUnzLQdjzYD+vhi/IHC9DUIVqhl0pmwSnosazLpHXJl/Q5+nQhsfDs/sZKIMqlArEamouiEWHuxYLH+tesz2Z68PDBje5ReEISNSvIAr81ajSMMHGyo3Q2380lodV5pYtkDJTbA50jQ/0mj0W2kZC1IGsEqMH6BhcZMllh0vzmn7odHbvgFS7f+ohO0szLet6j1XSzrIEOzE00a61OjgK3K/HZ5+dgfzSfw55Ai5aFg19pL22Xber6PrEvH+HUKmSlG2YUFdMyUqkxgsOzaf0io4vksTwua7oBlKoNRToTjRXrb/wvDOL/tui+WFIriFgD5eaOuCDVJR8H47i85L6t08iRRhGb4gq/29cugZaX3k4WqM0HUaL3EOl9KX7MbfjCQ46c+1K7IEQc5ZsUWJFOUoVz4auFFTmeS0+zpCRcoeW39NYJPenlUw== dmitrylugovoy@Entrix-Dmitrys-MacBook-Pro.local"
   ];
   
-paulKeys = [
+  paulKeys = [
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBRCSw5/GC9pXvETobJk+//LCHlHTrM6xQaDF2PRv15RXNKQZ/R8XJJTU9C2xR4SI319TD2zd8eMWU8oS3bWu5s= DSOS@secretive.blue.local"
   ];
@@ -369,6 +372,18 @@ in
       uid = 2034;
       allowedHosts = [ "graham" "ryan" "rose" ];
       openssh.authorizedKeys.keys = dmitrylugovoyKeys;
+    };
+
+    # Thang Tran, MSc Thesis with Manos (Quantum Computing Scheduling)
+    # Remove after SS24
+    thang = {
+      isNormalUser = true;
+      home = "/home/thang";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2038;
+      allowedHosts = [ "graham" "ryan" "rose" ];
+      openssh.authorizedKeys.keys = thangKeys;
     };
 
     # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
