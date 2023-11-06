@@ -134,6 +134,22 @@
         "type": "github"
       }
     },
+    "nixos-23_05": {
+      "locked": {
+        "lastModified": 1699169573,
+        "narHash": "sha256-cvUb1xZkvOp3W2SzylStrTirhVd9zCeo5utJl9nSIhw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "aeefe2054617cae501809b82b44a8e8f7be7cc4b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-23.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixos-anywhere": {
       "inputs": {
         "disko": [
@@ -236,11 +252,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1699163564,
-        "narHash": "sha256-Jxb/JkUJhXKalVRlhnh2B+lkGASxQ5vrymcHtU71qyI=",
+        "lastModified": 1699272556,
+        "narHash": "sha256-xpwl5y0701QK9A/h2lWpiJ5LiPgq/48gSSzoMEZfSgk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "88abb29a4bfbd84a2f20380c2595db77d36c3635",
+        "rev": "fabd09269879db3fb52c762c0df6eff20ad88ed1",
         "type": "github"
       },
       "original": {
@@ -251,11 +267,11 @@
     },
     "retiolum": {
       "locked": {
-        "lastModified": 1698762718,
-        "narHash": "sha256-kQLHIH45sSs02hiRDR2xCHknqHz2FEIzTivP3Y9FETk=",
+        "lastModified": 1699275538,
+        "narHash": "sha256-wjS+6i1it8CP01WC+QgCwWi2UWyaCkNg5UKL6sctGzQ=",
         "ref": "refs/heads/master",
-        "rev": "57f33219ab35e41b3c2108280469bbb1575f8da6",
-        "revCount": 327,
+        "rev": "e8c58f8b93a1f4a5a2f261d6aa72a4b1995fe5fa",
+        "revCount": 328,
         "type": "git",
         "url": "https://git.thalheim.io/Mic92/retiolum"
       },
@@ -304,16 +320,17 @@
     },
     "srvos": {
       "inputs": {
+        "nixos-23_05": "nixos-23_05",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1699089426,
-        "narHash": "sha256-sKn293aK7HxUDMUL/36aqQIJ1eEaoM72PGYevaNGS5Q=",
+        "lastModified": 1699261528,
+        "narHash": "sha256-9uD1xuL14UlNMAZlS2akLsOtfEVDntDk8qNjo2jf4uc=",
         "owner": "numtide",
         "repo": "srvos",
-        "rev": "d725309c965ccad663c16f141ccedecd64317b96",
+        "rev": "a1f21ef419e748dce33b17fe5685f21b6b956f90",
         "type": "github"
       },
       "original": {
