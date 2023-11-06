@@ -32,7 +32,7 @@
     , ...
     }: {
       packages = {
-        netboot = pkgs.callPackage ./modules/netboot/netboot.nix {
+        netboot = pkgs.callPackage ../modules/netboot/netboot.nix {
           # this nixosSystem is built for x86_64 machines regardless of the host machine
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
           inherit (inputs.nixpkgs.lib) nixosSystem;
@@ -42,7 +42,7 @@
           ];
         };
 
-        netboot-pixie-core = pkgs.callPackage ./modules/netboot/netboot-pixie-core.nix {
+        netboot-pixie-core = pkgs.callPackage ../modules/netboot/netboot-pixie-core.nix {
           inherit (self'.packages) netboot;
         };
       };
