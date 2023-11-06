@@ -27,6 +27,7 @@ let
        "CONFIG_${builtins.elemAt kv 0}=${builtins.elemAt kv 1}";
     in lib.strings.concatMapStringsSep "\n" perLine lines;
 
+  # TODO remove import from derivation!
   readConfig = configfile: import (runCommand "config.nix" { } ''
     echo "{ } // " > "$out"
     while IFS='=' read key val; do
