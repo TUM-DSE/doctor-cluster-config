@@ -115,4 +115,9 @@ nix shell .#netboot-pixie-core --command "sudo netboot-pixie-core"
 Given that your ssh key is in `module/users.nix`, you may connect now via `ssh root@$host` to check out `lsblk` or fix internet connectivity. 
 Take care that your ssh-agent is working for later inv commands to work. 
 
+## Obsolete:
 
+legacy systems can be installed via 
+
+- `inv format-disk`
+- adapt the nixos-anywhere command called by `inv reformat-install-nixos` to install into your pre-partitioned system
