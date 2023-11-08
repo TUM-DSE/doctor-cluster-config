@@ -197,9 +197,13 @@ def document_nixos(_hosts: List[str]) -> None:
     hosts.run_function(doc_host)
     # generate expansion cards docs
     cards = document_cards(hosts)
-    template = (ROOT / "docs" / "expansion_cards.md.template").read_text()
-    content = Template(template).substitute(dict(PCI_SLOT_ALLOCATION=cards))
-    (ROOT / "docs" / "expansion_cards.md").write_text(content)
+    content = f"""# List of slots
+
+Note that ubuntu workstations and servers don't appear in this list.
+
+{cards}
+"""
+    (ROOT / "docs" / "expansion_cards_autogen.md").write_text(content)
 
 
 def get_lldp_neighbors(hosts: List[str]) -> None:
