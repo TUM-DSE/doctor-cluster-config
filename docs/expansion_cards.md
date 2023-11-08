@@ -51,7 +51,7 @@ Parameters to consider for matching cards to slots:
     - jackson: dual port. (,)
         - MAC1: b4:96:91:a4:1b:88
         - MAC2: b4:96:91:a4:1b:89
-    - christina: dual port. (christina,christina)
+    - christina: dual port. (christina,craig)
         - MAC1:
         - MAC2:
     - wilfred: single port. (wilfred-craig3)
@@ -85,14 +85,16 @@ Parameters to consider for matching cards to slots:
 
 Onboard (not listed by [List of slots](#List of slots)):
 
-    - Intel X720
-        - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
-    - Intel X550: 2 port RJ-45
-        - christina: (chistina-adelaide, christina-adelaide)
-        - adelaide: (adelaide-chistina, adelaide-christina)
-        - wilfred: (wilfred-river, wilfred-river)
-        - river: (river-wilfred, river-wilfred)
-        - probably jackson: (none-none)
+- Intel X720
+    - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
+- Intel X550: 2 port RJ-45
+    - christina: (chistina-adelaide, christina-adelaide)
+    - adelaide: (adelaide-chistina, adelaide-christina)
+    - wilfred: (wilfred-river, wilfred-river)
+    - river: (river-wilfred, river-wilfred)
+    - probably jackson: (none-none)
+- Mellanox ConnectX-6
+    - vislor: 2 ports RJ-45 (,)
 
-(^ list last updated 06.03.23)
+(^ list last updated 08.11.23)
 
