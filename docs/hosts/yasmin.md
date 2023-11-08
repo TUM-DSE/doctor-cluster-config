@@ -1,9 +1,9 @@
 # yasmin
 
 ```
-System:    Host: yasmin Kernel: 6.4.16 aarch64 bits: 64 compiler: gcc v: 12.2.0 
-           parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/d7fpbzsrgdkwnibqaz5fnf0ra23pbamr-linux-6.4.16-Image 
-           init=/nix/store/c753wwb63jdc6my0aznvyi27gbvgmdzi-nixos-system-yasmin-23.05.20230927.3048712/init 
+System:    Host: yasmin Kernel: 6.5.9 aarch64 bits: 64 compiler: gcc v: 12.2.0 
+           parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/qa7s18v78l0jr29rimnq9kwgwvzswdwb-linux-6.5.9-Image 
+           init=/nix/store/rz86ivil3cxy06m21hws9518fqgq4b85-nixos-system-yasmin-23.05.20231027.0517940/init 
            console=tty0 console=ttyAMA0,115200 console=ttyS0,115200 console=ttyS0,115200n8 
            console=ttyAMA0,115200n8 console=tty0 nohibernate loglevel=4 
            Console: N/A Distro: NixOS 23.05 (Stoat) 
@@ -11,7 +11,7 @@ Machine:   Type: Server System: GIGABYTE product: R181-T90-00 v: 0100 serial: GL
            Chassis: type: 23 v: 1.0 serial: 01234567890123456789AB 
            Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 UEFI: GIGABYTE v: F34 
            date: 08/13/2020 
-Memory:    RAM: total: 251.26 GiB used: 45.04 GiB (17.9%) 
+Memory:    RAM: total: 251.26 GiB used: 34.1 GiB (13.6%) 
            Array-1: capacity: 2 TiB slots: 12 EC: Multi-bit ECC max-module-size: 170.67 GiB 
            note: est. 
            Device-1: DIMM_P0_A0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
@@ -65,7 +65,7 @@ Graphics:  Device-1: ASPEED Graphics Family driver: ast v: kernel bus-ID: 0e:00.
            Display: server: No display server data found. Headless machine? tty: N/A 
            Message: Advanced graphics data unavailable in console for root. 
 Audio:     Message: No device data found. 
-           Sound Server-1: ALSA v: k6.4.16 running: yes 
+           Sound Server-1: ALSA v: k6.5.9 running: yes 
 Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede 
            v: kernel port: N/A bus-ID: 0b:00.0 chip-ID: 1077:8070 class-ID: 0200 
            IF: eno1 state: up speed: 10000 Mbps duplex: full mac: b4:2e:99:3f:74:7c 
@@ -83,45 +83,45 @@ Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigab
            IF: enp0s15f1u1u3c2 state: unknown speed: -1 duplex: half mac: 16:d4:72:2c:21:77 
            IP v4: 169.254.252.174/16 scope: link 
            IP v6: fe80::14d4:72ff:fe2c:2177/64 scope: link 
-           IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:7b:c5:3c:55 
+           IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:a7:cc:a3:b9 
            IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IP v6: fe80::42:7bff:fec5:3c55/64 scope: link 
+           IP v6: fe80::42:a7ff:fecc:a3b9/64 scope: link 
            IF-ID-2: eno2 state: down mac: b4:2e:99:3f:74:7d 
            IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
            IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global 
-           IF-ID-4: veth456412f state: up speed: 10000 Mbps duplex: full mac: e2:70:49:e4:27:7f 
+           IF-ID-4: vethafe211c state: up speed: 10000 Mbps duplex: full mac: 0a:b3:77:69:de:88 
            WAN IP: 131.159.102.7 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 682 GiB 
-           allocated: 206 GiB 
+RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 683 GiB 
+           allocated: 205 GiB 
            Components: Online: N/A 
-Drives:    Local Storage: total: 1.78 TiB used: 2.5 TiB (140.5%) 
+Drives:    Local Storage: total: 1.78 TiB used: 2.53 TiB (142.2%) 
            ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
            size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
            rotation: SSD serial: S4EWNX0R514087T rev: 2B2QEXM7 temp: 29 ° (302 K) C 
-           SMART: yes health: PASSED on: 68d 15h cycles: 7 read-units: 402 [205 MB] 
+           SMART: yes health: PASSED on: 68d 16h cycles: 7 read-units: 417 [213 MB] 
            written-units: 562,576 [288 GB] 
            ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 
            family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
            sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNC0R216725 rev: 904Q temp: 20 C 
            scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 2y 78d 6h cycles: 22 read: 20.82 TiB 
-           written: 37.86 TiB 
-Partition: ID-1: / raw-size: N/A size: 749.02 GiB used: 95.97 GiB (12.8%) fs: zfs 
+           SMART: yes state: enabled health: PASSED on: 2y 97d 3h cycles: 22 read: 21.43 TiB 
+           written: 38.36 TiB 
+Partition: ID-1: / raw-size: N/A size: 750.35 GiB used: 95.94 GiB (12.8%) fs: zfs 
            logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 89.8 MiB (18.0%) fs: vfat 
+           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 265.5 MiB (53.1%) fs: vfat 
            block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 3.22 TiB used: 787.86 GiB (23.9%) fs: nfs4 
+           ID-3: /home raw-size: N/A size: 3.22 TiB used: 797.28 GiB (24.2%) fs: nfs4 
            remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 653.43 GiB used: 398.4 MiB (0.1%) fs: zfs 
+           ID-4: /tmp raw-size: N/A size: 654.81 GiB used: 406 MiB (0.1%) fs: zfs 
            logical: zroot/root/tmp 
 Swap:      Alert: No swap data was found. 
 Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 34.3 C mobo: 34.3 C 
+           System Temperatures: lm-sensors cpu: 35.4 C mobo: 33.8 C 
            Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 2512 
-           Uptime: 13:02:24  up 19 days 12:48,  0 users,  load average: 0.20, 0.17, 0.09 
+Info:      Processes: 2503 
+           Uptime: 09:11:40  up 10 days  8:58,  3 users,  load average: 0.24, 0.19, 0.09 
            Init: systemd v: 253 target: multi-user.target tool: systemctl Compilers: gcc: 12.2.0 
-           Packages: nix-default: 0 nix-sys: 524 lib: 116 nix-usr: 0 Client: Sudo v: 1.9.13p3 
+           Packages: nix-default: 0 nix-sys: 527 lib: 116 nix-usr: 0 Client: Sudo v: 1.9.13p3 
            inxi: 3.3.04 
 ```
 ![hardware topology](yasmin.lstopo.svg)

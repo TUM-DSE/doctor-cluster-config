@@ -161,7 +161,7 @@
 	<text id='PU_31_text' class='PU' font-family='Monospace' x='573' y='444' fill='rgb(0,0,0)' font-size='10px'>PU L#31</text>
 	<text id='PU_31_text_1' class='PU' font-family='Monospace' x='582' y='458' fill='rgb(0,0,0)' font-size='10px'>P#31</text>
 	<rect id='NUMANode_0_rect' class='NUMANode' x='14' y='48' width='1037' height='24' fill='rgb(239,223,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='NUMANode_0_text' class='NUMANode' font-family='Monospace' x='21' y='65' fill='rgb(0,0,0)' font-size='10px'>NUMANode L#0 P#0 (378GB)</text>
+	<text id='NUMANode_0_text' class='NUMANode' font-family='Monospace' x='21' y='65' fill='rgb(0,0,0)' font-size='10px'>NUMANode L#0 P#0 (377GB)</text>
 	<rect id='HostBridge_0_rect' class='HostBridge' x='646' y='79' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_0_line' class='HostBridge' x1='653' y1='82' x2='660' y2='82' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_0_line_2' class='HostBridge' x1='660' y1='82' x2='684' y2='82' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -487,5 +487,5 @@
 	<text id='Misc_23_text' class='Misc' font-family='Monospace' x='1258' y='258' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
 	<rect id='anon_rect' x='0' y='1041' width='1344' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='1058' fill='rgb(0,0,0)' font-size='10px'>Host: vislor</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='1072' fill='rgb(0,0,0)' font-size='10px'>Date: Fri 20 Oct 2023 01:02:20 PM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='1072' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 08 Nov 2023 09:11:39 AM UTC</text>
 </svg>
