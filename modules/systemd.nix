@@ -6,5 +6,5 @@
 
   # allow scheduling of jobs at arbitrary times
   # (atd doesnt build for riscv64-linux)
-  services.atd.enable = !(pkgs.stdenv.hostPlatform == "riscv64-linux"); # if system != "riscv64-linux" then true else false;
+  services.atd.enable = !(pkgs.stdenv.hostPlatform.isRiscV64);
 }
