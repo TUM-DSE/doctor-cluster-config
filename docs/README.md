@@ -99,8 +99,11 @@ machines. Those machines also are not backed up.
 ## Others
 
 - RBG VMs:
-  - doctor.r [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring ([prometheus](https://prometheus.dse.in.tum.de))
-  - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost and grafana
+  - monitoring.dos.cit.tum.de/doctor.r [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+    - [prometheus](https://prometheus.dse.in.tum.de)
+    - [alertmanager](https://alertmanager.dse.in.tum.de)
+    - [buildbot](https://buildbot.dse.in.tum.de)
+  - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
 - RISC-V:
   - ruby.r [ruby.nix](./hosts/ruby.nix)
 
