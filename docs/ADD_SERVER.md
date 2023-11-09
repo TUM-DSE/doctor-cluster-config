@@ -48,7 +48,10 @@ For the next section (Install NixOS), you need to set `boot.loader.efi.canTouchE
 We boot the `github:nix-community/nixos-images/pxe-boot#netboot-installer-nixos-unstable`.
 The following script expects the server to be connected to your physical LAN port `$eth0` which will act as a router. 
 The script will also print the ip of the server you can connect to via ssh. 
-Tell your network manager not to use `$eth0`. Example for gnome/ubuntus `NetworkManager`: `nmcli dev set $eth0 managed no`
+
+Tell your network manager not to use `$eth0`. Example for gnome/ubuntus `NetworkManager`: `nmcli dev set $eth0 managed no`.
+
+Stop your local dnsmasq, if you have one: `systemctl stop dnsmasq`.
 
 Format the disks and install nixos on the server:
 
