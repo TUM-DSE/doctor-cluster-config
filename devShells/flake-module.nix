@@ -4,6 +4,7 @@
       buildInputs = [
         pkgs.ipmitool
 
+        pkgs.nixos-rebuild
         pkgs.python3.pkgs.invoke
         #Until nixos-anywhere is packaged
         inputs'.nixos-anywhere.packages.nixos-anywhere-pxe

@@ -10,6 +10,8 @@
 
   boot.hugepages1GB.number = 8;
 
+  boot.initrd.availableKernelModules = [ "nvme" ];
+
   networking.hostName = "wilfred";
 
   simd.arch = "icelake-server";
