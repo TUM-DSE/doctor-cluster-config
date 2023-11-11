@@ -9,8 +9,8 @@ let
   ];
   
   paulKeys = [
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEBXRWrVa4+O0OulhfKo7US7baIVO7b3NqhBYJ8O4Bg+MFQj8lwcVkgteia9K0VYV4xJbzdyBlrHk2LXsN/SBkI= DSE@secretive.Paul’s-MacBook-Pro.local"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBRCSw5/GC9pXvETobJk+//LCHlHTrM6xQaDF2PRv15RXNKQZ/R8XJJTU9C2xR4SI319TD2zd8eMWU8oS3bWu5s= DSOS@secretive.blue.local"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBL+h7jYBo9Ktd9xYhaHyt5jYnX+OVLsnUnXKrKPPNQK4kjgbtBVn42tLYwL5iN6Ji6vMSSbDks9gI1Pqhxgu2tE= doctor-cluster@secretive.pine.local"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBE/ravSwL0wdXSmQziYCoOxJa8byyXYEhQqMagxz13xNNoJADphNtSqqTpLGYi037qdGSUn9/iVdLp8TeQBprs0= doctor-cluster@secretive.cerulean.local"
   ];
 
   mfKeys = [
