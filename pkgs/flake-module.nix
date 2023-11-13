@@ -45,6 +45,10 @@
         netboot-pixie-core = pkgs.callPackage ../modules/netboot/netboot-pixie-core.nix {
           inherit (self'.packages) netboot;
         };
+
+        install-iso = pkgs.callPackage ./install-iso/default.nix {
+          inherit self;
+        };
       };
     };
 }

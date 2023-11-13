@@ -24,6 +24,12 @@
     # In case we need backports, we can use our fork
     nixpkgs.url = "github:TUM-DSE/nixpkgs/release-23.05-backports";
 
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixlib.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
