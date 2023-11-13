@@ -9,7 +9,6 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from string import Template
 from typing import IO, Any, Callable, List
 
 from deploykit import DeployGroup, DeployHost
@@ -67,7 +66,7 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
             if target_user:
                 target_host = f"{target_user}@{target_host}"
             cmd.extend(["--target-host", target_host])
-        
+
         ret = h.run(cmd, check=False)
         # re-retry switch if the first time fails
         if ret.returncode != 0:
@@ -777,6 +776,7 @@ def ipmi_boot_bios(c: Any, host: str = "") -> None:
     """
     ipmi_boot(c, host, "bios")
 
+
 @task
 def ipmi_boot_pxe(c: Any, host: str = "") -> None:
     """
@@ -827,8 +827,8 @@ def cleanup_gcroots(c: Any, hosts: str = "") -> None:
         g.run("systemctl restart nix-gc")
 
 
-@task 
-def update_host_keys(c: Any, hosts: str = "") -> None: 
+@task
+def update_host_keys(c: Any, hosts: str = "") -> None:
     """
     Update host ssh keys in corresponding host.yml
     """
@@ -836,7 +836,7 @@ def update_host_keys(c: Any, hosts: str = "") -> None:
         "ssh_host_ed25519_key",
         "ssh_host_ed25519_key.pub",
         "ssh_host_rsa_key",
-        "ssh_host_rsa_key.pub"
+        "ssh_host_rsa_key.pub",
     ]
     if hosts == "":
         g = DeployGroup([DeployHost(h, user="root") for h in HOSTS])
@@ -847,7 +847,10 @@ def update_host_keys(c: Any, hosts: str = "") -> None:
         for result in results:
             hostname = result.host.host.split(".")[0]
             sops_file = f"{ROOT}/hosts/{hostname}.yml"
-            c.run(f"sops --set '[\"{key}\"] {json.dumps(result.result.stdout)}' {sops_file}")
+            c.run(
+                f"sops --set '[\"{key}\"] {json.dumps(result.result.stdout)}' {sops_file}"
+            )
+
 
 def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
     out = host.run(f"sfdisk --json {dev}", stdout=subprocess.PIPE)
@@ -870,23 +873,61 @@ def _format_disks(host: DeployHost, device: str) -> None:
         f"zpool create zroot -O acltype=posixacl -O xattr=sa -O compression=lz4 -O atime=off {root_part}"
     )
 
-    host.run(f"partprobe")
+    host.run("partprobe")
     host.run(f"mkfs.vfat {boot} -n NIXOS_BOOT")
 
     # setup zfs dataset
-    host.run(f"zfs create -o mountpoint=none zroot/root")
-    host.run(f"zfs create -o mountpoint=none zroot/docker")
-    host.run(f"zfs create -o mountpoint=legacy zroot/root/nixos")
-    host.run(f"zfs create -o mountpoint=legacy zroot/root/home")
+    host.run("zfs create -o mountpoint=none zroot/root")
+    host.run("zfs create -o mountpoint=none zroot/docker")
+    host.run("zfs create -o mountpoint=legacy zroot/root/nixos")
+    host.run("zfs create -o mountpoint=legacy zroot/root/home")
 
 
 def _mount_disks(host: DeployHost, device: str) -> None:
-    host.run(f"zpool import -af")
+    host.run("zpool import -af")
     # and finally mount
-    host.run(f"mount -t zfs zroot/root/nixos /mnt")
-    host.run(f"mkdir -p /mnt/home /mnt/boot")
-    host.run(f"mount -t zfs zroot/root/home /mnt/home")
-    host.run(f"mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
+    host.run("mount -t zfs zroot/root/nixos /mnt")
+    host.run("mkdir -p /mnt/home /mnt/boot")
+    host.run("mount -t zfs zroot/root/home /mnt/home")
+    host.run("mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
+
+
+@task
+def reset_k3s_cluster(c):
+    master = DeployHost("astrid.dos.cit.tum.de", user="root")
+    master.run("k3s-reset-node")
+    admin_kubeconfig = master.run(
+        "cat /etc/rancher/k3s/k3s.yaml", stdout=subprocess.PIPE
+    )
+    print(
+        "Put this in https://github.com/ls1-courses/internal-docs/tree/main/runner/astrid.kubeconfig"
+    )
+    print(
+        admin_kubeconfig.stdout.replace(
+            "https://127.0.0.1", "https://astrid.dos.cit.tum.de"
+        )
+    )
+    token = master.run(
+        "cat /var/lib/rancher/k3s/server/node-token", stdout=subprocess.PIPE
+    )
+    # update sops file at ./modules/k3s/secrets.yml
+    c.run(
+        f"sops --set '[\"k3s-server-token\"] {json.dumps(token.stdout)}' modules/k3s/secrets.yml"
+    )
+    cert = master.run(
+        "cat /var/lib/rancher/k3s/server/tls/server-ca.crt", stdout=subprocess.PIPE
+    )
+    c.run(
+        f"sops --set '[\"k3s-server-cert\"] {json.dumps(cert.stdout)}' modules/k3s/secrets.yml"
+    )
+
+    agent_hosts = [
+        DeployHost(h, user="root")
+        for h in ["dan.dos.cit.tum.de", "mickey.dos.cit.tum.de"]
+    ]
+    agents = DeployGroup(agent_hosts)
+    agents.run("k3s-reset-node")
+    deploy_nixos(agent_hosts)
 
 
 @task
