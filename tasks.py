@@ -455,11 +455,7 @@ def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
 
     with tempfile.TemporaryDirectory() as tmpdir:
         decrypt_host_keys(c, machine, tmpdir)
-        c.run(f"nix run github:NixOS/nixpkgs/nixpkgs-unstable#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}", echo=True)
-    info("Device information:")
-    info(
-        "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
-    )
+        c.run(f"nix run github:nix-community/nixos-anywhere#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}", echo=True)
 
 
 @task
