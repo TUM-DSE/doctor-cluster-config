@@ -107,6 +107,10 @@ let
   anandKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5f8emRDO9eK9FDLE5g6EdMHDywVoV0I2jseoXrjkvCqRylvFVbuZQOSSg4Zve74d5uLY1JRDO/kUjQpBxQVfsKxtggtdDFeprVeCbo3lJf7/aFoktfiHOO1bIKfQOq6FsdmOxCFsG6GWOGJ1AhQ89rUO7+7KcEScP0ZdMEINiINEj94nvCaWDI/+fxaL5W8TVq4nqMrSqXLLVvQKgzggHc39vwP+qmCxtH+/UkAaTwqZ64kNBdL9xENzlQ1zvxD7Kt/FWMMYVx89yi2G8BFsn5c7mULI3EnO902dMlOod+y2QpEBHV4O1DteMJIvtDebNowHFDVX4dSLGKUsv9mYWUotvBdDTNUBadl6GiHj+2OJpXNcTn04tPcd5hT71qaXZTMOGupPR2GAzB1BetfRc8Dqb8tFCzqkdofRVbbI6lCrTngFm+OOES2YHza6SMkfo12VOUTJQ0evU2BA/V9MaeiHqXo9DgAn6NnBGVQ7Fcr2W2X9r2lOkQujo+j0ruMM= anand@LAPTOP-IH04RQJ6"
   ];
+  alexanderKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEpj5zfMSznyFbOL8z6W278nKP6WPkz8+xSZObXsSJZi"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvDyakenTwms8HfK0plF9KSRbdegxyTFaekzlJBsRiW"
+  ];
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
@@ -408,6 +412,16 @@ in
       uid = 2036;
       allowedHosts = [ "amy" ];
       openssh.authorizedKeys.keys = anandKeys;
+    };
+    # Alexander Schindler, Thesis work with Patrick (Compass)
+    alexander = {
+      isNormalUser = true;
+      home = "/home/alexander";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2039;
+      allowedHosts = [ "jackson" ];
+      openssh.authorizedKeys.keys = alexanderKeys;
     };
 
     root.openssh.authorizedKeys.keys = yiheKeys;
