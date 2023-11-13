@@ -29,6 +29,7 @@ let
       mmisono
       yihe
       robert
+      ilya
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
@@ -44,6 +45,7 @@ let
       "modules/sshd/ca-keys.yml$" = [ ];
       "terraform/secrets.enc.json$" = [ ];
       "terraform/github-permissions/secrets.enc.json$" = [ ]; # is a symlink to terraform/secrets
+      "pkgs/install-iso/secrets.yml" = [ ];
     } //
     builtins.mapAttrs (name: value: (map (x: keys.machines.${x}) value)) {
       "modules/nfs/secrets.yml$" = [ "bill" "nardole" ];
