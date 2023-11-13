@@ -45,6 +45,7 @@
             acltype = "posixacl";
             "com.sun:auto-snapshot" = "false";
           };
+          options.ashift = "12";
 
           datasets = {
             "docker".type = "zfs_fs";
