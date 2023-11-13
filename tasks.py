@@ -898,3 +898,54 @@ def reset_k3s_cluster(c: Any) -> None:
     time.sleep(15)
     master.run("k3s kubectl get nodes")
     get_k3s_kubeconfig(c)
+
+## Mount/Reforemat code below is legacy and should be removed soon
+
+def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
+    out = host.run(f"sfdisk --json {dev}", stdout=subprocess.PIPE)
+    data = json.loads(out.stdout)
+    return data["partitiontable"]["partitions"]
+
+
+def _format_disks(host: DeployHost, device: str) -> None:
+    # format disk with as follow:
+    # - partition 1 will be the boot partition
+    # - partition 2 takes up the rest of the space and is for the system
+    host.run(f"blkdiscard -f {device}")
+    host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef00 -t 2:8304 {device}")
+
+    partitions = sfdisk_json(host, device)
+    boot = partitions[0]["node"]
+    uuid = partitions[1]["uuid"].lower()
+    root_part = f"/dev/disk/by-partuuid/{uuid}"
+    host.run(
+        f"zpool create zroot -O acltype=posixacl -O xattr=sa -O compression=lz4 -O atime=off {root_part}"
+    )
+
+    host.run(f"partprobe")
+    host.run(f"mkfs.vfat {boot} -n NIXOS_BOOT")
+
+    # setup zfs dataset
+    host.run(f"zfs create -o mountpoint=none zroot/root")
+    host.run(f"zfs create -o mountpoint=none zroot/docker")
+    host.run(f"zfs create -o mountpoint=legacy zroot/root/nixos")
+    host.run(f"zfs create -o mountpoint=legacy zroot/root/home")
+
+
+def _mount_disks(host: DeployHost, device: str) -> None:
+    host.run(f"zpool import -af")
+    # and finally mount
+    host.run(f"mount -t zfs zroot/root/nixos /mnt")
+    host.run(f"mkdir -p /mnt/home /mnt/boot")
+    host.run(f"mount -t zfs zroot/root/home /mnt/home")
+    host.run(f"mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
+
+
+@task
+def format_disks(c, hosts, disk=""):
+    """
+    Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
+    """
+    for h in get_hosts(hosts):
+        _format_disks(h, disk)
+        _mount_disks(h, disk)
