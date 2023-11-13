@@ -422,7 +422,7 @@ def decrypt_host_keys(c: Any, host: str, tmpdir: str) -> None:
 
 
 @task
-def reformat_install_nixos(c: Any, host: str, dhcp_interface: str) -> None:
+def netboot_install_nixos(c: Any, host: str, dhcp_interface: str) -> None:
     """
     format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
     """
@@ -442,6 +442,24 @@ def reformat_install_nixos(c: Any, host: str, dhcp_interface: str) -> None:
     # h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
     # h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
     # h.run("reboot")
+
+
+@task
+def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
+    """
+    format disks and install nixos, i.e.: inv ssh-install-nixos --machine adelaide --hostname root@adelaide.dse.in.tum.de
+    """
+    ask = input(f"Are you sure you want to install .#{machine} on {hostname}? [y/N] ")
+    if ask != "y":
+        return
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        decrypt_host_keys(c, machine, tmpdir)
+        c.run(f"nix run github:NixOS/nixpkgs/nixpkgs-unstable#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}", echo=True)
+    info("Device information:")
+    info(
+        "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
+    )
 
 
 @task
