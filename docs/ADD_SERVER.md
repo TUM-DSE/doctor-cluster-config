@@ -56,7 +56,7 @@ Stop your local dnsmasq, if you have one: `systemctl stop dnsmasq`.
 Format the disks and install nixos on the server:
 
 ```
-inv reformat-install-nixos $host $eth0
+inv netboot-install-nixos $host $eth0
 ```
 
 Finally, note down the MAC addresses of the relevant NICs (and the IPMI) which are printed by install-nixos to give them to the chair admins. 
