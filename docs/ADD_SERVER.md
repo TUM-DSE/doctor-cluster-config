@@ -61,6 +61,21 @@ inv reformat-install-nixos $host $eth0
 
 Finally, note down the MAC addresses of the relevant NICs (and the IPMI) which are printed by install-nixos to give them to the chair admins. 
 
+## Install NixOS via USB stick
+
+Build a USB drive image to flash onto a USB stick (`$usbdev` e.g. `/dev/sdi`).
+
+```
+nix build .#install-iso
+sudo dd status=progress bs=4M conv=fsync oflag=direct iflag=direct if=$(echo ./result/iso/nixos-*.iso) of=$usbdev
+```
+
+Boot from that iso, make sure you can connect to it via ssh and install the system:
+
+```
+inv ssh-install-nixos --machine $host --hostname root@$host
+```
+
 ## Finializing
 
 Once the server is installed in the server room:
