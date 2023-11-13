@@ -104,6 +104,7 @@ machines. Those machines also are not backed up.
     - [alertmanager](https://alertmanager.dse.in.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
+  - dosvm1.cit.tum.de: pxeboot
 - RISC-V:
   - ruby.r [ruby.nix](./hosts/ruby.nix)
 
