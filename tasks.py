@@ -852,50 +852,8 @@ def update_host_keys(c: Any, hosts: str = "") -> None:
             )
 
 
-def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
-    out = host.run(f"sfdisk --json {dev}", stdout=subprocess.PIPE)
-    data = json.loads(out.stdout)
-    return data["partitiontable"]["partitions"]
-
-
-def _format_disks(host: DeployHost, device: str) -> None:
-    # format disk with as follow:
-    # - partition 1 will be the boot partition
-    # - partition 2 takes up the rest of the space and is for the system
-    host.run(f"blkdiscard -f {device}")
-    host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef00 -t 2:8304 {device}")
-
-    partitions = sfdisk_json(host, device)
-    boot = partitions[0]["node"]
-    uuid = partitions[1]["uuid"].lower()
-    root_part = f"/dev/disk/by-partuuid/{uuid}"
-    host.run(
-        f"zpool create zroot -O acltype=posixacl -O xattr=sa -O compression=lz4 -O atime=off {root_part}"
-    )
-
-    host.run("partprobe")
-    host.run(f"mkfs.vfat {boot} -n NIXOS_BOOT")
-
-    # setup zfs dataset
-    host.run("zfs create -o mountpoint=none zroot/root")
-    host.run("zfs create -o mountpoint=none zroot/docker")
-    host.run("zfs create -o mountpoint=legacy zroot/root/nixos")
-    host.run("zfs create -o mountpoint=legacy zroot/root/home")
-
-
-def _mount_disks(host: DeployHost, device: str) -> None:
-    host.run("zpool import -af")
-    # and finally mount
-    host.run("mount -t zfs zroot/root/nixos /mnt")
-    host.run("mkdir -p /mnt/home /mnt/boot")
-    host.run("mount -t zfs zroot/root/home /mnt/home")
-    host.run("mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
-
-
-@task
-def reset_k3s_cluster(c):
+def get_k3s_kubeconfig(c: Any) -> None:
     master = DeployHost("astrid.dos.cit.tum.de", user="root")
-    master.run("k3s-reset-node")
     admin_kubeconfig = master.run(
         "cat /etc/rancher/k3s/k3s.yaml", stdout=subprocess.PIPE
     )
@@ -907,19 +865,12 @@ def reset_k3s_cluster(c):
             "https://127.0.0.1", "https://astrid.dos.cit.tum.de"
         )
     )
-    token = master.run(
-        "cat /var/lib/rancher/k3s/server/node-token", stdout=subprocess.PIPE
-    )
-    # update sops file at ./modules/k3s/secrets.yml
-    c.run(
-        f"sops --set '[\"k3s-server-token\"] {json.dumps(token.stdout)}' modules/k3s/secrets.yml"
-    )
-    cert = master.run(
-        "cat /var/lib/rancher/k3s/server/tls/server-ca.crt", stdout=subprocess.PIPE
-    )
-    c.run(
-        f"sops --set '[\"k3s-server-cert\"] {json.dumps(cert.stdout)}' modules/k3s/secrets.yml"
-    )
+
+
+@task
+def reset_k3s_cluster(c: Any) -> None:
+    master = DeployHost("astrid.dos.cit.tum.de", user="root")
+    master.run("k3s-reset-node")
 
     agent_hosts = [
         DeployHost(h, user="root")
@@ -927,23 +878,9 @@ def reset_k3s_cluster(c):
     ]
     agents = DeployGroup(agent_hosts)
     agents.run("k3s-reset-node")
-    deploy_nixos(agent_hosts)
 
+    import time
 
-@task
-def format_disks(c, hosts, disk=""):
-    """
-    Format disks with zfs, i.e.: inv format-disks --hosts new-hostname --disk /dev/nvme0n1
-    """
-    for h in get_hosts(hosts):
-        _format_disks(h, disk)
-        _mount_disks(h, disk)
-
-
-@task
-def mount_disks(c, hosts, disk=""):
-    """
-    Mount disks from the installer, i.e.: inv mount-disks --hosts new-hostname --disk /dev/nvme0n1
-    """
-    for h in get_hosts(hosts):
-        _mount_disks(h, disk)
+    time.sleep(15)
+    master.run("k3s kubectl get nodes")
+    get_k3s_kubeconfig(c)

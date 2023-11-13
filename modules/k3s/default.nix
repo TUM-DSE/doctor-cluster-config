@@ -1,5 +1,6 @@
 { config
 , pkgs
+, lib
 , ...
 }: {
   config = {
@@ -11,9 +12,9 @@
         cni.conf_dir = "/var/lib/rancher/k3s/agent/etc/cni/net.d/";
         # FIXME: upstream
         cni.bin_dir = "${pkgs.runCommand "cni-bin-dir" {} ''
-          mkdir -p $out
-          ln -sf ${pkgs.cni-plugins}/bin/* ${pkgs.cni-plugin-flannel}/bin/* $out
-        ''}";
+        mkdir -p $out
+        ln -sf ${pkgs.cni-plugins}/bin/* ${pkgs.cni-plugin-flannel}/bin/* $out
+      ''}";
       };
     };
 
@@ -31,5 +32,8 @@
         "-${pkgs.zfs}/bin/zfs create -o mountpoint=/var/lib/containerd/io.containerd.snapshotter.v1.zfs zroot/containerd"
       ];
     };
+
+    sops.secrets.k3s-server-token.sopsFile = ./secrets.yml;
+    services.k3s.tokenFile = lib.mkDefault config.sops.secrets.k3s-server-token.path;
   };
 }
