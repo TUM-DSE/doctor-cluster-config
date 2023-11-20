@@ -7,13 +7,22 @@ buildFHSUserEnv {
   name = xilinxName;
   inherit runScript;
   targetPkgs = pkgs:
-    with pkgs; [
+    with pkgs; let
+      ncurses' = ncurses5.overrideAttrs (old: {
+        configureFlags = old.configureFlags ++ ["--with-termlib"];
+        postFixup = "";
+      });
+    in [
       bash
       coreutils
       zlib
       lsb-release
       stdenv.cc.cc
-      ncurses5
+      # https://github.com/NixOS/nixpkgs/issues/218534
+      # postFixup would create symlinks for the non-unicode version but since it breaks
+      # in buildFHSUserEnv, we just install both variants
+      ncurses'
+      (ncurses'.override { unicodeSupport = false; })
       xorg.libXext
       xorg.libX11
       xorg.libXrender
