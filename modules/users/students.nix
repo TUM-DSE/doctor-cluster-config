@@ -112,6 +112,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvDyakenTwms8HfK0plF9KSRbdegxyTFaekzlJBsRiW"
   ];
 
+  nicolaKeys = [
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmWVwq6Wj2CMu9IF+qadLEK3DBNz+T7+LsVaFI/XdvA nicola@the-shadow"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -422,6 +426,17 @@ in
       uid = 2039;
       allowedHosts = [ "jackson" ];
       openssh.authorizedKeys.keys = alexanderKeys;
+    };
+
+	# Nicola Crivellin, Thesis work with Sebastian&Theo (DBTesting)
+    nicola = {
+      isNormalUser = true;
+      home = "/home/nicola";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2040;
+      allowedHosts = [ "graham" ];
+      openssh.authorizedKeys.keys = nicolaKeys;
     };
 
     root.openssh.authorizedKeys.keys = yiheKeys;
