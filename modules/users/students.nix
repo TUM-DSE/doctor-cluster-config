@@ -61,11 +61,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgvtsWzXcCS8gCXFHZ+7wlgdxWBZETkVytZl33MLgLaYniRaOnPUThS7wuevMKS7cRzX87Sut7Gf3ILIWp5VoTVgHkfJgM8oYhdHMQOMmHhaHlJ7DTlhDAiYdLJKolBnFyy/icXtR6U3SPdZAyf8+aIT1ZyTrkZmFgxNKXDU12CFuX7aVvJXHbgr5GcJpv/cS0Bp8IF42yyRqtx+lSWGGCMA94XJjKIwaJXun55yPVzZotHVUlcs6cB+6eg35EeFLGWpuji/yyUSYW7hux2A7V0v3BZrdI3hWq++zDhM/Ai5WAJUf21VQpFzd8pjrm+WVz7vQK4LulPd3aWLnO5eZ1+iVmdqBYm74gLeiObynZgEhwO/EsUpTglDwfSv9uqcmDfkH/iFR6rrGm+7A79f4KjMANSCTb8A2ppJ+nKAlW+Me4Ut6w+R6WACpqYuj4LRASvAX6Eada/21j15tJ6W07CrI7HpDB7Ay4jhlhyRM2LIqxu0A06hevMbCwHjq6qs0= eaypek@ertugrul"
   ];
 
-  kaiKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDV3oHLMnrwqomwg7mZh43uV4IORsJHpzZQGDlTV5lz2aKlSdnB8UX7abgt5HwGPYqjHb+Q3HL6WRBMIMVqPk18LvITg7fOJxeIhgSOpJolr4UOM0Gb8ITqmKUDRloyr/74bx6JDC27+snaBfTD1vWyrH80t0xepvDlgWMD+Osx68a6lKV/832vRb3EZxOcdQe3oJPb+MEDMP+jQTbRn2US6TAi2zI3z1XgSPnPy4CKeFKmsIhMw0MVDKVKTfVxW0croX3pPk383XwKTe1M7qBH6UtNV7AqTR5imsI+7FCJbEKQBynaYgBjYEoSUKNfNATeBo+p4oKkz8hcLnAEXL+lvym1iEFJXDzh8keNfPYY30yBRV+kNANduFkWbPlKzTXS+l8ICdVJWFtmLLL/kTYTtfS2qR8spNpkbUq9AVpTYVBQHxG4KTI0CqYhmP2N8OIsERNayezc8yhC"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM+ApCfMsWq6WAKeElbZyxH+fve33DB7k5cFzOMo8ic5"
-  ];
-
   kamilKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPCKEUYZMotuVIMsFnwgTeSfv3oqfazkmpfrahmL0xqt2TLRvNpiNs1OE5JS3loPPefQ5OmskItTovgm5uo2ZoR+6aJmaKnbYhIT3C9TOWO/WbPL+XpN+Go49MK2P92h0TgMQ+Ilff99BvNWIn/rbkmO6tWJByXpuQnCMYpCDO3rgeNBxYKYN1asEij18TgPSOxbgNq9Fy0zxNXwU+raozbx3/t6FQpMkKPcZ5uwlER8RidZOakZa9gioQKZmN6pGnEN4oQUhuQA8V5g+RrPaJcJhUGC5ZOQaOyr0sGH/s4la/rbTSMh5imcoC/74ZeRg44t34XSDP0XapS0ePWiY9WuQDn7elbNU4m188f3G41ZOnIBOkfle1mtfao8gO7zzJd1tbi056HkB9KGj9v96rN4LtG5CF6n8mQsyHIgeP91HWAkqdKwFC2LX3m7urzWvaA9JjejgFqOMMDlGSYrZ5MYfZaeRQPxukT4LlDyYnluOy08MpgQ7fvviY2PwvHfjdrVGDusBAiKSfbOB77qFr8WE1Xh0SQteJ9mADNqTeJG/aYw33a/HEaRs/gDlco4mRF9mw/RsPC/t5O7lb9GHIB0OfKPlGv2EbahHxbiWbsE7nFmzbG69GEL+9zVC3rbQ1fzjIkGHYlfLZ8ygrOVPGdtNeskDBx+kkjiHNwIptuw== kamilkozakowski@Kamils-MacBook-Air.local"
   ];
@@ -253,17 +248,6 @@ in
       uid = 2023;
       allowedHosts = [ "rose" "ryan" ];
       openssh.authorizedKeys.keys = eaypekKeys;
-    };
-
-    # Kai-Chun Hsieh, MSc student with Masa (unikernel bpf verif)
-    kai = {
-      isNormalUser = true;
-      home = "/home/kai";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2025;
-      allowedHosts = [ "adelaide" ];
-      openssh.authorizedKeys.keys = kaiKeys;
     };
 
     # Kamil Patryk Kozakowski, MSc student with Dimitra (FPGA-based RDMA stack)
@@ -468,5 +452,6 @@ in
     "sarac"
     "mwerndle"
     "jonas"
+    "kai"
   ];
 }
