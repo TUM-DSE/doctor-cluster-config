@@ -109,6 +109,7 @@ let
 
   nicolaKeys = [
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmWVwq6Wj2CMu9IF+qadLEK3DBNz+T7+LsVaFI/XdvA nicola@the-shadow"
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLiBlPKdgncidmS6l01wNk0/Pc8dGDb3CVROGiR9veJ nicola.crivellin98@gmail.com"
   ];
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
