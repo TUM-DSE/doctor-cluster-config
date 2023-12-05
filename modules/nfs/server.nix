@@ -181,6 +181,12 @@
     startAt = "daily";
     exclude = [
       "/export/home/*/.direnv"
+      "/export/home/*/.cache"
+      "/export/home/*/.npm"
+      "/export/home/*/.m2"
+      "/export/home/*/.gradle"
+      "/export/home/*/.opam"
+      "/export/home/*/.clangd"
 
       # these users have qemu images in their home directories, which causes borgbackup to fail
       # /export/home/gierens/images/guest.qcow2: file changed while we backed it up
