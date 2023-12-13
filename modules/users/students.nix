@@ -402,14 +402,14 @@ in
       allowedHosts = [ "amy" ];
       openssh.authorizedKeys.keys = anandKeys;
     };
-    # Alexander Schindler, Thesis work with Patrick (Compass)
+    # Alexander Schindler, Thesis work with Patrick (VMPL)
     alexander = {
       isNormalUser = true;
       home = "/home/alexander";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2039;
-      allowedHosts = [ "jackson" ];
+      allowedHosts = [ "jackson" "ryan" ];
       openssh.authorizedKeys.keys = alexanderKeys;
     };
 
