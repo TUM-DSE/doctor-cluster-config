@@ -109,10 +109,10 @@ let
   snp_latest = {
     owner = "AMDESE";
     repo = "linux";
-    rev = "ad9c0bf475ecde466a065af44fc94918f109c4c9";
-    sha256 = "sha256-cAgiVA7bKuFteF/GaklTm1M6SkDN61LpPBNhflN1M1o=";
-    version = "6.5";
-    modDirVersion = "6.5.0-rc2";
+    rev = "5a170ce1a08259ac57a9074e1e7a170d6b8c0cda";
+    sha256 = "sha256-YDLSwDI5jHMvYuAYdkya707U6zehkXlUL8VzpEk6+Bs=";
+    version = "6.6";
+    modDirVersion = "6.6.0-rc1";
     extraPatches = [ ];
   };
 in
