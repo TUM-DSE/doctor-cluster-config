@@ -67,6 +67,12 @@
           ./devShells/flake-module.nix
           ./templates
         ];
+        perSystem = { system, ... }: {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         flake = {
           hydraJobs = inputs.nixpkgs.lib.mapAttrs' (name: config: inputs.nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations // {
             devShells = self.devShells.x86_64-linux.default;
