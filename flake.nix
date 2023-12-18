@@ -67,7 +67,7 @@
     } @ inputs:
     (flake-parts.lib.evalFlakeModule
       { inherit inputs; }
-      ({ self, inputs, ... }: {
+      ({ lib, self, inputs, ... }: {
         systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
         imports = [
           ./configurations.nix
@@ -76,16 +76,17 @@
           ./devShells/flake-module.nix
           ./templates
         ];
-        perSystem = { system, ... }: {
+        perSystem = { self', system, ... }: {
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
             config.allowUnfree = true;
           };
-        };
-        flake = {
-          hydraJobs = inputs.nixpkgs.lib.mapAttrs' (name: config: inputs.nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations // {
-            devShells = self.devShells.x86_64-linux.default;
-          };
+          checks =
+            let
+              nixosMachines = lib.mapAttrs' (name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) ((lib.filterAttrs (_: config: config.pkgs.system == system)) self.nixosConfigurations);
+              devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
+            in
+            nixosMachines // devShells;
         };
       })).config.flake;
 
