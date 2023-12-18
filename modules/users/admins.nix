@@ -37,7 +37,7 @@ in
       };
 
       root = {
-        passwordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
+        hashedPasswordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
         openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys;
       };
     };
