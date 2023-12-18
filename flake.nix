@@ -20,7 +20,9 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
+    # nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    # In case we need backports, we can use our fork
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/release-23.05-backports";
 
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
