@@ -5,7 +5,6 @@
     ../modules/dax.nix
     ../modules/nvidia.nix
     ../modules/stable-diffusion.nix
-    ../modules/vicuna.nix
     ../modules/dpdk.nix
   ];
 
