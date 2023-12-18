@@ -22,6 +22,14 @@
     outputsPath = "/var/www/buildbot/nix-outputs";
   };
 
+  services.buildbot-master = {
+    extraConfig = ''
+      c["protocols"] = {"pb": {"port": "tcp:9989:interface=\\:\\:"}}
+    '';
+    pythonPackages = ps: [ ps.bcrypt ps.cryptography ];
+  };
+
+
   # TODO: make nginx optional in buildbot-nix
   services.buildbot-master.buildbotUrl = lib.mkForce "https://buildbot.dse.in.tum.de/";
 
