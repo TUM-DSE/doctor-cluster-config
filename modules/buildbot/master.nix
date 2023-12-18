@@ -75,13 +75,11 @@ in
 
   services.postgresql = {
     ensureDatabases = [ "buildbot" ];
-    ensureUsers = [
-      {
-        name = "buildbot";
-        ensurePermissions."DATABASE buildbot" = "ALL PRIVILEGES";
-      }
-    ];
   };
+  services.postgresql.ensureUsers = [{
+    name = "buildbot";
+    ensureDBOwnership = true;
+  }];
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.nginx.enable = true;
