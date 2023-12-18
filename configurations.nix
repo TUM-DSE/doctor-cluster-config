@@ -184,7 +184,7 @@ in
         ++ [
           ./hosts/graham.nix
           nixos-hardware.nixosModules.dell-poweredge-r7515
-          buildbot-nix.nixosModules.buildbot-master
+          buildbot-nix.nixosModules.buildbot-worker
         ];
     };
 
