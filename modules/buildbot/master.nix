@@ -1,62 +1,28 @@
-{ config, lib, pkgs, ... }:
-
-let
-  # TODO: make this an option
-
-  # https://github.com/organizations/numtide/settings/applications
-  # Application name: BuildBot
-  # Homepage URL: https://buildbot.numtide.com
-  # Authorization callback URL: https://buildbot.numtide.com/auth/login
-  # oauth_token:  2516248ec6289e4d9818122cce0cbde39e4b788d
-
-  buildbotDomain = "buildbot.dse.in.tum.de";
-  githubOauthId = "1448d1d1a3d84fa023f4";
-in
+{ config, lib, ...  }:
 {
-  services.buildbot-master = {
+  services.buildbot-nix.master = {
     enable = true;
-    masterCfg = "${./.}/master.py";
-    dbUrl = "postgresql://@/buildbot";
-    pythonPackages = ps: [
-      ps.requests
-      ps.treq
-      ps.psycopg2
-      (ps.toPythonModule pkgs.buildbot-worker)
+    domain = "buildbot-master";
+    workersFile = config.sops.secrets.buildbot-nix-workers.path;
+    buildSystems = [
+      "i686-linux"
+      "x86_64-linux"
+      "aarch64-linux"
     ];
-    home = "/var/lib/buildbot-master";
+    evalWorkerCount = 32;
+    github = {
+      tokenFile = config.sops.secrets.github-token.path;
+      webhookSecretFile = config.sops.secrets.github-webhook-secret.path;
+      oauthSecretFile = config.sops.secrets.github-oauth-secret.path;
+      oauthId = "1448d1d1a3d84fa023f4";
+      user = "doctor-cluster-bot";
+      admins = [ "Mic92" "pogobanane" ];
+    };
+    outputsPath = "/var/www/buildbot/nix-outputs";
   };
 
-  # We don't want this to collide with normal user uids
-  users.users.buildbot.isSystemUser = true;
-  users.users.buildbot.isNormalUser = lib.mkForce false;
-
-  systemd.services.buildbot-master = {
-    environment = {
-      PORT = "1810";
-      DB_URL = config.services.buildbot-master.dbUrl;
-      # Github app used for the login button
-      GITHUB_OAUTH_ID = githubOauthId;
-      GITHUB_ORG = "TUM-DSE";
-      GITHUB_REPO = "doctor-cluster-config";
-      GITHUB_BRANCH = "master";
-
-      BUILDBOT_URL = "https://${buildbotDomain}/";
-      BUILDBOT_GITHUB_USER = "doctor-cluster-bot";
-      # UNUSED: comma seperated list of users that are allowed to login to buildbot and do stuff
-      # GITHUB_ADMINS = "Mic92,pogobanane";
-    };
-    serviceConfig = {
-      # in master.py we read secrets from $CREDENTIALS_DIRECTORY
-      LoadCredential = [
-        "github-token:${config.sops.secrets.github-token.path}"
-        "github-webhook-secret:${config.sops.secrets.github-webhook-secret.path}"
-        "github-oauth-secret:${config.sops.secrets.github-oauth-secret.path}"
-        "buildbot-nix-workers:${config.sops.secrets.buildbot-nix-workers.path}"
-        "cachix-name:${config.sops.secrets.cachix-name.path}"
-        "cachix-auth-token:${config.sops.secrets.cachix-auth-token.path}"
-      ];
-    };
-  };
+  # TODO: make nginx optional in buildbot-nix
+  services.buildbot-master.buildbotUrl = lib.mkForce "https://buildbot.dse.in.tum.de/";
 
   sops.secrets = {
     # doctor-cluster-bot-token
@@ -69,41 +35,9 @@ in
   };
 
   imports = [
-    ../postgresql.nix
     ./hostfile.nix
+    ../postgresql.nix
   ];
 
-  services.postgresql = {
-    ensureDatabases = [ "buildbot" ];
-  };
-  services.postgresql.ensureUsers = [{
-    name = "buildbot";
-    ensureDBOwnership = true;
-  }];
-
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
-  services.nginx.enable = true;
-
-  services.nginx.virtualHosts."buildbot-master" = {
-    locations."/".proxyPass = "http://127.0.0.1:1810/";
-    locations."/sse" = {
-      proxyPass = "http://127.0.0.1:1810/sse/";
-      # proxy buffering will prevent sse to work
-      extraConfig = "proxy_buffering off;";
-    };
-    locations."/ws" = {
-      proxyPass = "http://127.0.0.1:1810/ws";
-      proxyWebsockets = true;
-      # raise the proxy timeout for the websocket
-      extraConfig = "proxy_read_timeout 6000s;";
-    };
-
-    # In this directory we store the lastest build store paths for nix attributes
-    locations."/nix-outputs".root = "/var/www/buildbot/";
-  };
-
-  # Allow buildbot-master to write to this directory
-  systemd.tmpfiles.rules = [
-    "d /var/www/buildbot/nix-outputs 0755 buildbot buildbot - -"
-  ];
+  networking.firewall.allowedTCPPorts = [ 80 ];
 }

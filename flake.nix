@@ -22,6 +22,14 @@
 
     nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
 
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    buildbot-nix.url = "github:Mic92/buildbot-nix";
+    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
+    buildbot-nix.inputs.flake-parts.follows = "flake-parts";
+    buildbot-nix.inputs.treefmt-nix.follows = "treefmt-nix";
+
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";

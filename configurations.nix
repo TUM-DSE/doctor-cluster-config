@@ -12,6 +12,7 @@ let
     srvos
     disko
     nix-index-database
+    buildbot-nix
     ;
   nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
 
@@ -154,6 +155,7 @@ in
         computeNodeModules
         ++ [
           ./hosts/bill.nix
+          buildbot-nix.nixosModules.buildbot-master
         ];
     };
 
@@ -182,6 +184,7 @@ in
         ++ [
           ./hosts/graham.nix
           nixos-hardware.nixosModules.dell-poweredge-r7515
+          buildbot-nix.nixosModules.buildbot-master
         ];
     };
 
