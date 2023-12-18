@@ -17,6 +17,7 @@
       oauthId = "1448d1d1a3d84fa023f4";
       user = "doctor-cluster-bot";
       admins = [ "Mic92" "pogobanane" ];
+      topic = "buildbot-tum-dse";
     };
     outputsPath = "/var/www/buildbot/nix-outputs";
   };
