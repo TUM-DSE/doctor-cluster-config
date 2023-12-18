@@ -1,7 +1,5 @@
 { pkgs, config, ... }:
 {
-  nixpkgs.config.allowUnfree = true;
-
   # enable the nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;

@@ -24,7 +24,7 @@
 
     users.users = lib.listToAttrs (map
       (user: lib.nameValuePair user {
-        passwordFile = config.sops.secrets."${user}-password-hash".path;
+        hashedPasswordFile = config.sops.secrets."${user}-password-hash".path;
       })
       config.users.xrdpUsers);
 

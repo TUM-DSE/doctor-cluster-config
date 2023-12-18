@@ -101,11 +101,18 @@ let
       nix-index-database.nixosModules.nix-index
       ./modules/nix-index.nix
     ];
+
+    pkgsForSystem = system: import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgs-x86_64-linux = pkgsForSystem "x86_64-linux";
+    pkgs-aarch64-linux = pkgsForSystem "aarch64-linux";
 in
 {
   flake.nixosConfigurations = {
     doctor = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         commonModules
         ++ [
@@ -115,7 +122,7 @@ in
     };
 
     rose = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -124,7 +131,7 @@ in
     };
 
     amy = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -133,7 +140,7 @@ in
     };
     
     clara = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -142,7 +149,7 @@ in
     };
 
     bill = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -151,7 +158,7 @@ in
     };
 
     nardole = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -160,7 +167,7 @@ in
     };
 
     yasmin = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.aarch64-linux;
+      pkgs = pkgs-aarch64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -169,7 +176,7 @@ in
     };
 
     graham = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -179,7 +186,7 @@ in
     };
 
     ryan = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -188,7 +195,7 @@ in
     };
 
     mickey = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -197,7 +204,7 @@ in
     };
 
     astrid = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -206,7 +213,7 @@ in
     };
 
     dan = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -215,7 +222,7 @@ in
     };
 
     christina = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -224,7 +231,7 @@ in
     };
 
     jackson = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -233,7 +240,7 @@ in
     };
 
     adelaide = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -242,7 +249,7 @@ in
     };
 
     wilfred = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -251,7 +258,7 @@ in
     };
 
     river = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -260,7 +267,7 @@ in
     };
 
     jack = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules =
         computeNodeModules
         ++ [
@@ -269,7 +276,7 @@ in
     };
 
     donna = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.aarch64-linux;
+      pkgs = pkgs-aarch64-linux;
       modules = 
         computeNodeModules
         ++ [
@@ -278,7 +285,7 @@ in
     };
 
     vislor = nixosSystem {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs-x86_64-linux;
       modules = 
         computeNodeModules
         ++ [
@@ -287,14 +294,11 @@ in
     };
 
     ruby = nixosSystem {
+      pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
       modules =
         computeNodeModules
         ++ [
           ./hosts/ruby.nix
-          {
-            nixpkgs.hostPlatform = "riscv64-linux";
-            nixpkgs.buildPlatform = "x86_64-linux";
-          }
         ];
     };
   };

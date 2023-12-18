@@ -20,9 +20,7 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    # nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    # In case we need backports, we can use our fork
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/release-23.05-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
 
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -69,6 +67,12 @@
           ./devShells/flake-module.nix
           ./templates
         ];
+        perSystem = { system, ... }: {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         flake = {
           hydraJobs = inputs.nixpkgs.lib.mapAttrs' (name: config: inputs.nixpkgs.lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) self.nixosConfigurations // {
             devShells = self.devShells.x86_64-linux.default;
