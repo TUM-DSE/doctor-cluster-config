@@ -49,6 +49,7 @@
     nixos-anywhere.url = "github:nix-community/nixos-anywhere/pxe-boot";
     nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs";
     nixos-anywhere.inputs.disko.follows = "disko";
+    nixos-anywhere.inputs.treefmt-nix.follows = "treefmt-nix";
 
     retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
 
