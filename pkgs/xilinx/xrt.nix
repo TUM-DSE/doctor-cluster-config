@@ -25,11 +25,11 @@
 , libxcrypt
 }:
 let
-  suffix = "2.14.354";
-  version = "202220.${suffix}";
+  suffix = "2.16.204";
+  version = "202320.${suffix}";
   xrtBin = fetchurl {
-    url = "https://www.xilinx.com/bin/public/openDownload?filename=xrt_${version}_20.04-amd64-xrt.deb";
-    sha256 = "sha256-56oftTwApQ/H8S9mLti1Ga3zLAxILwWvZQr60RoPo3A=";
+    url = "https://www.xilinx.com/bin/public/openDownload?filename=xrt_${version}_22.04-amd64-xrt.deb";
+    sha256 = "sha256-FEhzx2KlIYpunXmTSBjtyAtblbuz5tkvnt2qp21gUho=";
   };
 in
 stdenv.mkDerivation rec {
@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
     repo = "XRT";
     rev = version;
     fetchSubmodules = true;
-    sha256 = "sha256-ME3s1HQh97T44EirGGGEU2i7ia1bfoH2OfzcKGEHhIg=";
+    sha256 = "sha256-j6BE6Vx+FzztnPY9m+GQK1sUwf2areNp6oTzas/ITks=";
   };
 
   enableParallelBuilding = true;
@@ -85,6 +85,17 @@ stdenv.mkDerivation rec {
       echo "NO xrt firmware found in binary release"
       false
     fi
+    # Fake git info: https://github.com/Xilinx/XRT/blob/f0f31af48d4545bc9fe77a64ded241db0f564deb/src/CMake/version.cmake#L33C29-L33C50
+
+    export GIT_AUTHOR_NAME="John Doe"
+    export GIT_AUTHOR_EMAIL=john@example.com
+    export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+    export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+    git init .
+    git add .
+    git commit -m 'fake commit'
+    git checkout -b origin/master
+
     cd src
 
     find . -type f -print0 | \
