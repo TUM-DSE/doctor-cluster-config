@@ -91,10 +91,6 @@ let
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIOJpaI1Zb1R9gcipR71Ulh1SNxJj1frEK9XfzRFe/uJmAAAAC3NzaDp0ZXJtaXVz"
   ];
 
-  m00wlKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKj82MjggZ8uEbi/1cITRA84Ou2I6TYfCPfFHwhXm2Tx moritz.lumme@tum.de"
-  ];
-
   brunoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1nFbMNCDHkh8iOR77/RvrUS3Yd14/NxKqZCEJHOJHmXMVfV+LzCcQOKXRBp2P66OzKu0PwaOksyqjiVlPI1WEwaESOmrol8PCFywdGU976DILPpCFH0Ce7vDx3rjS0eyzB3zjFHcAVy5umk6h9FCV+G3cCQPJXEZk1SLi2kj4ZqxxL0sKx3OubGKsXx4NGRcH4wt3HIksukRIm4e47/235gGqxGmnZvfdIzshmAtqNeiT78Eo+ybjT/n8D009NLCQoTEy8xjVAJjL3PnwHUuRdHnmTp2C5R8nt7dv4OzXIVwflQn4WEtGwUggd89k0PqaNE8p+mSLshYBj2dHlFNxTkCS27JwAKx2fiHYdpibLJYcP0INicStduPSIPQq3N4zF3z2RfIeWUfY3b4zgdwCFYck3WWu/f2K4DCYIrj2sC4sEt1eB0rHWhABjJHdqcfAXLhSKnOdr30r0wm7Wgwn8DJ0RolMibwi5CfgzW4a2mk0vop2meumxHMJvnYhlry0OzxlwXxMO5MQM3Pg9xoxHY+DJY1u9KG5gavM96H5UgSq66UhqH1Q7Ugg8zqKviIP+1dKPInq0dD745aoHFxynMQjfi/HTUmtGwJjEojPuwDX5zKwziAmCtosTRo6gVG7QkbNme5EEBEKiFA9griSPIZBUthagHyJLFsqfeITWQ=="
   ];
@@ -344,17 +340,6 @@ in
       openssh.authorizedKeys.keys = florianKeys;
     };
 
-    # Moritz Lumme (fix gnugrep/musl on ARM)
-    m00wl = {
-      isNormalUser = true;
-      home = "/home/m00wl";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 1014;
-      allowedHosts = [ "yasmin" ];
-      openssh.authorizedKeys.keys = m00wlKeys;
-    };
-
     # Dmitry Lugovoy, MSc Thesis with Manos (Quantum Computing Scheduling)
     # Remove after WS23
     dmitrylugovoy = {
@@ -452,6 +437,7 @@ in
     "raito"
     "sarac"
     "mwerndle"
+    "m00wl"
     "jonas"
     "kai"
   ];
