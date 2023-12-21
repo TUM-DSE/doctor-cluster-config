@@ -30,9 +30,17 @@ let
     modDirVersionArg = "6.1.0-rc4";
     extraPatches = [ ];
   };
-
+  coconut_svsm = {
+    owner = "coconut-svsm";
+    repo = "linux";
+    rev = "e1335c6f029281db280945e084ec2d079934e744"; # branch svsm
+    sha256 = "sha256-Q/gTKUvWE/9wGExzbgxJPjfz2g2JtKPAp93jcbl3rBw=";
+    version = "6.5";
+    modDirVersionArg = "6.5.0";
+    extraPatches = [ ];
+  };
   # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = svsm_preview_hv_2;
+  snp_kernel = coconut_svsm;
 
 in
 with snp_kernel;
