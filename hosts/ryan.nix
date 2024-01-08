@@ -11,6 +11,7 @@
     # ../modules/amd_sev.nix
     ../modules/amd_sev_svsm.nix
     #../modules/amd_sev_snp.nix
+    ../modules/vfio/iommu-amd.nix
 
     # since the disk failure, ryan is partitioned with disko
     ../modules/zfs-partitioning.nix
