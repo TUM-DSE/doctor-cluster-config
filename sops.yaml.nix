@@ -30,6 +30,7 @@ let
       yihe
       robert
       ilya
+      felix
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
