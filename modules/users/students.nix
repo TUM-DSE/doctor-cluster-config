@@ -281,15 +281,14 @@ in
     #  openssh.authorizedKeys.keys = robertoKeys;
     #};
 
-    # Fritz Rehde, Bsc student with Martin (memory safety for wasm)
-    # Remove after SS23
+    # Fritz Rehde, working on the WASM project with Martin
     fritz = {
       isNormalUser = true;
       home = "/home/fritz";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2029;
-      allowedHosts = [ "rose" "graham" ];
+      allowedHosts = [ "rose" "graham" "donna" ];
       openssh.authorizedKeys.keys = fritzKeys;
     };
 
