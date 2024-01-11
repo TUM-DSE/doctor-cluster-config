@@ -434,7 +434,7 @@ in
       home = "/home/laurent";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
-      uid = 2041;
+      uid = 2042;
       allowedHosts = [ "hinoki" "sakura" "momiji" "graham" ];
       openssh.authorizedKeys.keys = laurentKeys;
     };
