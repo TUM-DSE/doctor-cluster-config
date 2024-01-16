@@ -20,4 +20,8 @@
   # simd.arch = "zenver4";
 
   system.stateVersion = "23.05";
+
+  boot.kernelParams = [
+    "isolcpus=4-16"
+  ];
 }
