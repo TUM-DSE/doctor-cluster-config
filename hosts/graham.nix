@@ -8,11 +8,14 @@
     ../modules/amd_sev.nix
     ../modules/dpdk.nix
     ../modules/vfio/iommu-amd.nix
+    ../modules/zfs-partitioning.nix
   ];
 
   boot.hugepages1GB.number = 8;
 
   networking.hostName = "graham";
+
+  disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZ1L23T8HBLA-00A07_S667NJ0T732147";
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media
@@ -32,5 +35,4 @@
   system.stateVersion = "21.05";
 
   networking.doctor-bridge.enable = true;
-
 }
