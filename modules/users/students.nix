@@ -7,11 +7,6 @@ let
   dmitrylugovoyKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdbSlGlXXxUTL6ARkf1wlzOuCikGkdkle0s3ltav6CZEl+hdqbgRhpThR7fYL/ZYwciR2x71rfC1eoHa2LDy8YhFEZgfTPAanEAGmV+IF2+G5g3LudpifJUJcLjHZj8TF/bvoIr6wTVI4EqZ2SAO+152fbOLTmGimVihRPAadSimCym+IJHVAb/Avp+i6PxTM5k8VWBU+gf0m6M5qMv74KimaGWiMIG2CBhwvVby7uAOUKZ9ztSTKUnzLQdjzYD+vhi/IHC9DUIVqhl0pmwSnosazLpHXJl/Q5+nQhsfDs/sZKIMqlArEamouiEWHuxYLH+tesz2Z68PDBje5ReEISNSvIAr81ajSMMHGyo3Q2380lodV5pYtkDJTbA50jQ/0mj0W2kZC1IGsEqMH6BhcZMllh0vzmn7odHbvgFS7f+ohO0szLet6j1XSzrIEOzE00a61OjgK3K/HZ5+dgfzSfw55Ai5aFg19pL22Xber6PrEvH+HUKmSlG2YUFdMyUqkxgsOzaf0io4vksTwua7oBlKoNRToTjRXrb/wvDOL/tui+WFIriFgD5eaOuCDVJR8H47i85L6t08iRRhGb4gq/29cugZaX3k4WqM0HUaL3EOl9KX7MbfjCQ46c+1K7IEQc5ZsUWJFOUoVz4auFFTmeS0+zpCRcoeW39NYJPenlUw== dmitrylugovoy@Entrix-Dmitrys-MacBook-Pro.local"
   ];
-  
-  paulKeys = [
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBL+h7jYBo9Ktd9xYhaHyt5jYnX+OVLsnUnXKrKPPNQK4kjgbtBVn42tLYwL5iN6Ji6vMSSbDks9gI1Pqhxgu2tE= doctor-cluster@secretive.pine.local"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBE/ravSwL0wdXSmQziYCoOxJa8byyXYEhQqMagxz13xNNoJADphNtSqqTpLGYi037qdGSUn9/iVdLp8TeQBprs0= doctor-cluster@secretive.cerulean.local"
-  ];
 
   mfKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
@@ -126,17 +121,6 @@ in
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
-    # Paul Heidekrüger, Babish's BA student (Dependency ordering in the linux kernel)
-    paul = {
-      isNormalUser = true;
-      home = "/home/paul";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 1007;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = paulKeys;
-    };
-
     # Martin Fink (HiWi)
     martin = {
       isNormalUser = true;
@@ -483,5 +467,6 @@ in
     "m00wl"
     "jonas"
     "kai"
+    "paul"
   ];
 }
