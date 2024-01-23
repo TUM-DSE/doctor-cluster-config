@@ -19,6 +19,6 @@
 | Robert Schambach            | Lenovo ThinkPad X13 Gen 1 (laptop) |
 | Harshavardhan Unnibhavi     | LG 27UL850 display, Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station) |
 | Jörg Thalheim               | xxx                                                                                                                                                                                                |
-| Martin Fink                 | MacBook Pro 13" M1 Pro (laptop) |
+| Martin Fink                 | MacBook Pro 14" M1 Max (laptop) |
 | Anatole Lefort              | Lenovo ThinkPad X1 Carbon gen 11 (laptop), Lenovo ThinkVision P27u-20 (x2, monitor), Lenovo Thunderbolt 3 Dock Gen 2 (docking station) |
 | Evgeny Volynsky             | Lenovo ThinkPad P15 Gen 1 (laptop), Acer (monitor), Philips (monitor), Lenovo Thunderbolt Dock (docking station) |
