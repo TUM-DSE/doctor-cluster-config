@@ -36,6 +36,7 @@ let
     ./modules/zsh.nix
     ./modules/systemd.nix
     ./modules/cleanup-usr.nix
+    ./modules/tinc.nix
 
     disko.nixosModules.disko
 
@@ -43,8 +44,6 @@ let
 
     srvos.nixosModules.mixins-telegraf
     srvos.nixosModules.mixins-terminfo
-    ## allow to access telegraf on vpn interface
-    #{ networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 9273 ]; }
 
     sops-nix.nixosModules.sops
     ({ pkgs
@@ -78,9 +77,6 @@ let
         nur.flake = nur;
       };
       time.timeZone = "UTC";
-
-      # only allow connections from hosts specified in our retiolum hosts.
-      services.tinc.networks.retiolum.extraConfig = "StrictSubnets yes";
     })
     retiolum.nixosModules.retiolum
   ];
