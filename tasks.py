@@ -603,6 +603,17 @@ def generate_password(c: Any, user: str = "root") -> None:
 
 
 @task
+def generate_tinc_key(c: Any, hostname: str) -> None:
+    """
+    Generate tinc private key for a given hostname
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        c.run(f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-ed25519-keys", echo=True)
+        content = (Path(tmp) / "ed25519_key.priv").read_text()
+        c.run(f"sops --set '[\"tinc-key\"] {json.dumps(content)}' {ROOT}/hosts/{hostname}.yml")
+
+
+@task
 def add_server(c: Any, hostname: str) -> None:
     """
     Generate new server keys and configurations for a given hostname and hardware config
@@ -643,6 +654,9 @@ def add_server(c: Any, hostname: str) -> None:
 
     print("Generating SSH certificate")
     generate_ssh_cert(c, hostname)
+
+    print("Generating Tinc key")
+    generate_tinc_key(c, hostname)
 
     print("Generating age key")
     key_ed = subprocess.Popen(
