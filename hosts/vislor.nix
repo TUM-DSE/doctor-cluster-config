@@ -8,11 +8,6 @@
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNS0W800676";
-  
-  networking.doctowho.bonding.macs = [
-    "94:6d:ae:da:eb:42"
-    "94:6d:ae:da:eb:43"
-  ];
 
   networking.hostName = "vislor";
   # not in nixpkgs yet
