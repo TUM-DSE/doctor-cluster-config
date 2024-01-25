@@ -2,7 +2,6 @@
 {
   imports = [
     ../modules/hardware/poweredge7625.nix
-    ../modules/bonding.nix
     ../modules/nfs/client.nix
     ../modules/amd_sev_snp.nix
     ../modules/dpdk.nix
