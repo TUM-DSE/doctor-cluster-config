@@ -913,7 +913,7 @@ def reset_k3s_cluster(c: Any) -> None:
     master.run("k3s kubectl get nodes")
     get_k3s_kubeconfig(c)
 
-## Mount/Reforemat code below is legacy and should be removed soon
+## Mount/Reforemat code below is legacy and should be kept as util for debugging/emergency situations
 
 def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
     out = host.run(f"sfdisk --json {dev}", stdout=subprocess.PIPE)
