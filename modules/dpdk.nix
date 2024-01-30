@@ -38,6 +38,12 @@ with lib; {
       "hugepagesz=2MB"
       "hugepages=${toString config.boot.hugepages2MB.number}"
     ];
+    # 2k hugepages are automatically mounted by nixos
+    fileSystems."/dev/hugepages1G" = {
+      device = "hugetlbfs";
+      fsType = "hugetlbfs";
+      options = [ "nosuid" "nodev" "pagesize=1G" ];
+    };
     boot.extraModulePackages = lib.mkIf (config.boot.kernelPackages.kernel.version != currentlyIncompatibleKernelVersion) [
       # provide igb_uio:
       config.boot.kernelPackages.dpdk-kmods
