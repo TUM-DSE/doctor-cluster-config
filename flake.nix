@@ -22,6 +22,9 @@
 
     nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
 
+    home-manager.url = "github:rycee/home-manager/release-23.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -39,11 +42,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
-    home-manager.url = "github:rycee/home-manager/release-22.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # FIXME: I saw weird crashes on the latest HEAD... try upgrading later
-    sops-nix.url = "github:Mic92/sops-nix/7c8e9727a2ecf9994d4a63d577ad5327e933b6a4";
+    sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-anywhere.url = "github:nix-community/nixos-anywhere/pxe-boot";
