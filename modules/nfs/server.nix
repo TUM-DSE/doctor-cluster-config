@@ -180,6 +180,9 @@
     compression = "auto,zstd";
     startAt = "daily";
     exclude = [
+      "*.pyc"
+      "*.swp"
+      "*.o"
       "/export/home/*/.direnv"
       "/export/home/*/.cache"
       "/export/home/*/.npm"
