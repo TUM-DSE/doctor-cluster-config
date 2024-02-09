@@ -18,7 +18,7 @@
   boot.hugepages1GB.number = 0;
   # boot.hugepages2MB.number = 0;
   boot.hugepages2MB.number = let 
-    gb = 200;
+    gb = 100;
   in gb * 1024 / 2;
 
   networking.hostName = "rose";
