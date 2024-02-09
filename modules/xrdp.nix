@@ -9,6 +9,7 @@
     layout = "us";
     xkbVariant = "altgr-intl";
   };
+  fonts.enableDefaultPackages = true;
 
   environment.etc."xrdp/startwm.sh" = {
     text = ''
