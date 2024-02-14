@@ -26,6 +26,9 @@
   simd.arch = "znver3";
   system.stateVersion = "22.11";
 
+  # peters benchmarks seem to trigger envfs to hang up, rendering the enire system unusable
+  services.envfs.enable = false;
+
   # external deduplicating zfs for large numbers of VMs
   # formating:
   # create linux partition with fdisk
