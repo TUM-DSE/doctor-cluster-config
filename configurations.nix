@@ -292,6 +292,15 @@ in
         ];
     };
 
+    vicki = nixosSystem {
+      pkgs = pkgs-x86_64-linux;
+      modules = 
+        computeNodeModules
+        ++ [
+          ./hosts/vicki.nix
+        ];
+    };
+
     ruby = nixosSystem {
       pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
       modules =

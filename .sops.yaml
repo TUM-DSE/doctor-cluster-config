@@ -306,6 +306,22 @@ creation_rules:
     path_regex: hosts/ryan.yml$
   - key_groups:
       - age:
+          - age1ulxltkr6kcnhv9mmv3tkc6k7rkmhaamf7yujqt66m0vr0ra3x57qwle0lv
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+          - age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv
+          - age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0
+          - age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd
+          - age17ve9wnwazsmp2xgvsp27u7clywqwwqynsslyyxa4k0hu8mznf5qq2vmp2c
+          - age1cz7kkx8w8hxy7qgps20nw7v55963gqz5n53zxy990cv4sj8gjgnqlcz64s
+          - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
+          - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
+          - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+    path_regex: hosts/vicki.yml$
+  - key_groups:
+      - age:
           - age10y4q33yjrw33ghx2prad9w9jxglumkwyft09hjd26c2m6sftcu4qcpwanm
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
@@ -418,6 +434,7 @@ creation_rules:
           - age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx
           - age1q2t8w6qta7v6mhwv3qlfq6un60mj0u8k5j8qp7v37kjkd6008ycs4ecxmt
           - age193d5ln9y7jgn3pk99g0h4p3wggnmm8rwylwq8c8jet4swvy0mf4qhrgxna
+          - age1ulxltkr6kcnhv9mmv3tkc6k7rkmhaamf7yujqt66m0vr0ra3x57qwle0lv
           - age10y4q33yjrw33ghx2prad9w9jxglumkwyft09hjd26c2m6sftcu4qcpwanm
           - age14esukks86hdswm9tjpjpjwxquset7407ffahxk6tc3t2ayanta4swyvw5f
           - age1ygw55360m3gjquperauv50u6zd6rkl2uuergycl6apf92ycc8gkqktdcm6
