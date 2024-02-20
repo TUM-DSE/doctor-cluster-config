@@ -197,7 +197,17 @@ Our chair currently has three networks:
 - TUM-ITO/RBG: 131.159.0.0/16
 - TUM-ITO/RBG private: 172.24.0.0/16
 - TUM-ITO/RBG vlans: 172.24.0.0/17
-- L3 Switch "Craig" `craig-mgmt.dos.cit.tum.de` (sops encrypted (config)[./craig.sops])
+- L3 Switch "Adric" `adric-mgmt.dos.cit.tum.de`
+  - FibreStore N8550-32C switch with Broadcom BCM56870 Trident III chip
+  - 32x 100G QSFP
+  - 2x 10G SFP+
+  - 8 core Intel Xeon D-1518 @ 2.20GHz
+  - runs SONiC OS
+  - subnet: 10.0.0.0/24
+  - management via ssh with username admin 
+  - relevant commands: `show` and its counterpart `sudo config`
+  - use `/etc/config_db.json` with `sudo config reload` and `config save` to persist changes (manual)[https://github.com/sonic-net/SONiC/blob/master/doc/SONiC-User-Manual.md#3321-modify-config_dbjson]
+- Retired: L3 Switch "Craig" `craig-mgmt.dos.cit.tum.de` (sops encrypted (config)[./craig.sops])
   - 6x 100Gbit/s QSFP
   - many 10Gbit/s SFP+
   - ip: 172.24.90.18
