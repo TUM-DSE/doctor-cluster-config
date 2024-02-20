@@ -25,14 +25,14 @@
                 };
               };
               zfs = {
-                size = "50%";
+                size = "100%";
                 content = {
                   type = "zfs";
                   pool = "zroot";
                 };
               };
               ubuntu = {
-                size = "50%";
+                size = "512G";
                 content = {
                   type = "filesystem";
                   format = "ext4";
