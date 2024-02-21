@@ -31,16 +31,26 @@ let
     extraPatches = [ ];
   };
   coconut_svsm = {
-    owner = "coconut-svsm";
+    owner = "Sabanic-P";
     repo = "linux";
-    rev = "e1335c6f029281db280945e084ec2d079934e744"; # branch svsm
-    sha256 = "sha256-Q/gTKUvWE/9wGExzbgxJPjfz2g2JtKPAp93jcbl3rBw=";
+    rev = "aa599c0fdf6fbdaeaf12a626155a9eef5ad6f133"; # branch svsm
+    sha256 = "sha256-1iN7DENoY1e2cMgP3j9QtXNIrJU/aOYMzRkNsjNONp0=";
     version = "6.5";
     modDirVersionArg = "6.5.0";
     extraPatches = [ ];
   };
+  coconut_svsm_with_reflectvc = {
+    owner = "Sabanic-P";
+    repo = "linux";
+    rev = "8f3e2540e2131e0559ef2b008387cc715ed9d505"; # branch svsm
+    sha256 = "sha256-ry47acIdc6TIDYkaSIQRMzjAjeUef3A6pJO1osxX2W4=";
+    version = "6.5-reflectvc";
+    modDirVersionArg = "6.5.0";
+    extraPatches = [ ];
+  };
+
   # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = coconut_svsm;
+  snp_kernel = coconut_svsm_with_reflectvc;
 
 in
 with snp_kernel;
