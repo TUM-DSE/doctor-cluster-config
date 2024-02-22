@@ -20,6 +20,8 @@
   boot.hugepages2MB.number = let 
     gb = 100;
   in gb * 1024 / 2;
+  # blacklist kernel module that conflicts with the Intel FPGA OpenCL driver
+  boot.blacklistedKernelModules = [ "altera_cvp" ];
 
   networking.hostName = "rose";
 
