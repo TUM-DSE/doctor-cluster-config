@@ -22,7 +22,8 @@
       xilinx-env = pkgs.callPackage ./xilinx/fhs-env.nix { };
       xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix { };
       xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers { };
-      intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers.nix { };
+      intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers { };
+      intel-opencl-drivers = pkgs.callPackage ./intel-fpgas/opencl-drivers { };
     };
 
   # packages for many targets:
