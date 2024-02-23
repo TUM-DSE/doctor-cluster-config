@@ -1,1 +1,1 @@
-KERNEL=="acls10_ref*", SUBSYSTEM=="aclpci_s10_ref", MODE=="0600", MODE="0666"
+KERNEL=="acls10_ref*", SUBSYSTEM=="aclpci_s10_ref", MODE="0666"
