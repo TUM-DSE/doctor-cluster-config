@@ -382,7 +382,7 @@ in
       openssh.authorizedKeys.keys = alpKeys;
     };
 
-    # Laurent Bindschaedler, external contributor in FPGA serverless project
+    # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
     laurent = {
       isNormalUser = true;
       home = "/home/laurent";
