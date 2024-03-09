@@ -29,7 +29,7 @@
         [Service]
         Type=oneshot
         RemainAfterExit=true
-        ExecStart=/bin/sh -c "docker exec -i ls1-coffee-accounting-db-1 pg_dumpall -U drinks-api | gzip > /var/backups/postgresl-backup.sql.gz"
+        ExecStart=/bin/bash -c "set -eux -o pipefail; docker exec -i ls1-coffee-accounting-db-1 pg_dumpall -U drinks-api | gzip > /var/backups/postgresl-backup.sql.gz.tmp; mv /var/backups/postgresl-backup.sql.gz{.tmp,}"
       dest:
         /etc/systemd/system/postgres-backup.service
       mode: '0644'
