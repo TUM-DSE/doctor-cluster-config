@@ -29,9 +29,6 @@
       config.users.xrdpUsers);
 
     # add all users here that should have xrdp access.
-    users.xrdpUsers = [
-      "yihe" # TODO comment needed. He is not part of sys-lab
-      "joerg"
-    ];
+    users.xrdpUsers = [ "joerg" ];
   };
 }

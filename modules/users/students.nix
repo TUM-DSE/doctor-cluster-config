@@ -23,10 +23,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
-  yiheKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgQ10239M1Ehw6nmY7mFxGyqfpCkfSHAjZzSZZZ7NLA"
-  ];
-
   robertKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAA3PSbVdQzIvsWTNWYhR298oaYDl9ySe/PBUZrlcjPB scha@in.tum.de"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQr4yKAEw1M3n5Dp1gAJ017jyz3aYaty6yAydn7aUAi klamm"
@@ -160,17 +156,6 @@ in
       uid = 2003;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = gierensKeys;
-    };
-
-    # Yi He, Sys-lab WS22 (Sebastian's group), and now a HiWi
-    yihe = {
-      isNormalUser = true;
-      home = "/home/yihe";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2006;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = yiheKeys;
     };
 
     # Robert Schambach, Masa's MSc student (cc-vm-io)
@@ -467,8 +452,6 @@ in
       allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = milenKeys;
     };
-
-    root.openssh.authorizedKeys.keys = yiheKeys;
   };
 
   # DANGER ZONE!
@@ -500,5 +483,6 @@ in
     "jonas"
     "kai"
     "paul"
+    "yihe"
   ];
 }
