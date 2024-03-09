@@ -27,8 +27,6 @@ let
       patrick
       francisco
       mmisono
-      yihe
-      robert
       ilya
       felix
       anatole
