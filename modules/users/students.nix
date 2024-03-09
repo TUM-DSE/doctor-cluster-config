@@ -85,9 +85,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1nFbMNCDHkh8iOR77/RvrUS3Yd14/NxKqZCEJHOJHmXMVfV+LzCcQOKXRBp2P66OzKu0PwaOksyqjiVlPI1WEwaESOmrol8PCFywdGU976DILPpCFH0Ce7vDx3rjS0eyzB3zjFHcAVy5umk6h9FCV+G3cCQPJXEZk1SLi2kj4ZqxxL0sKx3OubGKsXx4NGRcH4wt3HIksukRIm4e47/235gGqxGmnZvfdIzshmAtqNeiT78Eo+ybjT/n8D009NLCQoTEy8xjVAJjL3PnwHUuRdHnmTp2C5R8nt7dv4OzXIVwflQn4WEtGwUggd89k0PqaNE8p+mSLshYBj2dHlFNxTkCS27JwAKx2fiHYdpibLJYcP0INicStduPSIPQq3N4zF3z2RfIeWUfY3b4zgdwCFYck3WWu/f2K4DCYIrj2sC4sEt1eB0rHWhABjJHdqcfAXLhSKnOdr30r0wm7Wgwn8DJ0RolMibwi5CfgzW4a2mk0vop2meumxHMJvnYhlry0OzxlwXxMO5MQM3Pg9xoxHY+DJY1u9KG5gavM96H5UgSq66UhqH1Q7Ugg8zqKviIP+1dKPInq0dD745aoHFxynMQjfi/HTUmtGwJjEojPuwDX5zKwziAmCtosTRo6gVG7QkbNme5EEBEKiFA9griSPIZBUthagHyJLFsqfeITWQ=="
   ];
 
-  anandKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5f8emRDO9eK9FDLE5g6EdMHDywVoV0I2jseoXrjkvCqRylvFVbuZQOSSg4Zve74d5uLY1JRDO/kUjQpBxQVfsKxtggtdDFeprVeCbo3lJf7/aFoktfiHOO1bIKfQOq6FsdmOxCFsG6GWOGJ1AhQ89rUO7+7KcEScP0ZdMEINiINEj94nvCaWDI/+fxaL5W8TVq4nqMrSqXLLVvQKgzggHc39vwP+qmCxtH+/UkAaTwqZ64kNBdL9xENzlQ1zvxD7Kt/FWMMYVx89yi2G8BFsn5c7mULI3EnO902dMlOod+y2QpEBHV4O1DteMJIvtDebNowHFDVX4dSLGKUsv9mYWUotvBdDTNUBadl6GiHj+2OJpXNcTn04tPcd5hT71qaXZTMOGupPR2GAzB1BetfRc8Dqb8tFCzqkdofRVbbI6lCrTngFm+OOES2YHza6SMkfo12VOUTJQ0evU2BA/V9MaeiHqXo9DgAn6NnBGVQ7Fcr2W2X9r2lOkQujo+j0ruMM= anand@LAPTOP-IH04RQJ6"
-  ];
   alexanderKeys = [
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEpj5zfMSznyFbOL8z6W278nKP6WPkz8+xSZObXsSJZi"
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvDyakenTwms8HfK0plF9KSRbdegxyTFaekzlJBsRiW"
@@ -352,18 +349,6 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = brunoKeys;
     };
-
-    # Anand Krishna Rallabhandi, Project work with Atsushi (HeteroFunky)
-    # Remove after SS23
-    anand = {
-      isNormalUser = true;
-      home = "/home/anand";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2036;
-      allowedHosts = [ "amy" ];
-      openssh.authorizedKeys.keys = anandKeys;
-    };
     # Alexander Schindler, Thesis work with Patrick (VMPL)
     alexander = {
       isNormalUser = true;
@@ -484,5 +469,6 @@ in
     "kai"
     "paul"
     "yihe"
+    "anand"
   ];
 }
