@@ -4,10 +4,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFjpAcawhrQfHbjj9jf+tmM1/1XMeKxhemX6XnTWX0Ak"
   ];
 
-  dmitrylugovoyKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdbSlGlXXxUTL6ARkf1wlzOuCikGkdkle0s3ltav6CZEl+hdqbgRhpThR7fYL/ZYwciR2x71rfC1eoHa2LDy8YhFEZgfTPAanEAGmV+IF2+G5g3LudpifJUJcLjHZj8TF/bvoIr6wTVI4EqZ2SAO+152fbOLTmGimVihRPAadSimCym+IJHVAb/Avp+i6PxTM5k8VWBU+gf0m6M5qMv74KimaGWiMIG2CBhwvVby7uAOUKZ9ztSTKUnzLQdjzYD+vhi/IHC9DUIVqhl0pmwSnosazLpHXJl/Q5+nQhsfDs/sZKIMqlArEamouiEWHuxYLH+tesz2Z68PDBje5ReEISNSvIAr81ajSMMHGyo3Q2380lodV5pYtkDJTbA50jQ/0mj0W2kZC1IGsEqMH6BhcZMllh0vzmn7odHbvgFS7f+ohO0szLet6j1XSzrIEOzE00a61OjgK3K/HZ5+dgfzSfw55Ai5aFg19pL22Xber6PrEvH+HUKmSlG2YUFdMyUqkxgsOzaf0io4vksTwua7oBlKoNRToTjRXrb/wvDOL/tui+WFIriFgD5eaOuCDVJR8H47i85L6t08iRRhGb4gq/29cugZaX3k4WqM0HUaL3EOl9KX7MbfjCQ46c+1K7IEQc5ZsUWJFOUoVz4auFFTmeS0+zpCRcoeW39NYJPenlUw== dmitrylugovoy@Entrix-Dmitrys-MacBook-Pro.local"
-  ];
-
   mfKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
@@ -58,22 +54,8 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/RJrLS8Wjy5mTP+9c0Qg17SSjEytq5fdRBlXuz4GFKyr1rD064hIWeEP2mRiprbME2smiLl8jJG8d/WJKcK6xIPYs1qExCn4gt39kYPUmRnOwtcepfkdNTjIBvYAnPPjA+9t+m31wr2NUO6ns43SyDlkcz0YxXM1JuYpf77EDQ3HCHg3c+pn9MGXXaBrLqqP+7MNiIHHyygwASPxx5c4f98Me06DDlyZjGsriZB/X+W4eKum8AZsQAUpo9u1Njsb7BB2V4Y+WXnzJewyWUQNONeJVgzxB47k3PlVUvjWn4ZJ63uCVm8kDrfLM92RCSmDwVkd6SDHCefmh6L0g1cdl fritz.rehde@tum.de"
   ];
 
-  iuliaKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWO997ZygpIs+41KpvcZ9glH+vv/Wz0j59x1owYPyP6 iulia.cornea@tum.de"
-  ];
-
-
   martinLKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKs9HeN8+UkNXlfYBSFZmF7L+1lG/tckc1UxnI94bOt3 fair"
-  ];
-
-  elizaKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKva0ESsYg2pmkK5b7t0FbwZLk/ObmDJk07E9x5EdWH7 liza@w196-3i-v4.eduroam.dynamic.rbg.tum.de"
-  ];
-
-  florianKeys = [
-    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIK4f12ldfJGJhMUbAYOz5E3aXc+F6SScLb2n2KdVfqu4AAAAC3NzaDp0ZXJtaXVz"
-    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIOJpaI1Zb1R9gcipR71Ulh1SNxJj1frEK9XfzRFe/uJmAAAAC3NzaDp0ZXJtaXVz"
   ];
 
   brunoKeys = [
@@ -239,18 +221,6 @@ in
       openssh.authorizedKeys.keys = fritzKeys;
     };
 
-    # Iulia Cornea, Ma Thesis with Evgeny (configurable cloud deploymet w/ openstack and kubernetes)
-    # Remove after SS23
-    iulia = {
-      isNormalUser = true;
-      home = "/home/iulia";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2030;
-      allowedHosts = [ "clara" "graham" ];
-      openssh.authorizedKeys.keys = iuliaKeys;
-    };
-
     # Martin Lambeck, Ma Thesis with Jiyang (FAIR)
     # Remove after SS23
     martinL = {
@@ -262,43 +232,6 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = martinLKeys;
     };
-
-    # Elizaveta Boriskova, Thesis with Babis/Atsushi (FPGA serverless porting)
-    # Remove after WS23
-    eliza = {
-      isNormalUser = true;
-      home = "/home/eliza";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2032;
-      allowedHosts = [ "clara" ];
-      openssh.authorizedKeys.keys = elizaKeys;
-    };
-
-    # Florian Freudiger, Thesis with Peter (NIC queue multiplexing)
-    # Remove after WS23
-    florian = {
-      isNormalUser = true;
-      home = "/home/florian";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2033;
-      allowedHosts = [ "graham" "jackson" "christina" "wilfred" "river" "clara" ];
-      openssh.authorizedKeys.keys = florianKeys;
-    };
-
-    # Dmitry Lugovoy, MSc Thesis with Manos (Quantum Computing Scheduling)
-    # Remove after WS23
-    dmitrylugovoy = {
-      isNormalUser = true;
-      home = "/home/dmitrylugovoy";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2034;
-      allowedHosts = [ "graham" "ryan" "rose" ];
-      openssh.authorizedKeys.keys = dmitrylugovoyKeys;
-    };
-
     # Thang Tran, MSc Thesis with Manos (Quantum Computing Scheduling)
     # Remove after SS24
     thang = {
@@ -445,5 +378,10 @@ in
     "anand"
     "shu"
     "roberto"
+    "dmitrylugovoy"
+    "iulia"
+    "martinL"
+    "florian"
+    "eliza"
   ];
 }
