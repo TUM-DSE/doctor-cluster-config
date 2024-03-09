@@ -228,17 +228,6 @@ in
       openssh.authorizedKeys.keys = nateKeys;
     };
 
-    # Roberto Castellotti, MSc student (guided research) with Masa (unik)
-    # disabled for now
-    #roberto = {
-    #  isNormalUser = true;
-    #  home = "/home/roberto";
-    #  inherit (config.users.users.joerg) extraGroups;
-    #  shell = "/run/current-system/sw/bin/bash";
-    #  uid = 2027;
-    #  openssh.authorizedKeys.keys = robertoKeys;
-    #};
-
     # Fritz Rehde, working on the WASM project with Martin
     fritz = {
       isNormalUser = true;
@@ -455,5 +444,6 @@ in
     "yihe"
     "anand"
     "shu"
+    "roberto"
   ];
 }
