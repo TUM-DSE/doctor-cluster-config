@@ -408,7 +408,7 @@ in
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
-     # Paul Zhang, B.Sc.. thesis with Ilya (UkBPF project)
+     # Paul Zhang, B.Sc.. thesis with Ilya (UkBPF project, Ilya Meignan--Masson)
     paulz = {
       isNormalUser = true;
       home = "/home/paulz";
