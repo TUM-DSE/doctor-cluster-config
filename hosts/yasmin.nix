@@ -12,8 +12,5 @@
 
   system.stateVersion = "20.09";
 
-  nix = {
-    nrBuildUsers = 224;
-    settings.system-features = [ "benchmark" "big-parallel" "kvm" "nixos-test" "armv8.1-a" ];
-  };
+  nix.settings.system-features = [ "benchmark" "big-parallel" "kvm" "nixos-test" "armv8.1-a" ];
 }

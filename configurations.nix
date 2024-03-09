@@ -44,6 +44,7 @@ let
 
     srvos.nixosModules.mixins-telegraf
     srvos.nixosModules.mixins-terminfo
+    srvos.nixosModules.mixins-nix-experimental
 
     sops-nix.nixosModules.sops
     ({ pkgs

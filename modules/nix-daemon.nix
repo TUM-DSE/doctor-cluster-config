@@ -29,9 +29,6 @@ in
       gc.dates = "03:15";
       gc.options = "--delete-older-than 14d";
 
-      # should be enough?
-      nrBuildUsers = lib.mkDefault 32;
-
       # https://github.com/NixOS/nix/issues/719
 
       settings = {
