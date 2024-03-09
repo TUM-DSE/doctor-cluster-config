@@ -1,14 +1,14 @@
 { config, pkgs, lib, ... }:
 let
-  asahi = import ../../packages/overlay.nix pkgs pkgs;
+  pkgs' = config.hardware.asahi.pkgs;
 
-  bootM1n1 = asahi.m1n1.override {
+  bootM1n1 = pkgs'.m1n1.override {
     isRelease = true;
     withTools = false;
     customLogo = config.boot.m1n1CustomLogo;
   };
 
-  bootUBoot = asahi.uboot-asahi.override {
+  bootUBoot = pkgs'.uboot-asahi.override {
     m1n1 = bootM1n1;
   };
 

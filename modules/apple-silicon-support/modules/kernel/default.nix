@@ -4,11 +4,10 @@
 {
   config = {
     boot.kernelPackages = let
-      asahi = import ../../packages/overlay.nix pkgs pkgs;
+      pkgs' = config.hardware.asahi.pkgs;
     in
-      asahi.linux-asahi.override {
-        inherit (config.boot) kernelPatches;
-        _4KBuild = config.hardware.asahi.use4KPages;
+      pkgs'.linux-asahi.override {
+        _kernelPatches = config.boot.kernelPatches;
         withRust = config.hardware.asahi.withRust;
       };
 
@@ -16,9 +15,6 @@
     # schedutil is a prerequisite for using it
     # source: https://www.kernel.org/doc/html/latest/scheduler/sched-energy.html
     powerManagement.cpuFreqGovernor = lib.mkOverride 800 "schedutil";
-
-    boot.supportedFilesystems = [ "zfs" ];
-    networking.hostId = lib.mkDefault ("bb5b017d");
 
     boot.initrd.includeDefaultModules = false;
     boot.initrd.availableKernelModules = [
@@ -60,7 +56,7 @@
 
     boot.kernelParams = [
       "earlycon"
-      "console=ttySAC0,1500000"
+      "console=ttySAC0,115200n8"
       "console=tty0"
       "boot.shell_on_fail"
       # Apple's SSDs are slow (~dozens of ms) at processing flush requests which
@@ -85,20 +81,21 @@
       efiInstallAsRemovable = true;
       device = "nodev";
     };
+
+    # autosuspend was enabled as safe for the PCI SD card reader
+    # "Genesys Logic, Inc GL9755 SD Host Controller [17a0:9755] (rev 01)"
+    # by recent systemd versions, but this has a "negative interaction"
+    # with our kernel/SoC and causes random boot hangs. disable it!
+    services.udev.extraHwdb = ''
+      pci:v000017A0d00009755*
+        ID_AUTOSUSPEND=0
+    '';
   };
 
   imports = [
-    ./edge.nix
+    (lib.mkRemovedOptionModule [ "hardware" "asahi" "addEdgeKernelConfig" ]
+      "All edge kernel config options are now the default.")
   ];
-
-  options.hardware.asahi.use4KPages = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
-    description = ''
-      Build the Asahi Linux kernel with 4K pages to improve compatibility in
-      some cases at the cost of performance in others.
-    '';
-  };
 
   options.hardware.asahi.withRust = lib.mkOption {
     type = lib.types.bool;

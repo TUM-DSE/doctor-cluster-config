@@ -25,14 +25,14 @@ let
   });
 in stdenv.mkDerivation rec {
   pname = "m1n1";
-  version = "1.2.6";
+  version = "1.4.11";
 
   src = fetchFromGitHub {
-    # tracking: https://github.com/AsahiLinux/PKGBUILDs/blob/main/m1n1/PKGBUILD
+    # tracking: https://src.fedoraproject.org/rpms/m1n1
     owner = "AsahiLinux";
     repo = "m1n1";
     rev = "v${version}";
-    hash = "sha256-2Yw/jfWyMdkLLJ9o1bPmNZzghfKf7oGprc7QYIHdGPE=";
+    hash = "sha256-1lWI9tcOxgrcfaPfdSF+xRE9qofhNR3SQiA4h86VVeE=";
     fetchSubmodules = true;
   };
 
@@ -62,6 +62,7 @@ in stdenv.mkDerivation rec {
 
     rm bootlogo_128.png
     convert bootlogo_256.png -resize 128x128 bootlogo_128.png
+    patchShebangs --build ./makelogo.sh
     ./makelogo.sh
     popd &>/dev/null
   '';

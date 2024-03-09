@@ -35,7 +35,7 @@
   options.hardware.asahi = {
     extractPeripheralFirmware = lib.mkOption {
       type = lib.types.bool;
-      default = false;
+      default = true;
       description = ''
         Automatically extract the non-free non-redistributable peripheral
         firmware necessary for features like Wi-Fi.
