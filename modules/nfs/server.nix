@@ -199,6 +199,7 @@
       "/export/home/gierens/"
       "/export/home/simonk/"
       "/export/home/patrick/"
+      "/export/home/dimitrios"
     ];
     preHook = ''
       set -x
