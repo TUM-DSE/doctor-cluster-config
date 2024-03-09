@@ -75,15 +75,6 @@ let
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBYcRp+3vOyxwxDybx5qgXRK1Cms1xnhGDYUJtPpOmFhNEcYIo9VHQjn4A7f5EKxxpSzJTFO71d4nyRsSfk695g="
   ];
 
-  matthiasKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDg/MON5ETxrOAcmxbnphJao1MxxeRIDDn7M6tMqERThU5gPumc2W/eAkWqXs/ZdgmMV9vBVdmZS4J++L2yLwWdcZcSeUC7lMdRMRW8i56ME6tOMymZIk0Z6p+BFFzgncOa+IFtx1QZ8Pl4Z8wfVNU9L5XY6lrfgoDjR40KgIpa4XZE1SiO2BbCsa2zhA1ZNCeOa6FEpK80BlA7Jw4pJ0w+Bl7UfGiOTkQ9idoygy7/B8Z48jSXgHPlOzxR1HyvG8QoNEGThK0o441DxVPfy4p9Q5HFqj2Wf1Vrxktoco6dpdNkuU89z5L/JsKfkbo9dBNRW6ICVus84rLUr6uFFyU39FahRtfJ7xsZjt2IVd2eY2nZWdJ2Pd7ytzzD+djJKsnDJXm96fh6qpjYHzDGPqLUkd86FGSpr3gbFvCprXkUDi8J5z/GkdAwNeqk9kUdYBEcGS5E3jciAxz4fmDGYhJ8O6gs9MRT947mWG1Q6+vOqcglxBUX+5w7LIb9bhUNLTs= mhille@mhilleWork"
-    "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFbOAoiGH2iTed3lz9DGJu/+rDJnVrbuKGX741qsCu4XWvlbrzCugffFugPTfRyykTT0SWRyhWe2bVjAWP4k1OsDQB9d5JI3b0dETHYByksUs0SQyjg5JPMZnVtfxrtQhaPsrHc+bie+sUjC4FObn0YD1tQeY6RMK7gmN8F6X8rjoRvSQ== mhille@mhilleWork"
-  ];
-
-  martinklKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvQLwToitv9b0cZK2UNUh26BYJ8/ie8oexCyye+BpXP martin@kleppmann.com"
-  ];
-
   patrickKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBzLGDgXaT6+pWNDa5UazUO2RAvlWwkrGLNiWHSy+dkp"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBovteXjmdsqJ432B4rZillIjnfe7Sx2LhfMg2WtkAks"
@@ -124,7 +115,6 @@ in
       };
 
       # Dimitris Stavrakakis
-      # tum
       dimitrios = {
         isNormalUser = true;
         home = "/home/dimitrios";
@@ -134,7 +124,7 @@ in
         openssh.authorizedKeys.keys = dimitriosKeys;
       };
 
-      # Felix Gust, Atsushi's Master student (Trustworthy disaggregation)
+      # Felix Gust
       felix = {
         isNormalUser = true;
         home = "/home/felix";
@@ -146,7 +136,6 @@ in
       };
 
       # Harshavardhan Unnibhavi
-      # tum
       harshanavkis = {
         isNormalUser = true;
         home = "/home/harshanavkis";
@@ -168,7 +157,6 @@ in
       };
 
       # Redha Gouicem
-      # tum
       redha = {
         isNormalUser = true;
         home = "/home/redha";
@@ -179,7 +167,6 @@ in
       };
 
       # Atsushi Koshiba
-      # tum
       atsushi = {
         isNormalUser = true;
         home = "/home/atsushi";
@@ -190,7 +177,6 @@ in
       };
 
       # Jiyang Chen
-      # tum
       chenjiyang = {
         isNormalUser = true;
         home = "/home/chenjiyang";
@@ -201,7 +187,6 @@ in
       };
 
       # Charalampos Mainas
-      # tum
       cmainas = {
         isNormalUser = true;
         home = "/home/cmainas";
@@ -212,7 +197,6 @@ in
       };
 
       # Masanouri Misono
-      # tum
       masa = {
         isNormalUser = true;
         home = "/home/masa";
@@ -223,7 +207,6 @@ in
       };
 
       # Sebastian Reimers
-      # tum
       sebastian = {
         isNormalUser = true;
         home = "/home/sebastian";
@@ -231,28 +214,6 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1022;
         openssh.authorizedKeys.keys = sebastianKeys;
-      };
-
-      # Matthias Hille
-      # tud
-      matthias = {
-        isNormalUser = true;
-        home = "/home/matthias";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1023;
-        openssh.authorizedKeys.keys = matthiasKeys;
-      };
-
-      # Martin Kleppmann
-      # tum
-      martinkl = {
-        isNormalUser = true;
-        home = "/home/martinkl";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1024;
-        openssh.authorizedKeys.keys = martinklKeys;
       };
 
       # Francisco Romao
@@ -333,7 +294,10 @@ in
     # DANGER ZONE!
     # Make sure all data is backed up before adding user names here. This will
     # delete all data of the associated user
-    users.deletedUsers = [ ];
+    users.deletedUsers = [
+      "martinkl"
+      "matthias"
+    ];
 
     nix.settings.trusted-users = [ "joerg" "harshanavkis" "sandro" "redha" ];
   };
