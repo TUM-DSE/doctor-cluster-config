@@ -1,4 +1,5 @@
-{ python3
+{ lib
+, python3
 , fetchFromGitHub
 , gzip
 , gnutar
@@ -7,19 +8,15 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "asahi-fwextract";
-  version = "0.5pre2";
+  version = "0.6.9";
 
   # tracking version: https://github.com/AsahiLinux/PKGBUILDs/blob/main/asahi-fwextract/PKGBUILD
   src = fetchFromGitHub {
     owner = "AsahiLinux";
     repo = "asahi-installer";
     rev = "v${version}";
-    hash = "sha256-p34eN2iE1s8rupdysjyf6GN8kHkVG9NDw31YKPDNXbk=";
+    hash = "sha256-MkNi4EBgT4gfev/yWqYyw5HZxewj6XTfb8na+eI2iVo=";
   };
-
-  patches = [
-    ./add_entry_point.patch
-  ];
 
   postPatch = ''
     substituteInPlace asahi_firmware/img4.py \
