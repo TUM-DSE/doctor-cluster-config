@@ -133,6 +133,7 @@ in
     };
 
     # Robert Schambach, Masa's MSc student (cc-vm-io)
+    # Delete after May 2024
     robert = {
       isNormalUser = true;
       home = "/home/robert";
@@ -144,7 +145,7 @@ in
     };
 
     # Moritz Beckel, Robert's BSc student (cc-vm-io)
-    # Delete after WS23
+    # Delete after April 2024
     moritz = {
       isNormalUser = true;
       home = "/home/moritz";
