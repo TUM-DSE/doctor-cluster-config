@@ -22,3 +22,4 @@
 | Martin Fink                 | MacBook Pro 14" M1 Max (laptop) |
 | Anatole Lefort              | Lenovo ThinkPad X1 Carbon gen 11 (laptop), Lenovo ThinkVision P27u-20 (x2, monitor), Lenovo Thunderbolt 3 Dock Gen 2 (docking station) |
 | Evgeny Volynsky             | Lenovo ThinkPad P15 Gen 1 (laptop), Acer (monitor), Philips (monitor), Lenovo Thunderbolt Dock (docking station) |
+| Teofil Bodea                | Beyerdynamic MMX 300 (headphones)                                                                                |
