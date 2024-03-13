@@ -118,6 +118,8 @@ let
   paulzKeys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcFpqGUDaxZnfVR//Dm8Zncur8iaaJUbLiB2bMiL/64LHhQDqfeXKuJO4MbtO15A8VgfFY4r40w+cLrQ5zXJLioCJiLAKvC3BBza7Y2zcCHsITLxaky2Nr7TyTVWKYX2iSiYROdlSYYmLAVqAz+Ha3ENcJ3/rKOfGZRQ3Z/+DtjeNXauiznj3ezkLpt9gXpW+YXf2kffv/6RF1GRIsaOQ5LNQpNrXk4DHgOS/AdlKP0lMqSjp3jLOo+pVrIWQ9cyg+mTtXTJMP7adDUafr5QBaMcP4Oo7xk8exaDeSf1LVJg+pq0vq0NkrMGQpJbA/ssm2515xvEW4LbUH1TfrNP8f62dPn4qjDFo1pshfn8dtmBSmTf7ZooNVYKs2h3WkRYpyvQVnDax9CbrYnCh6tLcqenEr8Nl3lYAeK14LfkabeCD/C0xs1BwrzlXwClQRXcj/PuDHpplhf3LriUtH4KA0g2WhWF0aIvw0yOTl0FwGG4P1WMp2lL588UU4UVEi6UE= paulzhng"
 ];
 
+  hendrikKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFcakm1qnZBt+7q+cyEzujZ45b89s7E91XxpVR4LFYGa= hendrik"];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -437,6 +439,16 @@ in
       uid = 2043;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = paulzKeys;
+    };
+
+    hendrik = {
+      isNormalUser = true;
+      home = "/home/hendrik";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2044;
+      allowedHosts = [ "all" ];
+      openssh.authorizedKeys.keys = hendrikKeys;
     };
 
     root.openssh.authorizedKeys.keys = yiheKeys;
