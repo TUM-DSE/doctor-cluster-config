@@ -8,6 +8,10 @@
   ];
 
   boot.hugepages1GB.number = 8;
+  boot.hugepages2MB.number = let 
+    gb = 100;
+  in gb * 1024 / 2;
+
 
   networking.hostName = "christina";
 
