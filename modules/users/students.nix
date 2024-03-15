@@ -120,6 +120,8 @@ let
 
   hendrikKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"];
 
+  milenKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWU9Mh+p7C7PsAcJKYDw8MpnRaYteO5a2eBhZIjISBs milen.vitanov96@gmail.com"];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -437,7 +439,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2043;
-      allowedHosts = [ "all" ];
+      allowedHosts = [ "adelaide" ]; # TODO add the new AMD server when it arrives
       openssh.authorizedKeys.keys = paulzKeys;
     };
 
@@ -449,6 +451,16 @@ in
       uid = 2044;
       allowedHosts = [ "christina" "rose" "wilfred" "graham" "jackson" "river" ]; # TODO figure out what he needs access to
       openssh.authorizedKeys.keys = hendrikKeys;
+    };
+
+    milen = {
+      isNormalUser = true;
+      home="/home/milen";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2045;
+      allowedHosts = [ "adelaide" ];
+      openssh.authorizedKeys.keys = milenKeys;
     };
 
     root.openssh.authorizedKeys.keys = yiheKeys;
