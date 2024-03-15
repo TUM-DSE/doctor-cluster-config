@@ -118,7 +118,9 @@ let
   paulzKeys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcFpqGUDaxZnfVR//Dm8Zncur8iaaJUbLiB2bMiL/64LHhQDqfeXKuJO4MbtO15A8VgfFY4r40w+cLrQ5zXJLioCJiLAKvC3BBza7Y2zcCHsITLxaky2Nr7TyTVWKYX2iSiYROdlSYYmLAVqAz+Ha3ENcJ3/rKOfGZRQ3Z/+DtjeNXauiznj3ezkLpt9gXpW+YXf2kffv/6RF1GRIsaOQ5LNQpNrXk4DHgOS/AdlKP0lMqSjp3jLOo+pVrIWQ9cyg+mTtXTJMP7adDUafr5QBaMcP4Oo7xk8exaDeSf1LVJg+pq0vq0NkrMGQpJbA/ssm2515xvEW4LbUH1TfrNP8f62dPn4qjDFo1pshfn8dtmBSmTf7ZooNVYKs2h3WkRYpyvQVnDax9CbrYnCh6tLcqenEr8Nl3lYAeK14LfkabeCD/C0xs1BwrzlXwClQRXcj/PuDHpplhf3LriUtH4KA0g2WhWF0aIvw0yOTl0FwGG4P1WMp2lL588UU4UVEi6UE= paulzhng"
 ];
 
-  hendrikKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFcakm1qnZBt+7q+cyEzujZ45b89s7E91XxpVR4LFYGa= hendrik"];
+  hendrikKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"];
+
+  milenKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWU9Mh+p7C7PsAcJKYDw8MpnRaYteO5a2eBhZIjISBs milen.vitanov96@gmail.com"];
 
   christianKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIhea3KWKAWEuDkbyGhHmyV6XS8Ye3IN7oW5gchmNJg1 crist@lptlegion"
@@ -435,13 +437,14 @@ in
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
+     # Paul Zhang, B.Sc.. thesis with Ilya (UkBPF project)
     paulz = {
       isNormalUser = true;
       home = "/home/paulz";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2043;
-      allowedHosts = [ "all" ];
+      allowedHosts = [ "adelaide" ]; # TODO add the new AMD server when it arrives
       openssh.authorizedKeys.keys = paulzKeys;
     };
 
@@ -451,9 +454,10 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2044;
-      allowedHosts = [ "all" ];
+      allowedHosts = [ "christina" "rose" "wilfred" "graham" "jackson" "river" ]; # TODO figure out what he needs access to
       openssh.authorizedKeys.keys = hendrikKeys;
     };
+
 
     # Christian Sandu, M.Sc. thesis with Ilya (CHERI db project)
     christian = {
@@ -461,9 +465,20 @@ in
       home = "/home/christian";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
-      uid = 2045;
+      uid = 2046;
       allowedHosts = [ "graham" ];
       openssh.authorizedKeys.keys = christianKeys;
+    };
+
+    # Milen Vitanov, M.Sc. thesis with Ilya (UkBPF project)
+    milen = {
+      isNormalUser = true;
+      home="/home/milen";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2045;
+      allowedHosts = [ "adelaide" ];
+      openssh.authorizedKeys.keys = milenKeys;
     };
 
     root.openssh.authorizedKeys.keys = yiheKeys;
