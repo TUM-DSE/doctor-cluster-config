@@ -51,12 +51,12 @@ Parameters to consider for matching cards to slots:
     - jackson: dual port. (,)
         - MAC1: b4:96:91:a4:1b:88
         - MAC2: b4:96:91:a4:1b:89
-    - christina: dual port. (christina,craig5)
+    - christina: dual port. (christina-river)
         - MAC1:
         - MAC2:
     - wilfred: single port. (wilfred-craig3)
         - MAC: b4:96:91:b3:8b:04
-    - river: single port. (river-craig2)
+    - river: single port. (river-christina)
         - MAC: b4:96:91:b3:8b:3c
     - rose: single port. (rose-craig1)
         - MAC: b4:96:91:b3:8a:90
