@@ -10,6 +10,13 @@
   ];
 
   networking.hostName = "amy";
+  # give ethernet interface eno1 internet access through NAT, we use this for
+  # the IPU in rose because its ethernet ports are occupied
+  networking.nat = {
+    enable = true;
+    externalInterface = "enp194s0f0np0";
+    internalInterfaces = [ "eno1" ];
+  };
 
   # for some reason the disk naming/usage of /dev/nvme{0,1}n1 is
   # inconsistent on this server compared to others. Lets now be
