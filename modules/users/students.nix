@@ -448,6 +448,7 @@ in
       openssh.authorizedKeys.keys = paulzKeys;
     };
 
+    # Hendrik Huebner, HiWi for SS 24 with Peter (vmux)
     hendrik = {
       isNormalUser = true;
       home = "/home/hendrik";
