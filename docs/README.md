@@ -111,9 +111,13 @@ machines. Those machines also are not backed up.
 # Storage
 
 We have a shared nfs-based `/home` mounted. The nfs for /home is based on a NVME
-disk on nardole and is limited to 1TB. If you need fast local disk access use
-`/scratch/$YOURUSER` - however unlike `/home` and `/share` this directory are
-not included in the backup. If you want to share larger datasets between
+disk on nardole and is limited to 3.5TB.
+Please do not store large amounts of data such as VM images here. VM images of
+running VMs will also interfere with the Backupsoftware.
+Instead if you need fast local disk access use `/scratch/$YOURUSER`
+- however unlike `/home` and `/share` this directory are
+not included in the backup.
+If you want to share larger datasets between
 machines use `/share`, which is based on two hard disk (15TB capacity).
 
 Both nfs export stored on `nardole` are also replicated to `bill` every 15
