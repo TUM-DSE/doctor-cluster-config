@@ -144,10 +144,9 @@
     };
     compression = "auto,zstd";
     startAt = "daily";
+    environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-share-ssh.path}";
     preHook = ''
       set -x
-      eval $(ssh-agent)
-      ssh-add ${config.sops.secrets.tum-borgbackup-share-ssh.path}
     '';
 
     postHook = ''
@@ -200,10 +199,9 @@
       "/export/home/simonk/"
       "/export/home/patrick/"
     ];
+    environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-home-ssh.path}";
     preHook = ''
       set -x
-      eval $(ssh-agent)
-      ssh-add ${config.sops.secrets.tum-borgbackup-home-ssh.path}
     '';
 
     postHook = ''
