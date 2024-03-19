@@ -15,6 +15,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: docs/hosts/craig.sops$
   - key_groups:
       - age:
@@ -31,6 +32,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/adelaide.yml$
   - key_groups:
       - age:
@@ -47,6 +49,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/amy.yml$
   - key_groups:
       - age:
@@ -63,6 +66,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/astrid.yml$
   - key_groups:
       - age:
@@ -79,6 +83,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/bill.yml$
   - key_groups:
       - age:
@@ -95,6 +100,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/christina.yml$
   - key_groups:
       - age:
@@ -111,6 +117,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/clara.yml$
   - key_groups:
       - age:
@@ -127,6 +134,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/dan.yml$
   - key_groups:
       - age:
@@ -143,6 +151,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/doctor.yml$
   - key_groups:
       - age:
@@ -159,6 +168,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/donna.yml$
   - key_groups:
       - age:
@@ -175,6 +185,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/graham.yml$
   - key_groups:
       - age:
@@ -191,6 +202,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/jack.yml$
   - key_groups:
       - age:
@@ -207,6 +219,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/jackson.yml$
   - key_groups:
       - age:
@@ -223,6 +236,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/mickey.yml$
   - key_groups:
       - age:
@@ -239,6 +253,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/nardole.yml$
   - key_groups:
       - age:
@@ -255,6 +270,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/river.yml$
   - key_groups:
       - age:
@@ -271,6 +287,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/rose.yml$
   - key_groups:
       - age:
@@ -287,6 +304,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/ruby.yml$
   - key_groups:
       - age:
@@ -303,6 +321,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/ryan.yml$
   - key_groups:
       - age:
@@ -319,6 +338,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/vicki.yml$
   - key_groups:
       - age:
@@ -335,6 +355,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/vislor.yml$
   - key_groups:
       - age:
@@ -351,6 +372,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/wilfred.yml$
   - key_groups:
       - age:
@@ -367,6 +389,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: hosts/yasmin.yml$
   - key_groups:
       - age:
@@ -385,6 +408,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: modules/k3s/secrets.yml$
   - key_groups:
       - age:
@@ -402,11 +426,13 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: modules/nfs/secrets.yml$
   - key_groups:
       - age:
           - age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59
           - age1t60q35wlu8rjk8k4trf7jg9q2kt0r44d66c5ezqpuw468jg5fs0q05qfwj
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
           - age1hen4wskutter8h4ypkhv7aqvh7mr9gl7pz7gd9mgln4jl2ckxq7qaks7h6
           - age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv
           - age1mfwpvl4fkjukpjc3502dgalvmllg5mzl8xq0p6wz2xegeev8r5ksjc2flq
@@ -451,6 +477,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: modules/secrets.yml$
   - key_groups:
       - age:
@@ -466,6 +493,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: modules/sshd/[^/]+\.yaml$
   - key_groups:
       - age:
@@ -481,6 +509,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: modules/sshd/ca-keys.yml$
   - key_groups:
       - age:
@@ -496,6 +525,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: pkgs/install-iso/secrets.yml
   - key_groups:
       - age:
@@ -511,6 +541,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: secrets.yml$
   - key_groups:
       - age:
@@ -526,6 +557,7 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: terraform/github-permissions/secrets.enc.json$
   - key_groups:
       - age:
@@ -541,4 +573,5 @@ creation_rules:
           - age1h72rxhnmvfp55rct4zj4frhuav0uf23sgre2e8qyrvqd3zu3x40swg0rhc
           - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
           - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
     path_regex: terraform/secrets.enc.json$
