@@ -31,6 +31,7 @@ let
       robert
       ilya
       felix
+      anatole
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
