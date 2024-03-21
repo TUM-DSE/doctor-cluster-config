@@ -310,5 +310,14 @@ in
           ./hosts/ruby.nix
         ];
     };
+
+    xavier = nixosSystem {
+      pkgs = pkgs-x86_64-linux;
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/xavier.nix
+        ];
+    };
   };
 }
