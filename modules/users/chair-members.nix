@@ -47,6 +47,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHM2c6Z1MvCqi75iKSbZDUCWnNEwxmU9hoXKDCk//qBo dimstav23@lenovo"
   ];
 
+  felixKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtPYKJOWfanR0dTkoQuYWA7XtiiPiVTYqpldjIuEk4w"
+  ];
+
   harshanavkisKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCk5NDpY5ZdeUZl1jwiPuUgDad9i9oKxq2Ocm/P2Nf6SVMgl6aaiWEPzS7QfkZpOCqwtBqnBdUoykvQ8RwGCBoA7H9KiV0laqZFIbdNmiFKhZX4KQk8WVVxBlVgUIpLfp1eN7iu1PX0shO7/+zkObF2lAP2XMWpPOanfB1sHS2Um4AdEaYo+4QlUdrBS3WwBDLnuZdsG6B3CfAfVdj+zuJALnKdd/p+HUzDKD031SFGYUT7pzvsOVkmrvNbSv3l2dbVUKVjC7NDTMb3tk0iIGT5RdyYNth6mdR4EgtjNl+vZqWiM/1wRoY7SZ1gmSaXkgNNU3DM9tU7IHc0JFGXjRCxdNVy8EuxZ0f/szvVt9RyuCizkpJ6WJBKjqX651uDLxNJ4FV2qTK4jBANKpWVt5J4BIjCeIOCTSsRoW61WSefQy2LovHr/1B9/vmYsOsicYOd41lcCjJ1AuHIY6HzYS7nvxaFHoC0hvxJsFgCxHUHjDqjfuRaiBthtZu/2cRWcJybYWmsfRn7cKPKFNo7VscC1Hu0YVyKQMxyzq1y9lC54IXjoFrnkicUYYLA6jU5qwoadvPqCSnGfOZBKSW1gFOZYfGKlf0u/CDCqdm1IfVGXQwONzJaELhpmV9bcING0cXLs+XfLe5kPhg7vXb8qHTgC37Jtodf/+s3M4SbW7WA4w== hvub@hack-haven"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCY1+b1HIuJ4hy+NMst9qjJmBCY9Zyk8rrZlUyXGy0ll06kLwUiDNzcKUuKFH1y3zsn+1yGZFFjZUWi4mnpyNWSkSsQ1HJcuz2bFLw+5UyF42K+HPyeq6SE7xZcZ/cEE508Mqms/hIjl+tffRtoA2jxDZNdEjk9Qq/gzuYJo0b13bqpDRnrU1vUIk7egw4XOU29Wl7tpdKiESf6fow+Hi71BoLUeBjtJp6lRr/oqmpxPcFgI4BQD61VuPH3BeQIlZl8TWmqiZ+XjOHxxqkDCH+f4ZdM++P1p8kIkhz8wZ3ajNIbJFnqCxOBkd/zTNLnKCmZafW0SlIm1rLh8W1na97wKJCGCPjTVzrq5dVTG6sEApuBx1kTk3Ir44V78CwkN2X0bTJmWyj/5QxF5cEbKlkP9UKmSFiDlk5/nnxPsWkNhIzyaEMTP/pZFWgAK1aWXwh9/kLn/YSTjKs5BhIjEw4EuFybWgiNzn2Cy38Ir5oR1XA+vmS0flti4K9eHWGzjxGcSb53jOcqWdILiTV0iPq+0H1mUCr5ZIUGF06FBjdEkpxlmg9PsTdf/uIkvkicYVQLUsG25oNZg+oOa0eJEuAqR48VSDvNwUn2sbaX22J22eQFEkaqgr+W6oGOny87Ig6fFglNNWQeLOS/mJ8HKnRS2rkxu2i6VYwLZIulVGpS7Q== hvub@TUM-Thinkpad"
@@ -71,15 +75,6 @@ let
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBG0TjS/uGWx3om7H8NsEZR6fA2SmEq89SxBfb43Mwe91fi7+O8oxrdQgcjk5Xo9cvSGmSKYIxH+TJVoNJBh5dkU= sebastian@ReimersS-T16"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOxedj13JHRmts0X34Gs7FPDO4T3qEUw7Yu6TPufNLnvD8DlkUGyUKGQAuXd97pOfX5YOg+sI2NSk/1uBoZlW8U="
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBYcRp+3vOyxwxDybx5qgXRK1Cms1xnhGDYUJtPpOmFhNEcYIo9VHQjn4A7f5EKxxpSzJTFO71d4nyRsSfk695g="
-  ];
-
-  matthiasKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDg/MON5ETxrOAcmxbnphJao1MxxeRIDDn7M6tMqERThU5gPumc2W/eAkWqXs/ZdgmMV9vBVdmZS4J++L2yLwWdcZcSeUC7lMdRMRW8i56ME6tOMymZIk0Z6p+BFFzgncOa+IFtx1QZ8Pl4Z8wfVNU9L5XY6lrfgoDjR40KgIpa4XZE1SiO2BbCsa2zhA1ZNCeOa6FEpK80BlA7Jw4pJ0w+Bl7UfGiOTkQ9idoygy7/B8Z48jSXgHPlOzxR1HyvG8QoNEGThK0o441DxVPfy4p9Q5HFqj2Wf1Vrxktoco6dpdNkuU89z5L/JsKfkbo9dBNRW6ICVus84rLUr6uFFyU39FahRtfJ7xsZjt2IVd2eY2nZWdJ2Pd7ytzzD+djJKsnDJXm96fh6qpjYHzDGPqLUkd86FGSpr3gbFvCprXkUDi8J5z/GkdAwNeqk9kUdYBEcGS5E3jciAxz4fmDGYhJ8O6gs9MRT947mWG1Q6+vOqcglxBUX+5w7LIb9bhUNLTs= mhille@mhilleWork"
-    "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFbOAoiGH2iTed3lz9DGJu/+rDJnVrbuKGX741qsCu4XWvlbrzCugffFugPTfRyykTT0SWRyhWe2bVjAWP4k1OsDQB9d5JI3b0dETHYByksUs0SQyjg5JPMZnVtfxrtQhaPsrHc+bie+sUjC4FObn0YD1tQeY6RMK7gmN8F6X8rjoRvSQ== mhille@mhilleWork"
-  ];
-
-  martinklKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvQLwToitv9b0cZK2UNUh26BYJ8/ie8oexCyye+BpXP martin@kleppmann.com"
   ];
 
   patrickKeys = [
@@ -122,7 +117,6 @@ in
       };
 
       # Dimitris Stavrakakis
-      # tum
       dimitrios = {
         isNormalUser = true;
         home = "/home/dimitrios";
@@ -132,8 +126,18 @@ in
         openssh.authorizedKeys.keys = dimitriosKeys;
       };
 
+      # Felix Gust
+      felix = {
+        isNormalUser = true;
+        home = "/home/felix";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2022;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = felixKeys;
+      };
+
       # Harshavardhan Unnibhavi
-      # tum
       harshanavkis = {
         isNormalUser = true;
         home = "/home/harshanavkis";
@@ -155,7 +159,6 @@ in
       };
 
       # Redha Gouicem
-      # tum
       redha = {
         isNormalUser = true;
         home = "/home/redha";
@@ -166,7 +169,6 @@ in
       };
 
       # Atsushi Koshiba
-      # tum
       atsushi = {
         isNormalUser = true;
         home = "/home/atsushi";
@@ -177,7 +179,6 @@ in
       };
 
       # Jiyang Chen
-      # tum
       chenjiyang = {
         isNormalUser = true;
         home = "/home/chenjiyang";
@@ -188,7 +189,6 @@ in
       };
 
       # Charalampos Mainas
-      # tum
       cmainas = {
         isNormalUser = true;
         home = "/home/cmainas";
@@ -199,7 +199,6 @@ in
       };
 
       # Masanouri Misono
-      # tum
       masa = {
         isNormalUser = true;
         home = "/home/masa";
@@ -210,7 +209,6 @@ in
       };
 
       # Sebastian Reimers
-      # tum
       sebastian = {
         isNormalUser = true;
         home = "/home/sebastian";
@@ -218,28 +216,6 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1022;
         openssh.authorizedKeys.keys = sebastianKeys;
-      };
-
-      # Matthias Hille
-      # tud
-      matthias = {
-        isNormalUser = true;
-        home = "/home/matthias";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1023;
-        openssh.authorizedKeys.keys = matthiasKeys;
-      };
-
-      # Martin Kleppmann
-      # tum
-      martinkl = {
-        isNormalUser = true;
-        home = "/home/martinkl";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1024;
-        openssh.authorizedKeys.keys = martinklKeys;
       };
 
       # Francisco Romao
@@ -312,7 +288,8 @@ in
         openssh.authorizedKeys.keys = harshanavkisKeys
           ++ dimitraKeys
           ++ dimitriosKeys
-          ++ redhaKeys;
+          ++ redhaKeys
+          ++ felixKeys;
       };
     };
 
@@ -320,19 +297,8 @@ in
     # Make sure all data is backed up before adding user names here. This will
     # delete all data of the associated user
     users.deletedUsers = [
-      # User for Eurosys 22 artifact evaluation
-      "reviewer"
-      # Michio Honda
-      "michio"
-      # Jin
-      "mjnam"
-      "iris"
-      # Myron Tsatsarakis
-      "myron"
-      # Simon Ellmann
-      "ackxolotl"
-      # Maurice Bailleu
-      "maurice"
+      "martinkl"
+      "matthias"
     ];
 
     nix.settings.trusted-users = [ "joerg" "harshanavkis" "sandro" "redha" ];
