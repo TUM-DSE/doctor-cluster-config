@@ -93,6 +93,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIhea3KWKAWEuDkbyGhHmyV6XS8Ye3IN7oW5gchmNJg1 crist@lptlegion"
   ];
 
+  simondKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXKJqoVipqnB7/rjCjx6EYYsi6ZRuG2ve4bZHvAVKMa simon@Laptop-Simon"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -344,6 +348,17 @@ in
       uid = 2045;
       allowedHosts = [ "adelaide" ];
       openssh.authorizedKeys.keys = milenKeys;
+    };
+
+    # Simon Dittrich, M.Sc. thesis with Anatole (CXL Gem5 sim project)
+    simond = {
+      isNormalUser = true;
+      home="/home/simond";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2047;
+      allowedHosts = [ "xavier" "jack" "graham" "ryan" ]; #TODO remove extra hosts once xavier is racked
+      openssh.authorizedKeys.keys = simondKeys;
     };
   };
 
