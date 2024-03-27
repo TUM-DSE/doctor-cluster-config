@@ -27,6 +27,7 @@
         pkgs.age
         pkgs.sops
         pkgs.yq-go
+        pkgs.cpio
       ] ++ pkgs.lib.optional (pkgs.stdenv.isLinux) pkgs.mkpasswd;
     };
   };
