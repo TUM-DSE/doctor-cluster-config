@@ -7,7 +7,6 @@ locals {
     "harshanavkis",   # Harshavardhan Unnibhavi
     "manosgior",      # Emmanouil (Manos) Giortamis
     "Mic92",          # Jörg Thalheim
-    "PBHDK",          # Paul Heidekrüger
     "pogobanane",     # Peter Okelmann
     "jedichen121",    # Jiyang Chen
     "mmisono",        # Masanori Misono
