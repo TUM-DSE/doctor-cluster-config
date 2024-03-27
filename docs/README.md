@@ -85,6 +85,13 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
   - when booted into NixOS/Linux: [donna](./hosts/donna.md)
   - when booted into macos: [sarah](./hosts/sarah.md)
 
+## Morello
+
+Currently, these machines run CheriBSD and are managed by [@martin-fink](https://github.com/martin-fink).
+Accounts and ssh keys need to be added manually.
+
+- [ace](./hosts/ace.md) (Morello)
+
 ## FPGA-servers
 
 Each of these machines is equipped with an Alveo U50 FPGA card. Those servers
