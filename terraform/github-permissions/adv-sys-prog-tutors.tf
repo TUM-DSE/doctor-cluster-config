@@ -1,6 +1,9 @@
 locals {
   adv-sys-prog-tutors = toset([
-    "FlorianFreudiger"
+    "FlorianFreudiger",  # Florian Freudiger
+    "julianpritzi",      # Julian Pritzi
+    "taugoust",          # Theofilos Augoustis
+    "FreakyPenguin",     # Antoine Kaufmann
   ])
 
   adv-sys-prog-upstreams = toset([
@@ -41,4 +44,11 @@ resource "github_team_repository" "adv_sys_prog_team_repositories" {
   for_each = local.adv-sys-prog-upstreams
   repository = each.value
   permission = "push"
+}
+
+resource "github_membership" "adv_sys_prog_tutors_ls1-adv-sys-prog-course" {
+  for_each = local.adv-sys-prog-tutors
+  username = each.value
+  role     = "admin"
+  provider = github.ls1-adv-sys-prog-course
 }
