@@ -413,7 +413,6 @@ in
     "roberto"
     "dmitrylugovoy"
     "iulia"
-    "martinL"
     "florian"
     "eliza"
   ];
