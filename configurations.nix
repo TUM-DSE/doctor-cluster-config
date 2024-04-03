@@ -319,5 +319,14 @@ in
           ./hosts/xavier.nix
         ];
     };
+    
+    irene = nixosSystem {
+      pkgs = pkgs-x86_64-linux;
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/irene.nix
+        ];
+      };
   };
 }
