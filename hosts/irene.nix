@@ -1,10 +1,9 @@
-
 {
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-AS-2015CS.nix
-    #../modules/nfs/client.nix
-    #../modules/vfio/iommu-amd.nix
+    ../modules/nfs/client.nix
+    ../modules/vfio/iommu-amd.nix
   ];
 
   networking.hostName = "irene";
