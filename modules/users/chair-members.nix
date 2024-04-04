@@ -267,7 +267,7 @@ in
       ilya = {
         isNormalUser = true;
         home = "/home/ilya";
-        inherit extraGroups;
+        extraGroups = extraGroups ++ [ "kvm" ];
         shell = "/run/current-system/sw/bin/bash";
         uid = 1030;
         openssh.authorizedKeys.keys = ilyaKeys;
