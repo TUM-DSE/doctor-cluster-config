@@ -7,12 +7,12 @@ locals {
     "harshanavkis",   # Harshavardhan Unnibhavi
     "manosgior",      # Emmanouil (Manos) Giortamis
     "Mic92",          # Jörg Thalheim
-    "PBHDK",          # Paul Heidekrüger
     "pogobanane",     # Peter Okelmann
     "jedichen121",    # Jiyang Chen
     "mmisono",        # Masanori Misono
     "Sabanic-P",      # Patrick Sabanic
-	  "Meandres",       # Ilya Meignan--Masson
+    "Meandres",       # Ilya Meignan--Masson
+    "gustifix",       # Felix Gust
   ])
   internship = toset([
   ])
@@ -44,4 +44,11 @@ resource "github_membership" "ls1-sys-prog-course" {
   username = each.value
   role     = "admin"
   provider = github.ls1-sys-prog-course
+}
+
+resource "github_membership" "ls1-adv-sys-prog-course" {
+  for_each = local.chair_members
+  username = each.value
+  role     = "admin"
+  provider = github.ls1-adv-sys-prog-course
 }
