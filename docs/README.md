@@ -42,6 +42,8 @@ Our epyc servers are shared devices on which many users usually work concurrentl
 - single NUMA node (EPYC 7713P):
   - [graham](./hosts/graham.md)
   - [ryan](./hosts/ryan.md)
+- single NUMA node (EPYC 9654P)
+  - [irene](./hosts/irene.md)
 - dual NUMA node (EPYC 7413, for many expansion cards)
   - [amy](./hosts/amy.md)
   - [clara](./hosts/clara.md)
