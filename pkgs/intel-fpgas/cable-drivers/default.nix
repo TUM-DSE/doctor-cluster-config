@@ -1,4 +1,4 @@
-{ stdenv }:
+{ stdenv, pkgs, ... }:
 # source: https://www.intel.com/content/www/us/en/docs/programmable/683719/current/installing-the-driver-on-linux-systems.html
 stdenv.mkDerivation {
   name = "intel-cable-driver";
