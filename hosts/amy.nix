@@ -7,8 +7,6 @@
     ../modules/xilinx.nix
     ../modules/xrdp.nix
     ../modules/xrdp-passwords.nix
-
-    ../modules/intel-fpgas.nix
   ];
 
   networking.hostName = "amy";
