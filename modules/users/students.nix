@@ -317,7 +317,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2043;
-      allowedHosts = [ "adelaide" ]; # TODO add the new AMD server when it arrives
+      allowedHosts = [ "adelaide" "irene" ]; # TODO add the new AMD server when it arrives
       openssh.authorizedKeys.keys = paulzKeys;
     };
 
@@ -340,7 +340,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2046;
-      allowedHosts = [ "graham" ];
+      allowedHosts = [ "graham" "irene" ];
       openssh.authorizedKeys.keys = christianKeys;
     };
 
@@ -351,7 +351,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2045;
-      allowedHosts = [ "adelaide" ];
+      allowedHosts = [ "Adelaide" "irene" ];
       openssh.authorizedKeys.keys = milenKeys;
     };
 
