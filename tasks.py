@@ -245,6 +245,7 @@ HOSTS = [
     "amy.dos.cit.tum.de",
     "rose.dos.cit.tum.de",
     "vislor.dos.cit.tum.de",
+    "irene.dos.cit.tum.de",
     "xavier.dos.cit.tum.de",
 ]
 
