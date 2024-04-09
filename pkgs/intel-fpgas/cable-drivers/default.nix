@@ -1,5 +1,7 @@
 { stdenv, pkgs, ... }:
-# source: https://www.intel.com/content/www/us/en/docs/programmable/683719/current/installing-the-driver-on-linux-systems.html
+# sources:
+# - https://www.intel.com/content/www/us/en/docs/programmable/683719/current/installing-the-driver-on-linux-systems.html
+# - https://wiki.trenz-electronic.de/display/PD/Arrow+USB+Programmer
 stdenv.mkDerivation {
   name = "intel-cable-driver";
   src = ./.;
@@ -7,7 +9,7 @@ stdenv.mkDerivation {
     mkdir -p $out/lib/udev/rules.d/
     cp -v *.rules $out/lib/udev/rules.d/
 
-    cat >> $out/lib/udev/rules.d/51-usbblaster.rules << EOF
+    cat >> $out/lib/udev/rules.d/51-usbblaster.rules << 'EOF'
     # Arrow USB Programmer, used by Napatech F2070X IPU
     SUBSYSTEM=="usb",\
     ENV{DEVTYPE}=="usb_device",\
