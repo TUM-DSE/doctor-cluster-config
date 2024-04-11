@@ -45,20 +45,20 @@ Parameters to consider for matching cards to slots:
     - (not installed; firmware bundle_id 1.1.1.1021)
     - (not installed; firmware bundle_id 1.1.1.1021)
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
-    - graham: dual port. (graham-graham,graham-graham)
+    - graham: dual port. (graham-adric1,)
         - MAC1: b4:96:91:a4:1c:f0
         - MAC2: b4:96:91:a4:1c:f1
-    - jackson: dual port. (,)
+    - jackson: dual port. (jackson-adric2,)
         - MAC1: b4:96:91:a4:1b:88
         - MAC2: b4:96:91:a4:1b:89
     - christina: dual port. (christina-river)
         - MAC1:
         - MAC2:
-    - wilfred: single port. (wilfred-craig3)
+    - wilfred: single port. (wilfred-rose)
         - MAC: b4:96:91:b3:8b:04
     - river: single port. (river-christina)
         - MAC: b4:96:91:b3:8b:3c
-    - rose: single port. (rose-craig1)
+    - rose: single port. (rose-wilfred)
         - MAC: b4:96:91:b3:8a:90
 - 7x Broadcom BCM57416 10G NIC (RJ-45 and SFP)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)

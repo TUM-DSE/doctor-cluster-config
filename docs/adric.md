@@ -23,6 +23,7 @@
   - https://img-en.fs.com/file/user_manual/n-series-switches-fsos-configuration-guide.pdf
   	- enable dhcp client:
   		- config vlan 1000 interface 100g 1/0/1 port ip address dhcp enable
+  - dump config: `show startup-config` (see `sops hosts/adric.cfg.sops`)
 
 ### sonic OS
 
