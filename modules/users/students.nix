@@ -26,10 +26,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEv5CtJ233Uy/n6X5mbEGzzMxdf/jsjYOIU9Rb6K32oY amalia"
   ];
 
-  moritzKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAItl6lxQEgoghA4ianfJ9u0aWE+2ZNv32qgN3r7TqIZFKcA9J5CHHCymt/ssQx8Mpu7j6fmSoCMJKjfShPDYAdtdGj/hfeRZgk+t46lRVG14EVU9AmS0zyT7sf4g7Rhdp3k5j7Ey+K+xSnw9LWjzMybrbkUhSpVvmEG1/z5lFkl2hdGUUaKiGdrQdxzMY/zlWPKeODeluayXuIy347HHFCwy/5ksY7pvtMDw3ZrC0FjSgz2HY+tLTCsAEW5PX/XpWuQ2KxzpK4ylhYN0hV5nASWIkHhqINwUTa4WsiTFgR+YyZxp2NGnFYFyf2jgQGGtQ80iKiDukqcSvUYpbLCTaFDEZnWvdXJcD7dYLM/zDEdB1oP08UhkZpJqHrksp3wMXuJwBdjoHuNN8NMpunomKXjrmKkuh5DVp7kLfZsxNEigphCNrwe50reg8DjjqlgkzcGL3WJFJRKM6Mfo7sKfvjcs5bs2CEfAELdNbaRRSaWDGTazoYxnwtQ0utqwQNh8="
-  ];
-
   theoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvGQ0aKNGTkaEjjkGkaQ+8vA83Tbl5fpjuGTPrmszZuxzmSx4/6kw7Py4faLRJfcFNPdPp9FfFxsqCLpYMWKYVmdojQHIGBTugTtaadCrQ4W0Su6WcTN3OLa6n9heo+SE4Z+Uk1dUys0jMaZoKH7x/x2Yd9Zwg9sd0O2oa65VFV831mVGnagSrk+pJBh1MprmDEgobsRVFDEC8bENe23S58Hpvp6c7kLJnNlb11ojVAJBPBmH1QLwKceW66iRQPAmHJdqx5xCIWO1qkOut/hzNuDQMghGabsfh9huWpInZBVSH29pEWWw4CiPgACVzFBTojqcmlRiTMiszX7MiPkIfLCilpQF/KtavhGihq4yRs+6UxKV/4ErYItZeDaI5kgU+19cug12newP8wks9hJNpXX3N0wXYM0M8ZPvXc61z7EfRfpBMh5XLj9RMnSfuGFfoGKkRcWgx9nx+69FwqNQYsbL+id8U0lHqas6ai6gEbecF8UJv/r2h0zDaoKhNv70= taugoust@fedora"
   ];
@@ -151,18 +147,6 @@ in
       uid = 2015;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = robertKeys;
-    };
-
-    # Moritz Beckel, Robert's BSc student (cc-vm-io)
-    # Delete after April 2024
-    moritz = {
-      isNormalUser = true;
-      home = "/home/moritz";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2037;
-      allowedHosts = [ "vislor" ];
-      openssh.authorizedKeys.keys = moritzKeys;
     };
 
     # Theofilos Augoustis, Redha's MSc student (Arancini project)
@@ -415,5 +399,6 @@ in
     "iulia"
     "florian"
     "eliza"
+    "moritz"
   ];
 }
