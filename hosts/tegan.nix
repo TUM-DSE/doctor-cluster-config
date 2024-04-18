@@ -1,6 +1,7 @@
 {
   imports = [
     ../modules/disko-ext4.nix
+    ../modules/nfs/client.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
