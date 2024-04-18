@@ -117,7 +117,8 @@ machines. Those machines also are not backed up.
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
   - dosvm1.cit.tum.de: pxeboot
 - RISC-V:
-  - ruby.r [ruby.nix](./hosts/ruby.nix)
+  - ruby.dos.cit.tum.de [ruby.nix](./hosts/ruby.nix), Hifive Unmatched
+  - mo10.dos.cit.tum.de [tegan.nix](./hosts/tegan.nix), Milk-V Pioneer
 
 # Storage
 
