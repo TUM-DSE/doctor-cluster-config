@@ -326,6 +326,26 @@ def deploy_ruby(c: Any) -> None:
 
 
 @task
+def deploy_tegan(c: Any) -> None:
+    """
+    Deploy to riscv server
+    """
+    host = DeployHost(
+        "graham.dos.cit.tum.de",
+        user="root",
+        forward_agent=True,
+        command_prefix="tegan",
+        meta=dict(
+            target_user="root",
+            target_host="mo10.dos.cit.tum.de",
+            flake_attr="tegan",
+            config_dir="/var/lib/nixos-config",
+        ),
+    )
+    deploy_nixos([host])
+
+
+@task
 def deploy_doctor(c: Any) -> None:
     """
     Deploy to doctor
@@ -458,7 +478,10 @@ def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
 
     with tempfile.TemporaryDirectory() as tmpdir:
         decrypt_host_keys(c, machine, tmpdir)
-        c.run(f"nix run github:nix-community/nixos-anywhere#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}", echo=True)
+        c.run(
+            f"nix run github:nix-community/nixos-anywhere#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}",
+            echo=True,
+        )
 
 
 @task
@@ -611,9 +634,14 @@ def generate_tinc_key(c: Any, hostname: str) -> None:
     Generate tinc private key for a given hostname
     """
     with tempfile.TemporaryDirectory() as tmp:
-        c.run(f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-ed25519-keys", echo=True)
+        c.run(
+            f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-ed25519-keys",
+            echo=True,
+        )
         content = (Path(tmp) / "ed25519_key.priv").read_text()
-        c.run(f"sops --set '[\"tinc-key\"] {json.dumps(content)}' {ROOT}/hosts/{hostname}.yml")
+        c.run(
+            f"sops --set '[\"tinc-key\"] {json.dumps(content)}' {ROOT}/hosts/{hostname}.yml"
+        )
 
 
 @task
@@ -916,7 +944,9 @@ def reset_k3s_cluster(c: Any) -> None:
     master.run("k3s kubectl get nodes")
     get_k3s_kubeconfig(c)
 
+
 ## Mount/Reforemat code below is legacy and should be kept as util for debugging/emergency situations
+
 
 def sfdisk_json(host: DeployHost, dev: str) -> List[Any]:
     out = host.run(f"sfdisk --json {dev}", stdout=subprocess.PIPE)

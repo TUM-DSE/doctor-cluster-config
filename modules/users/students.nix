@@ -167,7 +167,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
-      allowedHosts = [ "graham" "ruby" "yasmin" ];
+      allowedHosts = [ "graham" "ruby" "yasmin" "tegan" ];
       openssh.authorizedKeys.keys = simonkKeys;
     };
 
