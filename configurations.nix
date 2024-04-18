@@ -328,5 +328,15 @@ in
           ./hosts/irene.nix
         ];
       };
+
+    tegan = nixosSystem {
+      pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
+      modules =
+        computeNodeModules
+        ++ [
+          self.inputs.nixos-hardware.nixosModules.milkv-pioneer
+          ./hosts/tegan.nix
+        ];
+      };
   };
 }
