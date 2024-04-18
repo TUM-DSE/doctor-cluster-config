@@ -38,8 +38,8 @@
   # 2a09:80c0:38::101/128 is our riscv board in the hardware lab
   # 2a09:80c0:38::222/128 is our m1 mac mini
   services.nfs.server.exports = ''
-    /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25) ${config.networking.doctorwho.hosts.ruby.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=27) 2a09:80c0:38::222/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=29)
-    /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) ${config.networking.doctorwho.hosts.ruby.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=28) 2a09:80c0:38::222/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=30)
+    /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25) ${config.networking.doctorwho.hosts.ruby.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=27) 2a09:80c0:38::222/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=29) ${config.networking.doctorwho.hosts.tegan.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=31)
+    /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) ${config.networking.doctorwho.hosts.ruby.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=28) 2a09:80c0:38::222/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=30) ${config.networking.doctorwho.hosts.tegan.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=32)
   '';
 
   systemd.tmpfiles.rules =
