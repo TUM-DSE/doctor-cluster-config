@@ -19,10 +19,11 @@
 
   - Serial console: run on christina `sudo picocom -b 115200 /dev/ttyUSB0` (username: admin, pw: as for ipmi)
   - find docs by googling `fsos fs.com somekeyword`
-  - https://img-en.fs.com/file/user_manual/n-series-switches-fsos-cli-reference-guide.pdf
-  - https://img-en.fs.com/file/user_manual/n-series-switches-fsos-configuration-guide.pdf
-  	- enable dhcp client:
-  		- config vlan 1000 interface 100g 1/0/1 port ip address dhcp enable
+  - [Reference Guide](https://img-en.fs.com/file/user_manual/n-series-switches-fsos-cli-reference-guide.pdf),
+  - [Configuration Guide](https://img-en.fs.com/file/user_manual/n-series-switches-fsos-configuration-guide.pdf)
+  - [Documentation backup on archive.org](https://archive.org/details/n-series-switches-fsos-cli-reference-guide)
+ 	- enable dhcp client:
+    - config vlan 1000 interface 100g 1/0/1 port ip address dhcp enable
   - dump config: `show startup-config` (see `sops hosts/adric.cfg.sops`)
 
 ### sonic OS
