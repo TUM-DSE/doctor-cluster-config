@@ -89,7 +89,12 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
   - when booted into NixOS/Linux: [donna](./hosts/donna.md)
   - when booted into macos: [sarah](./hosts/sarah.md)
 
-## Morello
+## RISC-V
+
+- ruby.dos.cit.tum.de [ruby.nix](./hosts/ruby.nix), Hifive Unmatched
+- mo10.dos.cit.tum.de [tegan.nix](./hosts/tegan.nix), Milk-V Pioneer
+
+## Morello (ARM64)
 
 Currently, these machines run CheriBSD and are managed by [@martin-fink](https://github.com/martin-fink).
 Accounts and ssh keys need to be added manually.
@@ -116,9 +121,6 @@ machines. Those machines also are not backed up.
     - [buildbot](https://buildbot.dse.in.tum.de)
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
   - dosvm1.cit.tum.de: pxeboot
-- RISC-V:
-  - ruby.dos.cit.tum.de [ruby.nix](./hosts/ruby.nix), Hifive Unmatched
-  - mo10.dos.cit.tum.de [tegan.nix](./hosts/tegan.nix), Milk-V Pioneer
 
 # Storage
 
