@@ -101,6 +101,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqbnkl4OVgJGhO/CRhPnnMCsHGAE77jnbpWMoCLniKNgqLVwPBpevfJed9gwmrUdUKnAdvKP/+EIUMydjqC1VkYVXB0oNWd372hpxOmu9lYziXwQA7m0R2b8VhKwE3KXg2kZfDq8vW35ZQ5F/jGmMwBVSRuYP2cBo0BBMlEniYhgiPlUT7TzPttx0TmSCDUCj9CaSZ3rAGbyjT7ezcFFAQQEMd0EYvSa04B12EpYNLKf1rIcMrEEOUn7pwwF1kbpSLvVeP+0FnxokxiSlKKCKNMB2igE4ahJI2XH2HMTb20Ce/NKwGU79ZwWnwtsjXJV+qoqmh5VSyzKlwfBvELLNR anatole@MSI_GX740"
   ];
 
+  teofilKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBOQGd/261BdTe321WjxorM+P/lED8y1PggIt/+xRL5YzmgrM/+/n+8mDs0XiC3Wyt2U+Z692s6+9xkb0vBfIenHhvyD826lNPT8xB4dQtYjEbkAIM+dqdwVfFLYgF/PlKyn4HIbyVc6et+C1Gxtgqs6hVILfiHGjgphOeg3wu9DHYkyO5SMOMhkm72yMBCaO1RVvqlzqA98O7fsOFuB4u3Um324B+bxxuxXmcATlxgT1atUO6EQarah9cvAliZTQAglEwXcMZcqLQQDdniePRbc7XUAJ+pc9xAv2jfxC60YHRGJjfMNJ2/pyPtojV+Qle/owEpjzqh1bExH1ot1o3"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "staff" ];
 in
 {
@@ -284,6 +288,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1031;
         openssh.authorizedKeys.keys = anatoleKeys;
+      };
+
+      # Teofil Bodea
+      # tum
+      teofil = {
+        isNormalUser = true;
+        home = "/home/teofil";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1032;
+        openssh.authorizedKeys.keys = teofilKeys;
       };
 
       root = {
