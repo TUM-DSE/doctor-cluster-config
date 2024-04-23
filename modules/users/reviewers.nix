@@ -8,6 +8,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2xdhpNGTmBU3GE5cTaqqs1v2OCQiXUWSViU+w5Wjr33Lu/nkIg97hI5Ili+5D2dRZU/I6WTnhwYF5F0gMLqReb4wvaFDRin55GRP99shcHnxj+Mh3Cq7KScMyO9pV7Xt0qsBBivTsvQ2h8MoSg2X/zmwWfHwTabm6FwzZGV5AKDaLq+AeXxWDniDsGulugjFVxmgAH0cUvT6KJ8+UUoGvPeTlkLVGgyy1e/oRLlnMcm6hIgR7x/8JHhraTKbFFIpD+QwE0dr/OLuUCp04iaavU54S5QtOc31I93286An2E/Ut2F6eH/evZGe5duosOgG9RJsVY5gy80K8u+VJCGLT"
   ];
 
+  sppRev3Keys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfE76mn85zU953Iw0y8LA6nHRcBQyE6PsRW5NbJ7JPpzwQmNTPvdrrlk56UoTnTIymKq/gXyqqqOifgzCt0Yi9ok/a0WIdCkUZqxlSWTeu6aJnS2gELPtvHhzapwjd0LaRKENBt1gfuc95oUNWIfKXz89Mh6fvQyILWfVXd+njGYREjF72qhugdQ9KjLW5Mt+w02QttnR49ZGB69/rQZA6TMkdZEsp3xAQjCNAkQiPM3kwdmBYEgZ7b2cuSldRpVlSkLMGyZHmK0pDuzQgsd420lagCxeXqiFaW2ZnZavp9hVn7PMzvJyc1R2mPtvKDu+J1iQb94iK21oLkRAGCxXH test"
+  ];
+  
   extraGroups = [ "wheel" "docker" "input" ];
 in
 {
@@ -34,6 +38,17 @@ in
       uid = 4006;
       allowedHosts = [ "jack" ];
       openssh.authorizedKeys.keys = sppRev2Keys;
+    };
+
+    # SPP AE reviewer 3
+    sppRev3 = {
+      isNormalUser = true;
+      home = "/home/sppRev3";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4007;
+      allowedHosts = [ "jack" ];
+      openssh.authorizedKeys.keys = sppRev3Keys;
     };
   };
 
