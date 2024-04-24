@@ -102,7 +102,7 @@ let
   ];
 
   teofilKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBOQGd/261BdTe321WjxorM+P/lED8y1PggIt/+xRL5YzmgrM/+/n+8mDs0XiC3Wyt2U+Z692s6+9xkb0vBfIenHhvyD826lNPT8xB4dQtYjEbkAIM+dqdwVfFLYgF/PlKyn4HIbyVc6et+C1Gxtgqs6hVILfiHGjgphOeg3wu9DHYkyO5SMOMhkm72yMBCaO1RVvqlzqA98O7fsOFuB4u3Um324B+bxxuxXmcATlxgT1atUO6EQarah9cvAliZTQAglEwXcMZcqLQQDdniePRbc7XUAJ+pc9xAv2jfxC60YHRGJjfMNJ2/pyPtojV+Qle/owEpjzqh1bExH1ot1o3"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINkwdkIadTpo9JCWnxwtTiQu/PmQW7W4wAYZtVNGAqZK"
   ];
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "staff" ];
