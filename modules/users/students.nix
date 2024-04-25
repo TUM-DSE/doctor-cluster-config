@@ -268,7 +268,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2040;
-      allowedHosts = [ "graham" "yasmin" ];
+      allowedHosts = [ "graham" "yasmin" "tegan" ];
       openssh.authorizedKeys.keys = nicolaKeys;
     };
 
