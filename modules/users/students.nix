@@ -70,10 +70,6 @@ let
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLiBlPKdgncidmS6l01wNk0/Pc8dGDb3CVROGiR9veJ nicola.crivellin98@gmail.com"
   ];
 
-  alpKeys = [
-	"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQ1dv12QoUgbd4T6PhZE6dVAPRKxYa5Z8BFSdUPofIwL0OkPosfZLYZLwHEqE7KAtBykdBF3wMTSDnQF+SCzERPo7WlkVAl8/1s8LFjHzZNGU+mVY3phfUwCGkHmM620IcIElfkE7rghK9bD6Zn/M1l2rU5XLINtuWxtfWxLDYQjo2SP6kthj4esWRdlTrXzBUXAqldmUnsz1sXyC0TrhaTrK4ksz5CEKvY/4bT7kmaKT0Y7VcPZri2eXpYCTyn3evu+kTi7UsDEqyse6EITFSJvBAu8NkXBc3nNj1M5BO63+ZJFnYvtqgb1UqekWq9Ww5ueoEb/7p9olV3Dfm9mbpLbtVXV0pn1ytxjmTbiSMA/QGb8ENkz9nB9ApQXyuNAnVTjGPLOucPXg0ZGf0w82UPjxPTnHbduV4xNZV+mnuF3GViWPd/8RYfNGd+PlbMejq3ZWkF1VYKssPotU8dGJkH7cQRrKm/cAmmacaduNHJQuA2OujKY7a5BFxa5Vsu0OdV2Lm7PT7z2EFygCDd9fwWJTB2Ex5uP7z11PVDJs1T6+p797ykjh/RxiiA+l7r94f7lXZXcnxxMarheRSw/HpdrEfuY5mNZ1E+wd4Dt/2EI9TW19Xbwxp91Uss9g6oNBc199JVVoNoPv2SWGyCGtZDPyt9IsW8QuToihwhmOwdw== alpberkman@gmail.com"
-  ];
-
   laurentKeys = [
 	"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
   ];
@@ -263,19 +259,8 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2040;
-      allowedHosts = [ "graham" "yasmin" ];
+      allowedHosts = [ "graham" "yasmin" "tegan" ];
       openssh.authorizedKeys.keys = nicolaKeys;
-    };
-
-    # Alp Berkman, Thesis work with Sebastian&Theo (DBTesting)
-    alp = {
-      isNormalUser = true;
-      home = "/home/alp";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2041;
-      allowedHosts = [ "graham" "yasmin" ];
-      openssh.authorizedKeys.keys = alpKeys;
     };
 
     # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
@@ -385,5 +370,6 @@ in
     "eliza"
     "moritz"
     "konrad"
+		"alp"
   ];
 }

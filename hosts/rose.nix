@@ -61,6 +61,7 @@
   users.xrdpUsers = [ 
     "xilinx"
     "atsushi" 
+    "felix"
   ];
 
   # Don't manage vnet interface with systemd-networkd
