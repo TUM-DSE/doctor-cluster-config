@@ -89,11 +89,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXKJqoVipqnB7/rjCjx6EYYsi6ZRuG2ve4bZHvAVKMa simon@Laptop-Simon"
   ];
 
-  konradKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJWAJOgvWkJ/6KRb/s4tgaEZET+GUkOWzZoRLAxh/hb/ konrad@nixos-konradPC"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP1bYzBiPqp0q6tLpXBKykNDf1bh7+9+EbmgKWCR4Old konrad@konrad-nix"
-  ];
-
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -334,17 +329,6 @@ in
       allowedHosts = [ "xavier" "jack" "graham" "ryan" ]; #TODO remove extra hosts once xavier is racked
       openssh.authorizedKeys.keys = simondKeys;
     };
-
-    # Konrad Moron, IDP with Sebastian/Martin (gelato on CHERI)
-    konrad = {
-      isNormalUser = true;
-      home = "/home/konrad";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2048;
-      allowedHosts = [ "graham" ];
-      openssh.authorizedKeys.keys = konradKeys;
-    };
   };
 
   # DANGER ZONE!
@@ -385,6 +369,7 @@ in
     "florian"
     "eliza"
     "moritz"
+    "konrad"
 		"alp"
   ];
 }
