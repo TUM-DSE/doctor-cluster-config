@@ -6,7 +6,6 @@ let
     retiolum
     sops-nix
     home-manager
-    nur
     flake-registry
     nixos-hardware
     srvos
@@ -29,7 +28,6 @@ let
     ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
-    ./modules/tor-ssh.nix
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/promtail.nix
@@ -57,7 +55,6 @@ let
       nix.nixPath = [
         "home-manager=${home-manager}"
         "nixpkgs=${pkgs.path}"
-        "nur=${nur}"
       ];
       # TODO: share nixpkgs for each machine to speed up local evaluation.
       #nixpkgs.pkgs = self.inputs.nixpkgs.legacyPackages.${system};
@@ -75,7 +72,6 @@ let
       nix.registry = {
         home-manager.flake = home-manager;
         nixpkgs.flake = nixpkgs;
-        nur.flake = nur;
       };
       time.timeZone = "UTC";
     })

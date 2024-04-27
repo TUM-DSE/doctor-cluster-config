@@ -35,7 +35,6 @@ let
               users.withSops = false;
             })
             ../irc-announce.nix
-            ../tor-ssh.nix
             ../watchdog.nix
           ];
         };
