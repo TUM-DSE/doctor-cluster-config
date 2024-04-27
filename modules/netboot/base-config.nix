@@ -45,7 +45,6 @@
       };
 
   imports = [
-    ../tor-ssh.nix
     ../nix-daemon.nix
     ../users
     ({ ... }: {

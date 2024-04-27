@@ -40,7 +40,6 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    nur.url = "github:nix-community/NUR";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
