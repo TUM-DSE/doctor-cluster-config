@@ -89,6 +89,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXKJqoVipqnB7/rjCjx6EYYsi6ZRuG2ve4bZHvAVKMa simon@Laptop-Simon"
   ];
 
+  lucaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/51l9kxiOcTg0WZU1rPyLcPJjyPCpFHSedTS/6KzSN lmathias@framework13"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -328,6 +332,17 @@ in
       uid = 2047;
       allowedHosts = [ "xavier" "jack" "graham" "ryan" ]; #TODO remove extra hosts once xavier is racked
       openssh.authorizedKeys.keys = simondKeys;
+    };
+
+    # Luca Mathias, B.Sc. thesis with Masa (CVM project) SS24 (remove after Oct 2024)
+    luca = {
+      isNormalUser = true;
+      home="/home/luca";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2048;
+      allowedHosts = [ "vislor" ];
+      openssh.authorizedKeys.keys = lucaKeys;
     };
   };
 
