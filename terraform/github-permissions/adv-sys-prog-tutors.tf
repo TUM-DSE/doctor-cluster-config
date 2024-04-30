@@ -1,6 +1,5 @@
 locals {
   adv-sys-prog-tutors = toset([
-    "FlorianFreudiger",  # Florian Freudiger
     "julianpritzi",      # Julian Pritzi
     "taugoust",          # Theofilos Augoustis
     "FreakyPenguin",     # Antoine Kaufmann
