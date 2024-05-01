@@ -27,6 +27,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJvB1YX5ojVWxLk57MJeGg7SrMohDoyYeS8i4vSNh1uI globin2"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOE7oDtq+xt5RuvMigDZMeZQODFr5Otz6HCO8wnI80oo picnoir"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzd1XAB7Pc8Tplur5iV3llOXtvlHru8pLtQlbvHzmt1 picnoir"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBga6vW8lnbFKl+Yd2xBiF71FRyV14eDUnqcMc2AWifI hydra@c3d2"
   ];
 
   atsushiKeys = [
