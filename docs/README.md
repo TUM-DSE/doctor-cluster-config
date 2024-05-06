@@ -92,7 +92,7 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab
 ## RISC-V
 
 - ruby.dos.cit.tum.de [ruby.nix](./hosts/ruby.nix), Hifive Unmatched
-- mo10.dos.cit.tum.de [tegan.nix](./hosts/tegan.nix), Milk-V Pioneer
+- tegan.dos.cit.tum.de [tegan.nix](./hosts/tegan.nix), Milk-V Pioneer
 
 ## Morello (ARM64)
 
