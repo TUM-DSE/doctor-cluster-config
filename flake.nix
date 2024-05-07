@@ -9,8 +9,10 @@
   ];
 
   # To update all inputs:
-  # $ nix flake update --recreate-lock-file
+  # $ nix flake update
   inputs = {
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
+
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -19,8 +21,6 @@
 
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
 
     home-manager.url = "github:rycee/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
