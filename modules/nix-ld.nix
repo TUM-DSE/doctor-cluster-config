@@ -2,6 +2,7 @@
 {
   # Enable nix ld
   programs.nix-ld.enable = !pkgs.stdenv.hostPlatform.isRiscV;
+  programs.nix-ld.package = pkgs.nix-ld-rs;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
     zlib
