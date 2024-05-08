@@ -39,18 +39,39 @@ let
     modDirVersionArg = "6.5.0";
     extraPatches = [ ];
   };
-  coconut_svsm_with_reflectvc = {
+  coconut_svsm_with_restricted_interrupt = { # untested
     owner = "Sabanic-P";
     repo = "linux";
-    rev = "8f3e2540e2131e0559ef2b008387cc715ed9d505"; # branch svsm
+    rev = "8f3e2540e2131e0559ef2b008387cc715ed9d505"; # branch restricted_injection
     sha256 = "sha256-ry47acIdc6TIDYkaSIQRMzjAjeUef3A6pJO1osxX2W4=";
     version = "6.5-reflectvc";
     modDirVersionArg = "6.5.0";
     extraPatches = [ ];
   };
 
+  coconut_svsm_6_8 = {
+    owner = "Sabanic-P";
+    repo = "linux";
+    rev = "bc4de28e0cc1e7cf404af311c4052560aba355ba"; # branch svsm
+    sha256 = "sha256-osvxsBiRPCzJzED2aiY20DQ06gpbEler3WdD9Y+SiXs=";
+    version = "6.8";
+    modDirVersionArg = "6.8.0";
+    extraPatches = [ ];
+  };
+
+  coconut_svsm_with_reflectvc_vmpl = {
+    owner = "Sabanic-P";
+    repo = "linux";
+    rev = "29df906740fa864f8ebdcd62c30a20d2a62ec229"; # branch vc_reflection
+    sha256 = "sha256-2OM8lDn5WRviHGJhn9jjRo16kyg49lf+WATbSuI6bFI=";
+    version = "6.8-vcreflection";
+    modDirVersionArg = "6.8.0";
+    extraPatches = [ ];
+  };
+
+
   # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = coconut_svsm_with_reflectvc;
+  snp_kernel = coconut_svsm_with_reflectvc_vmpl;
 
 in
 with snp_kernel;
