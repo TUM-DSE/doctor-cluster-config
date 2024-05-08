@@ -320,7 +320,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2045;
-      allowedHosts = [ "Adelaide" "irene" ];
+      allowedHosts = [ "adelaide" "irene" ];
       openssh.authorizedKeys.keys = milenKeys;
     };
 
