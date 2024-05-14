@@ -62,6 +62,7 @@
     "xilinx"
     "atsushi" 
     "felix"
+    "teofil"
   ];
 
   # Don't manage vnet interface with systemd-networkd
