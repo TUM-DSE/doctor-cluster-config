@@ -24,3 +24,4 @@
 | Evgeny Volynsky             | Lenovo ThinkPad P15 Gen 1 (laptop), Acer (monitor), Philips (monitor), Lenovo Thunderbolt Dock (docking station) |
 | Teofil Bodea                | Beyerdynamic MMX 300 (headphones)                                                                                |
 | Nathaniel Tornow            | MacBook Pro 14" M3 (laptop) |
+| Oguzcan Kirmemis            | Lenovo ThinkPad X13 Yoga Gen 4 (laptop) |
