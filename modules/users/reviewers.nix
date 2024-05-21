@@ -12,7 +12,7 @@ in
     # ATC AE reviewer 1
     atcRev1 = {
       isNormalUser = true;
-      home = "/home/sppRev1";
+      home = "/home/atcRev1";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 4002;
