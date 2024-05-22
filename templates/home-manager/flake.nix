@@ -1,11 +1,11 @@
 {
   description = "Home Manager configuration";
 
-  # update flake.lock to latest nixos-22.05: `nix flake update`
+  # update flake.lock to latest nixos-23.11: `nix flake update`
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.05;
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -18,9 +18,13 @@
     in
     {
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs system username;
-        configuration = ./home.nix;
-        homeDirectory = "/home/${username}";
+        inherit pkgs;
+        modules = [
+          ./home.nix
+        ];
+        extraSpecialArgs = {
+          inherit username;
+        };
       };
 
       apps.${system}."switch-${username}-hm" = {
