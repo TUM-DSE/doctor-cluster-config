@@ -7,6 +7,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID2YBVW8L/0zj9IKnvhJZ7puwvaNUpVC70AN8kajzYT9 atc-ae2"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhxjg2BZHbsNLwjQgZP48XYEb9Box8M/icu96EUH/BEiBpwWU+e5eyqd9QoO/MygEz/sgPR+KtnYkMB0qNca3DSm5IwndMZlDkhOPtd6H89KMz/vU1LiJQfkFe1NspDufbtzZTFMlNSwHAxeamoAqX8aJYeyPr8XvEt6O++j43G/ZJO3FNNfPXN9ZoaBp4UDsRHlX54etxwHlqKmWG7xVT7uG2rhZ2+wX5gVA4UyMe5Dvyy0nK62slNRCSc+JitupKfhQkbKmpNMASK/x9Rpq0HzSMfLMEGxPfJPhqIT6DWYgPMJW5ya32iAtSPE7InoFwCDNBjaemvTKB+Ozptq3x+EhASO7sUVHVPC1EzuA5w+Tq1Htt5KAP68gsPPAAdn67AvEKUZvhYuIv6KakRuVk5qFsJl80m0iH/Gvn61v1jjrEoPoQuHnBSTiAxuWAlNgbzj0Ovf8PoxHXYKxRaE1AO6M2Ab95v+KWQZ5Xidb44QE+yo1K0wBpcKrcNRc0pcpqW5GKBw2LlciB2YPmvNvxB94N+Zl3XAEy66rMRyrF3VQEj2+CezfePOyqfRB7kcJj1p0scF/1CFhQERkoO9lt91tsm5WcNmXwXJFVlx+3/Tl4bZmbbShPsIvWTuyDwHZps3MKefjva2f3q/ZcIYItc1Ey7HVrv6SsYEUTn+t44w== atc-ae3"
   ];
+  atcRev3Keys = [
+    "AAAAB3NzaC1yc2EAAAADAQABAAABgQCro4oHnBIJji6VDdvtmliJmS0bd45Nxio84K7H+oUBRlrh0DI+qXQaQ70Dg8Pmp+UbdwrpLKeV+z6Y3Z53d7LQgGsnip9ZIPguEBQhBijzlV7qhJtWUL31lT5VphbusDjlG/yDlAhAoLAHwyI6GpqRJUWBD65H2x6QfK0OwgIYmYvH10Kg+SxM7ry0i8kyDYms5O/tYqswhQWZI1mZzBPwIrNfMfACzbnOpf2JZN81OKPZ0yjcjpX4SdTVzMprrAlkHmsXKR7/2InXvlLOSVzJ7vgP1MM4Ufqd8/nj3VPqK0AnoFDBKZ6Qy7o/rGYtiF5qEE5l9qmE1dY/Obz18YSTIs8zbftBjXXi/X8o+/AmHxLpGSJVDV72UlFFQ+s1C5D+M+MQBhvOLXl+PyxS6mNStJMdybl5xsgPcfc/3uf+0+Q5kgvKnsOJ8WdWL3wK8CxXVSu5KXwvbhjvMUM1zadR0vzRTlk6s6kx/brHlbuGlWtKRnk0i4vUVL+H8Hei1B8= atc-ae"
+  ];
   extraGroups = [ "wheel" "docker" "input" ];
 in
 {
@@ -36,6 +39,19 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = atcRev2Keys;
     };
+
+  users.users = {
+    # ATC AE reviewer 3
+    atcRev3 = {
+      isNormalUser = true;
+      home = "/home/atcRev3";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4004;
+      allowedHosts = [ "amy" "clara" ];
+      openssh.authorizedKeys.keys = atcRev3Keys;
+    };
+
   };
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
