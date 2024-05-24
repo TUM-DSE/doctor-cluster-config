@@ -39,6 +39,7 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = atcRev2Keys;
     };
+  };
 
   users.users = {
     # ATC AE reviewer 3
@@ -51,8 +52,8 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = atcRev3Keys;
     };
-
   };
+
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
