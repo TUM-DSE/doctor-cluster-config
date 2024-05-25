@@ -204,7 +204,7 @@ in
         openssh.authorizedKeys.keys = cmainasKeys;
       };
 
-      # Masanouri Misono
+      # Masanori Misono
       masa = {
         isNormalUser = true;
         home = "/home/masa";
