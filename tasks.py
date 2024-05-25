@@ -337,7 +337,7 @@ def deploy_tegan(c: Any) -> None:
         command_prefix="tegan",
         meta=dict(
             target_user="root",
-            target_host="mo10.dos.cit.tum.de",
+            target_host="tegan.dos.cit.tum.de",
             flake_attr="tegan",
             config_dir="/var/lib/nixos-config",
         ),

@@ -47,22 +47,6 @@ with lib; {
     boot.extraModulePackages = lib.mkIf (config.boot.kernelPackages.kernel.version != currentlyIncompatibleKernelVersion) [
       # provide igb_uio:
       config.boot.kernelPackages.dpdk-kmods
-      # provide rte_kni:
-      (config.boot.kernelPackages.dpdk.kmod.overrideAttrs (finalAttrs: previousAttrs: {
-        postPatch = previousAttrs.postPatch + ''
-          substituteInPlace ./kernel/linux/kni/kni_dev.h \
-            --replace "#include <linux/if.h>
-          " "#include <linux/if.h>
-          #include <linux/mm.h>
-
-          // only exists in later versions of the kernel
-          #define FOLL_TOUCH	0x02	/* mark page accessed */
-          "
-        '';
-        patches = [
-          # ./dpdk-kmod.patch # this doesnt seem to actually be required by dpvs
-        ];
-      }))
     ];
     boot.kernelModules = [ "igb_uio" ];
     boot.extraModprobeConfig = ''
