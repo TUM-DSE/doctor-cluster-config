@@ -7,9 +7,6 @@
     "${modulesPath}/installer/scan/not-detected.nix"
   ];
 
-  # Mellanox driver is broken in current 6.6.28 kernel. TODO switch back once we update nixpkgs to 6.6.29.
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
