@@ -25,3 +25,4 @@
 | Teofil Bodea                | Beyerdynamic MMX 300 (headphones)                                                                                |
 | Nathaniel Tornow            | MacBook Pro 14" M3 (laptop) |
 | Oguzcan Kirmemis            | Lenovo ThinkPad X13 Yoga Gen 4 (laptop) |
+| Nathaniel Tornow            | Lenovo ThinkPad X13 (laptop) |
