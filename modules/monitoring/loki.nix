@@ -1,7 +1,4 @@
-{ config
-, pkgs
-, ...
-}:
+{ config, pkgs, ... }:
 let
   rulerConfig = {
     groups = [
@@ -20,12 +17,13 @@ let
     ];
   };
 
-  rulerDir = pkgs.writeTextDir "ruler/ruler.yml" (builtins.toJSON rulerConfig);
+  rulerFile = pkgs.writeText "ruler.yml" (builtins.toJSON rulerConfig);
 in
 {
   systemd.tmpfiles.rules = [
     "d /var/lib/loki 0700 loki loki - -"
-    "d /var/lib/loki/ruler 0700 loki loki - -"
+    "d /var/lib/loki/rules 0700 loki loki - -"
+    "L /var/lib/loki/ruler/ruler.yml - - - - ${rulerFile}"
   ];
   services.loki = {
     enable = true;
@@ -36,31 +34,26 @@ in
         http_listen_port = 3100;
         log_level = "warn";
       };
-
-      # Distributor
-      distributor.ring.kvstore.store = "inmemory";
-
-      # Ingester
-      ingester = {
-        lifecycler.ring = {
-          kvstore.store = "inmemory";
-          replication_factor = 1;
+      common = {
+        path_prefix = config.services.loki.dataDir;
+        storage.filesystem = {
+          chunks_directory = "${config.services.loki.dataDir}/chunks";
+          rules_directory = "${config.services.loki.dataDir}/rules";
         };
-        lifecycler.interface_names = [ "eth0" "en0" "ens192" ];
-        chunk_encoding = "snappy";
-        # Disable block transfers on shutdown
-        max_transfer_retries = 0;
+        replication_factor = 1;
+        ring.kvstore.store = "inmemory";
+        ring.instance_addr = "127.0.0.1";
       };
 
-      # Storage
-      storage_config = {
-        boltdb.directory = "/var/lib/loki/boltdb";
-        filesystem.directory = "/var/lib/loki/storage";
+      ingester.chunk_encoding = "snappy";
+
+      limits_config = {
+        retention_period = "120h";
+        ingestion_burst_size_mb = 16;
+        reject_old_samples = true;
+        reject_old_samples_max_age = "12h";
       };
 
-      limits_config.retention_period = "120h";
-
-      # Table manager
       table_manager = {
         retention_deletes_enabled = true;
         retention_period = "120h";
@@ -69,31 +62,31 @@ in
       compactor = {
         retention_enabled = true;
         compaction_interval = "10m";
-        working_directory = "/var/lib/loki/compactor";
+        working_directory = "${config.services.loki.dataDir}/compactor";
+        delete_request_cancel_period = "10m"; # don't wait 24h before processing the delete_request
+        retention_delete_delay = "2h";
+        retention_delete_worker_count = 150;
+        delete_request_store = "filesystem";
       };
 
-      # Schema
       schema_config.configs = [
         {
           from = "2020-11-08";
-          store = "boltdb";
+          store = "tsdb";
           object_store = "filesystem";
-          schema = "v11";
+          schema = "v13";
           index.prefix = "index_";
-          index.period = "120h";
+          index.period = "24h";
         }
       ];
-
-      limits_config.ingestion_burst_size_mb = 16;
 
       ruler = {
         storage = {
           type = "local";
-          local.directory = rulerDir;
+          local.directory = "${config.services.loki.dataDir}/ruler";
         };
-        rule_path = "/var/lib/loki/ruler";
+        rule_path = "${config.services.loki.dataDir}/rules";
         alertmanager_url = "http://alertmanager.r";
-        ring.kvstore.store = "inmemory";
       };
 
       query_range.cache_results = true;
@@ -102,6 +95,7 @@ in
   };
 
   sops.secrets.promtail-nginx-password.owner = "nginx";
+  systemd.services.loki.restartTriggers = [ rulerFile ];
 
   services.nginx = {
     enable = true;
