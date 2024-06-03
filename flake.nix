@@ -11,7 +11,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-24.05-backports";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
