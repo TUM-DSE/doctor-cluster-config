@@ -13,7 +13,7 @@
       xrt = pkgs.callPackage ./xilinx/xrt.nix { };
       xrt-drivers = pkgs.callPackage ./xilinx/xrt-drivers.nix {
         inherit (self.packages.x86_64-linux) xrt;
-        inherit (pkgs.linuxPackages_5_10) kernel;
+        inherit (pkgs.linuxPackages_6_8) kernel;
       };
       xntools-core = pkgs.callPackage ./xilinx/xntools-core.nix { };
 

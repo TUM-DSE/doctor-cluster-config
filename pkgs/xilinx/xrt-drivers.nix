@@ -2,21 +2,25 @@
 let
   KERNELDIR = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   name = "xrt-drivers";
   dontUnpack = true;
   buildPhase = ''
     export INSTALL_MOD_PATH="$out"
 
-    cp -r ${xrt}/* .
+    cp -r ${xrt.src}/* .
     chmod -R +w .
-    cd src/xrt-*/driver/xocl
+    cd src/runtime_src/core/pcie/driver/linux/xocl/
+
+    cp ${xrt}/src/xrt-*/driver/include/version.h .
 
     pushd mgmtpf
+    cp ${xrt}/src/xrt-*/driver/include/version.h .
     make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)
     popd
 
     pushd userpf
+    cp ${xrt}/src/xrt-*/driver/include/version.h .
     make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd)
     popd
   '';
@@ -30,6 +34,8 @@ stdenv.mkDerivation rec {
     make -C "${KERNELDIR}" -j$NIX_BUILD_CORES M=$(pwd) modules_install
     popd
   '';
+
+  passthru = { inherit xrt; };
 
   meta = with lib; {
     description = "kernel drivers for xrt runtime";
