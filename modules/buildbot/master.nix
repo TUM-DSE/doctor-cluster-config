@@ -16,9 +16,9 @@
       oauthSecretFile = config.sops.secrets.github-oauth-secret.path;
       oauthId = "1448d1d1a3d84fa023f4";
       user = "doctor-cluster-bot";
-      admins = [ "Mic92" "pogobanane" ];
       topic = "buildbot-tum-dse";
     };
+    admins = [ "Mic92" "pogobanane" ];
     outputsPath = "/var/www/buildbot/nix-outputs";
   };
 

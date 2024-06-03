@@ -6,8 +6,8 @@
   services.xserver = {
     enable = true;
     desktopManager.xfce.enable = true;
-    layout = "us";
-    xkbVariant = "altgr-intl";
+    xkb.layout = "us";
+    xkb.variant = "altgr-intl";
   };
   fonts.enableDefaultPackages = true;
 
