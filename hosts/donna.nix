@@ -10,7 +10,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "donna";
 
-
+  hardware.asahi.enable = true;
   hardware.asahi.peripheralFirmwareDirectory = builtins.toString (pkgs.runCommand "all_firmware" {} ''
     mkdir -p $out
     cp ${(pkgs.fetchurl {
@@ -25,7 +25,6 @@
   '');
   # get rid of internal overlay
   hardware.asahi.pkgs = lib.mkForce (import ../modules/apple-silicon-support/packages/overlay.nix pkgs pkgs);
-
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

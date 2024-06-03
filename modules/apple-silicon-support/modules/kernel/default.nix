@@ -2,7 +2,7 @@
 
 { config, pkgs, lib, ... }:
 {
-  config = {
+  config = lib.mkIf config.hardware.asahi.enable {
     boot.kernelPackages = let
       pkgs' = config.hardware.asahi.pkgs;
     in
@@ -25,7 +25,7 @@
       "pinctrl-apple-gpio"
       "macsmc"
       "macsmc-rtkit"
-      "i2c-apple"
+      "i2c-pasemi-platform"
       "tps6598x"
       "apple-dart"
       "dwc3"
