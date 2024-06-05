@@ -342,7 +342,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2048;
-      allowedHosts = [ "vislor" ];
+      allowedHosts = [ "vislor" "graham" ];
       openssh.authorizedKeys.keys = lucaKeys;
     };
   };
