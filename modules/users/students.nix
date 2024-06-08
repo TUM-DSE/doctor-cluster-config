@@ -94,6 +94,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/51l9kxiOcTg0WZU1rPyLcPJjyPCpFHSedTS/6KzSN lmathias@framework13"
   ];
 
+  anubhavKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDwD3MJKQsdvxdCksNQQ90K3TTTwgP+nWxmOaG9skAcYGr2I2dVRCc+FBHNkHeD4j3T505QS33WVXOtaKNOU+aEtnOQMOpKEQQ1JUKIGovW3IMhQmzRNpBxkDfTkPAPa8+Nrx878vL8YbRPcPc9OW4efca+pxHWrsvH6i+knksf9kxoKULBncPk665VwiZ2m/82vqioL6i7pkt0ZkEmOiyCQxKRRPblB5yfim51rqp6AE9oX5emhhrUFkY/Bz/ZQjOE6i5Oax6iXdkMlaUT59wV3IUlypGbPc6bqjz4l9EyLL1USozZHYYA17qgY1PbsNvMh3VG9+QUPTwRgFnRQ3TD1tmf4ak99KT7aYlF1s7IAQF2FO8HckEjNzcR2NAoaDMI4ZutH3P3+y238pXYekFsbeOwoO2UYFSSjCdR4fHFSBfNKeXJhbOM3dfEDVIfYSu8Lw28fbVx66lKLR5QPVJngHP7vfdGwkbMez6tuNCYNcZp3ofsMYiBLqyxfolrklk= anubhav@anubhav-ROG"
+  ];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -344,6 +348,18 @@ in
       uid = 2048;
       allowedHosts = [ "vislor" "graham" ];
       openssh.authorizedKeys.keys = lucaKeys;
+    };
+
+    # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
+    # Remove after SS25
+    anubhav = {
+      isNormalUser = true;
+      home="/home/anubhav";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2049;
+      allowedHosts = [ "amy" "clara" ];
+      openssh.authorizedKeys.keys = anubhavKeys;
     };
   };
 
