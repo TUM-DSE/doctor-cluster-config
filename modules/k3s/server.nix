@@ -8,6 +8,6 @@
   virtualisation.oci-containers.containers.registry-proxy = {
     image = "registry";
     environment.REGISTRY_PROXY_REMOTEURL = "https://registry-1.docker.io";
-    ports = [ "5000:5000" ];
+    ports = [ "80:5000" ]; # use port 80, because this is what we whitelist in the firewall of the runner
   };
 }
