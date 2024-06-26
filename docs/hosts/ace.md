@@ -12,7 +12,7 @@ This machine is available from the outside.
 ssh user@ace.dos.cit.tum.de
 ```
 
-## USers
+## Users
 
 Currently, these users have access:
 
@@ -26,6 +26,20 @@ Connect your machine to the board using debug USB cable.
 
 Accessing the Morello console to troubleshoot/reboot/shutdown: https://ctsrd-cheri.github.io/cheribsd-getting-started/morello-console/index.html
 
+
+Currently, ace is connected to `tegan.dos.cit.tum.de`. On tegan, run the following commands.
+Please note that the exact tty device may vary, depending on which other machines are connected.
+
+```shell
+nix-shell -p tio
+sudo tio /dev/ttyUSB2
+# press enter to see if you're on the correct device
+# if you are, you should see something like "Cmd>"
+? # for help
+REBOOT
+```
+
+## Hardware info
 
 ```
 System:
