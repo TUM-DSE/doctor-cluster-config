@@ -65,14 +65,17 @@
   documentation.enable = false;
   documentation.nixos.options.warningsAreErrors = false;
 
-  # no auto-updates
-  systemd.services.update-prefetch.enable = false;
-
   environment.systemPackages = with pkgs; [
     diskrsync
     partclone
     ntfsprogs
     ntfs3g
+    curl
+    dnsutils
+    gitMinimal # for flakes
+    htop
+    jq
+    tmux
   ];
 
   systemd.services.sshd.wantedBy = lib.mkForce [ "multi-user.target" ];
