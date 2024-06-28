@@ -93,6 +93,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDwD3MJKQsdvxdCksNQQ90K3TTTwgP+nWxmOaG9skAcYGr2I2dVRCc+FBHNkHeD4j3T505QS33WVXOtaKNOU+aEtnOQMOpKEQQ1JUKIGovW3IMhQmzRNpBxkDfTkPAPa8+Nrx878vL8YbRPcPc9OW4efca+pxHWrsvH6i+knksf9kxoKULBncPk665VwiZ2m/82vqioL6i7pkt0ZkEmOiyCQxKRRPblB5yfim51rqp6AE9oX5emhhrUFkY/Bz/ZQjOE6i5Oax6iXdkMlaUT59wV3IUlypGbPc6bqjz4l9EyLL1USozZHYYA17qgY1PbsNvMh3VG9+QUPTwRgFnRQ3TD1tmf4ak99KT7aYlF1s7IAQF2FO8HckEjNzcR2NAoaDMI4ZutH3P3+y238pXYekFsbeOwoO2UYFSSjCdR4fHFSBfNKeXJhbOM3dfEDVIfYSu8Lw28fbVx66lKLR5QPVJngHP7vfdGwkbMez6tuNCYNcZp3ofsMYiBLqyxfolrklk= anubhav@anubhav-ROG"
   ];
 
+  lanKeys = [
+   "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAAl2L4v1N5MEkPMJ1TIfiF6OwM58J0b4FORkA1mTgroq+7c9fzxH8sv/9wsAJkV7LI8JPyCpK9zpMLcX5A1gNJImAEnsyrYxLzxUQfhKzhpf39v1gvMCgh2agbaB4g8TQ5wmjzx22EWR3yoOG7rldbjbdoXTa2CmGg9xLVkce9fLYC31w== lan@LAPTOP-TRMD7DCS"
+];
+
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
 {
@@ -344,6 +348,17 @@ in
       uid = 2049;
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = anubhavKeys;
+    };
+
+    # Lan Ouyang, M.Sc. thesis with Martin and Ilya (CHERI db project) Remove after Jan 2025
+    lan = {
+      isNormalUser = true;
+      home = "/home/lan";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2050;
+      allowedHosts = [ "graham" "irene" ];
+      openssh.authorizedKeys.keys = lanKeys;
     };
   };
 
