@@ -2,8 +2,8 @@
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-AS-4124GS.nix
-    ../modules/zfs-partitioning.nix
     ../modules/nfs/client.nix
+    ../modules/disko-zfs.nix
 
     ../modules/intel-fpgas.nix
     ../modules/xilinx.nix
@@ -15,6 +15,8 @@
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
   ];
+
+  disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_S64GNA0T724988";
 
   boot.hugepages1GB.number = 0;
   # boot.hugepages2MB.number = 0;
