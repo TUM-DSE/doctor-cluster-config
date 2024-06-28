@@ -839,7 +839,7 @@ def ipmi_boot_bios(c: Any, host: str = "") -> None:
 @task
 def ipmi_boot_pxe(c: Any, host: str = "") -> None:
     """
-    Set the next boot to bios and reboot
+    Set the next boot to pxe and reboot
     """
     ipmi_boot(c, host, "pxe")
 
