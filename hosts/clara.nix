@@ -2,6 +2,7 @@
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-AS-4124GS.nix
+    ../modules/zfs-partitioning.nix
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
 
