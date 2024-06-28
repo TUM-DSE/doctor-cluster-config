@@ -14,12 +14,11 @@
     ../modules/vfio/iommu-amd.nix
 
     # since the disk failure, ryan is partitioned with disko
-    ../modules/zfs-partitioning.nix
+    ../modules/disko-zfs.nix
   ];
 
   networking.hostName = "ryan";
-  disko.rootDisk = "/dev/sda";
-  # disko.noZfs = true;
+  disko.rootDisk = "/dev/nvme0n1";
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media
