@@ -58,6 +58,7 @@
             "root/tmp" = {
               type = "zfs_fs";
               mountpoint = "/tmp";
+              options.sync = "disabled";
             };
           };
         };
