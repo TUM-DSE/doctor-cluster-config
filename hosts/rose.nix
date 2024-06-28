@@ -21,7 +21,7 @@
   boot.hugepages1GB.number = 0;
   # boot.hugepages2MB.number = 0;
   boot.hugepages2MB.number = let 
-    gb = 100;
+    gb = 1500;
   in gb * 1024 / 2;
   # blacklist kernel module that conflicts with the Intel FPGA OpenCL driver
   boot.blacklistedKernelModules = [ "altera_cvp" ];
