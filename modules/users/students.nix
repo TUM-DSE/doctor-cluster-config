@@ -66,11 +66,6 @@ let
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIJ0VVdv4yqu7NVKaTQlEtYyOzSCEJFFtTpAaymDmiYm"
   ];
 
-  nicolaKeys = [
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmWVwq6Wj2CMu9IF+qadLEK3DBNz+T7+LsVaFI/XdvA nicola@the-shadow"
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLiBlPKdgncidmS6l01wNk0/Pc8dGDb3CVROGiR9veJ nicola.crivellin98@gmail.com"
-  ];
-
   laurentKeys = [
 	"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
   ];
@@ -261,17 +256,6 @@ in
       openssh.authorizedKeys.keys = alexanderKeys;
     };
 
-    # Nicola Crivellin, Thesis work with Sebastian&Theo (DBTesting)
-    nicola = {
-      isNormalUser = true;
-      home = "/home/nicola";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2040;
-      allowedHosts = [ "graham" "yasmin" "tegan" "ruby" ];
-      openssh.authorizedKeys.keys = nicolaKeys;
-    };
-
     # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
     laurent = {
       isNormalUser = true;
@@ -403,5 +387,6 @@ in
     "moritz"
     "konrad"
 		"alp"
+    "nicola"
   ];
 }
