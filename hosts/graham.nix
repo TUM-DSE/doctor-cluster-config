@@ -8,7 +8,7 @@
     ../modules/amd_sev.nix
     ../modules/dpdk.nix
     ../modules/vfio/iommu-amd.nix
-    ../modules/zfs-partitioning.nix
+    ../modules/disko-zfs.nix
   ];
 
   boot.hugepages1GB.number = 8;
