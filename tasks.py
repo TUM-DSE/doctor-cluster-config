@@ -483,6 +483,20 @@ def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
             echo=True,
         )
 
+@task
+def install_ssh_hostkeys(c: Any, machine: str, hostname: str) -> None:
+    """
+    Install ssh host keys stored in sops files on a remote host, i.e. inv install-ssh-hostkeys --machine mickey --hostname mickey.dos.cit.tum.de
+    """
+    with tempfile.TemporaryDirectory() as tmpdir:
+        decrypt_host_keys(c, machine, tmpdir)
+        c.run("mkdir -p /etc/ssh", pty=True)
+        host = DeployHost(hostname, user="root")
+        cmds = []
+        for keyname in Path(f"{tmpdir}/etc/ssh").iterdir():
+            cmds.append(f"echo '{keyname.read_text()}' > /etc/ssh/{keyname.name}")
+        host.run(";".join(cmds))
+
 
 @task
 def print_tinc_key(c: Any, hosts: str) -> None:
