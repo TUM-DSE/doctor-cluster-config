@@ -319,7 +319,7 @@ def deploy_ruby(c: Any) -> None:
             target_user="root",
             target_host="ruby.r",
             flake_attr="ruby",
-            config_dir="/var/lib/nixos-config",
+            flake_path="/var/lib/nixos-config",
         ),
     )
     deploy_nixos([host])
@@ -339,7 +339,7 @@ def deploy_tegan(c: Any) -> None:
             target_user="root",
             target_host="tegan.dos.cit.tum.de",
             flake_attr="tegan",
-            config_dir="/var/lib/nixos-config",
+            flake_path="/var/lib/nixos-config",
         ),
     )
     deploy_nixos([host])
@@ -359,7 +359,7 @@ def deploy_doctor(c: Any) -> None:
             target_user="root",
             target_host="doctor.r",
             flake_attr="doctor",
-            config_dir="/var/lib/nixos-config",
+            flake_path="/var/lib/nixos-config",
         ),
     )
     deploy_nixos([host])
