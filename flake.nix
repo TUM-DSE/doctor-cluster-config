@@ -11,7 +11,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-24.05-backports";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +22,7 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:rycee/home-manager/release-23.11";
+    home-manager.url = "github:rycee/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";

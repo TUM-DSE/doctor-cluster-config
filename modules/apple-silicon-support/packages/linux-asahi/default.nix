@@ -3,7 +3,6 @@
 , callPackage
 , writeShellScriptBin
 , writeText
-, removeReferencesTo
 , linuxPackagesFor
 , withRust ? false
 , _kernelPatches ? [ ]
@@ -87,16 +86,16 @@ let
     (linuxKernel.manualConfig rec {
       inherit stdenv lib;
 
-      version = "6.6.0-asahi";
+      version = "6.8.9-asahi";
       modDirVersion = version;
-      extraMeta.branch = "6.6";
+      extraMeta.branch = "6.8";
 
       src = fetchFromGitHub {
         # tracking: https://github.com/AsahiLinux/linux/tree/asahi-wip (w/ fedora verification)
         owner = "AsahiLinux";
         repo = "linux";
-        rev = "asahi-6.6-15";
-        hash = "sha256-Jm7wTKWuwd/6ZN0g5F4CNNETiOyGQL31hfSyTDYH85k=";
+        rev = "asahi-6.8.9-7";
+        hash = "sha256-Mso2cThj7JnemRgVc3wJ3d/IySL463nSKFEU1iBLixU=";
       };
 
       kernelPatches = [
@@ -117,10 +116,6 @@ let
             hash = "sha256-wn5x2hN42/kCp/XHBvLWeNLfwlOBB+T6UeeMt2tSg3o=";
           };
         }
-      ] ++ lib.optionals (rustAtLeast "1.75.0") [
-        { name = "rustc-1.75.0";
-          patch = ./0001-check-in-new-alloc-for-1.75.0.patch;
-        }
       ] ++ _kernelPatches;
 
       inherit configfile;
@@ -132,16 +127,7 @@ let
         rust-bindgen
         rustfmt
         rustc
-        removeReferencesTo
       ];
-      # HACK: references shouldn't have been there in the first place
-      # TODO: remove once 23.05 is obsolete
-      postFixup = (old.postFixup or "") + ''
-        if [ -f $dev/lib/modules/${old.version}/build/vmlinux ]; then
-          remove-references-to -t $out $dev/lib/modules/${old.version}/build/vmlinux
-        fi
-        remove-references-to -t $dev $out/Image
-      '';
       RUST_LIB_SRC = rustPlatform.rustLibSrc;
     } else {});
 
