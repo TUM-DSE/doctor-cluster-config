@@ -17,10 +17,7 @@
     "b8:ce:f6:0b:ee:65"
   ];
 
-  programs.ssh.knownHosts = {
-    nardole.hostNames = [ "nfs" "nfs-backup" ];
-    nardole.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICxBbS6tbc4KuS7sg/6py87kNhuI1s/sE1FtJpdQjzWJ";
-  };
+  services.nfs-server.backupPublickey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICF4STFVYFLpvpxzRzi1d9bFp3ttqDHo8k0L12WHD2FX";
 
   simd.arch = "skylake";
 

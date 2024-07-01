@@ -3,9 +3,7 @@
     ../modules/bonding.nix
     ../modules/ipmi-supermicro.nix
     ../modules/sys-prog/users.nix
-    ../modules/nfs/server-backup.nix
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
-    #../modules/nfs/server-backup.nix
   ];
 
   networking.hostName = "nardole";

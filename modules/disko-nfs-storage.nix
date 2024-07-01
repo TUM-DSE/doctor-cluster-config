@@ -65,11 +65,12 @@
         options.ashift = "12";
 
         datasets = {
-          "home" = {
-            type = "zfs_fs";
-            mountpoint = "/export/home";
-            options."com.sun:auto-snapshot" = "true";
-          };
+          # the initial syncoid replication will create this dataset, on the nfs server this dataset needs to be created
+          #"home" = {
+          #  type = "zfs_fs";
+          #  mountpoint = "/export/home";
+          #  options."com.sun:auto-snapshot" = "true";
+          #};
         };
       };
       nfs-data = {
@@ -84,11 +85,12 @@
         options.ashift = "12";
 
         datasets = {
-          "data" = {
-            type = "zfs_fs";
-            mountpoint = "/export/data";
-            options."com.sun:auto-snapshot" = "true";
-          };
+          # the initial syncoid replication will create this dataset, on the nfs server this dataset needs to be created
+          #"data" = {
+          #  type = "zfs_fs";
+          #  mountpoint = "/export/data";
+          #  options."com.sun:auto-snapshot" = "true";
+          #};
         };
       };
     };
