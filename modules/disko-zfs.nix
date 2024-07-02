@@ -65,7 +65,6 @@
               type = "zfs_fs";
               mountpoint = "/tmp";
               options.sync = "disabled";
-              options."mountpoint" = lib.mkIf config.disko.zfs.legacyMounts.enable "legacy";
             };
           };
         };
