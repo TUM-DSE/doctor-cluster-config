@@ -13,6 +13,8 @@
     #../modules/amd_sev_snp.nix
     ../modules/vfio/iommu-amd.nix
 
+    ../modules/kata-container
+
     # since the disk failure, ryan is partitioned with disko
     ../modules/disko-zfs.nix
   ];
