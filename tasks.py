@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 from typing import IO, Any, Callable, List
 
-from deploykit import DeployGroup, DeployHost
+from deploykit import DeployGroup, DeployHost, HostKeyCheck
 from invoke import task
 
 ROOT = Path(__file__).parent.resolve()
@@ -899,6 +899,23 @@ def cleanup_gcroots(c: Any, hosts: str = "") -> None:
         g.run("find /nix/var/nix/gcroots/auto -type s -delete")
         g.run("systemctl restart nix-gc")
 
+
+@task
+def restore_host_keys(c: Any, host: str = "") -> None:
+    """
+    Restore host ssh keys based on sops files
+    """
+    key_files = [
+        "ssh_host_ed25519_key",
+        "ssh_host_ed25519_key.pub",
+        "ssh_host_rsa_key",
+        "ssh_host_rsa_key.pub",
+    ]
+    h = DeployHost(host, user="root", host_key_check=HostKeyCheck.NONE)
+    for key in key_files:
+        hostname = host.split(".")[0]
+        result = h.run_local(f"sops --extract '[\"{key}\"]' -d {ROOT}/hosts/{hostname}.yml", stdout=subprocess.PIPE)
+        h.run(f"echo '{result.stdout}' > /etc/ssh/{key}")
 
 @task
 def update_host_keys(c: Any, hosts: str = "") -> None:

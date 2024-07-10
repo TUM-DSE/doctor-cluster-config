@@ -15,10 +15,10 @@
 # their ipv6 addresses to avoid ipv6 duplicate address detection to fail:
 #
 # on the server
-# ip addr del 2a09:80c0:102::f000:0/64 dev bond1
+# ip addr del 2a09:80c0:102::f000:0/64 dev <public interface>
 #
 # on the backup machine
-# ip addr del 2a09:80c0:102::f000:1/64 dev bond1
+# ip addr del 2a09:80c0:102::f000:1/64 dev <public interface>
 #
 # Than swap the imports for `nfs/server.nix` and `nfs/server-backup.nix` in both nixos configurations.
 {
@@ -65,20 +65,20 @@
       ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers);
 
     boot.zfs.extraPools = [
-      "zpool1"
-      "zpool2"
+      "nfs-data"
+      "nfs-home"
     ];
 
     fileSystems."/export/home" = {
-      device = "zpool1/home";
+      device = "nfs-home/home";
       fsType = "zfs";
-      options = [ "nofail" ];
+      options = [ "nofail" "zfsutil" ];
     };
 
     fileSystems."/export/share" = {
-      device = "zpool2/share";
+      device = "nfs-data/share";
       fsType = "zfs";
-      options = [ "nofail" ];
+      options = [ "nofail" "zfsutil" ];
     };
 
     systemd.services.syncoid-setup = {
@@ -89,9 +89,9 @@
         Type = "oneshot";
         ExecStart = [
           # delete nfs backup server ip if present.
-          "-${pkgs.iproute2}/bin/ip addr del 2a09:80c0:102::f000:1/64 dev bond1"
+          "-${pkgs.iproute2}/bin/ip addr del 2a09:80c0:102::f000:1/64 dev ${config.services.nfs-server.interface}"
           # add nfs server ip
-          "-${pkgs.iproute2}/bin/ip addr add 2a09:80c0:102::f000:0/64 dev bond1"
+          "-${pkgs.iproute2}/bin/ip addr add 2a09:80c0:102::f000:0/64 dev ${config.services.nfs-server.interface}"
         ];
       };
     };
@@ -100,17 +100,17 @@
       enable = true;
       # every 15 minutes
       interval = "*:0/15";
-      commands."zpool1/home" = {
+      commands."nfs-home/home" = {
         target = "syncoid@nfs-backup:nfs-home/home";
         sshKey = config.sops.secrets.syncoid.path;
       };
-      commands."zpool2/share" = {
+      commands."nfs-data/share" = {
         target = "syncoid@nfs-backup:nfs-data/share";
         sshKey = config.sops.secrets.syncoid.path;
       };
     };
 
-    systemd.services.syncoid-zpool1-home = {
+    systemd.services.syncoid-nfs-home-home = {
       serviceConfig.ExecStopPost = [
         (
           "+${pkgs.writeShellScript "telegraf" ''
@@ -123,7 +123,7 @@
       ];
     };
 
-    systemd.services.syncoid-zpool2-share = {
+    systemd.services.syncoid-nfs-data-share = {
       serviceConfig.ExecStopPost = [
         (
           "+${pkgs.writeShellScript "telegraf" ''
