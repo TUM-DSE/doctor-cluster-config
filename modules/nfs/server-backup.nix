@@ -7,15 +7,6 @@
 {
   imports = [ ./. ];
 
-  options = {
-    services.nfs-server-backup = {
-      interface = lib.mkOption {
-        type = lib.types.str;
-        example = "enp94s0f0np0";
-        description = "The network interface to bind the nfs server to.";
-      };
-    };
-  };
   config = {
     systemd.services.syncoid-setup = {
       wantedBy = [ "multi-user.target" ];
@@ -24,7 +15,7 @@
         Type = "oneshot";
         ExecStart = [
           # drop nfs server ip if present
-          "-${pkgs.iproute2}/bin/ip addr del 2a09:80c0:102::f000:0/64 dev ${config.services.nfs-server-backup.interface}"
+          "-${pkgs.iproute2}/bin/ip addr del 2a09:80c0:102::f000:0/64 dev ${config.services.nfs-server.interface}"
 
           "${pkgs.zfs}/bin/zfs allow syncoid compression,create,destroy,mount,mountpoint,receive,rollback,send,snapshot,bookmark,hold nfs-home"
           "${pkgs.zfs}/bin/zfs allow syncoid compression,create,destroy,mount,mountpoint,receive,rollback,send,snapshot,bookmark,hold nfs-data"
@@ -32,7 +23,7 @@
           # longer to serve stale monitoring files.
           "${pkgs.coreutils}/bin/rm -rf /var/log/telegraf/syncoid-home /var/log/telegraf/syncoid-share"
           # add nfs server backup ip
-          "-${pkgs.iproute2}/bin/ip addr add 2a09:80c0:102::f000:1/64 dev ${config.services.nfs-server-backup.interface}"
+          "-${pkgs.iproute2}/bin/ip addr add 2a09:80c0:102::f000:1/64 dev ${config.services.nfs-server.interface}"
         ];
         RemainAfterExit = true;
       };

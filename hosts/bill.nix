@@ -4,10 +4,9 @@
     ../modules/bonding.nix
     ../modules/jumphost
     ../modules/sys-prog/users.nix
-    ../modules/nfs/server.nix
+
     ../modules/buildbot/master.nix
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
-    #../modules/nfs/server.nix
   ];
 
   networking.hostName = "bill";
@@ -16,8 +15,6 @@
     "b8:ce:f6:0b:ee:64"
     "b8:ce:f6:0b:ee:65"
   ];
-
-  services.nfs-server.backupPublickey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICF4STFVYFLpvpxzRzi1d9bFp3ttqDHo8k0L12WHD2FX";
 
   simd.arch = "skylake";
 
