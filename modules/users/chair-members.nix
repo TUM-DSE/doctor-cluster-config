@@ -1,3 +1,4 @@
+{ config, lib, ... }:
 let
 
   manosKeys = [
@@ -316,14 +317,10 @@ in
         openssh.authorizedKeys.keys = oguzcanKeys;
       };
 
-      root = {
-        openssh.authorizedKeys.keys = harshanavkisKeys
-          ++ dimitraKeys
-          ++ dimitriosKeys
-          ++ redhaKeys
-          ++ sebastianKeys
-          ++ felixKeys;
-      };
+      # add staff to root account as well
+      root.openssh.authorizedKeys.keys = let
+        staff = builtins.filter (user: builtins.elem "staff" user.extraGroups) (builtins.attrValues config.users.users);
+      in lib.concatMap (user: user.openssh.authorizedKeys.keys) staff;
     };
 
     # DANGER ZONE!
