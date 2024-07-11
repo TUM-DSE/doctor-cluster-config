@@ -1,10 +1,10 @@
 { self, pkgs, ... }:
 
 let
-  inherit (self.inputs) nixos-generators;
   defaultModule = { ... }: {
     imports = [
       ./base-config.nix
+      ./nix-settings.nix
       self.inputs.sops-nix.nixosModules.default
     ];
     _module.args.inputs = self.inputs;
