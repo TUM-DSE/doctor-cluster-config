@@ -71,16 +71,18 @@ For information on how to setup the PM in App-Direct mode, please see [here](./S
 
 ## Servers used for NFS/Services
 
-- [bill](./hosts/bill.md)
-- [nardole](./hosts/nardole.md)
 
 ## CI servers
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab
 
 - [astrid](./hosts/astrid.md)
-- [dan](./hosts/dan.md)
+- [dan](./hosts/dan.md), also nfs primary
 - [mickey](./hosts/mickey.md)
+
+
+- [bill](./hosts/bill.md)
+- [nardole](./hosts/nardole.md)
 
 ## ARM64
 
@@ -125,7 +127,7 @@ machines. Those machines also are not backed up.
 # Storage
 
 We have a shared nfs-based `/home` mounted. The nfs for /home is based on a NVME
-disk on nardole and is limited to 3.5TB.
+disk on mickey and is limited to 1.5TB.
 Please do not store large amounts of data such as VM images here. VM images of
 running VMs will also interfere with the Backupsoftware.
 Instead if you need fast local disk access use `/scratch/$YOURUSER`
@@ -134,10 +136,10 @@ not included in the backup.
 If you want to share larger datasets between
 machines use `/share`, which is based on two hard disk (15TB capacity).
 
-Both nfs export stored on `nardole` are also replicated to `bill` every 15
+Both nfs export stored on `mickey` are also replicated to `dan` every 15
 minutes using zfs replication based on
 [syncoid](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server-backup.nix).
-In case there are hardware problems with `nardole`, `bill` can take over serving
+In case there are hardware problems with `mickey`, `dan` can take over serving
 the nfs.
 
 ## Adding non-nixos hosts to NFS.
