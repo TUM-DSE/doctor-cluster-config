@@ -35,6 +35,7 @@ let
     ./modules/systemd.nix
     ./modules/cleanup-usr.nix
     ./modules/tinc.nix
+    ./modules/sshd
 
     disko.nixosModules.disko
 
