@@ -11,7 +11,7 @@
     ];
     evalWorkerCount = 32;
     github = {
-      tokenFile = config.sops.secrets.github-token.path;
+      authType.legacy.tokenFile = config.sops.secrets.github-token.path;
       webhookSecretFile = config.sops.secrets.github-webhook-secret.path;
       oauthSecretFile = config.sops.secrets.github-oauth-secret.path;
       oauthId = "1448d1d1a3d84fa023f4";
