@@ -1,4 +1,5 @@
 { stdenv, fetchurl, dpkg }:
+# probably needs an update https://packages.xilinx.com/ui/native/debian-packages/pool/
 stdenv.mkDerivation rec {
   pname = "xilinx-firmware";
   version = "201920_3-3";
