@@ -3,7 +3,7 @@
   config = let
     isMode = mode: (config.hardware.asahi.useExperimentalGPUDriver
         && config.hardware.asahi.experimentalGPUInstallMode == mode);
-  in lib.mkMerge [
+  in lib.mkIf config.hardware.asahi.enable (lib.mkMerge [
     {
       # required for proper DRM setup even without GPU driver
       services.xserver.config = ''
@@ -37,11 +37,12 @@
       # (and in a way compatible with pure evaluation)
       nixpkgs.overlays = [
         (final: prev: {
-          mesa = final.mesa-asahi-edge;
+          # prevent cross-built Mesas that might be evaluated using this config (e.g. Steam emulation via box64) from using the special Asahi Mesa
+          mesa = if prev.targetPlatform.isAarch64 then final.mesa-asahi-edge else prev.mesa;
         })
       ];
     })
-  ];
+  ]);
 
   options.hardware.asahi.useExperimentalGPUDriver = lib.mkOption {
     type = lib.types.bool;

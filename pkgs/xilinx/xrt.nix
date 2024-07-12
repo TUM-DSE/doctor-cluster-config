@@ -23,13 +23,14 @@
 , dpkg
 , rapidjson
 , libxcrypt
+, libsystemtap
 }:
 let
-  suffix = "2.16.204";
-  version = "202320.${suffix}";
+  suffix = "2.17.319";
+  version = "202410.${suffix}";
   xrtBin = fetchurl {
-    url = "https://www.xilinx.com/bin/public/openDownload?filename=xrt_${version}_22.04-amd64-xrt.deb";
-    sha256 = "sha256-FEhzx2KlIYpunXmTSBjtyAtblbuz5tkvnt2qp21gUho=";
+    url = "https://archive.org/download/xrt_${version}_22.04-amd64-xrt/xrt_${version}_22.04-amd64-xrt.deb";
+    sha256 = "sha256-/t9coD/AQelVuc93UJF0tM4iJjDkQM1uwReUQ8Wj1gA=";
   };
 in
 stdenv.mkDerivation rec {
@@ -40,7 +41,7 @@ stdenv.mkDerivation rec {
     repo = "XRT";
     rev = version;
     fetchSubmodules = true;
-    sha256 = "sha256-j6BE6Vx+FzztnPY9m+GQK1sUwf2areNp6oTzas/ITks=";
+    sha256 = "sha256-a4BSVOZ2vcW4tj2/gH+3e4UFWEGRus7XG12B4CADvt4=";
   };
 
   enableParallelBuilding = true;
@@ -67,6 +68,7 @@ stdenv.mkDerivation rec {
     rapidjson
     protobuf
     libxcrypt
+    libsystemtap
   ];
 
   nativeBuildInputs = [
@@ -109,9 +111,10 @@ stdenv.mkDerivation rec {
   '';
 
   postInstall = ''
-    ln -s $out/opt/xilinx/xrt/include $out/include
-    ln -s $out/opt/xilinx/xrt $out/include/xrt
-    ln -s $out/opt/xilinx/xrt/lib/* $out/lib
+    ln -s $out/xrt/include $out/include
+    ln -s $out/xrt $out/include/xrt
+    ln -s $out/xrt/lib/* $out/lib
+    ln -s $out/xrt/bin/* $out/bin
     ln -s /opt/xilinx/firmware $out/opt/xilinx/firmware
     ln -s $out/lib/firmware/xilinx $out/opt/xilinx/xrt/share/fw
   '';

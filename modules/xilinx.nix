@@ -44,25 +44,25 @@ in
       packages.xrt
     ];
 
-    systemd.tmpfiles.rules = [
-      "L+ /opt/xilinx/xrt - - - - ${packages.xrt}/opt/xilinx/xrt"
-    ];
+    # this is broken just now, we may need to update the firmware from here:
+    # https://packages.xilinx.com/ui/native/debian-packages/pool/
+    # systemd.services.setup-xilinx-firmware = {
+    #   wantedBy = [ "multi-user.target" ];
+    #   script = ''
+    #     set -x
+    #     rm -rf /lib/firmware/xilinx /opt/xilinx
+    #     mkdir -p /lib/firmware/xilinx /opt/xilinx/firmware
+    #     cp -r ${packages.xrt}/opt/xilinx/xrt /opt/xilinx/xrt
+    #     cp -r ${packages.xilinx-firmware}/lib/firmware/xilinx /lib/firmware/
+    #     cp -r ${packages.firmware-sn1000}/lib/firmware/xilinx/sn1000 /lib/firmware/xilinx/
 
-    systemd.services.setup-xilinx-firmware = {
-      wantedBy = [ "multi-user.target" ];
-      script = ''
-        rm -rf /lib/firmware/xilinx /opt/xilinx/firmware
-        mkdir -p /lib/firmware/xilinx /opt/xilinx/firmware
-        cp -r ${packages.xilinx-firmware}/lib/firmware/xilinx/* /lib/firmware/xilinx/
-        cp -r ${packages.firmware-sn1000}/lib/firmware/xilinx/sn1000 /lib/firmware/xilinx/
-
-        cp -r ${packages.xilinx-firmware}/opt/xilinx/firmware/* /opt/xilinx/firmware/
-        for p in ${packages.xilinx-firmware}/share/xilinx-firmware/*; do
-           echo $p
-           $p
-        done
-      '';
-    };
+    #     cp -r ${packages.xilinx-firmware}/opt/xilinx/firmware /opt/xilinx
+    #     for p in ${packages.xilinx-firmware}/share/xilinx-firmware/*; do
+    #        echo $p
+    #        $p
+    #     done
+    #   '';
+    # };
 
     sops.secrets.xilinx-password-hash.neededForUsers = true;
 

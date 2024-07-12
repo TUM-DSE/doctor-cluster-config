@@ -231,7 +231,6 @@ HOSTS = [
     "dan.dos.cit.tum.de",
     "mickey.dos.cit.tum.de",
     "bill.dos.cit.tum.de",
-    "nardole.dos.cit.tum.de",
     "yasmin.dos.cit.tum.de",
     "graham.dos.cit.tum.de",
     "ryan.dos.cit.tum.de",
@@ -274,7 +273,6 @@ MANUFACTURERS = dict(
         ],
         "supermicro_broken": [
             "bill.dos.cit.tum.de",
-            "nardole.dos.cit.tum.de",
         ],
     }
 )
