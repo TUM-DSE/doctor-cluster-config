@@ -5,9 +5,7 @@
         "flake-parts": [
           "flake-parts"
         ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs",
         "treefmt-nix": [
           "treefmt-nix"
         ]
@@ -255,16 +253,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1720972987,
-        "narHash": "sha256-OzKwGy1u3mLGoRH7+mNuZFKhp+qn5Q26WpAdC4NeSCw=",
-        "owner": "TUM-DSE",
+        "lastModified": 1720933452,
+        "narHash": "sha256-HJhBuKZcmZSrAXukaIus9SsXahIVuo4/zdAhxSJrSQ4=",
+        "owner": "Nixos",
         "repo": "nixpkgs",
-        "rev": "474139f88ca210465c5e1934581e48eb28d69acf",
+        "rev": "3e7eb6610f8b7003416b2bffdd8865b85326db18",
         "type": "github"
       },
       "original": {
-        "owner": "TUM-DSE",
-        "ref": "nixos-24.05-backports",
+        "owner": "Nixos",
+        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -281,6 +279,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "release-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1720972987,
+        "narHash": "sha256-OzKwGy1u3mLGoRH7+mNuZFKhp+qn5Q26WpAdC4NeSCw=",
+        "owner": "TUM-DSE",
+        "repo": "nixpkgs",
+        "rev": "474139f88ca210465c5e1934581e48eb28d69acf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TUM-DSE",
+        "ref": "nixos-24.05-backports",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -311,7 +325,7 @@
         "nixos-anywhere": "nixos-anywhere",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
