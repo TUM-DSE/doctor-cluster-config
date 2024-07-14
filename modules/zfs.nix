@@ -8,7 +8,7 @@
   networking.hostId = "8425e348";
   boot.kernelPackages =
     lib.mkDefault
-      (pkgs.zfsUnstable.override { removeLinuxDRM = pkgs.hostPlatform.isAarch64; })
+      (config.boot.zfs.package.override { removeLinuxDRM = pkgs.hostPlatform.isAarch64; })
       .latestCompatibleLinuxPackages;
   boot.zfs.removeLinuxDRM = pkgs.hostPlatform.isAarch64;
 
