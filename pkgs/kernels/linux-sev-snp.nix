@@ -105,14 +105,24 @@ let
     extraPatches = [ ];
   };
 
-
-  snp_latest = {
+  snp_6_6 = {
     owner = "AMDESE";
     repo = "linux";
     rev = "5a170ce1a08259ac57a9074e1e7a170d6b8c0cda";
     sha256 = "sha256-YDLSwDI5jHMvYuAYdkya707U6zehkXlUL8VzpEk6+Bs=";
     version = "6.6";
     modDirVersion = "6.6.0-rc1";
+    extraPatches = [ ];
+  };
+
+  snp_latest = {
+    owner = "mmisono";
+    repo = "linux";
+    # branch: snp-host-latest-20240514
+    rev = "05b10142ac6a1a3b02d4be018e119c2648d1da6c";
+    sha256 = "sha256-ZEfGa2dbHlXWPbEzUmHrWTIifVt4PtkM+w1cHTzt7xw=";
+    version = "6.9";
+    modDirVersion = "6.9.0-rc7";
     extraPatches = [ ];
   };
 in
