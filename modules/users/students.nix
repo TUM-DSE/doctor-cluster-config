@@ -96,6 +96,9 @@ let
   lanKeys = [
    "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAAl2L4v1N5MEkPMJ1TIfiF6OwM58J0b4FORkA1mTgroq+7c9fzxH8sv/9wsAJkV7LI8JPyCpK9zpMLcX5A1gNJImAEnsyrYxLzxUQfhKzhpf39v1gvMCgh2agbaB4g8TQ5wmjzx22EWR3yoOG7rldbjbdoXTa2CmGg9xLVkce9fLYC31w== lan@LAPTOP-TRMD7DCS"
 ];
+  michaelKeys = [
+   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGoXqeCmxusQtuRVsFoZsa0SPTYRdPlcnmA9XY7WrHmt" 
+  ];
 
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in
@@ -104,7 +107,7 @@ in
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
     # Martin Fink (HiWi)
-    martin = {
+    martin = { 
       isNormalUser = true;
       home = "/home/martin";
       inherit extraGroups;
@@ -360,6 +363,17 @@ in
       allowedHosts = [ "graham" "irene" ];
       openssh.authorizedKeys.keys = lanKeys;
     };
+    
+    # Michael Hackl, M.Sc thesis (Wallet project)
+    michael = {
+      isNormalUser = true;
+      home = "/home/michael";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2051;
+      allowedHosts = [ "ryan" "vislor" ];
+      openssh.authorizedKeys.keys = michaelKeys;
+     };
   };
 
   # DANGER ZONE!
