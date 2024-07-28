@@ -64,27 +64,6 @@
         "type": "github"
       }
     },
-    "flake-parts_2": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "nixos-anywhere",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1698882062,
-        "narHash": "sha256-HkhafUayIqxXyHH1X8d9RDl1M2CkFgZLjKD3MzabiEo=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "8c9fa2545007b49a5db5f650ae91f227672c3877",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "flake-registry": {
       "flake": false,
       "locked": {
@@ -142,29 +121,15 @@
         "type": "github"
       }
     },
-    "nixos-2305": {
-      "locked": {
-        "lastModified": 1698911509,
-        "narHash": "sha256-FFwqTbF+1laraWTL/t7LI+gN+DYfoj+iFYLof5wCea8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ecd985f22e007e6ac3152d68590c06cbbaea8c0e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "release-23.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixos-anywhere": {
       "inputs": {
         "disko": [
           "disko"
         ],
-        "flake-parts": "flake-parts_2",
-        "nixos-2305": "nixos-2305",
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixos-2305": [],
         "nixos-images": "nixos-images",
         "nixpkgs": [
           "nixpkgs"
@@ -267,22 +232,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1720915306,
-        "narHash": "sha256-6vuViC56+KSr+945bCV8akHK+7J5k6n/epYg/W3I5eQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "74348da2f3a312ee25cea09b98cdba4cb9fa5d5d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "release-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1722192762,
@@ -337,7 +286,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-stable": "nixpkgs-stable"
+        "nixpkgs-stable": []
       },
       "locked": {
         "lastModified": 1720926522,
