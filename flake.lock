@@ -5,7 +5,9 @@
         "flake-parts": [
           "flake-parts"
         ],
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "treefmt-nix": [
           "treefmt-nix"
         ]
@@ -218,27 +220,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1720933452,
-        "narHash": "sha256-HJhBuKZcmZSrAXukaIus9SsXahIVuo4/zdAhxSJrSQ4=",
-        "owner": "Nixos",
-        "repo": "nixpkgs",
-        "rev": "3e7eb6610f8b7003416b2bffdd8865b85326db18",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Nixos",
-        "ref": "nixos-unstable-small",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1722192762,
-        "narHash": "sha256-dTe9kdpNZ8AyqaUST+1unWLWyv6fMZDuelipvORBSQ0=",
+        "lastModified": 1722419743,
+        "narHash": "sha256-loRZD4AO/g1lUuPOy84qbzP0IrmGSUB0Xmzvn6r+P4s=",
         "owner": "TUM-DSE",
         "repo": "nixpkgs",
-        "rev": "ba62b9cdc65eccf400d5031651fd0d0f2edbfe90",
+        "rev": "34eb9d184b3aa8c51b0c37b90a0136f04303cc5b",
         "type": "github"
       },
       "original": {
@@ -274,7 +260,7 @@
         "nixos-anywhere": "nixos-anywhere",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
