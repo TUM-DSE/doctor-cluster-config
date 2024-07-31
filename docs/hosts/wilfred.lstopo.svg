@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='952px' height='462px' viewBox='0 0 952px 462px' version='1.1'>
-	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='952' height='424' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='896px' height='462px' viewBox='0 0 896px 462px' version='1.1'>
+	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='896' height='424' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Machine_0_text' class='Machine' font-family='Monospace' x='7' y='17' fill='rgb(0,0,0)' font-size='10px'>Machine (251GB total)</text>
 	<rect id='Package_0_rect' class='Package' x='7' y='24' width='329' height='293' fill='rgb(210,231,164)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Package_0_text' class='Package' font-family='Monospace' x='14' y='41' fill='rgb(0,0,0)' font-size='10px'>Package L#0</text>
@@ -123,12 +123,8 @@
 	<line id='PCIBridge_7_line_2' class='PCIBridge' x1='785' y1='27' x2='809' y2='27' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PCIBridge_7_text_2' class='PCIBridge' font-family='Monospace' x='788' y='40' fill='rgb(0,0,0)' font-size='10px'>32</text>
 	<line id='PCIBridge_7_line_1' class='PCIBridge' x1='785' y1='27' x2='785' y2='27' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<rect id='PCI_7_rect' class='PCI' x='809' y='24' width='136' height='86' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='PCI_7_rect' class='PCI' x='809' y='24' width='80' height='24' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PCI_7_text' class='PCI' font-family='Monospace' x='816' y='41' fill='rgb(0,0,0)' font-size='10px'>PCI 51:00.0</text>
-	<rect id='Net_4_rect' class='Net' x='816' y='48' width='98' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Net_4_text' class='Net' font-family='Monospace' x='823' y='65' fill='rgb(0,0,0)' font-size='10px'>Net enp81s0np0</text>
-	<rect id='OpenFabrics_5_rect' class='OpenFabrics' x='816' y='79' width='122' height='24' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='OpenFabrics_5_text' class='OpenFabrics' font-family='Monospace' x='823' y='96' fill='rgb(0,0,0)' font-size='10px'>OpenFabrics irdma0</text>
 	<rect id='HostBridge_8_rect' class='HostBridge' x='343' y='241' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_8_line' class='HostBridge' x1='350' y1='244' x2='357' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_8_line_2' class='HostBridge' x1='357' y1='244' x2='381' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -141,12 +137,12 @@
 	<line id='PCIBridge_9_line_1' class='PCIBridge' x1='395' y1='244' x2='395' y2='244' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<rect id='PCI_8_rect' class='PCI' x='419' y='241' width='82' height='114' fill='rgb(190,210,149)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='PCI_8_text' class='PCI' font-family='Monospace' x='426' y='258' fill='rgb(0,0,0)' font-size='10px'>PCI 8a:00.0</text>
-	<rect id='Block_6_rect' class='Block' x='426' y='265' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Block_6_text' class='Block' font-family='Monospace' x='433' y='282' fill='rgb(0,0,0)' font-size='10px'>Block sdb</text>
-	<text id='Block_6_text_1' class='Block' font-family='Monospace' x='433' y='296' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
-	<rect id='Block_7_rect' class='Block' x='426' y='310' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Block_7_text' class='Block' font-family='Monospace' x='433' y='327' fill='rgb(0,0,0)' font-size='10px'>Block sda</text>
-	<text id='Block_7_text_1' class='Block' font-family='Monospace' x='433' y='341' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
+	<rect id='Block_4_rect' class='Block' x='426' y='265' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Block_4_text' class='Block' font-family='Monospace' x='433' y='282' fill='rgb(0,0,0)' font-size='10px'>Block sdb</text>
+	<text id='Block_4_text_1' class='Block' font-family='Monospace' x='433' y='296' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
+	<rect id='Block_5_rect' class='Block' x='426' y='310' width='68' height='38' fill='rgb(222,222,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<text id='Block_5_text' class='Block' font-family='Monospace' x='433' y='327' fill='rgb(0,0,0)' font-size='10px'>Block sda</text>
+	<text id='Block_5_text_1' class='Block' font-family='Monospace' x='433' y='341' fill='rgb(0,0,0)' font-size='10px'>1788 GB</text>
 	<rect id='Misc_0_rect' class='Misc' x='508' y='241' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Misc_0_text' class='Misc' font-family='Monospace' x='515' y='258' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
 	<rect id='Misc_1_rect' class='Misc' x='601' y='241' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -163,7 +159,7 @@
 	<text id='Misc_6_text' class='Misc' font-family='Monospace' x='443' y='410' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
 	<rect id='Misc_7_rect' class='Misc' x='529' y='393' width='86' height='24' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Misc_7_text' class='Misc' font-family='Monospace' x='536' y='410' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
-	<rect id='anon_rect' x='0' y='424' width='952' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
+	<rect id='anon_rect' x='0' y='424' width='896' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='441' fill='rgb(0,0,0)' font-size='10px'>Host: wilfred</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='455' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 08 Nov 2023 09:11:38 AM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='455' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 31 Jul 2024 02:54:26 PM UTC</text>
 </svg>

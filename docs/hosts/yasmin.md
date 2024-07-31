@@ -1,127 +1,150 @@
 # yasmin
 
 ```
-System:    Host: yasmin Kernel: 6.5.9 aarch64 bits: 64 compiler: gcc v: 12.2.0 
-           parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/qa7s18v78l0jr29rimnq9kwgwvzswdwb-linux-6.5.9-Image 
-           init=/nix/store/rz86ivil3cxy06m21hws9518fqgq4b85-nixos-system-yasmin-23.05.20231027.0517940/init 
-           console=tty0 console=ttyAMA0,115200 console=ttyS0,115200 console=ttyS0,115200n8 
-           console=ttyAMA0,115200n8 console=tty0 nohibernate loglevel=4 
-           Console: N/A Distro: NixOS 23.05 (Stoat) 
-Machine:   Type: Server System: GIGABYTE product: R181-T90-00 v: 0100 serial: GLG4NN012A0002 
-           Chassis: type: 23 v: 1.0 serial: 01234567890123456789AB 
-           Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 UEFI: GIGABYTE v: F34 
-           date: 08/13/2020 
-Memory:    RAM: total: 251.26 GiB used: 34.1 GiB (13.6%) 
-           Array-1: capacity: 2 TiB slots: 12 EC: Multi-bit ECC max-module-size: 170.67 GiB 
-           note: est. 
-           Device-1: DIMM_P0_A0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
-           detail: registered (buffered) bus-width: 64 bits total: 72 bits manufacturer: Samsung 
-           part-no: M393A8G40AB2-CWE serial: 1158043522 
-           Device-2: DIMM_P0_B0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
-           detail: registered (buffered) bus-width: 64 bits total: 72 bits manufacturer: Samsung 
-           part-no: M393A8G40AB2-CWE serial: 1158043450 
-           Array-2: capacity: 2 TiB slots: 12 EC: Multi-bit ECC max-module-size: 170.67 GiB 
-           note: est. 
-           Device-1: DIMM_P1_I0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
-           detail: registered (buffered) bus-width: 64 bits total: 72 bits manufacturer: Samsung 
-           part-no: M393A8G40AB2-CWE serial: 1158043569 
-           Device-2: DIMM_P1_J0 size: 64 GiB speed: spec: 3200 MT/s actual: 2666 MT/s type: DDR4 
-           detail: registered (buffered) bus-width: 64 bits total: 72 bits manufacturer: Samsung 
-           part-no: M393A8G40AB2-CWE serial: 27077680 
-PCI Slots: Slot: 0 type: x16 PCI Express 3 OCP_1_x16 status: Available length: Short 
-           Slot: 4 type: x8 PCI Express 3 PCIE SLOT2_1 / PCIE SLOT1_x8 status: Available 
-           length: Short 
-           Slot: 6 type: x4 PCI Express 3 PCIE SLOT2_1 / PCIE SLOT1_x4 status: In Use 
-           length: Short 
-           Slot: 7 type: x4 PCI Express 3 PCIE SLOT2_1 / PCIE SLOT1_x4 status: Available 
-           length: Short 
-           Slot: 8 type: x8 PCI Express 3 PCIE SLOT2_2_x8 status: Available length: Short 
-           Slot: 10 type: x4 PCI Express 3 LoM QL41102 status: In Use length: Short 
-           Slot: 12 type: x8 PCI Express 3 LSI 3008 status: In Use length: Short 
-           Slot: 14 type: x16 PCI Express 3 OCP_2_x16 status: Available length: Long 
-           Slot: 18 type: x16 PCI Express 3 PCIE SLOT3_1_x16 status: Available length: Long 
-           Slot: 26 type: x8 PCI Express 3 PCIE SLOT3_2_x8 status: Available length: Short 
-           Slot: 22 type: x16 PCI Express 3 PCIE SLOT4_x16 status: Available length: Long 
-CPU:       Info: 224-Core (2-Die) model: N/A bits: 64 type: MCP MCM arch: ARMv8 family: 8 
-           model-id: 1 stepping: 2 
-           features: Use -f option to see features bogomips: 89600 
-           Speed: N/A min/max: N/A base/boost: 2000/2500 volts: 0.8 V ext-clock: 33 MHz 
-           Core speeds (MHz): No per core speed data found. 
-           Vulnerabilities: Type: gather_data_sampling status: Not affected 
-           Type: itlb_multihit status: Not affected 
-           Type: l1tf status: Not affected 
-           Type: mds status: Not affected 
-           Type: meltdown status: Not affected 
-           Type: mmio_stale_data status: Not affected 
-           Type: retbleed status: Not affected 
-           Type: spec_rstack_overflow status: Not affected 
-           Type: spec_store_bypass status: Vulnerable 
-           Type: spectre_v1 mitigation: __user pointer sanitization 
-           Type: spectre_v2 status: Vulnerable 
-           Type: srbds status: Not affected 
-           Type: tsx_async_abort status: Not affected 
-Graphics:  Device-1: ASPEED Graphics Family driver: ast v: kernel bus-ID: 0e:00.0 
-           chip-ID: 1a03:2000 class-ID: 0300 
-           Display: server: No display server data found. Headless machine? tty: N/A 
-           Message: Advanced graphics data unavailable in console for root. 
-Audio:     Message: No device data found. 
-           Sound Server-1: ALSA v: k6.5.9 running: yes 
-Network:   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede 
-           v: kernel port: N/A bus-ID: 0b:00.0 chip-ID: 1077:8070 class-ID: 0200 
-           IF: eno1 state: up speed: 10000 Mbps duplex: full mac: b4:2e:99:3f:74:7c 
-           IP v4: 131.159.102.7/24 type: dynamic scope: global 
-           IP v6: 2a09:80c0:102::7/128 type: dynamic noprefixroute scope: global 
-           IP v6: fe80::b62e:99ff:fe3f:747c/64 scope: link 
-           Device-2: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede 
-           v: kernel port: N/A bus-ID: 0b:00.1 chip-ID: 1077:8070 class-ID: 0200 
-           IF: eno1 state: up speed: 10000 Mbps duplex: full mac: b4:2e:99:3f:74:7c 
-           IP v4: 131.159.102.7/24 type: dynamic scope: global 
-           IP v6: 2a09:80c0:102::7/128 type: dynamic noprefixroute scope: global 
-           IP v6: fe80::b62e:99ff:fe3f:747c/64 scope: link 
-           Device-3: American Megatrends Virtual Ethernet type: USB driver: cdc_ether 
-           bus-ID: 3-1.3:5 chip-ID: 046b:ffb0 class-ID: 0a00 serial: 1234567890 
-           IF: enp0s15f1u1u3c2 state: unknown speed: -1 duplex: half mac: 16:d4:72:2c:21:77 
-           IP v4: 169.254.252.174/16 scope: link 
-           IP v6: fe80::14d4:72ff:fe2c:2177/64 scope: link 
-           IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:a7:cc:a3:b9 
-           IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255 
-           IP v6: fe80::42:a7ff:fecc:a3b9/64 scope: link 
-           IF-ID-2: eno2 state: down mac: b4:2e:99:3f:74:7d 
-           IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A 
-           IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global 
-           IF-ID-4: vethafe211c state: up speed: 10000 Mbps duplex: full mac: 0a:b3:77:69:de:88 
-           WAN IP: 131.159.102.7 
-RAID:      Device-1: zroot type: zfs status: ONLINE level: linear size: 888 GiB free: 683 GiB 
-           allocated: 205 GiB 
-           Components: Online: N/A 
-Drives:    Local Storage: total: 1.78 TiB used: 2.53 TiB (142.2%) 
-           ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB 
-           size: 931.51 GiB block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
-           rotation: SSD serial: S4EWNX0R514087T rev: 2B2QEXM7 temp: 29 ° (302 K) C 
-           SMART: yes health: PASSED on: 68d 16h cycles: 7 read-units: 417 [213 MB] 
-           written-units: 562,576 [288 GB] 
-           ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 
-           family: based SSDs size: 894.25 GiB block-size: physical: 4096 B logical: 512 B 
-           sata: 3.2 speed: 6.0 Gb/s rotation: SSD serial: S45NNC0R216725 rev: 904Q temp: 20 C 
-           scheme: GPT 
-           SMART: yes state: enabled health: PASSED on: 2y 97d 3h cycles: 22 read: 21.43 TiB 
-           written: 38.36 TiB 
-Partition: ID-1: / raw-size: N/A size: 750.35 GiB used: 95.94 GiB (12.8%) fs: zfs 
-           logical: zroot/root/nixos 
-           ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 265.5 MiB (53.1%) fs: vfat 
-           block-size: 512 B dev: /dev/sdb1 maj-min: 8:17 
-           ID-3: /home raw-size: N/A size: 3.22 TiB used: 797.28 GiB (24.2%) fs: nfs4 
-           remote: nfs:/export/home 
-           ID-4: /tmp raw-size: N/A size: 654.81 GiB used: 406 MiB (0.1%) fs: zfs 
-           logical: zroot/root/tmp 
-Swap:      Alert: No swap data was found. 
-Sensors:   Message: No ipmi sensor data found. 
-           System Temperatures: lm-sensors cpu: 35.4 C mobo: 33.8 C 
-           Fan Speeds (RPM): lm-sensors N/A 
-Info:      Processes: 2503 
-           Uptime: 09:11:40  up 10 days  8:58,  3 users,  load average: 0.24, 0.19, 0.09 
-           Init: systemd v: 253 target: multi-user.target tool: systemctl Compilers: gcc: 12.2.0 
-           Packages: nix-default: 0 nix-sys: 527 lib: 116 nix-usr: 0 Client: Sudo v: 1.9.13p3 
-           inxi: 3.3.04 
+System:
+  Host: yasmin Kernel: 6.8.12 arch: aarch64 bits: 64 compiler: gcc v: 13.2.0
+    clocksource: arch_sys_counter
+    parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/wkgxlm39kj2za5xlqlpxjg6hpwi5cy7m-linux-6.8.12-Image
+    init=/nix/store/xpyngcx3i8grqa5248azr524xmkgaz5i-nixos-system-yasmin-24.05.20240709.249fbde/init
+    console=ttyS0,115200 console=ttyAMA0,115200 console=tty0 console=ttyS0,115200n8
+    console=ttyAMA0,115200n8 console=tty0 nohibernate loglevel=4
+  Console: N/A Distro: NixOS 24.05 (Uakari)
+Machine:
+  Type: Server System: GIGABYTE product: R181-T90-00 v: 0100 serial: GLG4NN012A0002 Chassis:
+    type: 23 v: 1.0 serial: 01234567890123456789AB
+  Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 part-nu: SABER SKU
+    uuid: 00000000-0000-0040-8000-b42e993f747c UEFI: GIGABYTE v: F34 date: 08/13/2020
+Memory:
+  System RAM: total: 256 GiB available: 251.24 GiB used: 111.84 GiB (44.5%)
+  Report: arrays: 2 capacity: 4 TiB installed: 256 GiB slots: 24 active: 4 type: DDR4
+    eec: Multi-bit ECC
+  Array-1: capacity: 2 TiB installed: 128 GiB slots: 12 modules: 2 EC: Multi-bit ECC
+    max-module-size: 170.67 GiB note: est.
+  Device-1: DIMM_P0_A0 type: DDR4 detail: registered (buffered) size: 64 GiB speed:
+    spec: 3200 MT/s actual: 2666 MT/s volts: curr: 1.2 min: 1.2 max: 1.2 width (bits): data: 64
+    total: 72 manufacturer: Samsung part-no: M393A8G40AB2-CWE serial: 1158043522
+  Device-2: DIMM_P0_B0 type: DDR4 detail: registered (buffered) size: 64 GiB speed:
+    spec: 3200 MT/s actual: 2666 MT/s volts: curr: 1.2 min: 1.2 max: 1.2 width (bits): data: 64
+    total: 72 manufacturer: Samsung part-no: M393A8G40AB2-CWE serial: 1158043450
+  Array-2: capacity: 2 TiB installed: 128 GiB slots: 12 modules: 2 EC: Multi-bit ECC
+    max-module-size: 170.67 GiB note: est.
+  Device-1: DIMM_P1_I0 type: DDR4 detail: registered (buffered) size: 64 GiB speed:
+    spec: 3200 MT/s actual: 2666 MT/s volts: curr: 1.2 min: 1.2 max: 1.2 width (bits): data: 64
+    total: 72 manufacturer: Samsung part-no: M393A8G40AB2-CWE serial: 1158043569
+  Device-2: DIMM_P1_J0 type: DDR4 detail: registered (buffered) size: 64 GiB speed:
+    spec: 3200 MT/s actual: 2666 MT/s volts: curr: 1.2 min: 1.2 max: 1.2 width (bits): data: 64
+    total: 72 manufacturer: Samsung part-no: M393A8G40AB2-CWE serial: 27077680
+PCI Slots:
+  Slot: 0 type: PCIe gen: 3 status: available length: short volts: 3.3 bus-ID: 01:00.0
+  Slot: 4 type: PCIe gen: 3 status: available length: short volts: 3.3 bus-ID: 05:00.0
+  Slot: 6 type: PCIe gen: 3 status: in use length: short volts: 3.3 bus-ID: 07:00.0
+  Slot: 7 type: PCIe gen: 3 status: available length: short volts: 3.3 bus-ID: 08:00.0
+  Slot: 8 type: PCIe gen: 3 status: available length: short volts: 3.3 bus-ID: 09:00.0
+  Slot: 10 type: PCIe gen: 3 status: in use length: short volts: 3.3 bus-ID: 0b:00.0
+  Slot: 12 type: PCIe gen: 3 status: in use length: short volts: 3.3 bus-ID: 0f:00.0
+  Slot: 14 type: PCIe gen: 3 status: available length: long volts: 3.3 bus-ID: 81:00.0
+  Slot: 18 type: PCIe gen: 3 status: available length: long volts: 3.3 bus-ID: 91:00.0
+  Slot: 26 type: PCIe gen: 3 status: available length: short volts: 3.3 bus-ID: 99:00.0
+  Slot: 22 type: PCIe gen: 3 status: available length: long volts: 3.3 bus-ID: 95:00.0
+CPU:
+  Info: model: N/A bits: 64 type: MT MCP SMP arch: ARMv8 family: 8 model-id: 1 stepping: 2
+  Topology: cpus: 2x cores: 28 tpc: 4 threads: 112 smt: enabled cache: L1: 2x 1.8 MiB (3.5 MiB)
+    desc: d-28x32 KiB; i-28x32 KiB L2: 2x 7 MiB (14 MiB) desc: 28x256 KiB L3: 2x 32 MiB (64 MiB)
+    desc: 1x32 MiB
+  Speed: N/A min/max: N/A base/boost: 2000/2500 volts: 0.8 V ext-clock: 33 MHz cores: No per
+    core speed data found. bogomips: 89600
+  Features: Use -f option to see features
+  Vulnerabilities:
+  Type: gather_data_sampling status: Not affected
+  Type: itlb_multihit status: Not affected
+  Type: l1tf status: Not affected
+  Type: mds status: Not affected
+  Type: meltdown status: Not affected
+  Type: mmio_stale_data status: Not affected
+  Type: reg_file_data_sampling status: Not affected
+  Type: retbleed status: Not affected
+  Type: spec_rstack_overflow status: Not affected
+  Type: spec_store_bypass status: Vulnerable
+  Type: spectre_v1 mitigation: __user pointer sanitization
+  Type: spectre_v2 status: Vulnerable
+  Type: srbds status: Not affected
+  Type: tsx_async_abort status: Not affected
+Graphics:
+  Device-1: ASPEED Graphics Family driver: ast v: kernel ports: active: VGA-1 empty: Virtual-1
+    bus-ID: 0e:00.0 chip-ID: 1a03:2000 class-ID: 0300
+  Display: server: No display server data found. Headless machine? tty: 80x40
+  Monitor-1: VGA-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
+  API: EGL Message: No EGL data available.
+  API: OpenGL Message: GL data unavailable in console for root.
+Audio:
+  Message: No device data found.
+  API: ALSA v: k6.8.12 status: kernel-api tools: N/A
+Network:
+  Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede v: kernel
+    pcie: gen: 3 speed: 8 GT/s lanes: 4 link-max: lanes: 8 port: N/A bus-ID: 0b:00.0
+    chip-ID: 1077:8070 class-ID: 0200
+  IF: eno1 state: up speed: 10000 Mbps duplex: full mac: b4:2e:99:3f:74:7c
+  IP v4: 131.159.102.7/24 type: dynamic scope: global
+  IP v6: 2a09:80c0:102::7/128 type: dynamic noprefixroute scope: global
+  IP v6: fe80::b62e:99ff:fe3f:747c/64 virtual: proto kernel_ll scope: link
+  Device-2: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede v: kernel
+    pcie: gen: 3 speed: 8 GT/s lanes: 4 link-max: lanes: 8 port: N/A bus-ID: 0b:00.1
+    chip-ID: 1077:8070 class-ID: 0200
+  IF: eno1 state: up speed: 10000 Mbps duplex: full mac: b4:2e:99:3f:74:7c
+  IP v4: 131.159.102.7/24 type: dynamic scope: global
+  IP v6: 2a09:80c0:102::7/128 type: dynamic noprefixroute scope: global
+  IP v6: fe80::b62e:99ff:fe3f:747c/64 virtual: proto kernel_ll scope: link
+  Device-3: American Megatrends Virtual Ethernet driver: cdc_ether type: USB rev: 2.0
+    speed: 480 Mb/s lanes: 1 mode: 2.0 bus-ID: 3-1.3:5 chip-ID: 046b:ffb0 class-ID: 0a00
+    serial: 1234567890
+  IF: enp0s15f1u1u3c2 state: unknown speed: -1 duplex: half mac: 16:d4:72:2c:21:77
+  IP v4: 169.254.252.174/16 scope: link
+  IP v6: fe80::14d4:72ff:fe2c:2177/64 virtual: proto kernel_ll scope: link
+  IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:a1:48:b2:c2
+  IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
+  IP v6: fe80::42:a1ff:fe48:b2c2/64 virtual: proto kernel_ll scope: link
+  IF-ID-2: eno2 state: down mac: b4:2e:99:3f:74:7d
+  IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
+  IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global
+  IF-ID-4: veth825e9ea state: up speed: 10000 Mbps duplex: full mac: ea:d9:b6:b9:49:56
+  Info: services: sshd, systemd-networkd, systemd-timesyncd
+  WAN IP: 131.159.102.7
+RAID:
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 888 GiB free: 439 GiB
+    allocated: 449 GiB zfs-fs: size: 860.5 GiB free: 410.91 GiB
+  Components: Online:
+  1: sdb2 maj-min: 8:18 size: 893.76 GiB
+Drives:
+  Local Storage: total: raw: 1.78 TiB usable: 1.75 TiB used: 402.33 GiB (22.4%)
+  ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB size: 931.51 GiB
+    block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 tech: SSD
+    serial: S4EWNX0R514087T fw-rev: 2B2QEXM7 temp: 39.9 C
+  SMART: yes health: PASSED on: 68d 17h cycles: 7 read-units: 579 [296 MB]
+    written-units: 562,580 [288 GB]
+  ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 family: based SSDs
+    size: 894.25 GiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s tech: SSD
+    serial: S45NNC0R216725 fw-rev: 904Q temp: 33 C scheme: GPT
+  SMART: yes state: enabled health: PASSED on: 2y 363d 8h cycles: 22 read: 31.97 TiB
+    written: 54.77 TiB
+Partition:
+  ID-1: / raw-size: N/A size: 548.46 GiB used: 137.54 GiB (25.1%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 181.2 MiB (36.3%) fs: vfat
+    block-size: 512 B dev: /dev/sdb1 maj-min: 8:17
+  ID-3: /home raw-size: N/A size: 3.02 TiB used: 1.3 TiB (43.1%) fs: nfs4
+    remote: nfs:/export/home
+  ID-4: /tmp raw-size: N/A size: 410.94 GiB used: 29.9 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+Swap:
+  Alert: No swap data was found.
+Sensors:
+  Src: ipmi System Temperatures: cpu-1: 48 C cpu-2: 47 C mobo: 35 C
+  Fan Speeds (rpm): N/A
+  Power: 12v: 12.545 5v: N/A 3.3v: N/A vbat: 3.053 dimm-p1: N/A dimm-p2: N/A
+  Src: lm-sensors+/sys Message: No sensor data found using /sys/class/hwmon or lm-sensors.
+Info:
+  Processes: 2384 Power: uptime: 19d 6h 30m states: freeze,mem suspend: deep avail: s2idle
+    wakeups: 0 hibernate: disabled image: 100.47 GiB Init: systemd v: 255 default: multi-user
+    tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 551 libs: 124 pm: nix-usr pkgs: 0
+    Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34
 ```
 ![hardware topology](yasmin.lstopo.svg)
