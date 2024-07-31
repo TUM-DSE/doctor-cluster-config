@@ -164,3 +164,5 @@ All machines are build by [gitlab ci](https://gitlab.com/TUM-DSE/doctor-cluster-
 self-hosted runner. Gitlab will also propagate the build status to the github repository eventually. 
 The resulting builds are uploaded to https://tum-dse.cachix.org from where
 machines can download them while upgrading.
+
+test
