@@ -115,7 +115,7 @@ let
     extraPatches = [ ];
   };
 
-  snp_latest = {
+  snp_6_9 = {
     owner = "mmisono";
     repo = "linux";
     # branch: snp-host-latest-20240514
@@ -123,6 +123,17 @@ let
     sha256 = "sha256-ZEfGa2dbHlXWPbEzUmHrWTIifVt4PtkM+w1cHTzt7xw=";
     version = "6.9";
     modDirVersion = "6.9.0-rc7";
+    extraPatches = [ ];
+  };
+
+  snp_latest = {
+    owner = "mmisono";
+    repo = "linux";
+    # branch: kvm-next-20240717
+    rev = "332d2c1d713e232e163386c35a3ba0c1b90df83f";
+    sha256 = "sha256-bkyJzgh8JU8uN7hF4HK0bUCQTaViDZcoWbH5pSM2v1Y=";
+    version = "6.10";
+    modDirVersion = "6.10.0-rc7";
     extraPatches = [ ];
   };
 in
