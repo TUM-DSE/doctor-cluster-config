@@ -11,11 +11,15 @@
     ];
     evalWorkerCount = 32;
     github = {
-      authType.legacy.tokenFile = config.sops.secrets.github-token.path;
       webhookSecretFile = config.sops.secrets.github-webhook-secret.path;
-      oauthSecretFile = config.sops.secrets.github-oauth-secret.path;
-      oauthId = "1448d1d1a3d84fa023f4";
-      topic = "buildbot-tum-dse";
+
+      oauthId = "Iv23liXx1iKmPAfsoUoQ";
+      oauthSecretFile = config.sops.secrets.buildbot-github-oauth-secret.path;
+
+      authType.app = {
+        id = 958012;
+        secretKeyFile = config.sops.secrets.buildbot-github-app-secret-key.path;
+      };
     };
     admins = [ "Mic92" "pogobanane" ];
     outputsPath = "/var/www/buildbot/nix-outputs";
@@ -34,9 +38,9 @@
 
   sops.secrets = {
     # doctor-cluster-bot-token
-    github-token = { };
     github-webhook-secret = { };
-    github-oauth-secret = { };
+    buildbot-github-oauth-secret = { };
+    buildbot-github-app-secret-key = { };
     buildbot-nix-workers = { };
     cachix-name = { };
     cachix-auth-token = { };
