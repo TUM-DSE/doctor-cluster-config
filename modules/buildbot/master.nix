@@ -12,6 +12,7 @@
     evalWorkerCount = 32;
     github = {
       webhookSecretFile = config.sops.secrets.github-webhook-secret.path;
+      topic = "buildbot-tum-dse";
 
       oauthId = "Iv23liXx1iKmPAfsoUoQ";
       oauthSecretFile = config.sops.secrets.buildbot-github-oauth-secret.path;
