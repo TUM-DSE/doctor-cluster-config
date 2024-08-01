@@ -1,0 +1,7667 @@
+{
+  "hardware": [
+    {
+      "index": 1,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 5,
+        "name": "BIOS"
+      },
+      "hardware_class": "bios",
+      "model": "BIOS",
+      "unique_id": "rdCR.lZF+r4EgHp4",
+      "detail": {
+        "type": "pci",
+        "apm_info": {
+          "supported": false,
+          "enabled": false,
+          "version": 0,
+          "sub_version": 0,
+          "bios_flags": 0
+        },
+        "vbe_info": {
+          "version": 0,
+          "video_memory": 0
+        },
+        "pnp": false,
+        "pnp_id": 0,
+        "lba_support": false,
+        "low_memory_size": 0,
+        "smbios_version": 770
+      }
+    },
+    {
+      "index": 2,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 7,
+        "name": "System"
+      },
+      "hardware_class": "system",
+      "model": "System",
+      "unique_id": "rdCR.n_7QNeEnh23",
+      "driver_info": {
+        "type": "module",
+        "db_entry_0": [
+          "thermal",
+          "fan"
+        ],
+        "active": true,
+        "modprobe": true,
+        "names": [
+          "thermal",
+          "fan"
+        ],
+        "module_args": [
+          "",
+          ""
+        ],
+        "conf": ""
+      }
+    },
+    {
+      "index": 3,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 5110 MHz",
+      "unique_id": "rdCR.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 4,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "1:1",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "wkFv.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 5,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "2:2",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "+rIN.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 6,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "3:3",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "4zLr.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 7,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "4:4",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "94PJ.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 8,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "5:5",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "EBSn.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 9,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "6:6",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 4900 MHz",
+      "unique_id": "JIVF.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 10,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "7:7",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "OPYj.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 11,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "8:8",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 4900 MHz",
+      "unique_id": "TWbB.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 12,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "9:9",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 4903 MHz",
+      "unique_id": "Ydef.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 13,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "10:10",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "dkh7.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 14,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "11:11",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 5100 MHz",
+      "unique_id": "hrkb.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 15,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "12:12",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 4900 MHz",
+      "unique_id": "myn3.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 16,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "13:13",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "r3rX.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 17,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "14:14",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "wAu+.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 18,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "15:15",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "+HxT.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 19,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "16:16",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "4P_x.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 20,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "17:17",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 5110 MHz",
+      "unique_id": "9W1Q.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 21,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "18:18",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "Ed4u.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 22,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "19:19",
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "hardware_class": "cpu",
+      "model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz, 800 MHz",
+      "unique_id": "Jk7M.j8NaKXDZtZ6",
+      "detail": {
+        "type": "cpu",
+        "architecture": "x86_64",
+        "family": 6,
+        "model": 165,
+        "stepping": 5,
+        "cache": 20480,
+        "units": 32,
+        "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "platform": "",
+        "features": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "pdpe1gb",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "art",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "nonstop_tsc",
+          "cpuid",
+          "aperfmperf",
+          "pni",
+          "pclmulqdq",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "smx",
+          "est",
+          "tm2",
+          "ssse3",
+          "sdbg",
+          "fma",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "movbe",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "lahf_lm",
+          "abm",
+          "3dnowprefetch",
+          "cpuid_fault",
+          "epb",
+          "ssbd",
+          "ibrs",
+          "ibpb",
+          "stibp",
+          "ibrs_enhanced",
+          "tpr_shadow",
+          "flexpriority",
+          "ept",
+          "vpid",
+          "ept_ad",
+          "fsgsbase",
+          "tsc_adjust",
+          "bmi1",
+          "avx2",
+          "smep",
+          "bmi2",
+          "erms",
+          "invpcid",
+          "mpx",
+          "rdseed",
+          "adx",
+          "smap",
+          "clflushopt",
+          "intel_pt",
+          "xsaveopt",
+          "xsavec",
+          "xgetbv1",
+          "xsaves",
+          "dtherm",
+          "ida",
+          "arat",
+          "pln",
+          "pts",
+          "hwp",
+          "hwp_notify",
+          "hwp_act_window",
+          "hwp_epp",
+          "vnmi",
+          "pku",
+          "ospke",
+          "md_clear",
+          "flush_l1d",
+          "arch_capabilities"
+        ],
+        "bogo": 7399.7
+      }
+    },
+    {
+      "index": 23,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 257,
+        "name": "Internally Used Class"
+      },
+      "sub_class": {
+        "value": 2,
+        "name": "Main Memory"
+      },
+      "hardware_class": "memory",
+      "model": "Main Memory",
+      "unique_id": "rdCR.CxwsZFjVASF",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 0,
+          "range": 134929043456,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "unknown"
+        },
+        {
+          "type": "phys_mem",
+          "range": 137438953472
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:768",
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 5427,
+        "name": "I210 Gigabit Network Connection"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 5427
+      },
+      "revision": {
+        "value": 3
+      },
+      "hardware_class": "network",
+      "model": "Intel I210 Gigabit Network Connection",
+      "attached_to": 30,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.5/0000:03:00.0",
+      "sysfs_bus_id": "0000:03:00.0",
+      "unix_device_name": "eno2",
+      "unique_id": "NotL.bJXNR25fQq9",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2823815168,
+          "range": 524288,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "io",
+          "base": 16384,
+          "range": 32,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "mem",
+          "base": 2824339456,
+          "range": 16384,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 17,
+          "triggered": 0,
+          "enabled": true
+        },
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 3,
+        "slot": 0,
+        "function": 0,
+        "base_class": 2,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 5427,
+        "vendor": 32902,
+        "sub_device": 5427,
+        "sub_vendor": 5593,
+        "revision": 3,
+        "irq": 17
+      },
+      "driver": "igb",
+      "driver_module": "igb",
+      "drivers": [
+        "igb"
+      ],
+      "driver_modules": [
+        "igb"
+      ],
+      "module_alias": "pci:v00008086d00001533sv000015D9sd00001533bc02sc00i00",
+      "label": "Intel Ethernet i210-AT"
+    },
+    {
+      "index": 25,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "23:23",
+      "base_class": {
+        "value": 1,
+        "name": "Mass storage controller"
+      },
+      "sub_class": {
+        "value": 6,
+        "name": "SATA controller"
+      },
+      "pci_interface": {
+        "value": 1,
+        "name": "AHCI 1.0"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1746,
+        "name": "Comet Lake SATA AHCI Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "storage_ctrl",
+      "model": "Intel Comet Lake SATA AHCI Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:17.0",
+      "sysfs_bus_id": "0000:00:17.0",
+      "unique_id": "abAj.ndlH4SQQFi7",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826125312,
+          "range": 8192,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2826149888,
+          "range": 256,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "io",
+          "base": 20560,
+          "range": 8,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "io",
+          "base": 20544,
+          "range": 4,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "io",
+          "base": 20512,
+          "range": 32,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "mem",
+          "base": 2826145792,
+          "range": 2048,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 155,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 23,
+        "function": 0,
+        "base_class": 1,
+        "sub_class": 6,
+        "prog_if": 1,
+        "device": 1746,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 155
+      },
+      "driver": "ahci",
+      "driver_module": "ahci",
+      "drivers": [
+        "ahci"
+      ],
+      "driver_modules": [
+        "ahci"
+      ],
+      "module_alias": "pci:v00008086d000006D2sv000015D9sd00001B6Ebc01sc06i01"
+    },
+    {
+      "index": 26,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "28:28",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 4,
+        "name": "PCI bridge"
+      },
+      "pci_interface": {
+        "name": "Normal decode"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1720
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 240
+      },
+      "hardware_class": "bridge",
+      "model": "Intel PCI bridge",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.0",
+      "sysfs_bus_id": "0000:00:1c.0",
+      "unique_id": "z8Q3.9c3Yx465UM0",
+      "resources": [
+        {
+          "type": "irq",
+          "base": 122,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 1,
+        "secondary_bus": 2,
+        "bus": 0,
+        "slot": 28,
+        "function": 0,
+        "base_class": 6,
+        "sub_class": 4,
+        "prog_if": 0,
+        "device": 1720,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 240,
+        "irq": 122
+      },
+      "driver": "pcieport",
+      "drivers": [
+        "pcieport"
+      ],
+      "module_alias": "pci:v00008086d000006B8sv000015D9sd00001B6Ebc06sc04i00"
+    },
+    {
+      "index": 27,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "8:8",
+      "base_class": {
+        "value": 8,
+        "name": "Generic system peripheral"
+      },
+      "sub_class": {
+        "value": 128,
+        "name": "System peripheral"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 6417,
+        "name": "Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model",
+      "sysfs_id": "/devices/pci0000:00/0000:00:08.0",
+      "sysfs_bus_id": "0000:00:08.0",
+      "unique_id": "RE4e.Ry34l9gReC1",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826170368,
+          "range": 4096,
+          "enabled": false,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 255,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 0,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 8,
+        "function": 0,
+        "base_class": 8,
+        "sub_class": 128,
+        "prog_if": 0,
+        "device": 6417,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 255
+      },
+      "module_alias": "pci:v00008086d00001911sv000015D9sd00001B6Ebc08sc80i00"
+    },
+    {
+      "index": 28,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "31:31",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "ISA bridge"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1687
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "bridge",
+      "model": "Intel ISA bridge",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1f.0",
+      "sysfs_bus_id": "0000:00:1f.0",
+      "unique_id": "BUZT.rMGYEOez6z7",
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 31,
+        "function": 0,
+        "base_class": 6,
+        "sub_class": 1,
+        "prog_if": 0,
+        "device": 1687,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 0
+      },
+      "module_alias": "pci:v00008086d00000697sv000015D9sd00001B6Ebc06sc01i00"
+    },
+    {
+      "index": 29,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:512",
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 5555,
+        "name": "Mellanox Technologies"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5555,
+        "name": "Mellanox Technologies"
+      },
+      "device": {
+        "type": "pci",
+        "value": 4117,
+        "name": "MT27710 Family [ConnectX-4 Lx]"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 4,
+        "name": "ConnectX-4 Lx Stand-up dual-port 10GbE MCX4121A-XCAT"
+      },
+      "hardware_class": "network",
+      "model": "Mellanox ConnectX-4 Lx Stand-up dual-port 10GbE MCX4121A-XCAT",
+      "attached_to": 26,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.0",
+      "sysfs_bus_id": "0000:02:00.0",
+      "unix_device_name": "slave0",
+      "unique_id": "jTwU.lOYM23d3zGE",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2751463424,
+          "range": 33554432,
+          "enabled": true,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2821718016,
+          "range": 1048576,
+          "enabled": false,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 16,
+          "triggered": 0,
+          "enabled": true
+        },
+        {
+          "type": "hwaddr",
+          "address": 98
+        },
+        {
+          "type": "phwaddr",
+          "address": 98
+        },
+        {
+          "Type": "link",
+          "connected": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 2,
+        "slot": 0,
+        "function": 0,
+        "base_class": 2,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 4117,
+        "vendor": 5555,
+        "sub_device": 4,
+        "sub_vendor": 5555,
+        "revision": 0,
+        "irq": 16
+      },
+      "driver": "mlx5_core",
+      "driver_module": "mlx5_core",
+      "drivers": [
+        "mlx5_core"
+      ],
+      "driver_modules": [
+        "mlx5_core"
+      ],
+      "module_alias": "pci:v000015B3d00001015sv000015B3sd00000004bc02sc00i00"
+    },
+    {
+      "index": 30,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "28:28",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 4,
+        "name": "PCI bridge"
+      },
+      "pci_interface": {
+        "name": "Normal decode"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1725,
+        "name": "Comet Lake PCIe Port #6"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 240
+      },
+      "hardware_class": "bridge",
+      "model": "Intel Comet Lake PCIe Port #6",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.5",
+      "sysfs_bus_id": "0000:00:1c.5",
+      "unique_id": "HnsE.kgnHLxhc6H2",
+      "resources": [
+        {
+          "type": "irq",
+          "base": 123,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 1,
+        "secondary_bus": 3,
+        "bus": 0,
+        "slot": 28,
+        "function": 5,
+        "base_class": 6,
+        "sub_class": 4,
+        "prog_if": 0,
+        "device": 1725,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 240,
+        "irq": 123
+      },
+      "driver": "pcieport",
+      "drivers": [
+        "pcieport"
+      ],
+      "module_alias": "pci:v00008086d000006BDsv000015D9sd00001B6Ebc06sc04i00"
+    },
+    {
+      "index": 31,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "22:22",
+      "base_class": {
+        "value": 7,
+        "name": "Communication controller"
+      },
+      "sub_class": {
+        "value": 128,
+        "name": "Communication controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1760,
+        "name": "Comet Lake HECI Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Comet Lake HECI Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:16.0",
+      "sysfs_bus_id": "0000:00:16.0",
+      "unique_id": "WnlC._viJU8X13PB",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826158080,
+          "range": 4096,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 156,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 22,
+        "function": 0,
+        "base_class": 7,
+        "sub_class": 128,
+        "prog_if": 0,
+        "device": 1760,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 156
+      },
+      "driver": "mei_me",
+      "driver_module": "mei_me",
+      "drivers": [
+        "mei_me"
+      ],
+      "driver_modules": [
+        "mei_me"
+      ],
+      "module_alias": "pci:v00008086d000006E0sv000015D9sd00001B6Ebc07sc80i00"
+    },
+    {
+      "index": 32,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:256",
+      "base_class": {
+        "value": 1,
+        "name": "Mass storage controller"
+      },
+      "sub_class": {
+        "value": 8,
+        "name": "Non-Volatile memory controller"
+      },
+      "pci_interface": {
+        "value": 2,
+        "name": "NVM Express"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 5197,
+        "name": "Samsung Electronics Co Ltd"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5197,
+        "name": "Samsung Electronics Co Ltd"
+      },
+      "device": {
+        "type": "pci",
+        "value": 43018,
+        "name": "NVMe SSD Controller PM9A1/PM9A3/980PRO"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 43026
+      },
+      "hardware_class": "storage_ctrl",
+      "model": "Samsung Electronics NVMe SSD Controller PM9A1/PM9A3/980PRO",
+      "attached_to": 33,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1b.0/0000:01:00.0",
+      "sysfs_bus_id": "0000:01:00.0",
+      "unique_id": "VCu0.zF9SowdUF55",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2824929280,
+          "range": 16384,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2824863744,
+          "range": 65536,
+          "enabled": false,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 16,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 1,
+        "slot": 0,
+        "function": 0,
+        "base_class": 1,
+        "sub_class": 8,
+        "prog_if": 2,
+        "device": 43018,
+        "vendor": 5197,
+        "sub_device": 43026,
+        "sub_vendor": 5197,
+        "revision": 0,
+        "irq": 16
+      },
+      "driver": "nvme",
+      "driver_module": "nvme",
+      "drivers": [
+        "nvme"
+      ],
+      "driver_modules": [
+        "nvme"
+      ],
+      "module_alias": "pci:v0000144Dd0000A80Asv0000144Dsd0000A812bc01sc08i02"
+    },
+    {
+      "index": 33,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "27:27",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 4,
+        "name": "PCI bridge"
+      },
+      "pci_interface": {
+        "name": "Normal decode"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1728,
+        "name": "Comet Lake PCI Express Root Port #17"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 240
+      },
+      "hardware_class": "bridge",
+      "model": "Intel Comet Lake PCI Express Root Port #17",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1b.0",
+      "sysfs_bus_id": "0000:00:1b.0",
+      "unique_id": "u1Nb.HwcXne2khQ3",
+      "resources": [
+        {
+          "type": "irq",
+          "base": 121,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1351,
+        "header_type": 1,
+        "secondary_bus": 1,
+        "bus": 0,
+        "slot": 27,
+        "function": 0,
+        "base_class": 6,
+        "sub_class": 4,
+        "prog_if": 0,
+        "device": 1728,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 240,
+        "irq": 121
+      },
+      "driver": "pcieport",
+      "drivers": [
+        "pcieport"
+      ],
+      "module_alias": "pci:v00008086d000006C0sv000015D9sd00001B6Ebc06sc04i00"
+    },
+    {
+      "index": 34,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "31:31",
+      "base_class": {
+        "value": 12,
+        "name": "Serial bus controller"
+      },
+      "sub_class": {
+        "value": 128,
+        "name": "Serial bus controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1700,
+        "name": "Comet Lake PCH SPI Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Comet Lake PCH SPI Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1f.5",
+      "sysfs_bus_id": "0000:00:1f.5",
+      "unique_id": "W60f.7UrxDRDXfD4",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 4261478400,
+          "range": 4096,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1026,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 31,
+        "function": 5,
+        "base_class": 12,
+        "sub_class": 128,
+        "prog_if": 0,
+        "device": 1700,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 0
+      },
+      "driver": "intel-spi",
+      "driver_module": "spi_intel_pci",
+      "drivers": [
+        "intel-spi"
+      ],
+      "driver_modules": [
+        "spi_intel_pci"
+      ],
+      "module_alias": "pci:v00008086d000006A4sv000015D9sd00001B6Ebc0Csc80i00"
+    },
+    {
+      "index": 35,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "31:31",
+      "base_class": {
+        "value": 4,
+        "name": "Multimedia controller"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "Audio device"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1736,
+        "name": "Comet Lake PCH cAVS"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "sound",
+      "model": "Intel Comet Lake PCH cAVS",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1f.3",
+      "sysfs_bus_id": "0000:00:1f.3",
+      "unique_id": "nS1_.67IrGG+LSAF",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826108928,
+          "range": 16384,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2819620864,
+          "range": 1048576,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 163,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 31,
+        "function": 3,
+        "base_class": 4,
+        "sub_class": 3,
+        "prog_if": 0,
+        "device": 1736,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 163
+      },
+      "driver": "snd_hda_intel",
+      "driver_module": "snd_hda_intel",
+      "drivers": [
+        "snd_hda_intel"
+      ],
+      "driver_modules": [
+        "snd_hda_intel"
+      ],
+      "module_alias": "pci:v00008086d000006C8sv000015D9sd00001B6Ebc04sc03i00"
+    },
+    {
+      "index": 36,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "name": "Host bridge"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 39731,
+        "name": "Comet Lake-S 6c Host Bridge/DRAM Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 5
+      },
+      "hardware_class": "bridge",
+      "model": "Intel Comet Lake-S 6c Host Bridge/DRAM Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:00.0",
+      "sysfs_bus_id": "0000:00:00.0",
+      "unique_id": "qLht.oBLreFgelpF",
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 6,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 0,
+        "function": 0,
+        "base_class": 6,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 39731,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 5,
+        "irq": 0
+      },
+      "driver": "skl_uncore",
+      "driver_module": "intel_uncore",
+      "drivers": [
+        "skl_uncore"
+      ],
+      "driver_modules": [
+        "intel_uncore"
+      ],
+      "module_alias": "pci:v00008086d00009B33sv000015D9sd00001B6Ebc06sc00i00"
+    },
+    {
+      "index": 37,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "18:18",
+      "base_class": {
+        "value": 17,
+        "name": "Signal processing controller"
+      },
+      "sub_class": {
+        "value": 128,
+        "name": "Signal processing controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1785,
+        "name": "Comet Lake PCH Thermal Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Comet Lake PCH Thermal Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:12.0",
+      "sysfs_bus_id": "0000:00:12.0",
+      "unique_id": "CLZK.17sBe3nMeVD",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826166272,
+          "range": 4096,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 16,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 2,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 18,
+        "function": 0,
+        "base_class": 17,
+        "sub_class": 128,
+        "prog_if": 0,
+        "device": 1785,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 16
+      },
+      "driver": "intel_pch_thermal",
+      "driver_module": "intel_pch_thermal",
+      "drivers": [
+        "intel_pch_thermal"
+      ],
+      "driver_modules": [
+        "intel_pch_thermal"
+      ],
+      "module_alias": "pci:v00008086d000006F9sv000015D9sd00001B6Ebc11sc80i00"
+    },
+    {
+      "index": 38,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:1536",
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 5475,
+        "name": "Ethernet Controller X550"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 5475
+      },
+      "revision": {
+        "value": 1
+      },
+      "hardware_class": "network",
+      "model": "Intel Ethernet Controller X550",
+      "attached_to": 42,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1d.0/0000:06:00.0",
+      "sysfs_bus_id": "0000:06:00.0",
+      "unix_device_name": "eno3",
+      "unique_id": "rz7Q.3CJsD9mEBe6",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2789212160,
+          "range": 4194304,
+          "enabled": true,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2793422848,
+          "range": 16384,
+          "enabled": true,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2823290880,
+          "range": 524288,
+          "enabled": false,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 16,
+          "triggered": 0,
+          "enabled": true
+        },
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 6,
+        "slot": 0,
+        "function": 0,
+        "base_class": 2,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 5475,
+        "vendor": 32902,
+        "sub_device": 5475,
+        "sub_vendor": 5593,
+        "revision": 1,
+        "irq": 16
+      },
+      "driver": "ixgbe",
+      "driver_module": "ixgbe",
+      "drivers": [
+        "ixgbe"
+      ],
+      "driver_modules": [
+        "ixgbe"
+      ],
+      "module_alias": "pci:v00008086d00001563sv000015D9sd00001563bc02sc00i00",
+      "label": "Intel Ethernet X550-AT2 #1"
+    },
+    {
+      "index": 39,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:512",
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 5555,
+        "name": "Mellanox Technologies"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5555,
+        "name": "Mellanox Technologies"
+      },
+      "device": {
+        "type": "pci",
+        "value": 4117,
+        "name": "MT27710 Family [ConnectX-4 Lx]"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 4,
+        "name": "ConnectX-4 Lx Stand-up dual-port 10GbE MCX4121A-XCAT"
+      },
+      "hardware_class": "network",
+      "model": "Mellanox ConnectX-4 Lx Stand-up dual-port 10GbE MCX4121A-XCAT",
+      "attached_to": 26,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.1",
+      "sysfs_bus_id": "0000:02:00.1",
+      "unix_device_name": "slave1",
+      "unique_id": "BfAZ.lOYM23d3zGE",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2717908992,
+          "range": 33554432,
+          "enabled": true,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2820669440,
+          "range": 1048576,
+          "enabled": false,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 17,
+          "triggered": 0,
+          "enabled": true
+        },
+        {
+          "type": "hwaddr",
+          "address": 98
+        },
+        {
+          "type": "phwaddr",
+          "address": 98
+        },
+        {
+          "Type": "link",
+          "connected": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 2,
+        "slot": 0,
+        "function": 1,
+        "base_class": 2,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 4117,
+        "vendor": 5555,
+        "sub_device": 4,
+        "sub_vendor": 5555,
+        "revision": 0,
+        "irq": 17
+      },
+      "driver": "mlx5_core",
+      "driver_module": "mlx5_core",
+      "drivers": [
+        "mlx5_core"
+      ],
+      "driver_modules": [
+        "mlx5_core"
+      ],
+      "module_alias": "pci:v000015B3d00001015sv000015B3sd00000004bc02sc00i00"
+    },
+    {
+      "index": 40,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "22:22",
+      "base_class": {
+        "value": 7,
+        "name": "Communication controller"
+      },
+      "sub_class": {
+        "name": "Serial controller"
+      },
+      "pci_interface": {
+        "value": 2,
+        "name": "16550"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1763,
+        "name": "Comet Lake Keyboard and Text (KT) Redirection"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Comet Lake Keyboard and Text (KT) Redirection",
+      "sysfs_id": "/devices/pci0000:00/0000:00:16.3",
+      "sysfs_bus_id": "0000:00:16.3",
+      "unique_id": "6mDj.ZVrp0XXON9F",
+      "resources": [
+        {
+          "type": "io",
+          "base": 20576,
+          "range": 8,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "mem",
+          "base": 2826153984,
+          "range": 4096,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 19,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 3,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 22,
+        "function": 3,
+        "base_class": 7,
+        "sub_class": 0,
+        "prog_if": 2,
+        "device": 1763,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 19
+      },
+      "driver": "serial",
+      "driver_module": "8250_pci",
+      "drivers": [
+        "serial"
+      ],
+      "driver_modules": [
+        "8250_pci"
+      ],
+      "module_alias": "pci:v00008086d000006E3sv000015D9sd00001B6Ebc07sc00i02"
+    },
+    {
+      "index": 41,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:1280",
+      "base_class": {
+        "value": 3,
+        "name": "Display controller"
+      },
+      "sub_class": {
+        "name": "VGA compatible controller"
+      },
+      "pci_interface": {
+        "name": "VGA"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 6659,
+        "name": "ASPEED Technology Inc."
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 8192,
+        "name": "AST1000/2000"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 65
+      },
+      "hardware_class": "graphics_card",
+      "model": "ASPEED AST1000/2000",
+      "attached_to": 46,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.6/0000:04:00.0/0000:05:00.0",
+      "sysfs_bus_id": "0000:05:00.0",
+      "unique_id": "Ddhb.C1RBZZaHSr8",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2801795072,
+          "range": 16777216,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2818572288,
+          "range": 131072,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "io",
+          "base": 12288,
+          "range": 128,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "mem",
+          "base": 786432,
+          "range": 131072,
+          "enabled": false,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 18,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 3,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 5,
+        "slot": 0,
+        "function": 0,
+        "base_class": 3,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 8192,
+        "vendor": 6659,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 65,
+        "irq": 18
+      },
+      "driver": "ast",
+      "driver_module": "ast",
+      "drivers": [
+        "ast"
+      ],
+      "driver_modules": [
+        "ast"
+      ],
+      "driver_info": {
+        "type": "x11",
+        "db_entry_0": [
+          "4",
+          "ast"
+        ],
+        "server": "ast",
+        "xf86_version": "4",
+        "supports_3d": false,
+        "Colors": {
+          "all": 0,
+          "c8": 0,
+          "c15": 0,
+          "c16": 0,
+          "c24": 0,
+          "c32": 0
+        },
+        "dac_speed": 0,
+        "script": ""
+      },
+      "module_alias": "pci:v00001A03d00002000sv000015D9sd00001B6Ebc03sc00i00",
+      "label": "ASPEED Video AST2500"
+    },
+    {
+      "index": 42,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "29:29",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 4,
+        "name": "PCI bridge"
+      },
+      "pci_interface": {
+        "name": "Normal decode"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1712,
+        "name": "Comet Lake PCI Express Root Port #9"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 240
+      },
+      "hardware_class": "bridge",
+      "model": "Intel Comet Lake PCI Express Root Port #9",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1d.0",
+      "sysfs_bus_id": "0000:00:1d.0",
+      "unique_id": "1GTX.1IWY5bpDGjE",
+      "resources": [
+        {
+          "type": "irq",
+          "base": 125,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 1,
+        "secondary_bus": 6,
+        "bus": 0,
+        "slot": 29,
+        "function": 0,
+        "base_class": 6,
+        "sub_class": 4,
+        "prog_if": 0,
+        "device": 1712,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 240,
+        "irq": 125
+      },
+      "driver": "pcieport",
+      "drivers": [
+        "pcieport"
+      ],
+      "module_alias": "pci:v00008086d000006B0sv000015D9sd00001B6Ebc06sc04i00"
+    },
+    {
+      "index": 43,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "28:28",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 4,
+        "name": "PCI bridge"
+      },
+      "pci_interface": {
+        "name": "Normal decode"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1726
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "revision": {
+        "value": 240
+      },
+      "hardware_class": "bridge",
+      "model": "Intel PCI bridge",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.6",
+      "sysfs_bus_id": "0000:00:1c.6",
+      "unique_id": "96M4.F5k1qVpJef2",
+      "resources": [
+        {
+          "type": "irq",
+          "base": 124,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1031,
+        "header_type": 1,
+        "secondary_bus": 4,
+        "bus": 0,
+        "slot": 28,
+        "function": 6,
+        "base_class": 6,
+        "sub_class": 4,
+        "prog_if": 0,
+        "device": 1726,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 240,
+        "irq": 124
+      },
+      "driver": "pcieport",
+      "drivers": [
+        "pcieport"
+      ],
+      "module_alias": "pci:v00008086d000006BEsv000015D9sd00001B6Ebc06sc04i00"
+    },
+    {
+      "index": 44,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "20:20",
+      "base_class": {
+        "value": 5,
+        "name": "Memory controller"
+      },
+      "sub_class": {
+        "name": "RAM memory"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1775,
+        "name": "Comet Lake PCH Shared SRAM"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Comet Lake PCH Shared SRAM",
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.2",
+      "sysfs_bus_id": "0000:00:14.2",
+      "unique_id": "5Dex.h7LrEtK9KX3",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826133504,
+          "range": 8192,
+          "enabled": false,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2826162176,
+          "range": 4096,
+          "enabled": false,
+          "access": "read_write",
+          "prefetch": "no"
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 0,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 20,
+        "function": 2,
+        "base_class": 5,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 1775,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 0
+      },
+      "module_alias": "pci:v00008086d000006EFsv000015D9sd00001B6Ebc05sc00i00"
+    },
+    {
+      "index": 45,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "31:31",
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 3404,
+        "name": "Ethernet Connection (11) I219-LM"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 3404
+      },
+      "hardware_class": "network",
+      "model": "Intel Ethernet Connection (11) I219-LM",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1f.6",
+      "sysfs_bus_id": "0000:00:1f.6",
+      "unix_device_name": "eno1",
+      "unique_id": "wcdH.asVSVPE7FF1",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2825912320,
+          "range": 131072,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 162,
+          "triggered": 0,
+          "enabled": true
+        },
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 31,
+        "function": 6,
+        "base_class": 2,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 3404,
+        "vendor": 32902,
+        "sub_device": 3404,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 162
+      },
+      "driver": "e1000e",
+      "driver_module": "e1000e",
+      "drivers": [
+        "e1000e"
+      ],
+      "driver_modules": [
+        "e1000e"
+      ],
+      "module_alias": "pci:v00008086d00000D4Csv000015D9sd00000D4Cbc02sc00i00",
+      "label": "Intel Ethernet i219-LM"
+    },
+    {
+      "index": 46,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:1024",
+      "base_class": {
+        "value": 6,
+        "name": "Bridge"
+      },
+      "sub_class": {
+        "value": 4,
+        "name": "PCI bridge"
+      },
+      "pci_interface": {
+        "name": "Normal decode"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 6659,
+        "name": "ASPEED Technology Inc."
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 6659,
+        "name": "ASPEED Technology Inc."
+      },
+      "device": {
+        "type": "pci",
+        "value": 4432,
+        "name": "AST1150 PCI-to-PCI Bridge"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 4432
+      },
+      "revision": {
+        "value": 4
+      },
+      "hardware_class": "bridge",
+      "model": "ASPEED AST1150 PCI-to-PCI Bridge",
+      "attached_to": 43,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1c.6/0000:04:00.0",
+      "sysfs_bus_id": "0000:04:00.0",
+      "unique_id": "YmUS._tiwZrVTbc2",
+      "resources": [
+        {
+          "type": "irq",
+          "base": 18,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 7,
+        "header_type": 1,
+        "secondary_bus": 5,
+        "bus": 4,
+        "slot": 0,
+        "function": 0,
+        "base_class": 6,
+        "sub_class": 4,
+        "prog_if": 0,
+        "device": 4432,
+        "vendor": 6659,
+        "sub_device": 4432,
+        "sub_vendor": 6659,
+        "revision": 4,
+        "irq": 18
+      },
+      "module_alias": "pci:v00001A03d00001150sv00001A03sd00001150bc06sc04i00"
+    },
+    {
+      "index": 47,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "20:20",
+      "base_class": {
+        "value": 12,
+        "name": "Serial bus controller"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "USB Controller"
+      },
+      "pci_interface": {
+        "value": 48,
+        "name": "XHCI"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1773,
+        "name": "Comet Lake USB 3.1 xHCI Host Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "usb_controller",
+      "model": "Intel Comet Lake USB 3.1 xHCI Host Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0",
+      "sysfs_bus_id": "0000:00:14.0",
+      "unique_id": "MZfG.3L29b6_+u+0",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826043392,
+          "range": 65536,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 127,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 20,
+        "function": 0,
+        "base_class": 12,
+        "sub_class": 3,
+        "prog_if": 48,
+        "device": 1773,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 127
+      },
+      "driver": "xhci_hcd",
+      "driver_module": "xhci_pci",
+      "drivers": [
+        "xhci_hcd"
+      ],
+      "driver_modules": [
+        "xhci_pci"
+      ],
+      "module_alias": "pci:v00008086d000006EDsv000015D9sd00001B6Ebc0Csc03i30"
+    },
+    {
+      "index": 48,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "31:31",
+      "base_class": {
+        "value": 12,
+        "name": "Serial bus controller"
+      },
+      "sub_class": {
+        "value": 5,
+        "name": "SMBus"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 1699,
+        "name": "Comet Lake PCH SMBus Controller"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 7022
+      },
+      "hardware_class": "unknown",
+      "model": "Intel Comet Lake PCH SMBus Controller",
+      "sysfs_id": "/devices/pci0000:00/0000:00:1f.4",
+      "sysfs_bus_id": "0000:00:1f.4",
+      "unique_id": "fnWp.B5hs7_R8vC2",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2826141696,
+          "range": 256,
+          "enabled": true,
+          "access": "read_write",
+          "prefetch": "no"
+        },
+        {
+          "type": "io",
+          "base": 61344,
+          "range": 32,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "irq",
+          "base": 16,
+          "triggered": 0,
+          "enabled": true
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 3,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 0,
+        "slot": 31,
+        "function": 4,
+        "base_class": 12,
+        "sub_class": 5,
+        "prog_if": 0,
+        "device": 1699,
+        "vendor": 32902,
+        "sub_device": 7022,
+        "sub_vendor": 5593,
+        "revision": 0,
+        "irq": 16
+      },
+      "driver": "i801_smbus",
+      "driver_module": "i2c_i801",
+      "drivers": [
+        "i801_smbus"
+      ],
+      "driver_modules": [
+        "i2c_i801"
+      ],
+      "module_alias": "pci:v00008086d000006A3sv000015D9sd00001B6Ebc0Csc05i00"
+    },
+    {
+      "index": 49,
+      "bus": {
+        "value": 4,
+        "name": "PCI"
+      },
+      "slot": "0:1536",
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 32902,
+        "name": "Intel Corporation"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5593,
+        "name": "Super Micro Computer Inc"
+      },
+      "device": {
+        "type": "pci",
+        "value": 5475,
+        "name": "Ethernet Controller X550"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 5475
+      },
+      "revision": {
+        "value": 1
+      },
+      "hardware_class": "network",
+      "model": "Intel Ethernet Controller X550",
+      "attached_to": 42,
+      "sysfs_id": "/devices/pci0000:00/0000:00:1d.0/0000:06:00.1",
+      "sysfs_bus_id": "0000:06:00.1",
+      "unix_device_name": "eno4",
+      "unique_id": "I9OU.3CJsD9mEBe6",
+      "resources": [
+        {
+          "type": "mem",
+          "base": 2785017856,
+          "range": 4194304,
+          "enabled": true,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2793406464,
+          "range": 16384,
+          "enabled": true,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "mem",
+          "base": 2822766592,
+          "range": 524288,
+          "enabled": false,
+          "access": "read_only",
+          "prefetch": "no"
+        },
+        {
+          "type": "irq",
+          "base": 17,
+          "triggered": 0,
+          "enabled": true
+        },
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "detail": {
+        "type": "pci",
+        "Log": "",
+        "command": 1030,
+        "header_type": 0,
+        "secondary_bus": 0,
+        "bus": 6,
+        "slot": 0,
+        "function": 1,
+        "base_class": 2,
+        "sub_class": 0,
+        "prog_if": 0,
+        "device": 5475,
+        "vendor": 32902,
+        "sub_device": 5475,
+        "sub_vendor": 5593,
+        "revision": 1,
+        "irq": 17
+      },
+      "driver": "ixgbe",
+      "driver_module": "ixgbe",
+      "drivers": [
+        "ixgbe"
+      ],
+      "driver_modules": [
+        "ixgbe"
+      ],
+      "module_alias": "pci:v00008086d00001563sv000015D9sd00001563bc02sc00i00",
+      "label": "Intel Ethernet X550-AT2 #2"
+    },
+    {
+      "index": 50,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 7,
+        "name": "Communication controller"
+      },
+      "sub_class": {
+        "name": "Serial controller"
+      },
+      "pci_interface": {
+        "value": 2,
+        "name": "16550"
+      },
+      "device": {
+        "name": "16550A"
+      },
+      "hardware_class": "unknown",
+      "model": "16550A",
+      "unix_device_name": "/dev/ttyS0",
+      "unique_id": "S_Uw.3fyvFV+mbWD",
+      "resources": [
+        {
+          "type": "io",
+          "base": 1016,
+          "range": 0,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "irq",
+          "base": 4,
+          "triggered": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 7,
+        "name": "Communication controller"
+      },
+      "sub_class": {
+        "name": "Serial controller"
+      },
+      "pci_interface": {
+        "value": 2,
+        "name": "16550"
+      },
+      "device": {
+        "name": "16550A"
+      },
+      "hardware_class": "unknown",
+      "model": "16550A",
+      "unix_device_name": "/dev/ttyS1",
+      "unique_id": "v9l_.3fyvFV+mbWD",
+      "resources": [
+        {
+          "type": "io",
+          "base": 760,
+          "range": 0,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "irq",
+          "base": 3,
+          "triggered": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 7,
+        "name": "Communication controller"
+      },
+      "sub_class": {
+        "name": "Serial controller"
+      },
+      "pci_interface": {
+        "value": 2,
+        "name": "16550"
+      },
+      "device": {
+        "name": "16550A"
+      },
+      "hardware_class": "unknown",
+      "model": "16550A",
+      "unix_device_name": "/dev/ttyS2",
+      "unique_id": "ML+2.3fyvFV+mbWD",
+      "resources": [
+        {
+          "type": "io",
+          "base": 20576,
+          "range": 0,
+          "enabled": true,
+          "access": "read_write"
+        },
+        {
+          "type": "irq",
+          "base": 19,
+          "triggered": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "bus": {
+        "value": 150,
+        "name": "NVME"
+      },
+      "base_class": {
+        "value": 262,
+        "name": "Mass Storage Device"
+      },
+      "sub_class": {
+        "name": "Disk"
+      },
+      "vendor": {
+        "type": "pci",
+        "value": 5197,
+        "name": "Samsung Electronics Co Ltd"
+      },
+      "sub_vendor": {
+        "type": "pci",
+        "value": 5197,
+        "name": "Samsung Electronics Co Ltd"
+      },
+      "device": {
+        "type": "pci",
+        "value": 43018,
+        "name": "NVMe SSD Controller PM9A1/PM9A3/980PRO"
+      },
+      "sub_device": {
+        "type": "pci",
+        "value": 43026
+      },
+      "hardware_class": "disk",
+      "model": "Samsung Electronics NVMe SSD Controller PM9A1/PM9A3/980PRO",
+      "attached_to": 32,
+      "sysfs_id": "/class/block/nvme0n1",
+      "sysfs_bus_id": "nvme0",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1b.0/0000:01:00.0/nvme/nvme0",
+      "unix_device_name": "/dev/nvme0n1",
+      "unix_device_number": {
+        "type": 98,
+        "major": 259,
+        "minor": 0,
+        "range": 0
+      },
+      "unique_id": "GP4z.kpp412_aLdC",
+      "resources": [
+        {
+          "type": "disk_geo",
+          "cylinders": 3662830,
+          "heads": 64,
+          "sectors": 32,
+          "size": 0,
+          "geo_type": "logical"
+        },
+        {
+          "type": "size",
+          "unit": "sectors",
+          "value_1": 7501476528,
+          "value_2": 512
+        }
+      ],
+      "driver": "nvme",
+      "driver_module": "nvme",
+      "drivers": [
+        "nvme"
+      ],
+      "driver_modules": [
+        "nvme"
+      ]
+    },
+    {
+      "index": 54,
+      "bus": {
+        "value": 133,
+        "name": "IDE"
+      },
+      "base_class": {
+        "value": 262,
+        "name": "Mass Storage Device"
+      },
+      "sub_class": {
+        "name": "Disk"
+      },
+      "vendor": {
+        "name": "SAMSUNG"
+      },
+      "device": {
+        "name": "MZ7LH960"
+      },
+      "revision": {
+        "name": "404Q"
+      },
+      "hardware_class": "disk",
+      "model": "SAMSUNG MZ7LH960",
+      "attached_to": 25,
+      "sysfs_id": "/class/block/sdb",
+      "sysfs_bus_id": "0:0:0:0",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata1/host0/target0:0:0/0:0:0:0",
+      "unix_device_name": "/dev/sdb",
+      "unix_device_number": {
+        "type": 98,
+        "major": 8,
+        "minor": 16,
+        "range": 16
+      },
+      "unique_id": "WZeP.9b_zD2JgHDD",
+      "resources": [
+        {
+          "type": "disk_geo",
+          "cylinders": 116737,
+          "heads": 255,
+          "sectors": 63,
+          "size": 0,
+          "geo_type": "logical"
+        },
+        {
+          "type": "size",
+          "unit": "sectors",
+          "value_1": 1875385008,
+          "value_2": 512
+        }
+      ],
+      "driver": "ahci",
+      "driver_module": "ahci",
+      "drivers": [
+        "ahci",
+        "sd"
+      ],
+      "driver_modules": [
+        "ahci",
+        "sd_mod"
+      ]
+    },
+    {
+      "index": 55,
+      "bus": {
+        "value": 133,
+        "name": "IDE"
+      },
+      "slot": "0:256",
+      "base_class": {
+        "value": 262,
+        "name": "Mass Storage Device"
+      },
+      "sub_class": {
+        "name": "Disk"
+      },
+      "vendor": {
+        "name": "WDC"
+      },
+      "device": {
+        "name": "WD80EFBX-68A"
+      },
+      "revision": {
+        "name": "0A85"
+      },
+      "hardware_class": "disk",
+      "model": "WDC WD80EFBX-68A",
+      "attached_to": 25,
+      "sysfs_id": "/class/block/sdc",
+      "sysfs_bus_id": "1:0:0:0",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata2/host1/target1:0:0/1:0:0:0",
+      "unix_device_name": "/dev/sdc",
+      "unix_device_number": {
+        "type": 98,
+        "major": 8,
+        "minor": 32,
+        "range": 16
+      },
+      "unique_id": "_kuT.01YZL4slarE",
+      "resources": [
+        {
+          "type": "disk_geo",
+          "cylinders": 972801,
+          "heads": 255,
+          "sectors": 63,
+          "size": 0,
+          "geo_type": "logical"
+        },
+        {
+          "type": "size",
+          "unit": "sectors",
+          "value_1": 15628053168,
+          "value_2": 512
+        }
+      ],
+      "driver": "ahci",
+      "driver_module": "ahci",
+      "drivers": [
+        "ahci",
+        "sd"
+      ],
+      "driver_modules": [
+        "ahci",
+        "sd_mod"
+      ]
+    },
+    {
+      "index": 56,
+      "bus": {
+        "value": 133,
+        "name": "IDE"
+      },
+      "slot": "0:512",
+      "base_class": {
+        "value": 262,
+        "name": "Mass Storage Device"
+      },
+      "sub_class": {
+        "name": "Disk"
+      },
+      "vendor": {
+        "name": "WDC"
+      },
+      "device": {
+        "name": "WD80EFBX-68A"
+      },
+      "revision": {
+        "name": "0A85"
+      },
+      "hardware_class": "disk",
+      "model": "WDC WD80EFBX-68A",
+      "attached_to": 25,
+      "sysfs_id": "/class/block/sda",
+      "sysfs_bus_id": "2:0:0:0",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
+      "unix_device_name": "/dev/sda",
+      "unix_device_number": {
+        "type": 98,
+        "major": 8,
+        "minor": 0,
+        "range": 16
+      },
+      "unique_id": "3OOL.4uEsuLzNQQ4",
+      "resources": [
+        {
+          "type": "disk_geo",
+          "cylinders": 972801,
+          "heads": 255,
+          "sectors": 63,
+          "size": 0,
+          "geo_type": "logical"
+        },
+        {
+          "type": "size",
+          "unit": "sectors",
+          "value_1": 15628053168,
+          "value_2": 512
+        }
+      ],
+      "driver": "ahci",
+      "driver_module": "ahci",
+      "drivers": [
+        "ahci",
+        "sd"
+      ],
+      "driver_modules": [
+        "ahci",
+        "sd_mod"
+      ]
+    },
+    {
+      "index": 57,
+      "bus": {
+        "value": 134,
+        "name": "USB"
+      },
+      "base_class": {
+        "value": 2,
+        "name": "Network controller"
+      },
+      "sub_class": {
+        "name": "Ethernet controller"
+      },
+      "vendor": {
+        "type": "usb",
+        "value": 2847,
+        "name": "Insyde Software Corp."
+      },
+      "device": {
+        "type": "usb",
+        "value": 1006,
+        "name": "RNDIS/Ethernet Gadget"
+      },
+      "revision": {
+        "name": "3.18"
+      },
+      "hardware_class": "network",
+      "model": "Insyde Software RNDIS/Ethernet Gadget",
+      "attached_to": 63,
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-13/1-13.2/1-13.2:2.0",
+      "sysfs_bus_id": "1-13.2:2.0",
+      "unix_device_name": "eth0",
+      "unique_id": "D6Cn.po1VuemAtb4",
+      "resources": [
+        {
+          "type": "baud",
+          "speed": 480000000,
+          "bits": 0,
+          "stop_bits": 0,
+          "parity": 0,
+          "handshake": 0
+        },
+        {
+          "type": "hwaddr",
+          "address": 98
+        },
+        {
+          "type": "phwaddr",
+          "address": 98
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "detail": {
+        "type": "usb",
+        "bus": 0,
+        "device_number": 0,
+        "lev": 0,
+        "parent": 0,
+        "port": 0,
+        "count": 0,
+        "connections": 0,
+        "used_connections": 0,
+        "interface_descriptor": 0,
+        "speed": 480000000,
+        "vendor": 2847,
+        "device": 1006,
+        "revision": 792,
+        "manufacturer": "Linux 3.18.0 with ast_vhub",
+        "product": "RNDIS/Ethernet Gadget",
+        "raw_descriptor": {
+          "start": 0,
+          "size": 0,
+          "data": ""
+        },
+        "device_class": "miscellaneous",
+        "device_subclass": 2,
+        "device_protocol": 1,
+        "interface_class": "wireless",
+        "interface_subclass": 1,
+        "interface_protocol": 3,
+        "country": 0
+      },
+      "driver": "rndis_host",
+      "driver_module": "rndis_host",
+      "drivers": [
+        "rndis_host"
+      ],
+      "driver_modules": [
+        "rndis_host"
+      ],
+      "module_alias": "usb:v0B1Fp03EEd0318dcEFdsc02dp01icE0isc01ip03in00"
+    },
+    {
+      "index": 58,
+      "bus": {
+        "value": 134,
+        "name": "USB"
+      },
+      "base_class": {
+        "name": "Unclassified device"
+      },
+      "sub_class": {
+        "name": "Unclassified device"
+      },
+      "vendor": {
+        "type": "usb",
+        "value": 1367,
+        "name": "ATEN International Co., Ltd"
+      },
+      "device": {
+        "type": "usb",
+        "value": 37441,
+        "name": "SMCI HID KM"
+      },
+      "revision": {
+        "name": "3.18"
+      },
+      "hardware_class": "unknown",
+      "model": "ATEN International SMCI HID KM",
+      "attached_to": 63,
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-13/1-13.1/1-13.1:1.0",
+      "sysfs_bus_id": "1-13.1:1.0",
+      "unix_device_name": "/dev/input/event0",
+      "unix_device_number": {
+        "type": 99,
+        "major": 13,
+        "minor": 64,
+        "range": 1
+      },
+      "unique_id": "we4n.D3kuUp3ZzG7",
+      "resources": [
+        {
+          "type": "baud",
+          "speed": 12000000,
+          "bits": 0,
+          "stop_bits": 0,
+          "parity": 0,
+          "handshake": 0
+        }
+      ],
+      "detail": {
+        "type": "usb",
+        "bus": 0,
+        "device_number": 0,
+        "lev": 0,
+        "parent": 0,
+        "port": 0,
+        "count": 0,
+        "connections": 0,
+        "used_connections": 0,
+        "interface_descriptor": 0,
+        "speed": 12000000,
+        "vendor": 1367,
+        "device": 37441,
+        "revision": 792,
+        "manufacturer": "Linux 3.18.0 with ast_vhub",
+        "product": "SMCI HID KM",
+        "raw_descriptor": {
+          "start": 0,
+          "size": 0,
+          "data": ""
+        },
+        "interface_class": "hid",
+        "interface_protocol": 1,
+        "country": 0
+      },
+      "driver": "usbhid",
+      "driver_module": "usbhid",
+      "drivers": [
+        "usbhid"
+      ],
+      "driver_modules": [
+        "usbhid"
+      ],
+      "module_alias": "usb:v0557p9241d0318dc00dsc00dp00ic03isc00ip01in00"
+    },
+    {
+      "index": 60,
+      "bus": {
+        "value": 134,
+        "name": "USB"
+      },
+      "base_class": {
+        "value": 266,
+        "name": "Hub"
+      },
+      "vendor": {
+        "type": "usb",
+        "value": 7531,
+        "name": "Linux Foundation"
+      },
+      "device": {
+        "type": "usb",
+        "value": 2,
+        "name": "2.0 root hub"
+      },
+      "revision": {
+        "name": "6.08"
+      },
+      "hardware_class": "hub",
+      "model": "Linux Foundation 2.0 root hub",
+      "attached_to": 47,
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0",
+      "sysfs_bus_id": "1-0:1.0",
+      "unique_id": "k4bc.2DFUsyrieMD",
+      "resources": [
+        {
+          "type": "baud",
+          "speed": 480000000,
+          "bits": 0,
+          "stop_bits": 0,
+          "parity": 0,
+          "handshake": 0
+        }
+      ],
+      "detail": {
+        "type": "usb",
+        "bus": 0,
+        "device_number": 0,
+        "lev": 0,
+        "parent": 0,
+        "port": 0,
+        "count": 0,
+        "connections": 0,
+        "used_connections": 0,
+        "interface_descriptor": 0,
+        "speed": 480000000,
+        "vendor": 7531,
+        "device": 2,
+        "revision": 1544,
+        "manufacturer": "Linux 6.8.12 xhci-hcd",
+        "product": "xHCI Host Controller",
+        "raw_descriptor": {
+          "start": 0,
+          "size": 0,
+          "data": ""
+        },
+        "device_class": "hub",
+        "device_protocol": 1,
+        "interface_class": "hub",
+        "country": 0
+      },
+      "driver": "hub",
+      "drivers": [
+        "hub"
+      ],
+      "module_alias": "usb:v1D6Bp0002d0608dc09dsc00dp01ic09isc00ip00in00"
+    },
+    {
+      "index": 61,
+      "bus": {
+        "value": 134,
+        "name": "USB"
+      },
+      "base_class": {
+        "value": 261,
+        "name": "Mouse"
+      },
+      "sub_class": {
+        "value": 3,
+        "name": "USB Mouse"
+      },
+      "vendor": {
+        "type": "usb",
+        "value": 1367,
+        "name": "ATEN International Co., Ltd"
+      },
+      "device": {
+        "type": "usb",
+        "value": 37441,
+        "name": "SMCI HID KM"
+      },
+      "revision": {
+        "name": "3.18"
+      },
+      "compat_vendor": {
+        "type": "special",
+        "value": 512,
+        "name": "Unknown"
+      },
+      "compat_device": {
+        "type": "special",
+        "value": 1,
+        "name": "Generic USB Mouse"
+      },
+      "hardware_class": "mouse",
+      "model": "ATEN International SMCI HID KM",
+      "attached_to": 63,
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-13/1-13.1/1-13.1:1.1",
+      "sysfs_bus_id": "1-13.1:1.1",
+      "unix_device_name": "/dev/input/mice",
+      "unix_device_number": {
+        "type": 99,
+        "major": 13,
+        "minor": 63,
+        "range": 1
+      },
+      "unix_device_name_2": "/dev/input/mouse0",
+      "unix_device_number_2": {
+        "type": 99,
+        "major": 13,
+        "minor": 32,
+        "range": 1
+      },
+      "unique_id": "NqKr.Pcj8oNPycl1",
+      "resources": [
+        {
+          "type": "baud",
+          "speed": 12000000,
+          "bits": 0,
+          "stop_bits": 0,
+          "parity": 0,
+          "handshake": 0
+        }
+      ],
+      "detail": {
+        "type": "usb",
+        "bus": 0,
+        "device_number": 0,
+        "lev": 0,
+        "parent": 0,
+        "port": 0,
+        "count": 0,
+        "connections": 0,
+        "used_connections": 0,
+        "interface_descriptor": 1,
+        "speed": 12000000,
+        "vendor": 1367,
+        "device": 37441,
+        "revision": 792,
+        "manufacturer": "Linux 3.18.0 with ast_vhub",
+        "product": "SMCI HID KM",
+        "raw_descriptor": {
+          "start": 0,
+          "size": 0,
+          "data": ""
+        },
+        "interface_class": "hid",
+        "interface_subclass": 1,
+        "interface_protocol": 2,
+        "country": 0
+      },
+      "driver": "usbhid",
+      "driver_module": "usbhid",
+      "drivers": [
+        "usbhid"
+      ],
+      "driver_modules": [
+        "usbhid"
+      ],
+      "driver_info": {
+        "type": "mouse",
+        "db_entry_0": [
+          "explorerps/2",
+          "exps2"
+        ],
+        "xf86": "explorerps/2",
+        "gpm": "exps2",
+        "buttons": -1,
+        "wheels": -1
+      },
+      "module_alias": "usb:v0557p9241d0318dc00dsc00dp00ic03isc01ip02in01"
+    },
+    {
+      "index": 62,
+      "bus": {
+        "value": 134,
+        "name": "USB"
+      },
+      "base_class": {
+        "value": 266,
+        "name": "Hub"
+      },
+      "vendor": {
+        "type": "usb",
+        "value": 7531,
+        "name": "Linux Foundation"
+      },
+      "device": {
+        "type": "usb",
+        "value": 3,
+        "name": "3.0 root hub"
+      },
+      "revision": {
+        "name": "6.08"
+      },
+      "hardware_class": "hub",
+      "model": "Linux Foundation 3.0 root hub",
+      "attached_to": 47,
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0",
+      "sysfs_bus_id": "2-0:1.0",
+      "unique_id": "pBe4.xYNhIwdOaa6",
+      "detail": {
+        "type": "usb",
+        "bus": 0,
+        "device_number": 0,
+        "lev": 0,
+        "parent": 0,
+        "port": 0,
+        "count": 0,
+        "connections": 0,
+        "used_connections": 0,
+        "interface_descriptor": 0,
+        "speed": 0,
+        "vendor": 7531,
+        "device": 3,
+        "revision": 1544,
+        "manufacturer": "Linux 6.8.12 xhci-hcd",
+        "product": "xHCI Host Controller",
+        "raw_descriptor": {
+          "start": 0,
+          "size": 0,
+          "data": ""
+        },
+        "device_class": "hub",
+        "device_protocol": 3,
+        "interface_class": "hub",
+        "country": 0
+      },
+      "driver": "hub",
+      "drivers": [
+        "hub"
+      ],
+      "module_alias": "usb:v1D6Bp0003d0608dc09dsc00dp03ic09isc00ip00in00"
+    },
+    {
+      "index": 63,
+      "bus": {
+        "value": 134,
+        "name": "USB"
+      },
+      "base_class": {
+        "value": 266,
+        "name": "Hub"
+      },
+      "vendor": {
+        "type": "usb",
+        "value": 7531,
+        "name": "Linux Foundation"
+      },
+      "device": {
+        "type": "usb",
+        "value": 263,
+        "name": "USB Virtual Hub"
+      },
+      "revision": {
+        "name": "1.00"
+      },
+      "hardware_class": "hub",
+      "model": "Linux Foundation USB Virtual Hub",
+      "attached_to": 60,
+      "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-13/1-13:1.0",
+      "sysfs_bus_id": "1-13:1.0",
+      "unique_id": "ygBX.H0zPr6u0x9F",
+      "resources": [
+        {
+          "type": "baud",
+          "speed": 480000000,
+          "bits": 0,
+          "stop_bits": 0,
+          "parity": 0,
+          "handshake": 0
+        }
+      ],
+      "detail": {
+        "type": "usb",
+        "bus": 0,
+        "device_number": 0,
+        "lev": 0,
+        "parent": 0,
+        "port": 0,
+        "count": 0,
+        "connections": 0,
+        "used_connections": 0,
+        "interface_descriptor": 0,
+        "speed": 480000000,
+        "vendor": 7531,
+        "device": 263,
+        "revision": 256,
+        "manufacturer": "Aspeed",
+        "product": "USB Virtual Hub",
+        "raw_descriptor": {
+          "start": 0,
+          "size": 0,
+          "data": ""
+        },
+        "device_class": "hub",
+        "device_protocol": 1,
+        "interface_class": "hub",
+        "country": 0
+      },
+      "driver": "hub",
+      "drivers": [
+        "hub"
+      ],
+      "module_alias": "usb:v1D6Bp0107d0100dc09dsc00dp01ic09isc00ip00in00"
+    },
+    {
+      "index": 64,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "3:3",
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 38,
+      "sysfs_id": "/class/net/eno3",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1d.0/0000:06:00.0",
+      "unix_device_name": "eno3",
+      "unique_id": "tetg.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "driver": "ixgbe",
+      "driver_module": "ixgbe",
+      "drivers": [
+        "ixgbe"
+      ],
+      "driver_modules": [
+        "ixgbe"
+      ]
+    },
+    {
+      "index": 65,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "1:1",
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 45,
+      "sysfs_id": "/class/net/eno1",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1f.6",
+      "unix_device_name": "eno1",
+      "unique_id": "zHNY.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "driver": "e1000e",
+      "driver_module": "e1000e",
+      "drivers": [
+        "e1000e"
+      ],
+      "driver_modules": [
+        "e1000e"
+      ]
+    },
+    {
+      "index": 66,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 29,
+      "sysfs_id": "/class/net/slave0",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.0",
+      "unix_device_name": "slave0",
+      "unique_id": "P7BN.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 98
+        },
+        {
+          "type": "phwaddr",
+          "address": 98
+        },
+        {
+          "Type": "link",
+          "connected": true
+        }
+      ],
+      "driver": "mlx5_core",
+      "driver_module": "mlx5_core",
+      "drivers": [
+        "mlx5_core"
+      ],
+      "driver_modules": [
+        "mlx5_core"
+      ]
+    },
+    {
+      "index": 68,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "4:4",
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 49,
+      "sysfs_id": "/class/net/eno4",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1d.0/0000:06:00.1",
+      "unix_device_name": "eno4",
+      "unique_id": "Lq7l.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "driver": "ixgbe",
+      "driver_module": "ixgbe",
+      "drivers": [
+        "ixgbe"
+      ],
+      "driver_modules": [
+        "ixgbe"
+      ]
+    },
+    {
+      "index": 71,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "2:2",
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 24,
+      "sysfs_id": "/class/net/eno2",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1c.5/0000:03:00.0",
+      "unix_device_name": "eno2",
+      "unique_id": "QTdc.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 51
+        },
+        {
+          "type": "phwaddr",
+          "address": 51
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "driver": "igb",
+      "driver_module": "igb",
+      "drivers": [
+        "igb"
+      ],
+      "driver_modules": [
+        "igb"
+      ]
+    },
+    {
+      "index": 72,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "name": "Loopback"
+      },
+      "hardware_class": "network_interface",
+      "model": "Loopback network interface",
+      "sysfs_id": "/class/net/lo",
+      "unix_device_name": "lo",
+      "unique_id": "ZsBS.GQNx7L4uPNA",
+      "resources": [
+        {
+          "Type": "link",
+          "connected": true
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "bus": {
+        "name": "None"
+      },
+      "slot": "1:1",
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 39,
+      "sysfs_id": "/class/net/slave1",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.1",
+      "unix_device_name": "slave1",
+      "unique_id": "sIRR.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 98
+        },
+        {
+          "type": "phwaddr",
+          "address": 98
+        },
+        {
+          "Type": "link",
+          "connected": true
+        }
+      ],
+      "driver": "mlx5_core",
+      "driver_module": "mlx5_core",
+      "drivers": [
+        "mlx5_core"
+      ],
+      "driver_modules": [
+        "mlx5_core"
+      ]
+    },
+    {
+      "index": 74,
+      "bus": {
+        "name": "None"
+      },
+      "base_class": {
+        "value": 263,
+        "name": "Network Interface"
+      },
+      "sub_class": {
+        "value": 1,
+        "name": "Ethernet"
+      },
+      "hardware_class": "network_interface",
+      "model": "Ethernet network interface",
+      "attached_to": 57,
+      "sysfs_id": "/class/net/eth0",
+      "sysfs_device_link": "/devices/pci0000:00/0000:00:14.0/usb1/1-13/1-13.2/1-13.2:2.0",
+      "unix_device_name": "eth0",
+      "unique_id": "usDW.ndpeucax6V1",
+      "resources": [
+        {
+          "type": "hwaddr",
+          "address": 98
+        },
+        {
+          "type": "phwaddr",
+          "address": 98
+        },
+        {
+          "Type": "link",
+          "connected": false
+        }
+      ],
+      "driver": "rndis_host",
+      "driver_module": "rndis_host",
+      "drivers": [
+        "rndis_host"
+      ],
+      "driver_modules": [
+        "rndis_host"
+      ]
+    }
+  ],
+  "smbios": [
+    {
+      "type": "bios",
+      "handle": 0,
+      "vendor": "American Megatrends Inc.",
+      "version": "1.0a",
+      "date": "01/11/2021",
+      "features": [
+        "PCI supported",
+        "BIOS flashable",
+        "BIOS shadowing allowed",
+        "CD boot supported",
+        "Selectable boot supported",
+        "BIOS ROM socketed",
+        "EDD spec supported",
+        "1.2MB Floppy supported",
+        "720kB Floppy supported",
+        "2.88MB Floppy supported",
+        "Print Screen supported",
+        "Serial Services supported",
+        "Printer Services supported",
+        "ACPI supported",
+        "USB Legacy supported",
+        "BIOS Boot Spec supported"
+      ],
+      "start_address": "0xf0000",
+      "rom_size": 16777216
+    },
+    {
+      "type": "system",
+      "handle": 1,
+      "manufacturer": "sysGen www.sysgen.de",
+      "product": "Super Server",
+      "version": "0123456789",
+      "wake_up": {
+        "value": 6,
+        "name": "Power Switch"
+      }
+    },
+    {
+      "type": "board",
+      "handle": 2,
+      "manufacturer": "Supermicro",
+      "product": "X12SCZ-TLN4F",
+      "version": "1.01A",
+      "asset_tag": "Default string",
+      "board_type": {
+        "value": 10,
+        "name": "Motherboard"
+      },
+      "features": [
+        "Hosting Board",
+        "Replaceable"
+      ],
+      "location": "Default string",
+      "chassis": 3
+    },
+    {
+      "type": "chassis",
+      "handle": 3,
+      "manufacturer": "sysGen www.sysgen.de",
+      "version": "0123456789",
+      "asset_tag": "Default string",
+      "chassis_type": {
+        "value": 3,
+        "name": "Desktop"
+      },
+      "lock_present": false,
+      "bootup_state": {
+        "value": 3,
+        "name": "Safe"
+      },
+      "power_state": {
+        "value": 3,
+        "name": "Safe"
+      },
+      "thermal_state": {
+        "value": 3,
+        "name": "Safe"
+      },
+      "security_state": {
+        "value": 3,
+        "name": "None"
+      },
+      "oem": "0x0"
+    },
+    {
+      "type": "port_connector",
+      "handle": 4,
+      "port_type": {
+        "value": 31,
+        "name": "Network Port"
+      },
+      "internal_reference_designator": "J8",
+      "external_connector_type": {
+        "value": 11,
+        "name": "RJ-45"
+      },
+      "external_reference_designator": "IPMI LAN"
+    },
+    {
+      "type": "port_connector",
+      "handle": 5,
+      "port_type": {
+        "value": 16,
+        "name": "USB"
+      },
+      "internal_reference_designator": "J8",
+      "external_connector_type": {
+        "value": 18,
+        "name": "Access Bus [USB]"
+      },
+      "external_reference_designator": "USB8/9(3.1)"
+    },
+    {
+      "type": "port_connector",
+      "handle": 6,
+      "port_type": {
+        "value": 16,
+        "name": "USB"
+      },
+      "internal_reference_designator": "J7",
+      "external_connector_type": {
+        "value": 18,
+        "name": "Access Bus [USB]"
+      },
+      "external_reference_designator": "USB6/7(3.1)"
+    },
+    {
+      "type": "port_connector",
+      "handle": 7,
+      "port_type": {
+        "value": 31,
+        "name": "Network Port"
+      },
+      "internal_reference_designator": "JLAN1_2",
+      "external_connector_type": {
+        "value": 11,
+        "name": "RJ-45"
+      },
+      "external_reference_designator": "LAN1/2"
+    },
+    {
+      "type": "port_connector",
+      "handle": 8,
+      "port_type": {
+        "value": 31,
+        "name": "Network Port"
+      },
+      "internal_reference_designator": "JLAN34",
+      "external_connector_type": {
+        "value": 11,
+        "name": "RJ-45"
+      },
+      "external_reference_designator": "LAN3/4"
+    },
+    {
+      "type": "port_connector",
+      "handle": 9,
+      "port_type": {
+        "value": 28,
+        "name": "Video Port"
+      },
+      "internal_reference_designator": "J1",
+      "external_connector_type": {
+        "value": 7,
+        "name": "DB-15 pin female"
+      },
+      "external_reference_designator": "VGA"
+    },
+    {
+      "type": "port_connector",
+      "handle": 10,
+      "port_type": {
+        "value": 28,
+        "name": "Video Port"
+      },
+      "internal_reference_designator": "J1",
+      "external_connector_type": {
+        "value": 5,
+        "name": "DB-25 pin female"
+      },
+      "external_reference_designator": "DVI-D"
+    },
+    {
+      "type": "port_connector",
+      "handle": 11,
+      "port_type": {
+        "value": 28,
+        "name": "Video Port"
+      },
+      "internal_reference_designator": "J28",
+      "external_connector_type": {
+        "value": 5,
+        "name": "DB-25 pin female"
+      },
+      "external_reference_designator": "DP++ 1/2"
+    },
+    {
+      "type": "slot",
+      "handle": 12,
+      "designation": "PCH SLOT4 PCI-E 3.0 X4 (IN X8)",
+      "slot_type": {
+        "value": 181,
+        "name": "Other"
+      },
+      "bus_width": {
+        "value": 10,
+        "name": "Other"
+      },
+      "usage": {
+        "value": 4,
+        "name": "In Use"
+      },
+      "length": {
+        "value": 3,
+        "name": "Short"
+      },
+      "id": 4,
+      "features": [
+        "3.3 V",
+        "Shared",
+        "PME#"
+      ]
+    },
+    {
+      "type": "slot",
+      "handle": 13,
+      "designation": "CPU SLOT6 PCI-E 3.0 X16",
+      "slot_type": {
+        "value": 182,
+        "name": "Other"
+      },
+      "bus_width": {
+        "value": 13,
+        "name": "Other"
+      },
+      "usage": {
+        "value": 3,
+        "name": "Available"
+      },
+      "length": {
+        "value": 4,
+        "name": "Long"
+      },
+      "id": 6,
+      "features": [
+        "3.3 V",
+        "Shared",
+        "PME#"
+      ]
+    },
+    {
+      "type": "slot",
+      "handle": 17,
+      "designation": "PCH SLOT7 PCI-E 3.0 X4",
+      "slot_type": {
+        "value": 180,
+        "name": "Other"
+      },
+      "bus_width": {
+        "value": 10,
+        "name": "Other"
+      },
+      "usage": {
+        "value": 3,
+        "name": "Available"
+      },
+      "length": {
+        "value": 3,
+        "name": "Short"
+      },
+      "id": 7,
+      "features": [
+        "3.3 V",
+        "Shared",
+        "PME#"
+      ]
+    },
+    {
+      "type": "slot",
+      "handle": 18,
+      "designation": "PCI-E M.2-M1",
+      "slot_type": {
+        "value": 23,
+        "name": "Other"
+      },
+      "bus_width": {
+        "value": 10,
+        "name": "Other"
+      },
+      "usage": {
+        "value": 4,
+        "name": "In Use"
+      },
+      "length": {
+        "value": 3,
+        "name": "Short"
+      },
+      "id": 8,
+      "features": [
+        "3.3 V",
+        "Shared",
+        "PME#"
+      ]
+    },
+    {
+      "type": "slot",
+      "handle": 19,
+      "designation": "PCI-E M.2-E1",
+      "slot_type": {
+        "value": 21,
+        "name": "Other"
+      },
+      "bus_width": {
+        "value": 8,
+        "name": "Other"
+      },
+      "usage": {
+        "value": 3,
+        "name": "Available"
+      },
+      "length": {
+        "value": 3,
+        "name": "Short"
+      },
+      "id": 9,
+      "features": [
+        "3.3 V",
+        "Shared",
+        "PME#"
+      ]
+    },
+    {
+      "type": "oem_strings",
+      "handle": 20,
+      "strings": [
+        "Intel CometLake-S/CometLake-H/CometLakeWS",
+        "Supermicro motherboard-X12 Series"
+      ]
+    },
+    {
+      "type": "system_boot",
+      "handle": 21,
+      "data": "0x2000000000002100446200000000310060000000"
+    },
+    {
+      "type": "system_power_supply",
+      "handle": 22,
+      "data": "0x27010698ffff21004467647473003100200060000000",
+      "strings": [
+        "PSU1",
+        "SUPERMICRO",
+        "PWS-920P-SQ",
+        "PWS-920P-SQ",
+        "2.0",
+        "P9212CK38MB0008",
+        "N/A"
+      ]
+    },
+    {
+      "type": "system_power_supply",
+      "handle": 23,
+      "data": "0x27020698ffff2100536f696156693100800080000000",
+      "strings": [
+        "PSU2",
+        "SUPERMICRO",
+        "PWS-920P-SQ",
+        "PWS-920P-SQ",
+        "2.0",
+        "P9212CK38MB0009",
+        "N/A"
+      ]
+    },
+    {
+      "type": "onboard_extended",
+      "handle": 24,
+      "data": "0x2901000000003100416920",
+      "strings": [
+        "ASPEED Video AST2500"
+      ]
+    },
+    {
+      "type": "onboard_extended",
+      "handle": 25,
+      "data": "0x2901000000003100496c68",
+      "strings": [
+        "Intel Ethernet i219-LM"
+      ]
+    },
+    {
+      "type": "onboard_extended",
+      "handle": 26,
+      "data": "0x2901000000002100496c68",
+      "strings": [
+        "Intel Ethernet i210-AT"
+      ]
+    },
+    {
+      "type": "onboard_extended",
+      "handle": 27,
+      "data": "0x2901000000002100000020",
+      "strings": [
+        "Intel Ethernet X550-AT2 #1"
+      ]
+    },
+    {
+      "type": "onboard_extended",
+      "handle": 28,
+      "data": "0x2901000000003100496c68",
+      "strings": [
+        "Intel Ethernet X550-AT2 #2"
+      ]
+    },
+    {
+      "type": "ipmi_device",
+      "handle": 29,
+      "data": "0x2601a30000004100dd070002ff0000ff00ff"
+    },
+    {
+      "type": "memory_array",
+      "handle": 31,
+      "location": {
+        "value": 3,
+        "name": "Motherboard"
+      },
+      "usage": {
+        "value": 3,
+        "name": "System memory"
+      },
+      "ecc": {
+        "value": 3,
+        "name": "None"
+      },
+      "max_size": 67108864,
+      "error_handle": 65534,
+      "slots": 4
+    },
+    {
+      "type": "memory_device",
+      "handle": 32,
+      "location": "DIMMA1",
+      "bank_location": "P0_Node0_Channel0_Dimm0",
+      "manufacturer": "Kingston",
+      "asset_tag": "9876543210",
+      "part_number": "KHX3200C16D4/32GX",
+      "array_handle": 31,
+      "error_handle": 65534,
+      "width": 64,
+      "ecc_bits": 0,
+      "size": 33554432,
+      "form_factor": {
+        "value": 9,
+        "name": "DIMM"
+      },
+      "set": 0,
+      "memory_type": {
+        "value": 26,
+        "name": "Other"
+      },
+      "memory_type_details": [
+        "Synchronous"
+      ],
+      "speed": 2400
+    },
+    {
+      "type": "memory_device",
+      "handle": 33,
+      "location": "DIMMA2",
+      "bank_location": "P0_Node0_Channel0_Dimm1",
+      "manufacturer": "Kingston",
+      "asset_tag": "9876543210",
+      "part_number": "KHX3200C16D4/32GX",
+      "array_handle": 31,
+      "error_handle": 65534,
+      "width": 64,
+      "ecc_bits": 0,
+      "size": 33554432,
+      "form_factor": {
+        "value": 9,
+        "name": "DIMM"
+      },
+      "set": 0,
+      "memory_type": {
+        "value": 26,
+        "name": "Other"
+      },
+      "memory_type_details": [
+        "Synchronous"
+      ],
+      "speed": 2400
+    },
+    {
+      "type": "memory_device",
+      "handle": 34,
+      "location": "DIMMB1",
+      "bank_location": "P0_Node0_Channel1_Dimm0",
+      "manufacturer": "Kingston",
+      "asset_tag": "9876543210",
+      "part_number": "KHX3200C16D4/32GX",
+      "array_handle": 31,
+      "error_handle": 65534,
+      "width": 64,
+      "ecc_bits": 0,
+      "size": 33554432,
+      "form_factor": {
+        "value": 9,
+        "name": "DIMM"
+      },
+      "set": 0,
+      "memory_type": {
+        "value": 26,
+        "name": "Other"
+      },
+      "memory_type_details": [
+        "Synchronous"
+      ],
+      "speed": 2400
+    },
+    {
+      "type": "memory_device",
+      "handle": 35,
+      "location": "DIMMB2",
+      "bank_location": "P0_Node0_Channel1_Dimm1",
+      "manufacturer": "Kingston",
+      "asset_tag": "9876543210",
+      "part_number": "KHX3200C16D4/32GX",
+      "array_handle": 31,
+      "error_handle": 65534,
+      "width": 64,
+      "ecc_bits": 0,
+      "size": 33554432,
+      "form_factor": {
+        "value": 9,
+        "name": "DIMM"
+      },
+      "set": 0,
+      "memory_type": {
+        "value": 26,
+        "name": "Other"
+      },
+      "memory_type_details": [
+        "Synchronous"
+      ],
+      "speed": 2400
+    },
+    {
+      "type": "memory_array_mapped_address",
+      "handle": 36,
+      "array_handle": 31,
+      "start_address": 0,
+      "end_address": 137438953472,
+      "part_width": 4
+    },
+    {
+      "type": "event_log",
+      "handle": 37,
+      "data": "0x0fff10050001030000000300000000000000e1000000f1003c333331366f20353020383720663120383820303820323020343420383020306620303820323837382065362063322032"
+    },
+    {
+      "type": "memory_device_mapped_address",
+      "handle": 38,
+      "memory_device_handle": 32,
+      "array_map_handle": 36,
+      "start_address": 0,
+      "end_address": 34359738368,
+      "row_position": 255,
+      "interleave_position": 1,
+      "interleave_depth": 2
+    },
+    {
+      "type": "memory_device_mapped_address",
+      "handle": 39,
+      "memory_device_handle": 33,
+      "array_map_handle": 36,
+      "start_address": 68719476736,
+      "end_address": 103079215104,
+      "row_position": 255,
+      "interleave_position": 1,
+      "interleave_depth": 2
+    },
+    {
+      "type": "memory_device_mapped_address",
+      "handle": 40,
+      "memory_device_handle": 34,
+      "array_map_handle": 36,
+      "start_address": 34359738368,
+      "end_address": 68719476736,
+      "row_position": 255,
+      "interleave_position": 2,
+      "interleave_depth": 2
+    },
+    {
+      "type": "memory_device_mapped_address",
+      "handle": 41,
+      "memory_device_handle": 35,
+      "array_map_handle": 36,
+      "start_address": 103079215104,
+      "end_address": 137438953472,
+      "row_position": 255,
+      "interleave_position": 2,
+      "interleave_depth": 2
+    },
+    {
+      "type": "SmbiosType(221)",
+      "handle": 42,
+      "data": "0xdd03000200000000000061003c5b3634367365316e7872656569",
+      "strings": [
+        "Reference Code - CPU",
+        "uCode Version",
+        "TXT ACM version"
+      ]
+    },
+    {
+      "type": "SmbiosType(221)",
+      "handle": 43,
+      "data": "0xdd03000200048d00000061003c5b3634317365317365726c2e76",
+      "strings": [
+        "Reference Code - ME",
+        "MEBx version",
+        "ME Firmware Version",
+        "Corporate SKU"
+      ]
+    },
+    {
+      "type": "SmbiosType(221)",
+      "handle": 44,
+      "data": "0xdd070002ff0000ff00ff07ff00fff10020001017b00000001f0003000000030020000300400000fe0400000000000000000000000000",
+      "strings": [
+        "Reference Code - CML PCH",
+        "PCH-CRID Status",
+        "Disabled",
+        "PCH-CRID Original Value",
+        "PCH-CRID New Value",
+        "OPROM - RST - RAID",
+        "ChipsetInit Base Version",
+        "ChipsetInit Oem Version"
+      ]
+    },
+    {
+      "type": "SmbiosType(221)",
+      "handle": 45,
+      "data": "0xdd070002000020ffff00070000ff2100000020000000f10050002014e000000015000000000000000000000000000000000000000000",
+      "strings": [
+        "Reference Code - SA - System Agent",
+        "Reference Code - MRC",
+        "SA - PCIe Version",
+        "SA-CRID Status",
+        "Disabled",
+        "SA-CRID Original Value",
+        "SA-CRID New Value",
+        "OPROM - VBIOS"
+      ]
+    },
+    {
+      "type": "SmbiosType(221)",
+      "handle": 46,
+      "data": "0xdd0100000000310007010200",
+      "strings": [
+        "FSP Binary Version"
+      ]
+    },
+    {
+      "type": "cache",
+      "handle": 47,
+      "socket": "L1 Cache",
+      "size_max": 640,
+      "size_current": 640,
+      "speed": 0,
+      "mode": {
+        "value": 1,
+        "name": "Write Back"
+      },
+      "enabled": true,
+      "location": {
+        "name": "Internal"
+      },
+      "socketed": false,
+      "level": 0,
+      "ecc": {
+        "value": 4,
+        "name": "Parity"
+      },
+      "cache_type": {
+        "value": 5,
+        "name": "Unified"
+      },
+      "associativity": {
+        "value": 7,
+        "name": "8-way Set-Associative"
+      },
+      "sram_type_current": [
+        "Synchronous"
+      ],
+      "sram_type_supported": [
+        "Synchronous"
+      ]
+    },
+    {
+      "type": "cache",
+      "handle": 48,
+      "socket": "L2 Cache",
+      "size_max": 2560,
+      "size_current": 2560,
+      "speed": 0,
+      "mode": {
+        "value": 1,
+        "name": "Write Back"
+      },
+      "enabled": true,
+      "location": {
+        "name": "Internal"
+      },
+      "socketed": false,
+      "level": 1,
+      "ecc": {
+        "value": 5,
+        "name": "Single-bit"
+      },
+      "cache_type": {
+        "value": 5,
+        "name": "Unified"
+      },
+      "associativity": {
+        "value": 5,
+        "name": "4-way Set-Associative"
+      },
+      "sram_type_current": [
+        "Synchronous"
+      ],
+      "sram_type_supported": [
+        "Synchronous"
+      ]
+    },
+    {
+      "type": "cache",
+      "handle": 49,
+      "socket": "L3 Cache",
+      "size_max": 20480,
+      "size_current": 20480,
+      "speed": 0,
+      "mode": {
+        "value": 1,
+        "name": "Write Back"
+      },
+      "enabled": true,
+      "location": {
+        "name": "Internal"
+      },
+      "socketed": false,
+      "level": 2,
+      "ecc": {
+        "value": 6,
+        "name": "Multi-bit"
+      },
+      "cache_type": {
+        "value": 5,
+        "name": "Unified"
+      },
+      "associativity": {
+        "value": 8,
+        "name": "16-way Set-Associative"
+      },
+      "sram_type_current": [
+        "Synchronous"
+      ],
+      "sram_type_supported": [
+        "Synchronous"
+      ]
+    },
+    {
+      "type": "processor",
+      "handle": 50,
+      "socket": "CPU",
+      "socket_type": {
+        "value": 1,
+        "name": "Other"
+      },
+      "socket_populated": true,
+      "manufacturer": "Intel(R) Corporation",
+      "version": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+      "asset_tag": "To Be Filled By O.E.M.",
+      "part": "To Be Filled By O.E.M.",
+      "processor_type": {
+        "value": 3,
+        "name": "CPU"
+      },
+      "processor_family": {
+        "value": 207,
+        "name": "Other"
+      },
+      "processor_status": {
+        "value": 1,
+        "name": "Enabled"
+      },
+      "voltage": 9,
+      "clock_ext": 100,
+      "clock_max": 3700,
+      "clock_current": 3600,
+      "cache_handle_l1": 47,
+      "cache_handle_l2": 48,
+      "cache_handle_l3": 49
+    },
+    {
+      "type": "SmbiosType(130)",
+      "handle": 51,
+      "data": "0x82240101c000510083350e00f80009008d00fe00"
+    },
+    {
+      "type": "SmbiosType(131)",
+      "handle": 52,
+      "data": "0x83350e00f80009008d00fe0000e676000000f1004000834030000000340000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "type": "management_controller_host_interface",
+      "handle": 53,
+      "data": "0x2a401f00b6045cf472b2a9000000ff0000000303000000ff000000000e2e2e3500009100c400bc6c642031622030302062352030392035392066352037632062622061652030302030302030302066662030302030302030302030312030652030302030302030302066302030302030302030302030302030312032322032"
+    },
+    {
+      "type": "additional_info",
+      "handle": 63,
+      "data": "0x28010053b3b30200000021004462000000002100b0007000000021"
+    },
+    {
+      "type": "additional_info",
+      "handle": 64,
+      "data": "0x280100530000000000001100667320202070746d706d6361202072"
+    },
+    {
+      "type": "additional_info",
+      "handle": 65,
+      "data": "0x2801005300000000000041006d6c6d206529724d393920202e4821"
+    },
+    {
+      "type": "additional_info",
+      "handle": 66,
+      "data": "0x280100534d4d0100000021003000e0000000210090005000000021"
+    },
+    {
+      "type": "additional_info",
+      "handle": 67,
+      "data": "0x28010053000000000000210070726e6d3a00210090001000000021"
+    },
+    {
+      "type": "additional_info",
+      "handle": 68,
+      "data": "0x2801005303d9030000002100500030000000410061657373336970"
+    },
+    {
+      "type": "additional_info",
+      "handle": 69,
+      "data": "0x2801005386d9020000002100b000b000000021000a000000000021"
+    },
+    {
+      "type": "additional_info",
+      "handle": 70,
+      "data": "0x2801005386d902000000210063666c200000210010009000000021"
+    },
+    {
+      "type": "additional_info",
+      "handle": 71,
+      "data": "0x2801005386d9020000002100d000b00000004100496c2065292d30"
+    },
+    {
+      "type": "additional_info",
+      "handle": 72,
+      "data": "0x2801005386d90200000021007370090a342021006d6c200a000021"
+    },
+    {
+      "type": "SmbiosType(199)",
+      "handle": 73,
+      "data": "0xc701000000",
+      "strings": [
+        ""
+      ]
+    },
+    {
+      "type": "SmbiosType(221)",
+      "handle": 74,
+      "data": "0xdd0c0002ff04ffffffff090000ffff00ff0dff0000000000000021005900bc6c7376786a336b786b676e646e36316e6469696e73653938716a6769306d692d74622d30303732626900733d5331306e65796f6c742c32386e65",
+      "strings": [
+        "Lan Phy Version",
+        "Sensor Firmware Version",
+        "Debug Mode Status",
+        "Disabled",
+        "Performance Mode Status",
+        "Disabled",
+        "Debug Use USB(Disabled:Serial)",
+        "Disabled",
+        "ICC Overclocking Version",
+        "UNDI Version",
+        "EC FW Version",
+        "GOP Version",
+        "Royal Park Version",
+        "Platform Version",
+        "Client Silicon Version"
+      ]
+    },
+    {
+      "type": "group_associations",
+      "handle": 75,
+      "name": "$MEI",
+      "handles": [
+        0
+      ]
+    },
+    {
+      "type": "SmbiosType(219)",
+      "handle": 76,
+      "data": "0xdb01028100401f0bffffffffffff038000000000000000000000000000005100ba00bc6c34203030203835203030203430203130203030206666206666206666206666206666206666203030203830203030203030203030203030203034203030203030203030203030",
+      "strings": [
+        "MEI1",
+        "MEI2",
+        "MEI3",
+        "MEI4"
+      ]
+    },
+    {
+      "type": "SmbiosType(136)",
+      "handle": 77,
+      "data": "0x880000000000"
+    },
+    {
+      "type": "group_associations",
+      "handle": 78,
+      "name": "Firmware Version Info",
+      "handles": [
+        184683593770,
+        188978561067,
+        193273528364,
+        197568495661,
+        317827579950,
+        4471060955210
+      ]
+    },
+    {
+      "type": "end_of_table",
+      "handle": 79,
+      "data": "0x7f000000"
+    }
+  ],
+  "system": "x86_64-linux",
+  "virtualisation": "none"
+}

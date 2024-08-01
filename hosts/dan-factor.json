@@ -52,7 +52,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "rdCR.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -61,7 +61,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -376,7 +376,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "+rIN.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -385,7 +385,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -862,7 +862,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 3045 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
       "unique_id": "EBSn.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -871,7 +871,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 3045,
+        "clock": 1000,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -1024,7 +1024,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
       "unique_id": "JIVF.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -1033,7 +1033,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 2500,
+        "clock": 1000,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -1348,7 +1348,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
       "unique_id": "TWbB.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -1357,7 +1357,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 2500,
+        "clock": 1000,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -1672,7 +1672,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 3329 MHz",
       "unique_id": "dkh7.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -1681,7 +1681,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 3329,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -2806,7 +2806,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "9W1Q.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -2815,7 +2815,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -3778,7 +3778,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1229 MHz",
       "unique_id": "bthG.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -3787,7 +3787,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 2500,
+        "clock": 1229,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -4102,7 +4102,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2400 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "l5oC.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -4111,7 +4111,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 2400,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -4912,7 +4912,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2200 MHz",
       "unique_id": "8f1Z.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -4921,7 +4921,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 2500,
+        "clock": 2200,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -5074,7 +5074,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "Dm41.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -5083,7 +5083,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -5398,7 +5398,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1600 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
       "unique_id": "N_Az.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -5407,7 +5407,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1600,
+        "clock": 1000,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -5722,7 +5722,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "WCHv.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -5731,7 +5731,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -5884,7 +5884,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
       "unique_id": "bJKN.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -5893,7 +5893,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 2500,
+        "clock": 1000,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
@@ -6208,7 +6208,7 @@
         "value": 3
       },
       "hardware_class": "cpu",
-      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 1000 MHz",
+      "model": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz, 2500 MHz",
       "unique_id": "lXQJ.j8NaKXDZtZ6",
       "detail": {
         "type": "cpu",
@@ -6217,7 +6217,7 @@
         "model": 85,
         "stepping": 7,
         "cache": 14080,
-        "clock": 1000,
+        "clock": 2500,
         "units": 32,
         "vendor_name": "GenuineIntel",
         "model_name": "Intel(R) Xeon(R) Gold 5215 CPU @ 2.50GHz",
