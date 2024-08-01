@@ -304,6 +304,21 @@ def deploy(c: Any) -> None:
 
 
 @task
+def generate_facter_json(c: Any) -> None:
+    """
+    Deploy to servers
+    """
+    def deploy(h: DeployHost) -> None:
+        ret = h.run(["nix", "run", "github:numtide/nixos-facter"], stdout=subprocess.PIPE)
+        name = h.host.split(".")[0]
+        path = ROOT / "hosts" / f"{name}-factor.json"
+        path.write_text(ret.stdout)
+
+    g = DeployGroup([DeployHost(h, user="root") for h in HOSTS])
+    g.run_function(deploy)
+
+
+@task
 def deploy_ruby(c: Any) -> None:
     """
     Deploy to riscv server
