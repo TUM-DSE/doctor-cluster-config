@@ -1,3 +1,3 @@
 { lib, ...}: {
-  services.envfs.enable = lib.mkDefault true;
+  services.envfs.enable = false; # envfs is broken
 }
