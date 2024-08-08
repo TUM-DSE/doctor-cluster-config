@@ -16,6 +16,9 @@ in
     "kvm_amd.sev_snp=1"
     #"kvm.mmio_caching=on"
     "sp5100_tco.blacklist=yes"
+
+    # this parameter exists on 6.9-
+    "kvm.gmem_2m_enabled=1"
   ];
 
   # enable libvirtd service
