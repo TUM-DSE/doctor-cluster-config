@@ -16,7 +16,6 @@
   system.stateVersion = "23.05";
 
   boot.kernelParams = [
-    "isolcpus=0-31"
     "nvme.poll_queues=4"
     "nvme_core.multipath=N"
   ];
