@@ -152,6 +152,7 @@
         "/export/share/cmainas/**/*.img"
         "/export/share/martinL/**/*.img"
       ];
+      extraCreateArgs = [ "--exclude-caches" ];
       encryption = {
         mode = "repokey";
         passCommand = "cat ${config.sops.secrets.tum-borgbackup-password.path}";
@@ -209,6 +210,7 @@
         "/export/home/simonk/"
         "/export/home/patrick/"
       ];
+      extraCreateArgs = [ "--exclude-caches" ];
       environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-home-ssh.path}";
       preHook = ''
         set -x
