@@ -151,6 +151,8 @@
         # vm images
         "/export/share/cmainas/**/*.img"
         "/export/share/martinL/**/*.img"
+        # large google traces
+        "/export/share/cmainas/traces"
       ];
       encryption = {
         mode = "repokey";
