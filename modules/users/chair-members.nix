@@ -278,7 +278,7 @@ in
       ilya = {
         isNormalUser = true;
         home = "/home/ilya";
-        extraGroups = extraGroups ++ [ "kvm" ];
+        extraGroups = extraGroups ++ [ "kvm" "elasticsearch" ];
         shell = "/run/current-system/sw/bin/bash";
         uid = 1030;
         openssh.authorizedKeys.keys = ilyaKeys;

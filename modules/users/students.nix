@@ -362,7 +362,7 @@ in
     lan = {
       isNormalUser = true;
       home = "/home/lan";
-      inherit extraGroups;
+      extraGroups = extraGroups ++ [ "elasticsearch" ];
       shell = "/run/current-system/sw/bin/bash";
       uid = 2050;
       allowedHosts = [ "graham" "irene" ];

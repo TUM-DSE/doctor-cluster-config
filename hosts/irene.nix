@@ -5,6 +5,7 @@
     ../modules/nfs/client.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
+    ../modules/elasticsearch.nix
   ];
 
   networking.hostName = "irene";
