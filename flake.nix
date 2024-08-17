@@ -28,8 +28,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    #buildbot-nix.url = "github:nix-community/buildbot-nix";
-    buildbot-nix.url = "github:MagicRB/buildbot-nix/use_installation_token_for_change_hook";
+    buildbot-nix.url = "github:nix-community/buildbot-nix";
     # requires nixpkgs-unstable
     buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
     buildbot-nix.inputs.flake-parts.follows = "flake-parts";
