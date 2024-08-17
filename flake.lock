@@ -13,16 +13,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1722441855,
-        "narHash": "sha256-4s4yeWR29OG/Mamz8YlPZXm7PZCziP+cIyWAmysO/Dw=",
-        "owner": "MagicRB",
+        "lastModified": 1723686396,
+        "narHash": "sha256-tL7V+/7Mcweqdd4Dbwsr/e8uRKKb2Jh/JFxAn5mB8Ho=",
+        "owner": "nix-community",
         "repo": "buildbot-nix",
-        "rev": "c6ba69e64f53b7d21eafe25ecb5a0f2492ab26f8",
+        "rev": "9d33309cccf590c2f85866dc9016207614be3ad6",
         "type": "github"
       },
       "original": {
-        "owner": "MagicRB",
-        "ref": "use_installation_token_for_change_hook",
+        "owner": "nix-community",
         "repo": "buildbot-nix",
         "type": "github"
       }
