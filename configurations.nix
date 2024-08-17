@@ -1,7 +1,7 @@
-{ self, ... }:
+{ self, inputs, ... }:
 let
   inherit
-    (self.inputs)
+    (inputs)
     nixpkgs
     retiolum
     sops-nix
@@ -10,17 +10,15 @@ let
     nixos-hardware
     srvos
     disko
-    nix-index-database
     buildbot-nix
     ;
-  nixosSystem = nixpkgs.lib.makeOverridable nixpkgs.lib.nixosSystem;
+
+  nixosSystem = args: nixpkgs.lib.nixosSystem ({
+    specialArgs = { inherit self inputs; };
+  } // args);
 
   commonModules = [
-    {
-      _module.args.self = self;
-      _module.args.inputs = self.inputs;
-      srvos.flake = self;
-    }
+    { srvos.flake = self; }
     # only include admins here for monitoring/backup infrastructure
     ./modules/users/admins.nix
     ./modules/users/extra-user-options.nix
@@ -93,7 +91,6 @@ let
       ./modules/qemu-bridge.nix
       ./modules/doctor-VMs.nix
       ./modules/lawful-access
-      nix-index-database.nixosModules.nix-index
       ./modules/nix-index.nix
     ];
 
