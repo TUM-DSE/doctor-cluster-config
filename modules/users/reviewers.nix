@@ -1,6 +1,8 @@
-let cgoPixel8Keys = [
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOPHHU+BO8E/+Mn98QFbkbz9mYm5wNUTBYGOO8EMGg7o pixel8"
-];
+let
+  cgoPixel8Keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOPHHU+BO8E/+Mn98QFbkbz9mYm5wNUTBYGOO8EMGg7o pixel8"
+  ];
+  cgo25RevKeys = [];
 in
 {
   # Please use a uid in the range between 4000-5000
@@ -14,6 +16,14 @@ in
       uid = 4005;
       allowedHosts = ["graham"];
       openssh.authorizedKeys.keys = cgoPixel8Keys;
+    };
+    cgo25Rev = {
+      isNormalUser = true;
+      home = "/scratch/cgo25Rev";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4006;
+      allowedHosts = ["graham"];
+      openssh.authorizedKeys.keys = cgo25RevKeys;
     };
   };
 
