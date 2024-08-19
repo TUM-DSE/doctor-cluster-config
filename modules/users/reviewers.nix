@@ -2,7 +2,9 @@ let
   cgoPixel8Keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOPHHU+BO8E/+Mn98QFbkbz9mYm5wNUTBYGOO8EMGg7o pixel8"
   ];
-  cgo25RevKeys = [];
+  cgo25RevKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
+  ];
 in
 {
   # Please use a uid in the range between 4000-5000
