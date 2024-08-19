@@ -35,4 +35,16 @@
   system.stateVersion = "21.05";
 
   networking.doctor-bridge.enable = true;
+
+  # Remove once CGO artifact evaluation is over
+  services.openssh.extraConfig = ''
+    Match User cgoPixel8
+        AllowTcpForwarding yes
+        X11Forwarding no
+        AllowAgentForwarding no
+        PermitTunnel no
+        PermitTTY no
+        PasswordAuthentication no
+    Match all # end match block
+  '';
 }
