@@ -304,17 +304,21 @@ def deploy(c: Any) -> None:
 
 
 @task
-def generate_facter_json(c: Any) -> None:
+def generate_facter_json(c: Any, hosts: str = "") -> None:
     """
     Deploy to servers
     """
     def deploy(h: DeployHost) -> None:
-        ret = h.run(["nix", "run", "github:numtide/nixos-facter"], stdout=subprocess.PIPE)
+        ret = h.run(["nix", "run", "--refresh", "github:numtide/nixos-facter"], stdout=subprocess.PIPE)
         name = h.host.split(".")[0]
-        path = ROOT / "hosts" / f"{name}-factor.json"
+        path = ROOT / "hosts" / f"{name}-facter.json"
         path.write_text(ret.stdout)
 
-    g = DeployGroup([DeployHost(h, user="root") for h in HOSTS])
+    if hosts != "":
+        host_list = hosts.split(",")
+    else:
+        host_list = HOSTS
+    g = DeployGroup([DeployHost(h, user="root") for h in host_list])
     g.run_function(deploy)
 
 
