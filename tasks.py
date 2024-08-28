@@ -782,6 +782,10 @@ def ipmi_serial(c: Any, host: str = "") -> None:
     Connect to the serial console of a server via IPMI
     """
     ipmitool(c, host, "sol info")
+    try:
+        ipmitool(c, host, "sol deactivate")
+    except Exception:
+        pass
     ipmitool(c, host, "sol activate")
 
 
