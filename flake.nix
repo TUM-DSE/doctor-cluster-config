@@ -53,7 +53,7 @@
     nixos-anywhere.inputs.flake-parts.follows = "flake-parts";
     nixos-anywhere.inputs.nixos-2305.follows = "";
 
-    retiolum.url = "git+https://git.thalheim.io/Mic92/retiolum";
+    retiolum.url = "github:Mic92/retiolum";
 
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
