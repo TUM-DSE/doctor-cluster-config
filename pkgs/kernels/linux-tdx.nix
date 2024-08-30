@@ -22,6 +22,11 @@ let
               INTEL_TDX_HOST y
             '';
           }
+          {
+            name = "bug_func export";
+            patch = ./zfs-tdx.patch;
+            extraConfig = '''';
+          }
         ] ++ extraPatches;
         extraMeta.branch = version;
         ignoreConfigErrors = true;
