@@ -332,5 +332,13 @@ in
           ./hosts/tegan.nix
         ];
       };
+    ian = nixosSystem {
+        pkgs = pkgs-x86_64-linux;
+        modules =
+                computeNodeModules
+                ++ [
+                 ./hosts/ian.nix
+                ];
+        };
   };
 }
