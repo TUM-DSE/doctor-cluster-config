@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  # defined in bills's secrets
+  # defined in astrid's secrets
   sops.secrets.deploy-ssh-key = { };
 
   programs.ssh.knownHosts."login.dos.cit.tum.de" = {
