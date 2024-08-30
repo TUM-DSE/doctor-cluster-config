@@ -368,7 +368,7 @@ def deploy_doctor(c: Any) -> None:
     Deploy to doctor
     """
     host = DeployHost(
-        "localhost",
+        "graham.dos.cit.tum.de",
         user="root",
         forward_agent=True,
         command_prefix="doctor",
