@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, inputs, ... }:
 {
   imports = [
     ./hostfile.nix
+    inputs.buildbot-nix.nixosModules.buildbot-worker
   ];
 
   sops.secrets.buildbot-builder-ssh-key = { };
