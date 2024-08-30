@@ -1,5 +1,10 @@
-{ config, lib, ...  }:
+{ config, lib, inputs, ...  }:
 {
+  imports = [
+    ./hostfile.nix
+    ../postgresql.nix
+    inputs.buildbot-nix.nixosModules.buildbot-master
+  ];
   services.buildbot-nix.master = {
     enable = true;
     domain = "buildbot-master";
@@ -46,11 +51,6 @@
     cachix-name = { };
     cachix-auth-token = { };
   };
-
-  imports = [
-    ./hostfile.nix
-    ../postgresql.nix
-  ];
 
   networking.firewall.allowedTCPPorts = [ 80 ];
 }
