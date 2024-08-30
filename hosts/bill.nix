@@ -2,7 +2,6 @@
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/bonding.nix
-    ../modules/sys-prog/users.nix
 
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
   ];
