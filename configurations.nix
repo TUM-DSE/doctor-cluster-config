@@ -200,6 +200,7 @@ in
         computeNodeModules
         ++ [
           ./hosts/astrid.nix
+          buildbot-nix.nixosModules.buildbot-worker
         ];
     };
 
