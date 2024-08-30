@@ -230,7 +230,6 @@ HOSTS = [
     "astrid.dos.cit.tum.de",
     "dan.dos.cit.tum.de",
     "mickey.dos.cit.tum.de",
-    "bill.dos.cit.tum.de",
     "yasmin.dos.cit.tum.de",
     "graham.dos.cit.tum.de",
     "ryan.dos.cit.tum.de",
@@ -270,9 +269,6 @@ MANUFACTURERS = dict(
             "clara.dos.cit.tum.de",
             "amy.dos.cit.tum.de",
             "rose.dos.cit.tum.de",
-        ],
-        "supermicro_broken": [
-            "bill.dos.cit.tum.de",
         ],
     }
 )
@@ -368,7 +364,7 @@ def deploy_doctor(c: Any) -> None:
     Deploy to doctor
     """
     host = DeployHost(
-        "localhost",
+        "graham.dos.cit.tum.de",
         user="root",
         forward_agent=True,
         command_prefix="doctor",

@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, inputs, ... }:
 {
   imports = [
     ./hostfile.nix
+    inputs.buildbot-nix.nixosModules.buildbot-worker
   ];
 
   sops.secrets.buildbot-builder-ssh-key = { };
@@ -28,7 +29,7 @@
 
   services.buildbot-nix.worker = {
     enable = true;
-    masterUrl = ''tcp:host=2a09\:80c0\:102\:\:1:port=9989'';
+    masterUrl = ''tcp:host=2a09\:80c0\:102\:\:11:port=9989'';
     workerPasswordFile = config.sops.secrets.buildbot-nix-worker-password.path;
   };
 }

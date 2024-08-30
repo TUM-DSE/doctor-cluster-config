@@ -6,7 +6,7 @@ There are several ways to access the servers:
 - Via SSH jump host: **recommended for ssh**, **required for students**
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dos.cit.tum.de`
-  - Keys are uploaded via the machine bill whenever nixos configuration is updated.
+  - Keys are uploaded via the machine astrid whenever nixos configuration is updated.
   - You can generate an SSH config file for all TUM hosts with [this script](./gen-ssh-config.sh), providing your username as an argument
 - VPN provided by RBG: **recommended for admins**
   - this option only works for ls1 employes
@@ -18,7 +18,7 @@ All servers in TUM have public ipv6/ipv4 addresses and dns record following the 
 - `$hostname.dos.cit.tum.de` for the machine itself.
 - `$hostname-mgmt.dos.cit.tum.de` for the IPMI/BMC interface.
 
-i.e. bill has the addresses `bill.dos.cit.tum.de` and `bill-mgmt.dos.cit.tum.de`.
+i.e. astrid has the addresses `astrid.dos.cit.tum.de` and `astrid-mgmt.dos.cit.tum.de`.
 
 # Management Interfaces
 
@@ -74,12 +74,15 @@ For information on how to setup the PM in App-Direct mode, please see [here](./S
 
 ## CI servers
 
-Those serve as a github action runner for Systemprogramming + cloud systems lab
+Those serve as a github action runner for Systemprogramming + cloud systems lab.
+Astrid also hosts the buildbot master server with Graham as the buildbot worker.
 
 - [astrid](./hosts/astrid.md)
 - [dan](./hosts/dan.md), also nfs primary
 - [mickey](./hosts/mickey.md)
 
+
+## Retired Server (offline)
 
 - [bill](./hosts/bill.md)
 - [nardole](./hosts/nardole.md)
@@ -117,7 +120,7 @@ machines. Those machines also are not backed up.
 ## Others
 
 - RBG VMs:
-  - monitoring.dos.cit.tum.de/doctor.r [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+  - monitoring.dos.cit.tum.de (VM), doctor.r (container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
     - [prometheus](https://prometheus.dse.in.tum.de)
     - [alertmanager](https://alertmanager.dse.in.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)

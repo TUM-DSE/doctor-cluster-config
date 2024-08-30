@@ -16,6 +16,9 @@ let
             extraConfig = ''
               X86_X2APIC y
               X86_MCE y
+              INTEL_KVM y
+              INTEL_KVM_INTEL y
+              INTEL_KVM_MMU_PRIVATE y
               INTEL_TDX_HOST y
             '';
           }
