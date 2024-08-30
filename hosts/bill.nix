@@ -2,10 +2,8 @@
   imports = [
     ../modules/ipmi-supermicro.nix
     ../modules/bonding.nix
-    ../modules/jumphost
     ../modules/sys-prog/users.nix
 
-    ../modules/buildbot/master.nix
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
   ];
 
