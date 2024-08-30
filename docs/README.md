@@ -117,7 +117,7 @@ machines. Those machines also are not backed up.
 ## Others
 
 - RBG VMs:
-  - monitoring.dos.cit.tum.de/doctor.r [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+  - monitoring.dos.cit.tum.de (VM), doctor.r (container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
     - [prometheus](https://prometheus.dse.in.tum.de)
     - [alertmanager](https://alertmanager.dse.in.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
