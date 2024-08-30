@@ -41,7 +41,7 @@ Available tasks:
   document-craig           Dump craigs (switch) config to encrypted docs/hosts/craig.sops
   flake-check              Run nix checks on this repo (may need a aarch64 remote builder configured)
   generate-password        Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
-  generate-ssh-cert        Generate ssh cert for host, i.e. inv generate-ssh-cert bill
+  generate-ssh-cert        Generate ssh cert for host, i.e. inv generate-ssh-cert astrid
   ipmi-boot-bios           Set the next boot to bios and reboot
   ipmi-powerconsumption    Measure the power consumption of our servers via IPMI. Note that this does not include all servers.
   ipmi-powercycle          Power cycle a host via IPMI
@@ -116,7 +116,7 @@ An example of the ```home.nix``` configured for VS Code support is shown in ```h
 On our TUM rack machines we have IPMI support.
 
 Generally, you can find the IPMI web interface at
-`https://$HOST-mgmt.dos.cit.tum.de/` (i.e. https://bill-mgmt.dos.cit.tum.de)
+`https://$HOST-mgmt.dos.cit.tum.de/` (i.e. https://astrid-mgmt.dos.cit.tum.de)
 once the device has been installed in the rack.  These addresses are only
 available through the management network, so you must use the [RBG
 vpn](https://vpn.rbg.tum.de/) for il1 to access them.
