@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -25,6 +26,7 @@ in
     warnings = lib.optionals (config.simd.arch == null) [ "Please set simd.arch for ${config.networking.hostName}" ];
 
     nix = {
+      package = pkgs.nixVersions.git;
       gc.automatic = true;
       gc.dates = "03:15";
       gc.options = "--delete-older-than 14d";
