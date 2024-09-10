@@ -110,6 +110,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxXOIbR/HN6LEC8xKB9lP/BRp9VcWbKiPOxIUFRnT3B oguzcan.kirmemis@gmail.com"
   ];
 
+  nicoloKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB2SyU4I0uC/qjsK2En6WNwnGaf05UGYKv8Yq0iMJcIg nicarp@TUM-Thinkpad"
+  ];
+  
   extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "staff" ];
 in
 {
@@ -315,6 +319,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1033;
         openssh.authorizedKeys.keys = oguzcanKeys;
+      };
+      
+      # Nicolo Carpentieri
+      # tum
+      nicolo = {
+        isNormalUser = true;
+        home = "/home/nicolo";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1034;
+        openssh.authorizedKeys.keys = nicoloKeys;
       };
 
       # add staff to root account as well
