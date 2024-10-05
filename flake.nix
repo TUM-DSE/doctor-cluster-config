@@ -86,7 +86,16 @@
           };
           checks =
             let
-              nixosMachines = lib.mapAttrs' (name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel) ((lib.filterAttrs (_: config: config.pkgs.buildPlatform.system == system)) self.nixosConfigurations);
+              aarch64-linux = [ "donna" "yasmin" ];
+              machinesPerSystem = {
+                inherit aarch64-linux;
+                x86_64-linux =  lib.filter (name: !builtins.elem name aarch64-linux) (builtins.attrNames self.nixosConfigurations);
+              };
+              nixosMachines = lib.mapAttrs' (n: lib.nameValuePair "nixos-${n}") (
+                lib.genAttrs (machinesPerSystem.${system} or [ ]) (
+                  name: self.nixosConfigurations.${name}.config.system.build.toplevel
+                )
+              );
               devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
             in
             nixosMachines // devShells;
