@@ -28,9 +28,10 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixpkgs-buildbot.url = "github:Mic92/nixpkgs/buildbot-python";
     buildbot-nix.url = "github:nix-community/buildbot-nix";
     # requires nixpkgs-unstable
-    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
+    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs-buildbot";
     buildbot-nix.inputs.flake-parts.follows = "flake-parts";
     buildbot-nix.inputs.treefmt-nix.follows = "treefmt-nix";
 

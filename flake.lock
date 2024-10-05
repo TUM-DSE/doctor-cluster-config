@@ -6,7 +6,7 @@
           "flake-parts"
         ],
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-buildbot"
         ],
         "treefmt-nix": [
           "treefmt-nix"
@@ -220,16 +220,32 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1728125699,
-        "narHash": "sha256-WDso3Fw3KZS+13SgrBibI6Rq8oYT7jbjfczEhMJiIj0=",
+        "lastModified": 1728126252,
+        "narHash": "sha256-C23aeyGlk9WMoDyNY9iCIYHVAsBZqh27tBoWiCu4tVo=",
         "owner": "TUM-DSE",
         "repo": "nixpkgs",
-        "rev": "a18baf5a92362a5ac7a5beb1346a5d93d15c5feb",
+        "rev": "002beb8d579e17ac15b1ba526aef2ef62b031a7b",
         "type": "github"
       },
       "original": {
         "owner": "TUM-DSE",
         "ref": "nixos-24.05-backports",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-buildbot": {
+      "locked": {
+        "lastModified": 1728125569,
+        "narHash": "sha256-E7oSfVQyT89shaiJYJYBIatWAgIlivBYSRLZm/blZeQ=",
+        "owner": "Mic92",
+        "repo": "nixpkgs",
+        "rev": "0a5607d5d0653426af1eb4814f226e484158012e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "ref": "buildbot-python",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -261,6 +277,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-buildbot": "nixpkgs-buildbot",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
