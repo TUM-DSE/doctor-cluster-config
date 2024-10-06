@@ -4,6 +4,7 @@
     ../modules/nfs/client.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/builder.nix
+    ../modules/uprobes.nix
   ];
 
   networking.hostName = "yasmin";

@@ -13,7 +13,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-  boot.kernelPatches = [ { name = "uprobes"; patch = null; extraConfig = "CONFIG_UPROBE_EVENTS y"; } ];
 
   fileSystems."/" = {
     device = "zroot/root/nixos";
