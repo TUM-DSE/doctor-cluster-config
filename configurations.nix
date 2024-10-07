@@ -17,7 +17,6 @@ let
   } // args);
 
   commonModules = [
-    { srvos.flake = self; }
     # only include admins here for monitoring/backup infrastructure
     ./modules/users/admins.nix
     ./modules/users/extra-user-options.nix
@@ -33,6 +32,7 @@ let
     ./modules/cleanup-usr.nix
     ./modules/tinc.nix
     ./modules/sshd
+    ./modules/register-flake.nix
 
     disko.nixosModules.disko
 
@@ -50,10 +50,6 @@ let
      }: let
        sopsFile = ./. + "/hosts/${config.networking.hostName}.yml";
     in {
-      nix.nixPath = [
-        "home-manager=${home-manager}"
-        "nixpkgs=${pkgs.path}"
-      ];
       # TODO: share nixpkgs for each machine to speed up local evaluation.
       #nixpkgs.pkgs = self.inputs.nixpkgs.legacyPackages.${system};
 
