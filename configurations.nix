@@ -59,14 +59,6 @@ let
       };
       sops.defaultSopsFile = lib.mkIf (builtins.pathExists sopsFile) sopsFile;
 
-      nix.extraOptions = ''
-        flake-registry = ${flake-registry}/flake-registry.json
-      '';
-
-      nix.registry = {
-        home-manager.flake = home-manager;
-        nixpkgs.flake = nixpkgs;
-      };
       time.timeZone = "UTC";
     })
     retiolum.nixosModules.retiolum
