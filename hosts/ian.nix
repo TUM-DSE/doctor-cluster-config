@@ -10,6 +10,8 @@
 
   networking.hostName = "ian";
 
+  simd.arch = "emeraldrapids";
+
   system.stateVersion = "23.05";
 
 }
