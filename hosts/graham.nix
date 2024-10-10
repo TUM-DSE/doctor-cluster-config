@@ -36,9 +36,9 @@
 
   networking.doctor-bridge.enable = true;
 
-  # Remove once CGO artifact evaluation is over
+  # Only allow port forwarding so we can connect remotely
   services.openssh.extraConfig = ''
-    Match User cgoPixel8
+    Match User pixel8
         AllowTcpForwarding yes
         X11Forwarding no
         AllowAgentForwarding no
