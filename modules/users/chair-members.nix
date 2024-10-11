@@ -115,6 +115,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB2SyU4I0uC/qjsK2En6WNwnGaf05UGYKv8Yq0iMJcIg nicarp@TUM-Thinkpad"
   ];
 
+  davidKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEFUUZ0oaGY1C/SdZvNYKZEnqFLFNWX2wWMktD33fSM+ david@David-TUM"
+  ];
+
     mfKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
@@ -347,6 +351,17 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1034;
         openssh.authorizedKeys.keys = nicoloKeys;
+      };
+
+      # David Schall
+      # tum
+      david = {
+        isNormalUser = true;
+        home = "/home/david";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 1035;
+        openssh.authorizedKeys.keys = davidKeys;
       };
 
       # add staff to root account as well
