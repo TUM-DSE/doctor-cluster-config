@@ -7,6 +7,8 @@
     ./students.nix
     # when we need to give external reviewers access for paper evaluation
     ./reviewers.nix
+    # devices that just connect and do port forwarding to allow for remote access
+    ./devices.nix
     # admins also have access to the monitoring / backup infrastructure
     ./admins.nix
 
