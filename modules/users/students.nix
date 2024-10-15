@@ -378,7 +378,6 @@ in
       allowedHosts = [ "graham" "yasmin" ];
       openssh.authorizedKeys.keys = raphaelKeys;
      };
-  };
 
     # Berkay Eren Ueruen, M.Sc. thesis with Teofil (LLM-OS)
     berkay = {
