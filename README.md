@@ -118,8 +118,7 @@ On our TUM rack machines we have IPMI support.
 Generally, you can find the IPMI web interface at
 `https://$HOST-mgmt.dos.cit.tum.de/` (i.e. https://astrid-mgmt.dos.cit.tum.de)
 once the device has been installed in the rack.  These addresses are only
-available through the management network, so you must use the [RBG
-vpn](https://vpn.rbg.tum.de/) for il1 to access them.
+available through the management network, so you must use the RBG VPN to access them (see [accessing the server](https://github.com/TUM-DSE/doctor-cluster-config/tree/master/docs#accessing-the-server)).
 
 You can also retrieve the IP addresses assigned to the IPMI/BMC firmware by
 running:
