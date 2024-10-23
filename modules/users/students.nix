@@ -50,22 +50,27 @@ let
   ];
 
   alexanderKeys = [
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEpj5zfMSznyFbOL8z6W278nKP6WPkz8+xSZObXsSJZi"
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvDyakenTwms8HfK0plF9KSRbdegxyTFaekzlJBsRiW"
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINes5GDjoBu//bm1S3/UYX/7Cpf3Xy09xUbNs7fyOvH3"
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIJ0VVdv4yqu7NVKaTQlEtYyOzSCEJFFtTpAaymDmiYm"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEpj5zfMSznyFbOL8z6W278nKP6WPkz8+xSZObXsSJZi"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvDyakenTwms8HfK0plF9KSRbdegxyTFaekzlJBsRiW"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINes5GDjoBu//bm1S3/UYX/7Cpf3Xy09xUbNs7fyOvH3"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIJ0VVdv4yqu7NVKaTQlEtYyOzSCEJFFtTpAaymDmiYm"
   ];
 
   laurentKeys = [
-	"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
   ];
 
-  paulzKeys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcFpqGUDaxZnfVR//Dm8Zncur8iaaJUbLiB2bMiL/64LHhQDqfeXKuJO4MbtO15A8VgfFY4r40w+cLrQ5zXJLioCJiLAKvC3BBza7Y2zcCHsITLxaky2Nr7TyTVWKYX2iSiYROdlSYYmLAVqAz+Ha3ENcJ3/rKOfGZRQ3Z/+DtjeNXauiznj3ezkLpt9gXpW+YXf2kffv/6RF1GRIsaOQ5LNQpNrXk4DHgOS/AdlKP0lMqSjp3jLOo+pVrIWQ9cyg+mTtXTJMP7adDUafr5QBaMcP4Oo7xk8exaDeSf1LVJg+pq0vq0NkrMGQpJbA/ssm2515xvEW4LbUH1TfrNP8f62dPn4qjDFo1pshfn8dtmBSmTf7ZooNVYKs2h3WkRYpyvQVnDax9CbrYnCh6tLcqenEr8Nl3lYAeK14LfkabeCD/C0xs1BwrzlXwClQRXcj/PuDHpplhf3LriUtH4KA0g2WhWF0aIvw0yOTl0FwGG4P1WMp2lL588UU4UVEi6UE= paulzhng"
-];
+  paulzKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcFpqGUDaxZnfVR//Dm8Zncur8iaaJUbLiB2bMiL/64LHhQDqfeXKuJO4MbtO15A8VgfFY4r40w+cLrQ5zXJLioCJiLAKvC3BBza7Y2zcCHsITLxaky2Nr7TyTVWKYX2iSiYROdlSYYmLAVqAz+Ha3ENcJ3/rKOfGZRQ3Z/+DtjeNXauiznj3ezkLpt9gXpW+YXf2kffv/6RF1GRIsaOQ5LNQpNrXk4DHgOS/AdlKP0lMqSjp3jLOo+pVrIWQ9cyg+mTtXTJMP7adDUafr5QBaMcP4Oo7xk8exaDeSf1LVJg+pq0vq0NkrMGQpJbA/ssm2515xvEW4LbUH1TfrNP8f62dPn4qjDFo1pshfn8dtmBSmTf7ZooNVYKs2h3WkRYpyvQVnDax9CbrYnCh6tLcqenEr8Nl3lYAeK14LfkabeCD/C0xs1BwrzlXwClQRXcj/PuDHpplhf3LriUtH4KA0g2WhWF0aIvw0yOTl0FwGG4P1WMp2lL588UU4UVEi6UE= paulzhng"
+  ];
 
-  hendrikKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"];
+  hendrikKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"
+  ];
 
-  milenKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWU9Mh+p7C7PsAcJKYDw8MpnRaYteO5a2eBhZIjISBs milen.vitanov96@gmail.com"];
+  milenKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWU9Mh+p7C7PsAcJKYDw8MpnRaYteO5a2eBhZIjISBs milen.vitanov96@gmail.com"
+  ];
 
   christianKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIhea3KWKAWEuDkbyGhHmyV6XS8Ye3IN7oW5gchmNJg1 crist@lptlegion"
@@ -84,11 +89,11 @@ let
   ];
 
   lanKeys = [
-   "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAAl2L4v1N5MEkPMJ1TIfiF6OwM58J0b4FORkA1mTgroq+7c9fzxH8sv/9wsAJkV7LI8JPyCpK9zpMLcX5A1gNJImAEnsyrYxLzxUQfhKzhpf39v1gvMCgh2agbaB4g8TQ5wmjzx22EWR3yoOG7rldbjbdoXTa2CmGg9xLVkce9fLYC31w== lan@LAPTOP-TRMD7DCS"
+    "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAAl2L4v1N5MEkPMJ1TIfiF6OwM58J0b4FORkA1mTgroq+7c9fzxH8sv/9wsAJkV7LI8JPyCpK9zpMLcX5A1gNJImAEnsyrYxLzxUQfhKzhpf39v1gvMCgh2agbaB4g8TQ5wmjzx22EWR3yoOG7rldbjbdoXTa2CmGg9xLVkce9fLYC31w== lan@LAPTOP-TRMD7DCS"
   ];
 
   michaelKeys = [
-   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGoXqeCmxusQtuRVsFoZsa0SPTYRdPlcnmA9XY7WrHmt" 
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGoXqeCmxusQtuRVsFoZsa0SPTYRdPlcnmA9XY7WrHmt"
   ];
 
   dominikKeys = [
@@ -101,16 +106,34 @@ let
   ];
 
   berkayKeys = [
-	"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVvRRiomFTL2f76ujvyF9yydT7aMjFWOLDcFhn/aGelicljhULa0JwQM5P1wCpILLCY9zjQyQn84w4MaEasJ4KMaVuDyGS9xpIOa9B6xqIryCuE17EWlodYZqsOCaINCfQ048uoJRnu+LqzG2SJN+tMgUtMI0k+T7+BWusqQ5A0i+H/S3H3KITT9Qfn34hYDpHgLZD+sw4ZAXAzWjuZj+CYPEh50d68YWqNzRR9ShKK9rL1R6dyUIM2FGZzLHo4N7pRzHOa38ELY+Qni7Z3uf9mK/0vkkD/mMlAJDbJSQfuSpZAnninvt7F5bzoRRb6a1Gd7yb6y8fTaMt1lBgsqtJWuILOOOisxZE4VmWqoiT/jDlSpSHSfQz/r001JT7ci1HD+xYvh2ect0TJEo9WH7X/vX/4Q8wHO0Zf3l4yCCF7qD0VoqTd3X0LncbahaVP7JAhA9PfuNSWj754lxJ6RBeSavcRxQWpkbX+8kDcF/I4AIEocHTkX48Uo6U7SRRr38= powermoon@powermoonPC"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVvRRiomFTL2f76ujvyF9yydT7aMjFWOLDcFhn/aGelicljhULa0JwQM5P1wCpILLCY9zjQyQn84w4MaEasJ4KMaVuDyGS9xpIOa9B6xqIryCuE17EWlodYZqsOCaINCfQ048uoJRnu+LqzG2SJN+tMgUtMI0k+T7+BWusqQ5A0i+H/S3H3KITT9Qfn34hYDpHgLZD+sw4ZAXAzWjuZj+CYPEh50d68YWqNzRR9ShKK9rL1R6dyUIM2FGZzLHo4N7pRzHOa38ELY+Qni7Z3uf9mK/0vkkD/mMlAJDbJSQfuSpZAnninvt7F5bzoRRb6a1Gd7yb6y8fTaMt1lBgsqtJWuILOOOisxZE4VmWqoiT/jDlSpSHSfQz/r001JT7ci1HD+xYvh2ect0TJEo9WH7X/vX/4Q8wHO0Zf3l4yCCF7qD0VoqTd3X0LncbahaVP7JAhA9PfuNSWj754lxJ6RBeSavcRxQWpkbX+8kDcF/I4AIEocHTkX48Uo6U7SRRr38= powermoon@powermoonPC"
   ];
 
   konstantinKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqB4RM0SUGkY1I+jLbWMxG10RPhhsNbsrPdMx32n7Iwt89rlkx3XGNra4eoBiZAdXLcggEgE4xgMtOIj9Wc7sexwbabEX5GXl1S7mc4Trm8wJRziBWdH6pwqICjG5HwNfXRyhiS290r8H/MB3LFIWgyE/U7VqaQ/nnHBimroYaJN1rDbkl25Ihe7mpS2s8P4M5HaqNIVY6HhgNKHJwQe9pgnjwnq4OkRGrRUOxi7q5R5TGsoCa2s2jefMrGOEXH0z6ZUzVo7auddNkQO4IYEHoiQxY4SlVwwCE0SYF/56kyupDRuEkg158HYcS0Yc2bTjYKe7sFTRwmssnQee+bxcHAOrqv3qunXx6USfGwzibNYlJoAFTDEoz5DJVMTlwlq9H0Qpvs7SIOiH5WhQ86T2TQhr3b5mIitge/uN2PVSnjhtxWqbUEipShgKmxpRinSR0D9VRf/X0cqTToz/ZfM9vcXEDyTtXHzbMU8STDlkIKQuexaqslqspAVsVBjCdQNk= konstantin@konstantin-IdeaPad-5-14ALC05"
   ];
 
-  extraGroups = [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
-in
-{
+  janhaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7"
+  ];
+
+  janheKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3jH+h2/BYRf3ZH7FGGAScFcNAnexFETsEGaOedB4wL"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxK7mB8Ar952m0BWIMJK5hZaGu0EjwI/ybYOwo+Mw3z"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMwSyi5MjQnoHbnMo8+RFCFr1fwK/Zp7sByNEaGcP4xl"
+  ];
+
+  sherifKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxcwd2ISpOP9Wj7tILTEM9RGDtwDnM1Ew0SffsT7jupZEJwlKYfJ8WFYPBaPmQD9ASHRR1aS2N+sOF+PyxGyBl0Yo9YyzQuy7O9K7rtGghNlk6TyMecNBVPC4Tq7QhPa7svtkc0bC/eyM1hAFsu/pnOMV3vwglO4hc/ct/CtOPVWR4P+koqQySR/f0BGew3RHyRTHUKhhMSJK3JDeeu3wEYok517vspmopvzkE+/gBVnS1XLXWLR2hPxI8a56WgTrE+NWaKV5HVoUxCv7mCbeLIDaqQu1Y2FL4h/gydmz6SXGLd99PphnFPbIzTLDcTb7RX+DVIOrpnQda/kwnFkq2C0Q0+jJ3nvayiw0EL5yOeeROrPraSwx1YjC2KtbbhpcMBdsAQKe4OpBL4dpUrT+CqAEn4FTy6gCF1PD0AA1lX0/l0dyr7oxb/qgTUAFTmYQDae7Ml6xnweGfKIcYt6NtkKpBN3UoonEEhZLfKyFKrMrn5Ta2la6p5ksZC/Ae4A95XrfRSMWlEiIhOnBGp8zNcbi72LLL8U7JwKlQfhBpJL1Vvtkie6ytUFPzx4frH1wy1J/u+rZel+YIqmo/dVztHWXXv3b0MIrkmmw4bTE/l/C9L8FdZUgef66WU7CQiMI0cXsKhpqlGQWj5dJEiwkQni4CZQypg71jotlkDFCexQ=="
+  ];
+
+  hristinaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKwhovd3dJO9+vDK+I/V8hRXkqgGW1LJIApSXFim+vr"
+  ];
+
+  extraGroups =
+    [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
+in {
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
@@ -260,14 +283,15 @@ in
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
-     # Paul Zhang, B.Sc.. thesis with Ilya (UkBPF project, Ilya Meignan--Masson)
+    # Paul Zhang, B.Sc.. thesis with Ilya (UkBPF project, Ilya Meignan--Masson)
     paulz = {
       isNormalUser = true;
       home = "/home/paulz";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2043;
-      allowedHosts = [ "adelaide" "irene" ]; # TODO add the new AMD server when it arrives
+      allowedHosts =
+        [ "adelaide" "irene" ]; # TODO add the new AMD server when it arrives
       openssh.authorizedKeys.keys = paulzKeys;
     };
 
@@ -278,10 +302,16 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2044;
-      allowedHosts = [ "christina" "rose" "wilfred" "graham" "jackson" "river" ]; # TODO figure out what he needs access to
+      allowedHosts = [
+        "christina"
+        "rose"
+        "wilfred"
+        "graham"
+        "jackson"
+        "river"
+      ]; # TODO figure out what he needs access to
       openssh.authorizedKeys.keys = hendrikKeys;
     };
-
 
     # Christian Sandu, M.Sc. thesis with Ilya (CHERI db project)
     christian = {
@@ -297,7 +327,7 @@ in
     # Milen Vitanov, M.Sc. thesis with Ilya (UkBPF project)
     milen = {
       isNormalUser = true;
-      home="/home/milen";
+      home = "/home/milen";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2045;
@@ -308,18 +338,23 @@ in
     # Simon Dittrich, M.Sc. thesis with Anatole (CXL Gem5 sim project)
     simond = {
       isNormalUser = true;
-      home="/home/simond";
+      home = "/home/simond";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2047;
-      allowedHosts = [ "xavier" "jack" "graham" "ryan" ]; #TODO remove extra hosts once xavier is racked
+      allowedHosts = [
+        "xavier"
+        "jack"
+        "graham"
+        "ryan"
+      ]; # TODO remove extra hosts once xavier is racked
       openssh.authorizedKeys.keys = simondKeys;
     };
 
     # Luca Mathias, B.Sc. thesis with Masa (CVM project) SS24 (remove after Oct 2024)
     luca = {
       isNormalUser = true;
-      home="/home/luca";
+      home = "/home/luca";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2048;
@@ -331,7 +366,7 @@ in
     # Remove after SS25
     anubhav = {
       isNormalUser = true;
-      home="/home/anubhav";
+      home = "/home/anubhav";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2049;
@@ -349,7 +384,7 @@ in
       allowedHosts = [ "graham" "irene" ];
       openssh.authorizedKeys.keys = lanKeys;
     };
-    
+
     # Michael Hackl, M.Sc thesis (Wallet project)
     michael = {
       isNormalUser = true;
@@ -359,7 +394,7 @@ in
       uid = 2051;
       allowedHosts = [ "ryan" "vislor" ];
       openssh.authorizedKeys.keys = michaelKeys;
-     };
+    };
 
     # Dominik Kreuzer, M.Sc. thesis with Peter (VirtIO-DPDK project)
     dominik = {
@@ -370,7 +405,7 @@ in
       uid = 2052;
       allowedHosts = [ "graham" "ryan" "jackson" "christina" ];
       openssh.authorizedKeys.keys = dominikKeys;
-     };
+    };
 
     # Raphael Dichler, B.Sc. thesis with Martin/Ilya (CHERIDB/MTE)
     raphael = {
@@ -381,7 +416,7 @@ in
       uid = 2053;
       allowedHosts = [ "graham" "yasmin" ];
       openssh.authorizedKeys.keys = raphaelKeys;
-     };
+    };
 
     # Berkay Eren Ueruen, M.Sc. thesis with Teofil (LLM-OS)
     berkay = {
@@ -392,7 +427,7 @@ in
       uid = 2054;
       allowedHosts = [ "jack" ];
       openssh.authorizedKeys.keys = berkayKeys;
-     };
+    };
 
     # Konstantin Garbers, B.Sc. thesis with Martin (Arm -> AIR lifter)
     konstantin = {
@@ -404,6 +439,51 @@ in
       allowedHosts = [ "graham" ];
       openssh.authorizedKeys.keys = konstantinKeys;
     };
+
+    # Jan Heckel, Sys Lab WS24
+    janhe = {
+      isNormalUser = true;
+      home = "/home/janhe";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2056;
+      allowedHosts = [ "vislor" "jackson" ];
+      openssh.authorizedKeys.keys = janheKeys;
+    };
+
+    # Jan Hampe, Sys Lab WS24
+    janha = {
+      isNormalUser = true;
+      home = "/home/janha";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2057;
+      allowedHosts = [ "vislor" "jackson" ];
+      openssh.authorizedKeys.keys = janhaKeys;
+    };
+
+    # Sherif Hussien, Sys Lab WS24
+    sherif = {
+      isNormalUser = true;
+      home = "/home/sherif";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2058;
+      allowedHosts = [ "vislor" "jackson" ];
+      openssh.authorizedKeys.keys = sherifKeys;
+    };
+
+    # Hristina Ivanova, Sys Lab WS24
+    hristina = {
+      isNormalUser = true;
+      home = "/home/hristina";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2059;
+      allowedHosts = [ "vislor" "jackson" ];
+      openssh.authorizedKeys.keys = hristinaKeys;
+    };
+
   };
 
   # DANGER ZONE!
@@ -444,7 +524,7 @@ in
     "eliza"
     "moritz"
     "konrad"
-		"alp"
+    "alp"
     "nicola"
     "eaypek"
     "fritz"
