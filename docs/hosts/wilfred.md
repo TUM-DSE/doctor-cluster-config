@@ -16,7 +16,7 @@ Machine:
     uuid: 00000000-0000-0000-0000-3cecef62ac40 UEFI: American Megatrends LLC. v: 1.1c
     date: 11/08/2021
 Memory:
-  System RAM: total: 1.25 TiB available: 251.2 GiB used: 39.61 GiB (15.8%)
+  System RAM: total: 1.25 TiB available: 251.2 GiB used: 39.64 GiB (15.8%)
   Array-1: capacity: 12 TiB note: check slots: 8 modules: 8 EC: Single-bit ECC
     max-module-size: 1.50 TiB note: est.
   Device-1: DIMMA1 type: DDR4 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -62,10 +62,10 @@ CPU:
     microcode: 0xD0003E7
   Topology: cpus: 1x cores: 12 tpc: 2 threads: 24 smt: enabled cache: L1: 960 KiB desc: d-12x48
     KiB; i-12x32 KiB L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
-  Speed (MHz): avg: 2753 high: 3000 min/max: 800/3600 base/boost: 3000/4500 scaling:
-    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 1481 2: 3000
-    3: 800 4: 3000 5: 3000 6: 3000 7: 3000 8: 3000 9: 3000 10: 3000 11: 3000 12: 3000 13: 3000
-    14: 3000 15: 3000 16: 3000 17: 3000 18: 800 19: 3000 20: 3000 21: 3000 22: 3000 23: 3000
+  Speed (MHz): avg: 2867 high: 3000 min/max: 800/3600 base/boost: 3000/4500 scaling:
+    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 1748 2: 3000
+    3: 3000 4: 3000 5: 3000 6: 3000 7: 3000 8: 3000 9: 3000 10: 3000 11: 3000 12: 2766 13: 3000
+    14: 3000 15: 3000 16: 3000 17: 3000 18: 3000 19: 3000 20: 3000 21: 1315 22: 3000 23: 3000
     24: 3000 bogomips: 144000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
@@ -97,6 +97,7 @@ Network:
   Device-1: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: kernel pcie: gen: 3
     speed: 8 GT/s lanes: 4 port: N/A bus-ID: 01:00.0 chip-ID: 8086:1563 class-ID: 0200
   IF: eno1 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:62:ac:40
+  IP v4: 169.254.100.47/16 scope: link
   IP v6: fe80::3eec:efff:fe62:ac40/64 virtual: proto kernel_ll scope: link
   Device-2: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: kernel pcie: gen: 3
     speed: 8 GT/s lanes: 4 port: N/A bus-ID: 01:00.1 chip-ID: 8086:1563 class-ID: 0200
@@ -148,7 +149,7 @@ Drives:
     scheme: GPT
   SMART: yes state: enabled
 Partition:
-  ID-1: / raw-size: N/A size: 1.65 TiB used: 431.25 GiB (25.5%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 1.65 TiB used: 431.24 GiB (25.5%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 36.4 MiB (3.6%) fs: vfat
     block-size: 512 B dev: /dev/sdb1 maj-min: 8:17
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
@@ -156,13 +157,13 @@ Partition:
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: 46 C mobo: 28 C
-  Fan Speeds (rpm): cpu: 8120 fan-2: 8120 fan-3: 8120 fan-4: 8120 fan-5: 8260 fan-6: 8260
+  Src: ipmi System Temperatures: cpu: 44 C mobo: 28 C
+  Fan Speeds (rpm): cpu: 8120 fan-2: 8120 fan-3: 8120 fan-4: 8260 fan-5: 8260 fan-6: 8120
   Power: 12v: 11.590 5v: 5.040 3.3v: 3.322 vbat: N/A dimm-p1: N/A dimm-p2: N/A
   Src: lm-sensors System Temperatures: cpu: 42.0 C pch: 49.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 506 Power: uptime: 21d 11h 54m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 505 Power: uptime: 21d 12h 27m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 97.27 GiB Init: systemd v: 255 default: multi-user tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 586 libs: 134 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34

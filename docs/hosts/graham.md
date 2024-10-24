@@ -8,7 +8,7 @@ System:
     init=/nix/store/d34wrhbylq5l7vspk6k5s465kamw0lr1-nixos-system-graham-24.05.20240926.3dfb4c8/init
     console=ttyS0,115200 console=tty0 amd_iommu=on hugepagesz=1GB hugepages=8 hugepagesz=2MB
     hugepages=1000 kvm_amd.sev=1 kvm_amd.sev_es=1 nohibernate loglevel=4
-  Console: N/A DM: LightDM v: 1.32.0 Distro: NixOS 24.05 (Uakari)
+  Console: pty pts/9 DM: LightDM v: 1.32.0 Distro: NixOS 24.05 (Uakari)
 Machine:
   Type: Server System: Dell product: PowerEdge R7515 v: N/A serial: BP0PSH3 Chassis: type: 23
     serial: BP0PSH3
@@ -16,7 +16,7 @@ Machine:
     part-nu: SKU=NotProvided;ModelName=PowerEdge R7515 uuid: 4c4c4544-0050-3010-8050-c2c04f534833
     UEFI: Dell v: 2.5.5 date: 10/07/2021
 Memory:
-  System RAM: total: 1024 GiB available: 995.16 GiB used: 465.94 GiB (46.8%)
+  System RAM: total: 1024 GiB available: 995.16 GiB used: 466.24 GiB (46.9%)
   Array-1: capacity: 2 TiB slots: 16 modules: 16 EC: Multi-bit ECC max-module-size: 128 GiB
     note: est.
   Device-1: A1 type: DDR4 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -79,21 +79,21 @@ CPU:
     microcode: 0xA0011D5
   Topology: cpus: 1x cores: 64 tpc: 2 threads: 128 smt: enabled cache: L1: 4 MiB desc: d-64x32
     KiB; i-64x32 KiB L2: 32 MiB desc: 64x512 KiB L3: 256 MiB desc: 8x32 MiB
-  Speed (MHz): avg: 1599 high: 2000 min/max: 1500/3721 boost: enabled base/boost: 2000/3900
+  Speed (MHz): avg: 1539 high: 2000 min/max: 1500/3721 boost: enabled base/boost: 2000/3900
     scaling: driver: acpi-cpufreq governor: schedutil volts: 1.8 V ext-clock: 2000 MHz cores: 1: 1500
-    2: 1500 3: 1500 4: 1500 5: 1500 6: 1500 7: 1500 8: 2000 9: 2000 10: 1500 11: 2000 12: 1500
+    2: 1500 3: 1500 4: 1500 5: 2000 6: 1500 7: 1500 8: 1500 9: 1500 10: 1500 11: 1500 12: 1500
     13: 1500 14: 1500 15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1500 21: 1500 22: 1500
     23: 1500 24: 1500 25: 1500 26: 1500 27: 1500 28: 1500 29: 1500 30: 1500 31: 1500 32: 1500
-    33: 1500 34: 1700 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500
-    43: 1500 44: 1500 45: 1500 46: 2000 47: 1500 48: 1500 49: 1500 50: 1500 51: 1500 52: 1500
-    53: 2000 54: 1500 55: 1500 56: 2000 57: 1500 58: 2000 59: 2000 60: 1500 61: 2000 62: 2000
-    63: 1500 64: 1500 65: 1500 66: 1500 67: 1500 68: 1500 69: 2000 70: 2000 71: 1500 72: 1500
-    73: 1500 74: 1500 75: 1500 76: 1500 77: 2000 78: 2000 79: 1500 80: 2000 81: 1500 82: 1500
-    83: 1500 84: 1500 85: 1500 86: 1500 87: 1500 88: 1500 89: 1500 90: 1500 91: 1500 92: 1500
+    33: 1500 34: 2000 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500
+    43: 2000 44: 2000 45: 1500 46: 1500 47: 1500 48: 1500 49: 1500 50: 1500 51: 1500 52: 1500
+    53: 1500 54: 1500 55: 1500 56: 1500 57: 1500 58: 1500 59: 1500 60: 1500 61: 1500 62: 1500
+    63: 1500 64: 1500 65: 1500 66: 1500 67: 1500 68: 1500 69: 1500 70: 1500 71: 1500 72: 1500
+    73: 2000 74: 1500 75: 1500 76: 1500 77: 1500 78: 1500 79: 1500 80: 1500 81: 1500 82: 1500
+    83: 1500 84: 1500 85: 1500 86: 1500 87: 1500 88: 1500 89: 2000 90: 1500 91: 1500 92: 1500
     93: 1500 94: 1500 95: 1500 96: 1500 97: 1500 98: 1500 99: 2000 100: 1500 101: 1500 102: 1500
-    103: 1500 104: 2000 105: 1500 106: 1500 107: 1500 108: 2000 109: 2000 110: 1500 111: 1500
-    112: 1500 113: 2000 114: 1500 115: 1500 116: 2000 117: 2000 118: 1500 119: 2000 120: 2000
-    121: 1500 122: 1500 123: 1500 124: 1500 125: 1500 126: 1500 127: 1500 128: 2000
+    103: 1500 104: 2000 105: 1500 106: 1500 107: 1500 108: 1500 109: 1500 110: 1500 111: 1500
+    112: 1500 113: 2000 114: 1500 115: 1500 116: 1500 117: 1500 118: 1500 119: 1500 120: 1500
+    121: 1500 122: 1500 123: 1500 124: 1500 125: 2000 126: 1500 127: 1500 128: 1500
     bogomips: 511040
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
@@ -124,7 +124,7 @@ Audio:
 Network:
   Device-1: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell driver: bnxt_en
     v: kernel pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: 02:00.0 chip-ID: 14e4:16d8
-    class-ID: 0200 temp: 46.0 C
+    class-ID: 0200 temp: 45.0 C
   IF: enp2s0f0np0 state: up speed: 10000 Mbps duplex: full mac: 2c:ea:7f:af:57:18
   Device-2: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell
     driver: bnxt_en v: kernel pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: 02:00.1
@@ -149,7 +149,7 @@ Network:
   IF: eno8403 state: down mac: d0:8e:79:ba:02:21
   Device-7: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet driver: bnxt_en v: kernel
     pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: c4:00.0 chip-ID: 14e4:16d8 class-ID: 0200
-    temp: 38.0 C
+    temp: 39.0 C
   IF: enp196s0f0np0 state: up speed: 10000 Mbps duplex: full mac: e4:3d:1a:71:d6:b0
   IP v4: 169.254.164.174/16 scope: link
   IP v6: fe80::e63d:1aff:fe71:d6b0/64 virtual: proto kernel_ll scope: link
@@ -181,24 +181,24 @@ RAID:
   Components: Online:
   1: nvme1n1p2 maj-min: 259:4 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 4.95 TiB usable: 4.83 TiB used: 798.12 GiB (16.1%)
+  Local Storage: total: raw: 4.95 TiB usable: 4.83 TiB used: 798.44 GiB (16.1%)
   ID-1: /dev/nvme0n1 maj-min: 259:1 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB size: 1.46 TiB
     block-size: physical: 512 B logical: 512 B tech: SSD serial: S61ANA0R501400 fw-rev: 2.0.2
     temp: 20 ° (293 K) C
-  SMART: yes health: PASSED on: 3y 11d 9h cycles: 34 read-units: 253,537,084 [129 TB]
+  SMART: yes health: PASSED on: 3y 11d 10h cycles: 34 read-units: 253,537,105 [129 TB]
     written-units: 242,345,129 [124 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:2 vendor: Samsung model: MZ1L23T8HBLA-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S667NJ0T732147 fw-rev: GDC7302Q temp: 26.9 C scheme: GPT
-  SMART: yes health: PASSED on: 289d 19h cycles: 11 read-units: 61,036,619 [31.2 TB]
-    written-units: 142,563,479 [72.9 TB]
+    serial: S667NJ0T732147 fw-rev: GDC7302Q temp: 28.9 C scheme: GPT
+  SMART: yes health: PASSED on: 289d 19h cycles: 11 read-units: 61,036,655 [31.2 TB]
+    written-units: 142,569,159 [72.9 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 2.78 TiB used: 772.49 GiB (27.2%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 2.78 TiB used: 772.81 GiB (27.2%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 28.8 MiB (2.8%) fs: vfat
     block-size: 512 B dev: /dev/nvme1n1p1 maj-min: 259:3
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 2.02 TiB used: 807.4 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 2.02 TiB used: 806.2 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
@@ -208,7 +208,7 @@ Sensors:
   Src: lm-sensors System Temperatures: cpu: 37.8 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 1779 Power: uptime: 24d 16h 29m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 1769 Power: uptime: 24d 17h 3m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 394.85 GiB Init: systemd v: 255 default: graphical tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 919 libs: 222 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34

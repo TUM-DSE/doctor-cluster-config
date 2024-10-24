@@ -15,7 +15,7 @@ Machine:
   Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 part-nu: SABER SKU
     uuid: 00000000-0000-0040-8000-b42e993f747c UEFI: GIGABYTE v: F34 date: 08/13/2020
 Memory:
-  System RAM: total: 256 GiB available: 251.24 GiB used: 128.18 GiB (51.0%)
+  System RAM: total: 256 GiB available: 251.24 GiB used: 128.21 GiB (51.0%)
   Report: arrays: 2 capacity: 4 TiB installed: 256 GiB slots: 24 active: 4 type: DDR4
     eec: Multi-bit ECC
   Array-1: capacity: 2 TiB installed: 128 GiB slots: 12 modules: 2 EC: Multi-bit ECC
@@ -111,37 +111,37 @@ Network:
   WAN IP: 131.159.102.7
 RAID:
   Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 888 GiB free: 410 GiB
-    allocated: 478 GiB zfs-fs: size: 860.5 GiB free: 381.43 GiB
+    allocated: 478 GiB zfs-fs: size: 860.5 GiB free: 381.4 GiB
   Components: Online:
   1: sdb2 maj-min: 8:18 size: 893.76 GiB
 Drives:
-  Local Storage: total: raw: 1.78 TiB usable: 1.75 TiB used: 471.13 GiB (26.3%)
+  Local Storage: total: raw: 1.78 TiB usable: 1.75 TiB used: 471.14 GiB (26.3%)
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB size: 931.51 GiB
     block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 tech: SSD
     serial: S4EWNX0R514087T fw-rev: 2B2QEXM7 temp: 35.9 C
-  SMART: yes health: PASSED on: 68d 17h cycles: 7 read-units: 674 [345 MB]
+  SMART: yes health: PASSED on: 68d 17h cycles: 7 read-units: 676 [346 MB]
     written-units: 562,583 [288 GB]
   ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 family: based SSDs
     size: 894.25 GiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s tech: SSD
     serial: S45NNC0R216725 fw-rev: 904Q temp: 28 C scheme: GPT
   SMART: yes state: enabled health: PASSED on: 3y 83d 4h cycles: 22 read: 33.42 TiB
-    written: 62.18 TiB
+    written: 62.19 TiB
 Partition:
-  ID-1: / raw-size: N/A size: 586.12 GiB used: 204.68 GiB (34.9%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 586.09 GiB used: 204.7 GiB (34.9%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 95.3 MiB (19.1%) fs: vfat
     block-size: 512 B dev: /dev/sdb1 maj-min: 8:17
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 381.44 GiB used: 4.5 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 381.4 GiB used: 2 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu-1: 44 C cpu-2: 43 C mobo: 31 C
   Fan Speeds (rpm): N/A
-  Power: 12v: 12.545 5v: N/A 3.3v: N/A vbat: 3.053 dimm-p1: N/A dimm-p2: N/A
+  Power: 12v: 12.545 5v: N/A 3.3v: N/A vbat: 3.074 dimm-p1: N/A dimm-p2: N/A
   Src: lm-sensors+/sys Message: No sensor data found using /sys/class/hwmon or lm-sensors.
 Info:
-  Processes: 2446 Power: uptime: 17d 2h 25m states: freeze,mem suspend: deep avail: s2idle
+  Processes: 2430 Power: uptime: 17d 2h 58m states: freeze,mem suspend: deep avail: s2idle
     wakeups: 0 hibernate: disabled image: 100.47 GiB Init: systemd v: 255 default: multi-user
     tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 554 libs: 125 pm: nix-usr pkgs: 0

@@ -60,6 +60,8 @@ Parameters to consider for matching cards to slots:
         - MAC: b4:96:91:b3:8b:3c
     - amy: single port. (amy-wilfred)
         - MAC: b4:96:91:b3:8a:90
+    - vislor has one too
+    - ian has one too
 - 7x Broadcom BCM57416 10G NIC (RJ-45)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,none)

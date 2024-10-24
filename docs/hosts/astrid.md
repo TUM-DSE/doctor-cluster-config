@@ -15,7 +15,7 @@ Machine:
     part-nu: SKU=07C9;ModelName=PowerEdge R440 uuid: 4c4c4544-0059-4210-8056-b2c04f584b33 UEFI: Dell
     v: 2.12.2 date: 07/09/2021
 Memory:
-  System RAM: total: 128 GiB available: 125.52 GiB used: 35.37 GiB (28.2%)
+  System RAM: total: 128 GiB available: 125.52 GiB used: 35.47 GiB (28.3%)
   Array-1: capacity: 1024 GiB slots: 16 modules: 4 EC: Multi-bit ECC max-module-size: 64 GiB
     note: est.
   Device-1: A1 type: DDR4 detail: synchronous registered (buffered) size: 32 GiB speed:
@@ -61,12 +61,12 @@ CPU:
   Topology: cpus: 2x cores: 10 tpc: 2 threads: 20 smt: enabled cache: L1: 2x 640 KiB (1.2 MiB)
     desc: d-10x32 KiB; i-10x32 KiB L2: 2x 10 MiB (20 MiB) desc: 10x1024 KiB
     L3: 2x 13.8 MiB (27.5 MiB) desc: 1x13.8 MiB
-  Speed (MHz): avg: 2199 high: 2500 min/max: N/A base/boost: 2500/4000 volts: 1.8 V
-    ext-clock: 10400 MHz cores: 1: 2500 2: 1000 3: 2500 4: 2500 5: 2500 6: 2500 7: 2500 8: 2500
-    9: 1000 10: 2500 11: 998 12: 1000 13: 2500 14: 2500 15: 2500 16: 2500 17: 2500 18: 2500 19: 998
-    20: 2500 21: 2500 22: 2500 23: 2500 24: 2500 25: 2500 26: 2500 27: 2500 28: 1001 29: 1000
-    30: 2500 31: 2500 32: 2500 33: 2500 34: 2500 35: 2500 36: 2500 37: 2500 38: 2500 39: 1000
-    40: 2500 bogomips: 200000
+  Speed (MHz): avg: 2275 high: 2500 min/max: N/A base/boost: 2500/4000 volts: 1.8 V
+    ext-clock: 10400 MHz cores: 1: 1000 2: 2500 3: 1000 4: 1000 5: 2500 6: 1000 7: 2500 8: 2500
+    9: 2500 10: 2500 11: 2500 12: 2500 13: 2500 14: 2500 15: 2500 16: 2500 17: 2500 18: 2500
+    19: 2500 20: 2500 21: 2500 22: 2500 23: 2500 24: 2500 25: 2500 26: 2500 27: 2500 28: 2500
+    29: 2500 30: 2500 31: 2500 32: 2500 33: 1000 34: 2500 35: 2500 36: 2500 37: 2500 38: 2500
+    39: 1000 40: 2500 bogomips: 200000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
   Type: gather_data_sampling mitigation: Microcode
@@ -104,7 +104,7 @@ Network:
   IF: eno2 state: down mac: f4:ee:08:0b:9f:87
   Device-3: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell
     driver: bnxt_en v: kernel pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: 5e:00.0
-    chip-ID: 14e4:16d8 class-ID: 0200 temp: 77.0 C
+    chip-ID: 14e4:16d8 class-ID: 0200 temp: 78.0 C
   IF: enp94s0f0np0 state: up speed: 10000 Mbps duplex: full mac: f4:ee:08:0a:ea:05
   IP v4: 131.159.102.11/24 type: dynamic scope: global
   IP v6: 2a09:80c0:102::11/128 type: dynamic noprefixroute scope: global
@@ -123,8 +123,8 @@ Network:
   IF-ID-4: veth13cc1ac7 state: up speed: 10000 Mbps duplex: full mac: 92:67:84:5e:74:3f
   IF-ID-5: veth1734a03f state: up speed: 10000 Mbps duplex: full mac: 2a:10:46:0d:5c:89
   IF-ID-6: veth23b60711 state: up speed: 10000 Mbps duplex: full mac: f6:70:cd:4b:be:1f
-  IF-ID-7: veth5cc1d6e5 state: up speed: 10000 Mbps duplex: full mac: 06:1b:09:43:3a:72
-  IF-ID-8: veth6515a878 state: up speed: 10000 Mbps duplex: full mac: da:06:c8:67:6d:ac
+  IF-ID-7: veth26cdd247 state: up speed: 10000 Mbps duplex: full mac: e6:43:aa:9d:5f:62
+  IF-ID-8: veth5cc1d6e5 state: up speed: 10000 Mbps duplex: full mac: 06:1b:09:43:3a:72
   IF-ID-9: veth8463a4bb state: up speed: 10000 Mbps duplex: full mac: 12:22:33:d1:d5:96
   IF-ID-10: vetha2266346 state: up speed: 10000 Mbps duplex: full mac: 36:fc:8a:87:46:d2
   IF-ID-11: vethb096ec28 state: up speed: 10000 Mbps duplex: full mac: 5a:09:42:29:85:82
@@ -144,38 +144,38 @@ Drives:
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB
     size: 1.46 TiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
     serial: PHAB123301411P9SGN fw-rev: 1.1.5 temp: 31.9 C scheme: GPT
-  SMART: yes health: PASSED on: 2y 273d 8h cycles: 42 read-units: 11,608,460 [5.94 TB]
-    written-units: 109,079,507 [55.8 TB]
+  SMART: yes health: PASSED on: 2y 273d 8h cycles: 42 read-units: 11,608,478 [5.94 TB]
+    written-units: 109,083,777 [55.8 TB]
   ID-2: /dev/sda maj-min: 8:0 vendor: Micron model: MTFDDAK480TDT size: 447.13 GiB block-size:
     physical: 4096 B logical: 512 B sata: 3.3 speed: <unknown> tech: SSD serial: 214131EA4BA1
     fw-rev: J004 temp: 28 C
-  SMART: yes state: enabled health: PASSED on: 2y 273d 13h cycles: 42 written: 84.91 GiB
+  SMART: yes state: enabled health: PASSED on: 2y 273d 13h cycles: 42 written: 84.92 GiB
   ID-3: /dev/sdb maj-min: 8:16 vendor: Micron model: MTFDDAK480TDT size: 447.13 GiB block-size:
     physical: 4096 B logical: 512 B sata: 3.3 speed: <unknown> tech: SSD serial: 214131EA4A01
     fw-rev: J004 temp: 29 C
-  SMART: yes state: enabled health: PASSED on: 2y 273d 13h cycles: 41 written: 82.69 GiB
+  SMART: yes state: enabled health: PASSED on: 2y 273d 14h cycles: 41 written: 82.69 GiB
   ID-4: /dev/sdc maj-min: 8:32 vendor: Micron model: MTFDDAK480TDT size: 447.13 GiB block-size:
     physical: 4096 B logical: 512 B sata: 3.3 speed: <unknown> tech: SSD serial: 21232F840E14
     fw-rev: J004 temp: 25 C
-  SMART: yes state: enabled health: PASSED on: 2y 273d 16h cycles: 55 written: 82.84 GiB
+  SMART: yes state: enabled health: PASSED on: 2y 273d 16h cycles: 55 written: 82.85 GiB
 Partition:
   ID-1: / raw-size: N/A size: 1.39 TiB used: 39.25 GiB (2.8%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 36.2 MiB (3.5%) fs: vfat
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 1.35 TiB used: 16.4 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 1.35 TiB used: 15.2 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu: N/A mobo: N/A
-  Fan Speeds (rpm): cpu: 5880 fan-26: 4560 fan-42: 4560 fan-43: 4800 fan-58: 4560 fan-59: 4920
-    fan-74: 4560 fan-75: 4800 fan-90: 4440 fan-91: 4800 fan-106: 4560 fan-107: 5880
+  Fan Speeds (rpm): cpu: 5880 fan-26: 4560 fan-42: 4440 fan-43: 4800 fan-58: 4680 fan-59: 4800
+    fan-74: 4560 fan-75: 4800 fan-90: 4440 fan-91: 4800 fan-106: 4560 fan-107: 6000
   Power: 12v: N/A 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 78.0 C pch: 40.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 78.0 C pch: 39.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 741 Power: uptime: 25d 10h 21m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 746 Power: uptime: 25d 10h 54m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 50.19 GiB Init: systemd v: 255 default: multi-user tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 612 libs: 139 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34

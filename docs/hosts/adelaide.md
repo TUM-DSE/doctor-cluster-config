@@ -62,9 +62,9 @@ CPU:
     microcode: 0xD0003E7
   Topology: cpus: 1x cores: 12 smt: disabled cache: L1: 960 KiB desc: d-12x48 KiB; i-12x32 KiB
     L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
-  Speed (MHz): avg: 1103 high: 2373 min/max: 800/3000 base/boost: 3000/4500 scaling:
-    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 800 2: 800
-    3: 800 4: 800 5: 1885 6: 801 7: 800 8: 800 9: 800 10: 2373 11: 1777 12: 800 bogomips: 72000
+  Speed (MHz): avg: 883 high: 1800 min/max: 800/3000 base/boost: 3000/4500 scaling:
+    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 800 2: 1800
+    3: 800 4: 800 5: 800 6: 800 7: 800 8: 800 9: 800 10: 800 11: 800 12: 800 bogomips: 72000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
   Type: gather_data_sampling mitigation: Microcode
@@ -94,11 +94,13 @@ Audio:
 Network:
   Device-1: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: kernel pcie: gen: 3
     speed: 8 GT/s lanes: 4 port: N/A bus-ID: 01:00.0 chip-ID: 8086:1563 class-ID: 0200
-  IF: eno1 state: down mac: 3c:ec:ef:62:ad:f2
+  IF: eno1 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:62:ad:f2
+  IP v4: 169.254.120.158/16 scope: link
   IP v6: fe80::3eec:efff:fe62:adf2/64 virtual: proto kernel_ll scope: link
   Device-2: Intel Ethernet X550 vendor: Super Micro driver: ixgbe v: kernel pcie: gen: 3
     speed: 8 GT/s lanes: 4 port: N/A bus-ID: 01:00.1 chip-ID: 8086:1563 class-ID: 0200
-  IF: eno2 state: down mac: 3c:ec:ef:62:ad:f3
+  IF: eno2 state: up speed: 10000 Mbps duplex: full mac: 3c:ec:ef:62:ad:f3
+  IP v4: 169.254.83.134/16 scope: link
   IP v6: fe80::3eec:efff:fe62:adf3/64 virtual: proto kernel_ll scope: link
   Device-3: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel pcie: gen: 2
     speed: 5 GT/s lanes: 8 port: 7020 bus-ID: 18:00.0 chip-ID: 8086:10fb class-ID: 0200
@@ -136,7 +138,7 @@ RAID:
   Components: Online:
   1: sda2 maj-min: 8:2 size: 1.75 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 31.34 GiB (0.9%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 31.33 GiB (0.9%)
   ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
     physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 32 C
     scheme: GPT
@@ -155,13 +157,13 @@ Partition:
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: 43 C mobo: 28 C
-  Fan Speeds (rpm): cpu: 8960 fan-2: 9100 fan-3: 8960 fan-4: 8960 fan-5: 8960 fan-6: 8960
+  Src: ipmi System Temperatures: cpu: 44 C mobo: 28 C
+  Fan Speeds (rpm): cpu: 8960 fan-2: 8960 fan-3: 8820 fan-4: 8960 fan-5: 9100 fan-6: 9100
   Power: 12v: 11.590 5v: 5.040 3.3v: 3.322 vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 41.0 C pch: 46.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 41.0 C pch: 47.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 340 Power: uptime: 25d 10h 20m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 338 Power: uptime: 25d 10h 53m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 100.47 GiB Init: systemd v: 255 default: multi-user tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 584 libs: 133 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34

@@ -17,7 +17,7 @@ Machine:
     part-nu: SKU=0AF9;ModelName=PowerEdge R7625 uuid: 4c4c4544-0054-5110-8035-c3c04f475a33 UEFI: Dell
     v: 1.5.8 date: 07/21/2023
 Memory:
-  System RAM: total: 768 GiB available: 752.49 GiB used: 166.74 GiB (22.2%)
+  System RAM: total: 768 GiB available: 752.49 GiB used: 166.79 GiB (22.2%)
   Array-1: capacity: 6 TiB note: check slots: 24 modules: 24 EC: Multi-bit ECC
     max-module-size: 256 GiB note: est.
   Device-1: A1 type: DDR5 detail: synchronous registered (buffered) size: 32 GiB speed: 4800 MT/s
@@ -124,13 +124,13 @@ CPU:
   Topology: cpus: 2x cores: 32 smt: <unsupported> cache: L1: 2x 2 MiB (4 MiB) desc: d-32x32 KiB;
     i-32x32 KiB L2: 2x 32 MiB (64 MiB) desc: 32x1024 KiB L3: 2x 128 MiB (256 MiB) desc: 4x32 MiB
   Speed (MHz): avg: 2699 high: 2700 min/max: N/A base/boost: 2700/4400 volts: 1.8 V
-    ext-clock: 32000 MHz cores: 1: 2700 2: 2700 3: 2699 4: 2700 5: 2700 6: 2700 7: 2700 8: 2699
-    9: 2700 10: 2700 11: 2700 12: 2700 13: 2700 14: 2700 15: 2700 16: 2700 17: 2700 18: 2700
-    19: 2700 20: 2700 21: 2699 22: 2699 23: 2699 24: 2700 25: 2700 26: 2700 27: 2700 28: 2700
-    29: 2700 30: 2700 31: 2700 32: 2700 33: 2700 34: 2700 35: 2700 36: 2700 37: 2700 38: 2700
-    39: 2700 40: 2700 41: 2700 42: 2699 43: 2700 44: 2699 45: 2700 46: 2700 47: 2700 48: 2700
+    ext-clock: 32000 MHz cores: 1: 2700 2: 2700 3: 2699 4: 2700 5: 2700 6: 2699 7: 2700 8: 2700
+    9: 2700 10: 2699 11: 2700 12: 2700 13: 2700 14: 2700 15: 2700 16: 2700 17: 2700 18: 2700
+    19: 2700 20: 2700 21: 2700 22: 2700 23: 2700 24: 2700 25: 2700 26: 2700 27: 2700 28: 2699
+    29: 2700 30: 2700 31: 2700 32: 2700 33: 2700 34: 2700 35: 2700 36: 2699 37: 2700 38: 2700
+    39: 2700 40: 2699 41: 2699 42: 2700 43: 2699 44: 2700 45: 2700 46: 2700 47: 2700 48: 2700
     49: 2700 50: 2700 51: 2700 52: 2700 53: 2700 54: 2700 55: 2700 56: 2700 57: 2700 58: 2700
-    59: 2700 60: 2700 61: 2700 62: 2700 63: 2700 64: 2700 bogomips: 345589
+    59: 2700 60: 2700 61: 2700 62: 2700 63: 2700 64: 2699 bogomips: 345589
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
@@ -214,17 +214,17 @@ Drives:
   ID-1: /dev/nvme0n1 maj-min: 259:2 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
     serial: S64HNS0W800676 fw-rev: GDC5602Q temp: 31.9 C scheme: GPT
-  SMART: yes health: PASSED on: 1y 12d 22h cycles: 51 read-units: 37,772,033 [19.3 TB]
-    written-units: 58,162,433 [29.7 TB]
+  SMART: yes health: PASSED on: 1y 12d 22h cycles: 51 read-units: 37,772,051 [19.3 TB]
+    written-units: 58,164,204 [29.7 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:0 vendor: Dell model: Ent NVMe AGN MU AIC 1.6TB size: 1.46 TiB
     block-size: physical: 512 B logical: 512 B speed: 126.4 Gb/s lanes: 8 tech: SSD
     serial: S61ANA0R501120 fw-rev: 2.0.2 temp: 29.9 C
-  SMART: yes health: PASSED on: 3y 0d 10h cycles: 64 read-units: 433,473,034 [221 TB]
+  SMART: yes health: PASSED on: 3y 0d 10h cycles: 64 read-units: 433,473,047 [221 TB]
     written-units: 232,666,445 [119 TB]
   ID-3: /dev/nvme2n1 maj-min: 259:1 vendor: Samsung model: MZPLJ1T6HBJR-00007 size: 1.46 TiB
     block-size: physical: 512 B logical: 512 B speed: 126.4 Gb/s lanes: 8 tech: SSD
     serial: S55JNC0W600234 fw-rev: EPK9GB5Q temp: 37.9 C
-  SMART: yes health: PASSED on: 1y 61d 17h cycles: 91 read-units: 314,118,611 [160 TB]
+  SMART: yes health: PASSED on: 1y 61d 18h cycles: 91 read-units: 314,118,624 [160 TB]
     written-units: 224,440,692 [114 TB]
 Partition:
   ID-1: / raw-size: N/A size: 3.33 TiB used: 573.82 GiB (16.8%) fs: zfs logical: zroot/root/nixos
@@ -232,18 +232,18 @@ Partition:
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:3
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 2.77 TiB used: 287.9 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 2.77 TiB used: 286.8 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu: N/A mobo: N/A
-  Fan Speeds (rpm): cpu: 9360 fan-27: 7320 fan-42: 9240 fan-43: 7320 fan-58: 9240 fan-59: 7440
-    fan-74: 9240 fan-75: 7320 fan-90: 9240 fan-91: 7320 fan-106: 9240 fan-107: 7320
+  Fan Speeds (rpm): cpu: 9360 fan-27: 7440 fan-42: 9240 fan-43: 7320 fan-58: 9240 fan-59: 7440
+    fan-74: 9240 fan-75: 7320 fan-90: 9240 fan-91: 7320 fan-106: 9240 fan-107: 7440
   Power: 12v: N/A 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 57.8 C mobo: 47.0 C
+  Src: lm-sensors System Temperatures: cpu: 57.9 C mobo: 47.0 C
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 2252 Power: uptime: 25d 10h 17m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 2202 Power: uptime: 25d 10h 50m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 300.99 GiB Init: systemd v: 255 default: multi-user tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 623 libs: 144 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34

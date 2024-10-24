@@ -15,7 +15,7 @@ Machine:
   Mobo: Supermicro model: H12DSG-O-CPU v: 1.01A serial: VM229S600002
     uuid: 77c47400-4a61-11ed-8000-3cecefea4b96 UEFI: American Megatrends v: 2.4 date: 04/22/2022
 Memory:
-  System RAM: total: 2 TiB available: 1.96 TiB used: 1.74 TiB (89.1%)
+  System RAM: total: 2 TiB available: 1.96 TiB used: 1.73 TiB (88.2%)
   Array-1: capacity: 8 TiB slots: 32 modules: 32 EC: Multi-bit ECC max-module-size: 256 GiB
     note: est.
   Device-1: P1-DIMMA1 type: DDR4 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -164,18 +164,18 @@ CPU:
   Topology: cpus: 2x cores: 24 tpc: 2 threads: 48 smt: enabled cache: L1: 2x 1.5 MiB (3 MiB)
     desc: d-24x32 KiB; i-24x32 KiB L2: 2x 12 MiB (24 MiB) desc: 24x512 KiB L3: 2x 128 MiB (256 MiB)
     desc: 4x32 MiB
-  Speed (MHz): avg: 1827 high: 2650 min/max: 1500/3631 boost: disabled base/boost: 2650/3625
+  Speed (MHz): avg: 1547 high: 2650 min/max: 1500/3631 boost: disabled base/boost: 2650/3625
     scaling: driver: acpi-cpufreq governor: schedutil volts: 1.1 V ext-clock: 100 MHz cores: 1: 1500
-    2: 1500 3: 1500 4: 2650 5: 2650 6: 1500 7: 1500 8: 1500 9: 1500 10: 2650 11: 1500 12: 1500
-    13: 2650 14: 1500 15: 1500 16: 1500 17: 2650 18: 1500 19: 1500 20: 1500 21: 2650 22: 2650
-    23: 1500 24: 1500 25: 2650 26: 1500 27: 2000 28: 1500 29: 1500 30: 1500 31: 1500 32: 1500
-    33: 1500 34: 1500 35: 2650 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 2650 42: 2650
-    43: 2650 44: 1500 45: 1500 46: 1500 47: 1500 48: 2000 49: 2650 50: 2650 51: 2650 52: 1500
-    53: 2650 54: 1500 55: 1500 56: 1500 57: 1500 58: 1500 59: 2650 60: 1500 61: 1500 62: 1500
-    63: 1500 64: 2650 65: 1500 66: 1500 67: 1500 68: 2650 69: 1500 70: 1500 71: 1500 72: 2650
-    73: 1500 74: 1500 75: 2000 76: 2650 77: 1500 78: 1500 79: 1500 80: 2650 81: 2650 82: 1500
-    83: 1500 84: 1500 85: 1500 86: 1500 87: 1500 88: 1500 89: 1500 90: 1500 91: 1500 92: 2650
-    93: 1500 94: 1500 95: 2650 96: 2650 bogomips: 508801
+    2: 1500 3: 1500 4: 1500 5: 1500 6: 1500 7: 2650 8: 1500 9: 1500 10: 1500 11: 1500 12: 1500
+    13: 1500 14: 1500 15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1500 21: 1500 22: 1500
+    23: 1500 24: 1500 25: 1500 26: 1500 27: 1500 28: 1500 29: 1500 30: 1500 31: 2650 32: 1500
+    33: 1500 34: 1500 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500
+    43: 1500 44: 2650 45: 1500 46: 1500 47: 1500 48: 1500 49: 1500 50: 1500 51: 1500 52: 1500
+    53: 1500 54: 1500 55: 1500 56: 1500 57: 1500 58: 1500 59: 1500 60: 1500 61: 1500 62: 1500
+    63: 1500 64: 1500 65: 1500 66: 1500 67: 1500 68: 1500 69: 1500 70: 1500 71: 1500 72: 1500
+    73: 1500 74: 1500 75: 1500 76: 1500 77: 1500 78: 1500 79: 1500 80: 1500 81: 1500 82: 1500
+    83: 1500 84: 1500 85: 1500 86: 2650 87: 1500 88: 1500 89: 1500 90: 1500 91: 1500 92: 1500
+    93: 1500 94: 1500 95: 1500 96: 1500 bogomips: 508801
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
@@ -386,23 +386,23 @@ RAID:
   Components: Online:
   1: nvme1n1p1 maj-min: 259:2 size: 1.75 TiB
   Device-2: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.22 TiB
-    allocated: 528 GiB zfs-fs: size: 1.68 TiB free: 1.17 TiB
+    allocated: 528 GiB zfs-fs: size: 1.68 TiB free: 1.16 TiB
   Components: Online:
   1: nvme0n1p2 maj-min: 259:4 size: 1.75 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.36 TiB used: 900.93 GiB (26.2%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.36 TiB used: 901.35 GiB (26.2%)
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL21T9HCJR-00A07 size: 1.75 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64GNA0T724989 fw-rev: GDC5602Q temp: 33.9 C scheme: GPT
-  SMART: yes health: PASSED on: 1y 250d 20h cycles: 131 read-units: 65,518,961 [33.5 TB]
-    written-units: 98,950,791 [50.6 TB]
+    serial: S64GNA0T724989 fw-rev: GDC5602Q temp: 34.9 C scheme: GPT
+  SMART: yes health: PASSED on: 1y 250d 21h cycles: 131 read-units: 65,518,979 [33.5 TB]
+    written-units: 98,955,291 [50.6 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:1 vendor: Samsung model: MZQL21T9HCJR-00A07 size: 1.75 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
     serial: S64GNA0T724990 fw-rev: GDC5602Q temp: 35.9 C scheme: MBR
-  SMART: yes health: PASSED on: 1y 250d 20h cycles: 131 read-units: 2,804,274 [1.43 TB]
+  SMART: yes health: PASSED on: 1y 250d 21h cycles: 131 read-units: 2,804,279 [1.43 TB]
     written-units: 28,486,607 [14.5 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 1.53 TiB used: 370.61 GiB (23.7%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 1.53 TiB used: 371.03 GiB (23.7%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 28.6 MiB (2.8%) fs: vfat
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:3
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
@@ -411,14 +411,14 @@ Partition:
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu-1: 42 C cpu-2: 41 C mobo: 41 C
+  Src: ipmi System Temperatures: cpu-1: 37 C cpu-2: 36 C mobo: 40 C
   Fan Speeds (rpm): fan-1: 3220 fan-2: 3220 fan-3: 3220 fan-4: 3220 fan-5: 3220 fan-6: 3220
     fan-7: 3220 fan-8: 3220 fan-9: 1260 fan-16: 1260
-  Power: 12v: 12.112 5v: 5.020 3.3v: 3.276 vbat: N/A dimm-p1: 1.195 dimm-p2: 1.200
-  Src: lm-sensors System Temperatures: cpu: 41.6 C mobo: N/A
+  Power: 12v: 12.112 5v: 5.020 3.3v: 3.293 vbat: N/A dimm-p1: 1.195 dimm-p2: 1.200
+  Src: lm-sensors System Temperatures: cpu: 37.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 1880 Power: uptime: 9d 21h 10m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 1841 Power: uptime: 9d 21h 44m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 801.56 GiB services: upowerd,xfce4-power-manager Init: systemd v: 255
     default: graphical tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 893 libs: 217 pm: nix-usr pkgs: 0

@@ -165,13 +165,13 @@ CPU:
   Topology: cpus: 2x cores: 24 smt: <unsupported> cache: L1: 2x 1.5 MiB (3 MiB) desc: d-24x32
     KiB; i-24x32 KiB L2: 2x 12 MiB (24 MiB) desc: 24x512 KiB L3: 2x 128 MiB (256 MiB)
     desc: 4x32 MiB
-  Speed (MHz): avg: 1523 high: 2650 min/max: 1500/3631 boost: disabled base/boost: 2650/3625
+  Speed (MHz): avg: 1595 high: 2650 min/max: 1500/3631 boost: disabled base/boost: 2650/3625
     scaling: driver: acpi-cpufreq governor: schedutil volts: 1.1 V ext-clock: 100 MHz cores: 1: 1500
-    2: 1500 3: 1500 4: 1500 5: 1500 6: 1500 7: 2650 8: 1500 9: 1500 10: 1500 11: 1500 12: 1500
+    2: 1500 3: 1500 4: 1500 5: 1500 6: 1500 7: 1500 8: 2650 9: 1500 10: 1500 11: 1500 12: 1500
     13: 1500 14: 1500 15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1500 21: 1500 22: 1500
-    23: 1500 24: 1500 25: 1500 26: 1500 27: 1500 28: 1500 29: 1500 30: 1500 31: 1500 32: 1500
-    33: 1500 34: 1500 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500
-    43: 1500 44: 1500 45: 1500 46: 1500 47: 1500 48: 1500 bogomips: 254395
+    23: 1500 24: 1500 25: 1500 26: 1500 27: 1500 28: 2650 29: 1500 30: 1500 31: 1500 32: 1500
+    33: 2650 34: 1500 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500
+    43: 1500 44: 1500 45: 1500 46: 1500 47: 1500 48: 2650 bogomips: 254395
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
@@ -239,7 +239,7 @@ RAID:
   Components: Online:
   1: nvme0n1p1 maj-min: 259:2 size: 1.75 TiB
   Device-2: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 692 GiB
-    allocated: 1.06 TiB zfs-fs: size: 1.68 TiB free: 637.36 GiB
+    allocated: 1.06 TiB zfs-fs: size: 1.68 TiB free: 637.33 GiB
   Components: Online:
   1: nvme1n1p2 maj-min: 259:4 size: 1.75 TiB
 Drives:
@@ -247,31 +247,31 @@ Drives:
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL21T9HCJR-00A07 size: 1.75 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
     serial: S64GNA0T724986 fw-rev: GDC5602Q temp: 34.9 C scheme: GPT
-  SMART: yes health: PASSED on: 1y 246d 17h cycles: 75 read-units: 13,217,729 [6.76 TB]
+  SMART: yes health: PASSED on: 1y 246d 18h cycles: 75 read-units: 13,217,734 [6.76 TB]
     written-units: 73,477,421 [37.6 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:1 vendor: Samsung model: MZQL21T9HCJR-00A07 size: 1.75 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64GNA0T724987 fw-rev: GDC5602Q temp: 33.9 C scheme: GPT
-  SMART: yes health: PASSED on: 1y 246d 17h cycles: 75 read-units: 106,930,102 [54.7 TB]
-    written-units: 123,150,044 [63.0 TB]
+    serial: S64GNA0T724987 fw-rev: GDC5602Q temp: 34.9 C scheme: GPT
+  SMART: yes health: PASSED on: 1y 246d 18h cycles: 75 read-units: 106,930,123 [54.7 TB]
+    written-units: 123,151,494 [63.0 TB]
 Partition:
   ID-1: / raw-size: N/A size: 1.57 TiB used: 971.28 GiB (60.4%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 28.9 MiB (2.8%) fs: vfat
     block-size: 512 B dev: /dev/nvme1n1p1 maj-min: 259:3
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 638.49 GiB used: 1.14 GiB (0.2%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 638.47 GiB used: 1.14 GiB (0.2%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu-1: 35 C cpu-2: 38 C mobo: 41 C
   Fan Speeds (rpm): fan-1: 3220 fan-2: 3220 fan-3: 3220 fan-4: 3220 fan-5: 3220 fan-6: 3220
     fan-7: 3220 fan-8: 3220 fan-9: 1260 fan-16: 1120
-  Power: 12v: 12.112 5v: 5.020 3.3v: 3.259 vbat: N/A dimm-p1: 1.189 dimm-p2: 1.200
-  Src: lm-sensors System Temperatures: cpu: 38.9 C mobo: N/A
+  Power: 12v: 12.112 5v: 5.020 3.3v: 3.276 vbat: N/A dimm-p1: 1.189 dimm-p2: 1.200
+  Src: lm-sensors System Temperatures: cpu: 38.8 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 1062 Power: uptime: 25d 10h 20m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 1022 Power: uptime: 25d 10h 53m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 798.4 GiB Init: systemd v: 255 default: graphical tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 917 libs: 222 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34

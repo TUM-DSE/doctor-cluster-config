@@ -62,10 +62,10 @@ CPU:
     microcode: 0xD0003E7
   Topology: cpus: 1x cores: 12 tpc: 2 threads: 24 smt: enabled cache: L1: 960 KiB desc: d-12x48
     KiB; i-12x32 KiB L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
-  Speed (MHz): avg: 925 high: 2400 min/max: 800/3600 base/boost: 3000/4500 scaling:
+  Speed (MHz): avg: 1043 high: 3600 min/max: 800/3600 base/boost: 3000/4500 scaling:
     driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 800 2: 800
-    3: 800 4: 800 5: 800 6: 800 7: 800 8: 800 9: 800 10: 800 11: 800 12: 800 13: 800 14: 800
-    15: 1310 16: 1300 17: 800 18: 800 19: 800 20: 800 21: 2400 22: 800 23: 1200 24: 800
+    3: 800 4: 800 5: 800 6: 800 7: 800 8: 800 9: 2300 10: 2300 11: 800 12: 800 13: 800 14: 800
+    15: 800 16: 849 17: 800 18: 800 19: 800 20: 800 21: 800 22: 800 23: 800 24: 3600
     bogomips: 144000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
@@ -141,11 +141,11 @@ Drives:
     physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 35 C
   SMART: yes state: enabled
   ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
-    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 34 C
+    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 35 C
     scheme: GPT
   SMART: yes state: enabled
 Partition:
-  ID-1: / raw-size: N/A size: 1.64 TiB used: 377.09 GiB (22.4%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 1.64 TiB used: 377.08 GiB (22.4%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 36.4 MiB (3.6%) fs: vfat
     block-size: 512 B dev: /dev/sdb1 maj-min: 8:17
   ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
@@ -154,12 +154,12 @@ Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu: 39 C mobo: 30 C
-  Fan Speeds (rpm): cpu: 8820 fan-2: 9100 fan-3: 8960 fan-4: 8960 fan-5: 8960 fan-6: 8960
+  Fan Speeds (rpm): cpu: 8960 fan-2: 8960 fan-3: 8960 fan-4: 8960 fan-5: 8960 fan-6: 8960
   Power: 12v: 11.590 5v: 5.040 3.3v: 3.322 vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 36.0 C pch: 47.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 35.0 C pch: 47.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 456 Power: uptime: 21h 18m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 461 Power: uptime: 21h 51m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 97.27 GiB Init: systemd v: 255 default: multi-user tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 584 libs: 133 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34
