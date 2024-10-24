@@ -158,10 +158,10 @@ def document_cards(hosts: DeployGroup) -> str:
         for line in inxi_slots.stdout.splitlines():
             is_device_line = False
             # print slot description or "PCI Slots:"
-            if "status: Available" in line:
+            if "status: available" in line.lower():
                 line = f"- ✅{line}"
                 is_device_line = True
-            if "status: In Use" in line:
+            if "status: in use" in line.lower():
                 line = f"- ❌{line}"
                 is_device_line = True
             result += f"{line}   \n"
@@ -173,7 +173,14 @@ def document_cards(hosts: DeployGroup) -> str:
                     result += f"{descriptions.pop()}  \n"
         return f"### {h.host} \n\n{result} \n\n"
 
-    results = hosts.run_function(doc_cards)
+    def doc_cards_safe(h: DeployHost) -> str:
+        try:
+            return doc_cards(h)
+        except Exception as e:
+            print(f"Error: {e}")
+            return f"### {h.host} \n\nError: in fetching expansion card data (host offline?) \n\n"
+
+    results = hosts.run_function(doc_cards_safe)
     results2 = list(
         map(
             lambda result: result.result,
@@ -245,6 +252,7 @@ HOSTS = [
     "vislor.dos.cit.tum.de",
     "irene.dos.cit.tum.de",
     "xavier.dos.cit.tum.de",
+    "ian.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
