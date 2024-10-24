@@ -78,8 +78,8 @@ Those serve as a github action runner for Systemprogramming + cloud systems lab.
 Astrid also hosts the buildbot master server with Graham as the buildbot worker.
 
 - [astrid](./hosts/astrid.md)
-- [dan](./hosts/dan.md), also nfs primary
-- [mickey](./hosts/mickey.md)
+- [dan](./hosts/dan.md), nfs backup
+- [mickey](./hosts/mickey.md), nfs primary
 
 
 ## Retired Server (offline)
