@@ -9,6 +9,7 @@
     ../modules/xrdp.nix
     ../modules/xrdp-passwords.nix
 
+    ../modules/amd_sev_snp.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
   ];
