@@ -15,4 +15,9 @@
   simd.arch = "icelake-server";
 
   system.stateVersion = "21.11";
+
+   fileSystems."/ssd_extension" = {
+    device = "ssd_extension/scratch";
+    fsType = "zfs";
+  };
 }
