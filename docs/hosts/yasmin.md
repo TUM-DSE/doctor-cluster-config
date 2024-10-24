@@ -2,10 +2,10 @@
 
 ```
 System:
-  Host: yasmin Kernel: 6.8.12 arch: aarch64 bits: 64 compiler: gcc v: 13.2.0
+  Host: yasmin Kernel: 6.6.54 arch: aarch64 bits: 64 compiler: gcc v: 13.2.0
     clocksource: arch_sys_counter
-    parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/wkgxlm39kj2za5xlqlpxjg6hpwi5cy7m-linux-6.8.12-Image
-    init=/nix/store/xpyngcx3i8grqa5248azr524xmkgaz5i-nixos-system-yasmin-24.05.20240709.249fbde/init
+    parameters: BOOT_IMAGE=(hd3,gpt1)//kernels/az0ml32w8z843s9vc8917bg9rgaflkhn-linux-6.6.54-Image
+    init=/nix/store/8c0jq7pfw43gnl0pjf6q77rbg82pylvb-nixos-system-yasmin-24.05.20241005.002beb8/init
     console=ttyS0,115200 console=ttyAMA0,115200 console=tty0 console=ttyS0,115200n8
     console=ttyAMA0,115200n8 console=tty0 nohibernate loglevel=4
   Console: N/A Distro: NixOS 24.05 (Uakari)
@@ -15,7 +15,7 @@ Machine:
   Mobo: GIGABYTE model: MT91-FS1-00 v: 00030101 serial: JH6N6700014 part-nu: SABER SKU
     uuid: 00000000-0000-0040-8000-b42e993f747c UEFI: GIGABYTE v: F34 date: 08/13/2020
 Memory:
-  System RAM: total: 256 GiB available: 251.24 GiB used: 111.84 GiB (44.5%)
+  System RAM: total: 256 GiB available: 251.24 GiB used: 128.18 GiB (51.0%)
   Report: arrays: 2 capacity: 4 TiB installed: 256 GiB slots: 24 active: 4 type: DDR4
     eec: Multi-bit ECC
   Array-1: capacity: 2 TiB installed: 128 GiB slots: 12 modules: 2 EC: Multi-bit ECC
@@ -78,7 +78,7 @@ Graphics:
   API: OpenGL Message: GL data unavailable in console for root.
 Audio:
   Message: No device data found.
-  API: ALSA v: k6.8.12 status: kernel-api tools: N/A
+  API: ALSA v: k6.6.54 status: kernel-api tools: N/A
 Network:
   Device-1: QLogic FastLinQ QL41000 Series 10/25/40/50GbE vendor: Gigabyte driver: qede v: kernel
     pcie: gen: 3 speed: 8 GT/s lanes: 4 link-max: lanes: 8 port: N/A bus-ID: 0b:00.0
@@ -100,51 +100,51 @@ Network:
   IF: enp0s15f1u1u3c2 state: unknown speed: -1 duplex: half mac: 16:d4:72:2c:21:77
   IP v4: 169.254.252.174/16 scope: link
   IP v6: fe80::14d4:72ff:fe2c:2177/64 virtual: proto kernel_ll scope: link
-  IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:a1:48:b2:c2
+  IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:4a:7c:7e:67
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IP v6: fe80::42:a1ff:fe48:b2c2/64 virtual: proto kernel_ll scope: link
+  IP v6: fe80::42:4aff:fe7c:7e67/64 virtual: proto kernel_ll scope: link
   IF-ID-2: eno2 state: down mac: b4:2e:99:3f:74:7d
   IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:9b18:d5e7:d945:ccf8:829e/16 scope: global
-  IF-ID-4: veth825e9ea state: up speed: 10000 Mbps duplex: full mac: ea:d9:b6:b9:49:56
+  IF-ID-4: veth6ad31d3 state: up speed: 10000 Mbps duplex: full mac: 2e:35:0d:b6:38:05
   Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.7
 RAID:
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 888 GiB free: 439 GiB
-    allocated: 449 GiB zfs-fs: size: 860.5 GiB free: 410.91 GiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 888 GiB free: 410 GiB
+    allocated: 478 GiB zfs-fs: size: 860.5 GiB free: 381.43 GiB
   Components: Online:
   1: sdb2 maj-min: 8:18 size: 893.76 GiB
 Drives:
-  Local Storage: total: raw: 1.78 TiB usable: 1.75 TiB used: 402.33 GiB (22.4%)
+  Local Storage: total: raw: 1.78 TiB usable: 1.75 TiB used: 471.13 GiB (26.3%)
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: SSD 970 EVO Plus 1TB size: 931.51 GiB
     block-size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 tech: SSD
-    serial: S4EWNX0R514087T fw-rev: 2B2QEXM7 temp: 39.9 C
-  SMART: yes health: PASSED on: 68d 17h cycles: 7 read-units: 579 [296 MB]
-    written-units: 562,580 [288 GB]
+    serial: S4EWNX0R514087T fw-rev: 2B2QEXM7 temp: 35.9 C
+  SMART: yes health: PASSED on: 68d 17h cycles: 7 read-units: 674 [345 MB]
+    written-units: 562,583 [288 GB]
   ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ7LH960HAJR-00005 family: based SSDs
     size: 894.25 GiB block-size: physical: 4096 B logical: 512 B sata: 3.2 speed: 6.0 Gb/s tech: SSD
-    serial: S45NNC0R216725 fw-rev: 904Q temp: 33 C scheme: GPT
-  SMART: yes state: enabled health: PASSED on: 2y 363d 8h cycles: 22 read: 31.97 TiB
-    written: 54.77 TiB
+    serial: S45NNC0R216725 fw-rev: 904Q temp: 28 C scheme: GPT
+  SMART: yes state: enabled health: PASSED on: 3y 83d 4h cycles: 22 read: 33.42 TiB
+    written: 62.18 TiB
 Partition:
-  ID-1: / raw-size: N/A size: 548.46 GiB used: 137.54 GiB (25.1%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 181.2 MiB (36.3%) fs: vfat
+  ID-1: / raw-size: N/A size: 586.12 GiB used: 204.68 GiB (34.9%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 500 MiB size: 499.7 MiB (99.95%) used: 95.3 MiB (19.1%) fs: vfat
     block-size: 512 B dev: /dev/sdb1 maj-min: 8:17
-  ID-3: /home raw-size: N/A size: 3.02 TiB used: 1.3 TiB (43.1%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 410.94 GiB used: 29.9 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 381.44 GiB used: 4.5 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu-1: 48 C cpu-2: 47 C mobo: 35 C
+  Src: ipmi System Temperatures: cpu-1: 44 C cpu-2: 43 C mobo: 31 C
   Fan Speeds (rpm): N/A
   Power: 12v: 12.545 5v: N/A 3.3v: N/A vbat: 3.053 dimm-p1: N/A dimm-p2: N/A
   Src: lm-sensors+/sys Message: No sensor data found using /sys/class/hwmon or lm-sensors.
 Info:
-  Processes: 2384 Power: uptime: 19d 6h 30m states: freeze,mem suspend: deep avail: s2idle
+  Processes: 2446 Power: uptime: 17d 2h 25m states: freeze,mem suspend: deep avail: s2idle
     wakeups: 0 hibernate: disabled image: 100.47 GiB Init: systemd v: 255 default: multi-user
     tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 551 libs: 124 pm: nix-usr pkgs: 0
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 554 libs: 125 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34
 ```
 ![hardware topology](yasmin.lstopo.svg)

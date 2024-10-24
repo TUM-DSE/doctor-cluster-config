@@ -2,10 +2,10 @@
 
 ```
 System:
-  Host: xavier Kernel: 6.8.12 arch: x86_64 bits: 64 compiler: gcc v: 13.2.0 clocksource: tsc
+  Host: xavier Kernel: 6.6.54 arch: x86_64 bits: 64 compiler: gcc v: 13.2.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\wmw7xfnpj7x8j332z3n3c1ai3c9a44c9-initrd-linux-6.8.12-initrd.efi
-    init=/nix/store/54shzk9xcxaa5sgbyny4rpshl2abalkd-nixos-system-xavier-24.05.20240709.249fbde/init
+    parameters: initrd=\EFI\nixos\1cnvwgx8q0j531zz8xqm9j4jbkb9rrmy-initrd-linux-6.6.54-initrd.efi
+    init=/nix/store/fla28q18ymz0g0j3pdvhmksdvvpwyjwd-nixos-system-xavier-24.05.20241005.002beb8/init
     console=ttyS0,115200 console=tty0 nohibernate loglevel=4
   Console: N/A Distro: NixOS 24.05 (Uakari)
 Machine:
@@ -15,7 +15,7 @@ Machine:
     part-nu: SKU=0A6B;ModelName=PowerEdge R760 uuid: 4c4c4544-004a-4610-8032-c4c04f393234 UEFI: Dell
     v: 2.0.0 date: 11/23/2023
 Memory:
-  System RAM: total: 2 TiB available: 1.97 TiB used: 542.99 GiB (26.9%)
+  System RAM: total: 2 TiB available: 1.97 TiB used: 53.64 GiB (2.7%)
   Array-1: capacity: 12 TiB note: check slots: 32 modules: 32 EC: Multi-bit ECC
     max-module-size: 384 GiB note: est.
   Device-1: A1 type: DDR5 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -144,21 +144,21 @@ CPU:
   Topology: cpus: 2x cores: 32 tpc: 2 threads: 64 smt: enabled cache: L1: 2x 2.5 MiB (5 MiB)
     desc: d-32x48 KiB; i-32x32 KiB L2: 2x 64 MiB (128 MiB) desc: 32x2 MiB L3: 2x 60 MiB (120 MiB)
     desc: 1x60 MiB
-  Speed (MHz): avg: 2798 high: 2800 min/max: N/A base/boost: 2000/4000 volts: 1.6 V
-    ext-clock: 16000 MHz cores: 1: 2783 2: 2800 3: 2800 4: 2800 5: 2800 6: 2800 7: 2800 8: 2800
-    9: 2789 10: 2800 11: 2796 12: 2800 13: 2786 14: 2800 15: 2800 16: 2800 17: 2800 18: 2779
-    19: 2800 20: 2800 21: 2800 22: 2800 23: 2800 24: 2800 25: 2800 26: 2800 27: 2800 28: 2800
-    29: 2800 30: 2800 31: 2800 32: 2800 33: 2800 34: 2800 35: 2800 36: 2800 37: 2800 38: 2800
-    39: 2800 40: 2800 41: 2800 42: 2800 43: 2800 44: 2800 45: 2783 46: 2800 47: 2800 48: 2800
-    49: 2800 50: 2800 51: 2800 52: 2800 53: 2800 54: 2800 55: 2786 56: 2800 57: 2782 58: 2800
-    59: 2800 60: 2800 61: 2800 62: 2800 63: 2800 64: 2800 65: 2786 66: 2800 67: 2800 68: 2800
-    69: 2800 70: 2800 71: 2800 72: 2800 73: 2793 74: 2800 75: 2786 76: 2800 77: 2786 78: 2800
-    79: 2800 80: 2800 81: 2800 82: 2785 83: 2800 84: 2800 85: 2800 86: 2800 87: 2800 88: 2800
-    89: 2800 90: 2800 91: 2800 92: 2800 93: 2800 94: 2800 95: 2800 96: 2800 97: 2800 98: 2800
-    99: 2800 100: 2800 101: 2800 102: 2800 103: 2800 104: 2800 105: 2800 106: 2800 107: 2800
-    108: 2800 109: 2785 110: 2800 111: 2800 112: 2800 113: 2800 114: 2800 115: 2800 116: 2800
-    117: 2800 118: 2800 119: 2786 120: 2800 121: 2784 122: 2800 123: 2800 124: 2800 125: 2800
-    126: 2800 127: 2800 128: 2800 bogomips: 512000
+  Speed (MHz): avg: 1915 high: 2000 min/max: N/A base/boost: 2000/4000 volts: 1.6 V
+    ext-clock: 16000 MHz cores: 1: 796 2: 2000 3: 2000 4: 2000 5: 2000 6: 2000 7: 780 8: 2000 9: 2000
+    10: 2000 11: 2000 12: 2000 13: 1998 14: 2000 15: 2000 16: 2000 17: 799 18: 2000 19: 2000
+    20: 2000 21: 2000 22: 2000 23: 2000 24: 2000 25: 2000 26: 800 27: 2000 28: 2000 29: 2000
+    30: 800 31: 785 32: 2000 33: 2000 34: 2000 35: 2000 36: 2000 37: 2000 38: 2000 39: 2000
+    40: 2000 41: 2000 42: 2000 43: 2000 44: 2000 45: 2000 46: 2000 47: 2000 48: 2000 49: 800
+    50: 2000 51: 800 52: 2000 53: 2000 54: 2000 55: 2000 56: 2000 57: 2000 58: 2000 59: 2000
+    60: 2000 61: 2000 62: 2000 63: 2000 64: 2000 65: 2000 66: 2000 67: 2000 68: 2000 69: 2000
+    70: 2000 71: 2000 72: 2000 73: 2000 74: 2000 75: 2000 76: 2000 77: 2000 78: 2000 79: 2000
+    80: 2000 81: 2000 82: 2000 83: 2000 84: 2000 85: 2000 86: 2000 87: 2000 88: 2000 89: 2000
+    90: 2000 91: 2000 92: 2000 93: 800 94: 2000 95: 2000 96: 2000 97: 2000 98: 2000 99: 2000
+    100: 2000 101: 2000 102: 2000 103: 2000 104: 2000 105: 2000 106: 2000 107: 2000 108: 2000
+    109: 2000 110: 2000 111: 2000 112: 2000 113: 2000 114: 2000 115: 2000 116: 2000 117: 2000
+    118: 2000 119: 2000 120: 2000 121: 2000 122: 2000 123: 2000 124: 2000 125: 2000 126: 2000
+    127: 2000 128: 2000 bogomips: 512000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
@@ -195,7 +195,7 @@ Network:
     chip-ID: 14e4:165f class-ID: 0200
   IF: eno8403 state: down mac: c4:cb:e1:c1:ab:7d
   Device-3: Mellanox MT2894 Family [ConnectX-6 Lx] driver: mlx5_core v: kernel pcie: gen: 4
-    speed: 16 GT/s lanes: 8 port: N/A bus-ID: 22:00.0 chip-ID: 15b3:101f class-ID: 0200 temp: 86.0 C
+    speed: 16 GT/s lanes: 8 port: N/A bus-ID: 22:00.0 chip-ID: 15b3:101f class-ID: 0200 temp: 76.0 C
   IF: eno12399np0 state: up speed: 10000 Mbps duplex: full mac: 58:a2:e1:2d:91:9e
   IP v4: 131.159.102.27/24 type: dynamic scope: global
   IP v6: 2a09:80c0:102::27/128 type: dynamic noprefixroute scope: global
@@ -203,47 +203,51 @@ Network:
   Device-4: Mellanox MT2894 Family [ConnectX-6 Lx] driver: mlx5_core v: kernel pcie: gen: 4
     speed: 16 GT/s lanes: 8 port: N/A bus-ID: 22:00.1 chip-ID: 15b3:101f class-ID: 0200
   IF: eno12409np1 state: down mac: 58:a2:e1:2d:91:9f
-  IF-ID-1: docker0 state: down mac: 02:42:1c:1d:95:f4
+  IF-ID-1: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:77:ae:8f:dd
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IP v6: fe80::42:1cff:fe1d:95f4/64 virtual: proto kernel_ll scope: link
+  IP v6: fe80::42:77ff:feae:8fdd/64 virtual: proto kernel_ll scope: link
   IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:6e0b:a95d:c4e8:99ac:156e/16 scope: global
+  IF-ID-3: veth04d33de state: up speed: 10000 Mbps duplex: full mac: a6:73:ff:1c:19:1c
+  IF-ID-4: veth2e23f2f state: up speed: 10000 Mbps duplex: full mac: ae:e2:3c:15:e8:6e
+  IF-ID-5: veth43577f9 state: up speed: 10000 Mbps duplex: full mac: f2:a6:73:99:2e:cb
+  IF-ID-6: veth82c45b3 state: up speed: 10000 Mbps duplex: full mac: f6:07:24:74:eb:11
   Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.27
 RAID:
-  Hardware-1: Broadcom / LSI Fusion-MPT 24GSAS/PCIe SAS40xx/41xx driver: mpi3mr v: 8.5.1.0.0
+  Hardware-1: Broadcom / LSI Fusion-MPT 24GSAS/PCIe SAS40xx/41xx driver: mpi3mr v: 8.5.0.0.0
     port: N/A bus-ID: 4a:00.0 chip-ID: 1000:00a5 rev: N/A class-ID: 0104
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.43 TiB
-    allocated: 57.3 GiB zfs-fs: size: 3.38 TiB free: 3.32 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.41 TiB
+    allocated: 77 GiB zfs-fs: size: 3.38 TiB free: 3.3 TiB
   Components: Online:
   1: nvme0n1p2 maj-min: 259:2 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.38 TiB used: 11.95 GiB (0.3%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.38 TiB used: 17.83 GiB (0.5%)
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNN0W800552 fw-rev: GDC5602Q temp: 34.9 C scheme: GPT
-  SMART: yes health: PASSED on: 126d 4h cycles: 23 read-units: 1,578,373 [808 GB]
-    written-units: 4,862,080 [2.48 TB]
+    serial: S64HNN0W800552 fw-rev: GDC5602Q temp: 29.9 C scheme: GPT
+  SMART: yes health: PASSED on: 210d 23h cycles: 23 read-units: 2,009,525 [1.02 TB]
+    written-units: 8,665,838 [4.43 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 3.33 TiB used: 11.88 GiB (0.3%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 72.4 MiB (7.1%) fs: vfat
+  ID-1: / raw-size: N/A size: 3.31 TiB used: 14.58 GiB (0.4%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 36.3 MiB (3.5%) fs: vfat
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1
-  ID-3: /home raw-size: N/A size: 3.02 TiB used: 1.3 TiB (43.1%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 3.32 TiB used: 1024 KiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 3.3 TiB used: 4 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu: N/A mobo: N/A
-  Fan Speeds (rpm): cpu: 9960 fan-27: 8760 fan-42: 10080 fan-43: 8880 fan-58: 9840 fan-59: 8760
-    fan-74: 9840 fan-75: 8760 fan-90: 10320 fan-91: 9120 fan-106: 9840 fan-107: 8760
+  Fan Speeds (rpm): cpu: 7440 fan-27: 6480 fan-42: 7320 fan-43: 6480 fan-58: 7440 fan-59: 6480
+    fan-74: 7440 fan-75: 6480 fan-90: 7200 fan-91: 6480 fan-106: 7320 fan-107: 6480
   Power: 12v: N/A 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 70.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 37.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 1815 Power: uptime: 3h 3m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 2122 Power: uptime: 17d 1h 33m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 806.14 GiB Init: systemd v: 255 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 581 libs: 132 pm: nix-usr pkgs: 0
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 584 libs: 133 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34
 ```
 ![hardware topology](xavier.lstopo.svg)
