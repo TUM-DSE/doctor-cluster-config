@@ -6,6 +6,7 @@
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
 
+    ../modules/amd_sev_snp.nix
     ../modules/xilinx.nix
     ../modules/xrdp.nix
     ../modules/xrdp-passwords.nix
