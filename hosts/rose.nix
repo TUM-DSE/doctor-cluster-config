@@ -66,6 +66,7 @@
     "atsushi" 
     "felix"
     "teofil"
+    "chenjiyang"
   ];
 
   # Don't manage vnet interface with systemd-networkd
