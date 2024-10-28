@@ -121,6 +121,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3jH+h2/BYRf3ZH7FGGAScFcNAnexFETsEGaOedB4wL"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxK7mB8Ar952m0BWIMJK5hZaGu0EjwI/ybYOwo+Mw3z"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMwSyi5MjQnoHbnMo8+RFCFr1fwK/Zp7sByNEaGcP4xl"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxK7mB8Ar952m0BWIMJK5hZaGu0EjwI/ybYOwo+Mw3z"
   ];
 
   sherifKeys = [
@@ -447,7 +448,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2056;
-      allowedHosts = [ "vislor" "jackson" ];
+      allowedHosts = [ "vislor" "jackson" "ian" ];
       openssh.authorizedKeys.keys = janheKeys;
     };
 
@@ -458,7 +459,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2057;
-      allowedHosts = [ "vislor" "jackson" ];
+      allowedHosts = [ "vislor" "jackson" "ian" ];
       openssh.authorizedKeys.keys = janhaKeys;
     };
 
@@ -469,7 +470,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2058;
-      allowedHosts = [ "vislor" "jackson" ];
+      allowedHosts = [ "vislor" "jackson" "ian" ];
       openssh.authorizedKeys.keys = sherifKeys;
     };
 
@@ -480,7 +481,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2059;
-      allowedHosts = [ "vislor" "jackson" ];
+      allowedHosts = [ "vislor" "jackson" "ian" ];
       openssh.authorizedKeys.keys = hristinaKeys;
     };
 
