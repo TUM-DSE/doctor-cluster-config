@@ -132,6 +132,20 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKwhovd3dJO9+vDK+I/V8hRXkqgGW1LJIApSXFim+vr"
   ];
 
+  benediktKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHh3jvEHzkSEtQ/CGHV38U8xRozY8Gbt03jee63dsz99 beni@eos"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDC+37cRJr2lcVYmxRPvBQHdBio24I7oxQZ2B3uCU3Pj beni@laptop"
+  ];
+
+  robertBKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEPdjagHzp7LJXfOT0PlQzFE1sGbd9jLMfaqCA4yZRZw atlas@evilatmc"
+  ];
+
+  neelKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7MxhhuffYFhsfJXxnvhjLh6w/+mgBcy07BFCYqik1MKGCyvuJXdVF2ezfkRHkqijv1ST+y3FOK8XRHml0MIYRgT14YsXmdw2WJySmvvOyZQ86LWvJwIlQYAHUm9Ur/+JISOQp7JCx4lBc74+ZcRzZDj9dOayVtkAmLZAaxpUcEOuLuk+IFrCyROytRdy3jnQBDrENRwx3W0Xyfof2ELSMoVMLKUTcT+Ul0y4tdmEs44aJsP9PybZIQDbjIKUVeYt3w2JVWlfq5cRg1GVLIlUyRFZdTch9YzbfKc5kaXt2b4TuRCfZWWGR/z8G9RT8Y/OMDSvt+ODusdk7pAGwYSgCDU1cOqMbANdD5QtOXNf33dKyn6zInu7G+zyNOwl//zxebGuPyGFkhIse/VcF1vSSZTp8tXXAElHV9ePvOgps9FjZcbkzbiheyNYTTLOG9T+Nnm/AgyyP/vmnMPlVmcjtf0Es8UEfYtoxBBpIzTbpNK8lNND96kLVuzUxEUs5jPs= neel@neel-950QDB"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP8gUqth1ZdR89+i5fyvz7qqIytNopXgI8QWhTzYdAro neelm@Neels-PC"
+  ];
+
   extraGroups =
     [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in {
@@ -485,6 +499,38 @@ in {
       openssh.authorizedKeys.keys = hristinaKeys;
     };
 
+    # Benedikt Rehbein, Sys Lab WS24
+    benedikt = {
+      isNormalUser = true;
+      home = "/home/benedikt";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2060;
+      allowedHosts = [ "rose" ];
+      openssh.authorizedKeys.keys = benediktKeys;
+    };
+
+    # Robert Barinov, Sys Lab WS24
+    robertB = {
+      isNormalUser = true;
+      home = "/home/robertB";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2061;
+      allowedHosts = [ "rose" ];
+      openssh.authorizedKeys.keys = robertBKeys;
+    };
+
+    # Neel Mandal, Sys Lab WS24
+    neel = {
+      isNormalUser = true;
+      home = "/home/neel";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2062;
+      allowedHosts = [ "rose" ];
+      openssh.authorizedKeys.keys = neelKeys;
+    };
   };
 
   # DANGER ZONE!
