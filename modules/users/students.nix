@@ -146,6 +146,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP8gUqth1ZdR89+i5fyvz7qqIytNopXgI8QWhTzYdAro neelm@Neels-PC"
   ];
 
+  konradHKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWpsrdbVRnFejvfa/IN668rSKXpRWqNBRgJ93UOOywt konradh03@gmail.com"
+  ];
+
   extraGroups =
     [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in {
@@ -530,6 +534,17 @@ in {
       uid = 2062;
       allowedHosts = [ "rose" ];
       openssh.authorizedKeys.keys = neelKeys;
+    };
+
+    # Konrad Hennig, Sys Lab WS24
+    konradH = {
+      isNormalUser = true;
+      home = "/home/konradH";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2063;
+      allowedHosts = [ "rose" ];
+      openssh.authorizedKeys.keys = konradHKeys;
     };
   };
 
