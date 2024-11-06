@@ -178,18 +178,6 @@ in {
       openssh.authorizedKeys.keys = gierensKeys;
     };
 
-    # Robert Schambach, Masa's MSc student (cc-vm-io)
-    # Delete after May 2024
-    robert = {
-      isNormalUser = true;
-      home = "/home/robert";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2015;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = robertKeys;
-    };
-
     # Theofilos Augoustis, Redha's MSc student (Arancini project)
     theo = {
       isNormalUser = true;
@@ -590,5 +578,6 @@ in {
     "nicola"
     "eaypek"
     "fritz"
+    "robert"
   ];
 }
