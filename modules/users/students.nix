@@ -545,7 +545,7 @@ in {
       home = "/home/kilian";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
-      uid = 2059;
+      uid = 2064;
       allowedHosts = [ "vislor" "jackson" "ian" ];
       openssh.authorizedKeys.keys = kilianKeys;
     };
