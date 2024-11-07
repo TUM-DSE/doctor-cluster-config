@@ -502,7 +502,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2060;
-      allowedHosts = [ "bill" "clara" ];
+      allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = benediktKeys;
     };
 
@@ -513,7 +513,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2061;
-      allowedHosts = [ "bill" "clara" ];
+      allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = robertBKeys;
     };
 
@@ -524,7 +524,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2062;
-      allowedHosts = [ "bill" "clara" ];
+      allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = neelKeys;
     };
 
@@ -535,7 +535,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2063;
-      allowedHosts = [ "bill" "clara" ];
+      allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = konradHKeys;
     };
 
