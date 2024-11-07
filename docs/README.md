@@ -65,6 +65,8 @@ Those servers (or individual devices) are sometimes used exclusively by a single
   - [jack](./hosts/jack.md)
 - dual socket Xeon Gold 6438Y+, CXL support
   - [xavier](./hosts/xavier.md)
+- dual socket Xeon Platinum 8562Y+
+  - [ian](./hosts/ian.md)
 
 **Note**: these servers are equipped with Persistent Memory (PM).
 For information on how to setup the PM in App-Direct mode, please see [here](./SETUP_PM.md)
