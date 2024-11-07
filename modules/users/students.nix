@@ -150,6 +150,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWpsrdbVRnFejvfa/IN668rSKXpRWqNBRgJ93UOOywt konradh03@gmail.com"
   ];
 
+  kilianKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTF9QkKayS1Wsj3MRLhpo4Kgh5traaOalOAmdWjCvps"
+  ];
+
   extraGroups =
     [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in {
@@ -533,6 +537,17 @@ in {
       uid = 2063;
       allowedHosts = [ "rose" ];
       openssh.authorizedKeys.keys = konradHKeys;
+    };
+
+    # Kilian Matheis, Sys Lab WS24
+    kilian = {
+      isNormalUser = true;
+      home = "/home/kilian";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2059;
+      allowedHosts = [ "vislor" "jackson" "ian" ];
+      openssh.authorizedKeys.keys = kilianKeys;
     };
   };
 
