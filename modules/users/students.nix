@@ -142,7 +142,7 @@ let
   ];
 
   neelKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7MxhhuffYFhsfJXxnvhjLh6w/+mgBcy07BFCYqik1MKGCyvuJXdVF2ezfkRHkqijv1ST+y3FOK8XRHml0MIYRgT14YsXmdw2WJySmvvOyZQ86LWvJwIlQYAHUm9Ur/+JISOQp7JCx4lBc74+ZcRzZDj9dOayVtkAmLZAaxpUcEOuLuk+IFrCyROytRdy3jnQBDrENRwx3W0Xyfof2ELSMoVMLKUTcT+Ul0y4tdmEs44aJsP9PybZIQDbjIKUVeYt3w2JVWlfq5cRg1GVLIlUyRFZdTch9YzbfKc5kaXt2b4TuRCfZWWGR/z8G9RT8Y/OMDSvt+ODusdk7pAGwYSgCDU1cOqMbANdD5QtOXNf33dKyn6zInu7G+zyNOwl//zxebGuPyGFkhIse/VcF1vSSZTp8tXXAElHV9ePvOgps9FjZcbkzbiheyNYTTLOG9T+Nnm/AgyyP/vmnMPlVmcjtf0Es8UEfYtoxBBpIzTbpNK8lNND96kLVuzUxEUs5jPs= neel@neel-950QDB"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICC1FrIyzGjtW1mBRyvCjV4uZBw75y3YptKIs8N3p7VR neel@neel-950QDB"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP8gUqth1ZdR89+i5fyvz7qqIytNopXgI8QWhTzYdAro neelm@Neels-PC"
   ];
 
@@ -502,7 +502,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2060;
-      allowedHosts = [ "rose" ];
+      allowedHosts = [ "bill" "clara" ];
       openssh.authorizedKeys.keys = benediktKeys;
     };
 
@@ -513,7 +513,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2061;
-      allowedHosts = [ "rose" ];
+      allowedHosts = [ "bill" "clara" ];
       openssh.authorizedKeys.keys = robertBKeys;
     };
 
@@ -524,7 +524,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2062;
-      allowedHosts = [ "rose" ];
+      allowedHosts = [ "bill" "clara" ];
       openssh.authorizedKeys.keys = neelKeys;
     };
 
@@ -535,7 +535,7 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2063;
-      allowedHosts = [ "rose" ];
+      allowedHosts = [ "bill" "clara" ];
       openssh.authorizedKeys.keys = konradHKeys;
     };
 
