@@ -1,5 +1,8 @@
 { pkgs, lib, config, ... }: let 
   VMs = {
+    # spare IPs for VMs: 
+    #  - il01_16, qemu3.dos.cit.tum.de, 96:83:AA:A4:06:34
+    #  - il01_14, qemu3b.dos.cit.tum.de, 96:83:AA:A5:06:34
     graham = [
       rec { 
         name = "qemu1"; 
