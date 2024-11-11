@@ -100,26 +100,32 @@ in
       river = {
         ipv4 = "131.159.102.16";
         ipv6 = "2a09:80c0:102::16";
+        mac = "00:1B:21:C3:82:D8";
       };
       jack = {
         ipv4 = "131.159.102.17";
         ipv6 = "2a09:80c0:102::17";
+        mac = "3C:EC:EF:FB:5C:7A";
       };
       amy = {
         ipv4 = "131.159.102.20";
         ipv6 = "2a09:80c0:102::20";
+        mac = "84:16:0C:CD:99:10";
       };
       clara = {
         ipv4 = "131.159.102.22";
         ipv6 = "2a09:80c0:102::22";
+        mac = "84:16:0C:CC:5A:30";
       };
       rose = {
         ipv4 = "131.159.102.21";
         ipv6 = "2a09:80c0:102::21";
+        mac = "84:16:0C:CD:69:40";
       };
       vislor = {
         ipv4 = "131.159.102.25";
         ipv6 = "2a09:80c0:102::25";
+        mac = "94:6D:AE:DA:EB:42";
       };
       # {loki, grafana, prometheus, alertmanager}.dos.cit.tum.de and vmbhatotia43.in.tum.de
       doctor = {
@@ -142,10 +148,12 @@ in
       xavier = {
         ipv4 = "131.159.102.27";
         ipv6 = "2a09:80c0:102::27";
+        mac = "58:A2:E1:2D:91:9E";
       };
       irene = {
         ipv4 = "131.159.102.28";
         ipv6 = "2a09:80c0:102::28";
+        mac = "7C:C2:55:25:D0:C6";
       };
     };
   };
