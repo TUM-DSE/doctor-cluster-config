@@ -25,6 +25,8 @@
   simd.arch = "znver3";
   system.stateVersion = "22.11";
 
+  networking.doctor-bridge.enable = true;
+
   # manually added to load xilinx from
   fileSystems."/share" = {
     device = "nfs:/export/share";
