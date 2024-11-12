@@ -31,6 +31,8 @@
     gb = 1500;
   in gb * 1024 / 2;
 
+  networking.doctor-bridge.enable = true;
+
   # external deduplicating zfs for large numbers of VMs
   # formating:
   # create linux partition with fdisk

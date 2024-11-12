@@ -15,6 +15,8 @@
 
   system.stateVersion = "23.05";
 
+  networking.doctor-bridge.enable = true;
+
   boot.kernelParams = [
     "nvme.poll_queues=4"
     "nvme_core.multipath=N"
