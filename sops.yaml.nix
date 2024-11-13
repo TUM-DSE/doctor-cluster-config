@@ -30,6 +30,7 @@ let
       ilya
       felix
       anatole
+      jiyang
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
