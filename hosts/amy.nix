@@ -65,5 +65,9 @@
     "atsushi" 
     "chenjiyang"
     "anubhav"
+    "benedikt"
+    "robertB"
+    "neel"
+    "konradH"
   ];
 }
