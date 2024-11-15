@@ -154,6 +154,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTF9QkKayS1Wsj3MRLhpo4Kgh5traaOalOAmdWjCvps"
   ];
 
+  martinLiKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLDbWHI/PLBf0hiS0wbHz0ppO/h177fSuRsoZRAq/VD mrtn@mrtnnix-nb"
+  ];
+
   extraGroups =
     [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
 in {
@@ -548,6 +552,17 @@ in {
       uid = 2064;
       allowedHosts = [ "vislor" "jackson" "ian" ];
       openssh.authorizedKeys.keys = kilianKeys;
+    };
+
+    # Martin Lindbuechl, BSc thesis with Ilya Meignan--Masson deleted after SS25
+    martinLi = {
+      isNormalUser = true;
+      home = "/home/martinLi";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2065;
+      allowedHosts = [ "irene" "adelaide" ];
+      openssh.authorizedKeys.keys = martinLi;
     };
   };
 
