@@ -156,6 +156,7 @@ let
 
   martinLiKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLDbWHI/PLBf0hiS0wbHz0ppO/h177fSuRsoZRAq/VD mrtn@mrtnnix-nb"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJYSM6kY7dtMlq7wzKCYe2jcOFQfA+EB0xPX/l8LdvH mrtn@nixos"
   ];
 
   extraGroups =
@@ -562,7 +563,7 @@ in {
       shell = "/run/current-system/sw/bin/bash";
       uid = 2065;
       allowedHosts = [ "irene" "adelaide" ];
-      openssh.authorizedKeys.keys = martinLi;
+      openssh.authorizedKeys.keys = martinLiKeys;
     };
   };
 
