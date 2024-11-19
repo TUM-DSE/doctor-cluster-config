@@ -2,7 +2,7 @@
 
 ## OS
 
-This machine is running [CheriBSD](https://www.cheribsd.org). 
+This machine is running Linux now. We have an SSD with [CheriBSD](https://www.cheribsd.org) available, should it be required. 
 
 ## SSH
 
@@ -14,11 +14,10 @@ ssh user@ace.dos.cit.tum.de
 
 ## Users
 
-Currently, these users have access:
+Currently, these users have access for the CheriBSD installation:
 
 - `martin`
 - `ilya`
-- `christian`
 
 ## Debugging
 

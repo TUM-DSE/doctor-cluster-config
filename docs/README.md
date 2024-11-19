@@ -103,9 +103,6 @@ Astrid also hosts the buildbot master server with Graham as the buildbot worker.
 
 ## Morello (ARM64)
 
-Currently, these machines run CheriBSD and are managed by [@martin-fink](https://github.com/martin-fink).
-Accounts and ssh keys need to be added manually.
-
 - [ace](./hosts/ace.md) (Morello)
 
 ## FPGA-servers
