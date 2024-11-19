@@ -31,6 +31,7 @@ let
       felix
       anatole
       jiyang
+      martin
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
