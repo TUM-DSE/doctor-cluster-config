@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}:
+{ pkgs, ... }:
 let
   directory = "/var/lib/stable-diffusion";
   vhost = {
@@ -36,7 +34,11 @@ in
   systemd.services.stable-diffusion-ui-output-generator = {
     enable = true;
     wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.jq pkgs.coreutils pkgs.mustache-go ];
+    path = [
+      pkgs.jq
+      pkgs.coreutils
+      pkgs.mustache-go
+    ];
     script =
       let
         template = pkgs.writeText "template" ''

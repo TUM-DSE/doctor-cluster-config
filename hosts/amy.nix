@@ -27,9 +27,11 @@
 
   boot.hugepages1GB.number = 0;
   # boot.hugepages2MB.number = 0;
-  boot.hugepages2MB.number = let
-    gb = 1500;
-  in gb * 1024 / 2;
+  boot.hugepages2MB.number =
+    let
+      gb = 1500;
+    in
+    gb * 1024 / 2;
 
   networking.doctor-bridge.enable = true;
 
@@ -60,9 +62,9 @@
       "timeo=14"
     ];
   };
-  users.xrdpUsers = [ 
+  users.xrdpUsers = [
     "xilinx"
-    "atsushi" 
+    "atsushi"
     "chenjiyang"
     "anubhav"
     "benedikt"

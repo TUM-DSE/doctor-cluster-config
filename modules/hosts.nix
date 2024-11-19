@@ -28,20 +28,22 @@ in
 {
   options = with lib; {
     networking.doctorwho.hosts = mkOption {
-      type = with types; attrsOf (submodule [{ options = hostOptions; }]);
+      type = with types; attrsOf (submodule [ { options = hostOptions; } ]);
       description = "A host in our cluster";
     };
     networking.doctorwho.currentHost = mkOption {
-      type = with types; submodule [{ options = hostOptions; }];
+      type = with types; submodule [ { options = hostOptions; } ];
       default = config.networking.doctorwho.hosts.${config.networking.hostName};
       description = "The host that is described by this configuration";
     };
   };
   config = {
     warnings =
-      lib.optional (!(config.networking.doctorwho.hosts ? ${config.networking.hostName}) && 
-        config.networking.hostName != "nixos" # we dont care about nixos netboot/installer images
-      )
+      lib.optional
+        (
+          !(config.networking.doctorwho.hosts ? ${config.networking.hostName})
+          && config.networking.hostName != "nixos" # we dont care about nixos netboot/installer images
+        )
         "Please add network configuration for ${config.networking.hostName}. None found in ${./hosts.nix}";
 
     # usually, for each host there is a hostname.dos.cit.tum.de and hostname.r domain

@@ -1,4 +1,9 @@
-{ config, lib, inputs, ...  }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hostfile.nix
@@ -27,7 +32,10 @@
         secretKeyFile = config.sops.secrets.buildbot-github-app-secret-key.path;
       };
     };
-    admins = [ "Mic92" "pogobanane" ];
+    admins = [
+      "Mic92"
+      "pogobanane"
+    ];
     outputsPath = "/var/www/buildbot/nix-outputs";
   };
 
@@ -35,9 +43,11 @@
     extraConfig = ''
       c["protocols"] = {"pb": {"port": "tcp:9989:interface=\\:\\:"}}
     '';
-    pythonPackages = ps: [ ps.bcrypt ps.cryptography ];
+    pythonPackages = ps: [
+      ps.bcrypt
+      ps.cryptography
+    ];
   };
-
 
   # TODO: make nginx optional in buildbot-nix
   services.buildbot-master.buildbotUrl = lib.mkForce "https://buildbot.dse.in.tum.de/";

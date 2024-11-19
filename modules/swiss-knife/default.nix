@@ -1,7 +1,5 @@
-{ lib
-, pkgs
-, ...
-}: {
+{ lib, pkgs, ... }:
+{
   imports = [
     ./users.nix
     ./network.nix
@@ -15,9 +13,7 @@
   virtualisation.podman.enable = true;
 
   # needed for the container task
-  environment.systemPackages = [
-    pkgs.docker-compose
-  ];
+  environment.systemPackages = [ pkgs.docker-compose ];
 
   # Do not do collide with the TUM vpn
   environment.etc."docker/daemon.json".text = builtins.toJSON {

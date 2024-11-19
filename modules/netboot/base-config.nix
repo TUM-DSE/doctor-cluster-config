@@ -1,8 +1,10 @@
-{ config
-, lib
-, pkgs
-, ...
-}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   networking.firewall.enable = false;
 
   services.resolved.enable = false;
@@ -16,7 +18,8 @@
   systemd.network.enable = true;
   systemd.network.networks =
     lib.mapAttrs'
-      (num: _:
+      (
+        num: _:
         lib.nameValuePair "eth${num}" {
           extraConfig = ''
             [Match]
@@ -36,7 +39,8 @@
             UseHostname = false
             RouteMetric = 512
           '';
-        })
+        }
+      )
       {
         "0" = { };
         "1" = { };
@@ -47,9 +51,12 @@
   imports = [
     ../nix-daemon.nix
     ../users
-    ({ ... }: {
-      users.withSops = false;
-    })
+    (
+      { ... }:
+      {
+        users.withSops = false;
+      }
+    )
   ];
 
   documentation.enable = false;
@@ -58,11 +65,19 @@
   systemd.services.update-prefetch.enable = false;
 
   documentation.info.enable = false;
-  environment.systemPackages = with pkgs; [ diskrsync partclone ntfsprogs ntfs3g ];
+  environment.systemPackages = with pkgs; [
+    diskrsync
+    partclone
+    ntfsprogs
+    ntfs3g
+  ];
 
   systemd.services.hidden-ssh-announce = {
     description = "irc announce hidden ssh";
-    after = [ "tor.service" "network-online.target" ];
+    after = [
+      "tor.service"
+      "network-online.target"
+    ];
     wants = [ "tor.service" ];
     wantedBy = [ "multi-user.target" ];
     script = ''

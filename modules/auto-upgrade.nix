@@ -1,13 +1,21 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   system.autoUpgrade.enable = lib.mkDefault true;
   system.autoUpgrade.flake = "github:TUM-DSE/doctor-cluster-config";
-  system.autoUpgrade.flags = [ "--option" "accept-flake-config" "true" ];
+  system.autoUpgrade.flags = [
+    "--option"
+    "accept-flake-config"
+    "true"
+  ];
 
   # add a random jitter so not all machines reboot at the same time.
   systemd.timers.auto-reboot.timerConfig.RandomizedDelaySec = 60 * 20;
 
   systemd.services.auto-reboot = {
-    path = [ pkgs.systemd pkgs.util-linux ];
+    path = [
+      pkgs.systemd
+      pkgs.util-linux
+    ];
     # The last saturday in a month
     startAt = "Sat *-*~07/1";
     script = ''

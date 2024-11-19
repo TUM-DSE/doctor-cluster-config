@@ -1,8 +1,6 @@
 { ... }:
 let
-  thangKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFjpAcawhrQfHbjj9jf+tmM1/1XMeKxhemX6XnTWX0Ak"
-  ];
+  thangKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFjpAcawhrQfHbjj9jf+tmM1/1XMeKxhemX6XnTWX0Ak" ];
 
   julianKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZs04queaSB/BGQesCEiunOkeEydB5rJ2WUXSrGlDLVoJ6/Q7fAHM99200fxK7h0vtKda4OkdUEBtRtq2wn+Z0YW51mFvzJ7214ZIY4JKtYX02KW8r7gVXYmjoX3VWEKi5iKfld0WO9jaDN3InU5CYyYx1nHl+BNasxIHtUzjhHCC+Ggxt3Kc+IxW2DV8J9/JwhKhgedqvqbc93+V05/UeYwG0Q9z1mwBEuOlGv8yP6uhCWmHzxbJYo+oxU5nSXM0lPHecxa7M8hROXEVrSxg27vUg7JoiSQ1wt3lzNQS4Abd8JLqOJlQYQvbz5Xxd0KhD0kaBCptXBCxdOo+YLi06XNs16rRtQPM51jTrero3h1wfA51XR7w7j52nbLC2ZGMyaSO1c5IQ5d5Xad/F1ZcOQQWvFhK+ie9LJzvR0AXiFXzEBvmPiZ82rLdjWGPO4975fSYTOxshZojk7oV4fQyd5vKCsjChL0JC2chPfYRv2kti/9CVqVseznVMPE/JgdE= julian@mind"
@@ -113,9 +111,7 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqB4RM0SUGkY1I+jLbWMxG10RPhhsNbsrPdMx32n7Iwt89rlkx3XGNra4eoBiZAdXLcggEgE4xgMtOIj9Wc7sexwbabEX5GXl1S7mc4Trm8wJRziBWdH6pwqICjG5HwNfXRyhiS290r8H/MB3LFIWgyE/U7VqaQ/nnHBimroYaJN1rDbkl25Ihe7mpS2s8P4M5HaqNIVY6HhgNKHJwQe9pgnjwnq4OkRGrRUOxi7q5R5TGsoCa2s2jefMrGOEXH0z6ZUzVo7auddNkQO4IYEHoiQxY4SlVwwCE0SYF/56kyupDRuEkg158HYcS0Yc2bTjYKe7sFTRwmssnQee+bxcHAOrqv3qunXx6USfGwzibNYlJoAFTDEoz5DJVMTlwlq9H0Qpvs7SIOiH5WhQ86T2TQhr3b5mIitge/uN2PVSnjhtxWqbUEipShgKmxpRinSR0D9VRf/X0cqTToz/ZfM9vcXEDyTtXHzbMU8STDlkIKQuexaqslqspAVsVBjCdQNk= konstantin@konstantin-IdeaPad-5-14ALC05"
   ];
 
-  janhaKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7"
-  ];
+  janhaKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7" ];
 
   janheKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3jH+h2/BYRf3ZH7FGGAScFcNAnexFETsEGaOedB4wL"
@@ -150,18 +146,24 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWpsrdbVRnFejvfa/IN668rSKXpRWqNBRgJ93UOOywt konradh03@gmail.com"
   ];
 
-  kilianKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTF9QkKayS1Wsj3MRLhpo4Kgh5traaOalOAmdWjCvps"
-  ];
+  kilianKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTF9QkKayS1Wsj3MRLhpo4Kgh5traaOalOAmdWjCvps" ];
 
   martinLiKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLDbWHI/PLBf0hiS0wbHz0ppO/h177fSuRsoZRAq/VD mrtn@mrtnnix-nb"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJYSM6kY7dtMlq7wzKCYe2jcOFQfA+EB0xPX/l8LdvH mrtn@nixos"
   ];
 
-  extraGroups =
-    [ "wheel" "docker" "plugdev" "vboxusers" "adbusers" "input" "student" ];
-in {
+  extraGroups = [
+    "wheel"
+    "docker"
+    "plugdev"
+    "vboxusers"
+    "adbusers"
+    "input"
+    "student"
+  ];
+in
+{
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
@@ -194,7 +196,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2016;
-      allowedHosts = [ "graham" "ruby" "yasmin" ];
+      allowedHosts = [
+        "graham"
+        "ruby"
+        "yasmin"
+      ];
       openssh.authorizedKeys.keys = theoKeys;
     };
 
@@ -205,7 +211,12 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
-      allowedHosts = [ "graham" "ruby" "yasmin" "tegan" ];
+      allowedHosts = [
+        "graham"
+        "ruby"
+        "yasmin"
+        "tegan"
+      ];
       openssh.authorizedKeys.keys = simonkKeys;
     };
 
@@ -216,7 +227,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2019;
-      allowedHosts = [ "rose" "clara" "amy" ];
+      allowedHosts = [
+        "rose"
+        "clara"
+        "amy"
+      ];
       openssh.authorizedKeys.keys = shuKeys;
     };
 
@@ -250,7 +265,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2031;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = martinLKeys;
     };
     # Thang Tran, MSc Thesis with Manos (Quantum Computing Scheduling)
@@ -261,7 +279,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2038;
-      allowedHosts = [ "graham" "ryan" "rose" ];
+      allowedHosts = [
+        "graham"
+        "ryan"
+        "rose"
+      ];
       openssh.authorizedKeys.keys = thangKeys;
     };
 
@@ -273,7 +295,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2035;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = brunoKeys;
     };
 
@@ -284,7 +309,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2039;
-      allowedHosts = [ "jackson" "ryan" ];
+      allowedHosts = [
+        "jackson"
+        "ryan"
+      ];
       openssh.authorizedKeys.keys = alexanderKeys;
     };
 
@@ -295,7 +323,12 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2042;
-      allowedHosts = [ "hinoki" "sakura" "momiji" "graham" ];
+      allowedHosts = [
+        "hinoki"
+        "sakura"
+        "momiji"
+        "graham"
+      ];
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
@@ -306,8 +339,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2043;
-      allowedHosts =
-        [ "adelaide" "irene" ]; # TODO add the new AMD server when it arrives
+      allowedHosts = [
+        "adelaide"
+        "irene"
+      ]; # TODO add the new AMD server when it arrives
       openssh.authorizedKeys.keys = paulzKeys;
     };
 
@@ -336,7 +371,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2046;
-      allowedHosts = [ "graham" "irene" ];
+      allowedHosts = [
+        "graham"
+        "irene"
+      ];
       openssh.authorizedKeys.keys = christianKeys;
     };
 
@@ -347,7 +385,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2045;
-      allowedHosts = [ "adelaide" "irene" ];
+      allowedHosts = [
+        "adelaide"
+        "irene"
+      ];
       openssh.authorizedKeys.keys = milenKeys;
     };
 
@@ -374,7 +415,12 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2048;
-      allowedHosts = [ "vislor" "graham" "river" "ian" ];
+      allowedHosts = [
+        "vislor"
+        "graham"
+        "river"
+        "ian"
+      ];
       openssh.authorizedKeys.keys = lucaKeys;
     };
 
@@ -386,7 +432,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2049;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = anubhavKeys;
     };
 
@@ -397,7 +446,10 @@ in {
       extraGroups = extraGroups ++ [ "elasticsearch" ];
       shell = "/run/current-system/sw/bin/bash";
       uid = 2050;
-      allowedHosts = [ "graham" "irene" ];
+      allowedHosts = [
+        "graham"
+        "irene"
+      ];
       openssh.authorizedKeys.keys = lanKeys;
     };
 
@@ -408,7 +460,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2051;
-      allowedHosts = [ "ryan" "vislor" ];
+      allowedHosts = [
+        "ryan"
+        "vislor"
+      ];
       openssh.authorizedKeys.keys = michaelKeys;
     };
 
@@ -419,7 +474,12 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/fish";
       uid = 2052;
-      allowedHosts = [ "graham" "ryan" "jackson" "christina" ];
+      allowedHosts = [
+        "graham"
+        "ryan"
+        "jackson"
+        "christina"
+      ];
       openssh.authorizedKeys.keys = dominikKeys;
     };
 
@@ -430,7 +490,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2053;
-      allowedHosts = [ "graham" "yasmin" ];
+      allowedHosts = [
+        "graham"
+        "yasmin"
+      ];
       openssh.authorizedKeys.keys = raphaelKeys;
     };
 
@@ -463,7 +526,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2056;
-      allowedHosts = [ "vislor" "jackson" "ian" ];
+      allowedHosts = [
+        "vislor"
+        "jackson"
+        "ian"
+      ];
       openssh.authorizedKeys.keys = janheKeys;
     };
 
@@ -474,7 +541,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2057;
-      allowedHosts = [ "vislor" "jackson" "ian" ];
+      allowedHosts = [
+        "vislor"
+        "jackson"
+        "ian"
+      ];
       openssh.authorizedKeys.keys = janhaKeys;
     };
 
@@ -485,7 +556,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2058;
-      allowedHosts = [ "vislor" "jackson" "ian" ];
+      allowedHosts = [
+        "vislor"
+        "jackson"
+        "ian"
+      ];
       openssh.authorizedKeys.keys = sherifKeys;
     };
 
@@ -496,7 +571,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2059;
-      allowedHosts = [ "vislor" "jackson" "ian" ];
+      allowedHosts = [
+        "vislor"
+        "jackson"
+        "ian"
+      ];
       openssh.authorizedKeys.keys = hristinaKeys;
     };
 
@@ -507,7 +586,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2060;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = benediktKeys;
     };
 
@@ -518,7 +600,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2061;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = robertBKeys;
     };
 
@@ -529,7 +614,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2062;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = neelKeys;
     };
 
@@ -540,7 +628,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2063;
-      allowedHosts = [ "amy" "clara" ];
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
       openssh.authorizedKeys.keys = konradHKeys;
     };
 
@@ -551,7 +642,11 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2064;
-      allowedHosts = [ "vislor" "jackson" "ian" ];
+      allowedHosts = [
+        "vislor"
+        "jackson"
+        "ian"
+      ];
       openssh.authorizedKeys.keys = kilianKeys;
     };
 
@@ -562,7 +657,10 @@ in {
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2065;
-      allowedHosts = [ "irene" "adelaide" ];
+      allowedHosts = [
+        "irene"
+        "adelaide"
+      ];
       openssh.authorizedKeys.keys = martinLiKeys;
     };
   };

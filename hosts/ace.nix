@@ -1,4 +1,5 @@
-{ lib, ...}: {
+{ lib, ... }:
+{
   imports = [
     ../modules/hardware/morello.nix
     ../modules/nfs/client.nix

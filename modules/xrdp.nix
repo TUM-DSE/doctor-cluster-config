@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   networking.firewall.allowedTCPPorts = [ 3389 ];
   services.xrdp.enable = true;
   # FIXME: this is actually ignored with the latest xrdp
@@ -16,7 +17,7 @@
       ${pkgs.runtimeShell}
       . /etc/profile
       ${pkgs.xfce.xfce4-session}/bin/xfce4-session
-     '';
+    '';
     mode = "755";
   };
 }

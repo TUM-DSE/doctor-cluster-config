@@ -1,14 +1,11 @@
-{ config
-, lib
-, ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.networking.doctowho.bonding;
 
   concatAttrs = attrList: lib.fold (x: y: x // y) { } attrList;
 
-  slaveLinks = concatAttrs (lib.imap0
-    (num: mac: {
+  slaveLinks = concatAttrs (
+    lib.imap0 (num: mac: {
       "05-slave${toString num}".extraConfig = ''
         [Match]
         MACAddress = ${mac}
@@ -17,11 +14,11 @@ let
         [Link]
         Name = slave${toString num}
       '';
-    })
-    cfg.macs);
+    }) cfg.macs
+  );
 
-  slaveNetworks = concatAttrs (lib.imap0
-    (num: _mac: {
+  slaveNetworks = concatAttrs (
+    lib.imap0 (num: _mac: {
       "05-slave${toString num}".extraConfig = ''
         [Match]
         Name = slave${toString num}
@@ -29,8 +26,8 @@ let
         [Network]
         Bond = bond1
       '';
-    })
-    cfg.macs);
+    }) cfg.macs
+  );
 
   carrier = lib.imap0 (num: _mac: "slave${toString num}") cfg.macs;
 in
@@ -66,28 +63,26 @@ in
       };
     };
 
-    systemd.network.networks =
-      slaveNetworks
-      // {
-        "05-bond1".extraConfig = ''
-          [Match]
-          Name = bond1
+    systemd.network.networks = slaveNetworks // {
+      "05-bond1".extraConfig = ''
+        [Match]
+        Name = bond1
 
-          [Network]
-          DNSSEC = no
-          DHCP = yes
-          LLMNR = true
-          EmitLLDP = true
-          MulticastDNS = yes
-          LinkLocalAddressing = yes
-          LLDP = true
-          IPv6AcceptRA = yes
-          IPForward = yes
-          BindCarrier = ${toString carrier}
+        [Network]
+        DNSSEC = no
+        DHCP = yes
+        LLMNR = true
+        EmitLLDP = true
+        MulticastDNS = yes
+        LinkLocalAddressing = yes
+        LLDP = true
+        IPv6AcceptRA = yes
+        IPForward = yes
+        BindCarrier = ${toString carrier}
 
-          [DHCP]
-          RouteMetric = 512
-        '';
-      };
+        [DHCP]
+        RouteMetric = 512
+      '';
+    };
   };
 }

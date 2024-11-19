@@ -1,4 +1,5 @@
-{ config, lib, ... }: {
+{ config, lib, ... }:
+{
   sops.secrets = lib.mkIf (config.users.withSops) {
     promtail-password.owner = "promtail";
     promtail-password.sopsFile = ./secrets.yml;
@@ -58,9 +59,7 @@
                 template = "{{if .coredump_exe}}{{.coredump_exe}} core dumped (user: {{.coredump_uid}}/{{.coredump_gid}}, command: {{.coredump_cmdline}}){{else}}{{.msg}}{{end}}";
               };
             }
-            {
-              labels.coredump_unit = "coredump_unit";
-            }
+            { labels.coredump_unit = "coredump_unit"; }
             {
               # Normalize session IDs (session-1234.scope -> session.scope) to limit number of label values
               replace = {
@@ -69,18 +68,14 @@
                 replace = "session.scope";
               };
             }
-            {
-              labels.unit = "unit";
-            }
+            { labels.unit = "unit"; }
             {
               # Write the proper message instead of JSON
               output.source = "msg";
             }
             # silence nscd:
             # Oct 24 18:20:19 nardole nscd[1812]: 1812 ignored inotify event for `/etc/netgroup` (file exists)
-            {
-              drop.expression = "ignored inotify event for";
-            }
+            { drop.expression = "ignored inotify event for"; }
             # silence kernel on yasmin:
             # [1707104.162310] ACPI CPPC: PCC check channel failed for ss: 11. ret=-110
             { drop.expression = "PCC check channel failed for ss"; }

@@ -1,11 +1,17 @@
-{ pkgs, lib, config, ... }: let 
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
   VMs = {
     # spare IPs for VMs: 
     #  - il01_16, qemu3.dos.cit.tum.de, 96:83:AA:A4:06:34
     #  - il01_14, qemu3b.dos.cit.tum.de, 96:83:AA:A5:06:34
     graham = [
-      rec { 
-        name = "qemu1"; 
+      rec {
+        name = "qemu1";
         mac = "96:83:AA:A0:06:34"; # il01_16, qemu1.dos.cit.tum.de
         macB = "96:83:AA:A2:06:34"; # il01_14, qemu1b.dos.cit.tum.de
         autostart = false;
@@ -26,8 +32,8 @@
             -nographic
         '';
       }
-      rec { 
-        name = "qemu2"; 
+      rec {
+        name = "qemu2";
         mac = "96:83:AA:A1:06:34"; # il01_16, qemu2.dos.cit.tum.de
         macB = "96:83:AA:A3:06:34"; # il01_14, qemu2b.dos.cit.tum.de
         autostart = false;
@@ -52,8 +58,10 @@
   };
 
   # return VMs.${config.networking.hostName} if it exists, otherwise return []
-  attrOr = attrset: attr: or': if lib.hasAttr attr attrset then attrset.${attr} else or';
-  currentHostsVMs = attrOr VMs config.networking.hostName [];
+  attrOr =
+    attrset: attr: or':
+    if lib.hasAttr attr attrset then attrset.${attr} else or';
+  currentHostsVMs = attrOr VMs config.networking.hostName [ ];
   services = lib.forEach currentHostsVMs (vm: {
     "doctor-vm-${vm.name}" = {
       wantedBy = lib.optionals vm.autostart [ "multi-user.target" ];
@@ -72,20 +80,24 @@
       };
     };
   });
-in {
-  environment.systemPackages = with pkgs; [
-    cloud-utils # for cloud-localds
-    qemu-utils # for qemu-img
-  ] ++ lib.forEach currentHostsVMs (vm: vm.execStart);
+in
+{
+  environment.systemPackages =
+    with pkgs;
+    [
+      cloud-utils # for cloud-localds
+      qemu-utils # for qemu-img
+    ]
+    ++ lib.forEach currentHostsVMs (vm: vm.execStart);
 
-  assertions = [{
-    assertion = !(
-      !config.networking.doctor-bridge.enable && 
-      (lib.any (vm: vm.uses-doctor-bridge) currentHostsVMs)
-    );
-    message = "config.networking.doctor-bridge must be enabled for ${config.networking.hostName} because there is a VM using it";
-  }];
+  assertions = [
+    {
+      assertion =
+        !(!config.networking.doctor-bridge.enable && (lib.any (vm: vm.uses-doctor-bridge) currentHostsVMs));
+      message = "config.networking.doctor-bridge must be enabled for ${config.networking.hostName} because there is a VM using it";
+    }
+  ];
 
   # add all services from the services list to the systemd.services attrset
-  systemd.services = lib.foldr (services: service: services // service) {} services;
+  systemd.services = lib.foldr (services: service: services // service) { } services;
 }

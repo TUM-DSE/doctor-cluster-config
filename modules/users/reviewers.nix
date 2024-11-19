@@ -13,7 +13,7 @@ in
       home = "/home/cgoPixel8";
       shell = "/run/current-system/sw/bin/bash";
       uid = 4005;
-      allowedHosts = ["graham"];
+      allowedHosts = [ "graham" ];
       openssh.authorizedKeys.keys = cgoPixel8Keys;
     };
   };

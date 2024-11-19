@@ -10,9 +10,11 @@
 # Note:
 # Since functions cannot be exposed to other nixos modules via config options, modules have to import the "apply" function from a seperate file.
 
-{config, lib, ...}: let
+{ config, lib, ... }:
+let
   publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJtsBHQzyMp517/Mkf69oYmW+qh/Q3HcLRrjv7bWgrcz lawful_access@all";
-in {
+in
+{
 
   options = {
     services.openssh.lawful-access.enable = lib.mkOption {
@@ -35,23 +37,26 @@ in {
 
     users.users = lib.mkOption {
       # what kind of black magic it this? But is merges keys from other modules with this default one.
-      type = lib.types.attrsOf (lib.types.submodule {
-        config.openssh.authorizedKeys.keys = [ config.services.openssh.lawful-access.publicKey ];
-      });
+      type = lib.types.attrsOf (
+        lib.types.submodule {
+          config.openssh.authorizedKeys.keys = [ config.services.openssh.lawful-access.publicKey ];
+        }
+      );
     };
 
   };
 
   config = lib.mkIf config.services.openssh.lawful-access.enable {
-    
-  
+
     # defined in hosts/christina.yml
-    sops.secrets.lawful-access-key = lib.mkIf (config.networking.hostName == config.services.openssh.lawful-access.controlHost) {
-        mode = "0600";
-        owner = "root";
-        group = "root";
-        path = "/root/.ssh/lawful_access";
-    };
+    sops.secrets.lawful-access-key =
+      lib.mkIf (config.networking.hostName == config.services.openssh.lawful-access.controlHost)
+        {
+          mode = "0600";
+          owner = "root";
+          group = "root";
+          path = "/root/.ssh/lawful_access";
+        };
   };
 
 }

@@ -20,9 +20,11 @@
 
   boot.hugepages1GB.number = 0;
   # boot.hugepages2MB.number = 0;
-  boot.hugepages2MB.number = let 
-    gb = 1500;
-  in gb * 1024 / 2;
+  boot.hugepages2MB.number =
+    let
+      gb = 1500;
+    in
+    gb * 1024 / 2;
   # blacklist kernel module that conflicts with the Intel FPGA OpenCL driver
   boot.blacklistedKernelModules = [ "altera_cvp" ];
 
@@ -49,7 +51,7 @@
     after = [ "local-fs.target" ];
     wantedBy = [ "multi-user.target" ];
     script = "chown -R okelmann:users /scratch/okelmann/vmuxIO/VMs";
-};
+  };
 
   # manually added to load xilinx from
   fileSystems."/share" = {
@@ -61,9 +63,9 @@
       "timeo=14"
     ];
   };
-  users.xrdpUsers = [ 
+  users.xrdpUsers = [
     "xilinx"
-    "atsushi" 
+    "atsushi"
     "felix"
     "teofil"
     "chenjiyang"

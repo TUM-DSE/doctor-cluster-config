@@ -72,13 +72,19 @@
     fileSystems."/export/home" = {
       device = "nfs-home/home";
       fsType = "zfs";
-      options = [ "nofail" "zfsutil" ];
+      options = [
+        "nofail"
+        "zfsutil"
+      ];
     };
 
     fileSystems."/export/share" = {
       device = "nfs-data/share";
       fsType = "zfs";
-      options = [ "nofail" "zfsutil" ];
+      options = [
+        "nofail"
+        "zfsutil"
+      ];
     };
 
     systemd.services.syncoid-setup = {

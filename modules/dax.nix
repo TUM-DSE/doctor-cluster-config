@@ -1,8 +1,10 @@
-{ config
-, lib
-, pkgs
-, ...
-}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   options = {
     doctorwho.pmem.devices = lib.mkOption {
       description = "List of pmem devices to mount";
@@ -29,7 +31,8 @@
     systemd.tmpfiles.rules =
       let
         loginUsers = lib.filterAttrs (_n: v: v.isNormalUser) config.users.users;
-        forDevice = device:
+        forDevice =
+          device:
           (lib.mapAttrsToList (n: _v: "d /mnt/${device}/${n} 0755 ${n} users -") loginUsers)
           ++ (builtins.map (n: "R /mnt/${device}/${n} - - - - -") config.users.deletedUsers);
       in
@@ -40,16 +43,17 @@
       let
         devices = lib.genAttrs config.doctorwho.pmem.devices (name: name);
       in
-      lib.mapAttrs'
-        (
-          dev: _:
-            lib.nameValuePair "/mnt/${dev}" {
-              device = "/dev/${dev}";
-              fsType = "ext4";
-              autoFormat = true;
-              options = [ "nofail" "dax" ];
-            }
-        )
-        devices;
+      lib.mapAttrs' (
+        dev: _:
+        lib.nameValuePair "/mnt/${dev}" {
+          device = "/dev/${dev}";
+          fsType = "ext4";
+          autoFormat = true;
+          options = [
+            "nofail"
+            "dax"
+          ];
+        }
+      ) devices;
   };
 }

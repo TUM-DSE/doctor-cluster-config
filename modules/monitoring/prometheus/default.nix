@@ -1,6 +1,4 @@
-{ config
-, ...
-}:
+{ config, ... }:
 {
   sops.secrets.alertmanager = { };
 
@@ -47,13 +45,7 @@
         ];
       }
     ];
-    alertmanagers = [
-      {
-        static_configs = [
-          { targets = [ "localhost:9093" ]; }
-        ];
-      }
-    ];
+    alertmanagers = [ { static_configs = [ { targets = [ "localhost:9093" ]; } ]; } ];
   };
   services.prometheus.alertmanager = {
     enable = true;
@@ -75,7 +67,7 @@
           }
         ];
       };
-      receivers = [{ name = "default"; }];
+      receivers = [ { name = "default"; } ];
     };
   };
 }

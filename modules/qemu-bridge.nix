@@ -1,4 +1,10 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
 
   # Allow qemu to access bridges
   environment.etc."qemu/bridge.conf" = {

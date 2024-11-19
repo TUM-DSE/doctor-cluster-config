@@ -4,29 +4,31 @@
 { lib, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "usbhid"
+    "usb_storage"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "zroot/root/nixos";
-      fsType = "zfs";
-    };
+  fileSystems."/" = {
+    device = "zroot/root/nixos";
+    fsType = "zfs";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/810C-14F6";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/810C-14F6";
+    fsType = "vfat";
+  };
 
-  fileSystems."/tmp" =
-    { device = "zroot/root/tmp";
-      fsType = "zfs";
-    };
+  fileSystems."/tmp" = {
+    device = "zroot/root/tmp";
+    fsType = "zfs";
+  };
 
   swapDevices = [ ];
 

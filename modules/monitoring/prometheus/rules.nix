@@ -1,23 +1,28 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   srvos.prometheus = {
     ruleGroups.srvosAlerts.alertRules =
-      (lib.genAttrs [
-        "borgbackup-job-nfs-home.service"
-        "borgbackup-job-nfs-share.service"
-      ]
+      (lib.genAttrs
+        [
+          "borgbackup-job-nfs-home.service"
+          "borgbackup-job-nfs-share.service"
+        ]
         (name: {
           expr = ''absent_over_time(task_last_run{name="${name}"}[1d])'';
           annotations.description = "status of ${name} is unknown: no data for a day";
-        })) //
-      (lib.genAttrs [
-        "syncoid-home"
-        "syncoid-share"
-      ]
+        })
+      )
+      // (lib.genAttrs
+        [
+          "syncoid-home"
+          "syncoid-share"
+        ]
         (name: {
           expr = ''absent_over_time(task_last_run{name="${name}"}[10m])'';
           annotations.description = "status of ${name} is unknown: no data for 10 minutes";
-        })) //
-      {
+        })
+      )
+      // {
         PublicRunnerActionOnline = {
           expr = ''count(http_busy{name=~"runner.*", status="online"}) < 2'';
           annotations.description = "{{$labels.instance}}: There are no public github action runner registerd with github (see https://github.com/organizations/ls1-sys-prog-course/settings/actions)";

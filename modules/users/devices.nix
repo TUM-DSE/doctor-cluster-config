@@ -13,7 +13,7 @@ in
       isNormalUser = true;
       shell = "/run/current-system/sw/bin/bash";
       uid = 5000;
-      allowedHosts = ["graham"];
+      allowedHosts = [ "graham" ];
       openssh.authorizedKeys.keys = pixel8Keys;
     };
   };
@@ -21,6 +21,5 @@ in
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
-  users.deletedUsers = [
-  ];
+  users.deletedUsers = [ ];
 }

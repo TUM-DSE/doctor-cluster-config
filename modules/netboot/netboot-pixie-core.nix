@@ -1,7 +1,4 @@
-{ pkgs
-, netboot
-,
-}:
+{ pkgs, netboot }:
 # 1. Connect this device directly to the server. On nixos you can use
 # github.com/Mic92/dotfiles/nixos/modules/dnsmasq.nix and follow its
 # instructions.

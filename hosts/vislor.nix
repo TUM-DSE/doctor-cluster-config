@@ -1,4 +1,3 @@
-
 {
   imports = [
     ../modules/hardware/poweredge7625.nix
