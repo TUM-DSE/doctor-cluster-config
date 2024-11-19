@@ -96,6 +96,7 @@
                 aarch64-linux = [
                   "donna"
                   "yasmin"
+                  "ace"
                 ];
                 machinesPerSystem = {
                   inherit aarch64-linux;
