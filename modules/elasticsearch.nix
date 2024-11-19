@@ -1,9 +1,11 @@
-{config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
-with lib; {
+with lib;
+{
   config = {
     services.elasticsearch = {
       enable = true;
@@ -13,8 +15,8 @@ with lib; {
       '';
     };
     environment.systemPackages = with pkgs; [
-        elasticsearch
-        jdk
+      elasticsearch
+      jdk
     ];
   };
 }

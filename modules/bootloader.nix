@@ -1,7 +1,5 @@
-{ lib
-, pkgs
-, ...
-}: {
+{ lib, pkgs, ... }:
+{
   # Enable this when you install NixOS on a new machine!
   boot.loader.efi.canTouchEfiVariables = false;
 
@@ -11,5 +9,7 @@
   };
 
   # something is buggy with systemd-boot on our EFI machine yasmin
-  boot.loader.systemd-boot.enable = lib.mkDefault (!pkgs.stdenv.isAarch64 && !pkgs.stdenv.hostPlatform.isRiscV);
+  boot.loader.systemd-boot.enable = lib.mkDefault (
+    !pkgs.stdenv.isAarch64 && !pkgs.stdenv.hostPlatform.isRiscV
+  );
 }

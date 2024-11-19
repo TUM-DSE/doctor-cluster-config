@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   fileSystems."/mnt/backup" = {
     device = "nasil1.in.tum.de:/srv/il1/share_il1/Project_DSE_NixOS_Backup";
     fsType = "nfs4";
@@ -18,18 +19,14 @@
       user = "il1dsenixosbk";
       group = "il1dsenixosbk";
       path = "/mnt/backup/nfs-home";
-      authorizedKeys = [
-        (builtins.readFile ./nfs-home-borgbackup.pub)
-      ];
+      authorizedKeys = [ (builtins.readFile ./nfs-home-borgbackup.pub) ];
     };
 
     nfs-share = {
       user = "il1dsenixosbk";
       group = "il1dsenixosbk";
       path = "/mnt/backup/nfs-share";
-      authorizedKeys = [
-        (builtins.readFile ./nfs-share-borgbackup.pub)
-      ];
+      authorizedKeys = [ (builtins.readFile ./nfs-share-borgbackup.pub) ];
     };
   };
 

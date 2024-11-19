@@ -1,7 +1,4 @@
-{ lib
-, config
-, ...
-}:
+{ lib, config, ... }:
 let
   cert = ./certs + "/${config.networking.hostName}-cert.pub";
 in
@@ -22,11 +19,9 @@ in
     settings.X11Forwarding = false;
   };
 
-  warnings =
-    lib.optional (! builtins.pathExists cert &&
-        config.networking.hostName != "nixos" # we dont care about nixos netboot/installer images
-    )
-      "No ssh certificate found at ${toString cert}";
+  warnings = lib.optional (
+    !builtins.pathExists cert && config.networking.hostName != "nixos" # we dont care about nixos netboot/installer images
+  ) "No ssh certificate found at ${toString cert}";
 
   programs.ssh.knownHosts.ssh-ca = {
     certAuthority = true;

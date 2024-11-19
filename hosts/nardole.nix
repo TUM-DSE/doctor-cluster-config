@@ -17,7 +17,10 @@
   '';
 
   programs.ssh.knownHosts = {
-    bill.hostNames = [ "nfs" "nfs-backup" ];
+    bill.hostNames = [
+      "nfs"
+      "nfs-backup"
+    ];
     bill.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGurhMZktK5kPgxj8GVPEhjH5aa/ZXrG/FjXnWOIjNrS";
   };
 

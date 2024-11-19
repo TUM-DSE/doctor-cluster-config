@@ -1,9 +1,10 @@
-{ rustPlatform
-, stdenv
-, rust
-, fetchCrate
-, pkg-config
-, alsa-lib
+{
+  rustPlatform,
+  stdenv,
+  rust,
+  fetchCrate,
+  pkg-config,
+  alsa-lib,
 }:
 
 rustPlatform.buildRustPackage rec {

@@ -1,7 +1,5 @@
-{ config
-, lib
-, ...
-}: {
+{ config, lib, ... }:
+{
   imports = [ ./. ];
   # When initializing a cluster from scratch also copy /etc/rancher/k3s/k3s.yaml
   # from the master to the https://github.com/ls1-courses/internal-docs/tree/main/runner

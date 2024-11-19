@@ -1,4 +1,10 @@
-{ modulesPath, lib, pkgs, config, ... }:
+{
+  modulesPath,
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 # To deploy as a systemd-nspawn container on a new host:
 # $ nix run github:nix-community/nixos-generators -- --format lxc --flake '.#doctor'
@@ -29,29 +35,31 @@
   simd.arch = "broadwell";
 
   # This also adds `/etc/os-release` to the lxc tarball
-  system.build.tarball = lib.mkForce (pkgs.callPackage (pkgs.path + "/nixos/lib/make-system-tarball.nix") {
-    extraArgs = "--owner=0";
+  system.build.tarball = lib.mkForce (
+    pkgs.callPackage (pkgs.path + "/nixos/lib/make-system-tarball.nix") {
+      extraArgs = "--owner=0";
 
-    storeContents = [
-      {
-        object = config.system.build.toplevel;
-        symlink = "none";
-      }
-    ];
+      storeContents = [
+        {
+          object = config.system.build.toplevel;
+          symlink = "none";
+        }
+      ];
 
-    contents = [
-      {
-        source = config.system.build.toplevel + "/init";
-        target = "/sbin/init";
-      }
-      {
-        source = config.system.build.toplevel + "/etc/os-release";
-        target = "/etc/os-release";
-      }
-    ];
+      contents = [
+        {
+          source = config.system.build.toplevel + "/init";
+          target = "/sbin/init";
+        }
+        {
+          source = config.system.build.toplevel + "/etc/os-release";
+          target = "/etc/os-release";
+        }
+      ];
 
-    extraCommands = "mkdir -p proc sys dev";
-  });
+      extraCommands = "mkdir -p proc sys dev";
+    }
+  );
 
   services.openssh.extraConfig = ''
     ListenAddress [42:0:3c46:96e2:72f4:be89:d6eb:ab14]

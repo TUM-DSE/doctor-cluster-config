@@ -6,38 +6,39 @@ let
   lib = pkgs.lib;
   nixos = import (pkgs.path + "/nixos") {
     configuration =
-      { lib
-      , modulesPath
-      , ...
-      }:
-        with lib; {
-          networking.hostName = "netboot";
-          services.openssh.hostKeys = [
-            {
-              bits = 4096;
-              path = ../../secrets/netboot_host_rsa_key;
-              type = "rsa";
-            }
-            {
-              path = ../../secrets/netboot_host_ed25519_key;
-              type = "ed25519";
-            }
-          ];
+      { lib, modulesPath, ... }:
+      with lib;
+      {
+        networking.hostName = "netboot";
+        services.openssh.hostKeys = [
+          {
+            bits = 4096;
+            path = ../../secrets/netboot_host_rsa_key;
+            type = "rsa";
+          }
+          {
+            path = ../../secrets/netboot_host_ed25519_key;
+            type = "ed25519";
+          }
+        ];
 
-          imports = [
-            flake.inputs.nur.nixosModules.nur
-            "${modulesPath}/profiles/minimal.nix"
-            "${modulesPath}/profiles/all-hardware.nix"
-            "${modulesPath}/installer/netboot/netboot.nix"
-            ../sshd
-            ../users
-            ({ ... }: {
+        imports = [
+          flake.inputs.nur.nixosModules.nur
+          "${modulesPath}/profiles/minimal.nix"
+          "${modulesPath}/profiles/all-hardware.nix"
+          "${modulesPath}/installer/netboot/netboot.nix"
+          ../sshd
+          ../users
+          (
+            { ... }:
+            {
               users.withSops = false;
-            })
-            ../irc-announce.nix
-            ../watchdog.nix
-          ];
-        };
+            }
+          )
+          ../irc-announce.nix
+          ../watchdog.nix
+        ];
+      };
   };
   rpiAddress = "129.215.165.108";
 

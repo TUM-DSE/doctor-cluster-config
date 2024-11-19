@@ -1,4 +1,5 @@
- { lib, config, ... }: { 
+{ lib, config, ... }:
+{
   options = {
     disko.rootDisk = lib.mkOption {
       type = lib.types.str;

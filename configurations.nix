@@ -325,5 +325,14 @@ in
                  ./hosts/ian.nix
                 ];
         };
+    ace = nixosSystem {
+      pkgs = pkgs-aarch64-linux;
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/ace.nix
+        ];
+    };
+
   };
 }

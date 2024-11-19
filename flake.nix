@@ -1,9 +1,7 @@
 {
   description = "NixOS configuration with flakes";
 
-  nixConfig.extra-substituters = [
-    "https://tum-dse.cachix.org"
-  ];
+  nixConfig.extra-substituters = [ "https://tum-dse.cachix.org" ];
   nixConfig.extra-trusted-public-keys = [
     "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
   ];
@@ -65,13 +63,20 @@
   };
 
   outputs =
-    { flake-parts
-    , ...
-    } @ inputs:
-    (flake-parts.lib.evalFlakeModule
-      { inherit inputs; }
-      ({ lib, self, inputs, ... }: {
-        systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
+    { flake-parts, ... }@inputs:
+    (flake-parts.lib.evalFlakeModule { inherit inputs; } (
+      {
+        lib,
+        self,
+        inputs,
+        ...
+      }:
+      {
+        systems = [
+          "x86_64-linux"
+          "aarch64-linux"
+          "aarch64-darwin"
+        ];
         imports = [
           ./configurations.nix
           ./modules/monitoring/flake-module.nix
@@ -79,27 +84,36 @@
           ./devShells/flake-module.nix
           ./templates
         ];
-        perSystem = { self', system, ... }: {
-          _module.args.pkgs = import inputs.nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
+        perSystem =
+          { self', system, ... }:
+          {
+            _module.args.pkgs = import inputs.nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            checks =
+              let
+                aarch64-linux = [
+                  "donna"
+                  "yasmin"
+                  "ace"
+                ];
+                machinesPerSystem = {
+                  inherit aarch64-linux;
+                  x86_64-linux = lib.filter (name: !builtins.elem name aarch64-linux) (
+                    builtins.attrNames self.nixosConfigurations
+                  );
+                };
+                nixosMachines = lib.mapAttrs' (n: lib.nameValuePair "nixos-${n}") (
+                  lib.genAttrs (machinesPerSystem.${system} or [ ]) (
+                    name: self.nixosConfigurations.${name}.config.system.build.toplevel
+                  )
+                );
+                devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
+              in
+              nixosMachines // devShells;
           };
-          checks =
-            let
-              aarch64-linux = [ "donna" "yasmin" ];
-              machinesPerSystem = {
-                inherit aarch64-linux;
-                x86_64-linux =  lib.filter (name: !builtins.elem name aarch64-linux) (builtins.attrNames self.nixosConfigurations);
-              };
-              nixosMachines = lib.mapAttrs' (n: lib.nameValuePair "nixos-${n}") (
-                lib.genAttrs (machinesPerSystem.${system} or [ ]) (
-                  name: self.nixosConfigurations.${name}.config.system.build.toplevel
-                )
-              );
-              devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
-            in
-            nixosMachines // devShells;
-        };
-      })).config.flake;
+      }
+    )).config.flake;
 
 }

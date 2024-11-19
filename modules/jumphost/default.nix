@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   # defined in astrid's secrets
   sops.secrets.deploy-ssh-key = { };
@@ -10,7 +15,9 @@
 
   systemd.services.update-authorized-keys =
     let
-      sshKeysUnfiltered = builtins.concatLists (lib.mapAttrsToList (_: user: user.openssh.authorizedKeys.keys) config.users.users);
+      sshKeysUnfiltered = builtins.concatLists (
+        lib.mapAttrsToList (_: user: user.openssh.authorizedKeys.keys) config.users.users
+      );
       sshKeys = (import ../lawful-access/util.nix { inherit config lib; }).filter sshKeysUnfiltered;
       authorizedKeys = pkgs.writeText "authorized-keys" (builtins.concatStringsSep "\n" sshKeys);
     in

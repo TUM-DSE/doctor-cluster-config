@@ -1,9 +1,10 @@
-{ lib
-, lv2
-, pkg-config
-, rustPlatform
-, fetchFromGitHub
-, fetchpatch
+{
+  lib,
+  lv2,
+  pkg-config,
+  rustPlatform,
+  fetchFromGitHub,
+  fetchpatch,
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -28,11 +29,7 @@ rustPlatform.buildRustPackage rec {
     make install
   '';
 
-  nativeBuildInputs = [
-    pkg-config
-  ];
+  nativeBuildInputs = [ pkg-config ];
 
-  buildInputs = [
-    lv2
-  ];
+  buildInputs = [ lv2 ];
 }

@@ -1,30 +1,38 @@
-{ pkgs, lib, ... }: {
-  imports =
-    [
-      ../modules/hardware/macmini-m1.nix
-      ../modules/apple-silicon-support
-      ../modules/nfs/client.nix
-    ];
+{ pkgs, lib, ... }:
+{
+  imports = [
+    ../modules/hardware/macmini-m1.nix
+    ../modules/apple-silicon-support
+    ../modules/nfs/client.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "donna";
 
   hardware.asahi.enable = true;
-  hardware.asahi.peripheralFirmwareDirectory = builtins.toString (pkgs.runCommand "all_firmware" {} ''
-    mkdir -p $out
-    cp ${(pkgs.fetchurl {
-      url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/firmware/all_firmware.tar.gz";
-      sha256 = "sha256-rLxgPlxtByDD6D+sBp5ShTIcvtle7hf2C+pmsBfZIW4=";
-    })} $out/all_firmware.tar.gz
-    cp ${(pkgs.fetchurl {
-      url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/firmware/kernelcache.release.mac13g.gz";
-      sha256 = "sha256-J0jbUp3p47GGHXwTvBiSMD5HzJXIjDR05VeJpnYIzSg=";
-    })} $out/kernelcache.release.mac13g.gz
-    gzip -d $out/kernelcache.release.mac13g.gz
-  '');
+  hardware.asahi.peripheralFirmwareDirectory = builtins.toString (
+    pkgs.runCommand "all_firmware" { } ''
+      mkdir -p $out
+      cp ${
+        (pkgs.fetchurl {
+          url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/firmware/all_firmware.tar.gz";
+          sha256 = "sha256-rLxgPlxtByDD6D+sBp5ShTIcvtle7hf2C+pmsBfZIW4=";
+        })
+      } $out/all_firmware.tar.gz
+      cp ${
+        (pkgs.fetchurl {
+          url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/firmware/kernelcache.release.mac13g.gz";
+          sha256 = "sha256-J0jbUp3p47GGHXwTvBiSMD5HzJXIjDR05VeJpnYIzSg=";
+        })
+      } $out/kernelcache.release.mac13g.gz
+      gzip -d $out/kernelcache.release.mac13g.gz
+    ''
+  );
   # get rid of internal overlay
-  hardware.asahi.pkgs = lib.mkForce (import ../modules/apple-silicon-support/packages/overlay.nix pkgs pkgs);
+  hardware.asahi.pkgs = lib.mkForce (
+    import ../modules/apple-silicon-support/packages/overlay.nix pkgs pkgs
+  );
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

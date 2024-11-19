@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   #OS management course users
   users.users = {
     # TeamA

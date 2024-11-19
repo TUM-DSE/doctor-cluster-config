@@ -1,11 +1,11 @@
-{ lib
-, config
-, ...
-}:
+{ lib, config, ... }:
 
 let
-  gcc-system-features = arch: lib.optionals (arch != null) ([ "gccarch-${arch}" ]
-    ++ map (x: "gccarch-${x}") lib.systems.architectures.inferiors.${arch});
+  gcc-system-features =
+    arch:
+    lib.optionals (arch != null) (
+      [ "gccarch-${arch}" ] ++ map (x: "gccarch-${x}") lib.systems.architectures.inferiors.${arch}
+    );
 in
 {
   options = {
@@ -22,7 +22,9 @@ in
   imports = [ ./builder.nix ];
 
   config = {
-    warnings = lib.optionals (config.simd.arch == null) [ "Please set simd.arch for ${config.networking.hostName}" ];
+    warnings = lib.optionals (config.simd.arch == null) [
+      "Please set simd.arch for ${config.networking.hostName}"
+    ];
 
     nix = {
       gc.automatic = true;
@@ -35,12 +37,19 @@ in
         keep-outputs = true;
         keep-derivations = true;
         # in zfs we trust
-        fsync-metadata = lib.boolToString (!config.boot.isContainer or config.fileSystems."/".fsType != "zfs");
+        fsync-metadata = lib.boolToString (
+          !config.boot.isContainer or config.fileSystems."/".fsType != "zfs"
+        );
         substituters = [
           "https://nix-community.cachix.org"
           "https://tum-dse.cachix.org"
         ];
-        system-features = [ "benchmark" "big-parallel" "kvm" "nixos-test" ] ++ gcc-system-features config.simd.arch;
+        system-features = [
+          "benchmark"
+          "big-parallel"
+          "kvm"
+          "nixos-test"
+        ] ++ gcc-system-features config.simd.arch;
         trusted-public-keys = [
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="

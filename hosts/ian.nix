@@ -1,4 +1,3 @@
-
 {
   imports = [
     ../modules/hardware/poweredge-r760.nix

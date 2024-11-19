@@ -3,55 +3,68 @@
 # to /etc/nixos/configuration.nix instead.
 { pkgs, modulesPath, ... }:
 {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "mmc_spi" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "nvme"
+    "mmc_spi"
+  ];
 
   hardware.deviceTree.name = "sifive/hifive-unmatched-a00.dtb";
 
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  boot.kernelPatches = [{
-    name = "unmatched-config";
-    patch = null;
-    extraConfig = ''
-      SOC_SIFIVE y
-      PCIE_FU740 y
-      PWM_SIFIVE y
-      EDAC_SIFIVE y
-      SIFIVE_L2 y
+  boot.kernelPatches = [
+    {
+      name = "unmatched-config";
+      patch = null;
+      extraConfig = ''
+        SOC_SIFIVE y
+        PCIE_FU740 y
+        PWM_SIFIVE y
+        EDAC_SIFIVE y
+        SIFIVE_L2 y
 
-      RISCV_ERRATA_ALTERNATIVE y
-      ERRATA_SIFIVE y
-      ERRATA_SIFIVE_CIP_453 y
-      ERRATA_SIFIVE_CIP_1200 y
+        RISCV_ERRATA_ALTERNATIVE y
+        ERRATA_SIFIVE y
+        ERRATA_SIFIVE_CIP_453 y
+        ERRATA_SIFIVE_CIP_1200 y
       '';
-  } {
-    name = "unmatched-cpufreq";
-    patch = null;
-    extraConfig = ''
-      CPU_IDLE y
-      CPU_FREQ y
-      CPU_FREQ_DEFAULT_GOV_USERSPACE y
-      CPU_FREQ_GOV_PERFORMANCE y
-      CPU_FREQ_GOV_USERSPACE y
-      CPU_FREQ_GOV_ONDEMAND y
+    }
+    {
+      name = "unmatched-cpufreq";
+      patch = null;
+      extraConfig = ''
+        CPU_IDLE y
+        CPU_FREQ y
+        CPU_FREQ_DEFAULT_GOV_USERSPACE y
+        CPU_FREQ_GOV_PERFORMANCE y
+        CPU_FREQ_GOV_USERSPACE y
+        CPU_FREQ_GOV_ONDEMAND y
       '';
-  }];
+    }
+  ];
 
-  boot.kernelParams = [ "console=tty0" "console=ttySIF0,115200" "earlycon=sbi" ];
-  boot.initrd.kernelModules = [ "nvme" "mmc_block" "mmc_spi" "spi_sifive" "spi_nor" ];
+  boot.kernelParams = [
+    "console=tty0"
+    "console=ttySIF0,115200"
+    "earlycon=sbi"
+  ];
+  boot.initrd.kernelModules = [
+    "nvme"
+    "mmc_block"
+    "mmc_spi"
+    "spi_sifive"
+    "spi_nor"
+  ];
 
   systemd.services."serial-getty@hvc0" = {
     enable = false;
   };
 
-  environment.systemPackages = with pkgs; [
-    mtdutils
-  ];
+  environment.systemPackages = with pkgs; [ mtdutils ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/18a3df38-55d0-419c-9e5a-0a0a6c56893e";

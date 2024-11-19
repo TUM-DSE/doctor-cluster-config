@@ -1,7 +1,5 @@
 {
-  imports = [
-    ./.
-  ];
+  imports = [ ./. ];
 
   virtualisation = {
     vfio = {

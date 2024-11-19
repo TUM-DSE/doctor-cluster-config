@@ -1,4 +1,11 @@
-{ config, lib, pkgs, kata-runtime, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  kata-runtime,
+  ...
+}:
+{
   qemu = lib.mkForce ''
     [hypervisor.qemu]
     path = "${kata-runtime}/bin/qemu-system-x86_64"

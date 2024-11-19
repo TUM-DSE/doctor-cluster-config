@@ -1,8 +1,6 @@
 # R     /dir/to/remove/recursively               -    -    -     -           -
-{ lib
-, config
-, ...
-}: {
+{ lib, config, ... }:
+{
   # Create scratch space per user.
   # The scratch space is not backed up!
   # /scratch is stored on the local rootfs (usually zfs) instead of NFS

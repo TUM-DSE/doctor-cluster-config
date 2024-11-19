@@ -1,5 +1,5 @@
-{ ...
-}: {
+{ ... }:
+{
   imports = [ ./. ];
   sops.secrets.k3s-server-token.sopsFile = ./secrets.yml;
   networking.firewall.allowedTCPPorts = [ 6443 ];

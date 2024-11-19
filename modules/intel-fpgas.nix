@@ -1,6 +1,8 @@
-{self, pkgs, ...}: let 
+{ self, pkgs, ... }:
+let
   packages = self.packages.${pkgs.system};
-in {
+in
+{
   config = {
     services.udev.packages = [
       packages.intel-cable-drivers
