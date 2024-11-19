@@ -4,6 +4,7 @@
     ../modules/hardware/morello.nix
     ../modules/nfs/client.nix
     ../modules/disko-zfs.nix
+    ../modules/arm_morello.nix
   ];
 
   networking.hostName = "ace";
