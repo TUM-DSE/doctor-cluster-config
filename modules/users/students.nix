@@ -153,6 +153,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJYSM6kY7dtMlq7wzKCYe2jcOFQfA+EB0xPX/l8LdvH mrtn@nixos"
   ];
 
+  timoKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC97GhiX/jbrPLlXdkgEGfl2TKDHaBwF7cYA0TW/VHdrXY2OvZPvh4Dolksxoafrtkc0LGtxZB3N2m56audkWUBpDDxksOjj1aiZdBLxvCme2mE+NoA3AaSBEPAqNurs0WRVdXxer5dCXF4m4E0jSlXA7w6ubnMClyGtBMJqEf0BlqM1q5nv2LaMFVWl0/oPDXmKmGTA+u2dzrIoUX8NqwSYdyrHoH1zpI9Mq74+NHLYpzXRsKsqGf09SdJNnoNxc/JPtjsEA4jn4dOiwQkaM2URHYrJAfRv+4BmPRD03eMbwVC55Um86rfmBxjUx7kW2TB5ytXUnc00kRSPLuf5IdnFcn+Ho+RgmNV/LDkjNEFEEf96wNAUuiD3EZxar82+3MuxILSnKGvElcGMiuhXp9y1Yw9e6Wx96DGNcXNmhg4IkPnd6CF0u8BfxA1MplyY+r0NP92Tiuc6B00raOmZXPsxdb3U+8o4AjiGL9suZM9nVeOK4XjunIHyBm6NsP+Mpc="
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -663,6 +667,17 @@ in
         "adelaide"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
+    };
+
+    # Yude (Timo) Jiang, BSc thesis with Martin (CHERI/Morello architectural analysis)
+    timo = {
+      isNormalUser = true;
+      home = "/home/timo";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2066;
+      allowedHosts = [ "ace" ];
+      openssh.authorizedKeys.keys = timoKeys;
     };
   };
 
