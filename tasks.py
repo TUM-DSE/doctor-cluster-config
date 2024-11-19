@@ -365,6 +365,25 @@ def deploy_tegan(c: Any) -> None:
     )
     deploy_nixos([host])
 
+@task
+def deploy_ace(c: Any) -> None:
+    """
+    Deploy to morello server
+    """
+    host = DeployHost(
+        "yasmin.dos.cit.tum.de",
+        user="root",
+        forward_agent=True,
+        command_prefix="ace",
+        meta=dict(
+            target_user="root",
+            target_host="ace.dos.cit.tum.de",
+            flake_attr="ace",
+            flake_path="/var/lib/nixos-config",
+        ),
+    )
+    deploy_nixos([host])
+
 
 @task
 def deploy_doctor(c: Any) -> None:
