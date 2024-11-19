@@ -17,4 +17,5 @@
 
   system.stateVersion = "22.11";
   simd.arch = "znver4";
+  services.envfs.enable = true;
 }
