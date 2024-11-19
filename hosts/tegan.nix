@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ../modules/disko-ext4.nix
@@ -12,4 +13,6 @@
   networking.hostName = "tegan";
 
   system.stateVersion = "24.05";
+
+  environment.systemPackages = [ pkgs.tio ];
 }
