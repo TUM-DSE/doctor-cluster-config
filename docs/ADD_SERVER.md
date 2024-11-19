@@ -17,7 +17,7 @@ inv add-server $host
 Prepare a config for a new host:
 
 > **If** there is no hardware configuration yet for your mainboard/server type: 
-> Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --dir .` and copy it into `modules/hardware/$hardwarename.nix`. 
+> Generate a `hardware-configuration.nix` on the server with `nixos-generate-config --no-filesystems --dir .` and copy it into `modules/hardware/$hardwarename.nix`. 
 > You can use `inv reformat-install-nixos wrongHostname $eth0` with a wrong hostname to netboot the server.
 > It will print an ssh command you can use to ssh into it.
 
