@@ -449,6 +449,7 @@ in
       allowedHosts = [
         "graham"
         "irene"
+        "ace"
       ];
       openssh.authorizedKeys.keys = lanKeys;
     };
