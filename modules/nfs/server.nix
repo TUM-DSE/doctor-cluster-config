@@ -52,10 +52,36 @@
     #
     # 2a09:80c0:38::101/128 is our riscv board in the hardware lab
     # 2a09:80c0:38::222/128 is our m1 mac mini
-    services.nfs.server.exports = ''
-      /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25) ${config.networking.doctorwho.hosts.ruby.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=27) 2a09:80c0:38::222/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=29) ${config.networking.doctorwho.hosts.tegan.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=31)
-      /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) ${config.networking.doctorwho.hosts.ruby.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=28) 2a09:80c0:38::222/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=30) ${config.networking.doctorwho.hosts.tegan.ipv6}/128(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=32)
-    '';
+
+    services.nfs.server.exports =
+      let
+        allowedHosts = [
+          # TODO: also move this in, requires reboot
+          # "2a09:80c0:102::/64"
+          config.networking.doctorwho.hosts.ruby.ipv6
+          config.networking.doctorwho.hosts.tegan.ipv6
+          config.networking.doctorwho.hosts.ace.ipv6
+          #config.networking.doctorwho.hosts.sarah.ipv6
+          config.networking.doctorwho.hosts.donna.ipv6
+        ];
+        # offset 27 has historically reasons
+        exportHome = lib.imap0 (
+          index: ip:
+          "${ip}(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=${
+            builtins.toString (index * 2 + 27)
+          })"
+        ) allowedHosts;
+        exportShare = lib.imap0 (
+          index: ip:
+          "${ip}(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=${
+            builtins.toString (index * 2 + 1 + 27)
+          })"
+        ) allowedHosts;
+      in
+      ''
+        /export/home 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=25) ${lib.concatStringsSep " " exportHome}
+        /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) ${lib.concatStringsSep " " exportShare}
+      '';
 
     systemd.tmpfiles.rules =
       let
