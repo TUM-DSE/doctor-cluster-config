@@ -253,6 +253,7 @@ HOSTS = [
     "irene.dos.cit.tum.de",
     "xavier.dos.cit.tum.de",
     "ian.dos.cit.tum.de",
+    "ace.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
