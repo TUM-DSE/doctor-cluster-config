@@ -19,6 +19,7 @@ let
     "-DLLVM_TARGETS_TO_BUILD=ARM;AArch64"
     "-DCMAKE_INSTALL_PREFIX=$out"
     "-DLLVM_INSTALL_TOOLCHAIN_ONLY=ON"
+    "-DLLVM_TOOL_LLVM_READOBJ_BUILD=ON"
   ];
 
   cmakeFlagsStr = lib.concatMapStringsSep " " (x: "\"${x}\"") cmakeFlags;
