@@ -4,6 +4,13 @@
     ../modules/bonding.nix
 
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
+    ../modules/disko-zfs.nix
+    ../modules/nfs/client.nix
+    ../modules/dpdk.nix
+
+    ../modules/xilinx.nix
+    ../modules/xrdp.nix
+    ../modules/xrdp-passwords.nix
   ];
 
   networking.hostName = "bill";
@@ -25,4 +32,20 @@
   '';
 
   system.stateVersion = "20.09";
+
+  disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_S64GNA0T724988";
+
+  boot.hugepages1GB.number = 8;
+
+  # manually added to load xilinx from
+  fileSystems."/share" = {
+    device = "nfs:/export/share";
+    fsType = "nfs4";
+    options = [
+      "nofail"
+      "ro"
+      "timeo=14"
+    ];
+  };
+
 }
