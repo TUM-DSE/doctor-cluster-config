@@ -70,10 +70,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWU9Mh+p7C7PsAcJKYDw8MpnRaYteO5a2eBhZIjISBs milen.vitanov96@gmail.com"
   ];
 
-  christianKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIhea3KWKAWEuDkbyGhHmyV6XS8Ye3IN7oW5gchmNJg1 crist@lptlegion"
-  ];
-
   simondKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXKJqoVipqnB7/rjCjx6EYYsi6ZRuG2ve4bZHvAVKMa simon@Laptop-Simon"
   ];
@@ -366,20 +362,6 @@ in
         "river"
       ]; # TODO figure out what he needs access to
       openssh.authorizedKeys.keys = hendrikKeys;
-    };
-
-    # Christian Sandu, M.Sc. thesis with Ilya (CHERI db project)
-    christian = {
-      isNormalUser = true;
-      home = "/home/christian";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2046;
-      allowedHosts = [
-        "graham"
-        "irene"
-      ];
-      openssh.authorizedKeys.keys = christianKeys;
     };
 
     # Milen Vitanov, M.Sc. thesis with Ilya (UkBPF project)
@@ -724,5 +706,6 @@ in
     "eaypek"
     "fritz"
     "robert"
+    "christian"
   ];
 }
