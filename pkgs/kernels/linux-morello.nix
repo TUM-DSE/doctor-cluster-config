@@ -51,6 +51,9 @@ let
             patch = null;
             extraConfig = ''
               ARM64_MORELLO y
+              TCG_TPM m
+              TCG_TIS m
+              TCG_CRB m
             '';
           }
         ] ++ extraPatches;
