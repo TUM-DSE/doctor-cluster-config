@@ -54,6 +54,7 @@ let
               TCG_TPM m
               TCG_TIS m
               TCG_CRB m
+              SATA_NV m
             '';
           }
         ] ++ extraPatches;
