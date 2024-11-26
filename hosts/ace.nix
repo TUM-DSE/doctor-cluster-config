@@ -11,7 +11,7 @@
 
   simd.arch = "armv8-a";
 
-  disko.rootDisk = "/dev/disk/by-id/ata-HFS480G3H2X069N_ESC3N5648I3603P2Y";
+  disko.devices.disk.main.device = "/dev/disk/by-id/ata-HFS480G3H2X069N_ESC3N5648I3603P2Y";
 
   system.stateVersion = "24.05";
 
