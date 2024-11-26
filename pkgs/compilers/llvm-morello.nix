@@ -1,16 +1,4 @@
-{
-  stdenv,
-  lib,
-  fetchFromGitLab,
-  cmake,
-  ninja,
-  python3,
-  pkg-config,
-  zlib,
-  clang,
-  gcc,
-  ...
-}:
+{ lib, fetchFromGitLab, cmake, ninja, python3, pkg-config, zlib, clang, gcc, stdenv, ... }:
 let
   cmakeFlags = [
     "-GNinja"
@@ -21,8 +9,6 @@ let
     "-DLLVM_INSTALL_TOOLCHAIN_ONLY=ON"
     "-DLLVM_TOOL_LLVM_READOBJ_BUILD=ON"
   ];
-
-  cmakeFlagsStr = lib.concatMapStringsSep " " (x: "\"${x}\"") cmakeFlags;
 in
 stdenv.mkDerivation rec {
   pname = "llvm-morello";
@@ -37,24 +23,14 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [
-    cmake
-    ninja
-    python3
-    pkg-config
-    zlib
-    clang
-    gcc
-  ];
-
-  buildInputs = [ ];
+  nativeBuildInputs = [ cmake ninja python3 pkg-config zlib clang gcc ];
 
   NIX_LDFLAGS = "-rpath ${zlib}/lib";
 
   configurePhase = ''
     mkdir -p build
     cd build
-    cmake ${cmakeFlagsStr} ../llvm
+    cmake ${lib.concatMapStringsSep " " (x: "\"${x}\"") cmakeFlags} ../llvm
   '';
 
   buildPhase = ''
@@ -64,6 +40,6 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "LLVM from Morello's morello/dev branch";
     homepage = "https://git.morello-project.org/morello/llvm-project";
-    maintainers = with maintainers; [ ];
   };
 }
+

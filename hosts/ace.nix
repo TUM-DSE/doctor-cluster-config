@@ -3,7 +3,7 @@
   imports = [
     ../modules/hardware/morello.nix
     ../modules/nfs/client.nix
-    ../modules/disko-zfs.nix
+    ../modules/disko-ext4.nix
     ../modules/arm_morello.nix
   ];
 
