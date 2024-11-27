@@ -599,12 +599,23 @@ def generate_ssh_cert(c: Any, host: str) -> None:
         signed_key_dst = f"{ROOT}/modules/sshd/certs/{host}-cert.pub"
         c.run(f"mv {signed_key_src} {signed_key_dst}")
 
+def check_experimental_nix_features(c: Any):
+    cmd = "nix eval --json --expr '\"ok\"' foo"
+    try:
+        c.run(cmd)
+    except Exception as e:
+        print(f"Command failed: {cmd}")
+        print(f"If you are on an old nix versoin: are experimental features enabled?")
+        print(f"Try: nix eval --extra-experimental-features 'nix-command flakes' --json --expr '\"ok\"'")
+        print(f"See also https://wiki.nixos.org/wiki/Nix_command#Enabling_the_nix_command")
 
 @task
 def update_sops_files(c: Any) -> None:
     """
     Update all sops yaml and json files according to .sops.yaml rules
     """
+    check_experimental_nix_features(c)
+
     with open(f"{ROOT}/.sops.yaml", "w") as f:
         print("# AUTOMATICALLY GENERATED WITH:", file=f)
         print("# $ inv update-sops-files", file=f)
