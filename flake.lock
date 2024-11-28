@@ -264,15 +264,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1729472124,
-        "narHash": "sha256-l1uqRV0XPDrCVXb8irXSnIHOdzmss78KiUqB6WkhDMw=",
+        "lastModified": 1732787566,
+        "narHash": "sha256-HIuRuu3xf8Ol2MQNC9/70OV9oSi6iqFFlI+lNm5ACHQ=",
         "owner": "numtide",
         "repo": "srvos",
-        "rev": "5607765a4ac3a567cfe6bf4efb3c352193604f57",
+        "rev": "fd67266eee7670606000cacb55bcb32e80992a13",
         "type": "github"
       },
       "original": {
         "owner": "numtide",
+        "ref": "zfs-eval-fix",
         "repo": "srvos",
         "type": "github"
       }
