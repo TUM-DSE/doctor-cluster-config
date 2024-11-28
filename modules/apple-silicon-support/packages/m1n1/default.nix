@@ -24,7 +24,10 @@ let
   );
 
   rustenv = rust-bin.selectLatestNightlyWith (
-    toolchain: toolchain.minimal.override { targets = [ "aarch64-unknown-none-softfloat" ]; }
+    toolchain:
+    toolchain.minimal.override {
+      targets = [ "aarch64-unknown-none-softfloat" ];
+    }
   );
 in
 stdenv.mkDerivation rec {
