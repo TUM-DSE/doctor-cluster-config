@@ -3,7 +3,7 @@
   zlib,
   fetchzip,
   autoPatchelfHook,
-  llvmPackages_14
+  llvmPackages_14,
 }:
 stdenv.mkDerivation {
   name = "morello-clang";
@@ -26,7 +26,12 @@ stdenv.mkDerivation {
     $out/bin/clang --version
   '';
   passthru.isClang = true;
-  passthru.hardeningUnsupportedFlagsByTargetPlatform = llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform;
+  passthru.hardeningUnsupportedFlagsByTargetPlatform =
+    targetPlatform:
+    (llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform)
+    ++ [
+      "strictoverflow"
+    ];
 
   meta = {
     description = "Morello build toolchain";
