@@ -73,12 +73,14 @@ in
       }) config.users.users
     );
 
-    sops.secrets = lib.mapAttrs' (
-      name: user:
-      lib.nameValuePair "${name}-password-hash" {
-        neededForUsers = true;
-        sopsFile = ./xrdp-passwords.yml;
-      }
-    ) (lib.filterAttrs (_: v: v.xrdpAccess) config.users.users);
+    sops.secrets = lib.mkIf config.services.xrdp.enable (
+      lib.mapAttrs' (
+        name: user:
+        lib.nameValuePair "${name}-password-hash" {
+          neededForUsers = true;
+          sopsFile = ./xrdp-passwords.yml;
+        }
+      ) (lib.filterAttrs (_: v: v.xrdpAccess) config.users.users)
+    );
   };
 }
