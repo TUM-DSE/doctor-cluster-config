@@ -6,6 +6,9 @@
   bintools-morello,
   runCommand,
   fetchurl,
+  buildPackages,
+  lib,
+  openssl,
   ...
 }@args:
 let
@@ -51,7 +54,8 @@ let
           "HOSTLD=${bintools-morello}/bin/ld.lld"
           "HOSTCC=${clang-morello}/bin/clang"
           "HOSTCXX=${clang-morello}/bin/clang++"
-          "V=1"
+          # openssl is not added to rpath of ./certs/extract-cert
+          "HOSTLDFLAGS=-Wl,--rpath=${lib.getLib openssl}/lib"
         ];
 
         firmwareSource = fetchurl {
