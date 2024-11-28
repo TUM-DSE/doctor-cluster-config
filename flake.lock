@@ -14,16 +14,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1732785430,
+        "lastModified": 1732788902,
         "narHash": "sha256-8czKpLb/y2h7fr6VxIShtUSoLdo5MTMzZSztwIPPhts=",
         "owner": "nix-community",
         "repo": "buildbot-nix",
-        "rev": "b67fc90ae8bb36ac764df70f4f820452ed77f1cf",
+        "rev": "2695e33353d7bffb2073dc6a1789502dd9e7b9fd",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "hercules",
         "repo": "buildbot-nix",
         "type": "github"
       }
@@ -264,16 +263,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1732787566,
-        "narHash": "sha256-HIuRuu3xf8Ol2MQNC9/70OV9oSi6iqFFlI+lNm5ACHQ=",
+        "lastModified": 1732791727,
+        "narHash": "sha256-E3ki8879tKii42pjibenRpJSDVW0mJFfSWHbci5Ck0s=",
         "owner": "numtide",
         "repo": "srvos",
-        "rev": "fd67266eee7670606000cacb55bcb32e80992a13",
+        "rev": "ce61f7168038e4077ed6e27a4aa9f2c3c3500099",
         "type": "github"
       },
       "original": {
         "owner": "numtide",
-        "ref": "zfs-eval-fix",
         "repo": "srvos",
         "type": "github"
       }
