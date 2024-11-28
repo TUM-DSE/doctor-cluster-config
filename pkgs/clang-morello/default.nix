@@ -3,6 +3,7 @@
   zlib,
   fetchzip,
   autoPatchelfHook,
+  llvmPackages_14
 }:
 stdenv.mkDerivation {
   name = "morello-clang";
@@ -25,9 +26,7 @@ stdenv.mkDerivation {
     $out/bin/clang --version
   '';
   passthru.isClang = true;
-  passthru.hardeningUnsupportedFlags = [
-    "zerocallusedregs"
-  ];
+  passthru.hardeningUnsupportedFlagsByTargetPlatform = llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform;
 
   meta = {
     description = "Morello build toolchain";
