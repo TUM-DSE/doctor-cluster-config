@@ -4,7 +4,6 @@
     ../modules/nfs/client.nix
     ../modules/dax.nix
     ../modules/nvidia.nix
-    ../modules/stable-diffusion.nix
     ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
   ];
