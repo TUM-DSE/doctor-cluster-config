@@ -4,6 +4,9 @@
   clang-morello,
   clang-morello-unwrapped,
   bintools-morello,
+  runCommand,
+  fetchurl,
+  unzip,
   ...
 }@args:
 let
@@ -46,12 +49,24 @@ let
           "OBJCOPY=${clang-morello-unwrapped}/bin/llvm-objcopy"
           "OBJDUMP=${clang-morello-unwrapped}/bin/llvm-objdump"
           "READELF=${clang-morello-unwrapped}/bin/llvm-readelf"
-
           "HOSTLD=${bintools-morello}/bin/ld.lld"
           "HOSTCC=${clang-morello}/bin/clang"
           "HOSTCXX=${clang-morello}/bin/clang++"
           "V=1"
         ];
+
+        firmwareSource = fetchurl {
+          url = "https://raw.githubusercontent.com/TI-OpenLink/firmwares/refs/heads/master/rtl_nic/rtl8168g-2.fw";
+          hash = "sha256-+HjscZ944LEEvHM2KphiYRhYvsiT9YobOyiaClfXHSU=";
+        };
+
+        extraFetch = runCommand "prepare-firmware" { buildInputs = [ unzip ]; } ''
+          mkdir -p firmware
+          cp ${firmwareSource} firmware/
+          chmod -R a+rX firmware
+          mkdir -p $out
+          cp -r firmware $out/
+        '';
 
         kernelPatches = [
           {
@@ -59,6 +74,8 @@ let
             #ARM64_MORELLO y
             patch = null;
             extraConfig = ''
+              EXTRA_FIRMWARE "${extraFetch}/firmware/rtl8168g-2.fw"
+              EXTRA_FIRMWARE_DIR "${extraFetch}/firmware"
               SYSVIPC y
               POSIX_MQUEUE y
               AUDIT y
@@ -215,6 +232,7 @@ let
               DEBUG_FS y
               CORESIGHT y
               MEMTEST y
+              DRM_NOUVEAU n
             '';
           }
         ] ++ extraPatches;
@@ -235,9 +253,7 @@ let
     sha256 = "sha256-HETq4ntekppJ6T6rGDzj9U0TlDdoy1oajIWfeZScoY0=";
     version = "6.7";
     modDirVersion = "6.7.0";
-    extraPatches =
-      [
-      ];
+    extraPatches = [ ];
   };
 in
 # change here to change kernel
