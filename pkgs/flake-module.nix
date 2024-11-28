@@ -1,5 +1,5 @@
-{ inputs, self, ... }: {
-
+{ inputs, self, ... }:
+{
   # packages for x86 only
   flake.packages.x86_64-linux =
     let
@@ -26,12 +26,22 @@
       intel-opencl-drivers = pkgs.callPackage ./intel-fpgas/opencl-drivers { };
     };
 
+  flake.packages.aarch64-linux =
+    let
+      pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
+    in
+    {
+      morello-clang = pkgs.callPackage ./morello-clang { };
+    };
+
   # packages for many targets:
   perSystem =
-    { pkgs
-    , self'
-    , ...
-    }: {
+    {
+      pkgs,
+      self',
+      ...
+    }:
+    {
       packages = {
         netboot = pkgs.callPackage ../modules/netboot/netboot.nix {
           # this nixosSystem is built for x86_64 machines regardless of the host machine
