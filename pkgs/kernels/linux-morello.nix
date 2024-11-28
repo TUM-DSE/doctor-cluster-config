@@ -99,7 +99,6 @@ let
               ARM64_VA_BITS_48 y
               SCHED_MC y
               NUMA y
-              COMPAT y
               RANDOMIZE_BASE y
               WQ_POWER_EFFICIENT_DEFAULT y
               ENERGY_MODEL y
