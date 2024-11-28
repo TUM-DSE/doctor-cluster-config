@@ -66,11 +66,11 @@ let
 
   computeNodeModules =
     commonModules ++ [
+      srvos.nixosModules.mixins-latest-zfs-kernel
       ./modules/users
       ./modules/tracing.nix
       ./modules/scratch-space.nix
       ./modules/docker.nix
-      ./modules/zfs.nix
       ./modules/bootloader.nix
       ./modules/nix-ld.nix
       ./modules/envfs.nix
