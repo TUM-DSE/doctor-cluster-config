@@ -41,7 +41,7 @@ in
     # boot.kernelPackages =
     #  lib.mkIf (config.hardware.xilinx.xrt-drivers.enable) pkgs.linuxPackages_5_10;
 
-    hardware.opengl.extraPackages = [ packages.xrt ];
+    hardware.graphics.extraPackages = [ packages.xrt ];
 
     # this is broken just now, we may need to update the firmware from here:
     # https://packages.xilinx.com/ui/native/debian-packages/pool/
