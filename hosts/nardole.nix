@@ -3,6 +3,8 @@
     ../modules/bonding.nix
     ../modules/ipmi-supermicro.nix
     ../modules/hardware/supermicro-X12SCZ-TLN4F.nix
+    # TODO: nardole needs to be re-installed with disko, if this machine is revived.
+    ../modules/disko-zfs.nix
   ];
 
   networking.hostName = "nardole";

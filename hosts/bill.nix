@@ -10,7 +10,6 @@
 
     ../modules/xilinx.nix
     ../modules/xrdp.nix
-    ../modules/xrdp-passwords.nix
   ];
 
   networking.hostName = "bill";

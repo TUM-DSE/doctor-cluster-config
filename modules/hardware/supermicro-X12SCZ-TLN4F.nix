@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -19,21 +18,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/NIXOS_BOOT";
-    fsType = "vfat";
-    options = [ "nofail" ];
-  };
-
-  fileSystems."/" = {
-    device = "zroot/root/nixos";
-    fsType = "zfs";
-  };
-
-  fileSystems."/tmp" = {
-    device = "zroot/root/tmp";
-    fsType = "zfs";
-  };
 
   swapDevices = [ ];
 

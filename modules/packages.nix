@@ -30,8 +30,16 @@
       man-pages
       netcat
       mtr
-      (neovim.override { vimAlias = true; })
-
+      (
+        # needs luajit: https://github.com/LuaJIT/LuaJIT/pull/1267
+        if stdenv.hostPlatform.isRiscV then
+          vim
+        else
+          neovim.override {
+            vimAlias = true;
+            withRuby = false;
+          }
+      )
       pciutils
       ethtool
       usbutils

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ../modules/hardware/macmini-m1.nix
@@ -11,6 +11,15 @@
   networking.hostName = "donna";
 
   hardware.asahi.enable = true;
+
+  # overrides latest-zfs kernel with kernel also set in modules/apple-silicon-support/modules/kernel/default.nix
+  boot.kernelPackages = lib.mkForce (let
+    pkgs' = config.hardware.asahi.pkgs;
+  in
+    pkgs'.linux-asahi.override {
+      _kernelPatches = config.boot.kernelPatches;
+      withRust = config.hardware.asahi.withRust;
+    });
   hardware.asahi.peripheralFirmwareDirectory = builtins.toString (
     pkgs.runCommand "all_firmware" { } ''
       mkdir -p $out

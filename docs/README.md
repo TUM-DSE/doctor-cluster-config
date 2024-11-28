@@ -20,6 +20,25 @@ All servers in TUM have public ipv6/ipv4 addresses and dns record following the 
 
 i.e. astrid has the addresses `astrid.dos.cit.tum.de` and `astrid-mgmt.dos.cit.tum.de`.
 
+# Accessing via xrdp
+
+On servers where we import `xrdp.nix`, we have graphical access via xrdp. This is mainly useful for xilinx development.
+User need to have `xrdpAccess` set to true in their account entry in [../modules/users](../modules/users).
+After than run the following commands:
+
+```
+$ inv generate-password --user <USER>
+```
+
+Send the password in `<USER>-password` to the student
+and store <USER>-password-hash in `./modules/users/xrdp-passwords.yml` by doing:
+
+```
+$ sops ./modules/users/xrdp-passwords.yml
+```
+
+You may have to restart xrdp-sesman.service for the changes to apply.
+
 # Management Interfaces
 
 Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI webinterfaces.

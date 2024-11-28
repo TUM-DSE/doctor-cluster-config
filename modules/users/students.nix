@@ -11,12 +11,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
-  robertKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAA3PSbVdQzIvsWTNWYhR298oaYDl9ySe/PBUZrlcjPB scha@in.tum.de"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQr4yKAEw1M3n5Dp1gAJ017jyz3aYaty6yAydn7aUAi klamm"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcrd9G2faqKD2cuc1N86R9MdShqUCCK6v8tb8pEPe91 barnabas"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEv5CtJ233Uy/n6X5mbEGzzMxdf/jsjYOIU9Rb6K32oY amalia"
-  ];
 
   theoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvGQ0aKNGTkaEjjkGkaQ+8vA83Tbl5fpjuGTPrmszZuxzmSx4/6kw7Py4faLRJfcFNPdPp9FfFxsqCLpYMWKYVmdojQHIGBTugTtaadCrQ4W0Su6WcTN3OLa6n9heo+SE4Z+Uk1dUys0jMaZoKH7x/x2Yd9Zwg9sd0O2oa65VFV831mVGnagSrk+pJBh1MprmDEgobsRVFDEC8bENe23S58Hpvp6c7kLJnNlb11ojVAJBPBmH1QLwKceW66iRQPAmHJdqx5xCIWO1qkOut/hzNuDQMghGabsfh9huWpInZBVSH29pEWWw4CiPgACVzFBTojqcmlRiTMiszX7MiPkIfLCilpQF/KtavhGihq4yRs+6UxKV/4ErYItZeDaI5kgU+19cug12newP8wks9hJNpXX3N0wXYM0M8ZPvXc61z7EfRfpBMh5XLj9RMnSfuGFfoGKkRcWgx9nx+69FwqNQYsbL+id8U0lHqas6ai6gEbecF8UJv/r2h0zDaoKhNv70= taugoust@fedora"
@@ -28,10 +22,6 @@ let
 
   shuKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDdNJJX/Y6xOkSKwrHubpZNti5Gk9VFycn9hLzP2x9fo/ZbqrSfNNSAmj2OMHjXKpXHkyVuD2V4Yw/N7ulIX070o05ljn3zbZO4z6upg1czjXys//LvGevCm6cItg5i4bk/XVz+1Q+iaQgPQbkQJ0cM9h1kIwq1p9S+mh37yj4JVmSb6w+hVD6kWOTrE9UL88HEPmBClr/syqQ9KJt9/KvnoeBV5GE58swYvCNCenUdSHYzhpE4WUKeJhqO38i1Oux6aXSJbjdQaR+YaHTXPHkHLOpkY6lHleRj2M9ooEwYzAjIoU9zGgjoj1fxOp9IGdlS/BhnFVaPh/z2Hu1KPpOmY+Cby9hIUf13KCUnp3eLGf5HB3IUBRTf6t12A65cPHeVISBOLO+6gcrOWKHnNAOq8RJaNBvNQ+N0AZejXYdojqvSod2+0ATT57bSlUiL3E+u5KN7gG7/dohY4OdxSMqt+Hvi3fsMYt2FKVUFWK4AqvgaXzDj4mjIZ44DAHdS408= gedatsu@fedora"
-  ];
-
-  kamilKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPCKEUYZMotuVIMsFnwgTeSfv3oqfazkmpfrahmL0xqt2TLRvNpiNs1OE5JS3loPPefQ5OmskItTovgm5uo2ZoR+6aJmaKnbYhIT3C9TOWO/WbPL+XpN+Go49MK2P92h0TgMQ+Ilff99BvNWIn/rbkmO6tWJByXpuQnCMYpCDO3rgeNBxYKYN1asEij18TgPSOxbgNq9Fy0zxNXwU+raozbx3/t6FQpMkKPcZ5uwlER8RidZOakZa9gioQKZmN6pGnEN4oQUhuQA8V5g+RrPaJcJhUGC5ZOQaOyr0sGH/s4la/rbTSMh5imcoC/74ZeRg44t34XSDP0XapS0ePWiY9WuQDn7elbNU4m188f3G41ZOnIBOkfle1mtfao8gO7zzJd1tbi056HkB9KGj9v96rN4LtG5CF6n8mQsyHIgeP91HWAkqdKwFC2LX3m7urzWvaA9JjejgFqOMMDlGSYrZ5MYfZaeRQPxukT4LlDyYnluOy08MpgQ7fvviY2PwvHfjdrVGDusBAiKSfbOB77qFr8WE1Xh0SQteJ9mADNqTeJG/aYw33a/HEaRs/gDlco4mRF9mw/RsPC/t5O7lb9GHIB0OfKPlGv2EbahHxbiWbsE7nFmzbG69GEL+9zVC3rbQ1fzjIkGHYlfLZ8ygrOVPGdtNeskDBx+kkjiHNwIptuw== kamilkozakowski@Kamils-MacBook-Air.local"
   ];
 
   nateKeys = [
@@ -237,17 +227,6 @@ in
         "amy"
       ];
       openssh.authorizedKeys.keys = shuKeys;
-    };
-
-    # Kamil Patryk Kozakowski, MSc student with Dimitra (FPGA-based RDMA stack)
-    kamilk = {
-      isNormalUser = true;
-      home = "/home/kamilk";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2026;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = kamilKeys;
     };
 
     #  Nathaniel Tornow, working on the Quantum project + tutor
@@ -582,6 +561,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = benediktKeys;
+      xrdpAccess = true;
     };
 
     # Robert Barinov, Sys Lab WS24
@@ -596,6 +576,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = robertBKeys;
+      xrdpAccess = true;
     };
 
     # Neel Mandal, Sys Lab WS24
@@ -610,6 +591,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = neelKeys;
+      xrdpAccess = true;
     };
 
     # Konrad Hennig, Sys Lab WS24
@@ -624,6 +606,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = konradHKeys;
+      xrdpAccess = true;
     };
 
     # Kilian Matheis, Sys Lab WS24
@@ -685,44 +668,45 @@ in
   # delete all data of the associated user
   users.deletedUsers = [
     "alexa"
-    "vincent"
-    "ml"
-    "philip"
-    "he"
-    "justusvonderbeek"
-    "rohanfernandez"
     "alexandermaslew"
-    "zixuanli"
-    "yiwenliu"
-    "hanwenliu"
-    "wonbangseo"
-    "vanda"
-    "mikilio"
-    "jasper"
-    "mflatus"
-    "emil"
-    "turkmen"
-    "raito"
-    "sarac"
-    "mwerndle"
-    "m00wl"
-    "jonas"
-    "kai"
-    "paul"
-    "yihe"
-    "anand"
-    "roberto"
-    "dmitrylugovoy"
-    "iulia"
-    "florian"
-    "eliza"
-    "moritz"
-    "konrad"
     "alp"
-    "nicola"
-    "eaypek"
-    "fritz"
-    "robert"
+    "anand"
     "christian"
+    "dmitrylugovoy"
+    "eaypek"
+    "eliza"
+    "emil"
+    "florian"
+    "fritz"
+    "hanwenliu"
+    "he"
+    "iulia"
+    "jasper"
+    "jonas"
+    "justusvonderbeek"
+    "kai"
+    "kamilk"
+    "konrad"
+    "m00wl"
+    "mflatus"
+    "mikilio"
+    "ml"
+    "moritz"
+    "mwerndle"
+    "nicola"
+    "paul"
+    "philip"
+    "raito"
+    "robert"
+    "roberto"
+    "rohanfernandez"
+    "sarac"
+    "turkmen"
+    "vanda"
+    "vincent"
+    "wonbangseo"
+    "yihe"
+    "yiwenliu"
+    "zixuanli"
   ];
 }

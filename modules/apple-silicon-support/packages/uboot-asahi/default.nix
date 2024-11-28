@@ -31,7 +31,9 @@
 }).overrideAttrs
   (o: {
     # nixos's downstream patches are not applicable
-    patches = [ ];
+    patches =
+      [
+      ];
 
     # DTC= flag somehow breaks DTC compilation so we remove it
     makeFlags = builtins.filter (s: (!(lib.strings.hasPrefix "DTC=" s))) o.makeFlags;

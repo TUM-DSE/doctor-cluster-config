@@ -6,8 +6,7 @@
 
         pkgs.nixos-rebuild
         pkgs.python3.pkgs.invoke
-        #Until nixos-anywhere is packaged
-        inputs'.nixos-anywhere.packages.nixos-anywhere-pxe
+        pkgs.nixos-anywhere
         pkgs.python3.pkgs.deploykit
         pkgs.mypy
         pkgs.pixiecore

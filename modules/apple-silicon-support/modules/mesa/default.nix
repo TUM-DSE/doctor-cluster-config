@@ -1,4 +1,5 @@
 {
+  options,
   config,
   pkgs,
   lib,
@@ -27,10 +28,19 @@
             EndSection
           '';
         }
-        (lib.mkIf config.hardware.asahi.useExperimentalGPUDriver {
+        (lib.mkIf config.hardware.asahi.useExperimentalGPUDriver (
           # install the drivers
-          hardware.opengl.package = config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
-
+          if builtins.hasAttr "graphics" options.hardware then
+            {
+              hardware.graphics.package = config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
+            }
+          else
+            {
+              # for 24.05
+              hardware.opengl.package = config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
+            }
+        ))
+        (lib.mkIf config.hardware.asahi.useExperimentalGPUDriver {
           # required for in-kernel GPU driver
           hardware.asahi.withRust = true;
         })

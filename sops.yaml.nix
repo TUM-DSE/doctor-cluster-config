@@ -53,6 +53,15 @@ let
     builtins.mapAttrs (name: value: (map (x: keys.machines.${x}) value)) {
       "modules/nfs/secrets.yml$" = [ "bill" "nardole" "mickey" ];
       "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
+
+      "modules/users/xrdp-passwords.yml$" = [
+        "amy"
+        "bill"
+        "clara"
+        "graham"
+        "rose"
+        "ryan"
+      ];
     };
 
 in

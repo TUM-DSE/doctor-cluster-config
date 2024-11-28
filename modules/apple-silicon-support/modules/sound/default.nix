@@ -7,17 +7,10 @@
 }:
 
 {
-  imports = [
-    # disable pulseaudio as the Asahi sound infrastructure can't use it.
-    # if we disable it only if setupAsahiSound is enabled, then infinite
-    # recursion results as pulseaudio enables config.sound by default.
-    { config.hardware.pulseaudio.enable = (!config.hardware.asahi.enable); }
-  ];
-
   options.hardware.asahi = {
     setupAsahiSound = lib.mkOption {
       type = lib.types.bool;
-      default = config.sound.enable && config.hardware.asahi.enable;
+      default = config.hardware.asahi.enable;
       description = ''
         Set up the Asahi DSP components so that the speakers and headphone jack
         work properly and safely.
@@ -31,7 +24,8 @@
 
       asahi-audio = pkgs.asahi-audio; # the asahi-audio we use
 
-      lsp-plugins = pkgs.lsp-plugins; # the lsp-plugins we use
+      # php override works around build failure: https://github.com/NixOS/nixpkgs/pull/330895
+      lsp-plugins = pkgs.lsp-plugins.override { php = pkgs.php82; }; # the lsp-plugins we use
 
       lsp-plugins-is-safe = (pkgs.lib.versionAtLeast lsp-plugins.version "1.2.14");
 
@@ -43,6 +37,8 @@
     lib.mkIf (cfg.setupAsahiSound && cfg.enable) (
       lib.mkMerge [
         {
+          # can't be used by Asahi sound infrastructure
+          hardware.pulseaudio.enable = false;
           # enable pipewire to run real-time and avoid audible glitches
           security.rtkit.enable = true;
           # set up pipewire with the supported capabilities (instead of pulseaudio)
