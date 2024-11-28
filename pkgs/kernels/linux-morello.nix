@@ -231,7 +231,6 @@ let
               DEBUG_FS y
               CORESIGHT y
               MEMTEST y
-              DRM_NOUVEAU n
             '';
           }
         ] ++ extraPatches;
