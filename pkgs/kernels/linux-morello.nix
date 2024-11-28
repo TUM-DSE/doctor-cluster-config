@@ -112,7 +112,6 @@ let
               ACPI_APEI_MEMORY_FAILURE y
               ACPI_APEI_EINJ y
               JUMP_LABEL y
-              CHERI_PURECAP_UABI y
               MODULES y
               MODULE_UNLOAD y
               BINFMT_MISC y
