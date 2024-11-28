@@ -54,6 +54,7 @@ in
     nix.settings.trusted-users = [
       "joerg"
       "okelmann"
+      "martin"
     ];
   };
 }
