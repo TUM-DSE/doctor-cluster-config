@@ -124,12 +124,7 @@ let
               IP_PNP y
               IP_PNP_DHCP y
               NETFILTER y
-              BRIDGE_NETFILTER y
               NF_CONNTRACK y
-              NETFILTER_XT_MATCH_ADDRTYPE y
-              NETFILTER_XT_MATCH_CONNTRACK y
-              NETFILTER_XT_MATCH_IPVS y
-              NETFILTER_XT_MATCH_MARK y
               IP_VS y
               IP_NF_IPTABLES y
               IP_NF_FILTER y
