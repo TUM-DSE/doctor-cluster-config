@@ -49,6 +49,8 @@ let
           "READELF=${clang-morello-unwrapped}/bin/llvm-readelf"
           "HOSTCC=${clang-morello}/bin/clang"
           "HOSTCXX=${clang-morello}/bin/clang++"
+          # our cc wrapper doesn't include intrinsic headers
+          "KCFLAGS=-I${clang-morello-unwrapped}/lib/clang/14.0.0/include"
           "V=1"
         ];
 
