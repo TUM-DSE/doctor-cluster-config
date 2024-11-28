@@ -6,7 +6,6 @@
   bintools-morello,
   runCommand,
   fetchurl,
-  unzip,
   ...
 }@args:
 let
@@ -60,7 +59,7 @@ let
           hash = "sha256-+HjscZ944LEEvHM2KphiYRhYvsiT9YobOyiaClfXHSU=";
         };
 
-        extraFetch = runCommand "prepare-firmware" { buildInputs = [ unzip ]; } ''
+        extraFetch = runCommand "prepare-firmware" { } ''
           mkdir -p firmware
           cp ${firmwareSource} firmware/
           chmod -R a+rX firmware
