@@ -23,4 +23,6 @@
     device = "ssd_extension/scratch";
     fsType = "zfs";
   };
+
+  boot.zfs.extraPools = [ "ssd_extension" ];
 }
