@@ -1,12 +1,13 @@
 {
   pkgs,
   lib,
-  stdenv,
+  self,
   ...
 }:
 let
-  linux = pkgs.callPackage ../pkgs/kernels/linux-morello.nix {};
-  linuxPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
+  linuxPackages = pkgs.recurseIntoAttrs (
+    pkgs.linuxPackagesFor self.packages.${pkgs.hostPlatform.system}.linux-morello
+  );
 in
 {
   boot.kernelPackages = lib.mkForce linuxPackages;
