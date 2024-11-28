@@ -41,20 +41,98 @@ let
         };
 
         extraMakeFlags = [
-          "LLVM=${llvmMorello}/bin/"
+          "LLVM=1"
           "LLVM_IAS=1"
+          "CC=${llvmMorello}/bin/clang"
+          "LD=${llvmMorello}/bin/ld.lld"
+          "HOSTLD=${llvmMorello}/bin/ld.lld"
+          "AR=${llvmMorello}/bin/llvm-ar"
+          "HOSTAR=${llvmMorello}/bin/llvm-ar"
+          "NM=${llvmMorello}/bin/llvm-nm"
+          "STRIP=${llvmMorello}/bin/llvm-strip"
+          "OBJCOPY=${llvmMorello}/bin/llvm-objcopy"
+          "OBJDUMP=${llvmMorello}/bin/llvm-objdump"
+          "READELF=${llvmMorello}/bin/llvm-readelf"
+          "HOSTCC=${llvmMorello}/bin/clang"
+          "HOSTCXX=${llvmMorello}/bin/clang++"
+          "V=1"
         ];
 
         kernelPatches = [
           {
             name = "enable morello";
+            #ARM64_MORELLO y
             patch = null;
             extraConfig = ''
+              CONFIG_ARM64_MORELLO y
               ARM64_MORELLO y
+              ANON_VMA_NAME y
+              ACPI y
+              ARM64_VA_BITS_48 y
+              ARM_MHU y
+              PLATFORM_MHU y
+              IP_PNP y
+              IP_PNP_DHCP y
+              ARM_SCMI_PROTOCOL y
+              ARM_SCMI_POWER_DOMAIN y
+              ARM_SCMI_CPUFREQ y
+              SENSORS_ARM_SCMI y
+              COMMON_CLK_SCMI y
+              CPU_FREQ_GOV_POWERSAVE y
+              ARM_SMMU_V3 y
+              USB_XHCI_PCI y
+              USB_XHCI_PCI_RENESAS y
+              USB_STORAGE y
+              DRM y
+              DRM_FBDEV_EMULATION y
+              DRM_I2C_NXP_TDA998X y
+              DRM_KOMEDA y
+              DRM_PANFROST y
+              FB_EFI y
+              I2C_CADENCE y
+              ATA y
+              SATA_AHCI y
+              BLK_DEV_NVME y
+              ETHERNET y
+
               TCG_TPM m
               TCG_TIS m
               TCG_CRB m
               SATA_NV m
+              SATA_VIA m
+              SATA_SIS m
+              SATA_ULI m
+              SATA_MV m
+              ATA_GENERIC m
+              ATA_PIIX m
+              PATA_MARVELL m
+
+              BLK_DEV_SR m
+              USB_UHCI_HCD m
+              HID_LENOVO m
+              HID_ROCCAT m
+              HID_LOGITECH_HIDPP m
+              HID_LOGITECH_DJ m
+              HID_CORSAIR m
+
+              R8169 m
+
+              MODULES_ALL y
+              MODULES y
+
+              NF_TABLES m
+              NF_TABLES_INET y
+              NF_TABLES_IPV4 y
+              NF_TABLES_IPV6 y
+              NF_TABLES_ARP y
+              NF_TABLES_BRIDGE m
+              NFT_CHAIN_ROUTE_IPV4 y
+              NFT_CHAIN_ROUTE_IPV6 y
+              NFT_REJECT m
+              NFT_MASQ m
+              NFT_LOG m
+              NFT_LIMIT m
+              NFT_NAT m
             '';
           }
         ] ++ extraPatches;
