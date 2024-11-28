@@ -45,13 +45,6 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs-stable.follows = "";
 
-    nixos-anywhere.url = "github:nix-community/nixos-anywhere/pxe-boot";
-    nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-anywhere.inputs.disko.follows = "disko";
-    nixos-anywhere.inputs.treefmt-nix.follows = "treefmt-nix";
-    nixos-anywhere.inputs.flake-parts.follows = "flake-parts";
-    nixos-anywhere.inputs.nixos-2305.follows = "";
-
     retiolum.url = "github:Mic92/retiolum";
 
     srvos.url = "github:numtide/srvos";
