@@ -466,29 +466,6 @@ def decrypt_host_keys(c: Any, host: str, tmpdir: str) -> None:
 
 
 @task
-def netboot_install_nixos(c: Any, host: str, dhcp_interface: str) -> None:
-    """
-    format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
-    """
-    with tempfile.TemporaryDirectory() as tmpdir:
-        decrypt_host_keys(c, host, tmpdir)
-        c.run(
-            f"sudo nixos-anywhere-pxe --flake .#{host} --netboot-image-flake 'github:nix-community/nixos-images#netboot-installer-nixos-unstable' --dhcp-interface {dhcp_interface} --extra-files {tmpdir} --no-reboot --pause-after-completion"
-        )
-    info("Device information:")
-    info(
-        "Remember to note down MAC addresses for IPMI port and network ports connected to foreign routers."
-    )
-    # TODO after starting nixos-remote-pxe, but before running nixos-remote (or
-    # afterwards), we want to check if booted into uefi and:
-    # h.run("nix-shell -p inxi --command 'inxi -F'")
-    # h.run("nix-shell -p inxi --command 'inxi -FZ'")
-    # h.run("nix-shell -p ipmitool --command 'ipmitool lan print 1'")
-    # h.run("nix-shell -p ipmitool --command 'ipmitool lan print 2'")
-    # h.run("reboot")
-
-
-@task
 def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
     """
     format disks and install nixos, i.e.: inv ssh-install-nixos --machine adelaide --hostname root@adelaide.dse.in.tum.de
