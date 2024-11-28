@@ -1,13 +1,12 @@
 {
   buildLinux,
   fetchFromGitLab,
-  callPackage,
-  lib,
-  glibc,
+  clang-morello,
+  clang-morello-unwrapped,
+  bintools-morello,
   ...
 }@args:
 let
-  clang-morello = callPackage ../clang-morello { };
 
   buildMorelloKernel =
     {
@@ -25,8 +24,6 @@ let
       // rec {
         inherit version modDirVersion;
 
-        stdenv = clang-morello.stdenv;
-
         src = fetchFromGitLab {
           inherit
             domain
@@ -41,18 +38,17 @@ let
           "LLVM=1"
           "LLVM_IAS=1"
           "CC=${clang-morello}/bin/clang"
-          "LD=${clang-morello}/bin/ld.lld"
-          "HOSTLD=${clang-morello}/bin/ld.lld"
-          "AR=${clang-morello}/bin/llvm-ar"
-          "HOSTAR=${clang-morello}/bin/llvm-ar"
-          "NM=${clang-morello}/bin/llvm-nm"
-          "STRIP=${clang-morello}/bin/llvm-strip"
-          "OBJCOPY=${clang-morello}/bin/llvm-objcopy"
-          "OBJDUMP=${clang-morello}/bin/llvm-objdump"
-          "READELF=${clang-morello}/bin/llvm-readelf"
+          "LD=${bintools-morello}/bin/ld.lld"
+          "HOSTLD=${bintools-morello}/bin/ld.lld"
+          "AR=${clang-morello-unwrapped}/bin/llvm-ar"
+          "HOSTAR=${clang-morello-unwrapped}/bin/llvm-ar"
+          "NM=${clang-morello-unwrapped}/bin/llvm-nm"
+          "STRIP=${clang-morello-unwrapped}/bin/llvm-strip"
+          "OBJCOPY=${clang-morello-unwrapped}/bin/llvm-objcopy"
+          "OBJDUMP=${clang-morello-unwrapped}/bin/llvm-objdump"
+          "READELF=${clang-morello-unwrapped}/bin/llvm-readelf"
           "HOSTCC=${clang-morello}/bin/clang"
           "HOSTCXX=${clang-morello}/bin/clang++"
-          "KCFLAGS=-isystem ${lib.getDev glibc}/include"
           "V=1"
         ];
 
@@ -228,7 +224,7 @@ let
           }
         ] ++ extraPatches;
         extraMeta.branch = version;
-#        ignoreConfigErrors = true;
+        #        ignoreConfigErrors = true;
         autoModules = false;
       }
       // (args.argsOverride or { })
@@ -244,8 +240,9 @@ let
     sha256 = "sha256-HETq4ntekppJ6T6rGDzj9U0TlDdoy1oajIWfeZScoY0=";
     version = "6.7";
     modDirVersion = "6.7.0";
-    extraPatches = [
-    ];
+    extraPatches =
+      [
+      ];
   };
 in
 # change here to change kernel

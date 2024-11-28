@@ -24,6 +24,11 @@ stdenv.mkDerivation {
   installCheckPhase = ''
     $out/bin/clang --version
   '';
+  passthru.isClang = true;
+  passthru.hardeningUnsupportedFlags = [
+    "zerocallusedregs"
+  ];
+
   meta = {
     description = "Morello build toolchain";
     platforms = [ "aarch64-linux" ];

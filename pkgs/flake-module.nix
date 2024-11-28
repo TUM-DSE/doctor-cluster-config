@@ -31,8 +31,12 @@
       pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
     in
     {
-      clang-morello = pkgs.callPackage ./clang-morello { };
-      linux-morello = pkgs.callPackage ./kernels/linux-morello.nix { };
+      clang-morello-unwrapped = pkgs.callPackage ./clang-morello { };
+      clang-morello = pkgs.wrapCC self.packages.aarch64-linux.clang-morello-unwrapped;
+      bintools-morello = pkgs.wrapBintoolsWith { bintools = self.packages.aarch64-linux.clang-morello-unwrapped; };
+      linux-morello = pkgs.callPackage ./kernels/linux-morello.nix {
+        inherit (self.packages.aarch64-linux) clang-morello bintools-morello clang-morello-unwrapped;
+      };
     };
 
   # packages for many targets:
