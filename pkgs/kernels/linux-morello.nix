@@ -2,15 +2,12 @@
   buildLinux,
   fetchFromGitLab,
   callPackage,
-  stdenv,
-  overrideCC,
-  ccacheStdenv,
-  llvmPackages_16,
+  lib,
+  glibc,
   ...
 }@args:
 let
-  llvmMorello = callPackage ../compilers/llvm-morello.nix { };
-  llvmPackages = llvmMorello;
+  clang-morello = callPackage ../clang-morello { };
 
   buildMorelloKernel =
     {
@@ -28,7 +25,7 @@ let
       // rec {
         inherit version modDirVersion;
 
-        stdenv = llvmMorello.stdenv;
+        stdenv = clang-morello.stdenv;
 
         src = fetchFromGitLab {
           inherit
@@ -43,18 +40,19 @@ let
         extraMakeFlags = [
           "LLVM=1"
           "LLVM_IAS=1"
-          "CC=${llvmMorello}/bin/clang"
-          "LD=${llvmMorello}/bin/ld.lld"
-          "HOSTLD=${llvmMorello}/bin/ld.lld"
-          "AR=${llvmMorello}/bin/llvm-ar"
-          "HOSTAR=${llvmMorello}/bin/llvm-ar"
-          "NM=${llvmMorello}/bin/llvm-nm"
-          "STRIP=${llvmMorello}/bin/llvm-strip"
-          "OBJCOPY=${llvmMorello}/bin/llvm-objcopy"
-          "OBJDUMP=${llvmMorello}/bin/llvm-objdump"
-          "READELF=${llvmMorello}/bin/llvm-readelf"
-          "HOSTCC=${llvmMorello}/bin/clang"
-          "HOSTCXX=${llvmMorello}/bin/clang++"
+          "CC=${clang-morello}/bin/clang"
+          "LD=${clang-morello}/bin/ld.lld"
+          "HOSTLD=${clang-morello}/bin/ld.lld"
+          "AR=${clang-morello}/bin/llvm-ar"
+          "HOSTAR=${clang-morello}/bin/llvm-ar"
+          "NM=${clang-morello}/bin/llvm-nm"
+          "STRIP=${clang-morello}/bin/llvm-strip"
+          "OBJCOPY=${clang-morello}/bin/llvm-objcopy"
+          "OBJDUMP=${clang-morello}/bin/llvm-objdump"
+          "READELF=${clang-morello}/bin/llvm-readelf"
+          "HOSTCC=${clang-morello}/bin/clang"
+          "HOSTCXX=${clang-morello}/bin/clang++"
+          "KCFLAGS=-isystem ${lib.getDev glibc}/include"
           "V=1"
         ];
 
