@@ -30,7 +30,10 @@
       man-pages
       netcat
       mtr
-      (neovim.override { vimAlias = true; })
+      (neovim.override {
+        vimAlias = true;
+        withRuby = false;
+      })
 
       pciutils
       ethtool
