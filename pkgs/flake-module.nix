@@ -31,7 +31,8 @@
       pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
     in
     {
-      morello-clang = pkgs.callPackage ./morello-clang { };
+      clang-morello = pkgs.callPackage ./clang-morello { };
+      linux-morello = pkgs.callPackage ./kernels/linux-morello.nix { };
     };
 
   # packages for many targets:
