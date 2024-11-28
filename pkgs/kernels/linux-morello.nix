@@ -6,12 +6,20 @@
   bintools-morello,
   runCommand,
   fetchurl,
-  buildPackages,
   lib,
   openssl,
+  elfutils,
+  zlib,
   ...
 }@args:
 let
+
+  rpath = runCommand "rpath" { } ''
+    mkdir $out
+    ln -s ${lib.getLib openssl}/lib/* $out
+    ln -s ${lib.getLib elfutils}/lib/* $out
+    ln -s ${lib.getLib zlib}/lib/* $out
+  '';
 
   buildMorelloKernel =
     {
@@ -55,7 +63,7 @@ let
           "HOSTCC=${clang-morello}/bin/clang"
           "HOSTCXX=${clang-morello}/bin/clang++"
           # openssl is not added to rpath of ./certs/extract-cert
-          "HOSTLDFLAGS=-Wl,--rpath=${lib.getLib openssl}/lib"
+          "HOSTLDFLAGS=-Wl,--rpath=${rpath}"
         ];
 
         firmwareSource = fetchurl {
@@ -75,10 +83,10 @@ let
           {
             name = "enable morello";
             #ARM64_MORELLO y
+            #EXTRA_FIRMWARE "${extraFetch}/firmware/rtl8168g-2.fw"
+            #EXTRA_FIRMWARE_DIR "${extraFetch}/firmware"
             patch = null;
             extraConfig = ''
-              EXTRA_FIRMWARE "${extraFetch}/firmware/rtl8168g-2.fw"
-              EXTRA_FIRMWARE_DIR "${extraFetch}/firmware"
               SYSVIPC y
               POSIX_MQUEUE y
               AUDIT y
