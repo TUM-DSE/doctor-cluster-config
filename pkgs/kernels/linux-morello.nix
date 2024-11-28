@@ -37,9 +37,8 @@ let
         extraMakeFlags = [
           "LLVM=1"
           "LLVM_IAS=1"
-          "CC=${clang-morello}/bin/clang"
-          "LD=${bintools-morello}/bin/ld.lld"
-          "HOSTLD=${bintools-morello}/bin/ld.lld"
+          "CC=${clang-morello-unwrapped}/bin/clang"
+          "LD=${clang-morello-unwrapped}/bin/ld.lld"
           "AR=${clang-morello-unwrapped}/bin/llvm-ar"
           "HOSTAR=${clang-morello-unwrapped}/bin/llvm-ar"
           "NM=${clang-morello-unwrapped}/bin/llvm-nm"
@@ -47,10 +46,10 @@ let
           "OBJCOPY=${clang-morello-unwrapped}/bin/llvm-objcopy"
           "OBJDUMP=${clang-morello-unwrapped}/bin/llvm-objdump"
           "READELF=${clang-morello-unwrapped}/bin/llvm-readelf"
+
+          "HOSTLD=${bintools-morello}/bin/ld.lld"
           "HOSTCC=${clang-morello}/bin/clang"
           "HOSTCXX=${clang-morello}/bin/clang++"
-          # our cc wrapper doesn't include intrinsic headers
-          "KCFLAGS=-I${clang-morello-unwrapped}/lib/clang/14.0.0/include"
           "V=1"
         ];
 
