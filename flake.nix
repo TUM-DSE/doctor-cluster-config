@@ -9,7 +9,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-24.05-backports";
+    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-24.11-backports";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,16 +20,14 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:rycee/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixpkgs-buildbot.url = "github:Mic92/nixpkgs/buildbot-python";
-    buildbot-nix.url = "github:nix-community/buildbot-nix";
-    # requires nixpkgs-unstable
-    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs-buildbot";
+    buildbot-nix.url = "github:nix-community/buildbot-nix/hercules";
+    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
     buildbot-nix.inputs.flake-parts.follows = "flake-parts";
     buildbot-nix.inputs.treefmt-nix.follows = "treefmt-nix";
 
