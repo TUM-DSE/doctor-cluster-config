@@ -31,6 +31,7 @@ in
         shell = "/run/current-system/sw/bin/zsh";
         uid = 1000;
         openssh.authorizedKeys.keys = joergsKeys;
+        xrdpAccess = true;
       };
 
       # Peter Okelmann

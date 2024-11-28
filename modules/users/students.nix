@@ -561,6 +561,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = benediktKeys;
+      xrdpAccess = true;
     };
 
     # Robert Barinov, Sys Lab WS24
@@ -575,6 +576,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = robertBKeys;
+      xrdpAccess = true;
     };
 
     # Neel Mandal, Sys Lab WS24
@@ -589,6 +591,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = neelKeys;
+      xrdpAccess = true;
     };
 
     # Konrad Hennig, Sys Lab WS24
@@ -603,6 +606,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = konradHKeys;
+      xrdpAccess = true;
     };
 
     # Kilian Matheis, Sys Lab WS24

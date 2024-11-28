@@ -22,6 +22,14 @@ in
         lib.types.submodule (
           { config, ... }:
           {
+            options.xrdpAccess = lib.mkOption {
+              type = lib.types.bool;
+              default = false;
+              description = ''
+                Whether the user is allowed to login via xrdp.
+                Requires user to also have a password set.
+              '';
+            };
             options.allowedHosts = lib.mkOption {
               type = lib.types.listOf lib.types.str;
               # for students and reviewers, we have an explicit list of allowed hosts
@@ -37,10 +45,18 @@ in
                 List of hosts the user is allowed to login. If "all", all hosts are allowed
               '';
             };
-            config = lib.mkIf (
-              !(builtins.elem "all" config.allowedHosts)
-              && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)
-            ) { shell = lib.mkForce "/run/current-system/sw/bin/nologin"; };
+            config =
+              lib.mkIf
+                (
+                  !(builtins.elem "all" config.allowedHosts)
+                  && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)
+                )
+                {
+                  shell = lib.mkForce "/run/current-system/sw/bin/nologin";
+                  hashedPasswordFile = lib.mkIf (
+                    globalConfig.services.xrdp.enable && config.xrdpAccess
+                  ) globalConfig.sops.secrets."${config.name}-password-hash".path;
+                };
           }
         )
       );
@@ -56,5 +72,13 @@ in
         '';
       }) config.users.users
     );
+
+    sops.secrets = lib.mapAttrs' (
+      name: user:
+      lib.nameValuePair "${name}-password-hash" {
+        neededForUsers = true;
+        sopsFile = ./xrdp-passwords.yml;
+      }
+    ) (lib.filterAttrs (_: v: v.xrdpAccess) config.users.users);
   };
 }

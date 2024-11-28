@@ -8,7 +8,6 @@
     ../modules/intel-fpgas.nix
     ../modules/xilinx.nix
     ../modules/xrdp.nix
-    ../modules/xrdp-passwords.nix
 
     ../modules/amd_sev_snp.nix
     #../modules/amd_sev_svsm.nix
@@ -63,13 +62,6 @@
       "timeo=14"
     ];
   };
-  users.xrdpUsers = [
-    "xilinx"
-    "atsushi"
-    "felix"
-    "teofil"
-    "chenjiyang"
-  ];
 
   # Don't manage vnet interface with systemd-networkd
   systemd.network.networks."05-rose_vnet".extraConfig = ''

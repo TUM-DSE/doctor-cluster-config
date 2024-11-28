@@ -165,6 +165,7 @@ in
         uid = 2022;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = felixKeys;
+        xrdpAccess = true;
       };
 
       # Harshavardhan Unnibhavi
@@ -206,6 +207,7 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1012;
         openssh.authorizedKeys.keys = atsushiKeys;
+        xrdpAccess = true;
       };
 
       # Martin Fink
@@ -226,6 +228,7 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1019;
         openssh.authorizedKeys.keys = chenjiyangKeys;
+        xrdpAccess = true;
       };
 
       # Charalampos Mainas
@@ -267,6 +270,7 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1026;
         openssh.authorizedKeys.keys = franciscoKeys;
+        xrdpAccess = true;
       };
 
       # Patrick Sabanic
@@ -336,6 +340,7 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1032;
         openssh.authorizedKeys.keys = teofilKeys;
+        xrdpAccess = true;
       };
 
       # Oguzcan Kirmemis

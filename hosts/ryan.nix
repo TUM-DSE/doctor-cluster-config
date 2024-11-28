@@ -8,7 +8,6 @@
     ../modules/nfs/client.nix
     ../modules/nfs
     ../modules/xilinx.nix
-    ../modules/xrdp-passwords.nix
     # ../modules/amd_sev.nix
     ../modules/amd_sev_svsm.nix
     #../modules/amd_sev_snp.nix
@@ -82,6 +81,4 @@
     [Link]
     Description=SN1000 Arm Representor Interface
   '';
-  #    Unmanaged=yes
-  users.xrdpUsers = [ "francisco" ];
 }
