@@ -253,6 +253,7 @@ HOSTS = [
     "irene.dos.cit.tum.de",
     "xavier.dos.cit.tum.de",
     "ian.dos.cit.tum.de",
+    "ace.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
@@ -360,6 +361,25 @@ def deploy_tegan(c: Any) -> None:
             target_user="root",
             target_host="tegan.dos.cit.tum.de",
             flake_attr="tegan",
+            flake_path="/var/lib/nixos-config",
+        ),
+    )
+    deploy_nixos([host])
+
+@task
+def deploy_ace(c: Any) -> None:
+    """
+    Deploy to morello server
+    """
+    host = DeployHost(
+        "yasmin.dos.cit.tum.de",
+        user="root",
+        forward_agent=True,
+        command_prefix="ace",
+        meta=dict(
+            target_user="root",
+            target_host="ace.dos.cit.tum.de",
+            flake_attr="ace",
             flake_path="/var/lib/nixos-config",
         ),
     )

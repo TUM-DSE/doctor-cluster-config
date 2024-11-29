@@ -1,14 +1,22 @@
-{ lib, ... }:
+{
+  lib,
+  pkgs,
+  self,
+  ...
+}:
 {
   imports = [
     ../modules/hardware/morello.nix
     ../modules/nfs/client.nix
-    ../modules/disko-zfs.nix
+    ../modules/disko-ext4.nix
+    ../modules/arm_morello.nix
   ];
 
   networking.hostName = "ace";
 
-  disko.rootDisk = "/dev/disk/by-id/ata-HFS480G3H2X069N_ESC3N5648I3603P2Y";
+  simd.arch = "armv8-a";
+
+  disko.devices.disk.main.device = "/dev/disk/by-id/ata-HFS480G3H2X069N_ESC3N5648I3603P2Y";
 
   system.stateVersion = "24.05";
 
