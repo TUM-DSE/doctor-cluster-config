@@ -59,7 +59,6 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
             "--option",
             "keep-going",
             "true",
-            "--keep-failed",
         ]
         target_host = h.meta.get("target_host")
         if target_host:
