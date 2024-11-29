@@ -1,4 +1,9 @@
-{ lib, pkgs, self, ... }:
+{
+  lib,
+  pkgs,
+  self,
+  ...
+}:
 {
   imports = [
     ../modules/hardware/morello.nix
