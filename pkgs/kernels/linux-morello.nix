@@ -263,6 +263,42 @@ let
               HID_LOGITECH_HIDPP m
               HID_LOGITECH_DJ m
               HID_CORSAIR m
+
+              NF_TABLES m
+              NF_TABLES_INET y
+              NF_TABLES_NETDEV y
+              NFT_NUMGEN m
+              NFT_CT m
+              NFT_FLOW_OFFLOAD m
+              NFT_CONNLIMIT m
+              NFT_LOG m
+              NFT_LIMIT m
+              NFT_MASQ m
+              NFT_REDIR m
+              NFT_NAT m
+              NFT_TUNNEL m
+              NFT_QUEUE m
+              NFT_QUOTA m
+              NFT_REJECT m
+              NFT_REJECT_INET m
+              NFT_COMPAT m
+              NFT_HASH m
+              NFT_FIB m
+              NFT_FIB_INET m
+              NFT_XFRM m
+              NFT_SOCKET m
+              NFT_OSF m
+              NFT_TPROXY m
+              NFT_SYNPROXY m
+              NF_DUP_NETDEV m
+              NFT_DUP_NETDEV m
+              NFT_FWD_NETDEV m
+              NFT_FIB_NETDEV m
+              NFT_REJECT_NETDEV m
+              NF_FLOW_TABLE_INET m
+              NF_FLOW_TABLE m
+              NF_FLOW_TABLE_PROCFS y
+              NETFILTER_XTABLES m
             '';
           }
         ] ++ extraPatches;
