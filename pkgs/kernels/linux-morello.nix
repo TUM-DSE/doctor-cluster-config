@@ -169,7 +169,7 @@ let
               EFI_CAPSULE_LOADER y
               BLK_DEV_LOOP y
               VIRTIO_BLK y
-              BLK_DEV_SD y
+              BLK_DEV_SD m
               ATA y
               SATA_AHCI y
               MD y
@@ -243,6 +243,26 @@ let
               DEBUG_FS y
               CORESIGHT y
               MEMTEST y
+
+              
+              TCG_TPM m
+              TCG_TIS m
+              TCG_CRB m
+              SATA_NV m
+              SATA_VIA m
+              SATA_SIS m
+              SATA_ULI m
+              SATA_MV m
+              ATA_GENERIC m
+              ATA_PIIX m
+              PATA_MARVELL m
+              BLK_DEV_SR m
+              USB_UHCI_HCD m
+              HID_LENOVO m
+              HID_ROCCAT m
+              HID_LOGITECH_HIDPP m
+              HID_LOGITECH_DJ m
+              HID_CORSAIR m
             '';
           }
         ] ++ extraPatches;
