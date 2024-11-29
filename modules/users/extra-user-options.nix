@@ -45,18 +45,15 @@ in
                 List of hosts the user is allowed to login. If "all", all hosts are allowed
               '';
             };
-            config =
-              lib.mkIf
-                (
-                  !(builtins.elem "all" config.allowedHosts)
-                  && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)
-                )
-                {
-                  shell = lib.mkForce "/run/current-system/sw/bin/nologin";
-                  hashedPasswordFile = lib.mkIf (
-                    globalConfig.services.xrdp.enable && config.xrdpAccess
-                  ) globalConfig.sops.secrets."${config.name}-password-hash".path;
-                };
+            config = {
+              shell = lib.mkIf (
+                !(builtins.elem "all" config.allowedHosts)
+                && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)
+              ) (lib.mkForce "/run/current-system/sw/bin/nologin");
+              hashedPasswordFile =
+                lib.mkIf (globalConfig.services.xrdp.enable && config.xrdpAccess)
+                  globalConfig.sops.secrets."${config.name}-password-hash".path;
+            };
           }
         )
       );
