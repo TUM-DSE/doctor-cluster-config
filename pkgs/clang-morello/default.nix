@@ -28,10 +28,13 @@ stdenv.mkDerivation {
   passthru.isClang = true;
   passthru.hardeningUnsupportedFlagsByTargetPlatform =
     targetPlatform:
-    (llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform)
-    ++ [
-      "strictoverflow"
-    ];
+    (
+      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_14.clang-unwrapped then
+        llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
+      else
+        [ ]
+    )
+    ++ [ "strictoverflow" ];
 
   meta = {
     description = "Morello build toolchain";
