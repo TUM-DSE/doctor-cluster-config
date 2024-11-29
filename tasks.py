@@ -497,7 +497,7 @@ def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
     with tempfile.TemporaryDirectory() as tmpdir:
         decrypt_host_keys(c, machine, tmpdir)
         c.run(
-            f"nix run --keep-failed github:nix-community/nixos-anywhere#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}",
+            f"nix run github:nix-community/nixos-anywhere#nixos-anywhere -- --flake .#{machine} --extra-files {tmpdir} {hostname}",
             echo=True,
         )
 
