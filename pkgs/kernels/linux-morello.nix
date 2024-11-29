@@ -66,25 +66,9 @@ let
           "HOSTLDFLAGS=-Wl,--rpath=${rpath}"
         ];
 
-        firmwareSource = fetchurl {
-          url = "https://raw.githubusercontent.com/TI-OpenLink/firmwares/refs/heads/master/rtl_nic/rtl8168g-2.fw";
-          hash = "sha256-+HjscZ944LEEvHM2KphiYRhYvsiT9YobOyiaClfXHSU=";
-        };
-
-        extraFetch = runCommand "prepare-firmware" { } ''
-          mkdir -p firmware
-          cp ${firmwareSource} firmware/
-          chmod -R a+rX firmware
-          mkdir -p $out
-          cp -r firmware $out/
-        '';
-
         kernelPatches = [
           {
             name = "enable morello";
-            #ARM64_MORELLO y
-            #EXTRA_FIRMWARE "${extraFetch}/firmware/rtl8168g-2.fw"
-            #EXTRA_FIRMWARE_DIR "${extraFetch}/firmware"
             patch = null;
             extraConfig = ''
               SYSVIPC y
@@ -303,7 +287,6 @@ let
           }
         ] ++ extraPatches;
         extraMeta.branch = version;
-        #        ignoreConfigErrors = true;
         autoModules = false;
       }
       // (args.argsOverride or { })
