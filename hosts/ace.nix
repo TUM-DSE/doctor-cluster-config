@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, self, ... }:
 {
   imports = [
     ../modules/hardware/morello.nix
@@ -17,4 +17,8 @@
 
   boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
   boot.loader.systemd-boot.enable = true;
+
+  environment.systemPackages = [
+    self.packages.${pkgs.hostPlatform.system}.clang-morello
+  ];
 }
