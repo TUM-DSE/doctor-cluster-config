@@ -11,5 +11,7 @@
     home.stateVersion = "23.11";
     home.username = username;
     home.homeDirectory = "/home/${username}";
+    xdg.cacheHome = "/scratch/${username}/.cache";
+    xdg.stateHome = "/scratch/${username}/.local/share";
   };
 }
