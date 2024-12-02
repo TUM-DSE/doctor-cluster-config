@@ -1,7 +1,11 @@
 The documenation for all hosts lives in [docs/](docs/). 
-The corresponding nixos configuration is in [hosts/](hosts/). 
+The corresponding nixos configuration is in [hosts/](hosts/).
 
-# New admins: getting started
+# New to NixOS?
+
+Check out our [tutorial](./docs/nix-getting-started.md).
+
+# New admins: Onboarding
 
 1. Install [nix](https://nixos.org/download.html#download-nix) (the recommended Multi-user installation is not NixOS, but only a package manager)
 2. [Enable flake support in nix](https://nixos.wiki/wiki/Flakes#Permanent). This effectively adds the following flags to all your `nix <flags> develop`-like commands: `--extra-experimental-features nix-command --extra-experimental-features flakes`
