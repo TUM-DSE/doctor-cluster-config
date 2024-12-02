@@ -19,6 +19,8 @@
     # only used by jasper atm
     programs.fish.enable = true;
 
+    services.userborn.enable = true;
+
     systemd.tmpfiles.rules = builtins.map (n: "R /home/${n} - - - - -") config.users.deletedUsers;
 
     # we cannot use this since we no longer have the database
