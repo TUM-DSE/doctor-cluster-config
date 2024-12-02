@@ -41,7 +41,6 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-    sops-nix.inputs.nixpkgs-stable.follows = "";
 
     retiolum.url = "github:Mic92/retiolum";
 
