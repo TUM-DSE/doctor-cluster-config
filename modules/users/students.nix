@@ -254,8 +254,8 @@ in
       ];
       openssh.authorizedKeys.keys = martinLKeys;
     };
-    # Thang Tran, MSc Thesis with Manos (Quantum Computing Scheduling)
-    # Remove after SS24
+    # Thang Tran, MSc Thesis with Manos *Finished*
+    # You can remove now
     thang = {
       isNormalUser = true;
       home = "/home/thang";
