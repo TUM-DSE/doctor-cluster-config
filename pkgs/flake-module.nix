@@ -37,6 +37,8 @@
       linux-morello = pkgs.callPackage ./kernels/linux-morello.nix {
         inherit (self.packages.aarch64-linux) clang-morello bintools-morello clang-morello-unwrapped;
       };
+      musl-morello = pkgs.callPackage ./musl-morello { inherit (self.packages.aarch64-linux) llvm-morello; };
+      llvm-morello = pkgs.callPackage ./llvm-morello { };
     };
 
   # packages for many targets:
