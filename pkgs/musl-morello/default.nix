@@ -14,7 +14,7 @@ stdenv.mkDerivation {
     llvm-morello
   ];
   configurePhase = ''
-    CC=${llvm-morello}/bin/clang ./configure --disable-shared --enable-morello --disable-libshim --prefix=$out --target=aarch64-linux-musl_purecap
+    CC=${llvm-morello}/bin/clang ./configure --disable-shared --enable-morello --enable-wrapper=clang --prefix=$out --target=aarch64-linux-musl_purecap --enable-debug
   '';
 
   patchPhase = "";
