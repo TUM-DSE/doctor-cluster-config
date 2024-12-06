@@ -71,12 +71,12 @@ Parameters to consider for matching cards to slots:
     - clara (internet/uplink, clara-craig2)
     - rose (internet/uplink, none)
     - amy (internet/uplink, amy-craig1)
-- 5x Intel X520-2 10G NIC (SFI/SFP+)
-    - adelaide (maybe internet/uplink?)
-    - christina (maybe internet/uplink?)
-    - jackson (maybe internet/uplink?)
-    - river (maybe internet/uplink?)
-    - wilfred (maybe internet/uplink?)
+- 5x Intel X550 10G NIC (RJ-45)
+    - adelaide (chistina-adelaide, christina-adelaide)
+    - christina (adelaide-chistina, adelaide-christina)
+    - jackson 
+    - river (wilfred-river, wilfred-river)
+    - wilfred (river-wilfred, river-wilfred)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
     - bill (internet/uplink)
     - nardole (internet/uplink)
@@ -91,11 +91,11 @@ Onboard (not listed by [List of slots](#List of slots)):
 
 - Intel X720
     - jack: 2 ports RJ-45 (jack-jack,jack-jack), 2 port SFP+ (internet,none)
-- Intel X550: 2 port RJ-45
-    - christina: (chistina-adelaide, christina-adelaide)
-    - adelaide: (adelaide-chistina, adelaide-christina)
-    - wilfred: (wilfred-river, wilfred-river)
-    - river: (river-wilfred, river-wilfred)
+- Intel 82599ES: 2 port RJ-45
+    - christina: (uplink, ) 
+    - adelaide: (uplink, ) 
+    - wilfred: (uplink, ) 
+    - river: (uplink, ) 
     - probably jackson: (none-none)
 - Mellanox ConnectX-6
     - vislor: 2 ports RJ-45 (,)
