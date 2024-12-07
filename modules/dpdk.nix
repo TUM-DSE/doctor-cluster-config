@@ -27,6 +27,13 @@ with lib;
       '';
       default = true;
     };
+    systemd.network.ignorePci = mkOption {
+      type = types.listOf types.nonEmptyStr;
+      description = ''
+        Pci addresses to be ignored by systemd-networkd.
+      '';
+      default = [];
+    };
   };
   config = {
     boot.kernelParams = [
@@ -59,8 +66,21 @@ with lib;
     users.groups.kvm.members = lib.optionals config.users.addAllToKvm (
       builtins.attrNames (lib.filterAttrs (_userName: user: user.isNormalUser) config.users.users)
     );
-    systemd.network.networks = {
-      # leave container interfaces alone
+    systemd.network.networks = let 
+      ignoreConfig = pciAddress: ''
+        [Match]
+        Property=DEVPATH=/devices/pci0000:00/${pciAddress}/*
+
+        [Link]
+        Unmanaged = yes
+      '';
+      pciIgnoreRules = builtins.listToAttrs ( builtins.map (
+        pciAddress: { 
+          name = "09-ignore-${pciAddress}"; 
+          value = { extraConfig = (ignoreConfig pciAddress); }; 
+        }) config.systemd.network.ignorePci);
+    in pciIgnoreRules // {
+      # leave 100G interfaces alone
       "09-ignore-e810".extraConfig = ''
         [Match]
         Driver = ice

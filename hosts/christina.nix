@@ -8,6 +8,10 @@
   ];
 
   boot.hugepages1GB.number = 8;
+  systemd.network.ignorePci = [ 
+    "0000:00:1c.0"
+    "0000:00:1c.1"
+  ];
 
   networking.hostName = "christina";
 

@@ -5,6 +5,7 @@
     # iommu for sebastians students
     ../modules/vfio/iommu-intel.nix
     ../modules/disko-zfs.nix
+    ../modules/dpdk.nix
   ];
 
   disko.rootDisk = "/dev/sdc";
@@ -15,4 +16,9 @@
 
   system.stateVersion = "21.11";
 
+  boot.hugepages1GB.number = 20;
+  systemd.network.ignorePci = [
+    "0000:00:1c.0"
+    "0000:00:1c.1"
+  ];
 }
