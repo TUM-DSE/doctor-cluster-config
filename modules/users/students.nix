@@ -406,6 +406,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = anubhavKeys;
+      xrdpAccess = true;
     };
 
     # Lan Ouyang, M.Sc. thesis with Martin and Ilya (CHERI db project) Remove after Jan 2025
