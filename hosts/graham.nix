@@ -12,7 +12,12 @@
     ../modules/disko-zfs.nix
   ];
 
-  boot.hugepages1GB.number = 8;
+  boot.hugepages1GB.number = 0;
+  boot.hugepages2MB.number =
+    let
+      gb = 30;
+    in
+    gb * 1024 / 2;
 
   networking.hostName = "graham";
 
