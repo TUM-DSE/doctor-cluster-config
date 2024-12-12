@@ -520,7 +520,7 @@ in
       openssh.authorizedKeys.keys = janhaKeys;
     };
 
-    # Sherif Hussien, Sys Lab WS24
+    # Sherif Hussien, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
     sherif = {
       isNormalUser = true;
       home = "/home/sherif";
@@ -528,9 +528,7 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2058;
       allowedHosts = [
-        "vislor"
-        "jackson"
-        "ian"
+        "jack"
       ];
       openssh.authorizedKeys.keys = sherifKeys;
     };
