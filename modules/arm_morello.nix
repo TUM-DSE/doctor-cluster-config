@@ -11,4 +11,10 @@ let
 in
 {
   boot.kernelPackages = lib.mkForce linuxPackages;
+  boot.initrd.includeDefaultModules = false;
+  boot.initrd.availableKernelModules = [
+    "usb-storage"
+    "usbhid"
+    "hid_generic"
+  ];
 }
