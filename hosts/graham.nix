@@ -10,6 +10,7 @@
     ../modules/dpdk.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/disko-zfs.nix
+    ../modules/kata-container
   ];
 
   boot.hugepages1GB.number = 0;
