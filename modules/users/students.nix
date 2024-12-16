@@ -475,7 +475,10 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2054;
-      allowedHosts = [ "jack" ];
+      allowedHosts = [
+	  	"jack"
+		"yasmin"
+	  ];
       openssh.authorizedKeys.keys = berkayKeys;
     };
 
