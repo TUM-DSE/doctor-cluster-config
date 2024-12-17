@@ -16,6 +16,7 @@
   boot.kernel.sysctl = {
     "vm.overcommit_memory" = 1;
   };
+  powerManagement.cpuFreqGovernor = "performance";
 
   system.stateVersion = "22.11";
   simd.arch = "znver4";
