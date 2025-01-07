@@ -189,18 +189,19 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732807440,
-        "narHash": "sha256-9DdfEJaqxsz+0aaHTT1yvTZJ0xeTqYC2yAXO5bpLbDQ=",
-        "owner": "TUM-DSE",
-        "repo": "nixpkgs",
-        "rev": "ae8dbdc84c60b8e4d7f3867e82989317e735e279",
-        "type": "github"
+        "lastModified": 1736236572,
+        "narHash": "sha256-t4sOdNtmvNZJwsDP3mwAO3COhEFNi6kIChx4od1Vom0=",
+        "ref": "nixos-24.11-backports",
+        "rev": "4132f61023508983cc462f5912ddf271ab3e0045",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/TUM-DSE/nixpkgs.git"
       },
       "original": {
-        "owner": "TUM-DSE",
         "ref": "nixos-24.11-backports",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/TUM-DSE/nixpkgs.git"
       }
     },
     "retiolum": {
