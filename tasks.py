@@ -602,7 +602,7 @@ def check_experimental_nix_features(c: Any):
         c.run(cmd)
     except Exception as e:
         print(f"Command failed: {cmd}: {e}")
-        print("If you are on an old nix versoin: are experimental features enabled?")
+        print("If you are on an old nix version: are experimental features enabled?")
         print("Try: nix eval --extra-experimental-features 'nix-command flakes' --json --expr '\"ok\"'")
         print("See also https://wiki.nixos.org/wiki/Nix_command#Enabling_the_nix_command")
 
