@@ -9,7 +9,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-24.11-backports";
+    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-24.11-backports&shallow=1";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
