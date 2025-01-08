@@ -1033,23 +1033,23 @@ def _format_disks(host: DeployHost, device: str) -> None:
         f"zpool create zroot -O acltype=posixacl -O xattr=sa -O compression=lz4 -O atime=off {root_part}"
     )
 
-    host.run(f"partprobe")
-    host.run(f"mkfs.vfat {boot} -n NIXOS_BOOT")
+    host.run("partprobe")
+    host.run("mkfs.vfat {boot} -n NIXOS_BOOT")
 
     # setup zfs dataset
-    host.run(f"zfs create -o mountpoint=none zroot/root")
-    host.run(f"zfs create -o mountpoint=none zroot/docker")
-    host.run(f"zfs create -o mountpoint=legacy zroot/root/nixos")
-    host.run(f"zfs create -o mountpoint=legacy zroot/root/home")
+    host.run("zfs create -o mountpoint=none zroot/root")
+    host.run("zfs create -o mountpoint=none zroot/docker")
+    host.run("zfs create -o mountpoint=legacy zroot/root/nixos")
+    host.run("zfs create -o mountpoint=legacy zroot/root/home")
 
 
 def _mount_disks(host: DeployHost, device: str) -> None:
-    host.run(f"zpool import -af")
+    host.run("zpool import -af")
     # and finally mount
-    host.run(f"mount -t zfs zroot/root/nixos /mnt")
-    host.run(f"mkdir -p /mnt/home /mnt/boot")
-    host.run(f"mount -t zfs zroot/root/home /mnt/home")
-    host.run(f"mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
+    host.run("mount -t zfs zroot/root/nixos /mnt")
+    host.run("mkdir -p /mnt/home /mnt/boot")
+    host.run("mount -t zfs zroot/root/home /mnt/home")
+    host.run("mount /dev/disk/by-label/NIXOS_BOOT /mnt/boot")
 
 
 @task
