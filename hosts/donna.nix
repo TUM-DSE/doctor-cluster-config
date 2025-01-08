@@ -8,6 +8,8 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # apple-silicon-support tries to patch systemd, but those patches are upstream already.
+  systemd.package = lib.mkForce pkgs.systemd;
   networking.hostName = "donna";
 
   hardware.asahi.enable = true;
