@@ -476,7 +476,9 @@ in
     berkay = {
       isNormalUser = true;
       home = "/home/berkay";
-      inherit extraGroups;
+	  extraGroups = extraGroups ++ [
+        "kvm"
+      ];
       shell = "/run/current-system/sw/bin/bash";
       uid = 2054;
       allowedHosts = [
