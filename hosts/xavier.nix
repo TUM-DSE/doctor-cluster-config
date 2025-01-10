@@ -12,4 +12,5 @@
   networking.hostName = "xavier";
 
   system.stateVersion = "23.05";
+  powerManagement.cpuFreqGovernor = "performance";
 }
