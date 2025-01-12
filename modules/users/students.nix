@@ -299,6 +299,7 @@ in
       allowedHosts = [
         "jackson"
         "ryan"
+	"graham"
       ];
       openssh.authorizedKeys.keys = alexanderKeys;
     };
@@ -438,6 +439,7 @@ in
       allowedHosts = [
         "ryan"
         "vislor"
+	"graham"
       ];
       openssh.authorizedKeys.keys = michaelKeys;
     };
