@@ -456,6 +456,8 @@ in
         "ryan"
         "jackson"
         "christina"
+        "amy"
+        "wilfred"
       ];
       openssh.authorizedKeys.keys = dominikKeys;
     };
