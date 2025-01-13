@@ -16,7 +16,7 @@
   boot.hugepages1GB.number = 0;
   boot.hugepages2MB.number =
     let
-      gb = 150;
+      gb = 300;
     in
     gb * 1024 / 2;
 
