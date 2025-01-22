@@ -1,4 +1,4 @@
-{
+{ lib, ... }: {
   imports = [
     ../modules/xilinx.nix
     ../modules/xrdp.nix
@@ -23,6 +23,10 @@
   networking.hostName = "graham";
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZ1L23T8HBLA-00A07_S667NJ0T732147";
+
+  # In https://github.com/nix-community/srvos/pull/523 we decreased this to 15s.
+  # However we saw sporadic watchdog events after that. Let's try 20s again.
+  systemd.watchdog.runtimeTime = lib.mkForce "20s";
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media
