@@ -48,24 +48,12 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
   ];
 
-  paulzKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcFpqGUDaxZnfVR//Dm8Zncur8iaaJUbLiB2bMiL/64LHhQDqfeXKuJO4MbtO15A8VgfFY4r40w+cLrQ5zXJLioCJiLAKvC3BBza7Y2zcCHsITLxaky2Nr7TyTVWKYX2iSiYROdlSYYmLAVqAz+Ha3ENcJ3/rKOfGZRQ3Z/+DtjeNXauiznj3ezkLpt9gXpW+YXf2kffv/6RF1GRIsaOQ5LNQpNrXk4DHgOS/AdlKP0lMqSjp3jLOo+pVrIWQ9cyg+mTtXTJMP7adDUafr5QBaMcP4Oo7xk8exaDeSf1LVJg+pq0vq0NkrMGQpJbA/ssm2515xvEW4LbUH1TfrNP8f62dPn4qjDFo1pshfn8dtmBSmTf7ZooNVYKs2h3WkRYpyvQVnDax9CbrYnCh6tLcqenEr8Nl3lYAeK14LfkabeCD/C0xs1BwrzlXwClQRXcj/PuDHpplhf3LriUtH4KA0g2WhWF0aIvw0yOTl0FwGG4P1WMp2lL588UU4UVEi6UE= paulzhng"
-  ];
-
   hendrikKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"
   ];
 
-  milenKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWU9Mh+p7C7PsAcJKYDw8MpnRaYteO5a2eBhZIjISBs milen.vitanov96@gmail.com"
-  ];
-
   simondKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXKJqoVipqnB7/rjCjx6EYYsi6ZRuG2ve4bZHvAVKMa simon@Laptop-Simon"
-  ];
-
-  lucaKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/51l9kxiOcTg0WZU1rPyLcPJjyPCpFHSedTS/6KzSN lmathias@framework13"
   ];
 
   anubhavKeys = [
@@ -177,7 +165,7 @@ in
       openssh.authorizedKeys.keys = julianKeys;
     };
 
-    # Sandro Gierens, Peter's BSc student (applying ioregionfd to KVM/qemu devices)
+    # Sandro Gierens, Masa's MSc student (expecting to finish the end of 2025)
     gierens = {
       isNormalUser = true;
       home = "/home/gierens";
@@ -321,20 +309,6 @@ in
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
-    # Paul Zhang, B.Sc.. thesis with Ilya (UkBPF project, Ilya Meignan--Masson)
-    paulz = {
-      isNormalUser = true;
-      home = "/home/paulz";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2043;
-      allowedHosts = [
-        "adelaide"
-        "irene"
-      ]; # TODO add the new AMD server when it arrives
-      openssh.authorizedKeys.keys = paulzKeys;
-    };
-
     # Hendrik Huebner, HiWi for SS 24 with Peter (vmux)
     hendrik = {
       isNormalUser = true;
@@ -353,20 +327,6 @@ in
       openssh.authorizedKeys.keys = hendrikKeys;
     };
 
-    # Milen Vitanov, M.Sc. thesis with Ilya (UkBPF project)
-    milen = {
-      isNormalUser = true;
-      home = "/home/milen";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2045;
-      allowedHosts = [
-        "adelaide"
-        "irene"
-      ];
-      openssh.authorizedKeys.keys = milenKeys;
-    };
-
     # Simon Dittrich, M.Sc. thesis with Anatole (CXL Gem5 sim project)
     simond = {
       isNormalUser = true;
@@ -381,22 +341,6 @@ in
         "ryan"
       ]; # TODO remove extra hosts once xavier is racked
       openssh.authorizedKeys.keys = simondKeys;
-    };
-
-    # Luca Mathias, B.Sc. thesis with Masa (CVM project) SS24 (remove after Oct 2024)
-    luca = {
-      isNormalUser = true;
-      home = "/home/luca";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2048;
-      allowedHosts = [
-        "vislor"
-        "graham"
-        "river"
-        "ian"
-      ];
-      openssh.authorizedKeys.keys = lucaKeys;
     };
 
     # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
@@ -651,7 +595,7 @@ in
       openssh.authorizedKeys.keys = martinLiKeys;
     };
 
-    # Yude (Timo) Jiang, BSc thesis with Martin (CHERI/Morello architectural analysis)
+    # Yude (Timo) Jiang, BSc thesis with Martin (CHERI/Morello architectural analysis ~Apr 2025)
     timo = {
       isNormalUser = true;
       home = "/home/timo";
@@ -713,14 +657,17 @@ in
     "kai"
     "kamilk"
     "konrad"
+    "luca"
     "m00wl"
     "mflatus"
     "mikilio"
+    "milen"
     "ml"
     "moritz"
     "mwerndle"
     "nicola"
     "paul"
+    "paulZ"
     "philip"
     "raito"
     "robert"
