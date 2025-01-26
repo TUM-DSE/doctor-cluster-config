@@ -334,5 +334,14 @@ in
         ];
     };
 
+    joy = nixosSystem {
+      pkgs = pkgs-aarch64-linux;
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/joy.nix
+        ];
+    };
+
   };
 }

@@ -30,6 +30,8 @@ with lib;
         };
       };
 
+      boot.initrd.systemd.network.networks."10-ethernet" = config.systemd.network.networks."10-ethernet";
+
       systemd.network.networks =
         {
           # leave container interfaces alone
