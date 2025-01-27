@@ -679,9 +679,7 @@ def generate_password(c: Any, user: str = "root") -> None:
     """
     Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
     """
-    size = 12
-    chars = string.ascii_letters + string.digits
-    passw = "".join(random.choice(chars) for x in range(size))
+    passw = c.run("nix shell --inputs-from . nixpkgs#xkcdpass -c xkcdpass --numwords 3 --delimiter - --count 1", echo=True).stdout
     out = c.run(f"echo '{passw}' | mkpasswd -m sha-512 -s", echo=True)
     print("# Add the following secrets")
     print(f"{user}-password: {passw}")
