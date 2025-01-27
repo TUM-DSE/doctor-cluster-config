@@ -11,6 +11,11 @@
   virtualisation.podman.enableNvidia = true;
 
   environment.systemPackages = [
+    # > nvidia-ctk cdi list
+    # nvidia.com/gpu=0
+    # nvidia.com/gpu=all
+
+    config.hardware.nvidia-jetpack.devicePkgs.nvidia-ctk
     config.hardware.nvidia-jetpack.devicePkgs.samples.cudnn-test
     config.hardware.nvidia-jetpack.devicePkgs.samples.cuda-test
   ];

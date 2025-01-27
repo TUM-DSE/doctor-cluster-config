@@ -1,10 +1,11 @@
 { pkgs, lib, ... }:
 {
   virtualisation.docker.enable = lib.mkForce false;
-  virtualisation = {
-    podman.enable = true;
-    podman.extraPackages = [ pkgs.zfs ];
-    podman.dockerCompat = true;
+  virtualisation.podman = {
+    enable = true;
+    extraPackages = [ pkgs.zfs ];
+    dockerCompat = true;
+    dockerSocket.enable = true;
   };
 
   virtualisation.containers.storage.settings = {
