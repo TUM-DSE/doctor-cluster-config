@@ -2,11 +2,8 @@
 
 | Name                        | Items                                                                                                                                                                                              |
 |:---------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Redha Gouicem               | Lenovo ThinkPad X13 (laptop), Lenovo ThinkVision P27u-20 (monitor), Lenovo Thunderbolt 3 Dock Gen 2 (docking station), Samsung Galaxy Tab S8 Ultra (tablet), Dell XPS (laptop, gateway for tablet) |
-| Martin Kleppmann            | xxx                                                                                                                                                                                                |
 | Atsushi Koshiba             | Macbook Pro (laptop), Lenovo ThinkVision P27u-20 (monitor), Acer (monitor)                                                                                                                         |
 | Masanori Misono             | Lenovo ThinkPad T14s (laptop), Dell OptiPlex 5000 Tower (desktop PC; hostname: of1.dse.in.tum.de; in the hardware room), Lenovo ThinkVision P27u-20 (monitor), Lenovo ThinkVision T27p-10 (monitor), Lenovo ThinkPad Universal USB-C Dock (docking station)                                                       |
-| Myoung Jin Nam              | Lenovo ThinkPad X13 (laptop: to be returned to RBP in Nov, 2022), Lenovo Thunderbolt Dock (docking station), Acer (monitor)                                                                        |
 | Jiyang Chen                 | Lenovo ThinkPad T14s (laptop), 2x Lenovo ThinkVision P27u-20 (monitor)                                                                                                                             |
 | Dimitra Giantsidi           | Dell XPS 13 9300 (laptop)                                                                                                                                                                          |
 | Emmanouil (Manos) Giortamis | Lenovo ThinkPad T14s (laptop), Acer (monitor)                                                                                                                                                      |
@@ -18,7 +15,6 @@
 | Dimitrios Stavrakakis       | Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Thunderbolt Dock (docking station), Lenovo ThinkVision P27u-20 (monitor), Acer B277Kbmiipprzx (monitor)                           |
 | Robert Schambach            | Lenovo ThinkPad X13 Gen 1 (laptop) |
 | Harshavardhan Unnibhavi     | LG 27UL850 display, Dell XPS 13 9300 (laptop), Lenovo ThinkPad T14s (laptop), Lenovo Dock (docking station) |
-| Jörg Thalheim               | xxx                                                                                                                                                                                                |
 | Martin Fink                 | MacBook Pro 14" M1 Max (laptop) |
 | Anatole Lefort              | Lenovo ThinkPad X1 Carbon gen 11 (laptop), Lenovo ThinkVision P27u-20 (x2, monitor), Lenovo Thunderbolt 3 Dock Gen 2 (docking station) |
 | Evgeny Volynsky             | Lenovo ThinkPad P15 Gen 1 (laptop), Acer (monitor), Philips (monitor), Lenovo Thunderbolt Dock (docking station) |

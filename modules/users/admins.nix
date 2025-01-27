@@ -16,6 +16,7 @@ let
     "vboxusers"
     "adbusers"
     "input"
+    "video"
     "admin"
   ];
 in

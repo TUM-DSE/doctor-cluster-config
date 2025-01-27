@@ -128,6 +128,7 @@ let
     "vboxusers"
     "adbusers"
     "input"
+    "video"
     "staff"
   ];
 in

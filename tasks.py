@@ -326,6 +326,23 @@ def generate_facter_json(c: Any, hosts: str = "") -> None:
     g = DeployGroup([DeployHost(h, user="root") for h in host_list])
     g.run_function(deploy)
 
+@task
+def deploy_joy(c: Any) -> None:
+    """
+    Deploy to Nvidia jetson
+    """
+    host = DeployHost(
+        "127.0.0.1",
+        user="root",
+        command_prefix="joy",
+        meta=dict(
+            flake_attr="joy",
+            target_user="root",
+            target_host="192.168.188.72",
+            flake_path="/var/lib/nixos-config",
+        ),
+    )
+    deploy_nixos([host])
 
 @task
 def deploy_ruby(c: Any) -> None:

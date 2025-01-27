@@ -164,6 +164,7 @@ antonKeys = [
     "adbusers"
     "input"
     "student"
+    "video"
   ];
 in
 {
