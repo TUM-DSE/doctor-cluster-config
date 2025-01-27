@@ -6,5 +6,9 @@
     ed25519PrivateKeyFile = lib.mkIf (
       config.sops.secrets ? "tinc-key"
     ) config.sops.secrets."tinc-key".path;
+
+    rsaPrivateKeyFile = lib.mkIf (
+      config.sops.secrets ? "tinc-legacy-key"
+    ) config.sops.secrets."tinc-legacy-key".path;
   };
 }
