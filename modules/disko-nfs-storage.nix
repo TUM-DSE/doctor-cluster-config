@@ -4,6 +4,7 @@
 #  disko.devices.disk.nfs-data-disk1.device = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_8TB_S5SSNJ0X300228R";
 #  disko.devices.disk.nfs-data-disk2.device = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_8TB_S5SSNJ0X300181Y";
 {
+  boot.zfs.extraPools = [ "nfs-home" "nfs-data" ];
   disko.devices = {
     disk = {
       nfs-home = {
