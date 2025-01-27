@@ -203,6 +203,7 @@ in
         "graham"
         "ruby"
         "yasmin"
+        "tegan"
       ];
       openssh.authorizedKeys.keys = theoKeys;
     };
