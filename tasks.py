@@ -313,8 +313,12 @@ def generate_facter_json(c: Any, hosts: str = "") -> None:
     """
     Deploy to servers
     """
+
     def deploy(h: DeployHost) -> None:
-        ret = h.run(["nix", "run", "--refresh", "github:numtide/nixos-facter"], stdout=subprocess.PIPE)
+        ret = h.run(
+            ["nix", "run", "--refresh", "github:numtide/nixos-facter"],
+            stdout=subprocess.PIPE,
+        )
         name = h.host.split(".")[0]
         path = ROOT / "hosts" / f"{name}-facter.json"
         path.write_text(ret.stdout)
@@ -325,6 +329,7 @@ def generate_facter_json(c: Any, hosts: str = "") -> None:
         host_list = HOSTS
     g = DeployGroup([DeployHost(h, user="root") for h in host_list])
     g.run_function(deploy)
+
 
 @task
 def deploy_joy(c: Any) -> None:
@@ -343,6 +348,7 @@ def deploy_joy(c: Any) -> None:
         ),
     )
     deploy_nixos([host])
+
 
 @task
 def deploy_ruby(c: Any) -> None:
@@ -382,6 +388,7 @@ def deploy_tegan(c: Any) -> None:
         ),
     )
     deploy_nixos([host])
+
 
 @task
 def deploy_ace(c: Any) -> None:
@@ -518,6 +525,7 @@ def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
             echo=True,
         )
 
+
 @task
 def install_ssh_hostkeys(c: Any, machine: str, hostname: str) -> None:
     """
@@ -613,6 +621,7 @@ def generate_ssh_cert(c: Any, host: str) -> None:
         signed_key_dst = f"{ROOT}/modules/sshd/certs/{host}-cert.pub"
         c.run(f"mv {signed_key_src} {signed_key_dst}")
 
+
 def check_experimental_nix_features(c: Any):
     cmd = "nix eval --json --expr '\"ok\"' foo"
     try:
@@ -620,8 +629,13 @@ def check_experimental_nix_features(c: Any):
     except Exception as e:
         print(f"Command failed: {cmd}: {e}")
         print("If you are on an old nix version: are experimental features enabled?")
-        print("Try: nix eval --extra-experimental-features 'nix-command flakes' --json --expr '\"ok\"'")
-        print("See also https://wiki.nixos.org/wiki/Nix_command#Enabling_the_nix_command")
+        print(
+            "Try: nix eval --extra-experimental-features 'nix-command flakes' --json --expr '\"ok\"'"
+        )
+        print(
+            "See also https://wiki.nixos.org/wiki/Nix_command#Enabling_the_nix_command"
+        )
+
 
 @task
 def update_sops_files(c: Any) -> None:
@@ -679,7 +693,10 @@ def generate_password(c: Any, user: str = "root") -> None:
     """
     Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
     """
-    passw = c.run("nix shell --inputs-from . nixpkgs#xkcdpass -c xkcdpass --numwords 3 --delimiter - --count 1", echo=True).stdout
+    passw = c.run(
+        "nix shell --inputs-from . nixpkgs#xkcdpass -c xkcdpass --numwords 3 --delimiter - --count 1",
+        echo=True,
+    ).stdout
     out = c.run(f"echo '{passw}' | mkpasswd -m sha-512 -s", echo=True)
     print("# Add the following secrets")
     print(f"{user}-password: {passw}")
@@ -962,8 +979,12 @@ def restore_host_keys(c: Any, host: str = "") -> None:
     h = DeployHost(host, user="root", host_key_check=HostKeyCheck.NONE)
     for key in key_files:
         hostname = host.split(".")[0]
-        result = h.run_local(f"sops --extract '[\"{key}\"]' -d {ROOT}/hosts/{hostname}.yml", stdout=subprocess.PIPE)
+        result = h.run_local(
+            f"sops --extract '[\"{key}\"]' -d {ROOT}/hosts/{hostname}.yml",
+            stdout=subprocess.PIPE,
+        )
         h.run(f"echo '{result.stdout}' > /etc/ssh/{key}")
+
 
 @task
 def update_host_keys(c: Any, hosts: str = "") -> None:
