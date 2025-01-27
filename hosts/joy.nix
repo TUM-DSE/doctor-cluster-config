@@ -3,8 +3,13 @@
   imports = [
     ../modules/disko-zfs.nix
     ../modules/facter.nix
-    #../modules/initrd-network.nix
+    ../modules/xrdp.nix
     inputs.jetpack-nixos.nixosModules.default
+  ];
+
+  environment.systemPackages = [
+    config.hardware.nvidia-jetpack.devicePkgs.samples.cudnn-test
+    config.hardware.nvidia-jetpack.devicePkgs.samples.cuda-test
   ];
 
   # overrides latest-zfs kernel with kernel also set in modules/apple-silicon-support/modules/kernel/default.nix
@@ -18,6 +23,11 @@
   hardware.nvidia-jetpack.enable = true;
   hardware.nvidia-jetpack.som = "orin-agx";
   hardware.nvidia-jetpack.carrierBoard = "devkit";
+
+  services.xserver.displayManager.lightdm.enable = true;
+
+  # x11 requires modesetting to be disabled
+  hardware.nvidia-jetpack.modesetting.enable = false;
 
   disko.rootDisk = "/dev/disk/by-id/nvme-WDS200T1X0E-00AFY0_213328800075";
 

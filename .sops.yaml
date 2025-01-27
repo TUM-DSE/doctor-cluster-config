@@ -549,7 +549,6 @@ creation_rules:
     path_regex: modules/nfs/secrets.yml$
   - key_groups:
       - age:
-          - ""
           - age1cd0fudka3fn78zpnnkkj9fpuwwq6q2fpm6gpv52evla0m9yhw53sexe0w7
           - age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59
           - age1t60q35wlu8rjk8k4trf7jg9q2kt0r44d66c5ezqpuw468jg5fs0q05qfwj
@@ -645,6 +644,7 @@ creation_rules:
           - age1qnz850jesp6l4968vqdp40mqenmtx3czhy5l8hsz4kym3aj8c56srs5dkk
           - age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx
           - age193d5ln9y7jgn3pk99g0h4p3wggnmm8rwylwq8c8jet4swvy0mf4qhrgxna
+          - age17tkh3f7v2pd5mwuakpha5jxu4e8dqjquqa3txpr3gjvw9d0pw5kqt6tk93
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
           - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
