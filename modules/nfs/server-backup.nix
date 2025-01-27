@@ -10,7 +10,7 @@
   config = {
     systemd.services.syncoid-setup = {
       wantedBy = [ "multi-user.target" ];
-      after = [ "network.target" ];
+      after = [ "network.target" "zfs-sync-nfs-data.service" "zfs-sync-nfs-home.service" ];
       serviceConfig = {
         Type = "oneshot";
         ExecStart = [
