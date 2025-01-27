@@ -313,8 +313,12 @@ def generate_facter_json(c: Any, hosts: str = "") -> None:
     """
     Deploy to servers
     """
+
     def deploy(h: DeployHost) -> None:
-        ret = h.run(["nix", "run", "--refresh", "github:numtide/nixos-facter"], stdout=subprocess.PIPE)
+        ret = h.run(
+            ["nix", "run", "--refresh", "github:numtide/nixos-facter"],
+            stdout=subprocess.PIPE,
+        )
         name = h.host.split(".")[0]
         path = ROOT / "hosts" / f"{name}-facter.json"
         path.write_text(ret.stdout)
@@ -325,6 +329,7 @@ def generate_facter_json(c: Any, hosts: str = "") -> None:
         host_list = HOSTS
     g = DeployGroup([DeployHost(h, user="root") for h in host_list])
     g.run_function(deploy)
+
 
 @task
 def deploy_joy(c: Any) -> None:
@@ -343,6 +348,7 @@ def deploy_joy(c: Any) -> None:
         ),
     )
     deploy_nixos([host])
+
 
 @task
 def deploy_ruby(c: Any) -> None:
@@ -382,6 +388,7 @@ def deploy_tegan(c: Any) -> None:
         ),
     )
     deploy_nixos([host])
+
 
 @task
 def deploy_ace(c: Any) -> None:
@@ -518,6 +525,7 @@ def ssh_install_nixos(c: Any, machine: str, hostname: str) -> None:
             echo=True,
         )
 
+
 @task
 def install_ssh_hostkeys(c: Any, machine: str, hostname: str) -> None:
     """
@@ -613,6 +621,7 @@ def generate_ssh_cert(c: Any, host: str) -> None:
         signed_key_dst = f"{ROOT}/modules/sshd/certs/{host}-cert.pub"
         c.run(f"mv {signed_key_src} {signed_key_dst}")
 
+
 def check_experimental_nix_features(c: Any):
     cmd = "nix eval --json --expr '\"ok\"' foo"
     try:
@@ -620,8 +629,13 @@ def check_experimental_nix_features(c: Any):
     except Exception as e:
         print(f"Command failed: {cmd}: {e}")
         print("If you are on an old nix version: are experimental features enabled?")
-        print("Try: nix eval --extra-experimental-features 'nix-command flakes' --json --expr '\"ok\"'")
-        print("See also https://wiki.nixos.org/wiki/Nix_command#Enabling_the_nix_command")
+        print(
+            "Try: nix eval --extra-experimental-features 'nix-command flakes' --json --expr '\"ok\"'"
+        )
+        print(
+            "See also https://wiki.nixos.org/wiki/Nix_command#Enabling_the_nix_command"
+        )
+
 
 @task
 def update_sops_files(c: Any) -> None:
@@ -679,9 +693,10 @@ def generate_password(c: Any, user: str = "root") -> None:
     """
     Generate password hashes for users i.e. for root in ./hosts/$HOSTNAME.yml
     """
-    size = 12
-    chars = string.ascii_letters + string.digits
-    passw = "".join(random.choice(chars) for x in range(size))
+    passw = c.run(
+        "nix shell --inputs-from . nixpkgs#xkcdpass -c xkcdpass --numwords 3 --delimiter - --count 1",
+        echo=True,
+    ).stdout
     out = c.run(f"echo '{passw}' | mkpasswd -m sha-512 -s", echo=True)
     print("# Add the following secrets")
     print(f"{user}-password: {passw}")
@@ -695,13 +710,23 @@ def generate_tinc_key(c: Any, hostname: str) -> None:
     """
     with tempfile.TemporaryDirectory() as tmp:
         c.run(
-            f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-ed25519-keys",
+            f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-keys",
             echo=True,
         )
-        content = (Path(tmp) / "ed25519_key.priv").read_text()
-        c.run(
-            f"sops --set '[\"tinc-key\"] {json.dumps(content)}' {ROOT}/hosts/{hostname}.yml"
-        )
+        ed25519_key = (Path(tmp) / "ed25519_key.priv").read_text()
+        ed25519_pubkey = (Path(tmp) / "ed25519_key.pub").read_text()
+        rsa_key = (Path(tmp) / "rsa_key.priv").read_text()
+        rsa_pubkey = (Path(tmp) / "rsa_key.pub").read_text()
+        keys = {
+            "tinc-key": ed25519_key,
+            "tinc-pubkey": ed25519_pubkey,
+            "tinc-legacy-key": rsa_key,
+            "tinc-legacy-pubkey": rsa_pubkey,
+        }
+        for key, value in keys.items():
+            c.run(
+                f"sops --set '[\"{key}\"] {json.dumps(value)}' {ROOT}/hosts/{hostname}.yml"
+            )
 
 
 @task
@@ -964,8 +989,12 @@ def restore_host_keys(c: Any, host: str = "") -> None:
     h = DeployHost(host, user="root", host_key_check=HostKeyCheck.NONE)
     for key in key_files:
         hostname = host.split(".")[0]
-        result = h.run_local(f"sops --extract '[\"{key}\"]' -d {ROOT}/hosts/{hostname}.yml", stdout=subprocess.PIPE)
+        result = h.run_local(
+            f"sops --extract '[\"{key}\"]' -d {ROOT}/hosts/{hostname}.yml",
+            stdout=subprocess.PIPE,
+        )
         h.run(f"echo '{result.stdout}' > /etc/ssh/{key}")
+
 
 @task
 def update_host_keys(c: Any, hosts: str = "") -> None:
