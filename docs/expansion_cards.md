@@ -14,6 +14,12 @@ Parameters to consider for matching cards to slots:
     - jack
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
     - momiji
+- 1x Intel Stratix 10 GX FPGA Development Kit H-Tile (high profile, dual slot)
+    - office 01.07.60
+- 1x Intel Agilex 7 FPGA I-Series Development Kit 2x R-Tile and 1x F-Tile (high profile, dual slot)
+    - office 01.07.60
+- 1x (Intel) Napatech F2070X Infrastructure Processing Unit (IPU) (high profile, dual slot)
+    - TBD
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
     - sakura (sakura-sakura, loopback)
         - SN: 501211207MON
@@ -100,5 +106,5 @@ Onboard (not listed by [List of slots](#List of slots)):
 - Mellanox ConnectX-6
     - vislor: 2 ports RJ-45 (,)
 
-(^ list last updated 08.11.23)
+(^ list last updated 28.01.2025)
 
