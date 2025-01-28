@@ -22,3 +22,4 @@
 | Nathaniel Tornow            | MacBook Pro 14" M3 (laptop) |
 | Oguzcan Kirmemis            | Lenovo ThinkPad X13 Yoga Gen 4 (laptop) |
 | Nathaniel Tornow            | Lenovo ThinkPad X13 (laptop) |
+| Felix Gust                  | Lenovo ThinkPad X1 Carbon gen 11 (laptop), 2x Lenovo ThinkVision P27u-20 (monitor), Mifcom Tower (desktop PC)                                                                                      |
