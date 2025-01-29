@@ -63,6 +63,7 @@
           config.networking.doctorwho.hosts.ace.ipv6
           #config.networking.doctorwho.hosts.sarah.ipv6
           config.networking.doctorwho.hosts.donna.ipv6
+	  config.networking.doctorwho.hosts.joy.ipv6
         ];
         # offset 27 has historically reasons
         exportHome = lib.imap0 (
