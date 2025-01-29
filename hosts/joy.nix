@@ -4,6 +4,7 @@
     ../modules/disko-zfs.nix
     ../modules/facter.nix
     ../modules/xrdp.nix
+    ../modules/nfs/client.nix
     # Docker doesn't work with nvidia passthru: https://github.com/TUM-DSE/jetpack-nixos?tab=readme-ov-file#oci-container-support
     ../modules/podman.nix
     inputs.jetpack-nixos.nixosModules.default
