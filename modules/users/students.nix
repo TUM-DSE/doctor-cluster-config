@@ -495,6 +495,7 @@ in
       allowedHosts = [
 	  	"jack"
 		"yasmin"
+		"joy"
 	  ];
       openssh.authorizedKeys.keys = berkayKeys;
     };
