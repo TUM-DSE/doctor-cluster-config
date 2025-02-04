@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 {
   # Enable this when you install NixOS on a new machine!
-  boot.loader.efi.canTouchEfiVariables = false;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.grub = lib.mkIf (pkgs.stdenv.isAarch64) {
     efiSupport = true;
