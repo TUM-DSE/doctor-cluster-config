@@ -210,6 +210,8 @@ Our chair currently has three networks:
 
 - `il01`: for devices in the office
   - `ruby`: firewall port 22 open (only for `login` jumphost)
+  - `ace`: firewall port 22 open from anywhere
+  - `joy`: firewall port 22 open from anywhere
 - `il01_16`: for the servers
   - open to `il01` (and VPN)
   - usually 10Gbit/s SFP+ connectors for fiber
