@@ -290,6 +290,23 @@ creation_rules:
     path_regex: hosts/jackson.yml$
   - key_groups:
       - age:
+          - age1cahs4a6flewnwrqta6fvyctxwwsjmt49ewplfk5sktz4e45megtsjmchhu
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+          - age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv
+          - age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0
+          - age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd
+          - age17ve9wnwazsmp2xgvsp27u7clywqwwqynsslyyxa4k0hu8mznf5qq2vmp2c
+          - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
+          - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
+          - age1vetu6glcp8md6uqv05jvyyqej47wumswxzjyaadnmuxh89at6sesrxcxzy
+          - age1z6phh2tdqf2cqq435n3gpd58a3zpn0k88zylqu23gxps2hgk8etspg9g30
+    path_regex: hosts/jamie.yml$
+  - key_groups:
+      - age:
           - age17tkh3f7v2pd5mwuakpha5jxu4e8dqjquqa3txpr3gjvw9d0pw5kqt6tk93
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
@@ -571,6 +588,7 @@ creation_rules:
           - age1uhvxadllxt9q6hvelz9kpyqp8jmhwl7plgp8ylnnvms9sj732yksg9swk9
           - age1t3shywg9gdlfu7k8zcwa8u2mn85d750ul60h9sdydfuxe9dssdaqucc24y
           - age1njxdasjq883w4whexdzdzvjpw64dmndlp8zjf9tj7k47q6mgaa5sux0urv
+          - age1cahs4a6flewnwrqta6fvyctxwwsjmt49ewplfk5sktz4e45megtsjmchhu
           - age1vetu6glcp8md6uqv05jvyyqej47wumswxzjyaadnmuxh89at6sesrxcxzy
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age17tkh3f7v2pd5mwuakpha5jxu4e8dqjquqa3txpr3gjvw9d0pw5kqt6tk93
