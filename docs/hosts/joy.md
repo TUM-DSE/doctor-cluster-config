@@ -1,5 +1,7 @@
 # joy
 
+Currently in Teofil's office.
+
 ```
 System:
   Host: joy Kernel: 5.10.216 arch: aarch64 bits: 64 compiler: gcc v: 13.3.0
