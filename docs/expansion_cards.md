@@ -44,12 +44,9 @@ Parameters to consider for matching cards to slots:
     - amy
         - MAC1: 00:0A:35:0E:24:D6
         - MAC2: 00:0A:35:0E:24:D7
-- 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC (bought, on the way)
-    - rose (rose1-craig4, rose2-craig5; old firmware)
-        - MAC1: 00:0A:35:0B:8B:EA
-        - MAC33: 00:0A:35:0B:8C:0A
-    - (not installed; firmware bundle_id 1.1.1.1021)
-    - (not installed; firmware bundle_id 1.1.1.1021)
+- 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC
+    - office 01.07.060
+    - firmware bundle_id 1.1.1.1021
 - 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
@@ -106,5 +103,5 @@ Onboard (not listed by [List of slots](#List of slots)):
 - Mellanox ConnectX-6
     - vislor: 2 ports RJ-45 (,)
 
-(^ list last updated 28.01.2025)
+(^ list last updated 06.02.2025)
 
