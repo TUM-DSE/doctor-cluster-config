@@ -53,6 +53,10 @@
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
     srvos.inputs.nixpkgs.follows = "nixpkgs";
 
+    hosthog.url = "github:pogobanane/hosthog";
+    hosthog.inputs.nixpkgs.follows = "nixpkgs";
+    hosthog.inputs.flake-parts.follows = "flake-parts";
+
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
   };

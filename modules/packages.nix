@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # this extends the list from:
   # https://github.com/numtide/srvos/blob/master/server.nix#L10
@@ -46,6 +46,9 @@
       smartmontools # smartctl
       nvme-cli # nvmectl
       edac-utils # edac-util: memory/pci errors
+
+      # cluster management
+      inputs.hosthog
 
       ipmitool
       # tries to default to soft-float due to out-dated cc-rs
