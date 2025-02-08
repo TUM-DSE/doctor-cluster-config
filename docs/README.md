@@ -63,6 +63,8 @@ Our epyc servers are shared devices on which many users usually work concurrentl
   - [ryan](./hosts/ryan.md)
 - single NUMA node (EPYC 9654P)
   - [irene](./hosts/irene.md)
+- dual NUMA node (EPYC 9654), GPU
+  - [jamie](./hosts/jamie.md)
 - dual NUMA node (EPYC 7413, for many expansion cards)
   - [amy](./hosts/amy.md)
   - [clara](./hosts/clara.md)
@@ -87,7 +89,7 @@ Those servers (or individual devices) are sometimes used exclusively by a single
 - dual socket Xeon Platinum 8562Y+, TDX support
   - [ian](./hosts/ian.md)
 
-**Note**: these servers are equipped with Persistent Memory (PM).
+**Note**: Some of these servers are equipped with Persistent Memory (PM).
 For information on how to setup the PM in App-Direct mode, please see [here](./SETUP_PM.md)
 
 ## Servers used for NFS/Services

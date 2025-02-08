@@ -254,6 +254,7 @@ HOSTS = [
     "xavier.dos.cit.tum.de",
     "ian.dos.cit.tum.de",
     "ace.dos.cit.tum.de",
+    "jamie.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
@@ -267,6 +268,7 @@ MANUFACTURERS = dict(
             "mickey.dos.cit.tum.de",
             "vislor.dos.cit.tum.de",
             "xavier.dos.cit.tum.de",
+            "jamie.dos.cit.tum.de",
         ],
         "supermicro": [
             "jackson.dos.cit.tum.de",
@@ -824,6 +826,7 @@ def add_server(c: Any, hostname: str) -> None:
 
 
 def ipmitool(c: Any, host: str, cmd: str) -> subprocess.CompletedProcess:
+    print(f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' {cmd}""")
     return c.run(
         f"""ipmitool -I lanplus -H {host} -U ADMIN -P '{ipmi_password(c)}' {cmd}""",
         pty=True,

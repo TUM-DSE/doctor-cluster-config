@@ -10,6 +10,8 @@ Parameters to consider for matching cards to slots:
 
 ## List of cards
 
+- 1x Nvidia H100 GPU (high profile, dual slot)
+    - jamie
 - 1x Nvidia A40 GPU (high profile, dual slot)
     - jack
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
@@ -103,5 +105,5 @@ Onboard (not listed by [List of slots](#List of slots)):
 - Mellanox ConnectX-6
     - vislor: 2 ports RJ-45 (,)
 
-(^ list last updated 06.02.2025)
+(^ list last updated 08.02.2025)
 
