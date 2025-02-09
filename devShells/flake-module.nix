@@ -9,7 +9,6 @@
         pkgs.nixos-anywhere
         pkgs.python3.pkgs.deploykit
         pkgs.mypy
-        pkgs.pixiecore
         pkgs.dnsmasq
         pkgs.python3.pkgs.netaddr
         pkgs.qemu_kvm
