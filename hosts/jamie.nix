@@ -6,6 +6,11 @@
     ../modules/nvidia.nix
   ];
 
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
   networking.hostName = "jamie";
 
   system.stateVersion = "23.05";
