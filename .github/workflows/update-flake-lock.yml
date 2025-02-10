@@ -3,7 +3,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron:  '38 0 * * *'
+    - cron: "38 0 * * 0,4"
 permissions:
   pull-requests: write
   contents: write
@@ -14,10 +14,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Nix
         uses: cachix/install-nix-action@v30
+      - uses: actions/create-github-app-token@v1
+        id: app-token
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          app-id: ${{ vars.CI_APP_ID }}
+          private-key: ${{ secrets.CI_PRIVATE_KEY }}
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@main
+        uses: DeterminateSystems/update-flake-lock@v24
         with:
-          pr-labels: |                  # Labels to be set on the PR
-            merge-queue
+          token: ${{ steps.app-token.outputs.token }}
