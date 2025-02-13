@@ -1,3 +1,4 @@
+{ pkgs, lib, ... }:
 {
   imports = [
     ../modules/ipmi-supermicro.nix
@@ -17,6 +18,7 @@
     "vm.overcommit_memory" = 1;
   };
   powerManagement.cpuFreqGovernor = "performance";
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
 
   system.stateVersion = "22.11";
   simd.arch = "znver4";
