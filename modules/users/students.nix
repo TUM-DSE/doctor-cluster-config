@@ -610,7 +610,7 @@ in
     martinLi = {
       isNormalUser = true;
       home = "/home/martinLi";
-      inherit extraGroups;
+      extraGroups = extraGroups ++ [ "disk" ];
       shell = "/run/current-system/sw/bin/bash";
       uid = 2065;
       allowedHosts = [
