@@ -88,6 +88,8 @@ Those servers (or individual devices) are sometimes used exclusively by a single
   - [xavier](./hosts/xavier.md)
 - dual socket Xeon Platinum 8562Y+, TDX support
   - [ian](./hosts/ian.md)
+- dual socket Xeon 6756E, TDX support
+  - [martha](./hosts/martha.md)
 
 **Note**: Some of these servers are equipped with Persistent Memory (PM).
 For information on how to setup the PM in App-Direct mode, please see [here](./SETUP_PM.md)
