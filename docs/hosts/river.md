@@ -2,13 +2,13 @@
 
 ```
 System:
-  Host: river Kernel: 5.15.84 arch: x86_64 bits: 64 compiler: gcc v: 13.2.0 clocksource: tsc
+  Host: river Kernel: 5.15.84 arch: x86_64 bits: 64 compiler: gcc v: 13.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\a11f4q7hxy8a9f8i57v2qsl5cf80rzdh-initrd-linux-5.15-initrd.efi
-    init=/nix/store/18m75fl2drxkmgdcrzsfnh4r6cb856id-nixos-system-river-24.05.20241018.07f7c53/init
-    console=ttyS0,115200 console=tty0 intel_iommu=on console=ttyS1,115200n8 console=tty1
+    parameters: initrd=\EFI\nixos\312apj1hxbr7g5lqnhhraykfd4ncidq2-initrd-linux-5.15-initrd.efi
+    init=/nix/store/2cw0dbawd1phs1dx280hv3xcz7ar611q-nixos-system-river-24.11.20250114.bfc5ea6/init
+    intel_iommu=on console=ttyS1,115200n8 console=tty1 console=ttyS0,115200 console=tty0
     hugepagesz=1GB hugepages=8 hugepagesz=2MB hugepages=51200 nohibernate loglevel=4
-  Console: N/A Distro: NixOS 24.05 (Uakari)
+  Console: N/A Distro: NixOS 24.11 (Vicuna)
 Machine:
   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789 serial: E424030X2100639 Chassis:
     type: 1 v: 0123456789 serial: C1160LK21P50425
@@ -16,7 +16,7 @@ Machine:
     uuid: 00000000-0000-0000-0000-3cecef62ac56 UEFI: American Megatrends LLC. v: 1.1c
     date: 11/08/2021
 Memory:
-  System RAM: total: 1.25 TiB available: 251.21 GiB used: 127.21 GiB (50.6%)
+  System RAM: total: 1.25 TiB available: 251.21 GiB used: 125.37 GiB (49.9%)
   Array-1: capacity: 12 TiB note: check slots: 8 modules: 8 EC: Single-bit ECC
     max-module-size: 1.50 TiB note: est.
   Device-1: DIMMA1 type: DDR4 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -62,10 +62,10 @@ CPU:
     microcode: 0xD0003E7
   Topology: cpus: 1x cores: 12 tpc: 2 threads: 24 smt: enabled cache: L1: 960 KiB desc: d-12x48
     KiB; i-12x32 KiB L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
-  Speed (MHz): avg: 856 high: 2134 min/max: 800/3600 base/boost: 3000/4500 scaling:
-    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 801 2: 800
-    3: 801 4: 801 5: 800 6: 800 7: 801 8: 801 9: 800 10: 801 11: 801 12: 801 13: 801 14: 800
-    15: 801 16: 801 17: 800 18: 801 19: 2134 20: 801 21: 801 22: 801 23: 801 24: 801
+  Speed (MHz): avg: 899 high: 2265 min/max: 800/3600 base/boost: 3000/4500 scaling:
+    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 801 2: 2265
+    3: 801 4: 1520 5: 801 6: 801 7: 801 8: 800 9: 801 10: 801 11: 975 12: 801 13: 800 14: 800
+    15: 801 16: 801 17: 801 18: 801 19: 801 20: 801 21: 801 22: 801 23: 800 24: 801
     bogomips: 144000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
@@ -112,7 +112,7 @@ Network:
   IF: enp24s0f1 state: down mac: 00:1b:21:c3:82:da
   Device-5: Intel Ethernet E810-C for QSFP driver: N/A modules: ice pcie: gen: 4 speed: 16 GT/s
     lanes: 16 port: N/A bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200
-  IF-ID-1: docker0 state: down mac: 02:42:d1:62:23:c0
+  IF-ID-1: docker0 state: down mac: 02:42:45:01:14:66
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
   IF-ID-2: tinc.retiolum state: unknown speed: 10 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:f7cf:5f5a:8ed8:f139:be6d/16 scope: global
@@ -128,37 +128,37 @@ Bluetooth:
 RAID:
   Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid_sas v: 07.717.02.00-rc1
     port: d000 bus-ID: 8a:00.0 chip-ID: 1000:0017 rev: N/A class-ID: 0104
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.47 TiB
-    allocated: 270 GiB zfs-fs: size: 1.68 TiB free: 1.42 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.51 TiB
+    allocated: 231 GiB zfs-fs: size: 1.68 TiB free: 1.46 TiB
   Components: Online:
   1: sda2 maj-min: 8:2 size: 1.75 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 270.03 GiB (7.7%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 230.78 GiB (6.6%)
   ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
-    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 35 C
+    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 36 C
     scheme: GPT
   SMART: yes state: enabled
   ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
-    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 34 C
+    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 35 C
   SMART: yes state: enabled
 Partition:
-  ID-1: / raw-size: N/A size: 1.68 TiB used: 269.99 GiB (15.7%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 34 MiB (3.3%) fs: vfat
+  ID-1: / raw-size: N/A size: 1.68 TiB used: 230.71 GiB (13.4%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 67.7 MiB (6.6%) fs: vfat
     block-size: 512 B dev: /dev/sda1 maj-min: 8:1
-  ID-3: /home raw-size: N/A size: 2.93 TiB used: 1.46 TiB (49.8%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 2.72 TiB used: 1.86 TiB (68.7%) fs: nfs4
     remote: nfs:/export/home
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: 34 C mobo: 27 C
-  Fan Speeds (rpm): cpu: 8960 fan-2: 8960 fan-3: 8960 fan-4: 8960 fan-5: 8960 fan-6: 9100
+  Src: ipmi System Temperatures: cpu: 39 C mobo: 29 C
+  Fan Speeds (rpm): cpu: 8120 fan-2: 8120 fan-3: 8120 fan-4: 8260 fan-5: 8260 fan-6: 8120
   Power: 12v: 11.508 5v: 4.958 3.3v: 3.299 vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 30.0 C pch: 44.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 33.0 C pch: 46.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 431 Power: uptime: 1d 23h 21m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 97.27 GiB Init: systemd v: 255 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 586 libs: 134 pm: nix-usr pkgs: 0
-    Compilers: gcc: 13.2.0 Client: Sudo v: 1.9.15p5 inxi: 3.3.34
+  Processes: 437 Power: uptime: 22d 19h 59m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 97.27 GiB Init: systemd v: 256 default: multi-user tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 595 libs: 134 pm: nix-usr pkgs: 0
+    Compilers: gcc: 13.3.0 Client: Sudo v: 1.9.16p2 inxi: 3.3.35
 ```
 ![hardware topology](river.lstopo.svg)

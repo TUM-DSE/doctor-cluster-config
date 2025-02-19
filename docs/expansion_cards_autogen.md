@@ -2,6 +2,12 @@
 
 Note that ubuntu workstations and servers don't appear in this list.
 
+### ace.dos.cit.tum.de 
+
+PCI Slots:   
+  Message: No ARM data found for this feature.   
+ 
+
 ### adelaide.dos.cit.tum.de 
 
 PCI Slots:   
@@ -103,7 +109,26 @@ No device/PCI ID.
 
 ### dan.dos.cit.tum.de 
 
-Error: in fetching expansion card data (host offline?) 
+PCI Slots:   
+- ✅  Slot: 2 type: PCIe gen: 3 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ❌  Slot: 3 type: PCIe gen: 3 status: in use length: short volts: 3.3 bus-ID: af:00.0   
+af:00.0, RAID bus controller, Broadcom / LSI, MegaRAID 12GSAS/PCIe Secure SAS39xx -p00, Dell, PERC H750 Adapter  
+- ❌  Slot: 1 type: PCIe gen: 3 status: in use length: other volts: 3.3 bus-ID: 5e:00.0   
+5e:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
+- ❌  Slot: 8 type: PCIe gen: 3 status: in use length: 2.5" drive form factor volts: 3.3   
+18:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
+    bus-ID: 18:00.0   
+- ❌  Slot: 9 type: PCIe gen: 3 status: in use length: 2.5" drive form factor volts: 3.3   
+19:00.0, Non-Volatile memory controller, Intel Corporation, NVMe DC SSD [3DNAND, Sentinel Rock Controller] -p02, Dell, NVMe MU U.2 1.6TB (P5600)  
+    bus-ID: 19:00.0   
+- ✅  Slot: 7 type: PCIe gen: 3 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 86:00.0   
+- ✅  Slot: 6 type: PCIe gen: 3 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 87:00.0   
+ 
 
 ### graham.dos.cit.tum.de 
 
@@ -204,6 +229,47 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 51:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 18:00.0   
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
+ 
+
+### jamie.dos.cit.tum.de 
+
+PCI Slots:   
+- ✅  Slot: 3 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ❌  Slot: 2 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 21:00.0   
+21:00.0, 3D controller, NVIDIA Corporation, GH100 [H100L 94GB] -ra1 -p00, NVIDIA Corporation, Device 1839  
+- ✅  Slot: 7 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 6 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 5 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 4 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 4 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 41:00.0   
+- ✅  Slot: 5 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 42:00.0   
+- ✅  Slot: 6 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 43:00.0   
+- ✅  Slot: 7 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 44:00.0   
+- ✅  Slot: 1 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: c1:00.0   
+- ❌  Slot: 0 type: PCIe gen: 4 status: in use length: 2.5" drive form factor volts: 3.3   
+c2:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
+    bus-ID: c2:00.0   
+- ✅  Slot: 3 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: c3:00.0   
+- ✅  Slot: 2 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: c4:00.0   
  
 
 ### mickey.dos.cit.tum.de 
