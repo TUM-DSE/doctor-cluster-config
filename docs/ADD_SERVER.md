@@ -62,11 +62,13 @@ inv ssh-install-nixos --machine $host --hostname root@$host
 
 Once the server is installed in the server room:
 
-- fix up warnings in the nixos config
 - ensure hostname labels are on front and back of the server
+- add host to `tasks.py` (`HOSTS` and `MANUFACTURERS`) and commit `inv update-docs`
+- add host to `docs/README.md`
+- fix up warnings in the nixos config
 - add the nfs client module to the servers config
-- include it to monitoring, backup services and retiolum
-- change PXE boot interface to the one plugged in at the server room
+- ask Joerg to include it to monitoring, backup services and retiolum
+- ~~change PXE boot interface to the one plugged in at the server room~~
 
 ## Misc: IPMI / UEFI
 
