@@ -126,6 +126,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCR0yt3zKrlR8XC+xwYT+jX1TLyLqK7vYjbXBZ1mM5f/fnsX+xWA1q5Caw0b+Q6aNmUEC7KQ0yUBV/q/9/7MPeQyVs0cWIO8RZCw0nKytcRh3tvmR1ysYZRYWCHuvB8yGAWpxmUYFUJv2BJnKB8jLor+XA/ceSYG0sJVu3tbXMZm0Mj4XIoSc/+EE9LU9yenruD8G8xQb12lvZ83bOhkXY5Hr0posRT4vb/15b1yXvrprPjSOMv53+TlYv2w4HYs0HOY737jMiNfhQIRMIXz+weDAQr76bUgTz8sKOUjbJX4OtRFVhsQjWk+8q5quYI9Kp0bUSPAz+LeXF/ZunImyA1w47DKW7Rq5sc8BZGCd1CP9W5VLoZWD9bcgIR8O26jsP3yRCBGo1m/cWbrAc7V/pJKDQamNzhCZYrB/4JJBbm3AWDIiZVpsoJ+03CF2K1ly/oxG1vkq9BDopK3tUH4akPfGefPnxf4zZcaMR3IzXmlPOx9JAC9OqGQbkaOSHh5cc= nathanieltornow@Monitor.dos.cit.tum.de"
   ];
 
+  aleksandraKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMq8uZ112OCsUx/gjZFhO4pJv/qpm80SHNp7dOrstevY aswierkowska@aswierkowska-thinkpad"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -391,6 +395,17 @@ in
         uid = 2028;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = nateKeys;
+      };
+
+      # Aleksandra Świerkowska
+      aleksandra = {
+        isNormalUser = true;
+        home = "/home/aleksandra";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2029;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = aleksandraKeys;
       };
 
       # add staff to root account as well
