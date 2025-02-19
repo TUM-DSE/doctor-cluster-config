@@ -32,6 +32,7 @@ let
       anatole
       jiyang
       martin
+      aleksandra
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
