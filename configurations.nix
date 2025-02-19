@@ -352,5 +352,13 @@ in
         ];
     };
 
+    martha = nixosSystem {
+      pkgs = pkgs-x86_64-linux;
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/martha.nix
+        ];
+    };
   };
 }
