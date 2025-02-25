@@ -112,7 +112,7 @@ let
   ];
 
   davidKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEFUUZ0oaGY1C/SdZvNYKZEnqFLFNWX2wWMktD33fSM+ david@David-TUM"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOspUL7xyTeVmDpu5C6rode5SjqNPLekcQho6YRDG7gT david.schall@tum.de"
   ];
 
   mfKeys = [
