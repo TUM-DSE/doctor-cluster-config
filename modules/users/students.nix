@@ -60,10 +60,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
   ];
 
-  lanKeys = [
-    "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAAl2L4v1N5MEkPMJ1TIfiF6OwM58J0b4FORkA1mTgroq+7c9fzxH8sv/9wsAJkV7LI8JPyCpK9zpMLcX5A1gNJImAEnsyrYxLzxUQfhKzhpf39v1gvMCgh2agbaB4g8TQ5wmjzx22EWR3yoOG7rldbjbdoXTa2CmGg9xLVkce9fLYC31w== lan@LAPTOP-TRMD7DCS"
-  ];
-
   michaelKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGoXqeCmxusQtuRVsFoZsa0SPTYRdPlcnmA9XY7WrHmt"
   ];
@@ -357,21 +353,6 @@ in
       ];
       openssh.authorizedKeys.keys = anubhavKeys;
       xrdpAccess = true;
-    };
-
-    # Lan Ouyang, M.Sc. thesis with Martin and Ilya (CHERI db project) Remove after Jan 2025
-    lan = {
-      isNormalUser = true;
-      home = "/home/lan";
-      extraGroups = extraGroups ++ [ "elasticsearch" ];
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2050;
-      allowedHosts = [
-        "graham"
-        "irene"
-        "ace"
-      ];
-      openssh.authorizedKeys.keys = lanKeys;
     };
 
     # Michael Hackl, M.Sc thesis (Wallet project)
@@ -681,5 +662,6 @@ in
     "yihe"
     "yiwenliu"
     "zixuanli"
+    "lan"
   ];
 }
