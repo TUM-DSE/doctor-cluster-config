@@ -6,6 +6,8 @@
     ../modules/nvidia.nix
   ];
 
+  simd.arch = "znver4";
+
   services.ollama = {
     enable = true;
     acceleration = "cuda";
