@@ -381,7 +381,7 @@ in
         isNormalUser = true;
         home = "/home/david";
         inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
+        shell = "/run/current-system/sw/bin/zsh";
         uid = 1035;
         openssh.authorizedKeys.keys = davidKeys;
       };
