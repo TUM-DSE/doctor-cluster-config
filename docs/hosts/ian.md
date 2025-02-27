@@ -15,7 +15,7 @@ Machine:
     part-nu: SKU=0A6B;ModelName=PowerEdge R760 uuid: 4c4c4544-0033-4810-8053-c2c04f463534 UEFI: Dell
     v: 2.2.8 date: 06/24/2024
 Memory:
-  System RAM: total: 1024 GiB available: 996.4 GiB used: 18.66 GiB (1.9%)
+  System RAM: total: 1024 GiB available: 996.4 GiB used: 18.56 GiB (1.9%)
   Array-1: capacity: 12 TiB note: check slots: 32 modules: 16 EC: Multi-bit ECC
     max-module-size: 384 GiB note: est.
   Device-1: A1 type: DDR5 detail: synchronous registered (buffered) size: 64 GiB speed: 5600 MT/s
@@ -111,14 +111,14 @@ CPU:
     model-id: 0xCF (207) stepping: 2 microcode: 0x21000283
   Topology: cpus: 2x cores: 32 smt: disabled cache: L1: 2x 2.5 MiB (5 MiB) desc: d-32x48 KiB;
     i-32x32 KiB L2: 2x 64 MiB (128 MiB) desc: 32x2 MiB L3: 2x 60 MiB (120 MiB) desc: 1x60 MiB
-  Speed (MHz): avg: 2824 high: 3800 min/max: N/A base/boost: 2800/4000 volts: 1.6 V
-    ext-clock: 20000 MHz cores: 1: 2800 2: 2800 3: 2800 4: 2800 5: 3356 6: 2800 7: 2800 8: 2800
+  Speed (MHz): avg: 2846 high: 3800 min/max: N/A base/boost: 2800/4000 volts: 1.6 V
+    ext-clock: 20000 MHz cores: 1: 2800 2: 2800 3: 2800 4: 2800 5: 2800 6: 2800 7: 2800 8: 2800
     9: 2800 10: 2800 11: 2800 12: 2800 13: 2800 14: 2800 15: 2800 16: 2800 17: 2800 18: 2800
     19: 2800 20: 2800 21: 2800 22: 2800 23: 2800 24: 2800 25: 2800 26: 2800 27: 2800 28: 2800
     29: 2800 30: 2800 31: 2800 32: 2800 33: 2800 34: 2800 35: 2800 36: 2800 37: 2800 38: 2800
-    39: 2800 40: 2800 41: 2800 42: 2800 43: 2800 44: 2800 45: 2800 46: 3800 47: 2800 48: 2800
-    49: 2800 50: 2800 51: 2800 52: 2800 53: 2800 54: 2800 55: 2800 56: 2800 57: 2800 58: 2800
-    59: 2800 60: 2800 61: 2800 62: 2800 63: 2800 64: 2800 bogomips: 357588
+    39: 2800 40: 2800 41: 3800 42: 2800 43: 3800 44: 2800 45: 2800 46: 2800 47: 2800 48: 2800
+    49: 2800 50: 2800 51: 2800 52: 2800 53: 2800 54: 3800 55: 2800 56: 2800 57: 2800 58: 2800
+    59: 2800 60: 2800 61: 2800 62: 2800 63: 2800 64: 2800 bogomips: 358506
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
   Type: itlb_multihit status: Not affected
@@ -166,7 +166,7 @@ Network:
   IF: enp160s0np0 state: up speed: 100000 Mbps duplex: full mac: 30:3e:a7:10:d6:b4
   IP v4: 169.254.166.149/16 scope: link
   IP v6: fe80::323e:a7ff:fe10:d6b4/64 virtual: proto kernel_ll scope: link
-  IF-ID-1: docker0 state: down mac: 02:42:ff:32:04:2a
+  IF-ID-1: docker0 state: down mac: 02:42:e5:45:c9:bd
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
   IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:41e3:b54a:9512:7a4b:573f/16 scope: global
@@ -175,40 +175,40 @@ Network:
 RAID:
   Hardware-1: Broadcom / LSI Fusion-MPT 24GSAS/PCIe SAS40xx/41xx driver: mpi3mr v: 8.2.0.3.0
     port: N/A bus-ID: ca:00.0 chip-ID: 1000:00a5 rev: N/A class-ID: 0104
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.38 TiB
-    allocated: 104 GiB zfs-fs: size: 3.38 TiB free: 3.27 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.39 TiB
+    allocated: 101 GiB zfs-fs: size: 3.38 TiB free: 3.28 TiB
   Components: Online:
   1: nvme1n1p2 maj-min: 259:4 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 4.95 TiB usable: 4.84 TiB used: 90.83 GiB (1.8%)
+  Local Storage: total: raw: 4.95 TiB usable: 4.84 TiB used: 66.87 GiB (1.4%)
   ID-1: /dev/nvme0n1 maj-min: 259:1 vendor: Samsung model: MZPLJ1T6HBJR-00007 size: 1.46 TiB
     block-size: physical: 512 B logical: 512 B tech: SSD serial: S55JNC0W600229 fw-rev: EPK9GB5Q
     temp: 42 ° (315 K) C
-  SMART: yes health: PASSED on: 167d 5h cycles: 28 read-units: 4,531,310 [2.32 TB]
+  SMART: yes health: PASSED on: 175d 9h cycles: 32 read-units: 4,531,382 [2.32 TB]
     written-units: 4,384,304 [2.24 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:2 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNS0W800690 fw-rev: GDC5602Q temp: 31.9 C scheme: GPT
-  SMART: yes health: PASSED on: 167d 5h cycles: 29 read-units: 1,334,612 [683 GB]
-    written-units: 6,811,117 [3.48 TB]
+    serial: S64HNS0W800690 fw-rev: GDC5602Q temp: 29.9 C scheme: GPT
+  SMART: yes health: PASSED on: 175d 9h cycles: 33 read-units: 1,350,494 [691 GB]
+    written-units: 7,083,029 [3.62 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 3.36 TiB used: 90.76 GiB (2.6%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 3.34 TiB used: 66.8 GiB (2.0%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 73.9 MiB (7.2%) fs: vfat
     block-size: 512 B dev: /dev/nvme1n1p1 maj-min: 259:3
-  ID-3: /home raw-size: N/A size: 2.72 TiB used: 1.86 TiB (68.7%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 2.71 TiB used: 1.98 TiB (73.1%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 3.27 TiB used: 1.5 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 3.28 TiB used: 1.5 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu: N/A mobo: N/A
-  Fan Speeds (rpm): cpu: 7920 fan-27: 6840 fan-42: 7920 fan-43: 6960 fan-58: 8040 fan-59: 6840
-    fan-74: 7920 fan-75: 6960 fan-90: 7920 fan-91: 6840 fan-106: 7920 fan-107: 6960
+  Fan Speeds (rpm): cpu: 7440 fan-27: 6480 fan-42: 7560 fan-43: 6480 fan-58: 7440 fan-59: 6480
+    fan-74: 7440 fan-75: 6480 fan-90: 7440 fan-91: 6480 fan-106: 7440 fan-107: 6360
   Power: 12v: N/A 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
   Src: lm-sensors System Temperatures: cpu: 66.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 957 Power: uptime: 5d 21h 58m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 950 Power: uptime: 1d 15h 19m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 398.55 GiB Init: systemd v: 256 default: multi-user tool: systemctl
   Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 638 libs: 142 pm: nix-usr pkgs: 0
     Compilers: gcc: 13.3.0 Client: Sudo v: 1.9.16p2 inxi: 3.3.35

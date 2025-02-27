@@ -2,10 +2,10 @@
 
 ```
 System:
-  Host: jackson Kernel: 6.12.10 arch: x86_64 bits: 64 compiler: gcc v: 13.3.0 clocksource: tsc
+  Host: jackson Kernel: 6.12.12 arch: x86_64 bits: 64 compiler: gcc v: 13.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\21v2k2xxmvar31hqx54ccgmzgsy3b7kw-initrd-linux-6.12.10-initrd.efi
-    init=/nix/store/bam0n24vllm8lf94l1858bvp8hqhj15b-nixos-system-jackson-24.11.20250120.643e964/init
+    parameters: initrd=\EFI\nixos\1wl3l289cxahan5py18nnqhsybhd1apb-initrd-linux-6.12.12-initrd.efi
+    init=/nix/store/xvy1fmwxcnwkc228hfqy5lxz7dmy0y9x-nixos-system-jackson-24.11.20250209.392aa11/init
     intel_iommu=on console=ttyS1,115200n8 console=tty1 console=ttyS0,115200 console=tty0
     hugepagesz=1GB hugepages=8 hugepagesz=2MB hugepages=1000 nohibernate loglevel=4
   Console: N/A Distro: NixOS 24.11 (Vicuna)
@@ -16,7 +16,7 @@ Machine:
     uuid: 00000000-0000-0000-0000-3cecef62ac26 UEFI: American Megatrends LLC. v: 1.1c
     date: 11/08/2021
 Memory:
-  System RAM: total: 1.25 TiB available: 251.2 GiB used: 37.65 GiB (15.0%)
+  System RAM: total: 1.25 TiB available: 251.2 GiB used: 26.91 GiB (10.7%)
   Array-1: capacity: 12 TiB note: check slots: 8 modules: 8 EC: Single-bit ECC
     max-module-size: 1.50 TiB note: est.
   Device-1: DIMMA1 type: DDR4 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -62,10 +62,10 @@ CPU:
     microcode: 0xD0003E7
   Topology: cpus: 1x cores: 12 tpc: 2 threads: 24 smt: enabled cache: L1: 960 KiB desc: d-12x48
     KiB; i-12x32 KiB L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
-  Speed (MHz): avg: 2866 high: 3000 min/max: 800/3000 base/boost: 3000/4500 scaling:
-    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 3000 2: 3000
-    3: 3000 4: 3000 5: 3000 6: 3000 7: 3000 8: 3000 9: 3000 10: 3000 11: 3000 12: 3000 13: 3000
-    14: 2216 15: 3000 16: 3000 17: 3000 18: 1374 19: 3000 20: 3000 21: 3000 22: 3000 23: 2210
+  Speed (MHz): avg: 2645 high: 3000 min/max: 800/3000 base/boost: 3000/4500 scaling:
+    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 3000 2: 1590
+    3: 3000 4: 3000 5: 3000 6: 3000 7: 3000 8: 2187 9: 1022 10: 1477 11: 3000 12: 3000 13: 3000
+    14: 2482 15: 1554 16: 3000 17: 3000 18: 3000 19: 3000 20: 2169 21: 3000 22: 3000 23: 3000
     24: 3000 bogomips: 144000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
@@ -110,16 +110,15 @@ Network:
     speed: 5 GT/s lanes: 8 port: 7000 bus-ID: 18:00.1 chip-ID: 8086:10fb class-ID: 0200
   IF: enp24s0f1 state: down mac: 00:1b:21:c3:85:9e
   Device-5: Intel Ethernet E810-C for QSFP driver: ice v: kernel pcie: gen: 4 speed: 16 GT/s
-    lanes: 16 port: N/A bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 temp: 62.0 C
+    lanes: 16 port: N/A bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200 temp: 61.0 C
   IF: enp81s0f0np0 state: up speed: 100000 Mbps duplex: full mac: b4:96:91:a4:1b:88
   IP v4: 10.100.100.2 scope: global
   Device-6: Intel Ethernet E810-C for QSFP driver: ice v: kernel pcie: gen: 4 speed: 16 GT/s
     lanes: 16 port: N/A bus-ID: 51:00.1 chip-ID: 8086:1592 class-ID: 0200
   IF: enp81s0f1np1 state: down mac: b4:96:91:a4:1b:89
-  IF-ID-1: docker0 state: down mac: 02:42:9c:ed:5d:d9
+  IF-ID-1: docker0 state: down mac: 02:42:2b:39:3b:59
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IP v6: fe80::42:9cff:feed:5dd9/64 virtual: proto kernel_ll scope: link
-  IF-ID-2: docker_gwbridge state: down mac: 02:42:6e:37:53:28
+  IF-ID-2: docker_gwbridge state: down mac: 02:42:24:8c:9e:d4
   IP v4: 172.18.0.1/16 scope: global broadcast: 172.18.255.255
   IF-ID-3: eth0 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f
   IP v4: 169.254.3.1/24 type: dynamic scope: global
@@ -135,35 +134,35 @@ Bluetooth:
 RAID:
   Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid_sas v: 07.727.03.00-rc1
     port: d000 bus-ID: 8a:00.0 chip-ID: 1000:0017 rev: N/A class-ID: 0104
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.31 TiB
-    allocated: 430 GiB zfs-fs: size: 1.68 TiB free: 1.26 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.32 TiB
+    allocated: 429 GiB zfs-fs: size: 1.68 TiB free: 1.26 TiB
   Components: Online:
   1: sda2 maj-min: 8:2 size: 1.75 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 388.84 GiB (11.1%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 387.16 GiB (11.0%)
   ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
     physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 34 C
     scheme: GPT
   SMART: yes state: enabled
   ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
-    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 35 C
+    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 34 C
   SMART: yes state: enabled
 Partition:
-  ID-1: / raw-size: N/A size: 1.64 TiB used: 388.77 GiB (23.1%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 74 MiB (7.2%) fs: vfat
+  ID-1: / raw-size: N/A size: 1.64 TiB used: 387.12 GiB (23.0%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 37.1 MiB (3.6%) fs: vfat
     block-size: 512 B dev: /dev/sda1 maj-min: 8:1
-  ID-3: /home raw-size: N/A size: 2.72 TiB used: 1.86 TiB (68.7%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 2.71 TiB used: 1.98 TiB (73.1%) fs: nfs4
     remote: nfs:/export/home
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: 54 C mobo: 34 C
-  Fan Speeds (rpm): cpu: 8960 fan-2: 8960 fan-3: 8960 fan-4: 8960 fan-5: 8960 fan-6: 8960
+  Src: ipmi System Temperatures: cpu: 48 C mobo: 31 C
+  Fan Speeds (rpm): cpu: 8820 fan-2: 9100 fan-3: 8960 fan-4: 8960 fan-5: 8960 fan-6: 8960
   Power: 12v: 11.590 5v: 5.040 3.3v: 3.322 vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 62.0 C pch: 55.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 61.0 C pch: 50.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 479 Power: uptime: 24d 9h 36m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 462 Power: uptime: 4d 14h 29m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 97.27 GiB Init: systemd v: 256 default: multi-user tool: systemctl
   Packages: 791 pm: nix-default pkgs: 100 pm: nix-sys pkgs: 591 libs: 132 pm: nix-usr pkgs: 100
     libs: 25 Compilers: gcc: 13.3.0 Client: Sudo v: 1.9.16p2 inxi: 3.3.35
