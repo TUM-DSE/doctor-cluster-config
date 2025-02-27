@@ -272,6 +272,47 @@ No device/PCI ID.
     bus-ID: c4:00.0   
  
 
+### martha.dos.cit.tum.de 
+
+PCI Slots:   
+- ❌  Slot: 7 type: PCIe gen: 5 status: in use length: short volts: 3.3 bus-ID: 10:00.0   
+10:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
+- ✅  Slot: 9 type: PCIe gen: 5 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ❌  Slot: 10 type: N/A status: in use length: other volts: 3.3 bus-ID: 87:00.0   
+87:00.0, Ethernet controller, Mellanox Technologies, MT2894 Family [ConnectX-6 Lx] -p00, Mellanox Technologies, Device 0005  
+- ✅  Slot: 2 type: PCIe gen: 5 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 3 type: PCIe gen: 5 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 4 type: N/A status: available length: other volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
+- ✅  Slot: 3 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: ae:00.0   
+- ✅  Slot: 2 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: af:00.0   
+- ❌  Slot: 1 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
+b0:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
+    bus-ID: b0:00.0   
+- ❌  Slot: 0 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
+b1:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
+    bus-ID: b1:00.0   
+- ✅  Slot: 7 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 0001:ae:00.0   
+- ✅  Slot: 6 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 0001:af:00.0   
+- ✅  Slot: 5 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 0001:b0:00.0   
+- ✅  Slot: 4 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 0001:b1:00.0   
+ 
+
 ### mickey.dos.cit.tum.de 
 
 PCI Slots:   
@@ -310,28 +351,7 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 ### rose.dos.cit.tum.de 
 
-PCI Slots:   
-- ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: e0:03.1   
-No device/PCI ID.  
-- ✅  Slot: 2 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: c0:01.1   
-No device/PCI ID.  
-- ✅  Slot: 3 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 80:01.1   
-No device/PCI ID.  
-- ✅  Slot: 4 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: a0:03.1   
-No device/PCI ID.  
-- ❌  Slot: 5 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: c2:00.0   
-c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
-- ❌  Slot: 6 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: c2:00.0   
-c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
-- ✅  Slot: 7 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 60:03.1   
-No device/PCI ID.  
-- ✅  Slot: 8 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 40:01.1   
-No device/PCI ID.  
-- ✅  Slot: 9 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 00:01.1   
-No device/PCI ID.  
-- ✅  Slot: 10 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 20:03.1   
-No device/PCI ID.  
- 
+Error: in fetching expansion card data (host offline?) 
 
 ### ryan.dos.cit.tum.de 
 
