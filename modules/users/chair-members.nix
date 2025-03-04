@@ -380,7 +380,9 @@ in
       david = {
         isNormalUser = true;
         home = "/home/david";
-        inherit extraGroups;
+        extraGroups = extraGroups ++ [
+          "kvm"
+        ];
         shell = "/run/current-system/sw/bin/zsh";
         uid = 1035;
         openssh.authorizedKeys.keys = davidKeys;
