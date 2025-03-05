@@ -5,7 +5,7 @@
     ../modules/nfs/client.nix
     ../modules/disko-zfs.nix
 
-    ../modules/vfio/iommu-amd.nix
+    ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
   ];
 
