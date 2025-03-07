@@ -49,11 +49,11 @@ Parameters to consider for matching cards to slots:
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC
     - office 01.07.060
     - firmware bundle_id 1.1.1.1021
-- 7x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+- 9x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
         - MAC2: b4:96:91:a4:1c:f1
-    - jackson: dual port. (jackson-adric2,jackson-adric4)
+    - jackson: dual port. (jackson-adric2,jackson-martha)
         - MAC1: b4:96:91:a4:1b:88
         - MAC2: b4:96:91:a4:1b:89
     - christina: dual port. (christina-river)
@@ -65,10 +65,12 @@ Parameters to consider for matching cards to slots:
         - MAC: b4:96:91:b3:8b:3c
     - amy: single port. (amy-wilfred)
         - MAC: b4:96:91:b3:8a:90
-    - vislor: single port
+    - vislor: single port (vislor-graham)
         - MAC: 30:3e:a7:05:d0:98 
     - ian: single port (ian-river)
         - MAC: 30:3e:a7:10:d6:b4
+    - martha: single port (martha-jackson)
+        - MAC:
 - 7x Broadcom BCM57416 10G NIC (RJ-45)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,none)
@@ -104,6 +106,7 @@ Onboard (not listed by [List of slots](#List of slots)):
     - probably jackson: (none-none)
 - Mellanox ConnectX-6
     - vislor: 2 ports RJ-45 (,)
+    - martha: 2 ports SFP (uplink, none)
 
 (^ list last updated 08.02.2025)
 
