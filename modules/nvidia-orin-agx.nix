@@ -25,8 +25,6 @@
     # nvidia.com/gpu=all
 
     config.hardware.nvidia-jetpack.devicePkgs.nvidia-ctk
-    config.hardware.nvidia-jetpack.devicePkgs.samples.cudnn-test
-    config.hardware.nvidia-jetpack.devicePkgs.samples.cuda-test
   ];
 
   # overrides latest-zfs kernel with kernel also set in modules/apple-silicon-support/modules/kernel/default.nix
