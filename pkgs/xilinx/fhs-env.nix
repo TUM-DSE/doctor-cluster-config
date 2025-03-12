@@ -44,6 +44,14 @@ buildFHSUserEnv {
       nasm
       glibc.dev
 
+      # dtc libraries
+      libyaml
+
+      # vivado-riscv libraries
+      libmpc
+      mpfr
+      gmp
+
       (python3.withPackages (ps: with ps; [ jinja2 ]))
 
       (libidn.overrideAttrs (_old: {
