@@ -564,7 +564,8 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2067;
       allowedHosts = [
-        "xavier"
+        "xavier" 
+        "ian"
       ];
       openssh.authorizedKeys.keys = antonKeys;
     };
