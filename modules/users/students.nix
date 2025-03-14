@@ -124,9 +124,13 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFrSp1SOJlgYtZCAplzFgO5l2aP0I23ciZX38hABj9CO p.assmann@nexus.gd"
   ];
 
-antonKeys = [
-"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8AlSd4iLm1XLO9p+xa5xLKHYfORl32wD2rOjSYei9d anton.ge@tum.de"
-];
+  antonKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8AlSd4iLm1XLO9p+xa5xLKHYfORl32wD2rOjSYei9d anton.ge@tum.de"
+  ];
+
+  steveKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFDiE8OWLvbkG6oW/iaRCEG6p5ag2fp0gYKdFp1c+B/9 stevebambou@steve-7510"
+  ];
 
   extraGroups = [
     "wheel"
@@ -583,7 +587,7 @@ in
       openssh.authorizedKeys.keys = kchristianKeys;
     };
 
-    # Phillip Assmann, BSc thesis with Nicolo (CXL-Bridge/Prefetcher and instruction cache analysis)
+    # Phillip Assmann, BSc thesis with David (Branch prediction research on gem5)
     phillip = {
       isNormalUser = true;
       home = "/home/phillip";
@@ -594,6 +598,20 @@ in
         "xavier"
       ];
       openssh.authorizedKeys.keys = phillipKeys;
+    };
+
+    # Steve Bambou, BSc thesis with David (Branch prediction research on gem5)
+    steve = {
+      isNormalUser = true;
+      home = "/home/steve";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2070;
+      allowedHosts = [
+        "xavier"
+	      "jamie"
+      ];
+      openssh.authorizedKeys.keys = steveKeys;
     };
   };
 
