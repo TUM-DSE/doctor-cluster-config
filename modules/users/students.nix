@@ -132,6 +132,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFDiE8OWLvbkG6oW/iaRCEG6p5ag2fp0gYKdFp1c+B/9 stevebambou@steve-7510"
   ];
 
+  maxKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHq8XrpIYVtb/1EHje+Kfys/wM+F/R5xmd54mMRvJwlP maxi@DESKTOP-DBGIHGB"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -612,6 +616,19 @@ in
 	      "jamie"
       ];
       openssh.authorizedKeys.keys = steveKeys;
+    };
+
+    # Maximilian Jäcklein, BSc thesis with Harsha (Resource disaggregation)
+    max = {
+      isNormalUser = true;
+      home = "/home/max";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2071;
+      allowedHosts = [
+        "amy"
+      ];
+      openssh.authorizedKeys.keys = maxKeys;
     };
   };
 
