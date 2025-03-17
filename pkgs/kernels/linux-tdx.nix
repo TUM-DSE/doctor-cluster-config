@@ -30,11 +30,12 @@ let
               KVM_MMU_PRIVATE y
             '';
           }
-          {
-            name = "bug_func export";
-            patch = ./zfs-tdx.patch;
-            extraConfig = '''';
-          }
+          # NOTE: only needed prior to 6.9
+          # {
+          #   name = "bug_func export";
+          #   patch = ./zfs-tdx.patch;
+          #   extraConfig = '''';
+          # }
         ] ++ extraPatches;
         extraMeta.branch = version;
         ignoreConfigErrors = true;
@@ -49,6 +50,15 @@ let
     version = "6.8";
     modDirVersion = "6.8.0-rc1";
   };
+  tdx_canonical_6_11_0_1006_6 = {
+    owner = "gierens";
+    repo = "linux-tdx-canonical";
+    # branch: main
+    rev = "414aea81b805c91b61a65652605a8b4360eb22a1";
+    sha256 = "sha256-xmUGhyhfLEvaGC7LtogVXcpSK2VL0jYlj1kvW2lyHQU=";
+    version = "6.11";
+    modDirVersion = "6.11.0";
+  };
 in
 # change here to change kernel
-buildKernel tdx_kvm_upstream_next_20240122
+buildKernel tdx_canonical_6_11_0_1006_6
