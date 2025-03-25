@@ -604,6 +604,8 @@ in
       uid = 2069;
       allowedHosts = [
         "xavier"
+        "jamie"
+        "yasmin"
       ];
       openssh.authorizedKeys.keys = phillipKeys;
     };
@@ -617,7 +619,8 @@ in
       uid = 2070;
       allowedHosts = [
         "xavier"
-	      "jamie"
+	"jamie"
+        "yasmin"
       ];
       openssh.authorizedKeys.keys = steveKeys;
     };
@@ -645,6 +648,7 @@ in
       allowedHosts = [
         "xavier"
 	"jamie"
+        "yasmin"
       ];
       openssh.authorizedKeys.keys = osmanKeys;
     };
