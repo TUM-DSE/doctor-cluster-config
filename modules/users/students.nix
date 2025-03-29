@@ -90,24 +90,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKwhovd3dJO9+vDK+I/V8hRXkqgGW1LJIApSXFim+vr"
   ];
 
-  benediktKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHh3jvEHzkSEtQ/CGHV38U8xRozY8Gbt03jee63dsz99 beni@eos"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDC+37cRJr2lcVYmxRPvBQHdBio24I7oxQZ2B3uCU3Pj beni@laptop"
-  ];
-
-  robertBKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEPdjagHzp7LJXfOT0PlQzFE1sGbd9jLMfaqCA4yZRZw atlas@evilatmc"
-  ];
-
-  neelKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICC1FrIyzGjtW1mBRyvCjV4uZBw75y3YptKIs8N3p7VR neel@neel-950QDB"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP8gUqth1ZdR89+i5fyvz7qqIytNopXgI8QWhTzYdAro neelm@Neels-PC"
-  ];
-
-  konradHKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWpsrdbVRnFejvfa/IN668rSKXpRWqNBRgJ93UOOywt konradh03@gmail.com"
-  ];
-
   kilianKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTF9QkKayS1Wsj3MRLhpo4Kgh5traaOalOAmdWjCvps" ];
 
   martinLiKeys = [
@@ -468,66 +450,6 @@ in
       openssh.authorizedKeys.keys = hristinaKeys;
     };
 
-    # Benedikt Rehbein, Sys Lab WS24
-    benedikt = {
-      isNormalUser = true;
-      home = "/home/benedikt";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2060;
-      allowedHosts = [
-        "amy"
-        "clara"
-      ];
-      openssh.authorizedKeys.keys = benediktKeys;
-      xrdpAccess = true;
-    };
-
-    # Robert Barinov, Sys Lab WS24
-    robertB = {
-      isNormalUser = true;
-      home = "/home/robertB";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2061;
-      allowedHosts = [
-        "amy"
-        "clara"
-      ];
-      openssh.authorizedKeys.keys = robertBKeys;
-      xrdpAccess = true;
-    };
-
-    # Neel Mandal, Sys Lab WS24
-    neel = {
-      isNormalUser = true;
-      home = "/home/neel";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2062;
-      allowedHosts = [
-        "amy"
-        "clara"
-      ];
-      openssh.authorizedKeys.keys = neelKeys;
-      xrdpAccess = true;
-    };
-
-    # Konrad Hennig, Sys Lab WS24
-    konradH = {
-      isNormalUser = true;
-      home = "/home/konradH";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2063;
-      allowedHosts = [
-        "amy"
-        "clara"
-      ];
-      openssh.authorizedKeys.keys = konradHKeys;
-      xrdpAccess = true;
-    };
-
     # Kilian Matheis, Sys Lab WS24
     kilian = {
       isNormalUser = true;
@@ -704,5 +626,9 @@ in
     "yiwenliu"
     "zixuanli"
     "lan"
+    "benedikt"
+    "robertB"
+    "neel"
+    "konradH"
   ];
 }
