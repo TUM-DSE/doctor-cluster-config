@@ -130,6 +130,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMq8uZ112OCsUx/gjZFhO4pJv/qpm80SHNp7dOrstevY aswierkowska@aswierkowska-thinkpad"
   ];
 
+  thoreKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQCP93wmHUCOKn5W42KnzyBQBjltRp5RU23WbAMlgy5 TUM"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -408,6 +412,17 @@ in
         uid = 2029;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = aleksandraKeys;
+      };
+
+      # Thore Sommer
+      thore = {
+        isNormalUser = true;
+        home = "/home/thore";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/fish";
+        uid = 2030;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = thoreKeys;
       };
 
       # add staff to root account as well
