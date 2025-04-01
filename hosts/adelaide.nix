@@ -17,7 +17,7 @@
   system.stateVersion = "21.11";
 
   boot.hugepages2MB.number = let
-    gb = 20;
+    gb = 30;
   in gb * 1024 / 2;
   systemd.network.ignorePci = [
     "0000:00:1c.0"
