@@ -11,7 +11,6 @@
         pkgs.mypy
         pkgs.dnsmasq
         pkgs.python3.pkgs.netaddr
-        pkgs.qemu_kvm
         pkgs.openssh
         pkgs.gitMinimal # for git flakes
         pkgs.rsync
