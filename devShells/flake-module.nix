@@ -14,7 +14,7 @@
         pkgs.openssh
         pkgs.gitMinimal # for git flakes
         pkgs.rsync
-        pkgs.nixVersions.nix_2_24
+        pkgs.nixVersions.latest
         pkgs.coreutils
         pkgs.curl # when uploading tarballs
         pkgs.gnugrep
