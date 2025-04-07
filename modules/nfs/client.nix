@@ -45,6 +45,8 @@ in
     XDG_CACHE_HOME = [ "/scratch/$USER/.cache" ];
     # This fixes user profile generation i.e. used by home-manager
     XDG_STATE_HOME = [ "/scratch/$USER/.local/share" ];
+    # We also set NIX_STATE_HOME in case a user has XDG_STATE_HOME is set to something else.
+    NIX_STATE_HOME = [ "/scratch/$USER/.local/share/nix" ];
   };
 
   # How should we mount NFS?
