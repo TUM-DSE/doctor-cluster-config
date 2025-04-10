@@ -182,15 +182,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1741358022,
-        "narHash": "sha256-gqWAQUV6IqXNN4w/fvyJpvLQMyoeaWuamtY5E2JNXMM=",
-        "ref": "refs/heads/main",
-        "rev": "15efd48445e47c3ca308c485cc99c499013d1be2",
+        "lastModified": 1744294216,
+        "narHash": "sha256-CHMDNDd2JAOUNs+wa+0C5rxu4Fa+tWiP53fAdaIe8d4=",
+        "ref": "final-stretch",
+        "rev": "3c874eb1c71f658218aeba26d2b5cf3e512022c0",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
       },
       "original": {
+        "ref": "final-stretch",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
@@ -271,10 +272,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1741361775,
-        "narHash": "sha256-lsS+t6NccR5UqF0XRfI2dAMAI280qHawcNxEwzCxllc=",
+        "lastModified": 1744290136,
+        "narHash": "sha256-L8/J3u/REmyZkRAeEJ+gTlyWG2tAuh2hWBHrMSfJfR0=",
         "ref": "nixos-24.11-backports",
-        "rev": "65b092492b7888b23914bd33177ce34c46a39c93",
+        "rev": "a055e82fe3555f2a98d570fff9f4d29ee525cb44",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"

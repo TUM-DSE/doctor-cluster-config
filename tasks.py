@@ -341,13 +341,13 @@ def deploy_joy(c: Any) -> None:
     Deploy to Nvidia jetson
     """
     host = DeployHost(
-        "127.0.0.1",
+        "yasmin.dos.cit.tum.de",
         user="root",
+        forward_agent=True,
         command_prefix="joy",
         meta=dict(
             flake_attr="joy",
             target_user="root",
-            target_host="192.168.188.72",
             flake_path="/var/lib/nixos-config",
         ),
     )
