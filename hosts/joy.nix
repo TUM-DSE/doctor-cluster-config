@@ -1,12 +1,11 @@
 {
-  config,
   inputs,
   lib,
   ...
 }:
 {
   imports = [
-    ../modules/disko-zfs.nix
+    ../modules/disko-ext4.nix
     ../modules/facter.nix
     ../modules/xrdp.nix
     ../modules/nfs/client.nix
