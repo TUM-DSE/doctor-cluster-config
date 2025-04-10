@@ -5,9 +5,9 @@
 
   # tpm-tis does not exists;
   boot.initrd.systemd.tpm2.enable = false;
-  hardware.enableAllHardware = true;
 
   boot.initrd.systemd.emergencyAccess = "$6$ezQIHzACzYp4zwHi$IAsJI6zHUXYuhv0NVlk5CiRj1B8DT/yGzjSFev2ZjovvSHkY4/YJ2/c9gnJvc7T7nF/0jt9icihJXpAuvsciS.";
+  boot.initrd.availableKernelModules = [ "nvme" "usbhid" "usb_storage" "sdhci_tegra" ];
 
   hardware.nvidia-jetpack.enable = true;
   hardware.nvidia-jetpack.som = "orin-agx";

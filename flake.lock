@@ -182,15 +182,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1741965748,
-        "narHash": "sha256-7bO2uWYytykA22mMnP7bF7RGTFOBjXC9tpCLc05954U=",
-        "ref": "refs/heads/main",
-        "rev": "f85ab29e39a07203e3a66a82c166089fae0429cf",
+        "lastModified": 1744294216,
+        "narHash": "sha256-CHMDNDd2JAOUNs+wa+0C5rxu4Fa+tWiP53fAdaIe8d4=",
+        "ref": "final-stretch",
+        "rev": "3c874eb1c71f658218aeba26d2b5cf3e512022c0",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
       },
       "original": {
+        "ref": "final-stretch",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
