@@ -556,6 +556,8 @@ in
       uid = 2071;
       allowedHosts = [
         "amy"
+        "clara"
+        "rose"
       ];
       openssh.authorizedKeys.keys = maxKeys;
     };
