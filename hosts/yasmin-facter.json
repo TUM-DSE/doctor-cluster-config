@@ -1,36 +1,49 @@
 {
-  "version": 2,
+  "version": 1,
   "system": "aarch64-linux",
   "virtualisation": "none",
   "hardware": {
     "bridge": [
       {
+        "index": 227,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 8,
+        "slot": {
+          "bus": 0,
+          "number": 8
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.0",
         "sysfs_bus_id": "0000:00:08.0",
         "resources": [
@@ -49,9 +62,6 @@
           "irq": 30,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -59,32 +69,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 228,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 13,
+        "slot": {
+          "bus": 0,
+          "number": 13
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0d.0",
         "sysfs_bus_id": "0000:00:0d.0",
         "resources": [
@@ -103,9 +126,6 @@
           "irq": 31,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -113,32 +133,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 229,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32770,
+        "slot": {
+          "bus": 128,
+          "number": 2
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:02.0",
         "sysfs_bus_id": "0000:80:02.0",
         "resources": [
@@ -157,9 +190,6 @@
           "irq": 35,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -167,32 +197,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 232,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 1,
+        "slot": {
+          "bus": 0,
+          "number": 1
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:01.0",
         "sysfs_bus_id": "0000:00:01.0",
         "resources": [
@@ -211,9 +254,6 @@
           "irq": 30,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -221,32 +261,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 233,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32773,
+        "slot": {
+          "bus": 128,
+          "number": 5
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:05.0",
         "sysfs_bus_id": "0000:80:05.0",
         "resources": [
@@ -265,9 +318,6 @@
           "irq": 37,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -275,32 +325,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 235,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32778,
+        "slot": {
+          "bus": 128,
+          "number": 10
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:0a.0",
         "sysfs_bus_id": "0000:80:0a.0",
         "resources": [
@@ -319,9 +382,6 @@
           "irq": 36,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -329,32 +389,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 236,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 4,
+        "slot": {
+          "bus": 0,
+          "number": 4
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:04.0",
         "sysfs_bus_id": "0000:00:04.0",
         "resources": [
@@ -373,9 +446,6 @@
           "irq": 33,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -383,32 +453,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 237,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32776,
+        "slot": {
+          "bus": 128,
+          "number": 8
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:08.0",
         "sysfs_bus_id": "0000:80:08.0",
         "resources": [
@@ -427,9 +510,6 @@
           "irq": 34,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -437,32 +517,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 238,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32781,
+        "slot": {
+          "bus": 128,
+          "number": 13
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:0d.0",
         "sysfs_bus_id": "0000:80:0d.0",
         "resources": [
@@ -481,9 +574,6 @@
           "irq": 35,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -491,32 +581,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 239,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 7,
+        "slot": {
+          "bus": 0,
+          "number": 7
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:07.0",
         "sysfs_bus_id": "0000:00:07.0",
         "resources": [
@@ -535,9 +638,6 @@
           "irq": 33,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -545,32 +645,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 240,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 12,
+        "slot": {
+          "bus": 0,
+          "number": 12
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0c.0",
         "sysfs_bus_id": "0000:00:0c.0",
         "resources": [
@@ -589,9 +702,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -599,32 +709,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 242,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32769,
+        "slot": {
+          "bus": 128,
+          "number": 1
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:01.0",
         "sysfs_bus_id": "0000:80:01.0",
         "resources": [
@@ -643,9 +766,6 @@
           "irq": 34,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -653,35 +773,48 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 244,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Host bridge",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "sub_vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Host bridge",
+          "hex": "af00",
           "value": 44800
         },
         "sub_device": {
+          "hex": "0000",
           "value": 0
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Host bridge",
+        "model": "Host bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:00.0",
         "sysfs_bus_id": "0000:00:00.0",
         "detail": {
@@ -692,39 +825,49 @@
           "irq": 0,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "module_alias": "pci:v0000177Dd0000AF00sv0000177Dsd00000000bc06sc00i00",
         "label": "Device 5"
       },
       {
+        "index": 245,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32772,
+        "slot": {
+          "bus": 128,
+          "number": 4
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:04.0",
         "sysfs_bus_id": "0000:80:04.0",
         "resources": [
@@ -743,9 +886,6 @@
           "irq": 37,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -753,32 +893,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 247,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 3,
+        "slot": {
+          "bus": 0,
+          "number": 3
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:03.0",
         "sysfs_bus_id": "0000:00:03.0",
         "resources": [
@@ -797,9 +950,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -807,32 +957,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 248,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32775,
+        "slot": {
+          "bus": 128,
+          "number": 7
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:07.0",
         "sysfs_bus_id": "0000:80:07.0",
         "resources": [
@@ -851,9 +1014,6 @@
           "irq": 37,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -861,32 +1021,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 250,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32780,
+        "slot": {
+          "bus": 128,
+          "number": 12
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:0c.0",
         "sysfs_bus_id": "0000:80:0c.0",
         "resources": [
@@ -905,9 +1078,6 @@
           "irq": 36,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -915,32 +1085,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 252,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 6,
+        "slot": {
+          "bus": 0,
+          "number": 6
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:06.0",
         "sysfs_bus_id": "0000:00:06.0",
         "resources": [
@@ -959,9 +1142,6 @@
           "irq": 30,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -969,32 +1149,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 253,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 11,
+        "slot": {
+          "bus": 0,
+          "number": 11
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0b.0",
         "sysfs_bus_id": "0000:00:0b.0",
         "resources": [
@@ -1013,9 +1206,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1023,35 +1213,48 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 255,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32768,
+        "slot": {
+          "bus": 128,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Host bridge",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "sub_vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Host bridge",
+          "hex": "af00",
           "value": 44800
         },
         "sub_device": {
+          "hex": "0000",
           "value": 0
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Host bridge",
+        "model": "Host bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:00.0",
         "sysfs_bus_id": "0000:80:00.0",
         "detail": {
@@ -1062,38 +1265,48 @@
           "irq": 0,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "module_alias": "pci:v0000177Dd0000AF00sv0000177Dsd00000000bc06sc00i00"
       },
       {
+        "index": 257,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 9,
+        "slot": {
+          "bus": 0,
+          "number": 9
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:09.0",
         "sysfs_bus_id": "0000:00:09.0",
         "resources": [
@@ -1112,9 +1325,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1122,32 +1332,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 258,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 14,
+        "slot": {
+          "bus": 0,
+          "number": 14
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0e.0",
         "sysfs_bus_id": "0000:00:0e.0",
         "resources": [
@@ -1166,9 +1389,6 @@
           "irq": 33,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1176,32 +1396,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 259,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32771,
+        "slot": {
+          "bus": 128,
+          "number": 3
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:03.0",
         "sysfs_bus_id": "0000:80:03.0",
         "resources": [
@@ -1220,9 +1453,6 @@
           "irq": 36,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1230,45 +1460,60 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 260,
+        "attached_to": 240,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 3328,
+        "slot": {
+          "bus": 13,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "ASPEED Technology, Inc.",
+          "hex": "1a03",
           "value": 6659
         },
         "sub_vendor": {
-          "name": "ASPEED Technology, Inc.",
+          "hex": "1a03",
           "value": 6659
         },
         "device": {
-          "name": "AST1150 PCI-to-PCI Bridge",
+          "hex": "1150",
           "value": 4432
         },
         "sub_device": {
+          "hex": "1150",
           "value": 4432
         },
         "revision": {
+          "hex": "0004",
           "value": 4
         },
-        "model": "ASPEED AST1150 PCI-to-PCI Bridge",
-        "attached_to": 240,
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0c.0/0000:0d:00.0",
         "sysfs_bus_id": "0000:0d:00.0",
+        "sysfs_iommu_group_id": 0,
         "resources": [
           {
             "type": "irq",
@@ -1285,38 +1530,48 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "module_alias": "pci:v00001A03d00001150sv00001A03sd00001150bc06sc04i00"
       },
       {
+        "index": 261,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 2,
+        "slot": {
+          "bus": 0,
+          "number": 2
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.0",
         "sysfs_bus_id": "0000:00:02.0",
         "resources": [
@@ -1335,9 +1590,6 @@
           "irq": 31,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1345,32 +1597,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 262,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32774,
+        "slot": {
+          "bus": 128,
+          "number": 6
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:06.0",
         "sysfs_bus_id": "0000:80:06.0",
         "resources": [
@@ -1389,9 +1654,6 @@
           "irq": 34,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1399,32 +1661,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 263,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32779,
+        "slot": {
+          "bus": 128,
+          "number": 11
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:0b.0",
         "sysfs_bus_id": "0000:80:0b.0",
         "resources": [
@@ -1443,9 +1718,6 @@
           "irq": 36,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1453,32 +1725,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 265,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 5,
+        "slot": {
+          "bus": 0,
+          "number": 5
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:05.0",
         "sysfs_bus_id": "0000:00:05.0",
         "resources": [
@@ -1497,9 +1782,6 @@
           "irq": 33,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1507,32 +1789,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 266,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32777,
+        "slot": {
+          "bus": 128,
+          "number": 9
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:09.0",
         "sysfs_bus_id": "0000:80:09.0",
         "resources": [
@@ -1551,9 +1846,6 @@
           "irq": 36,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1561,32 +1853,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 267,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 10,
+        "slot": {
+          "bus": 0,
+          "number": 10
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0a.0",
         "sysfs_bus_id": "0000:00:0a.0",
         "resources": [
@@ -1605,9 +1910,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1615,32 +1917,45 @@
         "module_alias": "pci:v0000177Dd0000AF84sv00000000sd00000000bc06sc04i00"
       },
       {
+        "index": 268,
+        "attached_to": 0,
+        "class_list": [
+          "pci",
+          "bridge"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32782,
+        "slot": {
+          "bus": 128,
+          "number": 14
+        },
         "base_class": {
+          "hex": "0006",
           "name": "Bridge",
           "value": 6
         },
         "sub_class": {
+          "hex": "0004",
           "name": "PCI bridge",
           "value": 4
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "Normal decode",
           "value": 0
         },
         "vendor": {
-          "name": "Cavium, Inc.",
+          "hex": "177d",
           "value": 6013
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+          "hex": "af84",
           "value": 44932
         },
-        "model": "Cavium CN99xx [ThunderX2] Integrated PCI Express RP Bridge",
+        "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:80/0000:80:0e.0",
         "sysfs_bus_id": "0000:80:0e.0",
         "resources": [
@@ -1659,9 +1974,6 @@
           "irq": 37,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "pcieport",
         "drivers": [
           "pcieport"
@@ -1671,40 +1983,71 @@
     ],
     "cdrom": [
       {
+        "index": 271,
+        "attached_to": 264,
+        "class_list": [
+          "cdrom",
+          "usb",
+          "scsi",
+          "block_device"
+        ],
         "bus_type": {
+          "hex": "0084",
           "name": "SCSI",
           "value": 132
         },
-        "slot": 768,
+        "slot": {
+          "bus": 2,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0106",
           "name": "Mass Storage Device",
           "value": 262
         },
         "sub_class": {
+          "hex": "0002",
           "name": "CD-ROM",
           "value": 2
         },
         "vendor": {
+          "hex": "046b",
           "name": "AMI",
           "value": 1131
         },
         "device": {
+          "hex": "ff20",
           "name": "Virtual CDROM0",
           "value": 65312
         },
         "revision": {
+          "hex": "0000",
           "name": "1.00",
           "value": 0
         },
+        "serial": "AAAABBBBCCCC1",
         "model": "AMI Virtual CDROM0",
-        "attached_to": 264,
         "sysfs_id": "/class/block/sr0",
-        "sysfs_bus_id": "3:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.1/3-1.1:1.0/host3/target3:0:0/3:0:0:0",
+        "sysfs_bus_id": "2:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.1/3-1.1:1.0/host2/target2:0:0/2:0:0:0",
         "unix_device_name": "/dev/sr0",
         "unix_device_number": {
           "type": 98,
           "major": 11,
+          "minor": 0,
+          "range": 1
+        },
+        "unix_device_names": [
+          "/dev/cdrom",
+          "/dev/disk/by-id/usb-AMI_Virtual_CDROM0_AAAABBBBCCCC1-0:0",
+          "/dev/disk/by-path/pci-0000:00:0f.1-usb-0:1.1:1.0-scsi-0:0:0:0",
+          "/dev/disk/by-path/pci-0000:00:0f.1-usbv2-0:1.1:1.0-scsi-0:0:0:0",
+          "/dev/sr0"
+        ],
+        "unix_device_name2": "/dev/sg0",
+        "unix_device_number2": {
+          "type": 99,
+          "major": 21,
           "minor": 0,
           "range": 1
         },
@@ -1718,13 +2061,10 @@
             "handshake": 0
           }
         ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "usb-storage",
         "drivers": [
-          "usb-storage",
-          "sr"
+          "sr",
+          "usb-storage"
         ],
         "driver_modules": [
           "sr_mod"
@@ -1757,42 +2097,59 @@
         "fpu": false,
         "fpu_exception": false,
         "write_protect": false,
-        "address_sizes": {}
+        "address_sizes": {
+          "physical": "0x0",
+          "virtual": "0x0"
+        }
       }
     ],
     "disk": [
       {
+        "index": 269,
+        "attached_to": 241,
+        "class_list": [
+          "disk",
+          "block_device",
+          "nvme"
+        ],
         "bus_type": {
+          "hex": "0096",
           "name": "NVME",
           "value": 150
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0106",
           "name": "Mass Storage Device",
           "value": 262
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Disk",
           "value": 0
         },
         "vendor": {
-          "name": "Samsung Electronics Co Ltd",
+          "hex": "144d",
           "value": 5197
         },
         "sub_vendor": {
-          "name": "Samsung Electronics Co Ltd",
+          "hex": "144d",
           "value": 5197
         },
         "device": {
-          "name": "NVMe SSD Controller SM981/PM981/PM983",
+          "hex": "a808",
+          "name": "Samsung SSD 970 EVO Plus 1TB",
           "value": 43016
         },
         "sub_device": {
-          "name": "SSD 970 EVO/PRO",
+          "hex": "a801",
           "value": 43009
         },
-        "model": "Samsung Electronics SSD 970 EVO/PRO",
-        "attached_to": 241,
+        "serial": "S4EWNX0R514087T",
+        "model": "Samsung SSD 970 EVO Plus 1TB",
         "sysfs_id": "/class/block/nvme0n1",
         "sysfs_bus_id": "nvme0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:07.0/0000:07:00.0/nvme/nvme0",
@@ -1803,13 +2160,21 @@
           "minor": 0,
           "range": 0
         },
+        "unix_device_names": [
+          "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_1TB_S4EWNX0R514087T",
+          "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_1TB_S4EWNX0R514087T_1",
+          "/dev/disk/by-id/nvme-eui.0025385511b0b08f",
+          "/dev/disk/by-path/pci-0000:07:00.0-nvme-1",
+          "/dev/disk/by-uuid/d45731c3-7b21-41e9-8ef1-a072255a5d2d",
+          "/dev/nvme0n1"
+        ],
         "resources": [
           {
             "type": "disk_geo",
             "cylinders": 953869,
             "heads": 64,
             "sectors": 32,
-            "size": 0,
+            "size": "0x0",
             "geo_type": "logical"
           },
           {
@@ -1819,9 +2184,6 @@
             "value_2": 512
           }
         ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "nvme",
         "driver_module": "nvme",
         "drivers": [
@@ -1832,36 +2194,52 @@
         ]
       },
       {
+        "index": 270,
+        "attached_to": 246,
+        "class_list": [
+          "disk",
+          "ide",
+          "block_device"
+        ],
         "bus_type": {
+          "hex": "0085",
           "name": "IDE",
           "value": 133
         },
-        "slot": 512,
+        "slot": {
+          "bus": 4,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0106",
           "name": "Mass Storage Device",
           "value": 262
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Disk",
           "value": 0
         },
         "vendor": {
+          "hex": "0000",
           "name": "SAMSUNG",
           "value": 0
         },
         "device": {
+          "hex": "0000",
           "name": "MZ7LH960",
           "value": 0
         },
         "revision": {
+          "hex": "0000",
           "name": "904Q",
           "value": 0
         },
+        "serial": "S45NNC0R216725",
         "model": "SAMSUNG MZ7LH960",
-        "attached_to": 246,
         "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "2:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0d.0/0000:0f:00.0/host2/port-2:0/end_device-2:0/target2:0:0/2:0:0:0",
+        "sysfs_bus_id": "4:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0d.0/0000:0f:00.0/host4/port-4:0/end_device-4:0/target4:0:0/4:0:0:0",
         "unix_device_name": "/dev/sdb",
         "unix_device_number": {
           "type": 98,
@@ -1869,13 +2247,19 @@
           "minor": 16,
           "range": 16
         },
+        "unix_device_names": [
+          "/dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R216725",
+          "/dev/disk/by-id/wwn-0x5002538e7120957f",
+          "/dev/disk/by-path/pci-0000:0f:00.0-sas-phy2-lun-0",
+          "/dev/sdb"
+        ],
         "resources": [
           {
             "type": "disk_geo",
             "cylinders": 116737,
             "heads": 255,
             "sectors": 63,
-            "size": 0,
+            "size": "0x0",
             "geo_type": "logical"
           },
           {
@@ -1885,9 +2269,6 @@
             "value_2": 512
           }
         ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "mpt3sas",
         "driver_module": "mpt3sas",
         "drivers": [
@@ -1899,36 +2280,53 @@
         ]
       },
       {
+        "index": 272,
+        "attached_to": 264,
+        "class_list": [
+          "disk",
+          "usb",
+          "scsi",
+          "block_device"
+        ],
         "bus_type": {
+          "hex": "0084",
           "name": "SCSI",
           "value": 132
         },
-        "slot": 1024,
+        "slot": {
+          "bus": 3,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0106",
           "name": "Mass Storage Device",
           "value": 262
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Disk",
           "value": 0
         },
         "vendor": {
+          "hex": "046b",
           "name": "AMI",
           "value": 1131
         },
         "device": {
+          "hex": "ff31",
           "name": "Virtual HDisk0",
           "value": 65329
         },
         "revision": {
+          "hex": "0000",
           "name": "1.00",
           "value": 0
         },
+        "serial": "AAAABBBBCCCC3",
         "model": "AMI Virtual HDisk0",
-        "attached_to": 264,
         "sysfs_id": "/class/block/sda",
-        "sysfs_bus_id": "4:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.2/3-1.2:1.0/host4/target4:0:0/4:0:0:0",
+        "sysfs_bus_id": "3:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.2/3-1.2:1.0/host3/target3:0:0/3:0:0:0",
         "unix_device_name": "/dev/sda",
         "unix_device_number": {
           "type": 98,
@@ -1936,15 +2334,20 @@
           "minor": 0,
           "range": 16
         },
+        "unix_device_names": [
+          "/dev/disk/by-id/usb-AMI_Virtual_HDisk0_AAAABBBBCCCC3-0:0",
+          "/dev/disk/by-path/pci-0000:00:0f.1-usb-0:1.2:1.0-scsi-0:0:0:0",
+          "/dev/disk/by-path/pci-0000:00:0f.1-usbv2-0:1.2:1.0-scsi-0:0:0:0",
+          "/dev/sda"
+        ],
+        "unix_device_name2": "/dev/sg1",
+        "unix_device_number2": {
+          "type": 99,
+          "major": 21,
+          "minor": 1,
+          "range": 1
+        },
         "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 1024,
-            "heads": 0,
-            "sectors": 62,
-            "size": 0,
-            "geo_type": "logical"
-          },
           {
             "type": "baud",
             "speed": 480000000,
@@ -1952,63 +2355,86 @@
             "stop_bits": 0,
             "parity": 0,
             "handshake": 0
+          },
+          {
+            "type": "disk_geo",
+            "cylinders": 1024,
+            "heads": 0,
+            "sectors": 62,
+            "size": "0x0",
+            "geo_type": "logical"
           }
         ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {
-          "not_ready": true
-        },
         "driver": "usb-storage",
         "drivers": [
-          "usb-storage",
-          "sd"
+          "sd",
+          "usb-storage"
         ],
         "module_alias": "usb:v046BpFF31d0100dc00dsc00dp00ic08isc06ip50in00"
       }
     ],
     "graphics_card": [
       {
+        "index": 256,
+        "attached_to": 260,
+        "class_list": [
+          "graphics_card",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 3584,
+        "slot": {
+          "bus": 14,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0003",
           "name": "Display controller",
           "value": 3
         },
         "sub_class": {
+          "hex": "0000",
           "name": "VGA compatible controller",
           "value": 0
         },
         "pci_interface": {
+          "hex": "0000",
           "name": "VGA",
           "value": 0
         },
         "vendor": {
-          "name": "ASPEED Technology, Inc.",
+          "hex": "1a03",
           "value": 6659
         },
         "sub_vendor": {
-          "name": "ASPEED Technology, Inc.",
+          "hex": "1a03",
           "value": 6659
         },
         "device": {
-          "name": "ASPEED Graphics Family",
+          "hex": "2000",
           "value": 8192
         },
         "sub_device": {
+          "hex": "2000",
           "value": 8192
         },
         "revision": {
+          "hex": "0041",
           "value": 65
         },
-        "model": "ASPEED Graphics Family",
-        "attached_to": 260,
+        "model": "VGA compatible controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0c.0/0000:0d:00.0/0000:0e:00.0",
         "sysfs_bus_id": "0000:0e:00.0",
         "resources": [
+          {
+            "type": "irq",
+            "base": 32,
+            "triggered": 0,
+            "enabled": true
+          },
           {
             "type": "mem",
             "base": 1073741824,
@@ -2024,12 +2450,6 @@
             "enabled": true,
             "access": "read_write",
             "prefetch": "no"
-          },
-          {
-            "type": "irq",
-            "base": 32,
-            "triggered": 0,
-            "enabled": true
           }
         ],
         "detail": {
@@ -2040,9 +2460,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "ast",
         "driver_module": "ast",
         "drivers": [
@@ -2057,105 +2474,144 @@
     ],
     "hub": [
       {
+        "index": 273,
+        "attached_to": 254,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "3.0 root hub",
+          "hex": "0003",
+          "name": "xHCI Host Controller",
           "value": 3
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 3.0 root hub",
-        "attached_to": 254,
+        "serial": "0000:80:0f.0",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:80/0000:80:0f.0/usb6/6-0:1.0",
         "sysfs_bus_id": "6-0:1.0",
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 0,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 3,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0003d0608dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
       },
       {
+        "index": 275,
+        "attached_to": 289,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Realtek Semiconductor Corp.",
+          "hex": "0bda",
+          "name": "Generic",
           "value": 3034
         },
         "device": {
-          "name": "Hub",
+          "hex": "0411",
+          "name": "4-Port USB 3.0 Hub",
           "value": 1041
         },
         "revision": {
+          "hex": "0000",
           "name": "1.36",
           "value": 0
         },
-        "model": "Realtek Hub",
-        "attached_to": 289,
+        "model": "Generic 4-Port USB 3.0 Hub",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.0/usb2/2-1/2-1:1.0",
         "sysfs_bus_id": "2-1:1.0",
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 0,
-          "manufacturer": "Generic",
-          "product": "4-Port USB 3.0 Hub",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 3,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
@@ -2163,29 +2619,43 @@
         "module_alias": "usb:v0BDAp0411d0136dc09dsc00dp03ic09isc00ip00in00"
       },
       {
+        "index": 276,
+        "attached_to": 264,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "2.0 root hub",
+          "hex": "0002",
+          "name": "xHCI Host Controller",
           "value": 2
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 2.0 root hub",
-        "attached_to": 264,
+        "serial": "0000:00:0f.1",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -2199,56 +2669,76 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 1,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0002d0608dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
+        "index": 278,
+        "attached_to": 230,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "2.0 root hub",
+          "hex": "0002",
+          "name": "xHCI Host Controller",
           "value": 2
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 2.0 root hub",
-        "attached_to": 230,
+        "serial": "0000:80:0f.1",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:80/0000:80:0f.1/usb7/7-0:1.0",
         "sysfs_bus_id": "7-0:1.0",
         "resources": [
@@ -2262,56 +2752,76 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 1,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0002d0608dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
+        "index": 279,
+        "attached_to": 276,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "American Megatrends, Inc.",
+          "hex": "046b",
+          "name": "American Megatrends",
           "value": 1131
         },
         "device": {
+          "hex": "ff01",
           "name": "Virtual Hub",
           "value": 65281
         },
         "revision": {
+          "hex": "0000",
           "name": "1.00",
           "value": 0
         },
+        "serial": "serial",
         "model": "American Megatrends Virtual Hub",
-        "attached_to": 276,
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1:1.0",
         "sysfs_bus_id": "3-1:1.0",
         "resources": [
@@ -2325,26 +2835,32 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "American Megatrends Inc.",
-          "product": "Virtual Hub",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 1,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
@@ -2352,135 +2868,189 @@
         "module_alias": "usb:v046BpFF01d0100dc09dsc00dp01ic09isc00ip00in00"
       },
       {
+        "index": 280,
+        "attached_to": 264,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "3.0 root hub",
+          "hex": "0003",
+          "name": "xHCI Host Controller",
           "value": 3
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 3.0 root hub",
-        "attached_to": 264,
+        "serial": "0000:00:0f.1",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 0,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 3,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0003d0608dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
       },
       {
+        "index": 282,
+        "attached_to": 230,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "3.0 root hub",
+          "hex": "0003",
+          "name": "xHCI Host Controller",
           "value": 3
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 3.0 root hub",
-        "attached_to": 230,
+        "serial": "0000:80:0f.1",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:80/0000:80:0f.1/usb8/8-0:1.0",
         "sysfs_bus_id": "8-0:1.0",
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 0,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 3,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0003d0608dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
       },
       {
+        "index": 283,
+        "attached_to": 243,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "2.0 root hub",
+          "hex": "0002",
+          "name": "xHCI Host Controller",
           "value": 2
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 2.0 root hub",
-        "attached_to": 243,
+        "serial": "0000:00:0f.0",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -2494,56 +3064,76 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 1,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0002d0608dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
+        "index": 286,
+        "attached_to": 254,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "2.0 root hub",
+          "hex": "0002",
+          "name": "xHCI Host Controller",
           "value": 2
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 2.0 root hub",
-        "attached_to": 254,
+        "serial": "0000:80:0f.0",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:80/0000:80:0f.0/usb5/5-0:1.0",
         "sysfs_bus_id": "5-0:1.0",
         "resources": [
@@ -2557,56 +3147,75 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 1,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0002d0608dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
+        "index": 288,
+        "attached_to": 283,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Realtek Semiconductor Corp.",
+          "hex": "0bda",
+          "name": "Generic",
           "value": 3034
         },
         "device": {
-          "name": "RTS5411 Hub",
+          "hex": "5411",
+          "name": "4-Port USB 2.0 Hub",
           "value": 21521
         },
         "revision": {
+          "hex": "0000",
           "name": "1.36",
           "value": 0
         },
-        "model": "Realtek RTS5411 Hub",
-        "attached_to": 283,
+        "model": "Generic 4-Port USB 2.0 Hub",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.0/usb1/1-1/1-1:1.0",
         "sysfs_bus_id": "1-1:1.0",
         "resources": [
@@ -2620,27 +3229,32 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "Generic",
-          "product": "4-Port USB 2.0 Hub",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 2,
-          "interface_class": "hub",
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "interface_protocol": 2,
-          "country": 0
+          "interface_number": 0,
+          "interface_alternate_setting": 1
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
@@ -2648,88 +3262,122 @@
         "module_alias": "usb:v0BDAp5411d0136dc09dsc00dp02ic09isc00ip02in00"
       },
       {
+        "index": 289,
+        "attached_to": 243,
+        "class_list": [
+          "usb",
+          "hub"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "010a",
           "name": "Hub",
           "value": 266
         },
         "vendor": {
-          "name": "Linux Foundation",
+          "hex": "1d6b",
+          "name": "Linux 6.12.22 xhci-hcd",
           "value": 7531
         },
         "device": {
-          "name": "3.0 root hub",
+          "hex": "0003",
+          "name": "xHCI Host Controller",
           "value": 3
         },
         "revision": {
-          "name": "6.08",
+          "hex": "0000",
+          "name": "6.12",
           "value": 0
         },
-        "model": "Linux Foundation 3.0 root hub",
-        "attached_to": 243,
+        "serial": "0000:00:0f.0",
+        "model": "Linux 6.12.22 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 0,
-          "manufacturer": "Linux 6.8.12 xhci-hcd",
-          "product": "xHCI Host Controller",
-          "device_class": "hub",
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
           "device_protocol": 3,
-          "interface_class": "hub",
-          "country": 0
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "hub",
         "drivers": [
           "hub"
         ],
-        "module_alias": "usb:v1D6Bp0003d0608dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
       }
     ],
     "keyboard": [
       {
+        "index": 277,
+        "attached_to": 279,
+        "class_list": [
+          "keyboard",
+          "usb"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0108",
           "name": "Keyboard",
           "value": 264
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Keyboard",
           "value": 0
         },
         "vendor": {
-          "name": "American Megatrends, Inc.",
+          "hex": "046b",
+          "name": "American Megatrends",
           "value": 1131
         },
         "device": {
+          "hex": "ff10",
           "name": "Virtual Keyboard and Mouse",
           "value": 65296
         },
         "revision": {
+          "hex": "0000",
           "name": "1.00",
           "value": 0
         },
         "model": "American Megatrends Virtual Keyboard and Mouse",
-        "attached_to": 279,
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.4/3-1.4:1.0",
         "sysfs_bus_id": "3-1.4:1.0",
         "unix_device_name": "/dev/input/event1",
@@ -2739,6 +3387,12 @@
           "minor": 65,
           "range": 1
         },
+        "unix_device_names": [
+          "/dev/input/by-id/usb-American_Megatrends_Inc._Virtual_Keyboard_and_Mouse-event-kbd",
+          "/dev/input/by-path/pci-0000:00:0f.1-usb-0:1.4:1.0-event-kbd",
+          "/dev/input/by-path/pci-0000:00:0f.1-usbv2-0:1.4:1.0-event-kbd",
+          "/dev/input/event1"
+        ],
         "resources": [
           {
             "type": "baud",
@@ -2750,26 +3404,32 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 1500000,
-          "manufacturer": "American Megatrends Inc.",
-          "product": "Virtual Keyboard and Mouse",
-          "interface_class": "hid",
-          "interface_subclass": 1,
+          "device_class": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "device_protocol": 0,
+          "interface_class": {
+            "hex": "0003",
+            "name": "hid",
+            "value": 3
+          },
+          "interface_subclass": {
+            "hex": "0001",
+            "name": "audio",
+            "value": 1
+          },
           "interface_protocol": 1,
-          "country": 0
+          "interface_number": 0,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "usbhid",
         "drivers": [
           "usbhid"
@@ -2782,39 +3442,84 @@
       }
     ],
     "memory": [
-      null
+      {
+        "index": 226,
+        "attached_to": 0,
+        "class_list": [
+          "memory"
+        ],
+        "base_class": {
+          "hex": "0101",
+          "name": "Internally Used Class",
+          "value": 257
+        },
+        "sub_class": {
+          "hex": "0002",
+          "name": "Main Memory",
+          "value": 2
+        },
+        "model": "Main Memory",
+        "resources": [
+          {
+            "type": "mem",
+            "base": 0,
+            "range": 269753569280,
+            "enabled": true,
+            "access": "read_write",
+            "prefetch": "unknown"
+          },
+          {
+            "type": "phys_mem",
+            "range": 274877906944
+          }
+        ]
+      }
     ],
     "mouse": [
       {
+        "index": 285,
+        "attached_to": 279,
+        "class_list": [
+          "mouse",
+          "usb"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0105",
           "name": "Mouse",
           "value": 261
         },
         "sub_class": {
+          "hex": "0003",
           "name": "USB Mouse",
           "value": 3
         },
         "vendor": {
-          "name": "American Megatrends, Inc.",
+          "hex": "046b",
+          "name": "American Megatrends",
           "value": 1131
         },
         "device": {
+          "hex": "ff10",
           "name": "Virtual Keyboard and Mouse",
           "value": 65296
         },
         "revision": {
+          "hex": "0000",
           "name": "1.00",
           "value": 0
         },
         "compat_vendor": "Unknown",
         "compat_device": "Generic USB Mouse",
         "model": "American Megatrends Virtual Keyboard and Mouse",
-        "attached_to": 279,
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.4/3-1.4:1.1",
         "sysfs_bus_id": "3-1.4:1.1",
         "unix_device_name": "/dev/input/mice",
@@ -2824,8 +3529,11 @@
           "minor": 63,
           "range": 1
         },
-        "unix_device_name_2": "/dev/input/mouse0",
-        "unix_device_number_2": {
+        "unix_device_names": [
+          "/dev/input/mice"
+        ],
+        "unix_device_name2": "/dev/input/mouse0",
+        "unix_device_number2": {
           "type": 99,
           "major": 13,
           "minor": 32,
@@ -2842,26 +3550,32 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 1,
-          "speed": 1500000,
-          "manufacturer": "American Megatrends Inc.",
-          "product": "Virtual Keyboard and Mouse",
-          "interface_class": "hid",
-          "interface_subclass": 1,
+          "device_class": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "device_protocol": 0,
+          "interface_class": {
+            "hex": "0003",
+            "name": "hid",
+            "value": 3
+          },
+          "interface_subclass": {
+            "hex": "0001",
+            "name": "audio",
+            "value": 1
+          },
           "interface_protocol": 2,
-          "country": 0
+          "interface_number": 1,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "usbhid",
         "drivers": [
           "usbhid"
@@ -2882,55 +3596,82 @@
     ],
     "network_controller": [
       {
+        "index": 234,
+        "attached_to": 253,
+        "class_list": [
+          "network_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 2816,
+        "slot": {
+          "bus": 11,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0002",
           "name": "Network controller",
           "value": 2
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Ethernet controller",
           "value": 0
         },
         "vendor": {
-          "name": "QLogic Corp.",
+          "hex": "1077",
           "value": 4215
         },
         "sub_vendor": {
-          "name": "Gigabyte Technology Co., Ltd",
+          "hex": "1458",
           "value": 5208
         },
         "device": {
-          "name": "FastLinQ QL41000 Series 10/25/40/50GbE Controller",
+          "hex": "8070",
           "value": 32880
         },
         "sub_device": {
+          "hex": "0011",
           "value": 17
         },
         "revision": {
+          "hex": "0002",
           "value": 2
         },
-        "model": "QLogic FastLinQ QL41000 Series 10/25/40/50GbE Controller",
-        "attached_to": 253,
+        "model": "Ethernet controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0b.0/0000:0b:00.0",
         "sysfs_bus_id": "0000:0b:00.0",
+        "sysfs_iommu_group_id": 3,
         "unix_device_name": "eno1",
+        "unix_device_names": [
+          "eno1"
+        ],
         "resources": [
           {
+            "type": "hwaddr",
+            "address": 98
+          },
+          {
+            "type": "irq",
+            "base": 32,
+            "triggered": 0,
+            "enabled": true
+          },
+          {
             "type": "mem",
-            "base": 1099528404992,
-            "range": 131072,
+            "base": 1099511627776,
+            "range": 8388608,
             "enabled": true,
             "access": "read_only",
             "prefetch": "no"
           },
           {
             "type": "mem",
-            "base": 1099511627776,
-            "range": 8388608,
+            "base": 1099528404992,
+            "range": 131072,
             "enabled": true,
             "access": "read_only",
             "prefetch": "no"
@@ -2952,22 +3693,8 @@
             "prefetch": "no"
           },
           {
-            "type": "irq",
-            "base": 32,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "hwaddr",
-            "address": 98
-          },
-          {
             "type": "phwaddr",
             "address": 98
-          },
-          {
-            "Type": "link",
-            "connected": true
           }
         ],
         "detail": {
@@ -2978,9 +3705,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "qede",
         "driver_module": "qede",
         "drivers": [
@@ -2993,55 +3717,82 @@
         "label": "Ethernet Controller 1"
       },
       {
+        "index": 251,
+        "attached_to": 253,
+        "class_list": [
+          "network_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 2816,
+        "slot": {
+          "bus": 11,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0002",
           "name": "Network controller",
           "value": 2
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Ethernet controller",
           "value": 0
         },
         "vendor": {
-          "name": "QLogic Corp.",
+          "hex": "1077",
           "value": 4215
         },
         "sub_vendor": {
-          "name": "Gigabyte Technology Co., Ltd",
+          "hex": "1458",
           "value": 5208
         },
         "device": {
-          "name": "FastLinQ QL41000 Series 10/25/40/50GbE Controller",
+          "hex": "8070",
           "value": 32880
         },
         "sub_device": {
+          "hex": "0011",
           "value": 17
         },
         "revision": {
+          "hex": "0002",
           "value": 2
         },
-        "model": "QLogic FastLinQ QL41000 Series 10/25/40/50GbE Controller",
-        "attached_to": 253,
+        "model": "Ethernet controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0b.0/0000:0b:00.1",
         "sysfs_bus_id": "0000:0b:00.1",
+        "sysfs_iommu_group_id": 3,
         "unix_device_name": "eno2",
+        "unix_device_names": [
+          "eno2"
+        ],
         "resources": [
           {
+            "type": "hwaddr",
+            "address": 98
+          },
+          {
+            "type": "irq",
+            "base": 32,
+            "triggered": 0,
+            "enabled": true
+          },
+          {
             "type": "mem",
-            "base": 1099528536064,
-            "range": 131072,
+            "base": 1099520016384,
+            "range": 8388608,
             "enabled": true,
             "access": "read_only",
             "prefetch": "no"
           },
           {
             "type": "mem",
-            "base": 1099520016384,
-            "range": 8388608,
+            "base": 1099528536064,
+            "range": 131072,
             "enabled": true,
             "access": "read_only",
             "prefetch": "no"
@@ -3063,22 +3814,8 @@
             "prefetch": "no"
           },
           {
-            "type": "irq",
-            "base": 32,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "hwaddr",
-            "address": 98
-          },
-          {
             "type": "phwaddr",
             "address": 98
-          },
-          {
-            "Type": "link",
-            "connected": false
           }
         ],
         "detail": {
@@ -3089,9 +3826,6 @@
           "irq": 32,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "qede",
         "driver_module": "qede",
         "drivers": [
@@ -3102,47 +3836,33 @@
         ],
         "module_alias": "pci:v00001077d00008070sv00001458sd00000011bc02sc00i00",
         "label": "Ethernet Controller 2"
-      },
+      }
+    ],
+    "network_interface": [
       {
-        "bus_type": {
-          "name": "USB",
-          "value": 134
-        },
-        "slot": 0,
+        "index": 291,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
         "base_class": {
-          "name": "Network controller",
-          "value": 2
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
         },
         "sub_class": {
-          "name": "USB Host-to-Host link",
-          "value": 145
+          "hex": "0001",
+          "name": "Ethernet",
+          "value": 1
         },
-        "vendor": {
-          "name": "American Megatrends, Inc.",
-          "value": 1131
-        },
-        "device": {
-          "name": "Virtual Ethernet",
-          "value": 65456
-        },
-        "revision": {
-          "name": "1.00",
-          "value": 0
-        },
-        "model": "American Megatrends Virtual Ethernet",
-        "attached_to": 279,
-        "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.3/3-1.3:2.0",
-        "sysfs_bus_id": "3-1.3:2.0",
+        "model": "Ethernet network interface",
+        "sysfs_id": "/class/net/enp0s15f1u1u3c2",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.3/3-1.3:2.0",
         "unix_device_name": "enp0s15f1u1u3c2",
+        "unix_device_names": [
+          "enp0s15f1u1u3c2"
+        ],
         "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          },
           {
             "type": "hwaddr",
             "address": 49
@@ -3150,33 +3870,8 @@
           {
             "type": "phwaddr",
             "address": 49
-          },
-          {
-            "Type": "link",
-            "connected": true
           }
         ],
-        "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 0,
-          "speed": 480000000,
-          "manufacturer": "American Megatrends Inc.",
-          "product": "Virtual Ethernet",
-          "device_class": "comm",
-          "interface_class": "comm",
-          "interface_subclass": 6,
-          "country": 0
-        },
-        "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "cdc_ether",
         "driver_module": "cdc_ether",
         "drivers": [
@@ -3184,26 +3879,31 @@
         ],
         "driver_modules": [
           "cdc_ether"
-        ],
-        "module_alias": "usb:v046BpFFB0d0100dc02dsc00dp00ic02isc06ip00in00"
-      }
-    ],
-    "network_interface": [
+        ]
+      },
       {
-        "slot": 2,
+        "index": 292,
+        "attached_to": 234,
+        "class_list": [
+          "network_interface"
+        ],
         "base_class": {
+          "hex": "0107",
           "name": "Network Interface",
           "value": 263
         },
         "sub_class": {
+          "hex": "0001",
           "name": "Ethernet",
           "value": 1
         },
         "model": "Ethernet network interface",
-        "attached_to": 251,
-        "sysfs_id": "/class/net/eno2",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0b.0/0000:0b:00.1",
-        "unix_device_name": "eno2",
+        "sysfs_id": "/class/net/eno1",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0b.0/0000:0b:00.0",
+        "unix_device_name": "eno1",
+        "unix_device_names": [
+          "eno1"
+        ],
         "resources": [
           {
             "type": "hwaddr",
@@ -3212,15 +3912,8 @@
           {
             "type": "phwaddr",
             "address": 98
-          },
-          {
-            "Type": "link",
-            "connected": false
           }
         ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "qede",
         "driver_module": "qede",
         "drivers": [
@@ -3231,84 +3924,51 @@
         ]
       },
       {
-        "slot": 0,
+        "index": 293,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
         "base_class": {
+          "hex": "0107",
           "name": "Network Interface",
           "value": 263
         },
         "sub_class": {
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "attached_to": 284,
-        "sysfs_id": "/class/net/enp0s15f1u1u3c2",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.3/3-1.3:2.0",
-        "unix_device_name": "enp0s15f1u1u3c2",
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 49
-          },
-          {
-            "type": "phwaddr",
-            "address": 49
-          },
-          {
-            "Type": "link",
-            "connected": true
-          }
-        ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
-        "driver": "cdc_ether",
-        "driver_module": "cdc_ether",
-        "drivers": [
-          "cdc_ether"
-        ],
-        "driver_modules": [
-          "cdc_ether"
-        ]
-      },
-      {
-        "slot": 0,
-        "base_class": {
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
+          "hex": "0000",
           "name": "Loopback",
           "value": 0
         },
         "model": "Loopback network interface",
         "sysfs_id": "/class/net/lo",
         "unix_device_name": "lo",
-        "resources": [
-          {
-            "Type": "link",
-            "connected": true
-          }
-        ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {}
+        "unix_device_names": [
+          "lo"
+        ]
       },
       {
-        "slot": 1,
+        "index": 295,
+        "attached_to": 251,
+        "class_list": [
+          "network_interface"
+        ],
         "base_class": {
+          "hex": "0107",
           "name": "Network Interface",
           "value": 263
         },
         "sub_class": {
+          "hex": "0001",
           "name": "Ethernet",
           "value": 1
         },
         "model": "Ethernet network interface",
-        "attached_to": 234,
-        "sysfs_id": "/class/net/eno1",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0b.0/0000:0b:00.0",
-        "unix_device_name": "eno1",
+        "sysfs_id": "/class/net/eno2",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0b.0/0000:0b:00.1",
+        "unix_device_name": "eno2",
+        "unix_device_names": [
+          "eno2"
+        ],
         "resources": [
           {
             "type": "hwaddr",
@@ -3317,15 +3977,8 @@
           {
             "type": "phwaddr",
             "address": 98
-          },
-          {
-            "Type": "link",
-            "connected": true
           }
         ],
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "qede",
         "driver_module": "qede",
         "drivers": [
@@ -3338,32 +3991,44 @@
     ],
     "storage_controller": [
       {
+        "index": 231,
+        "attached_to": 0,
+        "class_list": [
+          "storage_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 16,
+        "slot": {
+          "bus": 0,
+          "number": 16
+        },
         "base_class": {
+          "hex": "0001",
           "name": "Mass storage controller",
           "value": 1
         },
         "sub_class": {
-          "name": "SATA controller",
+          "hex": "0006",
           "value": 6
         },
         "pci_interface": {
-          "name": "AHCI 1.0",
+          "hex": "0001",
           "value": 1
         },
         "vendor": {
+          "hex": "14e4",
           "name": "Broadcom",
           "value": 5348
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller",
+          "hex": "9027",
           "value": 36903
         },
-        "model": "Broadcom CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller",
+        "model": "Broadcom Mass storage controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:10.0",
         "sysfs_bus_id": "0000:00:10.0",
         "resources": [
@@ -3392,9 +4057,6 @@
           "irq": 0,
           "prog_if": 1
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "ahci",
         "drivers": [
           "ahci"
@@ -3403,44 +4065,61 @@
         "label": "SATA Controller 1"
       },
       {
+        "index": 241,
+        "attached_to": 239,
+        "class_list": [
+          "storage_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 1792,
+        "slot": {
+          "bus": 7,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0001",
           "name": "Mass storage controller",
           "value": 1
         },
         "sub_class": {
-          "name": "Non-Volatile memory controller",
+          "hex": "0008",
           "value": 8
         },
         "pci_interface": {
-          "name": "NVM Express",
+          "hex": "0002",
           "value": 2
         },
         "vendor": {
-          "name": "Samsung Electronics Co Ltd",
+          "hex": "144d",
           "value": 5197
         },
         "sub_vendor": {
-          "name": "Samsung Electronics Co Ltd",
+          "hex": "144d",
           "value": 5197
         },
         "device": {
-          "name": "NVMe SSD Controller SM981/PM981/PM983",
+          "hex": "a808",
           "value": 43016
         },
         "sub_device": {
-          "name": "SSD 970 EVO/PRO",
+          "hex": "a801",
           "value": 43009
         },
-        "model": "Samsung Electronics SSD 970 EVO/PRO",
-        "attached_to": 239,
+        "model": "Mass storage controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:07.0/0000:07:00.0",
         "sysfs_bus_id": "0000:07:00.0",
+        "sysfs_iommu_group_id": 1,
         "resources": [
+          {
+            "type": "irq",
+            "base": 33,
+            "triggered": 0,
+            "enabled": true
+          },
           {
             "type": "mem",
             "base": 1124073472,
@@ -3448,12 +4127,6 @@
             "enabled": true,
             "access": "read_write",
             "prefetch": "no"
-          },
-          {
-            "type": "irq",
-            "base": 33,
-            "triggered": 0,
-            "enabled": true
           }
         ],
         "detail": {
@@ -3464,9 +4137,6 @@
           "irq": 33,
           "prog_if": 2
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "nvme",
         "driver_module": "nvme",
         "drivers": [
@@ -3478,48 +4148,67 @@
         "module_alias": "pci:v0000144Dd0000A808sv0000144Dsd0000A801bc01sc08i02"
       },
       {
+        "index": 246,
+        "attached_to": 228,
+        "class_list": [
+          "storage_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 3840,
+        "slot": {
+          "bus": 15,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0001",
           "name": "Mass storage controller",
           "value": 1
         },
         "sub_class": {
-          "name": "Serial Attached SCSI controller",
+          "hex": "0007",
           "value": 7
         },
         "vendor": {
-          "name": "Broadcom / LSI",
+          "hex": "1000",
           "value": 4096
         },
         "sub_vendor": {
-          "name": "Gigabyte Technology Co., Ltd",
+          "hex": "1458",
           "value": 5208
         },
         "device": {
-          "name": "SAS3008 PCI-Express Fusion-MPT SAS-3",
+          "hex": "0097",
           "value": 151
         },
         "sub_device": {
+          "hex": "3008",
           "value": 12296
         },
         "revision": {
+          "hex": "0002",
           "value": 2
         },
-        "model": "Broadcom / LSI SAS3008 PCI-Express Fusion-MPT SAS-3",
-        "attached_to": 228,
+        "model": "Mass storage controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0d.0/0000:0f:00.0",
         "sysfs_bus_id": "0000:0f:00.0",
+        "sysfs_iommu_group_id": 2,
         "resources": [
           {
+            "type": "irq",
+            "base": 31,
+            "triggered": 0,
+            "enabled": true
+          },
+          {
             "type": "mem",
-            "base": 1127481344,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_write",
+            "base": 1126170624,
+            "range": 1048576,
+            "enabled": false,
+            "access": "read_only",
             "prefetch": "no"
           },
           {
@@ -3532,17 +4221,11 @@
           },
           {
             "type": "mem",
-            "base": 1126170624,
-            "range": 1048576,
-            "enabled": false,
-            "access": "read_only",
+            "base": 1127481344,
+            "range": 65536,
+            "enabled": true,
+            "access": "read_write",
             "prefetch": "no"
-          },
-          {
-            "type": "irq",
-            "base": 31,
-            "triggered": 0,
-            "enabled": true
           }
         ],
         "detail": {
@@ -3553,9 +4236,6 @@
           "irq": 31,
           "prog_if": 0
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "mpt3sas",
         "driver_module": "mpt3sas",
         "drivers": [
@@ -3568,32 +4248,44 @@
         "label": "SAS Controller 1"
       },
       {
+        "index": 249,
+        "attached_to": 0,
+        "class_list": [
+          "storage_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 16,
+        "slot": {
+          "bus": 0,
+          "number": 16
+        },
         "base_class": {
+          "hex": "0001",
           "name": "Mass storage controller",
           "value": 1
         },
         "sub_class": {
-          "name": "SATA controller",
+          "hex": "0006",
           "value": 6
         },
         "pci_interface": {
-          "name": "AHCI 1.0",
+          "hex": "0001",
           "value": 1
         },
         "vendor": {
+          "hex": "14e4",
           "name": "Broadcom",
           "value": 5348
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller",
+          "hex": "9027",
           "value": 36903
         },
-        "model": "Broadcom CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller",
+        "model": "Broadcom Mass storage controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:10.1",
         "sysfs_bus_id": "0000:00:10.1",
         "resources": [
@@ -3622,9 +4314,6 @@
           "irq": 0,
           "prog_if": 1
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "ahci",
         "drivers": [
           "ahci"
@@ -3634,35 +4323,50 @@
       }
     ],
     "system": {},
-    "unknown": [
+    "usb": [
       {
+        "index": 274,
+        "attached_to": 279,
+        "class_list": [
+          "usb",
+          "unknown"
+        ],
         "bus_type": {
+          "hex": "0086",
           "name": "USB",
           "value": 134
         },
-        "slot": 0,
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
         "base_class": {
+          "hex": "0000",
           "name": "Unclassified device",
           "value": 0
         },
         "sub_class": {
+          "hex": "0000",
           "name": "Unclassified device",
           "value": 0
         },
         "vendor": {
-          "name": "American Megatrends, Inc.",
+          "hex": "046b",
+          "name": "American Megatrends",
           "value": 1131
         },
         "device": {
+          "hex": "ffb0",
           "name": "Virtual Ethernet",
           "value": 65456
         },
         "revision": {
+          "hex": "0000",
           "name": "1.00",
           "value": 0
         },
+        "serial": "1234567890",
         "model": "American Megatrends Virtual Ethernet",
-        "attached_to": 279,
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1/usb3/3-1/3-1.3/3-1.3:2.1",
         "sysfs_bus_id": "3-1.3:2.1",
         "resources": [
@@ -3676,25 +4380,32 @@
           }
         ],
         "detail": {
-          "bus": 0,
-          "device_number": 0,
-          "lev": 0,
-          "parent": 0,
-          "port": 0,
-          "count": 0,
-          "connections": 0,
-          "used_connections": 0,
-          "interface_descriptor": 1,
-          "speed": 480000000,
-          "manufacturer": "American Megatrends Inc.",
-          "product": "Virtual Ethernet",
-          "device_class": "comm",
-          "interface_class": "data",
-          "country": 0
+          "device_class": {
+            "hex": "0002",
+            "name": "comm",
+            "value": 2
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "device_protocol": 0,
+          "interface_class": {
+            "hex": "000a",
+            "name": "data",
+            "value": 10
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 1,
+          "interface_alternate_setting": 0
         },
         "hotplug": "usb",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "cdc_ether",
         "driver_module": "cdc_ether",
         "drivers": [
@@ -3708,32 +4419,45 @@
     ],
     "usb_controller": [
       {
+        "index": 230,
+        "attached_to": 0,
+        "class_list": [
+          "usb_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32783,
+        "slot": {
+          "bus": 128,
+          "number": 15
+        },
         "base_class": {
+          "hex": "000c",
           "name": "Serial bus controller",
           "value": 12
         },
         "sub_class": {
+          "hex": "0003",
           "name": "USB Controller",
           "value": 3
         },
         "pci_interface": {
-          "name": "XHCI",
+          "hex": "0030",
           "value": 48
         },
         "vendor": {
+          "hex": "14e4",
           "name": "Broadcom",
           "value": 5348
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+          "hex": "9026",
           "value": 36902
         },
-        "model": "Broadcom CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+        "model": "Broadcom USB Controller",
         "sysfs_id": "/devices/pci0000:80/0000:80:0f.1",
         "sysfs_bus_id": "0000:80:0f.1",
         "resources": [
@@ -3762,47 +4486,53 @@
           "irq": 0,
           "prog_if": 48
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "xhci_hcd",
-        "driver_module": "xhci_pci",
         "drivers": [
           "xhci_hcd"
-        ],
-        "driver_modules": [
-          "xhci_pci"
         ],
         "module_alias": "pci:v000014E4d00009026sv00000000sd00000000bc0Csc03i30",
         "label": "PCI Device 5"
       },
       {
+        "index": 243,
+        "attached_to": 0,
+        "class_list": [
+          "usb_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 15,
+        "slot": {
+          "bus": 0,
+          "number": 15
+        },
         "base_class": {
+          "hex": "000c",
           "name": "Serial bus controller",
           "value": 12
         },
         "sub_class": {
+          "hex": "0003",
           "name": "USB Controller",
           "value": 3
         },
         "pci_interface": {
-          "name": "XHCI",
+          "hex": "0030",
           "value": 48
         },
         "vendor": {
+          "hex": "14e4",
           "name": "Broadcom",
           "value": 5348
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+          "hex": "9026",
           "value": 36902
         },
-        "model": "Broadcom CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+        "model": "Broadcom USB Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.0",
         "sysfs_bus_id": "0000:00:0f.0",
         "resources": [
@@ -3831,47 +4561,53 @@
           "irq": 0,
           "prog_if": 48
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "xhci_hcd",
-        "driver_module": "xhci_pci",
         "drivers": [
           "xhci_hcd"
-        ],
-        "driver_modules": [
-          "xhci_pci"
         ],
         "module_alias": "pci:v000014E4d00009026sv00000000sd00000000bc0Csc03i30",
         "label": "PCI Device 1"
       },
       {
+        "index": 254,
+        "attached_to": 0,
+        "class_list": [
+          "usb_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 32783,
+        "slot": {
+          "bus": 128,
+          "number": 15
+        },
         "base_class": {
+          "hex": "000c",
           "name": "Serial bus controller",
           "value": 12
         },
         "sub_class": {
+          "hex": "0003",
           "name": "USB Controller",
           "value": 3
         },
         "pci_interface": {
-          "name": "XHCI",
+          "hex": "0030",
           "value": 48
         },
         "vendor": {
+          "hex": "14e4",
           "name": "Broadcom",
           "value": 5348
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+          "hex": "9026",
           "value": 36902
         },
-        "model": "Broadcom CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+        "model": "Broadcom USB Controller",
         "sysfs_id": "/devices/pci0000:80/0000:80:0f.0",
         "sysfs_bus_id": "0000:80:0f.0",
         "resources": [
@@ -3900,47 +4636,53 @@
           "irq": 0,
           "prog_if": 48
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "xhci_hcd",
-        "driver_module": "xhci_pci",
         "drivers": [
           "xhci_hcd"
-        ],
-        "driver_modules": [
-          "xhci_pci"
         ],
         "module_alias": "pci:v000014E4d00009026sv00000000sd00000000bc0Csc03i30",
         "label": "PCI Device 4"
       },
       {
+        "index": 264,
+        "attached_to": 0,
+        "class_list": [
+          "usb_controller",
+          "pci"
+        ],
         "bus_type": {
+          "hex": "0004",
           "name": "PCI",
           "value": 4
         },
-        "slot": 15,
+        "slot": {
+          "bus": 0,
+          "number": 15
+        },
         "base_class": {
+          "hex": "000c",
           "name": "Serial bus controller",
           "value": 12
         },
         "sub_class": {
+          "hex": "0003",
           "name": "USB Controller",
           "value": 3
         },
         "pci_interface": {
-          "name": "XHCI",
+          "hex": "0030",
           "value": 48
         },
         "vendor": {
+          "hex": "14e4",
           "name": "Broadcom",
           "value": 5348
         },
         "device": {
-          "name": "CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+          "hex": "9026",
           "value": 36902
         },
-        "model": "Broadcom CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller",
+        "model": "Broadcom USB Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0f.1",
         "sysfs_bus_id": "0000:00:0f.1",
         "resources": [
@@ -3969,20 +4711,14 @@
           "irq": 0,
           "prog_if": 48
         },
-        "hotplug": "none",
-        "hotplug_slot": 0,
-        "is": {},
         "driver": "xhci_hcd",
-        "driver_module": "xhci_pci",
         "drivers": [
           "xhci_hcd"
-        ],
-        "driver_modules": [
-          "xhci_pci"
         ],
         "module_alias": "pci:v000014E4d00009026sv00000000sd00000000bc0Csc03i30",
         "label": "PCI Device 2"
       }
     ]
-  }
+  },
+  "smbios": {}
 }
