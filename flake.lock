@@ -6,9 +6,7 @@
           "flake-parts"
         ],
         "hercules-ci-effects": "hercules-ci-effects",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs",
         "treefmt-nix": [
           "treefmt-nix"
         ]
@@ -272,6 +270,23 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1745385072,
+        "narHash": "sha256-geZyeQp56HeUaMbhPUVpuN58QfJ94s0jLOUoNf/jUlg=",
+        "ref": "nixos-unstable-small",
+        "rev": "6722b86722d71dbf45591685d355664645912388",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs"
+      },
+      "original": {
+        "ref": "nixos-unstable-small",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1744290136,
         "narHash": "sha256-L8/J3u/REmyZkRAeEJ+gTlyWG2tAuh2hWBHrMSfJfR0=",
         "ref": "nixos-24.11-backports",
@@ -315,7 +330,7 @@
         "nixos-facter-modules": "nixos-facter-modules",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",

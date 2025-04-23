@@ -27,7 +27,8 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     buildbot-nix.url = "github:nix-community/buildbot-nix";
-    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
+    # We need the nixpkgs unstable here.
+    #buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
     buildbot-nix.inputs.flake-parts.follows = "flake-parts";
     buildbot-nix.inputs.treefmt-nix.follows = "treefmt-nix";
 
