@@ -9,6 +9,9 @@
   ];
 
   boot.hugepages1GB.number = 8;
+  boot.hugepages2MB.number = let
+    gb = 30;
+  in gb * 1024 / 2;
 
   boot.initrd.availableKernelModules = [ "nvme" ];
 
