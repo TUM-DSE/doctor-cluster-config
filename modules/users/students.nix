@@ -65,10 +65,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVvRRiomFTL2f76ujvyF9yydT7aMjFWOLDcFhn/aGelicljhULa0JwQM5P1wCpILLCY9zjQyQn84w4MaEasJ4KMaVuDyGS9xpIOa9B6xqIryCuE17EWlodYZqsOCaINCfQ048uoJRnu+LqzG2SJN+tMgUtMI0k+T7+BWusqQ5A0i+H/S3H3KITT9Qfn34hYDpHgLZD+sw4ZAXAzWjuZj+CYPEh50d68YWqNzRR9ShKK9rL1R6dyUIM2FGZzLHo4N7pRzHOa38ELY+Qni7Z3uf9mK/0vkkD/mMlAJDbJSQfuSpZAnninvt7F5bzoRRb6a1Gd7yb6y8fTaMt1lBgsqtJWuILOOOisxZE4VmWqoiT/jDlSpSHSfQz/r001JT7ci1HD+xYvh2ect0TJEo9WH7X/vX/4Q8wHO0Zf3l4yCCF7qD0VoqTd3X0LncbahaVP7JAhA9PfuNSWj754lxJ6RBeSavcRxQWpkbX+8kDcF/I4AIEocHTkX48Uo6U7SRRr38= powermoon@powermoonPC"
   ];
 
-  konstantinKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqB4RM0SUGkY1I+jLbWMxG10RPhhsNbsrPdMx32n7Iwt89rlkx3XGNra4eoBiZAdXLcggEgE4xgMtOIj9Wc7sexwbabEX5GXl1S7mc4Trm8wJRziBWdH6pwqICjG5HwNfXRyhiS290r8H/MB3LFIWgyE/U7VqaQ/nnHBimroYaJN1rDbkl25Ihe7mpS2s8P4M5HaqNIVY6HhgNKHJwQe9pgnjwnq4OkRGrRUOxi7q5R5TGsoCa2s2jefMrGOEXH0z6ZUzVo7auddNkQO4IYEHoiQxY4SlVwwCE0SYF/56kyupDRuEkg158HYcS0Yc2bTjYKe7sFTRwmssnQee+bxcHAOrqv3qunXx6USfGwzibNYlJoAFTDEoz5DJVMTlwlq9H0Qpvs7SIOiH5WhQ86T2TQhr3b5mIitge/uN2PVSnjhtxWqbUEipShgKmxpRinSR0D9VRf/X0cqTToz/ZfM9vcXEDyTtXHzbMU8STDlkIKQuexaqslqspAVsVBjCdQNk= konstantin@konstantin-IdeaPad-5-14ALC05"
-  ];
-
   janhaKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7" ];
 
   janheKeys = [
@@ -381,17 +377,6 @@ in
       openssh.authorizedKeys.keys = berkayKeys;
     };
 
-    # Konstantin Garbers, B.Sc. thesis with Martin (Arm -> AIR lifter)
-    konstantin = {
-      isNormalUser = true;
-      home = "/home/konstantin";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2055;
-      allowedHosts = [ "graham" ];
-      openssh.authorizedKeys.keys = konstantinKeys;
-    };
-
     # Jan Heckel, Sys Lab WS24
     janhe = {
       isNormalUser = true;
@@ -635,5 +620,6 @@ in
     "neel"
     "konradH"
     "timo"
+    "konstantin"
   ];
 }
