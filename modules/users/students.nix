@@ -118,6 +118,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJfp4yvOGKPTqcdr9YZOJLZulCptWHK/4mV0IuIQ/Tvl hrisigr@gmail.com"
   ];
 
+  andersKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -562,6 +566,19 @@ in
         "irene"
       ];
       openssh.authorizedKeys.keys = hristinagKeys;
+    };
+
+    # Anders, M.Sc. thesis with Martin (airlift)
+    anders = {
+      isNormalUser = true;
+      home = "/home/anders";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2074;
+      allowedHosts = [
+        "irene"
+      ];
+      openssh.authorizedKeys.keys = andersKeys;
     };
   };
 
