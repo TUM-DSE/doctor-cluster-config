@@ -126,6 +126,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
   ];
 
+  christianKKeys = [
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfke0RoVMEtj0XjxdjatQgz0RQxs7gaGSgM2OoGBemO chris@deskpin"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -597,6 +601,21 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = florianDKeys;
+    };
+
+    # Christian Krinitsin, Bachelor student with Theofilos.
+    christianK = {
+      isNormalUser = true;
+      home = "/home/christianK";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2076;
+      allowedHosts = [
+        "yasmin"
+        "graham"
+        "jamie"
+      ];
+      openssh.authorizedKeys.keys = christianKKeys;
     };
   };
 
