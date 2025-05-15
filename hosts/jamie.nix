@@ -4,6 +4,7 @@
     ../modules/hardware/poweredge7625.nix
     ../modules/nfs/client.nix
     ../modules/amd_sev_snp.nix
+    ../modules/vfio/iommu-amd.nix
   ];
 
   simd.arch = "znver4";

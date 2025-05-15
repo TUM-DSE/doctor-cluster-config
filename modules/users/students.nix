@@ -65,10 +65,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVvRRiomFTL2f76ujvyF9yydT7aMjFWOLDcFhn/aGelicljhULa0JwQM5P1wCpILLCY9zjQyQn84w4MaEasJ4KMaVuDyGS9xpIOa9B6xqIryCuE17EWlodYZqsOCaINCfQ048uoJRnu+LqzG2SJN+tMgUtMI0k+T7+BWusqQ5A0i+H/S3H3KITT9Qfn34hYDpHgLZD+sw4ZAXAzWjuZj+CYPEh50d68YWqNzRR9ShKK9rL1R6dyUIM2FGZzLHo4N7pRzHOa38ELY+Qni7Z3uf9mK/0vkkD/mMlAJDbJSQfuSpZAnninvt7F5bzoRRb6a1Gd7yb6y8fTaMt1lBgsqtJWuILOOOisxZE4VmWqoiT/jDlSpSHSfQz/r001JT7ci1HD+xYvh2ect0TJEo9WH7X/vX/4Q8wHO0Zf3l4yCCF7qD0VoqTd3X0LncbahaVP7JAhA9PfuNSWj754lxJ6RBeSavcRxQWpkbX+8kDcF/I4AIEocHTkX48Uo6U7SRRr38= powermoon@powermoonPC"
   ];
 
-  konstantinKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqB4RM0SUGkY1I+jLbWMxG10RPhhsNbsrPdMx32n7Iwt89rlkx3XGNra4eoBiZAdXLcggEgE4xgMtOIj9Wc7sexwbabEX5GXl1S7mc4Trm8wJRziBWdH6pwqICjG5HwNfXRyhiS290r8H/MB3LFIWgyE/U7VqaQ/nnHBimroYaJN1rDbkl25Ihe7mpS2s8P4M5HaqNIVY6HhgNKHJwQe9pgnjwnq4OkRGrRUOxi7q5R5TGsoCa2s2jefMrGOEXH0z6ZUzVo7auddNkQO4IYEHoiQxY4SlVwwCE0SYF/56kyupDRuEkg158HYcS0Yc2bTjYKe7sFTRwmssnQee+bxcHAOrqv3qunXx6USfGwzibNYlJoAFTDEoz5DJVMTlwlq9H0Qpvs7SIOiH5WhQ86T2TQhr3b5mIitge/uN2PVSnjhtxWqbUEipShgKmxpRinSR0D9VRf/X0cqTToz/ZfM9vcXEDyTtXHzbMU8STDlkIKQuexaqslqspAVsVBjCdQNk= konstantin@konstantin-IdeaPad-5-14ALC05"
-  ];
-
   janhaKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7" ];
 
   janheKeys = [
@@ -98,10 +94,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1er1RkBKTjm2tPF7HOP2u05VdVLtJHJRxlLSzq0wEd mrtn@nixos"
   ];
 
-  timoKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC97GhiX/jbrPLlXdkgEGfl2TKDHaBwF7cYA0TW/VHdrXY2OvZPvh4Dolksxoafrtkc0LGtxZB3N2m56audkWUBpDDxksOjj1aiZdBLxvCme2mE+NoA3AaSBEPAqNurs0WRVdXxer5dCXF4m4E0jSlXA7w6ubnMClyGtBMJqEf0BlqM1q5nv2LaMFVWl0/oPDXmKmGTA+u2dzrIoUX8NqwSYdyrHoH1zpI9Mq74+NHLYpzXRsKsqGf09SdJNnoNxc/JPtjsEA4jn4dOiwQkaM2URHYrJAfRv+4BmPRD03eMbwVC55Um86rfmBxjUx7kW2TB5ytXUnc00kRSPLuf5IdnFcn+Ho+RgmNV/LDkjNEFEEf96wNAUuiD3EZxar82+3MuxILSnKGvElcGMiuhXp9y1Yw9e6Wx96DGNcXNmhg4IkPnd6CF0u8BfxA1MplyY+r0NP92Tiuc6B00raOmZXPsxdb3U+8o4AjiGL9suZM9nVeOK4XjunIHyBm6NsP+Mpc="
-  ];
-
   phillipKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFrSp1SOJlgYtZCAplzFgO5l2aP0I23ciZX38hABj9CO p.assmann@nexus.gd"
   ];
@@ -124,6 +116,18 @@ let
 
   hristinagKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJfp4yvOGKPTqcdr9YZOJLZulCptWHK/4mV0IuIQ/Tvl hrisigr@gmail.com"
+  ];
+
+  andersKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
+  ];
+
+  florianDKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
+  ];
+
+  christianKKeys = [
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfke0RoVMEtj0XjxdjatQgz0RQxs7gaGSgM2OoGBemO chris@deskpin"
   ];
 
   extraGroups = [
@@ -385,17 +389,6 @@ in
       openssh.authorizedKeys.keys = berkayKeys;
     };
 
-    # Konstantin Garbers, B.Sc. thesis with Martin (Arm -> AIR lifter)
-    konstantin = {
-      isNormalUser = true;
-      home = "/home/konstantin";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2055;
-      allowedHosts = [ "graham" ];
-      openssh.authorizedKeys.keys = konstantinKeys;
-    };
-
     # Jan Heckel, Sys Lab WS24
     janhe = {
       isNormalUser = true;
@@ -481,17 +474,6 @@ in
         "adelaide"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
-    };
-
-    # Yude (Timo) Jiang, BSc thesis with Martin (CHERI/Morello architectural analysis ~Apr 2025)
-    timo = {
-      isNormalUser = true;
-      home = "/home/timo";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2066;
-      allowedHosts = [ "ace" ];
-      openssh.authorizedKeys.keys = timoKeys;
     };
 
   # Anton Ge, BSc thesis on uintr deleted after SS25
@@ -593,6 +575,48 @@ in
       ];
       openssh.authorizedKeys.keys = hristinagKeys;
     };
+
+    # Anders, M.Sc. thesis with Martin (airlift)
+    anders = {
+      isNormalUser = true;
+      home = "/home/anders";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2074;
+      allowedHosts = [
+        "irene"
+      ];
+      openssh.authorizedKeys.keys = andersKeys;
+    };
+
+    # Florian Drescher, PhD student from the DB chair. uses tegan for his code gen project. Ask Ilya before removing
+    florianD = {
+      isNormalUser = true;
+      home = "/home/florianD";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2075;
+      allowedHosts = [
+        "tegan"
+        "graham"
+      ];
+      openssh.authorizedKeys.keys = florianDKeys;
+    };
+
+    # Christian Krinitsin, Bachelor student with Theofilos.
+    christianK = {
+      isNormalUser = true;
+      home = "/home/christianK";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2076;
+      allowedHosts = [
+        "yasmin"
+        "graham"
+        "jamie"
+      ];
+      openssh.authorizedKeys.keys = christianKKeys;
+    };
   };
 
   # DANGER ZONE!
@@ -649,5 +673,7 @@ in
     "robertB"
     "neel"
     "konradH"
+    "timo"
+    "konstantin"
   ];
 }
