@@ -19,6 +19,7 @@
 
   # for installation
   boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
+  boot.loader.systemd-boot.enable = true;
 
   networking.hostName = "joy";
 

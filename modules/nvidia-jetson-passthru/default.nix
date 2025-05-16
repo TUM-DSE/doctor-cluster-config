@@ -60,6 +60,10 @@ in {
       name = "bpmp_host_overlay";
       dtsFile = ./bpmp_host_overlay.dts;
     }
+  	{
+	  name = "GPU/Display passthrough overlay to host DTB";
+	  dtsFile = ./gpu_passthrough_overlay.dts;
+ 	}
   ];
 
   # TODO: Consider are these really needed, maybe add only in debug builds?
