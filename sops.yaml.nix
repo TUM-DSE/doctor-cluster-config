@@ -33,6 +33,7 @@ let
       jiyang
       martin
       aleksandra
+      teofil
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
