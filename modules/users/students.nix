@@ -56,10 +56,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5+gf9T6PyECwIVDSHvb8bCYW37J9b20P0EXd2dwifE dk@skytop"
   ];
 
-  raphaelKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDWBYEFdkHQV/5+5KtjNZnp895pzEXXabRDPgHq6zZwr23ksF0/+n1huHpI2fFlbCWcChANKOBtoAEFfUbQce/PKYhJaqFZpVIADJk4BsB7fI80UPkN4EHkTtE5k79kG4hAvA1v6TySPdyIKMat5J8YFuVJeOWxdEDIkySVQ4/tCIKjG8XZYnbgzU9uOaiZBe1QzW3pchT5bxZXGS/T1umYypVHtspCa7CE4ZV+6BgBuJRTyVWwZXlacCSJFNmumNP1G2wppTA44D4N9/q3dukyfQswkm9qejDmIaqhDHkkLN76zBdyATfbr/YSSTk1EFH1WE/iq5Sx+KkUuv7c5lPWN2UzW4Zca1J2fB25DYQgKCZ6MHxqorHKSZWDq21W4v3TZG0KJDnqB3RDrUJC5Fz6SX2d4bZFST8KP6dU2ageftZBqzSU9O4B49u4NNGCo5qbTrC6X9J91PV3pDS4oUaBQHfnISP/MKiQj1WtNdYZvg9Z+ppjxyJQufKztCAVYzc= private@t-rdichler"
-  ];
-
   berkayKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVvRRiomFTL2f76ujvyF9yydT7aMjFWOLDcFhn/aGelicljhULa0JwQM5P1wCpILLCY9zjQyQn84w4MaEasJ4KMaVuDyGS9xpIOa9B6xqIryCuE17EWlodYZqsOCaINCfQ048uoJRnu+LqzG2SJN+tMgUtMI0k+T7+BWusqQ5A0i+H/S3H3KITT9Qfn34hYDpHgLZD+sw4ZAXAzWjuZj+CYPEh50d68YWqNzRR9ShKK9rL1R6dyUIM2FGZzLHo4N7pRzHOa38ELY+Qni7Z3uf9mK/0vkkD/mMlAJDbJSQfuSpZAnninvt7F5bzoRRb6a1Gd7yb6y8fTaMt1lBgsqtJWuILOOOisxZE4VmWqoiT/jDlSpSHSfQz/r001JT7ci1HD+xYvh2ect0TJEo9WH7X/vX/4Q8wHO0Zf3l4yCCF7qD0VoqTd3X0LncbahaVP7JAhA9PfuNSWj754lxJ6RBeSavcRxQWpkbX+8kDcF/I4AIEocHTkX48Uo6U7SRRr38= powermoon@powermoonPC"
   ];
@@ -360,20 +356,6 @@ in
         "wilfred"
       ];
       openssh.authorizedKeys.keys = dominikKeys;
-    };
-
-    # Raphael Dichler, B.Sc. thesis with Martin/Ilya (CHERIDB/MTE)
-    raphael = {
-      isNormalUser = true;
-      home = "/home/raphael";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2053;
-      allowedHosts = [
-        "graham"
-        "yasmin"
-      ];
-      openssh.authorizedKeys.keys = raphaelKeys;
     };
 
     # Berkay Eren Ueruen, M.Sc. thesis with Teofil (LLM-OS)
@@ -694,5 +676,6 @@ in
     "konradH"
     "timo"
     "konstantin"
+    "raphael"
   ];
 }
