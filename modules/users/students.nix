@@ -11,7 +11,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
-
   theoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvGQ0aKNGTkaEjjkGkaQ+8vA83Tbl5fpjuGTPrmszZuxzmSx4/6kw7Py4faLRJfcFNPdPp9FfFxsqCLpYMWKYVmdojQHIGBTugTtaadCrQ4W0Su6WcTN3OLa6n9heo+SE4Z+Uk1dUys0jMaZoKH7x/x2Yd9Zwg9sd0O2oa65VFV831mVGnagSrk+pJBh1MprmDEgobsRVFDEC8bENe23S58Hpvp6c7kLJnNlb11ojVAJBPBmH1QLwKceW66iRQPAmHJdqx5xCIWO1qkOut/hzNuDQMghGabsfh9huWpInZBVSH29pEWWw4CiPgACVzFBTojqcmlRiTMiszX7MiPkIfLCilpQF/KtavhGihq4yRs+6UxKV/4ErYItZeDaI5kgU+19cug12newP8wks9hJNpXX3N0wXYM0M8ZPvXc61z7EfRfpBMh5XLj9RMnSfuGFfoGKkRcWgx9nx+69FwqNQYsbL+id8U0lHqas6ai6gEbecF8UJv/r2h0zDaoKhNv70= taugoust@fedora"
   ];
@@ -127,12 +126,12 @@ let
   ];
 
   christianKKeys = [
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfke0RoVMEtj0XjxdjatQgz0RQxs7gaGSgM2OoGBemO chris@deskpin"
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL7ghrJVl24UkfnyNOz21jbmrnPImp3+UR4/p2xymbnl chris@deskpin"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfke0RoVMEtj0XjxdjatQgz0RQxs7gaGSgM2OoGBemO chris@deskpin"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL7ghrJVl24UkfnyNOz21jbmrnPImp3+UR4/p2xymbnl chris@deskpin"
   ];
 
   victorTKeys = [
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1bpcpaHwXyU9H2Vsp0cb66J4r3tBwDDy9n+XI++qfe victor.trost@tum.de"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1bpcpaHwXyU9H2Vsp0cb66J4r3tBwDDy9n+XI++qfe victor.trost@tum.de"
   ];
 
   extraGroups = [
@@ -340,7 +339,7 @@ in
       allowedHosts = [
         "ryan"
         "vislor"
-	"graham"
+        "graham"
       ];
       openssh.authorizedKeys.keys = michaelKeys;
     };
@@ -381,16 +380,16 @@ in
     berkay = {
       isNormalUser = true;
       home = "/home/berkay";
-	  extraGroups = extraGroups ++ [
+      extraGroups = extraGroups ++ [
         "kvm"
       ];
       shell = "/run/current-system/sw/bin/bash";
       uid = 2054;
       allowedHosts = [
-	  	"jack"
-		"yasmin"
-		"joy"
-	  ];
+        "jack"
+        "yasmin"
+        "joy"
+      ];
       openssh.authorizedKeys.keys = berkayKeys;
     };
 
@@ -481,7 +480,7 @@ in
       openssh.authorizedKeys.keys = martinLiKeys;
     };
 
-  # Anton Ge, BSc thesis on uintr deleted after SS25
+    # Anton Ge, BSc thesis on uintr deleted after SS25
     anton = {
       isNormalUser = true;
       home = "/home/anton";
@@ -489,7 +488,7 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2067;
       allowedHosts = [
-        "xavier" 
+        "xavier"
         "ian"
       ];
       openssh.authorizedKeys.keys = antonKeys;
@@ -532,7 +531,7 @@ in
       uid = 2070;
       allowedHosts = [
         "xavier"
-	"jamie"
+        "jamie"
         "yasmin"
       ];
       openssh.authorizedKeys.keys = steveKeys;
@@ -562,7 +561,7 @@ in
       uid = 2072;
       allowedHosts = [
         "xavier"
-	"jamie"
+        "jamie"
         "yasmin"
       ];
       openssh.authorizedKeys.keys = osmanKeys;
