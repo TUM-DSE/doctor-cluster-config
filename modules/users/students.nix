@@ -131,6 +131,10 @@ let
   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL7ghrJVl24UkfnyNOz21jbmrnPImp3+UR4/p2xymbnl chris@deskpin"
   ];
 
+  victorTKeys = [
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1bpcpaHwXyU9H2Vsp0cb66J4r3tBwDDy9n+XI++qfe victor.trost@tum.de"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -617,6 +621,21 @@ in
         "jamie"
       ];
       openssh.authorizedKeys.keys = christianKKeys;
+    };
+
+    # Victor Trost, BSc thesis with Nicolo (SLICC generator)
+    victor = {
+      isNormalUser = true;
+      home = "/home/victor";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2077;
+      allowedHosts = [
+        "xavier"
+        "jamie"
+        "yasmin"
+      ];
+      openssh.authorizedKeys.keys = victorTKeys;
     };
   };
 
