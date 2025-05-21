@@ -50,9 +50,9 @@ in
                 !(builtins.elem "all" config.allowedHosts)
                 && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)
               ) (lib.mkForce "/run/current-system/sw/bin/nologin");
-              hashedPasswordFile =
-                lib.mkIf (globalConfig.services.xrdp.enable && config.xrdpAccess)
-                  globalConfig.sops.secrets."${config.name}-password-hash".path;
+              hashedPasswordFile = lib.mkIf (
+                globalConfig.services.xrdp.enable && config.xrdpAccess
+              ) globalConfig.sops.secrets."${config.name}-password-hash".path;
             };
           }
         )
