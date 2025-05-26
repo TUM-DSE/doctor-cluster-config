@@ -572,6 +572,7 @@ in
       uid = 2074;
       allowedHosts = [
         "irene"
+        "graham"
       ];
       openssh.authorizedKeys.keys = andersKeys;
     };
