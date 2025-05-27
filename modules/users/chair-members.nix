@@ -429,6 +429,17 @@ in
         openssh.authorizedKeys.keys = thoreKeys;
       };
 
+      # Theofilos Augoustis
+      theo = {
+        isNormalUser = true;
+        home = "/home/theo";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2016;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = theoKeys;
+      };
+
       # add staff to root account as well
       root.openssh.authorizedKeys.keys =
         let
@@ -437,17 +448,6 @@ in
           );
         in
         lib.concatMap (user: user.openssh.authorizedKeys.keys) staff;
-    };
-
-    # Theofilos Augoustis
-    theo = {
-      isNormalUser = true;
-      home = "/home/theo";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2016;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = theoKeys;
     };
 
     # DANGER ZONE!
