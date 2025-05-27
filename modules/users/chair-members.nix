@@ -134,6 +134,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQCP93wmHUCOKn5W42KnzyBQBjltRp5RU23WbAMlgy5 TUM"
   ];
 
+  theoKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvGQ0aKNGTkaEjjkGkaQ+8vA83Tbl5fpjuGTPrmszZuxzmSx4/6kw7Py4faLRJfcFNPdPp9FfFxsqCLpYMWKYVmdojQHIGBTugTtaadCrQ4W0Su6WcTN3OLa6n9heo+SE4Z+Uk1dUys0jMaZoKH7x/x2Yd9Zwg9sd0O2oa65VFV831mVGnagSrk+pJBh1MprmDEgobsRVFDEC8bENe23S58Hpvp6c7kLJnNlb11ojVAJBPBmH1QLwKceW66iRQPAmHJdqx5xCIWO1qkOut/hzNuDQMghGabsfh9huWpInZBVSH29pEWWw4CiPgACVzFBTojqcmlRiTMiszX7MiPkIfLCilpQF/KtavhGihq4yRs+6UxKV/4ErYItZeDaI5kgU+19cug12newP8wks9hJNpXX3N0wXYM0M8ZPvXc61z7EfRfpBMh5XLj9RMnSfuGFfoGKkRcWgx9nx+69FwqNQYsbL+id8U0lHqas6ai6gEbecF8UJv/r2h0zDaoKhNv70= taugoust@fedora"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -423,6 +427,17 @@ in
         uid = 2030;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = thoreKeys;
+      };
+
+      # Theofilos Augoustis
+      theo = {
+        isNormalUser = true;
+        home = "/home/theo";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2016;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = theoKeys;
       };
 
       # add staff to root account as well
