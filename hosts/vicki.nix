@@ -33,7 +33,7 @@
   # gui packages
   environment.systemPackages = with pkgs; [
     # fprintd # seems to brick the login screen on ThinkPad E14 amd
-    gnome.gnome-terminal
+    pkgs.gnome-terminal
     gedit
     remmina # rdp/vnc client
     alacritty
