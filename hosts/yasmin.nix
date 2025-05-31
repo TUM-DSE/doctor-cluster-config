@@ -4,7 +4,8 @@
     ../modules/nfs/client.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/builder.nix
-    ../modules/uprobes.nix
+    # TODO this no longer builds with the new kernel.
+    #../modules/uprobes.nix
   ];
 
   networking.hostName = "yasmin";
