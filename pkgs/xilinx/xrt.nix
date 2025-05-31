@@ -26,8 +26,8 @@
 , libsystemtap
 }:
 let
-  suffix = "2.17.319";
-  version = "202410.${suffix}";
+  suffix = "2.19.194";
+  version = "202510.${suffix}";
   xrtBin = fetchurl {
     url = "https://archive.org/download/xrt_${version}_22.04-amd64-xrt/xrt_${version}_22.04-amd64-xrt.deb";
     sha256 = "sha256-/t9coD/AQelVuc93UJF0tM4iJjDkQM1uwReUQ8Wj1gA=";
