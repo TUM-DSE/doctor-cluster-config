@@ -643,7 +643,7 @@ in
     "raito"
     "robert"
     "roberto"
-    "rohanfernandez"
+    "rohan"
     "sarac"
     "turkmen"
     "vanda"
@@ -651,7 +651,7 @@ in
     "wonbangseo"
     "yihe"
     "yiwenliu"
-    "zixuanli"
+    "zixuan"
     "lan"
     "benedikt"
     "robertB"
@@ -660,5 +660,8 @@ in
     "timo"
     "konstantin"
     "raphael"
+    "s1443541"
+    "mfaltus"
+    "justus"
   ];
 }
