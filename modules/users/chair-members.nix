@@ -455,6 +455,7 @@ in
     # delete all data of the associated user
     users.deletedUsers = [
       "martinkl"
+      "dimitria"
       "matthias"
     ];
 
