@@ -638,7 +638,7 @@ in
     "mwerndle"
     "nicola"
     "paul"
-    "paulZ"
+    "paulz"
     "philip"
     "raito"
     "robert"
