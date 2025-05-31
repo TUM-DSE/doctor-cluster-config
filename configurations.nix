@@ -21,7 +21,6 @@ let
     ./modules/users/admins.nix
     ./modules/users/extra-user-options.nix
     ./modules/packages.nix
-    ./modules/memlock-limits.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
     ./modules/hosts.nix
