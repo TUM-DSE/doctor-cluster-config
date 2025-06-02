@@ -527,6 +527,7 @@ in
         "jamie"
         "yasmin"
         "ace"
+        "eliza"
       ];
       openssh.authorizedKeys.keys = osmanKeys;
     };
