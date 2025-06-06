@@ -359,5 +359,14 @@ in
           ./hosts/martha.nix
         ];
     };
+    
+    eliza = nixosSystem {
+      pkgs = pkgs-aarch64-linux;
+      modules =
+        computeNodeModules
+        ++ [
+          ./hosts/eliza.nix
+        ];
+    };
   };
 }
