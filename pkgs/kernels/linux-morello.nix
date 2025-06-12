@@ -68,6 +68,8 @@ let
           "HOSTLDFLAGS=-Wl,--rpath=${rpath}"
         ];
 
+        ignoreConfigErrors = true;
+
         kernelPatches = [
           {
             name = "enable morello";
@@ -76,7 +78,7 @@ let
               TCG_TPM m
               TCG_TIS m
               TCG_CRB m
-              
+
               DMA_BUF_UDMABUF n
               DRM n
               DMA_BUF n
