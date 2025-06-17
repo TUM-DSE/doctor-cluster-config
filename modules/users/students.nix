@@ -622,6 +622,7 @@ in
         "rose"
       ];
       openssh.authorizedKeys.keys = nimaKeys;
+      xrdpAccess = true;
     };
 
     # Etienne Massart, student in seminar SS25 with Atsushi
@@ -635,6 +636,7 @@ in
         "rose"
       ];
       openssh.authorizedKeys.keys = etienneKeys;
+      xrdpAccess = true;
     };
   };
 
