@@ -519,6 +519,7 @@ in
         "amy"
         "clara"
         "rose"
+        "wilfred"
       ];
       openssh.authorizedKeys.keys = maxKeys;
     };
