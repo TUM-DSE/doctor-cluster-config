@@ -63,7 +63,7 @@
           config.networking.doctorwho.hosts.ace.ipv6
           #config.networking.doctorwho.hosts.sarah.ipv6
           config.networking.doctorwho.hosts.donna.ipv6
-	  config.networking.doctorwho.hosts.joy.ipv6
+          config.networking.doctorwho.hosts.joy.ipv6
         ];
         # offset 27 has historically reasons
         exportHome = lib.imap0 (
@@ -173,10 +173,14 @@
     sops.secrets.tum-borgbackup-home-ssh.sopsFile = ./secrets.yml;
     sops.secrets.tum-borgbackup-share-ssh.sopsFile = ./secrets.yml;
 
-    systemd.services.borgbackup-job-nfs-share.serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
+    systemd.services.borgbackup-job-nfs-share = {
+      path = [ pkgs.zfs ];
+      serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
+      serviceConfig.PrivateDevices = false; # ZFS needs access to /dev/zfs
+    };
 
     services.borgbackup.jobs.nfs-share = {
-      paths = [ "/export/share" ];
+      paths = [ "/export/share/.zfs/snapshot/borg" ];
       repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-share";
       exclude = [
         # large memory traces
@@ -186,6 +190,8 @@
         "/export/share/martinL/**/*.img"
         # large google traces
         "/export/share/cmainas/traces"
+        # node modules
+        "**/node_modules"
       ];
       extraCreateArgs = [ "--exclude-caches" ];
       encryption = {
@@ -197,9 +203,18 @@
       environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-share-ssh.path}";
       preHook = ''
         set -x
+        # Create ZFS snapshot before backup
+        ${pkgs.zfs}/bin/zfs snapshot -r nfs-data/share@borg
+        # Ensure snapshot is accessible
+        ls /export/share/.zfs/snapshot/borg/ > /dev/null
       '';
 
       postHook = ''
+        exitStatus=$?
+
+        # Destroy ZFS snapshot after backup
+        ${pkgs.zfs}/bin/zfs destroy -r nfs-data/share@borg || true
+
         cat > /var/log/telegraf/borgbackup-job-nfs-share.service <<EOF
         task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
         EOF
@@ -213,10 +228,14 @@
       };
     };
 
-    systemd.services.borgbackup-job-nfs-home.serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
+    systemd.services.borgbackup-job-nfs-home = {
+      path = [ pkgs.zfs ];
+      serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
+      serviceConfig.PrivateDevices = false; # ZFS needs access to /dev/zfs
+    };
 
     services.borgbackup.jobs.nfs-home = {
-      paths = [ "/export/home" ];
+      paths = [ "/export/home/.zfs/snapshot/borg" ];
       repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-home";
       encryption = {
         mode = "repokey";
@@ -235,6 +254,7 @@
         "/export/home/*/.gradle"
         "/export/home/*/.opam"
         "/export/home/*/.clangd"
+        "**/node_modules"
 
         # these users have qemu images in their home directories, which causes borgbackup to fail
         # /export/home/gierens/images/guest.qcow2: file changed while we backed it up
@@ -249,9 +269,18 @@
       environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-home-ssh.path}";
       preHook = ''
         set -x
+        # Create ZFS snapshot before backup
+        ${pkgs.zfs}/bin/zfs snapshot -r nfs-home/home@borg
+        # Ensure snapshot is accessible
+        ls /export/home/.zfs/snapshot/borg/ > /dev/null
       '';
 
       postHook = ''
+        exitStatus=$?
+
+        # Destroy ZFS snapshot after backup
+        ${pkgs.zfs}/bin/zfs destroy -r nfs-home/home@borg || true
+
         cat > /var/log/telegraf/borgbackup-job-nfs-home.service <<EOF
         task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
         EOF
