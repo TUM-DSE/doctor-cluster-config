@@ -7,10 +7,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUF8kwXqS/GNlrzJ2unEymDjX9qFi3/bAihzbl9ImBS0FI+09CuKp9UQVPO81PTgalDRHqQ/bk1oG/0GhBu9QPYN6KE4DbqA491mSfoAg1MF+nL04wapEH4q8jbo7sobPNi0+bCc/Efry53/tuAT38K8KI/veCXUuTS2SwdpvqAcRTYW/+lP+4TOcBy07oA12fY7XCOC0zZiNmuSo8tg5drkG7rC9LCoMWI6edOnTE6KAtv+Xwe30I+0Zshi8+zI5jM4/rdoolyG4ukjuoD6gh56TPkT4bcZFy50IsBz+LXN2hRAFv6rZVMZwuwb5zFN1Y+QPciVw9G8S8pwVe0QcL manosgior@manosgior"
   ];
 
-  redhaKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOb4/IcT/Ly2VjmhO8PhSlsBSziL3Yn7nTqoPrzRJ/FHHUfEZhUj0cx8h++wKas8Y6FELP0a121Hkki4L/QIhzd6zcTlqVQ19EX98KMmD9PsGlK5tdPV7+bjNLCtEXjqPIEYUi/cL/kvuKpMwLyzkVTyl5AFRvR9TQkITfHChWCV9KfKTFjM+h/FBQvH3zrjbpGbMiS7bclRL5Gvih3eOHSuQSrJurgkPr8cH1z47L8rqTlEwJ+9x54fQo2wbJm41BFcdY7qONSmtMI45EfFB3K7MdpH1ztg25l7K4ctgHayRASNI7IMIzijibd1acf08OutRec0XLLNGvCcKyW1EV redha@redha-Lenovo-U41-70"
-  ];
-
   sandroKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqNR2tsYH2igXjgiOA/yc3CdXqpg70ViICdGk/Acmxu sandro"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIb3uuMqE/xSJ7WL/XpJ6QOj4aSmh0Ga+GtmJl3CDvljGuIeGCKh7YAoqZAi051k5j6ZWowDrcWYHIOU+h0eZCesgCf+CvunlXeUz6XShVMjyZo87f2JPs2Hpb+u/ieLx4wGQvo/Zw89pOly/vqpaX9ZwyIR+U81IAVrHIhqmrTitp+2FwggtaY4FtD6WIyf1hPtrrDecX8iDhnHHuGhATr8etMLwdwQ2kIBx5BBgCoiuW7wXnLUBBVYeO3II957XP/yU82c+DjSVJtejODmRAM/3rk+B7pdF5ShRVVFyB6JJR+Qd1g8iSH+2QXLUy3NM2LN5u5p2oTjUOzoEPWZo7lykZzmIWd/5hjTW9YiHC+A8xsCxQqs87D9HK9hLA6udZ6CGkq4hG/6wFwNjSMnv30IcHZzx6IBihNGbrisrJhLxEiKWpMKYgeemhIirefXA6UxVfiwHg3gJ8BlEBsj0tl/HVARifR2y336YINEn8AsHGhwrPTBFOnBTmfA/VnP1NlWHzXCfVimP6YVvdoGCCnAwvFuJ+ZuxmZ3UzBb2TenZZOzwzV0sUzZk0D1CaSBFJUU3oZNOkDIM6z5lIZgzsyKwb38S8Vs3HYE+Dqpkfsl4yeU5ldc6DwrlVwuSIa4vVus4eWD3gDGFrx98yaqOx17pc4CC9KXk/2TjtJY5xmQ== lassulus"
@@ -205,16 +201,6 @@ in
         shell = "/run/current-system/sw/bin/zsh";
         uid = 1009;
         openssh.authorizedKeys.keys = sandroKeys;
-      };
-
-      # Redha Gouicem
-      redha = {
-        isNormalUser = true;
-        home = "/home/redha";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1010;
-        openssh.authorizedKeys.keys = redhaKeys;
       };
 
       # Atsushi Koshiba
@@ -457,13 +443,13 @@ in
       "martinkl"
       "dimitria"
       "matthias"
+      "redha"
     ];
 
     nix.settings.trusted-users = [
       "joerg"
       "harshanavkis"
       "sandro"
-      "redha"
     ];
   };
 }
