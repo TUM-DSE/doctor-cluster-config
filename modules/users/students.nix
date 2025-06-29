@@ -35,10 +35,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"
   ];
 
-  simondKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXKJqoVipqnB7/rjCjx6EYYsi6ZRuG2ve4bZHvAVKMa simon@Laptop-Simon"
-  ];
-
   anubhavKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
   ];
@@ -50,10 +46,6 @@ let
   dominikKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvQc9+uHtD42kQ/pADllV8HiW1Yuc+lQ5bgUwmvPWmb dk@arch.olymp"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5+gf9T6PyECwIVDSHvb8bCYW37J9b20P0EXd2dwifE dk@skytop"
-  ];
-
-  berkayKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVvRRiomFTL2f76ujvyF9yydT7aMjFWOLDcFhn/aGelicljhULa0JwQM5P1wCpILLCY9zjQyQn84w4MaEasJ4KMaVuDyGS9xpIOa9B6xqIryCuE17EWlodYZqsOCaINCfQ048uoJRnu+LqzG2SJN+tMgUtMI0k+T7+BWusqQ5A0i+H/S3H3KITT9Qfn34hYDpHgLZD+sw4ZAXAzWjuZj+CYPEh50d68YWqNzRR9ShKK9rL1R6dyUIM2FGZzLHo4N7pRzHOa38ELY+Qni7Z3uf9mK/0vkkD/mMlAJDbJSQfuSpZAnninvt7F5bzoRRb6a1Gd7yb6y8fTaMt1lBgsqtJWuILOOOisxZE4VmWqoiT/jDlSpSHSfQz/r001JT7ci1HD+xYvh2ect0TJEo9WH7X/vX/4Q8wHO0Zf3l4yCCF7qD0VoqTd3X0LncbahaVP7JAhA9PfuNSWj754lxJ6RBeSavcRxQWpkbX+8kDcF/I4AIEocHTkX48Uo6U7SRRr38= powermoon@powermoonPC"
   ];
 
   janhaKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7" ];
@@ -76,8 +68,6 @@ let
   hristinaKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKwhovd3dJO9+vDK+I/V8hRXkqgGW1LJIApSXFim+vr"
   ];
-
-  kilianKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTF9QkKayS1Wsj3MRLhpo4Kgh5traaOalOAmdWjCvps" ];
 
   martinLiKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLDbWHI/PLBf0hiS0wbHz0ppO/h177fSuRsoZRAq/VD mrtn@mrtnnix-nb"
@@ -282,21 +272,6 @@ in
       openssh.authorizedKeys.keys = hendrikKeys;
     };
 
-    # Simon Dittrich, M.Sc. thesis with Anatole (CXL Gem5 sim project)
-    simond = {
-      isNormalUser = true;
-      home = "/home/simond";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2047;
-      allowedHosts = [
-        "xavier"
-        "jack"
-        "graham"
-        "ryan"
-      ]; # TODO remove extra hosts once xavier is racked
-      openssh.authorizedKeys.keys = simondKeys;
-    };
 
     # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
     # Remove after SS25
@@ -345,23 +320,6 @@ in
         "wilfred"
       ];
       openssh.authorizedKeys.keys = dominikKeys;
-    };
-
-    # Berkay Eren Ueruen, M.Sc. thesis with Teofil (LLM-OS)
-    berkay = {
-      isNormalUser = true;
-      home = "/home/berkay";
-      extraGroups = extraGroups ++ [
-        "kvm"
-      ];
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2054;
-      allowedHosts = [
-        "jack"
-        "yasmin"
-        "joy"
-      ];
-      openssh.authorizedKeys.keys = berkayKeys;
     };
 
     # Jan Heckel, Sys Lab WS24
@@ -420,21 +378,6 @@ in
         "ian"
       ];
       openssh.authorizedKeys.keys = hristinaKeys;
-    };
-
-    # Kilian Matheis, Sys Lab WS24
-    kilian = {
-      isNormalUser = true;
-      home = "/home/kilian";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2064;
-      allowedHosts = [
-        "vislor"
-        "jackson"
-        "ian"
-      ];
-      openssh.authorizedKeys.keys = kilianKeys;
     };
 
     # Martin Lindbuechl, BSc thesis with Ilya Meignan--Masson deleted after SS25
@@ -645,11 +588,13 @@ in
   # Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
   users.deletedUsers = [
-    "alexander"
     "alexa"
+    "alexander"
     "alexandermaslew"
     "alp"
     "anand"
+    "benedikt"
+    "berkay"
     "christian"
     "dmitrylugovoy"
     "eaypek"
@@ -662,27 +607,39 @@ in
     "iulia"
     "jasper"
     "jonas"
+    "justus"
     "justusvonderbeek"
     "kai"
     "kamilk"
+    "kilian"
     "konrad"
+    "konradH"
+    "konstantin"
+    "lan"
     "luca"
     "m00wl"
+    "mfaltus"
     "mflatus"
     "mikilio"
     "milen"
     "ml"
     "moritz"
     "mwerndle"
+    "neel"
     "nicola"
     "paul"
     "paulz"
     "philip"
     "raito"
+    "raphael"
     "robert"
+    "robertB"
     "roberto"
     "rohan"
+    "s1443541"
     "sarac"
+    "simond"
+    "timo"
     "turkmen"
     "vanda"
     "vincent"
@@ -690,16 +647,5 @@ in
     "yihe"
     "yiwenliu"
     "zixuan"
-    "lan"
-    "benedikt"
-    "robertB"
-    "neel"
-    "konradH"
-    "timo"
-    "konstantin"
-    "raphael"
-    "s1443541"
-    "mfaltus"
-    "justus"
   ];
 }
