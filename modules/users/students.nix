@@ -57,6 +57,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH1sPdGosNVV8liuEZ3YOuAmOKUxAYxW8IucSkc8XCh2 christian.karidas@tum.de"
   ];
 
+  hristinaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKwhovd3dJO9+vDK+I/V8hRXkqgGW1LJIApSXFim+vr"
+  ];
 
   martinLiKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLDbWHI/PLBf0hiS0wbHz0ppO/h177fSuRsoZRAq/VD mrtn@mrtnnix-nb"
@@ -325,6 +328,20 @@ in
       openssh.authorizedKeys.keys = sherifKeys;
     };
 
+    # Hristina Ivanova, Sys Lab WS24
+    hristina = {
+      isNormalUser = true;
+      home = "/home/hristina";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2059;
+      allowedHosts = [
+        "vislor"
+        "jackson"
+        "ian"
+      ];
+      openssh.authorizedKeys.keys = hristinaKeys;
+    };
 
     # Martin Lindbuechl, BSc thesis with Ilya Meignan--Masson deleted after SS25
     martinLi = {
@@ -595,6 +612,5 @@ in
     "zixuan"
     "janhe"
     "janha"
-    "hristina"
   ];
 }
