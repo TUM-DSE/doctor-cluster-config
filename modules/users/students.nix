@@ -374,7 +374,7 @@ in
       openssh.authorizedKeys.keys = hristinagKeys;
     };
 
-    # Anders, M.Sc. thesis with Martin (airlift)
+    # Anders, working with Martin (tiramisu project). Ask Martin before removing.
     anders = {
       isNormalUser = true;
       home = "/home/anders";
