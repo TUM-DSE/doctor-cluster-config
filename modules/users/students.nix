@@ -225,25 +225,6 @@ in
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
-    # Hendrik Huebner, HiWi for SS 24 with Peter (vmux)
-    hendrik = {
-      isNormalUser = true;
-      home = "/home/hendrik";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2044;
-      allowedHosts = [
-        "christina"
-        "rose"
-        "wilfred"
-        "graham"
-        "jackson"
-        "river"
-      ]; # TODO figure out what he needs access to
-      openssh.authorizedKeys.keys = hendrikKeys;
-    };
-
-
     # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
     # Remove after SS25
     anubhav = {
@@ -305,20 +286,6 @@ in
         "jack"
       ];
       openssh.authorizedKeys.keys = sherifKeys;
-    };
-
-    # Martin Lindbuechl, BSc thesis with Ilya Meignan--Masson deleted after SS25
-    martinLi = {
-      isNormalUser = true;
-      home = "/home/martinLi";
-      extraGroups = extraGroups ++ [ "disk" ];
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2065;
-      allowedHosts = [
-        "irene"
-        "adelaide"
-      ];
-      openssh.authorizedKeys.keys = martinLiKeys;
     };
 
     # Anton Ge, BSc thesis on uintr deleted after SS25
@@ -436,20 +403,6 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = andersKeys;
-    };
-
-    # Florian Drescher, PhD student from the DB chair. uses tegan for his code gen project. Ask Ilya before removing
-    florianD = {
-      isNormalUser = true;
-      home = "/home/florianD";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2075;
-      allowedHosts = [
-        "tegan"
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = florianDKeys;
     };
 
     # Christian Krinitsin, Bachelor student with Theofilos.
@@ -578,5 +531,7 @@ in
     "janhe"
     "janha"
     "hristina"
+    "hendrik"
+    "florianD"
   ];
 }
