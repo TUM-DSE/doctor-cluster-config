@@ -13,9 +13,13 @@
     #../modules/amd_sev_svsm.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
+    # ../modules/zokelmannvms.nix # ZFS pool import fails currently
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_S64GNA0T724988";
+
+  # Configuration for zokelmannvms module (when enabled)
+  # services.zokelmannvms.partitionUuid = "ced04b7c-f718-4997-8306-c33fb44a04e2";
 
   boot.hugepages1GB.number = 0;
   # boot.hugepages2MB.number = 0;
@@ -34,23 +38,6 @@
 
   # peters benchmarks seem to trigger envfs to hang up, rendering the enire system unusable
   services.envfs.enable = false;
-
-  # external deduplicating zfs for large numbers of VMs
-  # formating:
-  # create linux partition with fdisk
-  # sudo zpool create zokelmannvms -O acltype=posixacl -O xattr=sa -O compression=lz4 -O atime=off /dev/disk/by-partuuid/ced04b7c-f718-4997-8306-c33fb44a04e2
-  # sudo zfs create -o mountpoint=legacy zokelmannvms/vms
-  fileSystems."/scratch/okelmann/vmuxIO/VMs" = {
-    device = "zokelmannvms/vms";
-    fsType = "zfs";
-    # options = [ "uid=${builtins.toString config.users.users.okelmann.uid}" ];
-  };
-  systemd.services.set-vmount-owner = {
-    description = "Set ownership of /scratch/okelmann/vmuxIO/VMs";
-    after = [ "local-fs.target" ];
-    wantedBy = [ "multi-user.target" ];
-    script = "chown -R okelmann:users /scratch/okelmann/vmuxIO/VMs";
-  };
 
   # manually added to load xilinx from
   fileSystems."/share" = {

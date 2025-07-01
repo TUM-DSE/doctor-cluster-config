@@ -1,0 +1,32 @@
+name: "Update flake inputs individually"
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: "38 0 * * 0,4"
+permissions:
+  pull-requests: write
+  contents: write
+jobs:
+  update-flake-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.CI_APP_ID }}
+          private-key: ${{ secrets.CI_PRIVATE_KEY }}
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Configure GitHub CLI
+        run: |
+          echo "${{ steps.app-token.outputs.token }}" | gh auth login --with-token
+      - name: Update flake inputs individually
+        run: |
+          chmod +x .github/update-flake-inputs.sh
+          .github/update-flake-inputs.sh

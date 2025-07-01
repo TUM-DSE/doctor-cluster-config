@@ -44,14 +44,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5+gf9T6PyECwIVDSHvb8bCYW37J9b20P0EXd2dwifE dk@skytop"
   ];
 
-  janhaKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKixlCYR4hAf1K0/7zi5hhG+kFBRCStaJL+98WvEGnY7" ];
-
-  janheKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3jH+h2/BYRf3ZH7FGGAScFcNAnexFETsEGaOedB4wL"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxK7mB8Ar952m0BWIMJK5hZaGu0EjwI/ybYOwo+Mw3z"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMwSyi5MjQnoHbnMo8+RFCFr1fwK/Zp7sByNEaGcP4xl"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxK7mB8Ar952m0BWIMJK5hZaGu0EjwI/ybYOwo+Mw3z"
-  ];
 
   sherifKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxcwd2ISpOP9Wj7tILTEM9RGDtwDnM1Ew0SffsT7jupZEJwlKYfJ8WFYPBaPmQD9ASHRR1aS2N+sOF+PyxGyBl0Yo9YyzQuy7O9K7rtGghNlk6TyMecNBVPC4Tq7QhPa7svtkc0bC/eyM1hAFsu/pnOMV3vwglO4hc/ct/CtOPVWR4P+koqQySR/f0BGew3RHyRTHUKhhMSJK3JDeeu3wEYok517vspmopvzkE+/gBVnS1XLXWLR2hPxI8a56WgTrE+NWaKV5HVoUxCv7mCbeLIDaqQu1Y2FL4h/gydmz6SXGLd99PphnFPbIzTLDcTb7RX+DVIOrpnQda/kwnFkq2C0Q0+jJ3nvayiw0EL5yOeeROrPraSwx1YjC2KtbbhpcMBdsAQKe4OpBL4dpUrT+CqAEn4FTy6gCF1PD0AA1lX0/l0dyr7oxb/qgTUAFTmYQDae7Ml6xnweGfKIcYt6NtkKpBN3UoonEEhZLfKyFKrMrn5Ta2la6p5ksZC/Ae4A95XrfRSMWlEiIhOnBGp8zNcbi72LLL8U7JwKlQfhBpJL1Vvtkie6ytUFPzx4frH1wy1J/u+rZel+YIqmo/dVztHWXXv3b0MIrkmmw4bTE/l/C9L8FdZUgef66WU7CQiMI0cXsKhpqlGQWj5dJEiwkQni4CZQypg71jotlkDFCexQ=="
@@ -59,10 +51,6 @@ let
 
   kchristianKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH1sPdGosNVV8liuEZ3YOuAmOKUxAYxW8IucSkc8XCh2 christian.karidas@tum.de"
-  ];
-
-  hristinaKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKwhovd3dJO9+vDK+I/V8hRXkqgGW1LJIApSXFim+vr"
   ];
 
   martinLiKeys = [
@@ -97,6 +85,7 @@ let
 
   andersKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfzGHxcRgfwt3SZ0iTY+stOgi2yAORrBpnwJ1tCMn7h"
   ];
 
   florianDKeys = [
@@ -304,35 +293,6 @@ in
       openssh.authorizedKeys.keys = dominikKeys;
     };
 
-    # Jan Heckel, Sys Lab WS24
-    janhe = {
-      isNormalUser = true;
-      home = "/home/janhe";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2056;
-      allowedHosts = [
-        "vislor"
-        "jackson"
-        "ian"
-      ];
-      openssh.authorizedKeys.keys = janheKeys;
-    };
-
-    # Jan Hampe, Sys Lab WS24
-    janha = {
-      isNormalUser = true;
-      home = "/home/janha";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2057;
-      allowedHosts = [
-        "vislor"
-        "jackson"
-        "ian"
-      ];
-      openssh.authorizedKeys.keys = janhaKeys;
-    };
 
     # Sherif Hussien, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
     sherif = {
@@ -345,21 +305,6 @@ in
         "jack"
       ];
       openssh.authorizedKeys.keys = sherifKeys;
-    };
-
-    # Hristina Ivanova, Sys Lab WS24
-    hristina = {
-      isNormalUser = true;
-      home = "/home/hristina";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2059;
-      allowedHosts = [
-        "vislor"
-        "jackson"
-        "ian"
-      ];
-      openssh.authorizedKeys.keys = hristinaKeys;
     };
 
     # Martin Lindbuechl, BSc thesis with Ilya Meignan--Masson deleted after SS25
@@ -466,7 +411,7 @@ in
       openssh.authorizedKeys.keys = osmanKeys;
     };
 
-    # Hristina Grigorova, BSc thesis with Ilya (udos)
+    # Hristina Grigorova, BSc thesis with Ilya (udos) can be safely removed after SS25
     hristinag = {
       isNormalUser = true;
       home = "/home/hristinag";
@@ -630,5 +575,8 @@ in
     "yiwenliu"
     "zixuan"
     "martinL"
+    "janhe"
+    "janha"
+    "hristina"
   ];
 }
