@@ -2,6 +2,7 @@
   imports = [
     ../modules/hardware/supermicro-ARS-211M-NR.nix
     ../modules/nfs/client.nix
+    ../modules/nvidia-aarch64.nix
     ../modules/disko-zfs.nix
   ];
 
