@@ -157,6 +157,7 @@ in
         "ruby"
         "yasmin"
         "tegan"
+        "joy"
       ];
       openssh.authorizedKeys.keys = simonkKeys;
     };
