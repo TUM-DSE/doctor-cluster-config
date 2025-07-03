@@ -398,7 +398,7 @@ in
         openssh.authorizedKeys.keys = julianKeys;
       };
 
-      #  Nathaniel Tornow, working on the Quantum project + tutor
+      #  Nathaniel Tornow
       nate = {
         isNormalUser = true;
         home = "/home/nate";
