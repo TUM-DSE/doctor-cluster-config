@@ -464,7 +464,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = jannikKeys;
-      xrdpAccess = false;
+      xrdpAccess = true;
     };
 
     # Peter Wegmann, MSc thesis with Aleksandra and Manos
@@ -479,7 +479,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = peterKeys;
-      xrdpAccess = false;
+      xrdpAccess = true;
     };
   };
 
