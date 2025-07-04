@@ -63,6 +63,7 @@ let
         "rose"
         "ryan"
         "joy"
+        "jamie"
       ];
     };
 
