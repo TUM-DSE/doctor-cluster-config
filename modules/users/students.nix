@@ -171,7 +171,7 @@ in
         "amy"
       ];
       openssh.authorizedKeys.keys = shuKeys;
-      expires = "2025-01-31";  # Former intern - should be removed immediately
+      expires = "2025-12-31";  # Extended to end of year
     };
 
     # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
