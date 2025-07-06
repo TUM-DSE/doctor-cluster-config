@@ -125,6 +125,7 @@ in
       uid = 2000;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = julianKeys;
+      expires = "2025-12-31";
     };
 
     # Sandro Gierens, Masa's MSc student (expecting to finish the end of 2025)
@@ -136,6 +137,7 @@ in
       uid = 2003;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = gierensKeys;
+      expires = "2025-12-31";
     };
 
     # Simon Kammermeier, Redha's BSc student (Arancini project)
@@ -153,6 +155,7 @@ in
         "joy"
       ];
       openssh.authorizedKeys.keys = simonkKeys;
+      expires = "2025-12-31";
     };
 
     # Shu Anzai, former intern (Atsushi)
@@ -201,6 +204,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = laurentKeys;
+      expires = "2025-12-31";
     };
 
     # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
@@ -233,6 +237,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = michaelKeys;
+      expires = "2025-12-31";
     };
 
     # Dominik Kreuzer, M.Sc. thesis with Peter (VirtIO-DPDK project)
@@ -251,6 +256,7 @@ in
         "wilfred"
       ];
       openssh.authorizedKeys.keys = dominikKeys;
+      expires = "2025-12-31";
     };
 
     # Sherif Hussien, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
@@ -309,6 +315,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = phillipKeys;
+      expires = "2025-12-31";
     };
 
     # Steve Bambou, BSc thesis with David (Branch prediction research on gem5)
@@ -324,6 +331,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = steveKeys;
+      expires = "2025-12-31";
     };
 
     # Maximilian Jäcklein, BSc thesis with Harsha (Resource disaggregation)
@@ -340,6 +348,7 @@ in
         "wilfred"
       ];
       openssh.authorizedKeys.keys = maxKeys;
+      expires = "2025-12-31";
     };
 
     # Osman Yasar, HiWi working for David on gem5-related implemenations
@@ -357,6 +366,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = osmanKeys;
+      expires = "2025-12-31";
     };
 
     # Hristina Grigorova, BSc thesis with Ilya (udos) can be safely removed after SS25
@@ -385,6 +395,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = andersKeys;
+      expires = "2025-12-31";
     };
 
     # Christian Krinitsin, Bachelor student with Theofilos.
@@ -400,6 +411,7 @@ in
         "jamie"
       ];
       openssh.authorizedKeys.keys = christianKKeys;
+      expires = "2025-12-31";
     };
 
     # Victor Trost, BSc thesis with Nicolo (SLICC generator)
@@ -415,6 +427,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = victorTKeys;
+      expires = "2025-12-31";
     };
 
     # Nima Baradaran Hassanzadeh, student in seminar SS25 with Atsushi
@@ -460,6 +473,7 @@ in
       ];
       openssh.authorizedKeys.keys = jannikKeys;
       xrdpAccess = false;
+      expires = "2025-12-31";
     };
 
     # Peter Wegmann, MSc thesis with Aleksandra and Manos
@@ -475,6 +489,7 @@ in
       ];
       openssh.authorizedKeys.keys = peterKeys;
       xrdpAccess = false;
+      expires = "2025-12-31";
     };
   };
 
