@@ -3,6 +3,7 @@
 import json
 import os
 import random
+import shlex
 import shutil
 import string
 import subprocess
@@ -754,12 +755,8 @@ def check_expired_accounts():
     # Sort by expiration date
     expired.sort(key=lambda x: x[1])
     expiring.sort(key=lambda x: x[2])
-    
-    return {
-        "expired": expired,
-        "expiring": expiring,
-        "today": today.isoformat()
-    }
+
+    return {"expired": expired, "expiring": expiring, "today": today.isoformat()}
 
 
 @task
@@ -803,20 +800,83 @@ def expired_accounts_json(c: Any) -> None:
     Check for expired student accounts (JSON output for automation)
     """
     data = check_expired_accounts()
-    
+
     # Convert to JSON-friendly format - only include what GitHub action needs
     result = {
         "expired": [
-            {
-                "username": username,
-                "expiration_date": expires
-            }
+            {"username": username, "expiration_date": expires}
             for username, expires, days_ago in data["expired"]
         ],
-        "expired_count": len(data["expired"])
+        "expired_count": len(data["expired"]),
     }
-    
+
     print(json.dumps(result, indent=2))
+
+
+@task
+def expired_accounts_create_issues(c: Any) -> None:
+    """
+    Create GitHub issues for expired student accounts
+    """
+    data = check_expired_accounts()
+    expired = data["expired"]
+
+    if not expired:
+        print("No expired accounts found.")
+        return
+
+    print(f"Found {len(expired)} expired accounts")
+
+    for username, expires, days_ago in expired:
+        print(f"\nProcessing expired account: {username}")
+
+        # Check if an issue already exists
+        result = c.run(
+            f'gh issue list --search "Expired student account: {username}" --state all --json number --jq ".[0].number"',
+            hide=True,
+            warn=True,
+        )
+
+        if result.ok and result.stdout.strip():
+            issue_number = result.stdout.strip()
+            print(f"  Issue already exists: #{issue_number}")
+            continue
+
+        print(f"  Creating issue for {username}")
+
+        # Create the issue body
+        issue_body = f"""## Expired Student Account
+
+**Username:** {username}
+**Expiration Date:** {expires}
+**Days Expired:** {days_ago}
+
+This student account has expired and should be reviewed for removal.
+
+### Action Items
+- [ ] Verify the student has completed their work
+- [ ] Back up any important data if needed
+- [ ] Move the user to `deletedUsers` in `modules/users/default.nix`
+- [ ] Remove SSH keys and any special access permissions
+- [ ] Deploy changes to affected systems
+
+### How to remove the user
+1. Edit `modules/users/students.nix`
+2. Remove the user definition
+3. Add the username to `users.deletedUsers` in `modules/users/default.nix`
+4. Commit and create a PR
+
+cc @TUM-DSE/chair-members"""
+
+        # Create the issue
+        c.run(
+            f"gh issue create "
+            f'--title "Expired student account: {username}" '
+            f"--body {shlex.quote(issue_body)} "
+            f'--label "user-management" '
+            f'--label "expired-account"',
+            echo=True,
+        )
 
 
 @task

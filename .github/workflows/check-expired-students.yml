@@ -17,69 +17,10 @@ jobs:
       
       - name: Install Nix
         uses: cachix/install-nix-action@v31
-        
-      - name: Check for expired student accounts
-        id: check-expired
-        run: |
-          # Enter devshell and run the command
-          nix develop -c inv expired-accounts-json > expired-students.json
-          
-          # Read the JSON
-          EXPIRED_JSON=$(cat expired-students.json)
-          echo "Expired students JSON: $EXPIRED_JSON"
-          
-          # Extract count
-          EXPIRED_COUNT=$(echo "$EXPIRED_JSON" | jq '.expired_count')
-          echo "expired_count=$EXPIRED_COUNT" >> $GITHUB_OUTPUT
-          
+
       - name: Create issues for expired accounts
-        if: steps.check-expired.outputs.expired_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Read the expired students data
-          EXPIRED_JSON=$(cat expired-students.json)
-          
-          # Get list of expired students
-          echo "$EXPIRED_JSON" | jq -c '.expired[]' | while read -r student; do
-            USERNAME=$(echo "$student" | jq -r '.username')
-            EXPIRES=$(echo "$student" | jq -r '.expiration_date')
-            
-            echo "Processing expired account: $USERNAME"
-            
-            # Check if an issue already exists for this student
-            EXISTING_ISSUE=$(gh issue list --search "Expired student account: $USERNAME" --state all --json number --jq '.[0].number' || echo "")
-            
-            if [ -z "$EXISTING_ISSUE" ]; then
-              echo "Creating issue for $USERNAME"
-              
-              # Create the issue
-              gh issue create \
-                --title "Expired student account: $USERNAME" \
-                --body "## Expired Student Account
-
-**Username:** $USERNAME
-**Expiration Date:** $EXPIRES
-
-This student account has expired and should be reviewed for removal.
-
-### Action Items
-- [ ] Verify the student has completed their work
-- [ ] Back up any important data if needed
-- [ ] Move the user to \`deletedUsers\` in \`modules/users/default.nix\`
-- [ ] Remove SSH keys and any special access permissions
-- [ ] Deploy changes to affected systems
-
-### How to remove the user
-1. Edit \`modules/users/students.nix\`
-2. Remove the user definition
-3. Add the username to \`users.deletedUsers\` in \`modules/users/default.nix\`
-4. Commit and create a PR
-
-cc @TUM-DSE/chair-members" \
-                --label "user-management" \
-                --label "expired-account"
-            else
-              echo "Issue already exists for $USERNAME (#$EXISTING_ISSUE)"
-            fi
-          done
+          # Enter devshell and run the issue creation command
+          nix develop -c inv expired-accounts-create-issues

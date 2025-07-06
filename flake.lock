@@ -135,16 +135,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1747688870,
-        "narHash": "sha256-ypL9WAZfmJr5V70jEVzqGjjQzF0uCkz+AFQF7n9NmNc=",
+        "lastModified": 1751468302,
+        "narHash": "sha256-tWosziZTT039x6PgEZUhzGlV8oLvdDmIgKTE8ESMaEA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d5f1f641b289553927b3801580598d200a501863",
+        "rev": "501cfec8277f931a9c9af9f23d3105c537faeafe",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-24.11",
+        "ref": "release-25.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -287,16 +287,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1751369908,
-        "narHash": "sha256-Ca2va5xeSNvUjUQehAgbSDpfNDI7cqCeIWfuEKry5Mg=",
-        "ref": "nixos-24.11-backports",
-        "rev": "a8023865f6510f967bb0d3b2bf45690446f76676",
+        "lastModified": 1751807313,
+        "narHash": "sha256-ddNtACLEVli5i4WxZzo2dYwEO+tUv3muYvkkOkIycU0=",
+        "ref": "nixos-25.05-backports",
+        "rev": "8d7f3510c407a155014e122c5d5148a7e525f8aa",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       },
       "original": {
-        "ref": "nixos-24.11-backports",
+        "ref": "nixos-25.05-backports",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"

@@ -37,7 +37,7 @@
       lib.mkMerge [
         {
           # can't be used by Asahi sound infrastructure
-          hardware.pulseaudio.enable = false;
+          services.pulseaudio.enable = false;
           # enable pipewire to run real-time and avoid audible glitches
           security.rtkit.enable = true;
           # set up pipewire with the supported capabilities (instead of pulseaudio)
