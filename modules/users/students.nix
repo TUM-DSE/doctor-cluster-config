@@ -168,6 +168,7 @@ in
         "amy"
       ];
       openssh.authorizedKeys.keys = shuKeys;
+      expires = "2025-01-31";  # Former intern - should be removed immediately
     };
 
     # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
@@ -183,6 +184,7 @@ in
         "clara"
       ];
       openssh.authorizedKeys.keys = brunoKeys;
+      expires = "2025-03-31";  # WS24/25 ends (SS24 already ended)
     };
 
     # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
@@ -215,6 +217,7 @@ in
       ];
       openssh.authorizedKeys.keys = anubhavKeys;
       xrdpAccess = true;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Michael Hackl, M.Sc thesis (Wallet project)
@@ -261,6 +264,7 @@ in
         "jack"
       ];
       openssh.authorizedKeys.keys = sherifKeys;
+      expires = "2025-07-31";
     };
 
     # Anton Ge, BSc thesis on uintr deleted after SS25
@@ -275,6 +279,7 @@ in
         "ian"
       ];
       openssh.authorizedKeys.keys = antonKeys;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Christian Karidas, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
@@ -288,6 +293,7 @@ in
         "jack"
       ];
       openssh.authorizedKeys.keys = kchristianKeys;
+      expires = "2025-07-31";
     };
 
     # Phillip Assmann, BSc thesis with David (Branch prediction research on gem5)
@@ -364,6 +370,7 @@ in
         "irene"
       ];
       openssh.authorizedKeys.keys = hristinagKeys;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Anders, working with Martin (tiramisu project). Ask Martin before removing.
@@ -422,6 +429,7 @@ in
       ];
       openssh.authorizedKeys.keys = nimaKeys;
       xrdpAccess = true;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Etienne Massart, student in seminar SS25 with Atsushi
@@ -436,6 +444,7 @@ in
       ];
       openssh.authorizedKeys.keys = etienneKeys;
       xrdpAccess = true;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
