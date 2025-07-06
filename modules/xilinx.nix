@@ -10,7 +10,6 @@ let
   xrt-drivers = packages.xrt-drivers.override { inherit (config.boot.kernelPackages) kernel; };
 in
 {
-
   options = {
     hardware.xilinx.xrt-drivers.enable = lib.mkEnableOption "Propritary kernel drivers for flashing firmware";
   };
@@ -33,14 +32,6 @@ in
     # 6.0+ kernel
     boot.extraModulePackages = lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
 
-    # 5.15 kernel
-    # boot.extraModulePackages = [ sfc-drivers ]
-    #                            ++ lib.optional (config.hardware.xilinx.xrt-drivers.enable) xrt-drivers;
-
-    # 5.10 kernel
-    # boot.kernelPackages =
-    #  lib.mkIf (config.hardware.xilinx.xrt-drivers.enable) pkgs.linuxPackages_5_10;
-
-    hardware.graphics.extraPackages = [ packages.xrt ];
+    # hardware.graphics.extraPackages = [ packages.xrt ];
   };
 }

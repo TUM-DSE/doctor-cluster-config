@@ -21,10 +21,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
   ];
 
-  hendrikKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEg3T8Tc1pNDRqPPE0cLffb9mYpU2FGoY1EghnU3+WMF hendrik.huebner18@gmail.com"
-  ];
-
   anubhavKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
   ];
@@ -44,12 +40,6 @@ let
 
   kchristianKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH1sPdGosNVV8liuEZ3YOuAmOKUxAYxW8IucSkc8XCh2 christian.karidas@tum.de"
-  ];
-
-  martinLiKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLDbWHI/PLBf0hiS0wbHz0ppO/h177fSuRsoZRAq/VD mrtn@mrtnnix-nb"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJYSM6kY7dtMlq7wzKCYe2jcOFQfA+EB0xPX/l8LdvH mrtn@nixos"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1er1RkBKTjm2tPF7HOP2u05VdVLtJHJRxlLSzq0wEd mrtn@nixos"
   ];
 
   phillipKeys = [
@@ -79,10 +69,6 @@ let
   andersKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfzGHxcRgfwt3SZ0iTY+stOgi2yAORrBpnwJ1tCMn7h"
-  ];
-
-  florianDKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
   ];
 
   christianKKeys = [
@@ -135,6 +121,7 @@ in
       uid = 2000;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = julianKeys;
+      expires = "2025-12-31";
     };
 
     # Sandro Gierens, Masa's MSc student (expecting to finish the end of 2025)
@@ -146,6 +133,7 @@ in
       uid = 2003;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = gierensKeys;
+      expires = "2025-12-31";
     };
 
     # Simon Kammermeier, Redha's BSc student (Arancini project)
@@ -163,6 +151,7 @@ in
         "joy"
       ];
       openssh.authorizedKeys.keys = simonkKeys;
+      expires = "2025-12-31";
     };
 
     # Shu Anzai, former intern (Atsushi)
@@ -178,7 +167,9 @@ in
         "amy"
       ];
       openssh.authorizedKeys.keys = shuKeys;
+      expires = "2025-12-31";  # Extended to end of year
     };
+
 
     # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
     laurent = {
@@ -194,6 +185,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = laurentKeys;
+      expires = "2025-12-31";
     };
 
     # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
@@ -210,6 +202,7 @@ in
       ];
       openssh.authorizedKeys.keys = anubhavKeys;
       xrdpAccess = true;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Michael Hackl, M.Sc thesis (Wallet project)
@@ -225,6 +218,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = michaelKeys;
+      expires = "2025-12-31";
     };
 
     # Dominik Kreuzer, M.Sc. thesis with Peter (VirtIO-DPDK project)
@@ -243,6 +237,7 @@ in
         "wilfred"
       ];
       openssh.authorizedKeys.keys = dominikKeys;
+      expires = "2025-12-31";
     };
 
     # Sherif Hussien, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
@@ -256,6 +251,7 @@ in
         "jack"
       ];
       openssh.authorizedKeys.keys = sherifKeys;
+      expires = "2025-07-31";
     };
 
     # Anton Ge, BSc thesis on uintr deleted after SS25
@@ -270,6 +266,7 @@ in
         "ian"
       ];
       openssh.authorizedKeys.keys = antonKeys;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Christian Karidas, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
@@ -283,6 +280,7 @@ in
         "jack"
       ];
       openssh.authorizedKeys.keys = kchristianKeys;
+      expires = "2025-07-31";
     };
 
     # Phillip Assmann, BSc thesis with David (Branch prediction research on gem5)
@@ -298,6 +296,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = phillipKeys;
+      expires = "2025-12-31";
     };
 
     # Steve Bambou, BSc thesis with David (Branch prediction research on gem5)
@@ -313,6 +312,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = steveKeys;
+      expires = "2025-12-31";
     };
 
     # Maximilian Jäcklein, BSc thesis with Harsha (Resource disaggregation)
@@ -329,6 +329,7 @@ in
         "wilfred"
       ];
       openssh.authorizedKeys.keys = maxKeys;
+      expires = "2025-12-31";
     };
 
     # Osman Yasar, HiWi working for David on gem5-related implemenations
@@ -346,6 +347,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = osmanKeys;
+      expires = "2025-12-31";
     };
 
     # Hristina Grigorova, BSc thesis with Ilya (udos) can be safely removed after SS25
@@ -359,6 +361,7 @@ in
         "irene"
       ];
       openssh.authorizedKeys.keys = hristinagKeys;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Anders, working with Martin (tiramisu project). Ask Martin before removing.
@@ -373,6 +376,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = andersKeys;
+      expires = "2025-12-31";
     };
 
     # Christian Krinitsin, Bachelor student with Theofilos.
@@ -388,6 +392,7 @@ in
         "jamie"
       ];
       openssh.authorizedKeys.keys = christianKKeys;
+      expires = "2025-12-31";
     };
 
     # Victor Trost, BSc thesis with Nicolo (SLICC generator)
@@ -403,6 +408,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = victorTKeys;
+      expires = "2025-12-31";
     };
 
     # Nima Baradaran Hassanzadeh, student in seminar SS25 with Atsushi
@@ -417,6 +423,7 @@ in
       ];
       openssh.authorizedKeys.keys = nimaKeys;
       xrdpAccess = true;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Etienne Massart, student in seminar SS25 with Atsushi
@@ -431,6 +438,7 @@ in
       ];
       openssh.authorizedKeys.keys = etienneKeys;
       xrdpAccess = true;
+      expires = "2025-09-30";  # SS25 ends
     };
 
     # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
@@ -446,6 +454,7 @@ in
       ];
       openssh.authorizedKeys.keys = jannikKeys;
       xrdpAccess = false;
+      expires = "2025-12-31";
     };
 
     # Peter Wegmann, MSc thesis with Aleksandra and Manos
@@ -461,6 +470,7 @@ in
       ];
       openssh.authorizedKeys.keys = peterKeys;
       xrdpAccess = false;
+      expires = "2025-12-31";
     };
   };
 

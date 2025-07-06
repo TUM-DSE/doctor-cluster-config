@@ -28,12 +28,12 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # disable pulseaudio because it conflicts with our common server config
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # gui packages
   environment.systemPackages = with pkgs; [
     # fprintd # seems to brick the login screen on ThinkPad E14 amd
-    gnome.gnome-terminal
+    pkgs.gnome-terminal
     gedit
     remmina # rdp/vnc client
     alacritty

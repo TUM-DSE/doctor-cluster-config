@@ -1,0 +1,26 @@
+name: "Check for expired student accounts"
+on:
+  schedule:
+    # Run daily at 9 AM UTC
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check-expired-students:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Create issues for expired accounts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Enter devshell and run the issue creation command
+          nix develop -c inv expired-accounts-create-issues

@@ -3,11 +3,13 @@
 import json
 import os
 import random
+import shlex
 import shutil
 import string
 import subprocess
 import sys
 import tempfile
+from datetime import datetime
 from pathlib import Path
 from typing import IO, Any, Callable, List
 
@@ -709,6 +711,172 @@ def generate_password(c: Any, user: str = "root") -> None:
     print(f"{user}-password-hash: {out.stdout}")
 
 
+def check_expired_accounts():
+    """
+    Check for expired student accounts and return the data
+    """
+    import re
+
+    students_file = ROOT / "modules" / "users" / "students.nix"
+
+    # Parse the students.nix file for expires lines
+    with open(students_file, "r") as f:
+        content = f.read()
+
+    # Find all user blocks with expires field
+    # Pattern to match user = { ... expires = "YYYY-MM-DD"; ... }
+    user_pattern = r'(\w+)\s*=\s*\{[^}]*expires\s*=\s*"(\d{4}-\d{2}-\d{2})"[^}]*\}'
+
+    expired = []
+    expiring = []
+    today = datetime.now().date()
+
+    # Find all matches
+    for match in re.finditer(user_pattern, content, re.DOTALL):
+        username = match.group(1)
+        expires_str = match.group(2)
+        expires_date = datetime.strptime(expires_str, "%Y-%m-%d").date()
+
+        # Skip if this is inside a comment
+        # Check if the line with expires is commented
+        expires_line_start = match.start(2)
+        line_start = content.rfind("\n", 0, expires_line_start) + 1
+        line = content[line_start:expires_line_start]
+        if "#" in line:
+            continue
+
+        days_until_expiry = (expires_date - today).days
+
+        if days_until_expiry < 0:
+            expired.append((username, expires_str, -days_until_expiry))
+        elif days_until_expiry <= 30:
+            expiring.append((username, expires_str, days_until_expiry))
+
+    # Sort by expiration date
+    expired.sort(key=lambda x: x[1])
+    expiring.sort(key=lambda x: x[2])
+
+    return {"expired": expired, "expiring": expiring, "today": today.isoformat()}
+
+
+@task
+def expired_accounts(c: Any) -> None:
+    """
+    Check for expired student accounts (human-readable output)
+    """
+    data = check_expired_accounts()
+    expired = data["expired"]
+    expiring = data["expiring"]
+    today = data["today"]
+
+    if expired:
+        print(f"\n❌ Expired student accounts (as of {today}):")
+        print("-" * 60)
+        for username, expires, days_ago in expired:
+            print(f"  {username:<20} Expired: {expires} ({days_ago} days ago)")
+        print(f"\nTotal expired accounts: {len(expired)}")
+        print(
+            "\nAction required: Move these users to deletedUsers in modules/users/default.nix"
+        )
+    else:
+        print("\n✅ No expired student accounts found.")
+
+    if expiring:
+        print("\n⚠️  Student accounts expiring within 30 days:")
+        print("-" * 60)
+        for username, expires, days_left in expiring:
+            print(f"  {username:<20} Expires: {expires} ({days_left} days)")
+
+    # Summary
+    print("\n📊 Summary:")
+    print(f"  Expired: {len(expired)}")
+    print(f"  Expiring soon: {len(expiring)}")
+    print(f"  Total accounts checked: {len(expired) + len(expiring)}")
+
+
+@task
+def expired_accounts_json(c: Any) -> None:
+    """
+    Check for expired student accounts (JSON output for automation)
+    """
+    data = check_expired_accounts()
+
+    # Convert to JSON-friendly format - only include what GitHub action needs
+    result = {
+        "expired": [
+            {"username": username, "expiration_date": expires}
+            for username, expires, days_ago in data["expired"]
+        ],
+        "expired_count": len(data["expired"]),
+    }
+
+    print(json.dumps(result, indent=2))
+
+
+@task
+def expired_accounts_create_issues(c: Any) -> None:
+    """
+    Create GitHub issues for expired student accounts
+    """
+    data = check_expired_accounts()
+    expired = data["expired"]
+
+    if not expired:
+        print("No expired accounts found.")
+        return
+
+    print(f"Found {len(expired)} expired accounts")
+
+    for username, expires, days_ago in expired:
+        print(f"\nProcessing expired account: {username}")
+
+        # Check if an issue already exists
+        result = c.run(
+            f'gh issue list --search "Expired student account: {username}" --state all --json number --jq ".[0].number"',
+            hide=True,
+            warn=True,
+        )
+
+        if result.ok and result.stdout.strip():
+            issue_number = result.stdout.strip()
+            print(f"  Issue already exists: #{issue_number}")
+            continue
+
+        print(f"  Creating issue for {username}")
+
+        # Create the issue body
+        issue_body = f"""## Expired Student Account
+
+**Username:** {username}
+**Expiration Date:** {expires}
+**Days Expired:** {days_ago}
+
+This student account has expired and should be reviewed for removal.
+
+### Action Items
+- [ ] Verify the student has completed their work
+- [ ] Back up any important data if needed
+- [ ] Move the user to `deletedUsers` in `modules/users/default.nix`
+- [ ] Remove SSH keys and any special access permissions
+- [ ] Deploy changes to affected systems
+
+### How to remove the user
+1. Edit `modules/users/students.nix`
+2. Remove the user definition
+3. Add the username to `users.deletedUsers` in `modules/users/default.nix`
+4. Commit and create a PR
+
+cc @TUM-DSE/chair-members"""
+
+        # Create the issue
+        c.run(
+            f"gh issue create "
+            f'--title "Expired student account: {username}" '
+            f"--body {shlex.quote(issue_body)} ",
+            echo=True,
+        )
+
+
 @task
 def generate_tinc_key(c: Any, hostname: str) -> None:
     """
@@ -1079,7 +1247,6 @@ def _format_disks(host: DeployHost, device: str) -> None:
     host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef00 -t 2:8304 {device}")
 
     partitions = sfdisk_json(host, device)
-    boot = partitions[0]["node"]
     uuid = partitions[1]["uuid"].lower()
     root_part = f"/dev/disk/by-partuuid/{uuid}"
     host.run(

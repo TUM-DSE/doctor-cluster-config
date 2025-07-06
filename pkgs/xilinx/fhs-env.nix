@@ -1,9 +1,9 @@
-{ buildFHSUserEnv
+{ buildFHSEnv
 , runScript ? "bash -c"
 , xilinxName ? "xilinx-env"
 ,
 }:
-buildFHSUserEnv {
+buildFHSEnv {
   name = xilinxName;
   inherit runScript;
   targetPkgs = pkgs:
@@ -20,7 +20,7 @@ buildFHSUserEnv {
       stdenv.cc.cc
       # https://github.com/NixOS/nixpkgs/issues/218534
       # postFixup would create symlinks for the non-unicode version but since it breaks
-      # in buildFHSUserEnv, we just install both variants
+      # in buildFHSEnv, we just install both variants
       ncurses'
       (ncurses'.override { unicodeSupport = false; })
       xorg.libXext
