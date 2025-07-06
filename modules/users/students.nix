@@ -453,7 +453,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = jannikKeys;
-      xrdpAccess = true;
+      xrdpAccess = false;
       expires = "2025-12-31";
     };
 
@@ -469,7 +469,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = peterKeys;
-      xrdpAccess = true;
+      xrdpAccess = false;
       expires = "2025-12-31";
     };
   };
