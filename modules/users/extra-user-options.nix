@@ -61,13 +61,22 @@ in
   };
   config = {
     assertions = lib.flatten (
-      lib.mapAttrsToList (name: user: {
-        assertion = user.isSystemUser || user.allowedHosts != [ ];
-        message = ''
-          User ${name} has no allowedHosts option set.
-          Please add at least one host to the list.
-        '';
-      }) config.users.users
+      lib.mapAttrsToList (name: user: [
+        {
+          assertion = user.isSystemUser || user.allowedHosts != [ ];
+          message = ''
+            User ${name} has no allowedHosts option set.
+            Please add at least one host to the list.
+          '';
+        }
+        {
+          assertion = user.isSystemUser || !(builtins.elem "student" user.extraGroups) || user.expires != null;
+          message = ''
+            Student user ${name} has no expiration date set.
+            All students must have an expires option set.
+          '';
+        }
+      ]) config.users.users
     );
 
     sops.secrets = lib.mkIf config.services.xrdp.enable (
