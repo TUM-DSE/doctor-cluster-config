@@ -1,5 +1,6 @@
-# To update .sops.yaml:
+# IMPORTANT when changing this file, also run
 # $ inv update-sops-files
+# to update .sops.yaml:
 let
   mapAttrsToList = f: attrs:
     map (name: f name attrs.${name}) (builtins.attrNames attrs);
