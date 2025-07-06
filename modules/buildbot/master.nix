@@ -37,6 +37,11 @@
       "pogobanane"
     ];
     outputsPath = "/var/www/buildbot/nix-outputs";
+    cachix = {
+      enable = true;
+      name = "tum-dse";
+      auth.authToken.file = config.sops.secrets.cachix-auth-token.path;
+    };
   };
 
   services.buildbot-master = {
@@ -58,7 +63,6 @@
     buildbot-github-oauth-secret = { };
     buildbot-github-app-secret-key = { };
     buildbot-nix-workers = { };
-    cachix-name = { };
     cachix-auth-token = { };
   };
 
