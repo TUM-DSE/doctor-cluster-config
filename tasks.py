@@ -715,7 +715,6 @@ def check_expired_accounts():
     Check for expired student accounts and return the data
     """
     import re
-    from datetime import timedelta
 
     students_file = ROOT / "modules" / "users" / "students.nix"
 
@@ -786,13 +785,13 @@ def expired_accounts(c: Any) -> None:
         print("\n✅ No expired student accounts found.")
 
     if expiring:
-        print(f"\n⚠️  Student accounts expiring within 30 days:")
+        print("\n⚠️  Student accounts expiring within 30 days:")
         print("-" * 60)
         for username, expires, days_left in expiring:
             print(f"  {username:<20} Expires: {expires} ({days_left} days)")
 
     # Summary
-    print(f"\n📊 Summary:")
+    print("\n📊 Summary:")
     print(f"  Expired: {len(expired)}")
     print(f"  Expiring soon: {len(expiring)}")
     print(f"  Total accounts checked: {len(expired) + len(expiring)}")
@@ -1190,7 +1189,6 @@ def _format_disks(host: DeployHost, device: str) -> None:
     host.run(f"sgdisk -Z -n 1:2048:+1G -N 2 -t 1:ef00 -t 2:8304 {device}")
 
     partitions = sfdisk_json(host, device)
-    boot = partitions[0]["node"]
     uuid = partitions[1]["uuid"].lower()
     root_part = f"/dev/disk/by-partuuid/{uuid}"
     host.run(
