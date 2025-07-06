@@ -28,7 +28,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # disable pulseaudio because it conflicts with our common server config
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # gui packages
   environment.systemPackages = with pkgs; [
