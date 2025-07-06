@@ -37,6 +37,11 @@
       "pogobanane"
     ];
     outputsPath = "/var/www/buildbot/nix-outputs";
+    cachix = {
+      enable = true;
+      name = config.sops.secrets.cachix-name.path;
+      auth.authToken.file = config.sops.secrets.cachix-auth-token.path;
+    };
   };
 
   services.buildbot-master = {
