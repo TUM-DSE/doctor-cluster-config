@@ -545,5 +545,6 @@ in
     "hristina"
     "hendrik"
     "florianD"
+    "bruno"
   ];
 }
