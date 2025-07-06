@@ -115,6 +115,8 @@ Astrid also hosts the buildbot master server with Graham as the buildbot worker.
 ## ARM64
 
 - [yasmin](./hosts/yasmin.md)
+- [eliza](./hosts/eliza.md)
+  - [Enabling MTE](./mte-supermicro.md)
 - We have an M1 Mac Mini in Patric's office with a dual boot macos/linux
   - when booted into NixOS/Linux: [donna](./hosts/donna.md)
   - when booted into macos: [sarah](./hosts/sarah.md)

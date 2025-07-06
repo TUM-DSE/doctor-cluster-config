@@ -1,7 +1,5 @@
 { ... }:
 let
-  thangKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFjpAcawhrQfHbjj9jf+tmM1/1XMeKxhemX6XnTWX0Ak" ];
-
   julianKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZs04queaSB/BGQesCEiunOkeEydB5rJ2WUXSrGlDLVoJ6/Q7fAHM99200fxK7h0vtKda4OkdUEBtRtq2wn+Z0YW51mFvzJ7214ZIY4JKtYX02KW8r7gVXYmjoX3VWEKi5iKfld0WO9jaDN3InU5CYyYx1nHl+BNasxIHtUzjhHCC+Ggxt3Kc+IxW2DV8J9/JwhKhgedqvqbc93+V05/UeYwG0Q9z1mwBEuOlGv8yP6uhCWmHzxbJYo+oxU5nSXM0lPHecxa7M8hROXEVrSxg27vUg7JoiSQ1wt3lzNQS4Abd8JLqOJlQYQvbz5Xxd0KhD0kaBCptXBCxdOo+YLi06XNs16rRtQPM51jTrero3h1wfA51XR7w7j52nbLC2ZGMyaSO1c5IQ5d5Xad/F1ZcOQQWvFhK+ie9LJzvR0AXiFXzEBvmPiZ82rLdjWGPO4975fSYTOxshZojk7oV4fQyd5vKCsjChL0JC2chPfYRv2kti/9CVqVseznVMPE/JgdE= julian@mind"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCkHALCUCursw1AvmYaQLfYBee1lGR4sqqlTEHfatyAqQrCxFnWNnO03ScEfNsDQKDZPRQ/RZYOOHlNxoKQzYaHlpbFafePKNH+lKZWibabp4HT3ho0mi56i2sqXLSMP+y3nz4S7vx678CVgyK1/gW9wB0ORNh1Ss1NqPhi/DFxHVxcLig3mjCVoC6QzIzTLq8uVP/bOD2jtED/PSdAFQQNd2RjKWea7UjjH7IiQvvJHwl1OB8X1x7mxwuQuHCMj7kwwKfEEvqOy3NiDzY9Ewc7HihFLkROMK3obbYLoQjYf/tP9SYpekWx4Q8CpgmvAblwDcv8unmnYAN2Cj5PQ4YulBPCOwNfmVCvsp3gX8eLG6XNYjnHt7DIEm8Yj4EeSCuB6DLOR2Em5eKH57qzQFHyubdIwVoY1xzfdd1wzaKuL+ahoLKmZ23Q6bK795BwZBogyoceREg9surF9P8l9mJi2Yn8aGMtCF9ecIySNGYwI1AqKGYX14Vo9HA3nfADCI1wCND5LyqD6UDGfM1iBV38gGl05jyywcTgpctI4ryQy6SUDf9x+CZuDwHXihR6Rj9Oj1Vy6zFdCKq4xt76xCsIPuy+6CY4RdOkCNmQn3NKeRnttLmyYIpLbHkTdYs8GIyLsf1mz6uHZNcWg5fwPTabgT8PJ5yJRQo9IoXGawf+vQ== julian.pritzi@gmail.com"
@@ -39,7 +37,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvQc9+uHtD42kQ/pADllV8HiW1Yuc+lQ5bgUwmvPWmb dk@arch.olymp"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5+gf9T6PyECwIVDSHvb8bCYW37J9b20P0EXd2dwifE dk@skytop"
   ];
-
 
   sherifKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxcwd2ISpOP9Wj7tILTEM9RGDtwDnM1Ew0SffsT7jupZEJwlKYfJ8WFYPBaPmQD9ASHRR1aS2N+sOF+PyxGyBl0Yo9YyzQuy7O9K7rtGghNlk6TyMecNBVPC4Tq7QhPa7svtkc0bC/eyM1hAFsu/pnOMV3vwglO4hc/ct/CtOPVWR4P+koqQySR/f0BGew3RHyRTHUKhhMSJK3JDeeu3wEYok517vspmopvzkE+/gBVnS1XLXWLR2hPxI8a56WgTrE+NWaKV5HVoUxCv7mCbeLIDaqQu1Y2FL4h/gydmz6SXGLd99PphnFPbIzTLDcTb7RX+DVIOrpnQda/kwnFkq2C0Q0+jJ3nvayiw0EL5yOeeROrPraSwx1YjC2KtbbhpcMBdsAQKe4OpBL4dpUrT+CqAEn4FTy6gCF1PD0AA1lX0/l0dyr7oxb/qgTUAFTmYQDae7Ml6xnweGfKIcYt6NtkKpBN3UoonEEhZLfKyFKrMrn5Ta2la6p5ksZC/Ae4A95XrfRSMWlEiIhOnBGp8zNcbi72LLL8U7JwKlQfhBpJL1Vvtkie6ytUFPzx4frH1wy1J/u+rZel+YIqmo/dVztHWXXv3b0MIrkmmw4bTE/l/C9L8FdZUgef66WU7CQiMI0cXsKhpqlGQWj5dJEiwkQni4CZQypg71jotlkDFCexQ=="
@@ -106,6 +103,14 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6oQHZBmvxJsCX8dLLnLhZvKuk64mUrYeLNUiCbZ65iwJx9rDEy7Bz1eBIy/U9RuVLbdTE7NvhWYgU8uGjvMUmUWOMXuFLiFIlEVp6wVoShKfJQg0wzh7W4dcGQDn5Ysee4T6bPCtutSVBZREI00kSDkR3/AXMZ6Dpo5p+SOnRkKR443bHl+z+ZDM451KwW8UGrCAoc+9xZyOJsSghXYRq2AH0PrzhKpMmgemZg2fFEGMmMO4fXvG6jFBvy9rQLsjPGDfRpcPJgb/zl/gOiifetje0ZWKMgAV17L0ysBYh+vTUjBHGimTMxp14hytoqjCj9o91RByRdu8sepbaPW74f0oPjL3PO9rF1+QODDNU5U0mEb7rdwoOn6rRBijgAHTPtjmiMaaxEH20fEgtH6paYPyVCIt2kv/+g9tjpSCcz0aQotZNhuft/RXaMoBPJD+8fUlbaAypSOn6XBniq9s1PIDDcjy/SD407jV/qzKBwLEEgw277+ed0kAz2vA98z8="
   ];
 
+  jannikKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
+  ];
+
+  peterKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEQXgzXZD88m4eXmr1R1mWTVhtknjHrhRzJfWa4d9xU wegii@idontcare"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -155,6 +160,7 @@ in
         "ruby"
         "yasmin"
         "tegan"
+        "joy"
       ];
       openssh.authorizedKeys.keys = simonkKeys;
     };
@@ -173,23 +179,6 @@ in
       ];
       openssh.authorizedKeys.keys = shuKeys;
     };
-
-    # Thang Tran, MSc Thesis with Manos *Finished*
-    # You can remove now
-    thang = {
-      isNormalUser = true;
-      home = "/home/thang";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2038;
-      allowedHosts = [
-        "graham"
-        "ryan"
-        "rose"
-      ];
-      openssh.authorizedKeys.keys = thangKeys;
-    };
-
 
     # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
     laurent = {
@@ -255,7 +244,6 @@ in
       ];
       openssh.authorizedKeys.keys = dominikKeys;
     };
-
 
     # Sherif Hussien, M.Sc. thesis with Dimitris (GDPRuler) (till ~07.2025)
     sherif = {
@@ -373,7 +361,7 @@ in
       openssh.authorizedKeys.keys = hristinagKeys;
     };
 
-    # Anders, M.Sc. thesis with Martin (airlift)
+    # Anders, working with Martin (tiramisu project). Ask Martin before removing.
     anders = {
       isNormalUser = true;
       home = "/home/anders";
@@ -444,6 +432,36 @@ in
       openssh.authorizedKeys.keys = etienneKeys;
       xrdpAccess = true;
     };
+
+    # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
+    jannik = {
+      isNormalUser = true;
+      home = "/home/jannik";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2080;
+      allowedHosts = [
+        "jamie"
+        "graham"
+      ];
+      openssh.authorizedKeys.keys = jannikKeys;
+      xrdpAccess = false;
+    };
+
+    # Peter Wegmann, MSc thesis with Aleksandra and Manos
+    peter = {
+      isNormalUser = true;
+      home = "/home/peter";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2081;
+      allowedHosts = [
+        "jamie"
+        "graham"
+      ];
+      openssh.authorizedKeys.keys = peterKeys;
+      xrdpAccess = false;
+    };
   };
 
   # DANGER ZONE!
@@ -510,6 +528,7 @@ in
     "yiwenliu"
     "zixuan"
     "bruno"
+    "thang"
     "martinL"
     "janhe"
     "janha"
