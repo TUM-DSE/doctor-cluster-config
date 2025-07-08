@@ -74,7 +74,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00000998sv00008086sd00000000bc06sc00i00"
@@ -135,28 +134,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:60/0000:60:07.0",
         "sysfs_bus_id": "0000:60:07.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 147,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 41781440806912,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 100,
-          "irq": 147,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -221,7 +203,6 @@
           "command": 1351,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00001B81sv00001028sd00000A6Bbc06sc01i00"
@@ -272,20 +253,11 @@
         "model": "PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0e.0/0000:02:00.0",
         "sysfs_bus_id": "0000:02:00.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 16,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 7,
           "header_type": 1,
           "secondary_bus": 3,
-          "irq": 16,
           "prog_if": 0
         },
         "module_alias": "pci:v00001556d0000BE00sv00000000sd00000000bc06sc04i00"
@@ -346,28 +318,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:c9/0000:c9:03.0",
         "sysfs_bus_id": "0000:c9:03.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 155,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 48378510835712,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 203,
-          "irq": 155,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -433,28 +388,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:60/0000:60:03.0",
         "sysfs_bus_id": "0000:60:03.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 145,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 41781441069056,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 98,
-          "irq": 145,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -519,28 +457,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0c.0",
         "sysfs_bus_id": "0000:00:0c.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 135,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 36283882799104,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 1,
-          "irq": 135,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -605,28 +526,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:c9/0000:c9:05.0",
         "sysfs_bus_id": "0000:c9:05.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 156,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 48378510704640,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 204,
-          "irq": 156,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -692,28 +596,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:21/0000:21:01.0",
         "sysfs_bus_id": "0000:21:01.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 139,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 38482905923584,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 34,
-          "irq": 139,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -779,28 +666,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:60/0000:60:05.0",
         "sysfs_bus_id": "0000:60:05.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 146,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 41781440937984,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 99,
-          "irq": 146,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -865,7 +735,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00001BFEsv00001028sd00000A6Bbc06sc00i00"
@@ -925,28 +794,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:00/0000:00:0e.0",
         "sysfs_bus_id": "0000:00:0e.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 136,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 36283882668032,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 2,
-          "irq": 136,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -1011,28 +863,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:c9/0000:c9:01.0",
         "sysfs_bus_id": "0000:c9:01.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 154,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 48378510966784,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 202,
-          "irq": 154,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -1098,28 +933,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:60/0000:60:01.0",
         "sysfs_bus_id": "0000:60:01.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 144,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 41781441200128,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 97,
-          "irq": 144,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -1185,28 +1003,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:49/0000:49:01.0",
         "sysfs_bus_id": "0000:49:01.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 142,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 40681929179136,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 74,
-          "irq": 142,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -1268,7 +1069,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00000998sv00008086sd00000000bc06sc00i00"
@@ -1329,28 +1129,11 @@
         "model": "Intel PCI bridge",
         "sysfs_id": "/devices/pci0000:c9/0000:c9:07.0",
         "sysfs_bus_id": "0000:c9:07.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 157,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 48378510573568,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1351,
           "header_type": 1,
           "secondary_bus": 205,
-          "irq": 157,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -1717,7 +1500,7 @@
         "power_management": [
           ""
         ],
-        "bogo": 3981.31,
+        "bogo": 3981,
         "cache": 61440,
         "units": 128,
         "physical_id": 1,
@@ -1785,13 +1568,6 @@
         "sysfs_id": "/class/block/nvme0n1",
         "sysfs_bus_id": "nvme0",
         "sysfs_device_link": "/devices/pci0000:c9/0000:c9:01.0/0000:ca:00.0/nvme/nvme0",
-        "unix_device_name": "/dev/nvme0n1",
-        "unix_device_number": {
-          "type": 98,
-          "major": 259,
-          "minor": 0,
-          "range": 0
-        },
         "unix_device_names": [
           "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNN0W800552",
           "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNN0W800552_1",
@@ -1882,52 +1658,11 @@
         "model": "Matrox VGA compatible controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0e.0/0000:02:00.0/0000:03:00.0",
         "sysfs_bus_id": "0000:03:00.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 16,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2483027968,
-            "range": 16777216,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2499805184,
-            "range": 8388608,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2508226560,
-            "range": 16384,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 786432,
-            "range": 131072,
-            "enabled": false,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 7,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 16,
           "prog_if": 0
         },
         "driver": "mgag200",
@@ -2365,14 +2100,6 @@
         "model": "Main Memory",
         "resources": [
           {
-            "type": "mem",
-            "base": 0,
-            "range": 2164011741184,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "unknown"
-          },
-          {
             "type": "phys_mem",
             "range": 2199023255552
           }
@@ -2425,7 +2152,6 @@
         "model": "Ethernet controller",
         "sysfs_id": "/devices/pci0000:21/0000:21:01.0/0000:22:00.1",
         "sysfs_bus_id": "0000:22:00.1",
-        "unix_device_name": "eno12409np1",
         "unix_device_names": [
           "eno12409np1"
         ],
@@ -2433,28 +2159,6 @@
           {
             "type": "hwaddr",
             "address": 53
-          },
-          {
-            "type": "irq",
-            "base": 17,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2684354560,
-            "range": 33554432,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2752512000,
-            "range": 1048576,
-            "enabled": false,
-            "access": "read_only",
-            "prefetch": "no"
           },
           {
             "type": "phwaddr",
@@ -2466,7 +2170,6 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 17,
           "prog_if": 0
         },
         "driver": "mlx5_core",
@@ -2526,7 +2229,6 @@
         "model": "Broadcom Ethernet controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0c.0/0000:01:00.0",
         "sysfs_bus_id": "0000:01:00.0",
-        "unix_device_name": "eno8303",
         "unix_device_names": [
           "eno8303"
         ],
@@ -2534,44 +2236,6 @@
           {
             "type": "hwaddr",
             "address": 99
-          },
-          {
-            "type": "irq",
-            "base": 16,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2416967680,
-            "range": 262144,
-            "enabled": false,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2509438976,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2509504512,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2509570048,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
           },
           {
             "type": "phwaddr",
@@ -2583,7 +2247,6 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 16,
           "prog_if": 0
         },
         "driver": "tg3",
@@ -2642,7 +2305,6 @@
         "model": "Ethernet controller",
         "sysfs_id": "/devices/pci0000:21/0000:21:01.0/0000:22:00.0",
         "sysfs_bus_id": "0000:22:00.0",
-        "unix_device_name": "eno12399np0",
         "unix_device_names": [
           "eno12399np0"
         ],
@@ -2650,28 +2312,6 @@
           {
             "type": "hwaddr",
             "address": 53
-          },
-          {
-            "type": "irq",
-            "base": 16,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2717908992,
-            "range": 33554432,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2751463424,
-            "range": 1048576,
-            "enabled": false,
-            "access": "read_only",
-            "prefetch": "no"
           },
           {
             "type": "phwaddr",
@@ -2683,7 +2323,6 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 16,
           "prog_if": 0
         },
         "driver": "mlx5_core",
@@ -2743,7 +2382,6 @@
         "model": "Broadcom Ethernet controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0c.0/0000:01:00.1",
         "sysfs_bus_id": "0000:01:00.1",
-        "unix_device_name": "eno8403",
         "unix_device_names": [
           "eno8403"
         ],
@@ -2751,44 +2389,6 @@
           {
             "type": "hwaddr",
             "address": 99
-          },
-          {
-            "type": "irq",
-            "base": 17,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2417229824,
-            "range": 262144,
-            "enabled": false,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2509242368,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2509307904,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2509373440,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
           },
           {
             "type": "phwaddr",
@@ -2800,7 +2400,6 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 17,
           "prog_if": 0
         },
         "driver": "tg3",
@@ -2817,91 +2416,7 @@
     ],
     "network_interface": [
       {
-        "index": 448,
-        "attached_to": 367,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "sysfs_id": "/class/net/eno8403",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0c.0/0000:01:00.1",
-        "unix_device_name": "eno8403",
-        "unix_device_names": [
-          "eno8403"
-        ],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 99
-          },
-          {
-            "type": "phwaddr",
-            "address": 99
-          }
-        ],
-        "driver": "tg3",
-        "driver_module": "tg3",
-        "drivers": [
-          "tg3"
-        ],
-        "driver_modules": [
-          "tg3"
-        ]
-      },
-      {
-        "index": 451,
-        "attached_to": 227,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "sysfs_id": "/class/net/eno8303",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:0c.0/0000:01:00.0",
-        "unix_device_name": "eno8303",
-        "unix_device_names": [
-          "eno8303"
-        ],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 99
-          },
-          {
-            "type": "phwaddr",
-            "address": 99
-          }
-        ],
-        "driver": "tg3",
-        "driver_module": "tg3",
-        "drivers": [
-          "tg3"
-        ],
-        "driver_modules": [
-          "tg3"
-        ]
-      },
-      {
-        "index": 453,
+        "index": 449,
         "attached_to": 189,
         "class_list": [
           "network_interface"
@@ -2919,7 +2434,6 @@
         "model": "Ethernet network interface",
         "sysfs_id": "/class/net/eno12409np1",
         "sysfs_device_link": "/devices/pci0000:21/0000:21:01.0/0000:22:00.1",
-        "unix_device_name": "eno12409np1",
         "unix_device_names": [
           "eno12409np1"
         ],
@@ -2943,30 +2457,7 @@
         ]
       },
       {
-        "index": 454,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_name": "lo",
-        "unix_device_names": [
-          "lo"
-        ]
-      },
-      {
-        "index": 455,
+        "index": 450,
         "attached_to": 352,
         "class_list": [
           "network_interface"
@@ -2984,7 +2475,6 @@
         "model": "Ethernet network interface",
         "sysfs_id": "/class/net/eno12399np0",
         "sysfs_device_link": "/devices/pci0000:21/0000:21:01.0/0000:22:00.0",
-        "unix_device_name": "eno12399np0",
         "unix_device_names": [
           "eno12399np0"
         ],
@@ -3005,6 +2495,110 @@
         ],
         "driver_modules": [
           "mlx5_core"
+        ]
+      },
+      {
+        "index": 451,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
+        ]
+      },
+      {
+        "index": 452,
+        "attached_to": 367,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0001",
+          "name": "Ethernet",
+          "value": 1
+        },
+        "model": "Ethernet network interface",
+        "sysfs_id": "/class/net/eno8403",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0c.0/0000:01:00.1",
+        "unix_device_names": [
+          "eno8403"
+        ],
+        "resources": [
+          {
+            "type": "hwaddr",
+            "address": 99
+          },
+          {
+            "type": "phwaddr",
+            "address": 99
+          }
+        ],
+        "driver": "tg3",
+        "driver_module": "tg3",
+        "drivers": [
+          "tg3"
+        ],
+        "driver_modules": [
+          "tg3"
+        ]
+      },
+      {
+        "index": 453,
+        "attached_to": 227,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0001",
+          "name": "Ethernet",
+          "value": 1
+        },
+        "model": "Ethernet network interface",
+        "sysfs_id": "/class/net/eno8303",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:0c.0/0000:01:00.0",
+        "unix_device_names": [
+          "eno8303"
+        ],
+        "resources": [
+          {
+            "type": "hwaddr",
+            "address": 99
+          },
+          {
+            "type": "phwaddr",
+            "address": 99
+          }
+        ],
+        "driver": "tg3",
+        "driver_module": "tg3",
+        "drivers": [
+          "tg3"
+        ],
+        "driver_modules": [
+          "tg3"
         ]
       }
     ],
@@ -3061,7 +2655,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -3118,7 +2711,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -3175,7 +2767,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -3232,7 +2823,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -3289,7 +2879,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "isst_if_pci",
@@ -3358,7 +2947,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -3419,7 +3007,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -3480,7 +3067,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -3532,30 +3118,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:75/0000:75:02.0",
         "sysfs_bus_id": "0000:75:02.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 42880952565760,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 42880952762368,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "idxd",
@@ -3621,7 +3188,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003245sv00008086sd00000000bc08sc80i00"
@@ -3678,7 +3244,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -3739,7 +3304,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -3796,7 +3360,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003247sv00008086sd00000000bc08sc80i00"
@@ -3857,7 +3420,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -3914,7 +3476,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003240sv00008086sd00000000bc08sc80i00"
@@ -3975,7 +3536,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -4032,7 +3592,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -4089,7 +3648,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -4150,7 +3708,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -4207,7 +3764,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -4264,7 +3820,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -4325,7 +3880,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Esv00008086sd00000000bc08sc80i00"
@@ -4382,7 +3936,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -4443,7 +3996,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -4504,7 +4056,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -4561,7 +4112,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -4622,7 +4172,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -4679,7 +4228,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -4736,7 +4284,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003241sv00008086sd00000000bc08sc80i00"
@@ -4793,7 +4340,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -4845,22 +4391,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:f2/0000:f2:03.0",
         "sysfs_bus_id": "0000:f2:03.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 4211081216,
-            "range": 1048576,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A6sv00008086sd00000000bc08sc80i00"
@@ -4917,7 +4452,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -4974,7 +4508,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003457sv00008086sd00000000bc08sc80i00"
@@ -5031,7 +4564,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -5088,7 +4620,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "isst_if_pci",
@@ -5153,7 +4684,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -5210,7 +4740,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -5267,7 +4796,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003245sv00008086sd00000000bc08sc80i00"
@@ -5328,7 +4856,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -5385,7 +4912,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -5442,7 +4968,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -5499,7 +5024,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -5560,7 +5084,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -5617,7 +5140,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -5674,7 +5196,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -5735,7 +5256,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Csv00008086sd00000000bc08sc80i00"
@@ -5796,7 +5316,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Esv00008086sd00000000bc08sc80i00"
@@ -5853,7 +5372,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003242sv00008086sd00000000bc08sc80i00"
@@ -5910,7 +5428,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -5967,7 +5484,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -6019,30 +5535,11 @@
         "model": "Intel Co-processor",
         "sysfs_id": "/devices/pci0000:78/0000:78:00.0",
         "sysfs_bus_id": "0000:78:00.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 41794326757376,
-            "range": 4294967296,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 41798621724672,
-            "range": 67108864,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 326,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002710sv00008086sd00000000bc0Bsc40i00"
@@ -6094,30 +5591,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:75/0000:75:03.1",
         "sysfs_bus_id": "0000:75:03.1",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 3356491776,
-            "range": 262144,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 3356753920,
-            "range": 8192,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 1,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "intel_vsec",
@@ -6186,7 +5664,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -6237,20 +5714,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:36/0000:36:00.4",
         "sysfs_bus_id": "0000:36:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 140,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 140,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -6311,7 +5779,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003246sv00008086sd00000000bc08sc80i00"
@@ -6368,7 +5835,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -6425,7 +5891,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003241sv00008086sd00000000bc08sc80i00"
@@ -6482,7 +5947,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -6539,7 +6003,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -6596,7 +6059,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003457sv00008086sd00000000bc08sc80i00"
@@ -6653,7 +6115,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -6710,7 +6171,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -6767,7 +6227,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -6824,7 +6283,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -6881,7 +6339,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -6938,7 +6395,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -6995,7 +6451,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -7052,7 +6507,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -7113,7 +6567,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Asv00008086sd00000000bc08sc80i00"
@@ -7170,7 +6623,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -7231,7 +6683,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Csv00008086sd00000000bc08sc80i00"
@@ -7288,7 +6739,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003240sv00008086sd00000000bc08sc80i00"
@@ -7345,7 +6795,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003242sv00008086sd00000000bc08sc80i00"
@@ -7402,7 +6851,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -7459,7 +6907,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -7516,7 +6963,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -7577,7 +7023,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -7634,7 +7079,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003246sv00008086sd00000000bc08sc80i00"
@@ -7684,20 +7128,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:00/0000:00:00.4",
         "sysfs_bus_id": "0000:00:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 134,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 134,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -7758,7 +7193,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -7815,7 +7249,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -7872,7 +7305,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -7929,7 +7361,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -7986,7 +7417,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -8043,7 +7473,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -8100,7 +7529,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -8155,28 +7583,11 @@
         "model": "Intel Communication controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:16.0",
         "sysfs_bus_id": "0000:00:16.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 255,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 36283882950656,
-            "range": 4096,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 255,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00001BE0sv00001028sd00000A6Bbc07sc80i00"
@@ -8237,7 +7648,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -8289,30 +7699,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:75/0000:75:01.0",
         "sysfs_bus_id": "0000:75:01.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 42880952434688,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 42880952696832,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "idxd",
@@ -8378,7 +7769,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003247sv00008086sd00000000bc08sc80i00"
@@ -8435,7 +7825,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -8492,7 +7881,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -8553,7 +7941,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003258sv00008086sd00000000bc08sc80i00"
@@ -8610,7 +7997,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -8671,7 +8057,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Asv00008086sd00000000bc08sc80i00"
@@ -8728,7 +8113,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003240sv00008086sd00000000bc08sc80i00"
@@ -8785,7 +8169,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -8842,7 +8225,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -8899,7 +8281,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -8956,7 +8337,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -9007,20 +8387,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:8a/0000:8a:00.4",
         "sysfs_bus_id": "0000:8a:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 150,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 150,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -9085,7 +8456,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -9139,30 +8509,11 @@
         "model": "Intel Serial bus controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:1f.5",
         "sysfs_bus_id": "0000:00:1f.5",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 2449473536,
-            "range": 33554432,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 4261478400,
-            "range": 4096,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 5,
           "command": 1350,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "intel-spi",
@@ -9230,7 +8581,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00001028sd00000A6Bbc08sc80i00"
@@ -9287,7 +8637,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -9344,7 +8693,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -9401,7 +8749,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -9452,20 +8799,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:b4/0000:b4:00.4",
         "sysfs_bus_id": "0000:b4:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 152,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 152,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -9526,7 +8864,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -9583,7 +8920,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003241sv00008086sd00000000bc08sc80i00"
@@ -9640,7 +8976,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -9692,30 +9027,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:f2/0000:f2:02.0",
         "sysfs_bus_id": "0000:f2:02.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 50577533960192,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 50577534156800,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "idxd",
@@ -9781,7 +9097,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -9838,7 +9153,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -9895,7 +9209,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -9952,7 +9265,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003245sv00008086sd00000000bc08sc80i00"
@@ -10009,7 +9321,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003247sv00008086sd00000000bc08sc80i00"
@@ -10066,7 +9377,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -10123,7 +9433,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -10184,7 +9493,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003258sv00008086sd00000000bc08sc80i00"
@@ -10235,20 +9543,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:75/0000:75:00.4",
         "sysfs_bus_id": "0000:75:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 148,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 148,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -10309,7 +9608,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -10366,7 +9664,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -10423,7 +9720,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -10480,7 +9776,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -10537,7 +9832,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -10594,7 +9888,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003252sv00008086sd00000000bc08sc80i00"
@@ -10655,7 +9948,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -10716,7 +10008,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -10777,7 +10068,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -10837,7 +10127,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00001028sd00000A6Bbc08sc80i00"
@@ -10893,38 +10182,11 @@
         "model": "Intel Co-processor",
         "sysfs_id": "/devices/pci0000:76/0000:76:00.0",
         "sysfs_bus_id": "0000:76:00.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 41785720045568,
-            "range": 8388608,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 41785728434176,
-            "range": 2097152,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 41785730531328,
-            "range": 524288,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 326,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "4xxx",
@@ -10989,7 +10251,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -11046,7 +10307,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003246sv00008086sd00000000bc08sc80i00"
@@ -11103,7 +10363,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -11164,7 +10423,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -11221,7 +10479,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -11282,7 +10539,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -11339,7 +10595,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003241sv00008086sd00000000bc08sc80i00"
@@ -11396,7 +10651,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -11453,7 +10707,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -11514,7 +10767,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -11571,7 +10823,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -11622,20 +10873,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:80/0000:80:00.4",
         "sysfs_bus_id": "0000:80:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 149,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 149,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -11700,7 +10942,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Fsv00008086sd00000000bc08sc80i00"
@@ -11757,7 +10998,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -11814,7 +11054,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003245sv00008086sd00000000bc08sc80i00"
@@ -11875,7 +11114,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -11932,7 +11170,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -11984,30 +11221,11 @@
         "model": "Intel Co-processor",
         "sysfs_id": "/devices/pci0000:f5/0000:f5:00.0",
         "sysfs_bus_id": "0000:f5:00.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 49490908151808,
-            "range": 4294967296,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 49495203119104,
-            "range": 67108864,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 326,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002710sv00008086sd00000000bc0Bsc40i00"
@@ -12064,7 +11282,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -12125,7 +11342,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -12182,7 +11398,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -12239,7 +11454,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -12296,7 +11510,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003242sv00008086sd00000000bc08sc80i00"
@@ -12353,7 +11566,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -12405,30 +11617,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:f2/0000:f2:03.1",
         "sysfs_bus_id": "0000:f2:03.1",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 4212129792,
-            "range": 262144,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 4212391936,
-            "range": 8192,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 1,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "intel_vsec",
@@ -12493,7 +11686,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -12550,7 +11742,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -12607,7 +11798,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003250sv00008086sd00000000bc08sc80i00"
@@ -12668,7 +11858,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -12725,7 +11914,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003252sv00008086sd00000000bc08sc80i00"
@@ -12782,7 +11970,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -12839,7 +12026,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -12900,7 +12086,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -12957,7 +12142,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003246sv00008086sd00000000bc08sc80i00"
@@ -13018,7 +12202,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -13075,7 +12258,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -13132,7 +12314,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -13189,7 +12370,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -13250,7 +12430,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -13307,7 +12486,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -13368,7 +12546,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Dsv00008086sd00000000bc08sc80i00"
@@ -13429,7 +12606,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Fsv00008086sd00000000bc08sc80i00"
@@ -13486,7 +12662,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -13541,28 +12716,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:00/0000:00:15.0",
         "sysfs_bus_id": "0000:00:15.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 420,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 36283882954752,
-            "range": 1024,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 420,
           "prog_if": 0
         },
         "driver": "ismt_smbus",
@@ -13631,7 +12789,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -13688,7 +12845,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -13749,7 +12905,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -13806,7 +12961,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003247sv00008086sd00000000bc08sc80i00"
@@ -13863,7 +13017,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003240sv00008086sd00000000bc08sc80i00"
@@ -13920,7 +13073,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -13977,7 +13129,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003242sv00008086sd00000000bc08sc80i00"
@@ -14034,7 +13185,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -14091,7 +13241,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000344Fsv00008086sd00000000bc08sc80i00"
@@ -14148,7 +13297,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -14205,7 +13353,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -14262,7 +13409,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003250sv00008086sd00000000bc08sc80i00"
@@ -14319,7 +13465,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -14376,7 +13521,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -14427,20 +13571,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:21/0000:21:00.4",
         "sysfs_bus_id": "0000:21:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 138,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 138,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -14501,7 +13636,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -14558,7 +13692,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -14619,7 +13752,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -14676,7 +13808,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -14733,7 +13864,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -14794,7 +13924,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Bsv00008086sd00000000bc08sc80i00"
@@ -14855,7 +13984,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Dsv00008086sd00000000bc08sc80i00"
@@ -14912,7 +14040,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003241sv00008086sd00000000bc08sc80i00"
@@ -14964,30 +14091,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:f2/0000:f2:01.0",
         "sysfs_bus_id": "0000:f2:01.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 50577533829120,
-            "range": 131072,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 50577534091264,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "idxd",
@@ -15053,7 +14161,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -15110,7 +14217,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -15167,7 +14273,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -15219,22 +14324,11 @@
         "model": "Intel System peripheral",
         "sysfs_id": "/devices/pci0000:75/0000:75:03.0",
         "sysfs_bus_id": "0000:75:03.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 3355443200,
-            "range": 1048576,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A6sv00008086sd00000000bc08sc80i00"
@@ -15291,7 +14385,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003245sv00008086sd00000000bc08sc80i00"
@@ -15348,7 +14441,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003247sv00008086sd00000000bc08sc80i00"
@@ -15405,7 +14497,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003240sv00008086sd00000000bc08sc80i00"
@@ -15462,7 +14553,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -15519,7 +14609,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -15576,7 +14665,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000344Fsv00008086sd00000000bc08sc80i00"
@@ -15633,7 +14721,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -15690,7 +14777,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -15747,7 +14833,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -15804,7 +14889,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -15861,7 +14945,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -15922,7 +15005,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -15979,7 +15061,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -16036,7 +15117,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -16093,7 +15173,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -16154,7 +15233,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "isst_if_mbox_pci",
@@ -16219,7 +15297,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -16280,7 +15357,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000325Bsv00008086sd00000000bc08sc80i00"
@@ -16337,7 +15413,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003241sv00008086sd00000000bc08sc80i00"
@@ -16394,7 +15469,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -16451,7 +15525,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -16508,7 +15581,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -16565,7 +15637,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -16622,7 +15693,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -16679,7 +15749,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003255sv00008086sd00000000bc08sc80i00"
@@ -16730,20 +15799,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:f2/0000:f2:00.4",
         "sysfs_bus_id": "0000:f2:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 159,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 159,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -16808,7 +15868,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00008086sd00000000bc08sc80i00"
@@ -16863,30 +15922,11 @@
         "model": "Intel RAM memory",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.2",
         "sysfs_bus_id": "0000:00:14.2",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 36283882930176,
-            "range": 16384,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 36283882958848,
-            "range": 4096,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 2,
           "command": 262,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00001BCEsv00001028sd00000A6Bbc05sc00i00"
@@ -16943,7 +15983,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003245sv00008086sd00000000bc08sc80i00"
@@ -16994,20 +16033,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:0c/0000:0c:00.4",
         "sysfs_bus_id": "0000:0c:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 137,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 137,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -17068,7 +16098,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -17125,7 +16154,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -17182,7 +16210,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -17239,7 +16266,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -17296,7 +16322,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -17353,7 +16378,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003242sv00008086sd00000000bc08sc80i00"
@@ -17409,38 +16433,11 @@
         "model": "Intel Co-processor",
         "sysfs_id": "/devices/pci0000:f3/0000:f3:00.0",
         "sysfs_bus_id": "0000:f3:00.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 49482301440000,
-            "range": 8388608,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 49482309828608,
-            "range": 2097152,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 49482311925760,
-            "range": 524288,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 326,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "4xxx",
@@ -17505,7 +16502,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -17556,20 +16552,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:e0/0000:e0:00.4",
         "sysfs_bus_id": "0000:e0:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 158,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 158,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -17630,7 +16617,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -17687,7 +16673,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -17738,20 +16723,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:9f/0000:9f:00.4",
         "sysfs_bus_id": "0000:9f:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 151,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 151,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -17816,7 +16792,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A2sv00008086sd00000000bc08sc80i00"
@@ -17873,7 +16848,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003246sv00008086sd00000000bc08sc80i00"
@@ -17924,20 +16898,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:c9/0000:c9:00.4",
         "sysfs_bus_id": "0000:c9:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 153,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 153,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -17998,7 +16963,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -18055,7 +17019,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -18112,7 +17075,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -18173,7 +17135,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "isst_if_mbox_pci",
@@ -18238,7 +17199,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -18295,7 +17255,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -18352,7 +17311,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -18409,7 +17367,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00002880sv00008086sd00000000bc11sc01i00"
@@ -18466,7 +17423,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -18527,7 +17483,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -18584,7 +17539,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003255sv00008086sd00000000bc08sc80i00"
@@ -18645,7 +17599,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -18707,20 +17660,6 @@
             "range": 32,
             "enabled": true,
             "access": "read_write"
-          },
-          {
-            "type": "irq",
-            "base": 16,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 36283882946560,
-            "range": 256,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
           }
         ],
         "detail": {
@@ -18728,7 +17667,6 @@
           "command": 323,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 16,
           "prog_if": 0
         },
         "driver": "i801_smbus",
@@ -18796,7 +17734,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A4sv00001028sd00000A6Bbc08sc80i00"
@@ -18853,7 +17790,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -18910,7 +17846,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Asv00008086sd00000000bc11sc01i00"
@@ -18967,7 +17902,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003247sv00008086sd00000000bc08sc80i00"
@@ -19024,7 +17958,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -19081,7 +18014,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003240sv00008086sd00000000bc08sc80i00"
@@ -19138,7 +18070,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -19199,7 +18130,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -19256,7 +18186,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003242sv00008086sd00000000bc08sc80i00"
@@ -19307,20 +18236,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:60/0000:60:00.4",
         "sysfs_bus_id": "0000:60:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 143,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 143,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -19381,7 +18301,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -19438,7 +18357,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -19499,7 +18417,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -19556,7 +18473,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Csv00008086sd00000000bc08sc80i00"
@@ -19613,7 +18529,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d00003246sv00008086sd00000000bc08sc80i00"
@@ -19674,7 +18589,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d000009A3sv00008086sd00000000bc08sc80i00"
@@ -19725,20 +18639,11 @@
         "model": "Intel Generic system peripheral",
         "sysfs_id": "/devices/pci0000:49/0000:49:00.4",
         "sysfs_bus_id": "0000:49:00.4",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 141,
-            "triggered": 0,
-            "enabled": true
-          }
-        ],
         "detail": {
           "function": 4,
           "command": 1028,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 141,
           "prog_if": 0
         },
         "driver": "pcieport",
@@ -19799,7 +18704,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -19856,7 +18760,6 @@
           "command": 0,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "module_alias": "pci:v00008086d0000324Dsv00008086sd00000000bc08sc80i00"
@@ -19911,36 +18814,11 @@
         "model": "Mass storage controller",
         "sysfs_id": "/devices/pci0000:c9/0000:c9:01.0/0000:ca:00.0",
         "sysfs_bus_id": "0000:ca:00.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 16,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 3946840064,
-            "range": 16384,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 3946905600,
-            "range": 65536,
-            "enabled": false,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 16,
           "prog_if": 2
         },
         "driver": "nvme",
@@ -20028,36 +18906,6 @@
             "range": 4,
             "enabled": true,
             "access": "read_write"
-          },
-          {
-            "type": "irq",
-            "base": 163,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2510618624,
-            "range": 8192,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2510639104,
-            "range": 2048,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2510647296,
-            "range": 256,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
           }
         ],
         "detail": {
@@ -20065,7 +18913,6 @@
           "command": 1351,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 163,
           "prog_if": 1
         },
         "driver": "ahci",
@@ -20127,22 +18974,11 @@
         "model": "RAID bus controller",
         "sysfs_id": "/devices/pci0000:49/0000:49:01.0/0000:4a:00.0",
         "sysfs_bus_id": "0000:4a:00.0",
-        "resources": [
-          {
-            "type": "mem",
-            "base": 3019898880,
-            "range": 16384,
-            "enabled": true,
-            "access": "read_only",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 0,
           "prog_if": 0
         },
         "driver": "mpi3mr",
@@ -20230,36 +19066,6 @@
             "range": 4,
             "enabled": true,
             "access": "read_write"
-          },
-          {
-            "type": "irq",
-            "base": 161,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2510626816,
-            "range": 8192,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2510643200,
-            "range": 2048,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          },
-          {
-            "type": "mem",
-            "base": 2510651392,
-            "range": 256,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
           }
         ],
         "detail": {
@@ -20267,7 +19073,6 @@
           "command": 1351,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 161,
           "prog_if": 1
         },
         "driver": "ahci",
@@ -20312,7 +19117,6 @@
           "value": 0
         },
         "model": "16550A",
-        "unix_device_name": "/dev/ttyS0",
         "unix_device_names": [
           "/dev/ttyS0"
         ],
@@ -20323,12 +19127,6 @@
             "range": 0,
             "enabled": true,
             "access": "read_write"
-          },
-          {
-            "type": "irq",
-            "base": 4,
-            "triggered": 0,
-            "enabled": true
           }
         ]
       },
@@ -20359,7 +19157,6 @@
           "value": 0
         },
         "model": "16550A",
-        "unix_device_name": "/dev/ttyS1",
         "unix_device_names": [
           "/dev/ttyS1"
         ],
@@ -20370,12 +19167,6 @@
             "range": 0,
             "enabled": true,
             "access": "read_write"
-          },
-          {
-            "type": "irq",
-            "base": 3,
-            "triggered": 0,
-            "enabled": true
           }
         ]
       }
@@ -20435,28 +19226,11 @@
         "model": "Intel USB Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0",
         "sysfs_bus_id": "0000:00:14.0",
-        "resources": [
-          {
-            "type": "irq",
-            "base": 160,
-            "triggered": 0,
-            "enabled": true
-          },
-          {
-            "type": "mem",
-            "base": 2510553088,
-            "range": 65536,
-            "enabled": true,
-            "access": "read_write",
-            "prefetch": "no"
-          }
-        ],
         "detail": {
           "function": 0,
           "command": 1350,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 160,
           "prog_if": 48
         },
         "driver": "xhci_hcd",
