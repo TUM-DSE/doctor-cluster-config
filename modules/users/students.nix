@@ -97,6 +97,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEQXgzXZD88m4eXmr1R1mWTVhtknjHrhRzJfWa4d9xU wegii@idontcare"
   ];
 
+  tristanKeys = [
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILb8iNX9HZnIPTWMr7GQoEuJl7H3SdLk5mIjGO8ylOyiAAAABHNzaDo="
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -470,6 +474,20 @@ in
       ];
       openssh.authorizedKeys.keys = peterKeys;
       xrdpAccess = false;
+      expires = "2025-12-31";
+    };
+
+    # Tristan Schwieren, MSc thesis with Dennis and Julian
+    tristan = {
+      isNormalUser = true;
+      home = "/home/tristan";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2082;
+      allowedHosts = [
+        "xavier"
+      ];
+      openssh.authorizedKeys.keys = tristanKeys;
       expires = "2025-12-31";
     };
   };
