@@ -1,31 +1,14 @@
-name: Automerge
+name: Auto Merge Dependency Updates
 on:
-  pull_request:
-    types:
-      - labeled
-      - unlabeled
-      - synchronize
-      - opened
-      - edited
-      - ready_for_review
-      - reopened
-      - unlocked
-  pull_request_review:
-    types:
-      - submitted
-  check_suite:
-    types:
-      - completed
-  status: {}
+  - pull_request_target
 jobs:
-  automerge:
+  auto-merge-dependency-updates:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
+    concurrency:
+      group: "auto-merge:${{ github.head_ref }}"
+      cancel-in-progress: true
     steps:
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@v0.16.4"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Mic92/auto-merge@main
