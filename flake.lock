@@ -195,6 +195,27 @@
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
       }
     },
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "retiolum",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1751313918,
+        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -302,13 +323,33 @@
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       }
     },
-    "retiolum": {
+    "nixpkgs_3": {
       "locked": {
-        "lastModified": 1751995145,
-        "narHash": "sha256-aKHNIh9oX6AhASdlrn4Mvv7RVTHZwU485GxBKjPeocs=",
+        "lastModified": 1751949589,
+        "narHash": "sha256-mgFxAPLWw0Kq+C8P3dRrZrOYEQXOtKuYVlo9xvPntt8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9b008d60392981ad674e04016d25619281550a9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "retiolum": {
+      "inputs": {
+        "nix-darwin": "nix-darwin",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1752176723,
+        "narHash": "sha256-LHpOdt/LXyNMDQN5GoAn63EM8n1zDE2K5V1hlpgAL+M=",
         "owner": "Mic92",
         "repo": "retiolum",
-        "rev": "ce36bfe5995a178fbd421e3d16392e58509c6293",
+        "rev": "8e8fc935d310b981e7a5e02a5e7a4e83c44e3ef6",
         "type": "github"
       },
       "original": {
