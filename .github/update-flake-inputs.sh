@@ -64,7 +64,7 @@ $changes
 EOF
 				)" \
 				--base "master" \
-				--label "merge-queue"
+				--label "dependencies"
 
 			echo "Pull request created for $input"
 		fi
