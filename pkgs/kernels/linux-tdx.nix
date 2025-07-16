@@ -28,7 +28,7 @@ let
               CRASH_DUMP n
               INTEL_TDX_HOST y
               KVM_MMU_PRIVATE y
-              DRM n
+              DRM_AMDGPU n
               IIO n
             '';
           }
