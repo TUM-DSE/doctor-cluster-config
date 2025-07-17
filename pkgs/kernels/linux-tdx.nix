@@ -28,6 +28,8 @@ let
               CRASH_DUMP n
               INTEL_TDX_HOST y
               KVM_MMU_PRIVATE y
+              DRM_AMDGPU n
+              IIO n
             '';
           }
           # NOTE: only needed prior to 6.9
