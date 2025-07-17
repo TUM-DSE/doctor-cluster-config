@@ -61,6 +61,15 @@ let
     version = "6.11";
     modDirVersion = "6.11.0";
   };
+  tdx_mushroom = {
+    owner = "Freax13";
+    repo = "linux";
+    # branch: mushroom-tdx
+    rev = "d913eb6d3612397a8c3e302a3fe6176f4f3c58bc";
+    sha256 = "sha256-wsw/IA2Si+8ZgHDzZkM6xKb35Ub3OOgerfbaDPN5IZg=";
+    version = "6.8";
+    modDirVersion = "6.8.0-rc5";
+  };
 in
 # change here to change kernel
 buildKernel tdx_canonical_6_11_0_1006_6
