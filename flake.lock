@@ -308,10 +308,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1752671924,
-        "narHash": "sha256-kGCNnyjKiKBBzDQ3ieFoWzkfWCXtPdtTD46EgnY0dvQ=",
+        "lastModified": 1753201060,
+        "narHash": "sha256-zW5/lwbwmJ8o0Do3VvXqdcguTVCkCybYxSA8BeWX+CE=",
         "ref": "nixos-25.05-backports",
-        "rev": "827c7f395640d2ad127bae6876221c50e067cede",
+        "rev": "2a102363df6785bfbfc98b2d4cbdd1bf0d8ce5aa",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
