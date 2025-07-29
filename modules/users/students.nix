@@ -25,10 +25,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
   ];
 
-  michaelKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGoXqeCmxusQtuRVsFoZsa0SPTYRdPlcnmA9XY7WrHmt"
-  ];
-
   dominikKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvQc9+uHtD42kQ/pADllV8HiW1Yuc+lQ5bgUwmvPWmb dk@arch.olymp"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5+gf9T6PyECwIVDSHvb8bCYW37J9b20P0EXd2dwifE dk@skytop"
@@ -207,22 +203,6 @@ in
       openssh.authorizedKeys.keys = anubhavKeys;
       xrdpAccess = true;
       expires = "2025-09-30";  # SS25 ends
-    };
-
-    # Michael Hackl, M.Sc thesis (Wallet project)
-    michael = {
-      isNormalUser = true;
-      home = "/home/michael";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2051;
-      allowedHosts = [
-        "ryan"
-        "vislor"
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = michaelKeys;
-      expires = "2025-12-31";
     };
 
     # Dominik Kreuzer, M.Sc. thesis with Peter (VirtIO-DPDK project)
