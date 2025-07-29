@@ -267,6 +267,14 @@ $ sudo zfs destroy nfs-home/home@syncoid_mickey_2025-07-29:09:00:02-GMT00:00
 `zfs destory nfs-home/home` (without snapshot name) will delete the entire file
 system, so be careful!
 
+*IMPORTANT*: Do not delete the latest snapshots, as which are being synced with `dan`.
+It would be safer to delete old ones.  You can check the synchronization
+status with the following command:
+
+```
+[root@mickey:~]# systemctl status syncoid-nfs-home-home
+```
+
 # Networking
 
 Our chair currently has three networks:
