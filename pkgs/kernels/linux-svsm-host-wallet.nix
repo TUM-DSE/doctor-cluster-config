@@ -68,8 +68,8 @@ let
     modDirVersionArg = "6.8.0";
     extraPatches = [ ];
   };
-
-  coconut_svsm_6_11 = {
+	
+  coconut_svsm_6_11 = { 
 	owner = "coconut-svsm";
 	repo = "linux";
 	rev = "3b04c21f46a75560b83bf07eb233f1b414a65324"; # branch svsm
@@ -81,7 +81,8 @@ let
 
 
   # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = coconut_svsm_6_11;
+  #snp_kernel = coconut_svsm_6_11;
+  snp_kernel = coconut_svsm_with_reflectvc_vmpl;
 in
 with snp_kernel;
 buildLinux (args // rec {
