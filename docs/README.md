@@ -187,6 +187,23 @@ nfs:/export/home /home nfs4 nofail,timeo=14 0 2
 nfs:/export/share /share nfs4 nofail,timeo=14 0 2
 ```
 
+## Check disk usage
+On NFS server (`mickey`), run
+
+```
+$ zpool list
+NAME       SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+nfs-data  14.5T  4.23T  10.3T        -         -     0%    29%  1.00x    ONLINE  -
+nfs-home  3.48T  3.38T   110G        -         -    49%    96%  1.00x    ONLINE  -
+zroot     1.45T   152G  1.30T        -         -    12%    10%  1.00x    ONLINE  -
+```
+
+To get the disk usage per user, run
+
+```
+sudo nix run nixpkgs#ncdu -- /export/home
+```
+
 # Backups and snapshots
 
 ZFS is used on all machines whenever possible. We enable automatic snapshots of
@@ -210,6 +227,45 @@ nardole-eva-home-2023-02-14T00:00:00 Tue, 2023-02-14 00:00:07 [5024321057e1da6b6
 nardole-eva-home-2023-02-15T00:00:00 Wed, 2023-02-15 00:00:07 [85aac6717e3f1835c7e4bb79e5d8dc9d2dde99db32e21851ada29b071e0f3aca]
 [root@nardole:/home/okelmann]# borg-job-eva-home mount il1dsenixosbk@doctor.r:/mnt/backup/nfs-home::nardole-eva-home-2023-02-15T00:00:00
 ```
+
+## Delete snapshots
+ZFS taking snapshots means that deleting files does not immediately free up
+space. To reclaim space immediately, you have to delete the snapshots.
+
+To check which snapshots takes up the most space, (on the NFS server)
+
+```
+$ zfs list -t snapshot | sort -k2 -rh | head
+nfs-home/home@syncoid_mickey_2025-07-29:10:45:02-GMT00:00   72.7G      -  1.85T  -
+nfs-home/home@syncoid_mickey_2025-07-15:08:45:02-GMT00:00   18.5G      -  1.54T  -
+nfs-home/home@syncoid_mickey_2025-07-03:13:15:01-GMT00:00   17.0G      -  1.45T  -
+nfs-home/home@syncoid_mickey_2025-07-07:11:00:01-GMT00:00   16.2G      -  1.47T  -
+nfs-home/home@syncoid_mickey_2025-07-04:12:15:01-GMT00:00   16.2G      -  1.47T  -
+nfs-home/home@syncoid_mickey_2025-07-01:12:00:01-GMT00:00   16.2G      -  1.44T  -
+nfs-home/home@syncoid_mickey_2025-07-08:11:00:01-GMT00:00   16.1G      -  1.51T  -
+nfs-home/home@syncoid_mickey_2025-07-08:08:45:01-GMT00:00   16.1G      -  1.51T  -
+nfs-home/home@syncoid_mickey_2025-07-03:11:00:01-GMT00:00   16.1G      -  1.45T  -
+nfs-home/home@syncoid_mickey_2025-07-01:11:45:01-GMT00:00   16.1G      -  1.44T  -
+```
+
+The snapshot files might be shared between multiple snapshots. To check actual
+size that we can reclaim by deleting a snapshot, run the following command
+(*`-nv` means "dry run"*):
+
+```
+$ zfs destroy -nv nfs-home/home@syncoid_mickey_2025-07-29:10:45:02-GMT00:00
+would destroy nfs-home/home@syncoid_mickey_2025-07-29:10:45:02-GMT00:00
+would reclaim 72.7G
+```
+
+If this is ok, then run the command without `-nv` to actually delete the snapshot:
+
+```
+$ sudo zfs destroy nfs-home/home@syncoid_mickey_2025-07-29:09:00:02-GMT00:00
+```
+
+`zfs destory nfs-home/home` (without snapshot name) will delete the entire file
+system, so be careful!
 
 # Networking
 
