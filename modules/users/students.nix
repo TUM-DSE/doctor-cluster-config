@@ -101,6 +101,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
   ];
 
+  yongjieKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDkLa3VpTxlK4o49Pf+tGp4sIpKxNwDlqqFoDKxVnfX 87616@Huang"
+  ];
 
   extraGroups = [
     "wheel"
@@ -491,6 +494,22 @@ in
       ];
       openssh.authorizedKeys.keys = neelKeys;
       expires = "2026-12-31";
+    };
+
+    # Yongjie Huang, Remote student working with David (Branch prediction research on gem5)
+    yongjie = {
+      isNormalUser = true;
+      home = "/home/yongjie";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2084;
+      allowedHosts = [
+        "xavier"
+        "jamie"
+        "yasmin"
+      ];
+      openssh.authorizedKeys.keys = yongjieKeys;
+      expires = "2026-06-30";
     };
 
   };
