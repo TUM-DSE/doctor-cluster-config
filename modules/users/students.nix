@@ -97,6 +97,11 @@ let
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILb8iNX9HZnIPTWMr7GQoEuJl7H3SdLk5mIjGO8ylOyiAAAABHNzaDo="
   ];
 
+  neelKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
+  ];
+
+
   extraGroups = [
     "wheel"
     "docker"
@@ -471,6 +476,23 @@ in
       openssh.authorizedKeys.keys = tristanKeys;
       expires = "2025-12-31";
     };
+
+    # Neel Mandal, BSc thesis with David (Branch prediction research on gem5)
+    neel = {
+      isNormalUser = true;
+      home = "/home/neel";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2083;
+      allowedHosts = [
+        "xavier"
+        "jamie"
+        "yasmin"
+      ];
+      openssh.authorizedKeys.keys = neelKeys;
+      expires = "2026-12-31";
+    };
+
   };
 
   # DANGER ZONE!
@@ -514,7 +536,6 @@ in
     "ml"
     "moritz"
     "mwerndle"
-    "neel"
     "nicola"
     "paul"
     "paulz"
