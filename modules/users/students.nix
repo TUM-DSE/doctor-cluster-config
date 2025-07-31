@@ -320,6 +320,7 @@ in
         "rose"
         "wilfred"
         "vislor"
+        "graham"
       ];
       openssh.authorizedKeys.keys = maxKeys;
       expires = "2025-12-31";
