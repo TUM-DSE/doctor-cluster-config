@@ -110,6 +110,8 @@ let
               F2FS_FS n
 
               SHADOW_CALL_STACK n
+
+              AX25 n
             '';
           }
         ] ++ extraPatches;
