@@ -11,7 +11,7 @@ jobs:
   update-flake-inputs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Nix
         uses: cachix/install-nix-action@v31
       - uses: actions/create-github-app-token@v2
