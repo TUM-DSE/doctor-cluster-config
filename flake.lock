@@ -308,10 +308,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1755626821,
-        "narHash": "sha256-W2ACh5FlkkZ0Kp5WbsHe25X2YmHX7m2IdGLc7IIBt4Y=",
+        "lastModified": 1756286298,
+        "narHash": "sha256-Msjhi0VbxHFZIZC5gzjxrLjbSCW0biELETTkTqW6RbQ=",
         "ref": "nixos-25.05-backports",
-        "rev": "4994bbbf91c5867864bba9ec4e53e4e3cffdefcc",
+        "rev": "8719f09693e7d0ecfb1b97bc3ebd76577752a888",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
@@ -422,15 +422,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1755770475,
-        "narHash": "sha256-piB4s87GvBJkzWLbzOMyX4adjMBmTMxzMu0SNT/b8hU=",
+        "lastModified": 1756479948,
+        "narHash": "sha256-pQTGtmwVDVsOkTMtgIrRCM38wrXBoOMH2rMhcTr82AM=",
         "owner": "numtide",
         "repo": "srvos",
-        "rev": "bebcf12b45df0b7d6f422ebd5da06f92b52169a8",
+        "rev": "db534eca16df2b04d9ab47da4cb4b4ed4edea736",
         "type": "github"
       },
       "original": {
         "owner": "numtide",
+        "ref": "zfs",
         "repo": "srvos",
         "type": "github"
       }
