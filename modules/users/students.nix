@@ -106,6 +106,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDkLa3VpTxlK4o49Pf+tGp4sIpKxNwDlqqFoDKxVnfX 87616@Huang"
   ];
 
+  florianDKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -514,6 +518,23 @@ in
       expires = "2026-06-30";
     };
 
+    # DB chair PhD working on compiler stuff. Uses the Risc V board for experiments
+    # Ask Ilya before removing :pray:
+    florianD = {
+      isNormalUser = true;
+      home = "/home/florianD";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2085;
+      allowedHosts = [
+        "graham"
+        "tegan"
+      ];
+      openssh.authorizedKeys.keys = florianDKeys;
+      expires = "2027-11-06";
+
+    };
+
   };
 
   # DANGER ZONE!
@@ -585,7 +606,6 @@ in
     "janha"
     "hristina"
     "hendrik"
-    "florianD"
     "bruno"
   ];
 }
