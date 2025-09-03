@@ -134,6 +134,11 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCkHALCUCursw1AvmYaQLfYBee1lGR4sqqlTEHfatyAqQrCxFnWNnO03ScEfNsDQKDZPRQ/RZYOOHlNxoKQzYaHlpbFafePKNH+lKZWibabp4HT3ho0mi56i2sqXLSMP+y3nz4S7vx678CVgyK1/gW9wB0ORNh1Ss1NqPhi/DFxHVxcLig3mjCVoC6QzIzTLq8uVP/bOD2jtED/PSdAFQQNd2RjKWea7UjjH7IiQvvJHwl1OB8X1x7mxwuQuHCMj7kwwKfEEvqOy3NiDzY9Ewc7HihFLkROMK3obbYLoQjYf/tP9SYpekWx4Q8CpgmvAblwDcv8unmnYAN2Cj5PQ4YulBPCOwNfmVCvsp3gX8eLG6XNYjnHt7DIEm8Yj4EeSCuB6DLOR2Em5eKH57qzQFHyubdIwVoY1xzfdd1wzaKuL+ahoLKmZ23Q6bK795BwZBogyoceREg9surF9P8l9mJi2Yn8aGMtCF9ecIySNGYwI1AqKGYX14Vo9HA3nfADCI1wCND5LyqD6UDGfM1iBV38gGl05jyywcTgpctI4ryQy6SUDf9x+CZuDwHXihR6Rj9Oj1Vy6zFdCKq4xt76xCsIPuy+6CY4RdOkCNmQn3NKeRnttLmyYIpLbHkTdYs8GIyLsf1mz6uHZNcWg5fwPTabgT8PJ5yJRQo9IoXGawf+vQ== julian.pritzi@gmail.com"
   ];
 
+  andersKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfzGHxcRgfwt3SZ0iTY+stOgi2yAORrBpnwJ1tCMn7h"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -435,6 +440,17 @@ in
         uid = 2016;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = theoKeys;
+      };
+
+      # Anders Choi
+      anders = {
+        isNormalUser = true;
+        home = "/home/anders";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2074;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = andersKeys;
       };
 
       # add staff to root account as well

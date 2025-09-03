@@ -62,11 +62,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJfp4yvOGKPTqcdr9YZOJLZulCptWHK/4mV0IuIQ/Tvl hrisigr@gmail.com"
   ];
 
-  andersKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfzGHxcRgfwt3SZ0iTY+stOgi2yAORrBpnwJ1tCMn7h"
-  ];
-
   christianKKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfke0RoVMEtj0XjxdjatQgz0RQxs7gaGSgM2OoGBemO chris@deskpin"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL7ghrJVl24UkfnyNOz21jbmrnPImp3+UR4/p2xymbnl chris@deskpin"
@@ -361,21 +356,6 @@ in
       ];
       openssh.authorizedKeys.keys = hristinagKeys;
       expires = "2025-09-30";  # SS25 ends
-    };
-
-    # Anders, working with Martin (tiramisu project). Ask Martin before removing.
-    anders = {
-      isNormalUser = true;
-      home = "/home/anders";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2074;
-      allowedHosts = [
-        "irene"
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = andersKeys;
-      expires = "2025-12-31";
     };
 
     # Christian Krinitsin, Bachelor student with Theofilos.
