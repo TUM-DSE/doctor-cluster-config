@@ -10,6 +10,8 @@
 
   simd.arch = "znver4";
 
+  disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNJ0X815786";
+
   services.ollama = {
     enable = true;
     acceleration = "cuda";
