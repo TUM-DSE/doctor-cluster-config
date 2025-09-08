@@ -8,6 +8,10 @@ let
   nsdiRev2 = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHsNlrRA1w0oT2zL8fmd+6exWxFsvDchnZO6pECI93Yc reviewer2@nsdi2025-AEC"
   ];
+  nsdiRev4 = [
+    "ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBDpbkn4baRZJNdP7LVRzYznjWipd3xN0s3378AlNkym7o8sTlukkwlXxVLiL9NApGllAFsDgE+Gd6Q13Oi/KPeARNvS0Ay9XPVR2s1GRM14HcWHtiOaIY5u5dnDUGPqcYA== nsdi-aec-reviewer"
+  ];
+
   extraGroups = [ "wheel" "docker" "input" ];
 
 in {
@@ -24,7 +28,7 @@ in {
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev1;
     };
-    # NSDI AE reviwer 1
+    # NSDI AE reviwer 2
     nsdiRev2 = {
       isNormalUser = true;
       home = "/home/nsdiRev2";
@@ -34,7 +38,7 @@ in {
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev2;
     };
-    # NSDI AE reviwer 1
+    # NSDI AE reviwer 3
     nsdiRev3 = {
       isNormalUser = true;
       home = "/home/nsdiRev3";
@@ -43,6 +47,16 @@ in {
       uid = 4202;
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev3;
+    };
+    # NSDI AE reviewer 4
+    nsdiRev4 = {
+      isNormalUser = true;
+      home = "/home/nsdiRev4";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4203;
+      allowedHosts = [ "ryan" "graham" ];
+      openssh.authorizedKeys.keys = nsdiRev4;
     };
   };
 
