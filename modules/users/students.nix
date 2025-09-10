@@ -105,6 +105,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
   ];
 
+  robertBKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICqssRMR/zxTF+DbjNPzQhXUOtn/ClpBSFs8pBbs/4g5 atlas@evilatmc"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -244,6 +248,23 @@ in
       ];
       openssh.authorizedKeys.keys = sherifKeys;
       expires = "2025-09-30";
+    };
+
+    
+    # Robert Barinov, B.Sc. thesis w/ Anders (Tiramisù)
+    robertB = {
+      isNormalUser = true;
+      home = "/home/robertB";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2061;
+      allowedHosts = [
+        "graham"
+        "eliza"
+      ];
+      openssh.authorizedKeys.keys = robertBKeys;
+      xrdpAccess = true;
+      expires = "2026-03-31";
     };
 
     # Anton Ge, BSc thesis on uintr deleted after SS25
@@ -569,7 +590,6 @@ in
     "raito"
     "raphael"
     "robert"
-    "robertB"
     "roberto"
     "rohan"
     "s1443541"
