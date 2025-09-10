@@ -93,6 +93,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
   ];
 
+  neelmKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
+  ];
+
   yongjieKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDkLa3VpTxlK4o49Pf+tGp4sIpKxNwDlqqFoDKxVnfX 87616@Huang"
   ];
@@ -495,6 +499,22 @@ in
       openssh.authorizedKeys.keys = florianDKeys;
       expires = "2027-11-06";
 
+    };
+
+    # Neel Mandal, BSc thesis with David (Branch prediction research on gem5) (recreate user due to UID conficts with syslab)
+    neelm = {
+      isNormalUser = true;
+      home = "/home/neelm";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2086;
+      allowedHosts = [
+        "xavier"
+        "jamie"
+        "yasmin"
+      ];
+      openssh.authorizedKeys.keys = neelmKeys;
+      expires = "2026-12-31";
     };
 
   };
