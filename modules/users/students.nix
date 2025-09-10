@@ -500,8 +500,10 @@ in
   };
 
   # DANGER ZONE!
-  # Make sure all data is backed up before adding user names here. This will
+  # - Make sure all data is backed up before adding user names here. This will
   # delete all data of the associated user
+  # - If you reactivate a user, then make sure to use the same uid as before
+  # to avoid any permission issues
   users.deletedUsers = [
     "alexa"
     "alexander"
