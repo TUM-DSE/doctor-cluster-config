@@ -70,6 +70,15 @@ let
     version = "6.8";
     modDirVersion = "6.8.0-rc5";
   };
+  tdx_linux_6_16_5 = {
+    owner = "gregkh";
+    repo = "linux";
+    # tag: v6.16.5
+    rev = "4645fefac0b24d509b962c096b0327e87f34b1d2";
+    sha256 = "sha256-XiTuH40b3VJqzwygZzU0FcvMDj41Rq6IsMbm+3+QxDY=";
+    version = "6.16.5";
+    modDirVersion = "6.16.5";
+  };
 in
 # change here to change kernel
-buildKernel tdx_canonical_6_11_0_1006_6
+buildKernel tdx_linux_6_16_5
