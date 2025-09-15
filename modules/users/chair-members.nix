@@ -141,6 +141,11 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfzGHxcRgfwt3SZ0iTY+stOgi2yAORrBpnwJ1tCMn7h"
   ];
 
+  dennisKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHf4fYi0N++0qTWfJwdp4JkLtHi6sgKA81U3tVrD0eJ"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMyl7CnlZltO3IFHlogUGH6WaztW6i/m5noOgB0s4XXI"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -453,6 +458,17 @@ in
         uid = 2074;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = andersKeys;
+      };
+
+      # Dennis Sprokholt
+      dennis = {
+        isNormalUser = true;
+        home = "/home/dennis";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1036;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = dennisKeys;
       };
 
       # add staff to root account as well
