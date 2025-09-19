@@ -1,6 +1,13 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
-  hardware.graphics.enable = true;
+
+  hardware.graphics =  {
+    enable = true;
+  }
+  // lib.optionalAttrs(pkgs.stdenv.hostPlatform.isx86_64) {
+    enable32Bit = true;
+  };
+
   # Switching from datacenter driver to production driver for kernel 6.15 compatibility
   # The production driver (570.153.02) includes patches for kernel 6.15 support
   # while dc_565 (565.57.01) does not support kernels newer than 6.13
@@ -14,5 +21,4 @@
 
   virtualisation.docker.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
-  hardware.graphics.enable32Bit = true;
 }

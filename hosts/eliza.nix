@@ -2,11 +2,16 @@
   imports = [
     ../modules/hardware/supermicro-ARS-211M-NR.nix
     ../modules/nfs/client.nix
-    ../modules/nvidia-aarch64.nix
+    ../modules/nvidia.nix
     ../modules/disko-zfs.nix
   ];
 
   networking.hostName = "eliza";
+
+  boot.kernelParams = [
+    # NVIDIA A40 GPU had a bus error once. Set this as potential workaround.
+    "pcie_aspm=off"
+  ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNN0XA20382";
 
