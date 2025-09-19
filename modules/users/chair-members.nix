@@ -146,6 +146,11 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMyl7CnlZltO3IFHlogUGH6WaztW6i/m5noOgB0s4XXI"
   ];
 
+  anubhavKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPGx6ZevvIeVpRzN5CmUuC7dskP/8sFsYJUA165reuYP5TGb9FDnDvd1VtV+rr12lvXCbqbB5vFkbtWCFQ5qblSoNuqD3fhwL6/+tF8WVUy1TvxfpXAUpIiByIukIGF6zIw4KVwcv54jEy11quxb5+MIYY0fR+GOfG0AiHjmr56c09xvzRIa4jDVDyXjwYE4FMw4X1oXv2S3puaXa3OPRExP9uUNV95KuqPDGkuetoDeqmK17MR9yb9xKvW4F2nEMc8jG34QmZlos5XGxxqJz1krQJODF35zYDWz9nje15Xk0PRkOgde0AVKHHI9SmyH9pAtCrMyc6ch1YL6z0z/0BumEbZ20JYnvxuFGxbnEX0tCoM9Vvq8KaUKkbwaeEZWeWC5pOnLLsIOSJqLdoisUNCCb3OfkXfTnSoP1235+jrH5m/rOCYsERQ0wkaC9sQwSxK2eYpdD897XY1cXDveqoKx5tV/gUR6gho1SSRJHF8k7gZ4nDu3eNmiX/uQcpOoRAEyCp5jgJMgDucr9I81DODOX3G+KdvUiawB/lOf2CQX0NTBhxo74Fqy+P4NB0T7nWQ/0n2X9XNjtiMGRh+NmRUqZQvtglOuRGjZ9OOXBL+zhSraYQGO8GsyLhVLYmXrNhYH39qRl2XfkjgyynfuOe8TuL9GW2UBDA3d3dx7dLXQ== panda@Anubhavs-MacBook-Pro.local"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -469,6 +474,18 @@ in
         uid = 1036;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = dennisKeys;
+      };
+
+      # Anubhav Panda
+      anubhav = {
+        isNormalUser = true;
+        home = "/home/anubhav";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2049;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = anubhavKeys;
+        xrdpAccess = true;
       };
 
       # add staff to root account as well

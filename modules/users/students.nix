@@ -21,11 +21,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhulu81xcBVedbyA+9UfjU1B3foZfjEedKSWZMn533paXbhANxutevnDfAOI9tikXB2rM99J2SIedq5dIIC80L0obzqz95tNWn4LQodVS7gxblndJMylD9SSCAqaXhmKJ4VvQhhyG5Ko3d82HU9NuhRJ+gxZFqU4zUrLinHbHjzjndm+C0tbTdSMGRzdDY+DcOCYkWaceGhZg/Wj6nDHbtG6mPa87HVwvxXisQlnz8Q6YAfaOci7depmojXdiBKAmzbQEr8qbTRRS0PV12FP2PkkChyUprCR9IH9lyWg4Fp39b6jzLiWnjXmCzGdMWkfZlbP37UhrApI6l06FFquUr7mgBdGUXlPQw7ESgPlCe5ppprlkSOu/t5jZf7tuqQsXMqLVJtwSfgTWIUNi8++b6+IuwwfWY5NhujnmgM0al64wZEj5xfZLr2dbKzw93oHcpVH6MmWivLmuEs1XHyHiozTSycGb395G4DDqyUci/UESly8xjIg+E39e3HLmJV/Ff53ItCTqHg7GK3WJxuQJrrl7MvZxRB3bgfXm3s91iYjx9/awQ3Phj71Zbv2+MFSeZHDEiwVIfR9JA+zx6m+23WDF/XkOZMczvRPswWXpKCAi7NBG0Cb4bVWtiDwvZ6LjdipVCFzc5q3ESpGy+vJK38ZSNihPJAxywiGvOJj7wew=="
   ];
 
-  anubhavKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPGx6ZevvIeVpRzN5CmUuC7dskP/8sFsYJUA165reuYP5TGb9FDnDvd1VtV+rr12lvXCbqbB5vFkbtWCFQ5qblSoNuqD3fhwL6/+tF8WVUy1TvxfpXAUpIiByIukIGF6zIw4KVwcv54jEy11quxb5+MIYY0fR+GOfG0AiHjmr56c09xvzRIa4jDVDyXjwYE4FMw4X1oXv2S3puaXa3OPRExP9uUNV95KuqPDGkuetoDeqmK17MR9yb9xKvW4F2nEMc8jG34QmZlos5XGxxqJz1krQJODF35zYDWz9nje15Xk0PRkOgde0AVKHHI9SmyH9pAtCrMyc6ch1YL6z0z/0BumEbZ20JYnvxuFGxbnEX0tCoM9Vvq8KaUKkbwaeEZWeWC5pOnLLsIOSJqLdoisUNCCb3OfkXfTnSoP1235+jrH5m/rOCYsERQ0wkaC9sQwSxK2eYpdD897XY1cXDveqoKx5tV/gUR6gho1SSRJHF8k7gZ4nDu3eNmiX/uQcpOoRAEyCp5jgJMgDucr9I81DODOX3G+KdvUiawB/lOf2CQX0NTBhxo74Fqy+P4NB0T7nWQ/0n2X9XNjtiMGRh+NmRUqZQvtglOuRGjZ9OOXBL+zhSraYQGO8GsyLhVLYmXrNhYH39qRl2XfkjgyynfuOe8TuL9GW2UBDA3d3dx7dLXQ== panda@Anubhavs-MacBook-Pro.local"
-  ];
-
   dominikKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvQc9+uHtD42kQ/pADllV8HiW1Yuc+lQ5bgUwmvPWmb dk@arch.olymp"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5+gf9T6PyECwIVDSHvb8bCYW37J9b20P0EXd2dwifE dk@skytop"
@@ -199,23 +194,6 @@ in
       ];
       openssh.authorizedKeys.keys = laurentKeys;
       expires = "2025-12-31";
-    };
-
-    # Anubhav Panda, M.Sc. Project work with Jiyang (microShell)
-    # Remove after SS25
-    anubhav = {
-      isNormalUser = true;
-      home = "/home/anubhav";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2049;
-      allowedHosts = [
-        "amy"
-        "clara"
-      ];
-      openssh.authorizedKeys.keys = anubhavKeys;
-      xrdpAccess = true;
-      expires = "2025-09-30";  # SS25 ends
     };
 
     # Dominik Kreuzer, M.Sc. thesis with Peter (VirtIO-DPDK project)
