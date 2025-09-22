@@ -105,6 +105,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICqssRMR/zxTF+DbjNPzQhXUOtn/ClpBSFs8pBbs/4g5 atlas@evilatmc"
   ];
 
+  johannaKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIUFhOLikx/MHcvyj0lqcKvfzG7Hj5HFmAtIX2FuQZbksWD3wR8TCv+tTi62j34ez2KuS8I2CxaEs8RLgR2ScBL2N5YjzbLjGeLapjPyY5EMJHlIp3XGq4/TWBPsdgKu5FjWa6CcsX4i8uCXeOVIut6IsT/9RUtSsOH98XWSh73naHGVzspNMInyZxR/uBM5cZXQl4k4wGT8XL1UFypPspWj/ScoYC1U8nRj3+sArXW3RzYtX1NI5jQF94DZbBod518rzXOPATuDoLJcrarQjpd9px6uNIiFkg7u9qs3ws41Fw2Wy/atDerE/xvSLidAjLHeIfGoK+MXkYA9GK8A5RKDqHv9erest76kkHg1xH7fiDVIRS22Qjcj+6h69k8wwKsJtwUx7J0hDtGFpBuRJyQnN4OdzAbnpiRK43KUdAN8R4gbYO6+ooCOuAKjjV/ZZIeZyE/jg9MOy1oIRFbVb/JXWaRkGylphASgsqslBP2kh6mHz9PQu9Qs7aSmQnRjx6dJ99tbSvCWVoqfMhgAccFYELGA6iU8rPDDygqL/GaWX+mu7h2kB/M1jFLb9XcEVgSaV0HT2zkKBczncEFyAe2jg/MjR2qhbKMnSDJMfbAdMNPfGzqybkIGw8iwyIXz7tAje4o7hGl8i2PDb/xFH/jEaLY83JDzZPShVeepLRIw== johan@DESKTOP-BE42OA9"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -175,9 +179,8 @@ in
         "amy"
       ];
       openssh.authorizedKeys.keys = shuKeys;
-      expires = "2025-12-31";  # Extended to end of year
+      expires = "2025-12-31"; # Extended to end of year
     };
-
 
     # Laurent Bindschaedler, external contributor in FPGA serverless project (Charalampos Mainas)
     laurent = {
@@ -229,7 +232,6 @@ in
       expires = "2025-09-30";
     };
 
-    
     # Robert Barinov, B.Sc. thesis w/ Anders (Tiramisù)
     robertB = {
       isNormalUser = true;
@@ -258,7 +260,7 @@ in
         "ian"
       ];
       openssh.authorizedKeys.keys = antonKeys;
-      expires = "2025-09-30";  # SS25 ends
+      expires = "2025-09-30"; # SS25 ends
     };
 
     # Phillip Assmann, BSc thesis with David (Branch prediction research on gem5)
@@ -341,7 +343,7 @@ in
         "irene"
       ];
       openssh.authorizedKeys.keys = hristinagKeys;
-      expires = "2025-09-30";  # SS25 ends
+      expires = "2025-09-30"; # SS25 ends
     };
 
     # Christian Krinitsin, Bachelor student with Theofilos.
@@ -388,7 +390,7 @@ in
       ];
       openssh.authorizedKeys.keys = nimaKeys;
       xrdpAccess = true;
-      expires = "2025-09-30";  # SS25 ends
+      expires = "2025-09-30"; # SS25 ends
     };
 
     # Etienne Massart, student in seminar SS25 with Atsushi
@@ -403,7 +405,7 @@ in
       ];
       openssh.authorizedKeys.keys = etienneKeys;
       xrdpAccess = true;
-      expires = "2025-09-30";  # SS25 ends
+      expires = "2025-09-30"; # SS25 ends
     };
 
     # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
@@ -515,6 +517,22 @@ in
       ];
       openssh.authorizedKeys.keys = neelmKeys;
       expires = "2026-12-31";
+    };
+
+    # Johanna Latzel, MSc theis with Patrick (ARM CCA and Unikernels)
+    johanna = {
+      isNormalUser = true;
+      home = "/home/johanna";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2087;
+      allowedHosts = [
+        "ian"
+        "yasmin"
+        "jamie"
+      ];
+      openssh.authorizedKeys.keys = johannaKeys;
+      expires = "2027-12-31";
     };
 
   };
