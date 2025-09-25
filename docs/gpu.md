@@ -3,7 +3,7 @@
 ## GPU servers
 - jamie (AMD EPYC)
     - H100 (80GB, CC support)
-- eliza (Ampare aarch64)
+- jack (Intel Xeon)
     - A40 (48GB)
 
 ## Quick test
