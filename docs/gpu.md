@@ -21,7 +21,7 @@ nvidia-smi # this shows driver and cuda version
 - Run containers
 ```
 docker pull nvidia/cuda:12.8.0-cudnn-devel-ubuntu24.04
-docker run -it --name dev-cuda12.8 -v /scratch/$USER/work:/work -device=nvidia.com/gpu=all nvidia/cuda:12.8.0-cudnn-devel-ubuntu24.04
+docker run -it --name dev-cuda12.8 -v /scratch/$USER/work:/work --device=nvidia.com/gpu=all nvidia/cuda:12.8.0-cudnn-devel-ubuntu24.04
 ```
 
 - Test (in the container)
