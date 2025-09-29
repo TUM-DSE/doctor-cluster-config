@@ -130,6 +130,10 @@ Astrid also hosts the buildbot master server with Graham as the buildbot worker.
 
 - [ace](./hosts/ace.md) (Morello)
   - For debugging, see [these instructions](./morello.md)
+ 
+## NVIDIA Jetson (ARM64)
+
+- [joy](./hosts/joy.md)
 
 ## FPGA-servers
 
