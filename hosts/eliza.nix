@@ -3,6 +3,7 @@
     ../modules/hardware/supermicro-ARS-211M-NR.nix
     ../modules/nfs/client.nix
     ../modules/disko-zfs.nix
+    ../modules/buildbot/builder.nix
   ];
 
   networking.hostName = "eliza";
