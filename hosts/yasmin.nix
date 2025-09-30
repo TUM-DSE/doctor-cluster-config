@@ -3,7 +3,6 @@
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
     ../modules/nfs/client.nix
-    ../modules/buildbot/builder.nix
     # TODO this no longer builds with the new kernel.
     #../modules/uprobes.nix
   ];
