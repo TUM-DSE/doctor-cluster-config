@@ -5,8 +5,6 @@ let
     nixpkgs
     retiolum
     sops-nix
-    home-manager
-    flake-registry
     nixos-hardware
     srvos
     disko
@@ -80,18 +78,19 @@ let
       ./modules/nix-index.nix
     ];
 
-    pkgsForSystem = system: import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgs-x86_64-linux = pkgsForSystem "x86_64-linux";
-    pkgs-aarch64-linux = pkgsForSystem "aarch64-linux";
+  pkgsForSystem = system: import nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+  };
+  pkgs-x86_64-linux = pkgsForSystem "x86_64-linux";
+  pkgs-aarch64-linux = pkgsForSystem "aarch64-linux";
 in
 {
-  flake.nixosConfigurations = {
-    doctor = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+  # Define machine modules
+  flake.nixosModules = {
+    doctor = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         commonModules
         ++ [
           srvos.nixosModules.roles-prometheus
@@ -99,63 +98,63 @@ in
         ];
     };
 
-    rose = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    rose = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/rose.nix
         ];
     };
 
-    amy = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    amy = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/amy.nix
         ];
     };
     
-    clara = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    clara = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/clara.nix
         ];
     };
 
-    bill = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    bill = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/bill.nix
         ];
     };
 
-    nardole = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    nardole = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/nardole.nix
         ];
     };
 
-    yasmin = nixosSystem {
-      pkgs = pkgs-aarch64-linux;
-      modules =
+    yasmin = {
+      nixpkgs.pkgs = pkgs-aarch64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/yasmin.nix
         ];
     };
 
-    graham = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    graham = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/graham.nix
@@ -163,210 +162,217 @@ in
         ];
     };
 
-    ryan = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    ryan = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/ryan.nix
         ];
     };
 
-    mickey = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    mickey = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/mickey.nix
         ];
     };
 
-    astrid = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    astrid = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/astrid.nix
         ];
     };
 
-    dan = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    dan = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/dan.nix
         ];
     };
 
-    christina = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    christina = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/christina.nix
         ];
     };
 
-    jackson = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    jackson = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/jackson.nix
         ];
     };
 
-    adelaide = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    adelaide = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/adelaide.nix
         ];
     };
 
-    wilfred = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    wilfred = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/wilfred.nix
         ];
     };
 
-    river = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    river = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/river.nix
         ];
     };
 
-    jack = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    jack = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/jack.nix
         ];
     };
 
-    donna = nixosSystem {
-      pkgs = pkgs-aarch64-linux;
-      modules = 
+    donna = {
+      nixpkgs.pkgs = pkgs-aarch64-linux;
+      imports = 
         computeNodeModules
         ++ [
           ./hosts/donna.nix
         ];
     };
 
-    vislor = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules = 
+    vislor = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports = 
         computeNodeModules
         ++ [
           ./hosts/vislor.nix
         ];
     };
 
-    vicki = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules = 
+    vicki = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports = 
         computeNodeModules
         ++ [
           ./hosts/vicki.nix
         ];
     };
 
-    ruby = nixosSystem {
-      pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
-      modules =
+    ruby = {
+      nixpkgs.pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/ruby.nix
         ];
     };
 
-    xavier = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    xavier = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/xavier.nix
         ];
     };
     
-    irene = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    irene = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/irene.nix
         ];
       };
 
-    tegan = nixosSystem {
-      pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
-      modules =
+    tegan = {
+      nixpkgs.pkgs = pkgs-x86_64-linux.pkgsCross.riscv64;
+      imports =
         computeNodeModules
         ++ [
-          self.inputs.nixos-hardware.nixosModules.milkv-pioneer
+          nixos-hardware.nixosModules.milkv-pioneer
           ./hosts/tegan.nix
         ];
       };
-    ian = nixosSystem {
-        pkgs = pkgs-x86_64-linux;
-        modules =
+    ian = {
+        nixpkgs.pkgs = pkgs-x86_64-linux;
+        imports =
                 computeNodeModules
                 ++ [
                  ./hosts/ian.nix
                 ];
         };
-    ace = nixosSystem {
-      pkgs = pkgs-aarch64-linux;
-      modules =
+    ace = {
+      nixpkgs.pkgs = pkgs-aarch64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/ace.nix
         ];
     };
 
-    joy = nixosSystem {
-      pkgs = pkgs-aarch64-linux;
-      modules =
+    joy = {
+      nixpkgs.pkgs = pkgs-aarch64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/joy.nix
         ];
     };
     
-    jamie = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    jamie = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/jamie.nix
         ];
     };
 
-    martha = nixosSystem {
-      pkgs = pkgs-x86_64-linux;
-      modules =
+    martha = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/martha.nix
         ];
     };
     
-    eliza = nixosSystem {
-      pkgs = pkgs-aarch64-linux;
-      modules =
+    eliza = {
+      nixpkgs.pkgs = pkgs-aarch64-linux;
+      imports =
         computeNodeModules
         ++ [
           ./hosts/eliza.nix
         ];
     };
   };
+
+  # Map over the modules to create nixosConfigurations
+  flake.nixosConfigurations = nixpkgs.lib.mapAttrs (name: module:
+    nixosSystem {
+      modules = [ module ];
+    }
+  ) self.nixosModules;
 }
