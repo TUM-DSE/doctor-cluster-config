@@ -27,10 +27,8 @@
       oauthId = "Iv23liXx1iKmPAfsoUoQ";
       oauthSecretFile = config.sops.secrets.buildbot-github-oauth-secret.path;
 
-      authType.app = {
-        id = 958012;
-        secretKeyFile = config.sops.secrets.buildbot-github-app-secret-key.path;
-      };
+      appId = 958012;
+      appSecretKeyFile = config.sops.secrets.buildbot-github-app-secret-key.path;
     };
     admins = [
       "Mic92"

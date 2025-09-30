@@ -79,9 +79,18 @@ let
 	extraPatches = [ ];
   };
 
+  coconut_svsm_6_11_latest = {
+	owner = "coconut-svsm";
+	repo = "linux";
+	rev = "3d7f4e43fb9b1b41f1f0ef09c8f6d770505e59ce"; # branch svsm
+	sha256 = "sha256-GCwpZswt8AH6vG28d812CvCC2cVZqIKj0Y+KgVq7pOI=";
+	version = "6.11";
+	modDirVersionArg = "6.11.0";
+	extraPatches = [ ];
+  };
 
   # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = coconut_svsm_6_11;
+  snp_kernel = coconut_svsm_6_11_latest;
 in
 with snp_kernel;
 buildLinux (args // rec {
@@ -107,6 +116,7 @@ buildLinux (args // rec {
         KVM_AMD_SEV y
         MEMORY_FAILURE y
         EXPERT y
+        VFIO_DEVICE_CDEV y
       '';
     }
   ] ++ extraPatches;

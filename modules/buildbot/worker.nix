@@ -11,8 +11,8 @@
   nix.distributedBuilds = true;
   nix.buildMachines = [
     {
-      hostName = "yasmin.dos.cit.tum.de";
-      maxJobs = 96;
+      hostName = "eliza.dos.cit.tum.de";
+      maxJobs = 192;
       sshKey = config.sops.secrets.buildbot-builder-ssh-key.path;
       sshUser = "buildbot-worker";
       protocol = "ssh-ng";
