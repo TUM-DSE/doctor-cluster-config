@@ -49,6 +49,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     retiolum.url = "github:Mic92/retiolum";
+    retiolum.inputs.nixpkgs.follows = "nixpkgs";
 
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
