@@ -1,32 +1,31 @@
-name: "Update flake inputs individually"
+name: Update Flake Inputs
 on:
-  repository_dispatch:
-  workflow_dispatch:
   schedule:
-    - cron: "38 0 * * 0,4"
-permissions:
-  pull-requests: write
-  contents: write
+    - cron: "0 2 * * *"
+  workflow_dispatch:
 jobs:
   update-flake-inputs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v5
-      - name: Install Nix
-        uses: cachix/install-nix-action@v31
-      - uses: actions/create-github-app-token@v2
+      - name: Generate GitHub App Token
         id: app-token
+        uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ vars.CI_APP_ID }}
-          private-key: ${{ secrets.CI_PRIVATE_KEY }}
-      - name: Configure git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Configure GitHub CLI
-        run: |
-          echo "${{ steps.app-token.outputs.token }}" | gh auth login --with-token
-      - name: Update flake inputs individually
-        run: |
-          chmod +x .github/update-flake-inputs.sh
-          .github/update-flake-inputs.sh
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v31
+      - name: Update flake inputs
+        uses: mic92/update-flake-inputs@main
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          auto-merge: true
+          # Optional: exclude specific files or inputs
+          # exclude-patterns: 'tests/**/flake.nix,examples/**/flake.nix#home-manager'
