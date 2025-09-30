@@ -124,7 +124,7 @@ in
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
-    # Julian Pritzi, Harshas's student (Benchmarking tool for ICU project)
+    # Julian Pritzi, PhD now (move him to chair-members.nix ???)
     julian = {
       isNormalUser = true;
       home = "/home/julian";
@@ -133,7 +133,7 @@ in
       uid = 2000;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = julianKeys;
-      expires = "2025-12-31";
+      expires = "2027-12-31";
     };
 
     # Sandro Gierens, Masa's MSc student (expecting to finish the end of 2025)
@@ -155,6 +155,7 @@ in
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
+      allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = simonkKeys;
       expires = "2026-03-31";
     };
