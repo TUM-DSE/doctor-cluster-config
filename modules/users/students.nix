@@ -148,22 +148,15 @@ in
       expires = "2025-12-31";
     };
 
-    # Simon Kammermeier, Redha's BSc student (Arancini project)
+    # Simon Kammermeier, MSc student (expecting to finish by the WS2526
     simonk = {
       isNormalUser = true;
       home = "/home/simonk";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
       uid = 2017;
-      allowedHosts = [
-        "graham"
-        "ruby"
-        "yasmin"
-        "tegan"
-        "joy"
-      ];
       openssh.authorizedKeys.keys = simonkKeys;
-      expires = "2025-12-31";
+      expires = "2026-03-31";
     };
 
     # Shu Anzai, former intern (Atsushi)
