@@ -12,6 +12,8 @@
 
   networking.hostName = "martha";
 
+  simd.arch = "sierraforest";
+
   # Configuration for zokelmannvms module (when enabled)
   # services.zokelmannvms.partitionUuid = "8523992b-aa9b-4d77-b23b-4ab0b20f0de4";
 
