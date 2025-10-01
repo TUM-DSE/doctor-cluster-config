@@ -8,9 +8,19 @@
 
   networking.hostName = "eliza";
 
-
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNN0XA20382";
 
   system.stateVersion = "24.11";
-}
 
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "8192";
+    }
+  ];
+  systemd.user.extraConfig = ''
+    DefaultLimitNOFILE=8192
+  '';
+}
