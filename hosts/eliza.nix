@@ -12,6 +12,8 @@
 
   system.stateVersion = "24.11";
 
+  simd.arch = "armv8.6-a";
+
   security.pam.loginLimits = [
     {
       domain = "*";
