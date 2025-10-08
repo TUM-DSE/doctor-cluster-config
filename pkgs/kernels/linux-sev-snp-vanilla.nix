@@ -21,6 +21,7 @@ let
               KVM_AMD_SEV y
               MEMORY_FAILURE y
               EXPERT y
+              VFIO_DEVICE_CDEV y
             '';
           }
         ] ++ extraPatches;
