@@ -34,6 +34,7 @@ let
       jiyang
       martin
       aleksandra
+      thore
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
