@@ -19,5 +19,6 @@
   boot.kernelParams = [
     "nvme.poll_queues=4"
     "nvme_core.multipath=N"
+    "amd_iommu=on"
   ];
 }
