@@ -2,7 +2,7 @@
   imports = [
     ../modules/hardware/poweredge7625.nix
     ../modules/nfs/client.nix
-    ../modules/amd_sev_snp.nix
+    ../modules/amd_sev_snp-vanilla.nix
     ../modules/dpdk.nix
   ];
 
@@ -10,7 +10,7 @@
 
   networking.hostName = "vislor";
   # not in nixpkgs yet
-  # simd.arch = "zenver4";
+  simd.arch = "znver4";
 
   system.stateVersion = "23.05";
 
