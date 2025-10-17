@@ -13,10 +13,19 @@
   # Use the Samsung SSD for the system
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNE0T804198";
   # Use the PCI 5.0 SSD for the experiments. This lines binds it automatically to vfio
-  #virtualisation.vfio.devices = [ "1e0f:0013" ]; 
+  #virtualisation.vfio.devices = [ "1e0f:0013" ];
   boot.kernel.sysctl = {
     "vm.overcommit_memory" = 1;
   };
+  boot.kernelPatches = [
+    {
+      name = "vfio-cdev";
+      patch = null;
+      extraConfig = ''
+        VFIO_DEVICE_CDEV y
+      '';
+    }
+  ];
   powerManagement.cpuFreqGovernor = "performance";
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_12;
 
