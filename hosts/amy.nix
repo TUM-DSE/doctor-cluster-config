@@ -9,7 +9,7 @@
     ../modules/xrdp.nix
 
     ../modules/amd_sev_snp.nix
-    ../modules/vfio/iommu-amd.nix
+    # ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
     # ../modules/zokelmannvms.nix # ZFS pool import fails currently
   ];
