@@ -11,6 +11,7 @@ in
 
   boot.kernelParams = [
     #"mem_encrypt=on"
+    "amd_iommu=off"
     "kvm_amd.sev=1"
     "kvm_amd.sev_es=1"
     "kvm_amd.sev_snp=1"
