@@ -7,6 +7,7 @@
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
     ../modules/elasticsearch.nix
+    ../modules/amd_sev_snp-vanilla.nix
   ];
 
   networking.hostName = "irene";
@@ -18,7 +19,6 @@
     "vm.overcommit_memory" = 1;
   };
   powerManagement.cpuFreqGovernor = "performance";
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_12;
 
   system.stateVersion = "22.11";
   simd.arch = "znver4";
