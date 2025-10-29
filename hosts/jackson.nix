@@ -1,3 +1,4 @@
+{ config, pkgs, ... }:
 {
   imports = [
     ../modules/hardware/supermicro-x12spw-tf.nix
@@ -23,4 +24,23 @@
   simd.arch = "icelake-server";
 
   system.stateVersion = "21.11";
+
+  services.github-runners.jackson = {
+    enable = true;
+    url = "https://github.com/TUM-DSE";
+    name = "jackson";
+    tokenFile = config.sops.secrets.github-runner-token.path;
+    extraLabels = [ "icelake" ];
+    ephemeral = false;
+    replace = true;
+    extraPackages = with pkgs; [
+      git
+      nix
+    ];
+  };
+
+  sops.secrets = {
+    github-runner-token = { };
+  };
 }
+
