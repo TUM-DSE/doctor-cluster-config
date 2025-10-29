@@ -2,12 +2,12 @@
 
 ```
 System:
-  Host: dan Kernel: 6.12.12 arch: x86_64 bits: 64 compiler: gcc v: 13.3.0 clocksource: tsc
+  Host: dan Kernel: 6.16.9 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\mn8pflw11n0399nnpf08pmrikb5lp4a6-initrd-linux-6.12.12-initrd.efi
-    init=/nix/store/j7x7sd97angf16vv4dynzs1dhx17bym5-nixos-system-dan-24.11.20250209.392aa11/init
-    console=ttyS0,115200 console=tty0 nohibernate loglevel=4
-  Console: N/A Distro: NixOS 24.11 (Vicuna)
+    parameters: initrd=\EFI\nixos\fr8lv3i5j7bhd82b23m02hv1bm7dyb5a-initrd-linux-6.16.9-initrd.efi
+    init=/nix/store/n4jab6nsdyvf2144sa82bpvvjkqlyrzd-nixos-system-dan-25.05.20250930.51fcc5b/init
+    console=ttyS0,115200 console=tty0 nohibernate loglevel=4 lsm=landlock,yama,bpf
+  Console: N/A Distro: NixOS 25.05 (Warbler)
 Machine:
   Type: Server System: Dell product: PowerEdge R440 v: N/A serial: 4YBVXK3 Chassis: type: 23
     serial: 4YBVXK3
@@ -15,7 +15,7 @@ Machine:
     part-nu: SKU=07C9;ModelName=PowerEdge R440 uuid: 4c4c4544-0059-4210-8056-b4c04f584b33 UEFI: Dell
     v: 2.12.2 date: 07/09/2021
 Memory:
-  System RAM: total: 128 GiB available: 125.51 GiB used: 8.85 GiB (7.0%)
+  System RAM: total: 128 GiB available: 125.51 GiB used: 15.81 GiB (12.6%)
   Array-1: capacity: 1024 GiB slots: 16 modules: 4 EC: Multi-bit ECC max-module-size: 64 GiB
     note: est.
   Device-1: A1 type: DDR4 detail: synchronous registered (buffered) size: 32 GiB speed:
@@ -57,33 +57,38 @@ PCI Slots:
 CPU:
   Info: model: Intel Xeon Gold 5215 socket: LGA2011 bits: 64 type: MT MCP SMP arch: Cascade Lake
     level: v4 note: check built: 2019 process: Intel 14nm family: 6 model-id: 0x55 (85) stepping: 7
-    microcode: 0x5003707
-  Topology: cpus: 2x cores: 10 tpc: 2 threads: 20 smt: enabled cache: L1: 2x 640 KiB (1.2 MiB)
-    desc: d-10x32 KiB; i-10x32 KiB L2: 2x 10 MiB (20 MiB) desc: 10x1024 KiB
+    microcode: 0x5003901
+  Topology: cpus: 2x dies: 1 clusters: 10 cores: 10 threads: 20 tpc: 2 smt: enabled cache:
+    L1: 2x 640 KiB (1.2 MiB) desc: d-10x32 KiB; i-10x32 KiB L2: 2x 10 MiB (20 MiB) desc: 10x1024 KiB
     L3: 2x 13.8 MiB (27.5 MiB) desc: 1x13.8 MiB
-  Speed (MHz): avg: 2350 high: 2500 min/max: N/A base/boost: 2500/4000 volts: 1.8 V
-    ext-clock: 10400 MHz cores: 1: 2500 2: 2500 3: 2500 4: 2500 5: 2500 6: 2500 7: 2500 8: 2500
-    9: 2500 10: 2500 11: 2500 12: 2500 13: 2500 14: 2500 15: 2500 16: 2500 17: 2500 18: 2500
-    19: 1000 20: 2500 21: 2500 22: 2500 23: 2500 24: 1000 25: 1000 26: 1000 27: 2500 28: 2500
-    29: 2500 30: 2500 31: 2500 32: 2500 33: 2500 34: 2500 35: 2500 36: 2500 37: 2500 38: 2500
+  Speed (MHz): avg: 1937 high: 2500 min/max: N/A base/boost: 2500/4000 volts: 1.8 V
+    ext-clock: 10400 MHz cores: 1: 2500 2: 2500 3: 2500 4: 1001 5: 1000 6: 2500 7: 2500 8: 2500
+    9: 2500 10: 1000 11: 1000 12: 1000 13: 2500 14: 2500 15: 1001 16: 1001 17: 1000 18: 2500
+    19: 2500 20: 1000 21: 2500 22: 2500 23: 1000 24: 2500 25: 1000 26: 2500 27: 2500 28: 1000
+    29: 1000 30: 2500 31: 2500 32: 2500 33: 2500 34: 1000 35: 2500 36: 2500 37: 2500 38: 1000
     39: 2500 40: 2500 bogomips: 200000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
   Type: gather_data_sampling mitigation: Microcode
+  Type: ghostwrite status: Not affected
+  Type: indirect_target_selection mitigation: Aligned branch/return thunks
   Type: itlb_multihit status: KVM: Split huge pages
   Type: l1tf status: Not affected
   Type: mds status: Not affected
   Type: meltdown status: Not affected
   Type: mmio_stale_data mitigation: Clear CPU buffers; SMT vulnerable
+  Type: old_microcode status: Not affected
   Type: reg_file_data_sampling status: Not affected
   Type: retbleed mitigation: Enhanced IBRS
   Type: spec_rstack_overflow status: Not affected
   Type: spec_store_bypass mitigation: Speculative Store Bypass disabled via prctl
   Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization
-  Type: spectre_v2 mitigation: Enhanced / Automatic IBRS; IBPB: conditional; RSB filling;
-    PBRSB-eIBRS: SW sequence; BHI: SW loop, KVM: SW loop
+  Type: spectre_v2 mitigation: Enhanced / Automatic IBRS; IBPB: conditional; PBRSB-eIBRS: SW
+    sequence; BHI: SW loop, KVM: SW loop
   Type: srbds status: Not affected
+  Type: tsa status: Not affected
   Type: tsx_async_abort mitigation: TSX disabled
+  Type: vmscape mitigation: IBPB before exit to userspace
 Graphics:
   Device-1: Matrox Systems Integrated G200eW3 Graphics vendor: Dell driver: mgag200 v: kernel
     ports: active: VGA-1 empty: none bus-ID: 03:00.0 chip-ID: 102b:0536 class-ID: 0300
@@ -91,6 +96,7 @@ Graphics:
   Monitor-1: VGA-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
   API: EGL Message: No EGL data available.
   API: OpenGL Message: GL data unavailable in console for root.
+  Info: Tools: api: eglinfo,glxinfo x11: xdpyinfo, xprop, xrandr
 Audio:
   Message: No device data found.
 Network:
@@ -104,8 +110,8 @@ Network:
   IF: eno2 state: down mac: f4:ee:08:0b:f4:80
   Device-3: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell
     driver: bnxt_en v: kernel pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: 5e:00.0
-    chip-ID: 14e4:16d8 class-ID: 0200 temp: 78.0 C
-  IF: enp94s0f0np0 state: up speed: 10000 Mbps duplex: full mac: f4:ee:08:0a:ea:35
+    chip-ID: 14e4:16d8 class-ID: 0200 temp: 81.0 C
+  IF: ens1f0np0 state: up speed: 10000 Mbps duplex: full mac: f4:ee:08:0a:ea:35
   IP v4: 131.159.102.12/24 type: dynamic scope: global
   IP v6: 2a09:80c0:102::12/128 type: dynamic noprefixroute scope: global
   IP v6: 2a09:80c0:102::f000:1/64 scope: global
@@ -113,74 +119,80 @@ Network:
   Device-4: Broadcom BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet vendor: Dell
     driver: bnxt_en v: kernel pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: 5e:00.1
     chip-ID: 14e4:16d8 class-ID: 0200
-  IF: enp94s0f1np1 state: down mac: f4:ee:08:0a:ea:36
-  IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: 56:04:28:0d:26:27
+  IF: ens1f1np1 state: down mac: f4:ee:08:0a:ea:36
+  IF-ID-1: cni0 state: up speed: 10000 Mbps duplex: unknown mac: 26:79:73:b4:2d:78
   IP v4: 10.42.2.1/24 scope: global broadcast: 10.42.2.255
-  IP v6: fe80::5404:28ff:fe0d:2627/64 virtual: proto kernel_ll scope: link
-  IF-ID-2: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:d8:6b:30:39
+  IP v6: fe80::f086:9bff:fe29:884a/64 virtual: proto kernel_ll scope: link
+  IF-ID-2: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:0f:2f:14:f6
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IP v6: fe80::42:d8ff:fe6b:3039/64 virtual: proto kernel_ll scope: link
+  IP v6: fe80::42:fff:fe2f:14f6/64 virtual: proto kernel_ll scope: link
   IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:550c:ec4f:2dbb:3b14:95/16 scope: global
-  IF-ID-4: veth3c5cb2ba state: up speed: 10000 Mbps duplex: full mac: 76:c0:a5:2f:db:b6
-  IF-ID-5: vethf7bde8f state: up speed: 10000 Mbps duplex: full mac: ba:06:59:e7:f4:e6
-  IF-ID-6: vethfb40e9a0 state: up speed: 10000 Mbps duplex: full mac: 02:ba:44:a5:a1:82
+  IF-ID-4: veth2012697d state: up speed: 10000 Mbps duplex: full mac: 16:41:78:5e:ce:36
+  IF-ID-5: veth43bf2444 state: up speed: 10000 Mbps duplex: full mac: e6:c1:4b:8d:5e:07
+  IF-ID-6: veth82642519 state: up speed: 10000 Mbps duplex: full mac: 16:e1:e2:c5:76:10
+  IF-ID-7: veth9444bb3 state: up speed: 10000 Mbps duplex: full mac: de:7b:e5:79:e3:0a
+  IF-ID-8: veth992cd178 state: up speed: 10000 Mbps duplex: full mac: 3a:38:7d:ab:b1:fc
+  IF-ID-9: vethc5fd8ebc state: up speed: 10000 Mbps duplex: full mac: 76:2d:91:78:e0:09
+  IF-ID-10: vethe7dfa02e state: up speed: 10000 Mbps duplex: full mac: 92:fa:9f:28:36:3a
+  IF-ID-11: vethf10e0bec state: up speed: 10000 Mbps duplex: full mac: 4e:76:e5:47:b9:0b
+  IF-ID-12: vethf58a0ed4 state: up speed: 10000 Mbps duplex: full mac: e6:58:0b:ce:7c:c0
   Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.12
 RAID:
   Hardware-1: Broadcom / LSI MegaRAID 12GSAS/PCIe Secure SAS39xx driver: megaraid_sas
-    v: 07.727.03.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000:10e2 rev: class-ID: 0104
+    v: 07.734.00.00-rc1 port: c000 bus-ID: af:00.0 chip-ID: 1000:10e2 rev: class-ID: 0104
   Device-1: nfs-data type: zfs status: ONLINE level: linear raw: size: 14.5 TiB free: 10.1 TiB
-    allocated: 4.4 TiB zfs-fs: size: 14.41 TiB free: 10 TiB
+    allocated: 4.44 TiB zfs-fs: size: 14.41 TiB free: 9.97 TiB
   Components: Online:
   1: sda1 maj-min: 8:1 size: 7.28 TiB
   2: sdb1 maj-min: 8:17 size: 7.28 TiB
-  Device-2: nfs-home type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 942 GiB
-    allocated: 2.56 TiB zfs-fs: size: 3.38 TiB free: 830.63 GiB
+  Device-2: nfs-home type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 1.74 TiB
+    allocated: 1.75 TiB zfs-fs: size: 3.38 TiB free: 1.63 TiB
   Components: Online:
   1: nvme0n1p1 maj-min: 259:4 size: 3.49 TiB
-  Device-3: zroot type: zfs status: ONLINE level: linear raw: size: 1.45 TiB free: 1.39 TiB
-    allocated: 69 GiB zfs-fs: size: 1.41 TiB free: 1.34 TiB
+  Device-3: zroot type: zfs status: ONLINE level: linear raw: size: 1.45 TiB free: 1.38 TiB
+    allocated: 79.1 GiB zfs-fs: size: 1.41 TiB free: 1.33 TiB
   Components: Online:
   1: nvme1n1p2 maj-min: 259:2 size: 1.45 TiB
 Drives:
-  Local Storage: total: raw: 19.5 TiB usable: 19.19 TiB used: 6.35 TiB (33.1%)
+  Local Storage: total: raw: 19.5 TiB usable: 19.19 TiB used: 6.11 TiB (31.8%)
   ID-1: /dev/nvme0n1 maj-min: 259:3 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNT0X115372 fw-rev: GDC5A02Q temp: 31.9 C scheme: GPT
-  SMART: yes health: PASSED on: 309d 1h cycles: 6 read-units: 9,261,632 [4.74 TB]
-    written-units: 14,539,323 [7.44 TB]
+    serial: S64HNT0X115372 fw-rev: GDC5A02Q temp: 29.9 C scheme: GPT
+  SMART: yes health: PASSED on: 1y 188d 3h cycles: 7 read-units: 50,110,169 [25.6 TB]
+    written-units: 44,438,036 [22.7 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:0 vendor: Dell model: Ent NVMe P5600 MU U.2 1.6TB
     size: 1.46 TiB block-size: physical: 512 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
     serial: PHAB1234003F1P9SGN fw-rev: 1.1.5 temp: 32.9 C scheme: GPT
-  SMART: yes health: PASSED on: 3y 30d 17h cycles: 30 read-units: 12,406,381 [6.35 TB]
-    written-units: 94,945,591 [48.6 TB]
+  SMART: yes health: PASSED on: 3y 274d 16h cycles: 31 read-units: 13,715,466 [7.02 TB]
+    written-units: 111,397,865 [57.0 TB]
   ID-3: /dev/sda maj-min: 8:0 vendor: Samsung model: SSD 870 QVO 8TB family: based SSDs
     size: 7.28 TiB block-size: physical: 512 B logical: 512 B sata: 3.3 speed: <unknown> tech: SSD
-    serial: S5SSNJ0X300221P fw-rev: 2B6Q temp: 24 C scheme: GPT
-  SMART: yes state: enabled health: PASSED on: 309d 1h cycles: 8 written: 2.29 TiB
+    serial: S5SSNJ0X300221P fw-rev: 2B6Q temp: 21 C scheme: GPT
+  SMART: yes state: enabled health: PASSED on: 1y 188d 3h cycles: 9 written: 3.67 TiB
   ID-4: /dev/sdb maj-min: 8:16 vendor: Samsung model: SSD 870 QVO 8TB family: based SSDs
     size: 7.28 TiB block-size: physical: 512 B logical: 512 B sata: 3.3 speed: <unknown> tech: SSD
-    serial: S5SSNF0WC05521Z fw-rev: 2B6Q temp: 25 C scheme: GPT
-  SMART: yes state: enabled health: PASSED on: 309d 1h cycles: 7 written: 2.16 TiB
+    serial: S5SSNF0WC05521Z fw-rev: 2B6Q temp: 22 C scheme: GPT
+  SMART: yes state: enabled health: PASSED on: 1y 188d 3h cycles: 8 written: 5.79 TiB
 Partition:
-  ID-1: / raw-size: N/A size: 1.37 TiB used: 32.99 GiB (2.3%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 37 MiB (3.6%) fs: vfat
+  ID-1: / raw-size: N/A size: 1.37 TiB used: 42.95 GiB (3.1%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 44.3 MiB (4.3%) fs: vfat
     block-size: 512 B dev: /dev/nvme1n1p1 maj-min: 259:1
-  ID-3: /tmp raw-size: N/A size: 1.34 TiB used: 1.2 MiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-3: /tmp raw-size: N/A size: 1.33 TiB used: 128 KiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu: N/A mobo: N/A
-  Fan Speeds (rpm): cpu: 6120 fan-26: 4800 fan-42: 4680 fan-43: 4920 fan-58: 4800 fan-59: 5040
-    fan-74: 5040 fan-75: 5280 fan-90: 4920 fan-91: 5280 fan-106: 4680 fan-107: 6480
+  Fan Speeds (rpm): cpu: 5520 fan-26: 4200 fan-42: 4080 fan-43: 4320 fan-58: 4440 fan-59: 4800
+    fan-74: 4440 fan-75: 4560 fan-90: 4440 fan-91: 4680 fan-106: 4200 fan-107: 6000
   Power: 12v: N/A 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 78.0 C pch: 38.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 81.0 C pch: 38.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 1025 Power: uptime: 4d 14h 33m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 50.19 GiB Init: systemd v: 256 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 604 libs: 135 pm: nix-usr pkgs: 0
-    Compilers: gcc: 13.3.0 Client: Sudo v: 1.9.16p2 inxi: 3.3.35
+  Processes: 961 Power: uptime: 3d 15h 46m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 50.19 GiB Init: systemd v: 257 default: multi-user tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 616 libs: 138 pm: nix-usr pkgs: 0
+    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.38
 ```
 ![hardware topology](dan.lstopo.svg)

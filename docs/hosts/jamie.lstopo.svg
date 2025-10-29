@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1733px' height='827px' viewBox='0 0 1733px 827px' version='1.1'>
 	<rect id='Machine_0_rect' class='Machine' x='0' y='0' width='1733' height='789' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='Machine_0_text' class='Machine' font-family='Monospace' x='7' y='17' fill='rgb(0,0,0)' font-size='10px'>Machine (1511GB total)</text>
+	<text id='Machine_0_text' class='Machine' font-family='Monospace' x='7' y='17' fill='rgb(0,0,0)' font-size='10px'>Machine (1505GB total)</text>
 	<rect id='Package_0_rect' class='Package' x='7' y='24' width='1440' height='427' fill='rgb(210,231,164)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='Package_0_text' class='Package' font-family='Monospace' x='14' y='41' fill='rgb(0,0,0)' font-size='10px'>Package L#0</text>
 	<rect id='Die_0_rect' class='Die' x='14' y='79' width='323' height='262' fill='rgb(231,255,181)' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -395,7 +395,7 @@
 	<text id='PU_383_text' class='PU' font-family='Monospace' x='985' y='740' fill='rgb(0,0,0)' font-size='10px'>PU L#383</text>
 	<text id='PU_383_text_1' class='PU' font-family='Monospace' x='994' y='754' fill='rgb(0,0,0)' font-size='10px'>P#383</text>
 	<rect id='NUMANode_1_rect' class='NUMANode' x='14' y='482' width='1233' height='24' fill='rgb(239,223,222)' stroke='rgb(0,0,0)' stroke-width='1'/>
-	<text id='NUMANode_1_text' class='NUMANode' font-family='Monospace' x='21' y='499' fill='rgb(0,0,0)' font-size='10px'>NUMANode L#1 P#1 (756GB)</text>
+	<text id='NUMANode_1_text' class='NUMANode' font-family='Monospace' x='21' y='499' fill='rgb(0,0,0)' font-size='10px'>NUMANode L#1 P#1 (750GB)</text>
 	<rect id='HostBridge_9_rect' class='HostBridge' x='1065' y='513' width='7' height='7' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_9_line' class='HostBridge' x1='1072' y1='516' x2='1079' y2='516' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<line id='HostBridge_9_line_2' class='HostBridge' x1='1079' y1='516' x2='1103' y2='516' stroke='rgb(0,0,0)' stroke-width='1'/>
@@ -461,5 +461,5 @@
 	<text id='Misc_23_text' class='Misc' font-family='Monospace' x='1647' y='258' fill='rgb(0,0,0)' font-size='10px'>MemoryModule</text>
 	<rect id='anon_rect' x='0' y='789' width='1733' height='38' fill='rgb(255,255,255)' stroke='rgb(0,0,0)' stroke-width='1'/>
 	<text id='anon_text' font-family='Monospace' x='7' y='806' fill='rgb(0,0,0)' font-size='10px'>Host: jamie</text>
-	<text id='anon_text_1' font-family='Monospace' x='7' y='820' fill='rgb(0,0,0)' font-size='10px'>Date: Thu 27 Feb 2025 02:40:40 PM UTC</text>
+	<text id='anon_text_1' font-family='Monospace' x='7' y='820' fill='rgb(0,0,0)' font-size='10px'>Date: Wed 29 Oct 2025 04:08:55 PM UTC</text>
 </svg>

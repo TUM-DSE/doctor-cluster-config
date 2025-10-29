@@ -2,13 +2,14 @@
 
 ```
 System:
-  Host: wilfred Kernel: 6.12.12 arch: x86_64 bits: 64 compiler: gcc v: 13.3.0 clocksource: tsc
+  Host: wilfred Kernel: 6.16.9 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\kmfka792s2ppyiwnb24x6h6fq7z85yyf-initrd-linux-6.12.12-initrd.efi
-    init=/nix/store/sf3b4id5n16x3arxf9y1pkp92hn0y3k2-nixos-system-wilfred-24.11.20250209.392aa11/init
+    parameters: initrd=\EFI\nixos\bqnar5kj5jgdq24k36gnzy2c21yhqigr-initrd-linux-6.16.9-initrd.efi
+    init=/nix/store/0ca1kcrv0if6g55nb4hpfbi4w2cz6xlj-nixos-system-wilfred-25.05.20250930.51fcc5b/init
     intel_iommu=on console=ttyS1,115200n8 console=tty1 console=ttyS0,115200 console=tty0
-    hugepagesz=1GB hugepages=8 hugepagesz=2MB hugepages=1000 nohibernate loglevel=4
-  Console: N/A Distro: NixOS 24.11 (Vicuna)
+    hugepagesz=1GB hugepages=8 hugepagesz=2MB hugepages=15360 nohibernate loglevel=4
+    lsm=landlock,yama,bpf
+  Console: N/A Distro: NixOS 25.05 (Warbler)
 Machine:
   Type: Kvm System: Supermicro product: SYS-110P-WTR v: 0123456789 serial: E424030X2100628 Chassis:
     type: 1 v: 0123456789 serial: C1160LK21P50530
@@ -16,7 +17,7 @@ Machine:
     uuid: 00000000-0000-0000-0000-3cecef62ac40 UEFI: American Megatrends LLC. v: 1.1c
     date: 11/08/2021
 Memory:
-  System RAM: total: 1.25 TiB available: 251.2 GiB used: 30.49 GiB (12.1%)
+  System RAM: total: 1.25 TiB available: 251.19 GiB used: 51.67 GiB (20.6%)
   Array-1: capacity: 12 TiB note: check slots: 8 modules: 8 EC: Single-bit ECC
     max-module-size: 1.50 TiB note: est.
   Device-1: DIMMA1 type: DDR4 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -59,31 +60,35 @@ PCI Slots:
 CPU:
   Info: model: Intel Xeon Gold 5317 socket: LGA4189 bits: 64 type: MT MCP arch: Ice Lake level: v4
     note: check built: 2019-21 process: Intel 10nm family: 6 model-id: 0x6A (106) stepping: 6
-    microcode: 0xD0003E7
-  Topology: cpus: 1x cores: 12 tpc: 2 threads: 24 smt: enabled cache: L1: 960 KiB desc: d-12x48
-    KiB; i-12x32 KiB L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
-  Speed (MHz): avg: 2586 high: 3000 min/max: 800/3000 base/boost: 3000/4500 scaling:
-    driver: intel_cpufreq governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 3000 2: 3000
-    3: 3000 4: 3000 5: 3000 6: 3000 7: 3000 8: 3000 9: 3000 10: 3000 11: 3000 12: 3000 13: 2064
-    14: 3000 15: 3000 16: 3000 17: 3000 18: 1264 19: 2245 20: 2147 21: 1505 22: 800 23: 1050
-    24: 3000 bogomips: 144000
+    microcode: 0xD000410
+  Topology: cpus: 1x dies: 1 clusters: 12 cores: 12 threads: 24 tpc: 2 smt: enabled cache:
+    L1: 960 KiB desc: d-12x48 KiB; i-12x32 KiB L2: 15 MiB desc: 12x1.2 MiB L3: 18 MiB desc: 1x18 MiB
+  Speed (MHz): avg: 800 min/max: 800/3600 base/boost: 3000/4500 scaling: driver: intel_cpufreq
+    governor: schedutil volts: 1.6 V ext-clock: 100 MHz cores: 1: 800 2: 800 3: 800 4: 800 5: 800
+    6: 800 7: 800 8: 800 9: 800 10: 800 11: 800 12: 800 13: 800 14: 800 15: 800 16: 800 17: 800
+    18: 800 19: 800 20: 800 21: 800 22: 800 23: 800 24: 800 bogomips: 144000
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
   Vulnerabilities:
   Type: gather_data_sampling mitigation: Microcode
+  Type: ghostwrite status: Not affected
+  Type: indirect_target_selection mitigation: Aligned branch/return thunks
   Type: itlb_multihit status: Not affected
   Type: l1tf status: Not affected
   Type: mds status: Not affected
   Type: meltdown status: Not affected
   Type: mmio_stale_data mitigation: Clear CPU buffers; SMT vulnerable
+  Type: old_microcode status: Not affected
   Type: reg_file_data_sampling status: Not affected
   Type: retbleed status: Not affected
   Type: spec_rstack_overflow status: Not affected
   Type: spec_store_bypass mitigation: Speculative Store Bypass disabled via prctl
   Type: spectre_v1 mitigation: usercopy/swapgs barriers and __user pointer sanitization
-  Type: spectre_v2 mitigation: Enhanced / Automatic IBRS; IBPB: conditional; RSB filling;
-    PBRSB-eIBRS: SW sequence; BHI: SW loop, KVM: SW loop
+  Type: spectre_v2 mitigation: Enhanced / Automatic IBRS; IBPB: conditional; PBRSB-eIBRS: SW
+    sequence; BHI: SW loop, KVM: SW loop
   Type: srbds status: Not affected
+  Type: tsa status: Not affected
   Type: tsx_async_abort status: Not affected
+  Type: vmscape status: Not affected
 Graphics:
   Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel ports: active: VGA-1
     empty: none bus-ID: 04:00.0 chip-ID: 1a03:2000 class-ID: 0300
@@ -91,6 +96,7 @@ Graphics:
   Monitor-1: VGA-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
   API: EGL Message: No EGL data available.
   API: OpenGL Message: GL data unavailable in console for root.
+  Info: Tools: api: eglinfo,glxinfo x11: xdpyinfo, xprop, xrandr
 Audio:
   Message: No device data found.
 Network:
@@ -106,25 +112,23 @@ Network:
   IP v6: fe80::3eec:efff:fe62:ac41/64 virtual: proto kernel_ll scope: link
   Device-3: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel pcie: gen: 2
     speed: 5 GT/s lanes: 8 port: 7020 bus-ID: 18:00.0 chip-ID: 8086:10fb class-ID: 0200
-  IF: enp24s0f0 state: up speed: 10000 Mbps duplex: full mac: 00:1b:21:c3:82:2c
+  IF: ens1f0 state: up speed: 10000 Mbps duplex: full mac: 00:1b:21:c3:82:2c
   Device-4: Intel 82599ES 10-Gigabit SFI/SFP+ Network driver: ixgbe v: kernel pcie: gen: 2
     speed: 5 GT/s lanes: 8 port: 7000 bus-ID: 18:00.1 chip-ID: 8086:10fb class-ID: 0200
-  IF: enp24s0f1 state: down mac: 00:1b:21:c3:82:2e
-  Device-5: Intel Ethernet E810-C for QSFP driver: ice v: kernel pcie: gen: 4 speed: 16 GT/s
+  IF: ens1f1 state: down mac: 00:1b:21:c3:82:2e
+  Device-5: Intel Ethernet E810-C for QSFP driver: N/A modules: ice pcie: gen: 4 speed: 16 GT/s
     lanes: 16 port: N/A bus-ID: 51:00.0 chip-ID: 8086:1592 class-ID: 0200
-  IF: enp81s0np0 state: up speed: 100000 Mbps duplex: full mac: b4:96:91:b3:8b:04
-  IP v4: 10.1.0.2/21 scope: global
-  IF-ID-1: docker0 state: down mac: 02:42:29:ac:db:4d
+  IF-ID-1: docker0 state: down mac: 02:42:1e:ef:e4:e2
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
   IF-ID-2: doctor-bridge state: up speed: 10000 Mbps duplex: unknown mac: 00:1b:21:c3:82:2c
   IP v4: 131.159.102.15/24 type: dynamic scope: global
   IP v6: 2a09:80c0:102::15/128 type: dynamic noprefixroute scope: global
   IP v6: fe80::21b:21ff:fec3:822c/64 virtual: proto kernel_ll scope: link
-  IF-ID-3: eth0 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f
+  IF-ID-3: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
+  IP v6: 42:0:3c46:6dcc:65aa:4cb4:c1a9:9548/16 scope: global
+  IF-ID-4: usb0 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f
   IP v4: 169.254.3.1/24 type: dynamic scope: global
   IP v6: fe80::bc3a:f2ff:feb6:59f/64 virtual: proto kernel_ll scope: link
-  IF-ID-4: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
-  IP v6: 42:0:3c46:6dcc:65aa:4cb4:c1a9:9548/16 scope: global
   Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.15
 Bluetooth:
@@ -132,40 +136,40 @@ Bluetooth:
     speed: 480 Mb/s lanes: 1 mode: 2.0 bus-ID: 1-11.2:4 chip-ID: 0b1f:03ee class-ID: 0a00
   Report: This feature requires one of these tools: hciconfig/bt-adapter
 RAID:
-  Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid_sas v: 07.727.03.00-rc1
+  Hardware-1: Broadcom / LSI MegaRAID Tri-Mode SAS3408 driver: megaraid_sas v: 07.734.00.00-rc1
     port: d000 bus-ID: 8a:00.0 chip-ID: 1000:0017 rev: N/A class-ID: 0104
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.29 TiB
-    allocated: 459 GiB zfs-fs: size: 1.68 TiB free: 1.21 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.26 TiB
+    allocated: 482 GiB zfs-fs: size: 1.68 TiB free: 1.19 TiB
   Components: Online:
-  1: sda2 maj-min: 8:2 size: 1.75 TiB
+  1: sdb2 maj-min: 8:18 size: 1.75 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 442.87 GiB (12.6%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 459.5 GiB (13.1%)
   ID-1: /dev/sda maj-min: 8:0 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
-    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 32 C
+    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 31 C
     scheme: GPT
   SMART: yes state: enabled
   ID-2: /dev/sdb maj-min: 8:16 vendor: Samsung model: MZ1L21T9 size: 1.75 TiB block-size:
-    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 33 C
+    physical: 512 B logical: 512 B speed: <unknown> tech: SSD serial: N/A fw-rev: 102Q temp: 30 C
     scheme: GPT
   SMART: yes state: enabled
 Partition:
-  ID-1: / raw-size: N/A size: 1.64 TiB used: 442.83 GiB (26.3%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 37.2 MiB (3.6%) fs: vfat
-    block-size: 512 B dev: /dev/sda1 maj-min: 8:1
-  ID-3: /home raw-size: N/A size: 2.71 TiB used: 1.98 TiB (73.1%) fs: nfs4
+  ID-1: / raw-size: N/A size: 1.64 TiB used: 459.46 GiB (27.4%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 44.5 MiB (4.4%) fs: vfat
+    block-size: 512 B dev: /dev/sdb1 maj-min: 8:17
+  ID-3: /home raw-size: N/A size: 3.43 TiB used: 1.61 TiB (47.0%) fs: nfs4
     remote: nfs:/export/home
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: 45 C mobo: 28 C
-  Fan Speeds (rpm): cpu: 8120 fan-2: 8120 fan-3: 8260 fan-4: 8260 fan-5: 8260 fan-6: 8120
+  Src: ipmi System Temperatures: cpu: 37 C mobo: 26 C
+  Fan Speeds (rpm): cpu: 7000 fan-2: 7140 fan-3: 7140 fan-4: 7140 fan-5: 7140 fan-6: 7140
   Power: 12v: 11.590 5v: 5.040 3.3v: 3.322 vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 42.0 C pch: 48.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 33.0 C pch: 48.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 480 Power: uptime: 3d 5h 49m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 97.27 GiB Init: systemd v: 256 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 595 libs: 134 pm: nix-usr pkgs: 0
-    Compilers: gcc: 13.3.0 Client: Sudo v: 1.9.16p2 inxi: 3.3.35
+  Processes: 435 Power: uptime: 3d 15h 24m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 97.26 GiB Init: systemd v: 257 default: multi-user tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 606 libs: 137 pm: nix-usr pkgs: 0
+    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.38
 ```
 ![hardware topology](wilfred.lstopo.svg)
