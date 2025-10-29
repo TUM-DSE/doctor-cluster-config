@@ -130,6 +130,26 @@ No device/PCI ID.
     bus-ID: 87:00.0   
  
 
+### eliza.dos.cit.tum.de 
+
+PCI Slots:   
+- ✅  Slot: 1 type: PCIe gen: 5 status: available length: short volts: 3.3 bus-ID: 0006:01:00.0   
+No device/PCI ID.  
+- ✅  Slot: 5 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 01:00.0   
+No device/PCI ID.  
+- ✅  Slot: 6 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 0004:01:00.0   
+No device/PCI ID.  
+- ✅  Slot: 9 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 0005:01:00.0   
+No device/PCI ID.  
+- ✅  Slot: N/A type: PCIe gen: 5 status: available info: M.2 length: short volts: 3.3   
+No device/PCI ID.  
+    bus-ID: 0003:05:00.0   
+- ✅  Slot: 3 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 0007:01:00.0   
+No device/PCI ID.  
+- ✅  Slot: 1 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 0001:01:00.0   
+No device/PCI ID.  
+ 
+
 ### graham.dos.cit.tum.de 
 
 PCI Slots:   
@@ -152,7 +172,7 @@ PCI Slots:
 No device/PCI ID.  
 - ✅  Slot: 3 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
 No device/PCI ID.  
-- ✅  Slot: 1 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: N/A   
+- ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: N/A   
 No device/PCI ID.  
 - ❌  Slot: 6 type: PCIe gen: 4 status: in use length: short volts: 3.3 bus-ID: 8b:00.0   
 8b:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Samsung Electronics Co Ltd, Device a812  
@@ -210,8 +230,8 @@ PCI Slots:
 ca:00.0, 3D controller, NVIDIA Corporation, GA102GL [A40] -ra1 -p00, NVIDIA Corporation, Device 145a  
 - ✅  Slot: 2 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
 ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
-- ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 31:00.0   
-31:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller SM981/PM981/PM983 -p02, Samsung Electronics Co Ltd, SSD 970 EVO/PRO  
+- ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
 - ❌  Slot: N/A type: N/A status: in use length: other volts: 3.3 bus-ID: 19:00.0   
 19:00.0, Ethernet controller, Intel Corporation, Ethernet Controller X710 for 10GBASE-T -r02 -p00, Super Micro Computer Inc, Device 1b7b  
 - ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
@@ -351,7 +371,26 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 
 ### rose.dos.cit.tum.de 
 
-Error: in fetching expansion card data (host offline?) 
+PCI Slots:   
+- ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: e0:03.1   
+No device/PCI ID.  
+- ✅  Slot: 2 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: c0:01.1   
+No device/PCI ID.  
+- ✅  Slot: 3 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 80:01.1   
+No device/PCI ID.  
+- ❌  Slot: 4 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: a1:00.0   
+a1:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
+- ✅  Slot: 5 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: c0:03.1   
+c0:03.1, PCI bridge, Advanced Micro Devices, Inc. [AMD], Starship/Matisse GPP Bridge -p00, Advanced Micro Devices, Inc. [AMD], Device 1453  
+- ✅  Slot: 7 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 60:03.1   
+No device/PCI ID.  
+- ✅  Slot: 8 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 40:01.1   
+No device/PCI ID.  
+- ✅  Slot: 9 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 00:01.1   
+No device/PCI ID.  
+- ✅  Slot: 10 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 20:03.1   
+No device/PCI ID.  
+ 
 
 ### ryan.dos.cit.tum.de 
 
@@ -390,8 +429,8 @@ No device/PCI ID.
 - ❌  Slot: 23 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
 02:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, General DC NVMe PM9A3  
     bus-ID: 02:00.0   
-- ✅  Slot: 22 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
-No device/PCI ID.  
+- ❌  Slot: 22 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
+03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
     bus-ID: 03:00.0   
 - ✅  Slot: 20 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
