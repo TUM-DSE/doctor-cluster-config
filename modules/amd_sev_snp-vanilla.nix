@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
-  # Use 6.16 kernel for now
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_16;
+  # Use 6.16 (or newer) kernel
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   boot.zfs.package = pkgs.zfsUnstable; # needed for 6.9
 
   boot.kernelPatches = [
