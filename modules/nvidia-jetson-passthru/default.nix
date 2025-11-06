@@ -6,7 +6,7 @@ in {
     {
       name = "Added Configurations to Support VFIO";
       patch = null;
-      extraStructuredConfig = with lib.kernel; {
+      structuredExtraConfig = with lib.kernel; {
         VFIO = lib.mkDefault yes;
         VFIO_IOMMU_TYPE1 = lib.mkDefault yes;
         VFIO_PLATFORM = lib.mkDefault yes;
@@ -43,7 +43,7 @@ in {
     {
       name = "Bpmp virtualization host kernel configuration";
       patch = null;
-      extraStructuredConfig = with lib.kernel; {
+      structuredExtraConfig = with lib.kernel; {
         VFIO_PLATFORM = yes;
         TEGRA_BPMP_HOST_PROXY = yes;
       };
