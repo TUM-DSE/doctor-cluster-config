@@ -22,10 +22,6 @@ in
   imports = [ ./builder.nix ];
 
   config = {
-    warnings = lib.optionals (config.simd.arch == null) [
-      "Please set simd.arch for ${config.networking.hostName}"
-    ];
-
     nix = {
       gc.automatic = true;
       gc.dates = "03:15";
