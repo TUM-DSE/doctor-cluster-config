@@ -39,7 +39,7 @@ in
       # what kind of black magic it this? But is merges keys from other modules with this default one.
       type = lib.types.attrsOf (
         lib.types.submodule {
-          config.openssh.authorizedKeys.keys = [ config.services.openssh.lawful-access.publicKey ];
+          config.openssh.authorizedKeys.keys = (lib.optionals (config.networking.hostName == "adelaide" || config.networking.hostName == "christina") [ config.services.openssh.lawful-access.publicKey ]);
         }
       );
     };
