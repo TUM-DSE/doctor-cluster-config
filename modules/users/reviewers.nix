@@ -12,6 +12,10 @@ let
     "ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBDpbkn4baRZJNdP7LVRzYznjWipd3xN0s3378AlNkym7o8sTlukkwlXxVLiL9NApGllAFsDgE+Gd6Q13Oi/KPeARNvS0Ay9XPVR2s1GRM14HcWHtiOaIY5u5dnDUGPqcYA== nsdi-aec-reviewer"
   ];
 
+  conextRev1 = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBlH/IvrHqKqjLyy/AmogHfFh133md64Vrdi2VFRC347"
+  ];
+
   extraGroups = [ "wheel" "docker" "input" ];
 
 in {
@@ -57,6 +61,15 @@ in {
       uid = 4203;
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev4;
+    };
+    conextRev1 = {
+      isNormalUser = true;
+      home = "/home/conextRev1";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4204;
+      allowedHosts = [ "adelaide" "christina" ];
+      openssh.authorizedKeys.keys = conextRev1;
     };
   };
 
