@@ -15,6 +15,9 @@ let
   conextRev1 = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBlH/IvrHqKqjLyy/AmogHfFh133md64Vrdi2VFRC347"
   ];
+  conextRev2 = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPt3JzYG9byltL4UutIE355sTxdjS+ZMnLT64M2uubwD conextRev1"
+  ];
 
   extraGroups = [ "wheel" "docker" "input" ];
 
@@ -62,6 +65,7 @@ in {
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev4;
     };
+    # CoNEXT AE reviewer 1
     conextRev1 = {
       isNormalUser = true;
       home = "/home/conextRev1";
@@ -70,6 +74,16 @@ in {
       uid = 4204;
       allowedHosts = [ "adelaide" "christina" ];
       openssh.authorizedKeys.keys = conextRev1;
+    };
+    # CoNEXT AE reviewer 2
+    conextRev2 = {
+      isNormalUser = true;
+      home = "/home/conextRev2";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4205;
+      allowedHosts = [ "adelaide" "christina" ];
+      openssh.authorizedKeys.keys = conextRev2;
     };
   };
 
