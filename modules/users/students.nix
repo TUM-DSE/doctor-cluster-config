@@ -288,7 +288,7 @@ in
       expires = "2025-12-31";
     };
 
-    # Christian Krinitsin, Bachelor student with Theofilos.
+    # Christian Krinitsin, GR student with Theofilos.
     christianK = {
       isNormalUser = true;
       home = "/home/christianK";
@@ -299,9 +299,10 @@ in
         "yasmin"
         "graham"
         "jamie"
+        "eliza"
       ];
       openssh.authorizedKeys.keys = christianKKeys;
-      expires = "2025-12-31";
+      expires = "2026-12-31";
     };
 
     # Victor Trost, BSc thesis with Nicolo (SLICC generator)
