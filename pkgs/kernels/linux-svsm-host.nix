@@ -89,8 +89,18 @@ let
 	extraPatches = [ ];
   };
 
+  coconut_svsm_6_17_planes = {
+        owner = "coconut-svsm";
+        repo = "linux";
+        rev = "16e7d0b9c65cc7bf8c5ad3ec895e2209adde48d5"; # branch svsm
+        sha256 = "";
+        version = "6.17";
+        modDirVersionArg = "6.17.0";
+        extraPatches = [ ];
+  };
+
   # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = coconut_svsm_6_11_latest;
+  snp_kernel = coconut_svsm_6_17_planes;
 in
 with snp_kernel;
 buildLinux (args // rec {
