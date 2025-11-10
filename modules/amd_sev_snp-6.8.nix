@@ -7,7 +7,7 @@ in
   # Configuration for AMD SEV-SNP with AMD versions' kernel
 
   boot.kernelPackages = lib.mkForce linuxPackages;
-  #boot.zfs.package = pkgs.zfsUnstable; # needed for 6.9
+  boot.zfs.package = pkgs.zfsUnstable; # needed for 6.9
 
   boot.kernelParams = [
     #"mem_encrypt=on"
