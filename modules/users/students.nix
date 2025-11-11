@@ -51,14 +51,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1bpcpaHwXyU9H2Vsp0cb66J4r3tBwDDy9n+XI++qfe victor.trost@tum.de"
   ];
 
-  nimaKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0qFCWWIX8CYGDC+95O4/VFvA/vXSg03kJ1YpzzkzTnNDhLEEYhEcY0sbXl8JmHjeOxD/uLoW34ZIZqpII4AJRmQKnajiybB2k8xigna9NgAK5nAwfR9qhWLksi9jkWFHFIc9gBX5MZvvwBeXiE3qIdT3i17e64N6SSj6e+w7HwnO9ZxSsBBXe4QZqaF6YC06M2kndnC0l9Om7f41Po0qYuxiZ/CL9VffZq/VBUaWJT6aNhvy0L4kquFnsWWS+h3Fop3TsksIebAvfXEjpNAhP4V7Y3WOXqpS/lFPIYlrvHeacjdkIZUNU98T0L/qLg9dwAjcMpGgFSnSxQZAs/+IEfjwC1cv/X0UoL6U9U4ampM0E7z6o39xtmlBoX3sm/6Y8hCB5MEoeLXl2x9iK9cR5ku3bVkaAZE0XLnKyTeg5Plkegk0h5I1zu3yLStvXR9o8CiQimp2D5w9VzJev+pCSwTrOI8vogBlywrMCaWgweNfY2dCOlOTSdZz+VrJyWSM= nimansky@Nima-Desktop"
-  ];
-
-  etienneKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6oQHZBmvxJsCX8dLLnLhZvKuk64mUrYeLNUiCbZ65iwJx9rDEy7Bz1eBIy/U9RuVLbdTE7NvhWYgU8uGjvMUmUWOMXuFLiFIlEVp6wVoShKfJQg0wzh7W4dcGQDn5Ysee4T6bPCtutSVBZREI00kSDkR3/AXMZ6Dpo5p+SOnRkKR443bHl+z+ZDM451KwW8UGrCAoc+9xZyOJsSghXYRq2AH0PrzhKpMmgemZg2fFEGMmMO4fXvG6jFBvy9rQLsjPGDfRpcPJgb/zl/gOiifetje0ZWKMgAV17L0ysBYh+vTUjBHGimTMxp14hytoqjCj9o91RByRdu8sepbaPW74f0oPjL3PO9rF1+QODDNU5U0mEb7rdwoOn6rRBijgAHTPtjmiMaaxEH20fEgtH6paYPyVCIt2kv/+g9tjpSCcz0aQotZNhuft/RXaMoBPJD+8fUlbaAypSOn6XBniq9s1PIDDcjy/SD407jV/qzKBwLEEgw277+ed0kAz2vA98z8="
-  ];
-
   jannikKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
   ];
@@ -321,36 +313,6 @@ in
       expires = "2025-12-31";
     };
 
-    # Nima Baradaran Hassanzadeh, student in seminar SS25 with Atsushi
-    nima = {
-      isNormalUser = true;
-      home = "/home/nima";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2078;
-      allowedHosts = [
-        "rose"
-      ];
-      openssh.authorizedKeys.keys = nimaKeys;
-      xrdpAccess = true;
-      expires = "2025-09-30"; # SS25 ends
-    };
-
-    # Etienne Massart, student in seminar SS25 with Atsushi
-    etienne = {
-      isNormalUser = true;
-      home = "/home/etienne";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2079;
-      allowedHosts = [
-        "rose"
-      ];
-      openssh.authorizedKeys.keys = etienneKeys;
-      xrdpAccess = true;
-      expires = "2025-09-30"; # SS25 ends
-    };
-
     # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
     jannik = {
       isNormalUser = true;
@@ -554,5 +516,7 @@ in
     "kchristian"
     "hristinag"
     "sherif"
+    "nima"
+    "etienne"
   ];
 }
