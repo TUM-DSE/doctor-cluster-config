@@ -88,6 +88,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIUFhOLikx/MHcvyj0lqcKvfzG7Hj5HFmAtIX2FuQZbksWD3wR8TCv+tTi62j34ez2KuS8I2CxaEs8RLgR2ScBL2N5YjzbLjGeLapjPyY5EMJHlIp3XGq4/TWBPsdgKu5FjWa6CcsX4i8uCXeOVIut6IsT/9RUtSsOH98XWSh73naHGVzspNMInyZxR/uBM5cZXQl4k4wGT8XL1UFypPspWj/ScoYC1U8nRj3+sArXW3RzYtX1NI5jQF94DZbBod518rzXOPATuDoLJcrarQjpd9px6uNIiFkg7u9qs3ws41Fw2Wy/atDerE/xvSLidAjLHeIfGoK+MXkYA9GK8A5RKDqHv9erest76kkHg1xH7fiDVIRS22Qjcj+6h69k8wwKsJtwUx7J0hDtGFpBuRJyQnN4OdzAbnpiRK43KUdAN8R4gbYO6+ooCOuAKjjV/ZZIeZyE/jg9MOy1oIRFbVb/JXWaRkGylphASgsqslBP2kh6mHz9PQu9Qs7aSmQnRjx6dJ99tbSvCWVoqfMhgAccFYELGA6iU8rPDDygqL/GaWX+mu7h2kB/M1jFLb9XcEVgSaV0HT2zkKBczncEFyAe2jg/MjR2qhbKMnSDJMfbAdMNPfGzqybkIGw8iwyIXz7tAje4o7hGl8i2PDb/xFH/jEaLY83JDzZPShVeepLRIw== johan@DESKTOP-BE42OA9"
   ];
 
+  iljagKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG0E69xnjVWlZRp7SUmpwgzptEd+X06X1vgiEQMwmhlc ilja.gamza@tum.de"
+  ];
+
   benedikt2Keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFpxUXv21ooYcFRbcQttAwYIxd1ZPPQmraU6FqykzOJC benedikt@Benedicit.local"
   ];
@@ -444,6 +448,20 @@ in
       expires = "2027-12-31";
     };
 
+    # Ilja Gamza, SysLab student with Dennis
+    iljag = {
+      isNormalUser = true;
+      home = "/home/iljag";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2088;
+      allowedHosts = [
+        "graham"
+      ];
+      openssh.authorizedKeys.keys = iljagKeys;
+      expires = "2026-12-31";
+    };
+
     # Benedikt (Sys-lab)
     benedikt2 = {
       isNormalUser = true;
@@ -459,7 +477,6 @@ in
       openssh.authorizedKeys.keys = benedikt2Keys;
       expires = "2026-12-31";
     };
-
   };
 
   # DANGER ZONE!
