@@ -450,7 +450,7 @@ in
       home = "/home/benedikt2";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
-      uid = 2088;
+      uid = 2089;
       allowedHosts = [
         "ian"
         "yasmin"
