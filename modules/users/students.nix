@@ -92,6 +92,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG0E69xnjVWlZRp7SUmpwgzptEd+X06X1vgiEQMwmhlc ilja.gamza@tum.de"
   ];
 
+  benedikt2Keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFpxUXv21ooYcFRbcQttAwYIxd1ZPPQmraU6FqykzOJC benedikt@Benedicit.local"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -455,6 +459,22 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = iljagKeys;
+      expires = "2026-12-31";
+    };
+
+    # Benedikt (Sys-lab)
+    benedikt2 = {
+      isNormalUser = true;
+      home = "/home/benedikt2";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2089;
+      allowedHosts = [
+        "ian"
+        "yasmin"
+        "jamie"
+      ];
+      openssh.authorizedKeys.keys = benedikt2Keys;
       expires = "2026-12-31";
     };
   };
