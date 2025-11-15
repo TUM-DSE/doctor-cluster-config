@@ -21,6 +21,7 @@ let
     admin = [
       # admins may access all secrets
       joerg
+      joerg-mac
       peter
       cmainas
       dimitrios
