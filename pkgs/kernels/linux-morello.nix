@@ -112,6 +112,8 @@ let
               SHADOW_CALL_STACK n
 
               AX25 n
+
+              OVERLAY_FS y
             '';
           }
         ] ++ extraPatches;
