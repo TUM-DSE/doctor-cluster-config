@@ -127,8 +127,8 @@ let
     domain = "git.morello-project.org";
     owner = "morello/kernel";
     repo = "linux";
-    rev = "96c45a786534d894387e17ed60e4d31d33911567";
-    sha256 = "sha256-HETq4ntekppJ6T6rGDzj9U0TlDdoy1oajIWfeZScoY0=";
+    rev = "5c1e26bca388372ca365e3e01ad32a930c4c92fa";
+    sha256 = "sha256-PvdMOo/giXEfuTMS0Eu683k3E2t1ACM6vw9a5EiP03A=";
     version = "6.7";
     modDirVersion = "6.7.0";
     extraPatches = [ ];
