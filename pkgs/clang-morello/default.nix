@@ -3,13 +3,13 @@
   zlib,
   fetchzip,
   autoPatchelfHook,
-  llvmPackages_14,
+  llvmPackages_17,
 }:
 stdenv.mkDerivation {
   name = "morello-clang";
   src = fetchzip {
     url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/morello/artifacts.zip";
-    sha256 = "sha256-4D7Psufm80nb1CdN637FWcl7/djBGkWoHM8Kzg8tlaA=";
+    sha256 = "sha256-wKPXKmCP2aNeToTa4goey1uiNcG87o/x3Vt50ukCkgg";
     stripRoot = false;
   };
   installPhase = ''
@@ -29,8 +29,8 @@ stdenv.mkDerivation {
   passthru.hardeningUnsupportedFlagsByTargetPlatform =
     targetPlatform:
     (
-      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_14.clang-unwrapped then
-        llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
+      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_17.clang-unwrapped then
+        llvmPackages_17.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
       else
         [ ]
     )
