@@ -404,7 +404,7 @@ def deploy_ace(c: Any) -> None:
     Deploy to morello server
     """
     host = DeployHost(
-        "yasmin.dos.cit.tum.de",
+        "eliza.dos.cit.tum.de",
         user="root",
         forward_agent=True,
         command_prefix="ace",

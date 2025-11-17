@@ -3,13 +3,13 @@
   zlib,
   fetchurl,
   autoPatchelfHook,
-  llvmPackages_14,
+  llvmPackages_17,
 }:
 stdenv.mkDerivation {
   name = "llvm-morello-purecap";
   src = fetchurl {
-    url = "https://git.morello-project.org/morello/llvm-project-releases/-/archive/morello/linux-aarch64-release-1.8/llvm-project-releases-morello-linux-aarch64-release-1.8.tar.gz";
-    sha256 = "sha256-6kPG5y6wDFFiI+x/MYzdF6Rh6uSiclCz2nTN8OOQOQw=";
+    url = "https://git.morello-project.org/morello/llvm-project-releases/-/archive/morello/linux-aarch64-release-1.9/llvm-project-releases-morello-linux-aarch64-release-1.9.tar.gz";
+    sha256 = "sha256-lcmWWi7HsPZ6Ohy3jDCFzvN758PzyttAu/Q1D11PQ1k=";
     downloadToTemp = true;
   };
 
@@ -31,8 +31,8 @@ stdenv.mkDerivation {
   passthru.hardeningUnsupportedFlagsByTargetPlatform =
     targetPlatform:
     (
-      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_14.clang-unwrapped then
-        llvmPackages_14.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
+      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_17.clang-unwrapped then
+        llvmPackages_17.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
       else
         [ ]
     )
@@ -43,4 +43,3 @@ stdenv.mkDerivation {
     platforms = [ "aarch64-linux" ];
   };
 }
-

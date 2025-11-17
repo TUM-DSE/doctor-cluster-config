@@ -7,8 +7,8 @@ stdenv.mkDerivation {
   name = "musl-morello-purecap";
   src = fetchgit {
     url = "https://git.morello-project.org/morello/musl-libc.git";
-    rev = "64ae92a5460476c13c8b73919fdbc3a1f7bbaeb8";
-    sha256 = "sha256-mz9CZR7UvN9A+IRaaloGFVLSa/X2e7VqCXG5s5BpKSg=";
+    rev = "e379080e966573c79096f80d89e5b42f469ac8d1";
+    sha256 = "sha256-BCF6mFWoAPIuTe4CTDp1C2zn5oLy6h4haOA5ZSi0F9c=";
   };
   buildInputs = [
     llvm-morello-purecap
