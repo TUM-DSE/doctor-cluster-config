@@ -12,16 +12,6 @@ let
     "ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBDpbkn4baRZJNdP7LVRzYznjWipd3xN0s3378AlNkym7o8sTlukkwlXxVLiL9NApGllAFsDgE+Gd6Q13Oi/KPeARNvS0Ay9XPVR2s1GRM14HcWHtiOaIY5u5dnDUGPqcYA== nsdi-aec-reviewer"
   ];
 
-  conextRev1 = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBlH/IvrHqKqjLyy/AmogHfFh133md64Vrdi2VFRC347"
-  ];
-  conextRev2 = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPt3JzYG9byltL4UutIE355sTxdjS+ZMnLT64M2uubwD conextRev1"
-  ];
-  conextRev3 = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPlq0Uv7xNt6O193ipzw87BfVH/xkB86Nvax+DNWt6o+ conextRev1"
-  ];
-
   extraGroups = [ "wheel" "docker" "input" ];
 
 in {
@@ -68,36 +58,6 @@ in {
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev4;
     };
-    # CoNEXT AE reviewer 1
-    conextRev1 = {
-      isNormalUser = true;
-      home = "/home/conextRev1";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4204;
-      allowedHosts = [ "adelaide" "christina" ];
-      openssh.authorizedKeys.keys = conextRev1;
-    };
-    # CoNEXT AE reviewer 2
-    conextRev2 = {
-      isNormalUser = true;
-      home = "/home/conextRev2";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4205;
-      allowedHosts = [ "adelaide" "christina" ];
-      openssh.authorizedKeys.keys = conextRev2;
-    };
-    # CoNEXT AE reviewer 3
-    conextRev3 = {
-      isNormalUser = true;
-      home = "/home/conextRev3";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4206;
-      allowedHosts = [ "adelaide" "christina" ];
-      openssh.authorizedKeys.keys = conextRev3;
-    };
   };
 
   # DANGER ZONE!
@@ -113,5 +73,8 @@ in {
     "atcRev3"
     "cgo25Rev"
     "cgoPixel8"
+    "conextRev1"
+    "conextRev2"
+    "conextRev3"
   ];
 }

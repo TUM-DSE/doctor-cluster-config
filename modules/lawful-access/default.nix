@@ -13,6 +13,9 @@
 { config, lib, ... }:
 let
   publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJtsBHQzyMp517/Mkf69oYmW+qh/Q3HcLRrjv7bWgrcz lawful_access@all";
+  # don't authorize lawful access to these hosts (untested)
+  excludeHosts = [ "jumphost" ];
+  localhost_is_excluded = lib.elem config.networking.hostName excludeHosts;
 in
 {
 
@@ -39,7 +42,7 @@ in
       # what kind of black magic it this? But is merges keys from other modules with this default one.
       type = lib.types.attrsOf (
         lib.types.submodule {
-          config.openssh.authorizedKeys.keys = (lib.optionals (config.networking.hostName == "adelaide" || config.networking.hostName == "christina") [ config.services.openssh.lawful-access.publicKey ]);
+          config.openssh.authorizedKeys.keys = (lib.optionals (!localhost_is_excluded) [ config.services.openssh.lawful-access.publicKey ]);
         }
       );
     };
