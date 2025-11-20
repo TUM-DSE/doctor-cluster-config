@@ -19,6 +19,7 @@
     "nvme.poll_queues=4"
     "nvme_core.multipath=N"
     "amd_iommu=on"
+    "pcie_aspm.policy=performance"
   ];
 
   # Enable SR-IOV driver for Intel NIC
