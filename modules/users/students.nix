@@ -304,6 +304,7 @@ in
         "graham"
         "jamie"
         "eliza"
+        "ian"
       ];
       openssh.authorizedKeys.keys = christianKKeys;
       expires = "2026-12-31";
