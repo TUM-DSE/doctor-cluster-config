@@ -26,6 +26,14 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-1.url = "git+https://github.com/Mic92/nix-1?shallow=1";
+    nix-1.inputs.nixpkgs.follows = "nixpkgs";
+    nix-1.inputs.flake-parts.follows = "";
+    nix-1.inputs.flake-compat.follows = "";
+    nix-1.inputs.nixpkgs-regression.follows = "";
+    nix-1.inputs.git-hooks-nix.follows = "";
+    nix-1.inputs.nixpkgs-23-11.follows = "";
+
     buildbot-nix.url = "github:nix-community/buildbot-nix";
     buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
     buildbot-nix.inputs.flake-parts.follows = "flake-parts";
