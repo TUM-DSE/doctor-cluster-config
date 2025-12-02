@@ -1,3 +1,12 @@
+# Adding New Users
+
+When running Morello Debian, adding new users must be done manually.
+1. Create the user with the same uid as specified in `modules/users/*.nix`.
+2. Put the ssh keys into `/etc/ssh/authorized_keys.d/$USER`
+3. `chown $USER:users /etc/ssh/authorized_keys.d/$USER`
+4. `chmod 600 /etc/ssh/authorized_keys/$USER`
+
+
 # Debugging
 
 Connect your machine to the board using debug USB cable.
