@@ -128,6 +128,8 @@ Astrid also hosts the buildbot master server with Graham as the buildbot worker.
 
 ## Morello (ARM64)
 
+Ace is currently running Debian. To add users, see [these instructions](./morello.md).
+
 - [ace](./hosts/ace.md) (Morello)
   - For debugging, see [these instructions](./morello.md)
  
