@@ -84,6 +84,11 @@
         /export/share 2a09:80c0:102::/64(async,rw,nohide,insecure,no_subtree_check,no_root_squash,fsid=26) ${lib.concatStringsSep " " exportShare}
       '';
 
+    services.nfs.server.extraNfsdConfig = ''
+      vers3 = y
+      vers4 = y
+    '';
+
     systemd.tmpfiles.rules =
       let
         loginUsers = lib.filterAttrs (_n: v: v.isNormalUser) config.users.users;
