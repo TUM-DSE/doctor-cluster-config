@@ -97,10 +97,6 @@ let
 
   teofilKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINkwdkIadTpo9JCWnxwtTiQu/PmQW7W4wAYZtVNGAqZK" ];
 
-  oguzcanKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxXOIbR/HN6LEC8xKB9lP/BRp9VcWbKiPOxIUFRnT3B oguzcan.kirmemis@gmail.com"
-  ];
-
   nicoloKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB2SyU4I0uC/qjsK2En6WNwnGaf05UGYKv8Yq0iMJcIg nicarp@TUM-Thinkpad"
   ];
@@ -364,17 +360,6 @@ in
         xrdpAccess = true;
       };
 
-      # Oguzcan Kirmemis
-      # tum
-      oguzcan = {
-        isNormalUser = true;
-        home = "/home/oguzcan";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1033;
-        openssh.authorizedKeys.keys = oguzcanKeys;
-      };
-
       # Nicolo Carpentieri
       # tum
       nicolo = {
@@ -506,6 +491,7 @@ in
       "dimitria"
       "matthias"
       "redha"
+      "oguzcan"
     ];
 
     nix.settings.trusted-users = [
