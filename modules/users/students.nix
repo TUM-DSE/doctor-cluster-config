@@ -115,7 +115,7 @@ in
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
-    # Sandro Gierens, Masa's MSc student (expecting to finish the end of 2025)
+    # Sandro Gierens, MSc student working w/ Masa (thesis finished in Dec 2025, continuing to work on the project for a few months)
     gierens = {
       isNormalUser = true;
       home = "/home/gierens";
@@ -124,7 +124,7 @@ in
       uid = 2003;
       allowedHosts = [ "all" ];
       openssh.authorizedKeys.keys = gierensKeys;
-      expires = "2025-12-31";
+      expires = "2026-04-30";
     };
 
     # Simon Kammermeier, MSc student (expecting to finish by the WS2526
