@@ -79,6 +79,32 @@ let
     version = "6.16.5";
     modDirVersion = "6.16.5";
   };
+  pkvm_linux_6_15 = {
+    owner = "intel-staging";
+    repo = "pKVM-IA";
+    # cxdong/pub-pKVM-IAtree pkvm-v6.15-pvvmcs-part1
+    # rev = "44f43937f7254efd9e9ceba3d557721525bf46eb";
+    # sha256 = "sha256-wgsciEfFA0IlzoVeW1tGRER0euZHrrLpKICK27/CLx8=";
+    # tree/pkvm-v6.15-wip
+    rev = "d38618ae4ddd69f17cb6ad3beff35e8c82f3bba6";
+    sha256 = "sha256-TrD5ZvwThg7M8VbJhgKWVu2VLpvcnFUN4/UQNHjXB1o=";
+    version = "6.15";
+    modDirVersion = "6.15.0";
+    extraPatches = [
+      {
+        name = "pkvm-constants-fix";
+        patch = ./pkvm-constants-fix.patch;
+      }
+      {
+        name = "pkvm-config";
+        patch = null;
+        extraConfig = ''
+          PKVM_INTEL y
+          PKVM_INTEL_DEBUG y
+        '';
+      }
+    ];
+  };
   pkvm_linux_6_18 = {
     owner = "intel-staging";
     repo = "pKVM-IA";
@@ -89,10 +115,15 @@ let
     modDirVersion = "6.18.0-rc3";
     extraPatches = [
       {
+        name = "pkvm-constants-fix";
+        patch = ./pkvm-constants-fix.patch;
+      }
+      {
         name = "pkvm-config";
         patch = null;
         extraConfig = ''
           PKVM_INTEL y
+          PKVM_INTEL_DEBUG y
         '';
       }
     ];
