@@ -79,6 +79,25 @@ let
     version = "6.16.5";
     modDirVersion = "6.16.5";
   };
+  pkvm_linux_6_18 = {
+    owner = "intel-staging";
+    repo = "pKVM-IA";
+    # tree/pkvm-v6.18-rc3
+    rev = "2b6f1c2c6569b89db925b9eec2568d5bebb6bb0b";
+    sha256 = "sha256-j9BUXS9MM56Y1X+3iBYUaRaqGHsblqlG2zXaMvxoq24=";
+    version = "6.18";
+    modDirVersion = "6.18.0-rc3";
+    extraPatches = [
+      {
+        name = "pkvm-config";
+        patch = null;
+        extraConfig = ''
+          PKVM_INTEL y
+        '';
+      }
+    ];
+  };
 in
 # change here to change kernel
-buildKernel tdx_linux_6_16_5
+#buildKernel tdx_linux_6_16_5
+buildKernel pkvm_linux_6_18

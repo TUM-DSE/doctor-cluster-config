@@ -11,6 +11,7 @@ in
 
   boot.kernelParams = [
     "kvm_intel.tdx=1"
+    "kvm_intel.pkvm=1"
     # TDX cannot survive from S3 and deeper states
     "nohibernate"
   ];
