@@ -60,10 +60,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1heCt0ca+MMrSbLPtZBKp67u9QslGURHhYu3VOvxxIzIjzH44yTBHdXXC6slhr8XbTrDEDJfg1fCXFgtGF/DmZXlgP5mIOfGI7lfN/ZoRXaBYewOGiTnvJ8in7efZ0B4eIu0FfVtvlWsfWhqCnv3S4XfW30gOkzaioq1UQMDfZqNoBjT/kXck9CGppK8hN6SRk3BS5JbEk0FxEyfo3UKDWucfqTvlMnvziGrN3sQuxAZ8Ou0YsNccK7HxbcYVjCAMCU4C0ZNNvUNFmo5rumVzo19Ga2bO4TEcNi4Qdi8/eg3S7CJ2OW0xWgaCRLgKQiagD2FgWDiUS0icDST5Vm472tHEmtoxpLHOYYdXJW/9o/6WfK7t5WKMWwR945V3tNBQMyeUbuxC4s0CJLgxybYX5FiAgfmCKMEU62zKQtddY5WUIU2uuCnn3kq8dD9YSQ+O/o/ui+S3zjInKqDyIVhyaOeGKeHN2CaJMrdeXeKn3B6IBiN026XqhkZFKuF9B00= q673178@LPTP2044167"
   ];
 
-  tristanKeys = [
-    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILb8iNX9HZnIPTWMr7GQoEuJl7H3SdLk5mIjGO8ylOyiAAAABHNzaDo="
-  ];
-
   neelKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
   ];
@@ -358,20 +354,6 @@ in
       expires = "2025-12-31";
     };
 
-    # Tristan Schwieren, MSc thesis with Dennis and Julian
-    tristan = {
-      isNormalUser = true;
-      home = "/home/tristan";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2082;
-      allowedHosts = [
-        "xavier"
-      ];
-      openssh.authorizedKeys.keys = tristanKeys;
-      expires = "2025-12-31";
-    };
-
     # Neel Mandal, BSc thesis with David (Branch prediction research on gem5)
     neel = {
       isNormalUser = true;
@@ -556,6 +538,7 @@ in
     "sarac"
     "simond"
     "timo"
+    "tristan"
     "turkmen"
     "vanda"
     "vincent"
