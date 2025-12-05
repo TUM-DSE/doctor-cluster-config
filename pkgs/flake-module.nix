@@ -20,6 +20,7 @@
       firmware-sn1000 = pkgs.callPackage ./xilinx/firmware-sn1000.nix { };
 
       xilinx-env = pkgs.callPackage ./xilinx/fhs-env.nix { };
+      coyote-env = pkgs.callPackage ./xilinx/coyote-env.nix { };
       xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix { };
       xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers { };
       intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers { };
