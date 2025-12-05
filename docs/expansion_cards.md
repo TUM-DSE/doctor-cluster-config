@@ -49,6 +49,8 @@ Parameters to consider for matching cards to slots:
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC
     - office 01.07.060
     - firmware bundle_id 1.1.1.1021
+- 1x AMD/Xilinx Alveo V80 FPGA (high profile, dual slot)
+    - rose
 - 9x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
