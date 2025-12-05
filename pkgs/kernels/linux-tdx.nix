@@ -1,13 +1,18 @@
 { buildLinux, fetchFromGitHub, ... }@args:
 let
-  buildKernel = { owner, repo, rev, sha256, version, modDirVersion, extraPatches ? [ ] }:
+  buildKernel = { owner, repo, rev, sha256, version, modDirVersion,
+                  url ? "", ref ? "", localVersion ? "", extraPatches ? [ ] }:
     buildLinux
       (args // rec {
         inherit version modDirVersion;
 
-        src = fetchFromGitHub {
-          inherit owner repo rev sha256;
-        };
+        src = if url != "" then
+          if ref != "" then
+            builtins.fetchGit { inherit url ref; }
+          else
+            builtins.fetchGit { inherit url rev; }
+        else
+          fetchFromGitHub { inherit owner repo rev sha256; };
 
         kernelPatches = [
           {
@@ -41,6 +46,7 @@ let
         ] ++ extraPatches;
         extraMeta.branch = version;
         ignoreConfigErrors = true;
+        extraMakeFlags = [ "LOCALVERSION=${localVersion}" ];
       } // (args.argsOverride or { }));
 
   tdx_kvm_upstream_next_20240122 = {
@@ -79,7 +85,7 @@ let
     version = "6.16.5";
     modDirVersion = "6.16.5";
   };
-  pkvm_linux_6_15 = {
+  pkvm_linux_6_15 = rec {
     owner = "intel-staging";
     repo = "pKVM-IA";
     # cxdong/pub-pKVM-IAtree pkvm-v6.15-pvvmcs-part1
@@ -89,7 +95,8 @@ let
     rev = "d38618ae4ddd69f17cb6ad3beff35e8c82f3bba6";
     sha256 = "sha256-TrD5ZvwThg7M8VbJhgKWVu2VLpvcnFUN4/UQNHjXB1o=";
     version = "6.15";
-    modDirVersion = "6.15.0";
+    localVersion = "-pkvm-v6.15-wip";
+    modDirVersion = "6.15.0${localVersion}";
     extraPatches = [
       {
         name = "pkvm-constants-fix";
@@ -105,14 +112,15 @@ let
       }
     ];
   };
-  pkvm_linux_6_18 = {
+  pkvm_linux_6_18 = rec {
     owner = "intel-staging";
     repo = "pKVM-IA";
     # tree/pkvm-v6.18-rc3
     rev = "2b6f1c2c6569b89db925b9eec2568d5bebb6bb0b";
     sha256 = "sha256-j9BUXS9MM56Y1X+3iBYUaRaqGHsblqlG2zXaMvxoq24=";
     version = "6.18";
-    modDirVersion = "6.18.0-rc3";
+    localVersion = "-pkvm-v6.18-rc3";
+    modDirVersion = "6.18.0-rc3${localVersion}";
     extraPatches = [
       {
         name = "pkvm-constants-fix";
