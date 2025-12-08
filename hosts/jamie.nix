@@ -8,6 +8,8 @@
     #../modules/amd_sev_svsm_wallet.nix
     #../modules/nvidia.nix
     ../modules/vfio/iommu-amd.nix
+
+    ../modules/kata-container
   ];
 
   simd.arch = "znver4";
