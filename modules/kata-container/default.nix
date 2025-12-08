@@ -29,10 +29,15 @@ in
         TypeUrl = "io.containerd.kata.v2.options";
         ConfigPath = "/etc/kata-containers/configuration-qemu.toml";
       };
-      runtimes.kata-fc.runtimeType = "${kata-runtime}/bin/containerd-shim-kata-v2";
-      runtimes.kata-fc.options = {
+      runtimes.kata-qemu-gpu.runtimeType = "${kata-runtime}/bin/containerd-shim-kata-v2";
+      runtimes.kata-qemu-gpu.options = {
+	TypeUrl = "io.containerd.kata.v2.options";
+	ConfigPath = "/etc/kata-containers/configuration-qemu-gpu.toml";
+      };
+      runtimes.kata-snp-gpu.runtimeType = "${kata-runtime}/bin/containerd-shim-kata-v2";
+      runtimes.kata-snp-gpu.options = {
         TypeUrl = "io.containerd.kata.v2.options";
-        ConfigPath = "/etc/kata-containers/configuration-fc.toml";
+        ConfigPath = "/etc/kata-containers/configuration-qemu-snp-gpu.toml";
       };
       runtimes.kata-snp.runtimeType = "${kata-runtime}/bin/containerd-shim-kata-v2";
       runtimes.kata-snp.options = {

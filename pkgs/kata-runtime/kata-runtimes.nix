@@ -1,8 +1,8 @@
 { stdenv, lib, kata-runtime, autoPatchelfHook }:
-let version = "3.6.0";
+let version = "3.23.0";
 in stdenv.mkDerivation rec {
   pname = "kata-runtimes";
-  version = "3.6.0";
+  inherit version;
 
   dontUnpack = true;
 

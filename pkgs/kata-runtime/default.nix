@@ -1,14 +1,15 @@
-{ stdenv, lib, fetchzip, openssl, zlib, autoPatchelfHook }:
-let version = "3.6.0";
+{ stdenv, lib, fetchzip, openssl, zlib, zstd, autoPatchelfHook }:
+let version = "3.23.0";
 in stdenv.mkDerivation rec {
   pname = "kata";
-  version = "3.6.0";
+  inherit version;
 
   src = fetchzip {
     name = "kata-images-${version}";
     url =
-      "https://github.com/kata-containers/kata-containers/releases/download/${version}/kata-static-${version}-amd64.tar.xz";
-    hash = "sha256-ynMzMoJ90BzKuE6ih6DmbM2zWTDxsMwkAKsI8pbO3sg=";
+      "https://github.com/kata-containers/kata-containers/releases/download/${version}/kata-static-${version}-amd64.tar.zst";
+    hash = "sha256-h7+VXUq1leCIJEqTbDxr1qw1U7XFpiwjC7/sFHd3qFY=";
+    nativeBuildInputs = [ zstd ];
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
