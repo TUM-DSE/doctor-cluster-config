@@ -136,16 +136,19 @@ let
   pkvm_linux_6_18 = rec {
     owner = "intel-staging";
     repo = "pKVM-IA";
+    # tree/pkvm-v6.18
+    rev = "e46b421302af9eca8baf6d1812a690e81adf2ecb";
+    sha256 = "sha256-0Wd9DyhLzGUM1ZcPCGQODlpvI1gpvRI8/JnVsvw4/nY=";
     # tree/pkvm-v6.18-rc3
-    rev = "2b6f1c2c6569b89db925b9eec2568d5bebb6bb0b";
-    sha256 = "sha256-j9BUXS9MM56Y1X+3iBYUaRaqGHsblqlG2zXaMvxoq24=";
+    # rev = "2b6f1c2c6569b89db925b9eec2568d5bebb6bb0b";
+    # sha256 = "sha256-j9BUXS9MM56Y1X+3iBYUaRaqGHsblqlG2zXaMvxoq24=";
     version = "6.18";
-    localVersion = "-pkvm-v6.18-rc3";
-    modDirVersion = "6.18.0-rc3${localVersion}";
+    localVersion = "-pkvm-v6.18";
+    modDirVersion = "6.18.0${localVersion}";
     extraPatches = [
       {
         name = "pkvm-constants-fix";
-        patch = ./pkvm-constants-fix.patch;
+        patch = ./pkvm-constants-fix-v6.18.patch;
       }
       {
         name = "pkvm-config";
