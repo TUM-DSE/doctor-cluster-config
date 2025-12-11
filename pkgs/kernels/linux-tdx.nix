@@ -137,8 +137,11 @@ let
     owner = "intel-staging";
     repo = "pKVM-IA";
     # tree/pkvm-v6.18
-    rev = "e46b421302af9eca8baf6d1812a690e81adf2ecb";
-    sha256 = "sha256-0Wd9DyhLzGUM1ZcPCGQODlpvI1gpvRI8/JnVsvw4/nY=";
+    # rev = "e46b421302af9eca8baf6d1812a690e81adf2ecb";
+    # sha256 = "sha256-0Wd9DyhLzGUM1ZcPCGQODlpvI1gpvRI8/JnVsvw4/nY=";
+    # cxdong/pub-pKVM-IA/tree/pkvm-v6.18-pvvmcs-part2
+    rev = "b5046412770f32fe32c68f2d9683663770cf2b96";
+    sha256 = "sha256-lJGKs7JxJWOLdafZq5S94/14JFYtMU0SINfVzCEGiAw=";
     # tree/pkvm-v6.18-rc3
     # rev = "2b6f1c2c6569b89db925b9eec2568d5bebb6bb0b";
     # sha256 = "sha256-j9BUXS9MM56Y1X+3iBYUaRaqGHsblqlG2zXaMvxoq24=";
@@ -148,7 +151,8 @@ let
     extraPatches = [
       {
         name = "pkvm-constants-fix";
-        patch = ./pkvm-constants-fix-v6.18.patch;
+        #patch = ./pkvm-constants-fix-v6.18.patch;
+        patch = ./pkvm-constants-fix-v6.18-pvvmcs-part2.patch;
       }
       {
         name = "pkvm-config";
