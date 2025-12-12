@@ -16,6 +16,7 @@
           KVM_AMD_SEV y
           VFIO_DEVICE_CDEV y
           VFIO_NOIOMMU y
+          FS_VERITY y
         '';
       }
   ]; 
