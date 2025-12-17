@@ -101,6 +101,7 @@ For information on how to setup the PM in App-Direct mode, please see [here](./S
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab.
 Astrid also hosts the buildbot master server with Graham as the buildbot worker.
+See [buildbot.md](./buildbot.md) for documentation on how to add repositories and checks.
 
 - [astrid](./hosts/astrid.md)
 - [dan](./hosts/dan.md), nfs backup
