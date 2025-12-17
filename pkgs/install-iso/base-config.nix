@@ -3,7 +3,7 @@
 , config
 , ...
 }: {
-  system.stateVersion = config.system.nixos.version;
+  system.stateVersion = config.system.nixos.release;
 
   networking.firewall.enable = false;
 
