@@ -11,6 +11,9 @@ let
   nsdiRev4 = [
     "ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBDpbkn4baRZJNdP7LVRzYznjWipd3xN0s3378AlNkym7o8sTlukkwlXxVLiL9NApGllAFsDgE+Gd6Q13Oi/KPeARNvS0Ay9XPVR2s1GRM14HcWHtiOaIY5u5dnDUGPqcYA== nsdi-aec-reviewer"
   ];
+  vcxlgenRev1 = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ+H61SEboXJvsB07Hyj002kos3ANkxAIErBTysqbWdsXp3uxbqt8x2k9jxmXsEj29atsbmY/97m6R15SpnXeTNetehI2hq6DGlDY9LJQovyWAVna8OKaH2Zq1Iwn562HVVQP3dlbwAFHaleWjpT7YU7va15tOxSSzaBYWeZK0iMV9AaHol9516fuaueEjYU2DKaF7/4r8ACtrNzi9b/BNHnXg+xJf4eyosTgjfgU8r+K9fxCXp4pswilvWuGFNU4Xl2MjSNkqURcUOMcS+CosKzH+Dd4PBG+TQD7iwU/ImA+WcS/J+PrZNApGiPyQpE6t9A8anke8eih6831m5O1N vcxlgen-ae1"
+  ];
 
   extraGroups = [ "wheel" "docker" "input" ];
 
@@ -57,6 +60,16 @@ in {
       uid = 4203;
       allowedHosts = [ "ryan" "graham" ];
       openssh.authorizedKeys.keys = nsdiRev4;
+    };
+    # vCXLGen ASPLOS AE reviewer 1
+    vcxlgenRev1 = {
+      isNormalUser = true;
+      home = "/scratch/vcxlgenRev1";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4300;
+      allowedHosts = [ "xavier" ];
+      openssh.authorizedKeys.keys = vcxlgenRev1;
     };
   };
 
