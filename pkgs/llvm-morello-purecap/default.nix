@@ -3,7 +3,7 @@
   zlib,
   fetchurl,
   autoPatchelfHook,
-  llvmPackages_17,
+  llvmPackages_18,
 }:
 stdenv.mkDerivation {
   name = "llvm-morello-purecap";
@@ -31,8 +31,8 @@ stdenv.mkDerivation {
   passthru.hardeningUnsupportedFlagsByTargetPlatform =
     targetPlatform:
     (
-      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_17.clang-unwrapped then
-        llvmPackages_17.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
+      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_18.clang-unwrapped then
+        llvmPackages_18.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
       else
         [ ]
     )
