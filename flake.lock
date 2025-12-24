@@ -223,6 +223,33 @@
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
       }
     },
+    "niks3": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "process-compose": "process-compose",
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766460669,
+        "narHash": "sha256-i2uEhQAAyDSbXau5ln/XukgFJqJj6JBMa9K63e+XICE=",
+        "owner": "Mic92",
+        "repo": "niks3",
+        "rev": "82b2f29f8ea1ddd37e511ad19eb781bef3eb108c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "niks3",
+        "type": "github"
+      }
+    },
     "nix-1": {
       "inputs": {
         "flake-compat": [],
@@ -366,6 +393,21 @@
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       }
     },
+    "process-compose": {
+      "locked": {
+        "lastModified": 1764915241,
+        "narHash": "sha256-vTqn6IAkZhuuctvkxjhzI1EEybyzwaNd7HJvhF662O8=",
+        "owner": "Platonic-Systems",
+        "repo": "process-compose-flake",
+        "rev": "36678818ecbd0e06a60740a291c55b683fec79dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Platonic-Systems",
+        "repo": "process-compose-flake",
+        "type": "github"
+      }
+    },
     "retiolum": {
       "inputs": {
         "nix-darwin": "nix-darwin",
@@ -396,6 +438,7 @@
         "home-manager": "home-manager",
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",
+        "niks3": "niks3",
         "nix-1": "nix-1",
         "nix-index-database": "nix-index-database",
         "nixos-apple-silicon": "nixos-apple-silicon",
