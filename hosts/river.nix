@@ -5,7 +5,6 @@
     ../modules/dax.nix # just to disable PM as RAM
     ../modules/dpdk.nix
     ../modules/vfio/iommu-intel.nix
-    ../modules/linux-ioregionfd.nix
   ];
 
   boot.hugepages1GB.number = 8;
