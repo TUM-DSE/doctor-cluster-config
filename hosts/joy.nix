@@ -10,8 +10,6 @@
     ../modules/xrdp.nix
     ../modules/nfs/client.nix
     ../modules/nvidia-orin-agx.nix
-    ../modules/nvidia-jetson-passthru/default.nix
-    # Docker doesn't work with nvidia passthru: https://github.com/TUM-DSE/jetpack-nixos?tab=readme-ov-file#oci-container-support
     inputs.jetpack-nixos.nixosModules.default
   ];
 
