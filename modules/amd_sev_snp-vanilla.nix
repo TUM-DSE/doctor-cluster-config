@@ -2,7 +2,7 @@
 {
   # Use 6.16 (or newer) kernel
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-  boot.zfs.package = pkgs.zfsUnstable; # needed for 6.9
+  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.9
 
   boot.kernelPatches = [
       {

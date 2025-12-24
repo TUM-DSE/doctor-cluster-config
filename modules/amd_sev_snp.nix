@@ -1,13 +1,13 @@
 { pkgs, lib, ... }:
 let
   linux = pkgs.callPackage ../pkgs/kernels/linux-sev-snp.nix { };
-  linuxPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
+  linuxPackages = lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
 in
 {
   # Configuration for AMD SEV-SNP with AMD versions' kernel
 
   boot.kernelPackages = lib.mkForce linuxPackages;
-  boot.zfs.package = pkgs.zfsUnstable; # needed for 6.9
+  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.9
 
   boot.kernelParams = [
     #"mem_encrypt=on"

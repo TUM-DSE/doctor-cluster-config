@@ -26,7 +26,7 @@
 
   # In https://github.com/nix-community/srvos/pull/523 we decreased this to 15s.
   # However we saw sporadic watchdog events after that. Let's try 20s again.
-  systemd.watchdog.runtimeTime = lib.mkForce "20s";
+  systemd.settings.Manager.RuntimeWatchdogSec = lib.mkForce "20s";
 
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media

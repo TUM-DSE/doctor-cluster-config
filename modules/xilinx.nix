@@ -6,7 +6,7 @@
   ...
 }:
 let
-  packages = self.packages.${pkgs.system};
+  packages = self.packages.${pkgs.stdenv.hostPlatform.system};
   xrt-drivers = packages.xrt-drivers.override { inherit (config.boot.kernelPackages) kernel; };
 in
 {

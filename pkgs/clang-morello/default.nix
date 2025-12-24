@@ -3,7 +3,7 @@
   zlib,
   fetchzip,
   autoPatchelfHook,
-  llvmPackages_17,
+  llvmPackages_18,
 }:
 stdenv.mkDerivation {
   name = "morello-clang";
@@ -29,12 +29,12 @@ stdenv.mkDerivation {
   passthru.hardeningUnsupportedFlagsByTargetPlatform =
     targetPlatform:
     (
-      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_17.clang-unwrapped then
-        llvmPackages_17.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
+      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_18.clang-unwrapped then
+        llvmPackages_18.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
       else
         [ ]
     )
-    ++ [ "strictoverflow" ];
+    ++ [ "strictoverflow" "stackclashprotection" ];
 
   meta = {
     description = "Morello build toolchain";

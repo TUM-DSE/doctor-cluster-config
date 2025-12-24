@@ -1,27 +1,41 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+let
+  # Extend pkgs with the asahi overlay without adding it to nixpkgs.overlays
+  # (which would cause slow re-evaluation of the entire pkgs set)
+  asahiPkgs = pkgs.extend inputs.nixos-apple-silicon.overlays.default;
+in
 {
   imports = [
     ../modules/hardware/macmini-m1.nix
-    ../modules/apple-silicon-support
     ../modules/nfs/client.nix
+    inputs.nixos-apple-silicon.nixosModules.default
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # apple-silicon-support tries to patch systemd, but those patches are upstream already.
-  systemd.package = lib.mkForce pkgs.systemd;
   networking.hostName = "donna";
 
   hardware.asahi.enable = true;
 
-  # overrides latest-zfs kernel with kernel also set in modules/apple-silicon-support/modules/kernel/default.nix
-  boot.kernelPackages = lib.mkForce (let
-    pkgs' = config.hardware.asahi.pkgs;
-  in
-    pkgs'.linux-asahi.override {
+  # Prevent the module from adding its overlay to nixpkgs.overlays
+  nixpkgs.overlays = lib.mkForce [ ];
+
+  # Provide the asahi packages directly without using the overlay mechanism
+  hardware.asahi.pkgs = lib.mkForce asahiPkgs;
+
+  # Override latest-zfs kernel with linux-asahi
+  boot.kernelPackages = lib.mkForce (
+    asahiPkgs.linux-asahi.override {
       _kernelPatches = config.boot.kernelPatches;
-      withRust = config.hardware.asahi.withRust;
-    });
+    }
+  );
+
   hardware.asahi.peripheralFirmwareDirectory = builtins.toString (
     pkgs.runCommand "all_firmware" { } ''
       mkdir -p $out
@@ -39,10 +53,6 @@
       } $out/kernelcache.release.mac13g.gz
       gzip -d $out/kernelcache.release.mac13g.gz
     ''
-  );
-  # get rid of internal overlay
-  hardware.asahi.pkgs = lib.mkForce (
-    import ../modules/apple-silicon-support/packages/overlay.nix pkgs pkgs
   );
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

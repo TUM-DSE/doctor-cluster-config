@@ -9,7 +9,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-25.05-backports&shallow=1";
+    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-25.11-backports&shallow=1";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -47,7 +47,7 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    jetpack-nixos.url = "git+https://github.com/TUM-DSE/jetpack-nixos.git?shallow=1&ref=final-stretch";
+    jetpack-nixos.url = "git+https://github.com/TUM-DSE/jetpack-nixos.git?shallow=1&ref=no-overlay";
     jetpack-nixos.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
@@ -61,6 +61,10 @@
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
     srvos.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-apple-silicon.url = "github:nix-community/nixos-apple-silicon";
+    nixos-apple-silicon.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-apple-silicon.inputs.flake-compat.follows = "";
 
     hosthog.url = "github:pogobanane/hosthog";
     hosthog.inputs.nixpkgs.follows = "nixpkgs";

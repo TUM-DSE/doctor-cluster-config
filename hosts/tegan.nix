@@ -3,7 +3,7 @@
 # The machine uses the bootloader from the original installer sdcard image and needs it for booting.
 # After installation we moved the /boot/extlinux.conf on the sdcard so that linux boot will no longer try to boot from it and uses extlinux configuration from the NVME instead.
 # The NVME also still contains an EFI boot parition, but that one is no longer used for booting.
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, inputs, ... }:
 {
   imports = [
     ../modules/nfs/client.nix
@@ -13,6 +13,13 @@
     grub.enable = lib.mkDefault false;
     generic-extlinux-compatible.enable = lib.mkDefault true;
   };
+
+  # Force milkv-pioneer kernel over srvos ZFS kernel mixin
+  boot.kernelPackages = lib.mkForce (pkgs.linuxPackagesFor (
+    pkgs.callPackage "${inputs.nixos-hardware}/milkv/pioneer/linux.nix" {
+      inherit (config.boot) kernelPatches;
+    }
+  ));
 
   boot.kernelParams = [ "isolcpus=56-63" ];
 

@@ -3,7 +3,6 @@
     ../modules/hardware/supermicro-x12spw-tf.nix
     ../modules/nfs/client.nix
     ../modules/ci.nix
-    ../modules/dax.nix # just to disable PM as RAM
     ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
   ];

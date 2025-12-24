@@ -5,7 +5,7 @@
   ...
 }:
 let
-  useOverlayStorageDriver = pkgs.hostPlatform.isRiscV || config.networking.hostName == "ace";
+  useOverlayStorageDriver = pkgs.stdenv.hostPlatform.isRiscV || config.networking.hostName == "ace";
 in
 {
   # For docker
