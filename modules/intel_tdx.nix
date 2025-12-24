@@ -7,7 +7,7 @@ in
   # Configuration for Intel TDX
 
   boot.kernelPackages = lib.mkForce linuxPackages;
-  boot.zfs.package = pkgs.zfsUnstable; # needed for 6.9
+  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.9
 
   boot.kernelParams = [
     "kvm_intel.tdx=1"
