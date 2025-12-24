@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 let
   linux = pkgs.callPackage ../pkgs/kernels/linux-sev-snp-6.8.nix { };
-  linuxPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
+  linuxPackages = lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
 in
 {
   # Configuration for AMD SEV-SNP with AMD versions' kernel

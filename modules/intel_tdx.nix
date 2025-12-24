@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 let
   linux = pkgs.callPackage ../pkgs/kernels/linux-tdx.nix { };
-  linuxPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
+  linuxPackages = lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
 in
 {
   # Configuration for Intel TDX

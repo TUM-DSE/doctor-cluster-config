@@ -9,7 +9,7 @@
   srvos.registerSelf = true;
   # Nice for kernel hacking: https://blog.thalheim.io/2022/12/17/hacking-on-kernel-modules-in-nixos/
   # nix develop "$(realpath /run/booted-system/flake)#nixosConfigurations.$(hostname).config.boot.kernelPackages.kernel"
-  system.extraSystemBuilderCmds = ''
+  system.systemBuilderCommands = ''
     ln -s ${self} $out/flake
   '';
 

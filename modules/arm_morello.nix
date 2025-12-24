@@ -6,8 +6,8 @@
 }:
 let
   linuxPackages =
-    (pkgs.linuxPackagesFor self.packages.${pkgs.hostPlatform.system}.linux-morello).extend
-      (final: prev: { perf = pkgs.linuxPackages.perf; });
+    (pkgs.linuxPackagesFor self.packages.${pkgs.stdenv.hostPlatform.system}.linux-morello).extend
+      (final: prev: { perf = pkgs.perf; });
 in
 {
   boot.kernelPackages = lib.mkForce linuxPackages;

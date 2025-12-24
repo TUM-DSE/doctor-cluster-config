@@ -1,6 +1,6 @@
 { self, pkgs, ... }:
 let
-  packages = self.packages.${pkgs.system};
+  packages = self.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   config = {
