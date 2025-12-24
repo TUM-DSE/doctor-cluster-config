@@ -1,13 +1,22 @@
 { pkgs, lib, ... }:
-let
-  linux = pkgs.callPackage ../pkgs/kernels/linux-tdx.nix { };
-  linuxPackages = lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
-in
 {
-  # Configuration for Intel TDX
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.18
 
-  boot.kernelPackages = lib.mkForce linuxPackages;
-  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.9
+  boot.kernelPatches = [
+    {
+      name = "tdx-config";
+      patch = null;
+      # TDX now supports kexec as of kernel 6.18 (commit 80804847269e)
+      structuredExtraConfig = with lib.kernel; {
+        X86_X2APIC = yes;
+        X86_MCE = yes;
+        KVM = yes;
+        KVM_INTEL = yes;
+        INTEL_TDX_HOST = yes;
+      };
+    }
+  ];
 
   boot.kernelParams = [
     "kvm_intel.tdx=1"
@@ -15,6 +24,5 @@ in
     "nohibernate"
   ];
 
-  # enable libvirtd service
   virtualisation.libvirtd.enable = true;
 }
