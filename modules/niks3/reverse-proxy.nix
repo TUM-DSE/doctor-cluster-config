@@ -48,6 +48,9 @@ in
       js_set $s3_auth_header s3.authHeader;
       js_set $s3_amz_date s3.amzDate;
     '';
+    locations."= /" = {
+      return = "302 /index.html";
+    };
     locations."/" = {
       proxyPass = "https://dos-s3-1.s3.ito.cit.tum.de";
       extraConfig = ''

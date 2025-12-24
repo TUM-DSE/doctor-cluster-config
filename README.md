@@ -164,4 +164,4 @@ Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?org
 # CI
 
 All machines are build by [buildbot](https://buildbot.dse.in.tum.de/) using [buildbot-nix](https://github.com/nix-community/buildbot-nix).
-The resulting builds are uploaded to https://tum-dse.cachix.org from where machines can download them while upgrading.
+The resulting builds are uploaded to https://cache.dos.cit.tum.de from where machines can download them while upgrading.

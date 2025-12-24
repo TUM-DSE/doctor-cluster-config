@@ -1,9 +1,9 @@
 {
   description = "NixOS configuration with flakes";
 
-  nixConfig.extra-substituters = [ "https://tum-dse.cachix.org" ];
+  nixConfig.extra-substituters = [ "https://cache.dos.cit.tum.de" ];
   nixConfig.extra-trusted-public-keys = [
-    "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
+    "cache.dos.cit.tum.de-1:ZCSRbf/HsV0XwrrfR4dC6HyrjqwqKXmR/hDPsYyZ9Sg="
   ];
 
   # To update all inputs:

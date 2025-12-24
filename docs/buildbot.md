@@ -1,7 +1,7 @@
 # Buildbot CI
 
 All machines in this repository are built by [buildbot-nix](https://github.com/nix-community/buildbot-nix).
-Build results are uploaded to the [tum-dse.cachix.org](https://tum-dse.cachix.org) binary cache.
+Build results are uploaded to the [cache.dos.cit.tum.de](https://cache.dos.cit.tum.de) binary cache.
 
 - **Web UI**: https://buildbot.dse.in.tum.de/
 - **Master host**: astrid
@@ -10,7 +10,7 @@ Build results are uploaded to the [tum-dse.cachix.org](https://tum-dse.cachix.or
 ## Architecture
 
 ```
-GitHub webhook → astrid (master) → graham (worker) → builds → cachix upload
+GitHub webhook → astrid (master) → graham (worker) → builds → niks3 upload
                                  → eliza (aarch64 remote builder)
 ```
 

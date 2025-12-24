@@ -40,7 +40,7 @@ in
         );
         substituters = [
           "https://nix-community.cachix.org"
-          "https://tum-dse.cachix.org"
+          "https://cache.dos.cit.tum.de"
         ];
         system-features = [
           "benchmark"
@@ -50,7 +50,7 @@ in
         ] ++ gcc-system-features config.simd.arch;
         trusted-public-keys = [
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-          "tum-dse.cachix.org-1:v67rK18oLwgO0Z4b69l30SrV1yRtqxKpiHodG4YxhNM="
+          "cache.dos.cit.tum.de-1:ZCSRbf/HsV0XwrrfR4dC6HyrjqwqKXmR/hDPsYyZ9Sg="
         ];
       };
     };
