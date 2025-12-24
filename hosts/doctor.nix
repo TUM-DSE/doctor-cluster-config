@@ -21,6 +21,13 @@
 # $ systemd-nspawn --capability=CAP_NET_ADMIN -D /var/lib/machines/doctor -b
 # # or this:
 # $ machinectl start doctor
+#
+# NixOS systemd 258+ requires cgroup v2. If the container fails with
+# "Detected cgroup v1 hierarchy", create a service override:
+# $ cat /etc/systemd/system/systemd-nspawn@doctor.service.d/cgroup.conf
+# [Service]
+# Environment=UNIFIED_CGROUP_HIERARCHY=1
+# $ systemctl daemon-reload && systemctl restart systemd-nspawn@doctor
 
 {
   imports = [
