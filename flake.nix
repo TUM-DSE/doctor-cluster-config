@@ -62,6 +62,10 @@
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
     srvos.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-apple-silicon.url = "github:nix-community/nixos-apple-silicon";
+    nixos-apple-silicon.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-apple-silicon.inputs.flake-compat.follows = "";
+
     hosthog.url = "github:pogobanane/hosthog";
     hosthog.inputs.nixpkgs.follows = "nixpkgs";
     hosthog.inputs.flake-parts.follows = "flake-parts";

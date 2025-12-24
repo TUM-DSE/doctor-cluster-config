@@ -30,6 +30,6 @@
     config.hardware.nvidia-jetpack.devicePkgs.nvidia-ctk
   ];
 
-  # overrides latest-zfs kernel with kernel also set in modules/apple-silicon-support/modules/kernel/default.nix
+  # Override default kernel with Jetpack kernel
   boot.kernelPackages = lib.mkForce config.hardware.nvidia-jetpack.devicePkgs.kernelPackages;
 }
