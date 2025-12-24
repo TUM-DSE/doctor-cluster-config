@@ -34,7 +34,7 @@ stdenv.mkDerivation {
       else
         [ ]
     )
-    ++ [ "strictoverflow" ];
+    ++ [ "strictoverflow" "stackclashprotection" ];
 
   meta = {
     description = "Morello build toolchain";
