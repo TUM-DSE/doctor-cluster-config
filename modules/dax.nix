@@ -14,9 +14,6 @@
   };
   # This is used for persistent memory
   config = {
-    # To create/configure pmem devices
-    environment.systemPackages = [ (pkgs.callPackage ../pkgs/ipmctl.nix { }) ];
-
     # enable dax option for fs
     boot.kernelPatches = [
       {
