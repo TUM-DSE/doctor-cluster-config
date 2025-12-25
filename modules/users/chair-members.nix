@@ -204,6 +204,7 @@ in
         shell = "/run/current-system/sw/bin/zsh";
         uid = 1005;
         openssh.authorizedKeys.keys = harshanavkisKeys;
+        xrdpAccess = true;
       };
 
       # Dresden
