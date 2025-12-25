@@ -15,6 +15,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ+H61SEboXJvsB07Hyj002kos3ANkxAIErBTysqbWdsXp3uxbqt8x2k9jxmXsEj29atsbmY/97m6R15SpnXeTNetehI2hq6DGlDY9LJQovyWAVna8OKaH2Zq1Iwn562HVVQP3dlbwAFHaleWjpT7YU7va15tOxSSzaBYWeZK0iMV9AaHol9516fuaueEjYU2DKaF7/4r8ACtrNzi9b/BNHnXg+xJf4eyosTgjfgU8r+K9fxCXp4pswilvWuGFNU4Xl2MjSNkqURcUOMcS+CosKzH+Dd4PBG+TQD7iwU/ImA+WcS/J+PrZNApGiPyQpE6t9A8anke8eih6831m5O1N vcxlgen-ae1"
   ];
 
+  aranciniRev1 = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/RD4fEVQ5lDFu8UDXtBx7HBTcyiUQQAW3qOSfgJZLQ asplos"
+  ];
+
   extraGroups = [ "wheel" "docker" "input" ];
 
 in {
@@ -70,6 +74,16 @@ in {
       uid = 4300;
       allowedHosts = [ "xavier" ];
       openssh.authorizedKeys.keys = vcxlgenRev1;
+    };
+    # Arancini ASPLOS AE reviewer 1
+    aranciniRev1 = {
+      isNormalUser = true;
+      home = "/scratch/aranciniRev1";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4301;
+      allowedHosts = [ "yasmin" ];
+      openssh.authorizedKeys.keys = aranciniRev1;
     };
   };
 
