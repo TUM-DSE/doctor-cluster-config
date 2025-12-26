@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }:
 {
@@ -40,6 +41,12 @@
       name = "tum-dse";
       auth.authToken.file = config.sops.secrets.cachix-auth-token.path;
     };
+    niks3 = {
+      enable = true;
+      serverUrl = "https://niks3.dos.cit.tum.de";
+      authTokenFile = config.sops.secrets.niks3-api-token.path;
+      package = inputs.niks3.packages.${pkgs.system}.default;
+    };
   };
 
   services.buildbot-master = {
@@ -62,6 +69,7 @@
     buildbot-github-app-secret-key = { };
     buildbot-nix-workers = { };
     cachix-auth-token = { };
+    niks3-api-token.sopsFile = ../niks3/secrets.yml;
   };
 
   networking.firewall.allowedTCPPorts = [ 80 ];

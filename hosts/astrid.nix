@@ -8,6 +8,7 @@
 
     ../modules/jumphost
     ../modules/buildbot/master.nix
+    ../modules/niks3
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-Dell_Ent_NVMe_P5600_MU_U.2_1.6TB_PHAB123301411P9SGN";

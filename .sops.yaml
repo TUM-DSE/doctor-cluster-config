@@ -705,6 +705,27 @@ creation_rules:
     path_regex: modules/nfs/secrets.yml$
   - key_groups:
       - age:
+          - age1hen4wskutter8h4ypkhv7aqvh7mr9gl7pz7gd9mgln4jl2ckxq7qaks7h6
+          - age1vfq3px0tw8uflvyuvtw9k7yf0j8gsh06claxk9pqqwujj0vt9dtqyqhx9d
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1nnm255ah9wa4gpsaq0v023a75lnmlcxszt9lc6az3mtwzxgrucfq45rp7h
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+          - age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv
+          - age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0
+          - age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd
+          - age17ve9wnwazsmp2xgvsp27u7clywqwwqynsslyyxa4k0hu8mznf5qq2vmp2c
+          - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
+          - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
+          - age1vetu6glcp8md6uqv05jvyyqej47wumswxzjyaadnmuxh89at6sesrxcxzy
+          - age1z6phh2tdqf2cqq435n3gpd58a3zpn0k88zylqu23gxps2hgk8etspg9g30
+          - age17yvfale9tfad8kscjl63kyxzy46vvjg5lvgkfkg924q4vdpxkczqcaj2vx
+          - age1qt20th9n7v0g9tdkhdvp4ztndvnet0nmv303sc68e38s32q965ysl46ns0
+    path_regex: modules/niks3/secrets.yml$
+  - key_groups:
+      - age:
           - age1cd0fudka3fn78zpnnkkj9fpuwwq6q2fpm6gpv52evla0m9yhw53sexe0w7
           - age1s5ksz4aysaxg6ktlts075n26e5yfyny4lcncgljzuymddu3tsvesx8qa59
           - age17yvfale9tfad8kscjl63kyxzy46vvjg5lvgkfkg924q4vdpxkczqcaj2vx
