@@ -86,9 +86,7 @@ Parameters to consider for matching cards to slots:
     - jackson 
     - river (wilfred-river, wilfred-river)
     - wilfred (river-wilfred, river-wilfred)
-- 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?)
-    - bill (internet/uplink)
-    - nardole (internet/uplink)
+- 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?) - in former bill/nardole servers
 - 1x Intel X710 10G NIC (SFI/SFP+?)
     - jack
 - 4x PCI Samsung PM173X NVMe drive (high profile, low profile mod, x4?)

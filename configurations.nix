@@ -125,24 +125,6 @@ in
         ];
     };
 
-    bill = {
-      nixpkgs.pkgs = pkgs-x86_64-linux;
-      imports =
-        computeNodeModules
-        ++ [
-          ./hosts/bill.nix
-        ];
-    };
-
-    nardole = {
-      nixpkgs.pkgs = pkgs-x86_64-linux;
-      imports =
-        computeNodeModules
-        ++ [
-          ./hosts/nardole.nix
-        ];
-    };
-
     yasmin = {
       nixpkgs.pkgs = pkgs-aarch64-linux;
       imports =

@@ -1,6 +1,6 @@
 {
   networking.extraHosts = ''
-    # bills address
+    # astrid's address
     2a09:80c0:102::11 buildbot-master
   '';
 }
