@@ -19,24 +19,29 @@
           {
             targets = map (host: "${host}.r:9273") [
               # university
+              "ace"
               "adelaide"
               "amy"
               "astrid"
-              "bill"
               "christina"
               "clara"
               "dan"
+              "doctor"
+              "donna"
               "graham"
+              "ian"
+              "irene"
               "jack"
               "jackson"
               "mickey"
-              "nardole"
               "river"
               "rose"
               "ruby"
               "ryan"
+              "tegan"
               "vislor"
               "wilfred"
+              "xavier"
               "yasmin"
             ];
 
