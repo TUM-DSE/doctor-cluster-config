@@ -26,7 +26,7 @@ let
     ./modules/promtail.nix
     ./modules/zsh.nix
     ./modules/systemd.nix
-    ./modules/cleanup-usr.nix
+    ./modules/cleanup.nix
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
