@@ -1,23 +1,29 @@
 { lib, ... }:
 let
   urls = [
+    "ace.r"
     "adelaide.r"
     "amy.r"
     "astrid.r"
-    "bill.r"
     "christina.r"
     "clara.r"
     "dan.r"
+    "doctor.r"
+    "donna.r"
     "graham.r"
+    "ian.r"
+    "irene.r"
     "jack.r"
     "jackson.r"
     "mickey.r"
-    "nardole.r"
     "river.r"
     "rose.r"
+    "ruby.r"
     "ryan.r"
+    "tegan.r"
     "vislor.r"
     "wilfred.r"
+    "xavier.r"
     "yasmin.r"
   ];
 in
