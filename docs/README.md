@@ -108,10 +108,10 @@ See [buildbot.md](./buildbot.md) for documentation on how to add repositories an
 - [mickey](./hosts/mickey.md), nfs primary
 
 
-## Retired Server (offline)
+## Retired Server (names available for re-use)
 
-- [bill](./hosts/bill.md)
-- [nardole](./hosts/nardole.md)
+- bill
+- nardole
 
 ## ARM64
 
@@ -217,7 +217,7 @@ ZFS is used on all machines whenever possible. We enable automatic snapshots of
 the filesystem every 15 minutes. The snapshot can be accessed by entering the
 `.zfs` directory of a zfs dataset mountpoint.
 
-- for NFS mounted directories, snapshots are on the NFS master node (nardole?, `/export/home/.zfs` or `/export/share/.zfs`)
+- for NFS mounted directories, snapshots are on the NFS master node (mickey, `/export/home/.zfs` or `/export/share/.zfs`)
 - for local zfs datasets (`zfs list`) snapshots are at `/.zfs`, `/home/.zfs`, ...
 - note that `.zfs` is not seen by `ls`
 
@@ -225,14 +225,9 @@ Furthermore `/share` and `/home` are backed up daily to get RBG storage using
 [borgbackup](https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/nfs/server.nix). See also [nixos borg wiki](https://nixos.wiki/wiki/Borg_backup#Mounting_point-in-time_archives).
 
 ```console
-[root@nardole:/home/okelmann]# sudo su
-[root@nardole:/home/okelmann]# eval $(ssh-agent)
-[root@nardole:/home/okelmann]# ssh-add /run/secrets/tum-borgbackup-home-ssh
-[root@nardole:/home/okelmann]# borg-job-eva-home list
-nardole-eva-home-2022-12-28T00:00:00 Wed, 2022-12-28 00:00:05 [aca815ff996515a1b06c53e6363cff34fbdefaefda54b498fe1b579daeb97cff]
-nardole-eva-home-2023-02-14T00:00:00 Tue, 2023-02-14 00:00:07 [5024321057e1da6b6664f88d1ab72340cc8a0d6c41e572cb24023bd73ba9f0d5]
-nardole-eva-home-2023-02-15T00:00:00 Wed, 2023-02-15 00:00:07 [85aac6717e3f1835c7e4bb79e5d8dc9d2dde99db32e21851ada29b071e0f3aca]
-[root@nardole:/home/okelmann]# borg-job-eva-home mount il1dsenixosbk@doctor.r:/mnt/backup/nfs-home::nardole-eva-home-2023-02-15T00:00:00
+[root@mickey:~]# eval $(ssh-agent)
+[root@mickey:~]# ssh-add /run/secrets/tum-borgbackup-home-ssh
+[root@mickey:~]# borg-job-nfs-home list
 ```
 
 ## Delete snapshots

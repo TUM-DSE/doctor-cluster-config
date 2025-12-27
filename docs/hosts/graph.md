@@ -4,8 +4,6 @@
       adelaide.eno2["eno2"]-- 10G ---christina.83e2c9abd5bf41b4["83e2c9abd5bf41b4"]
       adelaide.enp24s0f0["enp24s0f0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       astrid.enp94s0f0np0["enp94s0f0np0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
-      bill.slave0["slave0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
-      bill.slave1["slave1"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       christina.eno1["eno1"]-- 10G ---adelaide.aea652f9da1c4c80["aea652f9da1c4c80"]
       christina.eno2["eno2"]-- 10G ---adelaide.aea652f9da1c4c80["aea652f9da1c4c80"]
       christina.enp81s0f0["enp81s0f0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
@@ -15,8 +13,6 @@
       graham.enp196s0f0np0["enp196s0f0np0"]-- 10G ---graham.f225daf2f6ed475b["f225daf2f6ed475b"]
       graham.enp196s0f1np1["enp196s0f1np1"]-- 10G ---graham.f225daf2f6ed475b["f225daf2f6ed475b"]
       mickey.enp94s0f0np0["enp94s0f0np0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
-      nardole.slave0["slave0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
-      nardole.slave1["slave1"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       river.enp24s0f0["enp24s0f0"]-- 10G ---nz-srvr2s2.info.444ca8a50c23["444ca8a50c23"]
       river.eno2["eno2"]-- 10G ---wilfred.b1b75b7a74ca45ba["b1b75b7a74ca45ba"]
       river.eno1["eno1"]-- 10G ---wilfred.b1b75b7a74ca45ba["b1b75b7a74ca45ba"]
@@ -32,10 +28,6 @@
       end
       subgraph astrid
       astrid.enp94s0f0np0["enp94s0f0np0"]
-      end
-      subgraph bill
-      bill.slave0["slave0"]
-      bill.slave1["slave1"]
       end
       subgraph yasmin
       yasmin.eno1["eno1"]
@@ -73,17 +65,11 @@
       graham.enp2s0f0np0["enp2s0f0np0"]
       graham.f225daf2f6ed475b["f225daf2f6ed475b"]
       end
-      subgraph nardole
-      nardole.slave0["slave0"]
-      nardole.slave1["slave1"]
-      end
       click river.ae904c71a4674386 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/river.md" "river"
       click river.eno1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/river.md" "river"
       click river.eno2 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/river.md" "river"
       click river.enp24s0f0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/river.md" "river"
       click astrid.enp94s0f0np0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/astrid.md" "astrid"
-      click bill.slave0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/bill.md" "bill"
-      click bill.slave1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/bill.md" "bill"
       click yasmin.eno1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/yasmin.md" "yasmin"
       click christina.83e2c9abd5bf41b4 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/christina.md" "christina"
       click christina.eno1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/christina.md" "christina"
@@ -103,6 +89,4 @@
       click graham.enp196s0f1np1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/graham.md" "graham"
       click graham.enp2s0f0np0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/graham.md" "graham"
       click graham.f225daf2f6ed475b "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/graham.md" "graham"
-      click nardole.slave0 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/nardole.md" "nardole"
-      click nardole.slave1 "https://github.com/TUM-DSE/doctor-cluster-config/blob/master/docs/hosts/nardole.md" "nardole"
 ```

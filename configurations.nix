@@ -26,7 +26,7 @@ let
     ./modules/promtail.nix
     ./modules/zsh.nix
     ./modules/systemd.nix
-    ./modules/cleanup-usr.nix
+    ./modules/cleanup.nix
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
@@ -122,24 +122,6 @@ in
         computeNodeModules
         ++ [
           ./hosts/clara.nix
-        ];
-    };
-
-    bill = {
-      nixpkgs.pkgs = pkgs-x86_64-linux;
-      imports =
-        computeNodeModules
-        ++ [
-          ./hosts/bill.nix
-        ];
-    };
-
-    nardole = {
-      nixpkgs.pkgs = pkgs-x86_64-linux;
-      imports =
-        computeNodeModules
-        ++ [
-          ./hosts/nardole.nix
         ];
     };
 
