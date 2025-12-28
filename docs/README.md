@@ -153,7 +153,7 @@ machines. Those machines also are not backed up.
 
 - RBG VMs:
   - monitoring.dos.cit.tum.de (VM), doctor.r (container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
-    - [prometheus](https://prometheus.dse.in.tum.de)
+    - [prometheus](https://prometheus.dse.in.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
     - [alertmanager](https://alertmanager.dse.in.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost

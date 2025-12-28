@@ -1,0 +1,40 @@
+name: Publish Prometheus Targets
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'modules/monitoring/prometheus-targets.nix'
+      - 'modules/monitoring/flake-module.nix'
+      - '.github/workflows/publish-prometheus-targets.yml'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Build prometheus-http-sd
+        run: |
+          nix build .#prometheus-http-sd
+          cp -rL result prometheus-http-sd
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Delete existing release if it exists
+          gh release delete prometheus-targets --yes || true
+          # Create new release with the JSON files
+          gh release create prometheus-targets \
+            --title "Prometheus HTTP SD Targets" \
+            --notes "Auto-generated Prometheus HTTP Service Discovery targets. Use these URLs in your prometheus http_sd_configs." \
+            prometheus-http-sd/*.json
