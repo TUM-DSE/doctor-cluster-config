@@ -1,57 +1,16 @@
-{ lib, ... }:
-let
-  urls = [
-    "ace.r"
-    "adelaide.r"
-    "amy.r"
-    "astrid.r"
-    "christina.r"
-    "clara.r"
-    "dan.r"
-    "doctor.r"
-    "donna.r"
-    "graham.r"
-    "ian.r"
-    "irene.r"
-    "jack.r"
-    "jackson.r"
-    "mickey.r"
-    "river.r"
-    "rose.r"
-    "ruby.r"
-    "ryan.r"
-    "tegan.r"
-    "vislor.r"
-    "wilfred.r"
-    "xavier.r"
-    "yasmin.r"
-  ];
-in
 {
-  services.telegraf.extraConfig.inputs = {
-    ping = map (url: {
-      method = "native";
-      urls = [ "6.${url}" ];
-      ipv6 = true;
-      tags.org = "uni";
-      tags.host = lib.removeSuffix ".r" url;
-    }) urls;
-    net_response = map (host: {
-      protocol = "tcp";
-      address = "${host}:22";
-      tags.host = host;
-      tags.org = "uni";
-      send = "SSH-2.0-Telegraf";
-      expect = "SSH-2.0";
-      timeout = "10s";
-    }) urls;
+  imports = [ ./http-sd.nix ];
 
-    x509_cert = [
-      {
-        sources = [ "https://web.dos.cit.tum.de:443" ];
-        tags.host = "vmbhatotia19";
-        tags.org = "uni";
-      }
-    ];
+  services.telegraf.httpSd.targets.uni = {
+    name = "uni";
+    url = "https://tum-dse.github.io/doctor-cluster-config/telegraf.json";
   };
+
+  services.telegraf.extraConfig.inputs.x509_cert = [
+    {
+      sources = [ "https://web.dos.cit.tum.de:443" ];
+      tags.host = "vmbhatotia19";
+      tags.org = "uni";
+    }
+  ];
 }
