@@ -1,14 +1,54 @@
-{ pkgs, lib, ... }:
 {
-  system.autoUpgrade.enable = lib.mkDefault true;
-  system.autoUpgrade.flake = "github:TUM-DSE/doctor-cluster-config";
-  system.autoUpgrade.flags = [
-    "--option"
-    "accept-flake-config"
-    "true"
-  ];
+  config,
+  pkgs,
+  ...
+}:
+{
+  # Fetch and apply system updates from buildbot CI
+  # Adapted from: https://github.com/nix-community/infra/blob/master/modules/nixos/common/update.nix
+  systemd.services.auto-upgrade = {
+    restartIfChanged = false;
+    unitConfig.X-StopOnRemoval = false;
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = "30s";
+      Type = "oneshot";
+    };
+    path = [
+      config.nix.package
+      config.systemd.package
+      pkgs.coreutils
+      pkgs.curl
+    ];
+    script = ''
+      set -euo pipefail
 
-  # add a random jitter so not all machines reboot at the same time.
+      arch=$(uname -m)
+      hostname=$(uname -n)
+      p=$(curl -fsSL "https://buildbot.dse.in.tum.de/nix-outputs/TUM-DSE/doctor-cluster-config/master/$arch-linux.nixos-$hostname")
+
+      if [[ "$(readlink /run/current-system)" == "$p" ]]; then
+        echo "Already at $p, nothing to do"
+        exit 0
+      fi
+
+      echo "Updating to $p"
+      nix-store --option narinfo-cache-negative-ttl 0 --realise "$p"
+      nix-env --profile /nix/var/nix/profiles/system --set "$p"
+
+      /nix/var/nix/profiles/system/bin/switch-to-configuration switch
+    '';
+  };
+
+  systemd.timers.auto-upgrade = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "5m";
+      OnUnitInactiveSec = "5m";
+    };
+  };
+
+  # Reboot on the last Saturday of each month if kernel changed
   systemd.timers.auto-reboot.timerConfig.RandomizedDelaySec = 60 * 20;
 
   systemd.services.auto-reboot = {
@@ -16,8 +56,7 @@
       pkgs.systemd
       pkgs.util-linux
     ];
-    # The last saturday in a month
-    startAt = "Sat *-*~07/1";
+    startAt = "Sat *-*~07/1"; # Last Saturday of the month
     script = ''
       booted="$(readlink /run/booted-system/{initrd,kernel,kernel-modules})"
       built="$(readlink /nix/var/nix/profiles/system/{initrd,kernel,kernel-modules})"

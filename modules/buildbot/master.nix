@@ -35,7 +35,7 @@
       "Mic92"
       "pogobanane"
     ];
-    outputsPath = "/var/www/buildbot/nix-outputs";
+    outputsPath = "/var/www/buildbot/nix-outputs/";
     niks3 = {
       enable = true;
       serverUrl = "https://niks3.dos.cit.tum.de";
