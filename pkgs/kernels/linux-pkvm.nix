@@ -19,23 +19,12 @@ let
             # Enable TDX config for development
             name = "tdx-config";
             patch = null;
-            # XXX: The current version of TDX kernel does not support KEXEC
-            #      therefore, disable KEXEC, KEXEC_FILE, and CRASH_CUMP that
-            #      enable KEXEC_CORE (required by INTEL_TDX_HOST)
-            #      future versions will support it
             extraConfig = ''
               X86_X2APIC y
               X86_MCE y
               KVM y
               KVM_INTEL y
-              KEXEC n
-              KEXEC_CORE n
-              KEXEC_FILE n
-              CRASH_DUMP n
               INTEL_TDX_HOST y
-              KVM_MMU_PRIVATE y
-              DRM_AMDGPU n
-              IIO n
             '';
           }
         ] ++ extraPatches;
