@@ -68,8 +68,6 @@ Once the server is installed in the server room:
 - fix up warnings in the nixos config
 - add the nfs client module to the servers config
 - add the host to monitoring in `modules/monitoring/prometheus-targets.nix` (see [monitoring.md](./monitoring.md))
-- ask Joerg to include it to backup services and retiolum
-- ~~change PXE boot interface to the one plugged in at the server room~~
 
 ## Misc: IPMI / UEFI
 
