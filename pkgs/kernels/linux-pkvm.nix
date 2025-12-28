@@ -27,6 +27,15 @@ let
               INTEL_TDX_HOST y
             '';
           }
+          {
+            # Reduce the kernel compilation time
+            name = "simplify";
+            patch = null;
+            extraConfig = ''
+              RUST n
+              DEBUG_INFO_BTF n
+            '';
+          }
         ] ++ extraPatches;
         extraMeta.branch = version;
         ignoreConfigErrors = true;

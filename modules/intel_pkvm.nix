@@ -40,4 +40,7 @@ in
   ];
 
   programs.ccache.packageNames = [ "zfs_unstable" ];
+  # to reduce compile times
+  programs.sysdig.enable = lib.mkForce false;
+  programs.bcc.enable = lib.mkForce false;
 }
