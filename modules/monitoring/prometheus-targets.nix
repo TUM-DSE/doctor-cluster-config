@@ -9,7 +9,8 @@
     {
       targets = map (host: "${host}.r:9273") [
         # university machines
-        "ace"
+        # runs debian at the moment
+        #"ace"
         "adelaide"
         "amy"
         "astrid"
@@ -26,7 +27,8 @@
         "mickey"
         "river"
         "rose"
-        "ruby"
+        # currently turned off
+        #"ruby"
         "ryan"
         "tegan"
         "vislor"
