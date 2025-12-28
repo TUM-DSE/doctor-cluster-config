@@ -3,7 +3,9 @@
     ../modules/hardware/poweredge-r770.nix
     ../modules/nfs/client.nix
     ../modules/disko-zfs.nix
-    ../modules/intel_tdx.nix
+    #../modules/intel_tdx.nix
+    ../modules/ccache.nix
+    ../modules/intel_pkvm.nix
 
     ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
