@@ -23,7 +23,7 @@ in
   systemd.tmpfiles.rules = [
     "d /var/lib/loki 0700 loki loki - -"
     "d /var/lib/loki/rules 0700 loki loki - -"
-    "L /var/lib/loki/ruler/ruler.yml - - - - ${rulerFile}"
+    "L+ /var/lib/loki/ruler/ruler.yml - - - - ${rulerFile}"
   ];
   services.loki = {
     enable = true;
@@ -41,6 +41,10 @@ in
           rules_directory = "${config.services.loki.dataDir}/rules";
         };
         replication_factor = 1;
+        # Loki 3.x bug: memberlist-kv initializes even with inmemory kvstore
+        # and fails if it can't find eth0/en0. Explicitly set interface names.
+        # https://github.com/grafana/loki/issues/19381
+        instance_interface_names = [ "ens192" ];
         ring.kvstore.store = "inmemory";
         ring.instance_addr = "127.0.0.1";
       };
