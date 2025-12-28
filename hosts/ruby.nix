@@ -22,9 +22,6 @@
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
 
-  # we cross-compile so we cannot auto upgrade
-  system.autoUpgrade.enable = false;
-
   environment.systemPackages = with pkgs; [
     vim
     lm_sensors

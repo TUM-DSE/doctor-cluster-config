@@ -61,9 +61,6 @@
 
   documentation.enable = false;
 
-  # no auto-updates
-  systemd.services.update-prefetch.enable = false;
-
   documentation.info.enable = false;
   environment.systemPackages = with pkgs; [
     diskrsync
