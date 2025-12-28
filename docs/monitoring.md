@@ -16,7 +16,7 @@ To add or remove a machine:
 3. GitHub Actions will build and publish the updated target list
 
 The targets are available at:
-https://github.com/TUM-DSE/doctor-cluster-config/releases/download/prometheus-targets/telegraf.json
+https://tum-dse.github.io/doctor-cluster-config/telegraf.json
 
 Prometheus fetches this file every 5 minutes via HTTP service discovery.
 
@@ -69,14 +69,14 @@ prometheus-targets.nix
    telegraf.json
         |
         v (GitHub Actions)
-   GitHub Release artifact
+   GitHub Pages
         |
         v (http_sd_configs, every 5m)
    Prometheus instances
 ```
 
 Both the doctor-cluster Prometheus and https://grafana.thalheim.io fetch from
-the same GitHub release, ensuring consistent target definitions.
+the same GitHub Pages URL, ensuring consistent target definitions.
 
 ## Alert rules
 

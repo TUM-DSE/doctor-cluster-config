@@ -14,7 +14,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,16 +30,11 @@ jobs:
       - name: Build prometheus-http-sd
         run: |
           nix build .#prometheus-http-sd
-          cp -rL result prometheus-http-sd
+          cp -rL result _site
 
-      - name: Upload to release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          # Delete existing release if it exists
-          gh release delete prometheus-targets --yes || true
-          # Create new release with the JSON files
-          gh release create prometheus-targets \
-            --title "Prometheus HTTP SD Targets" \
-            --notes "Auto-generated Prometheus HTTP Service Discovery targets. Use these URLs in your prometheus http_sd_configs." \
-            prometheus-http-sd/*.json
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
