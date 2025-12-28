@@ -15,37 +15,10 @@
         job_name = "telegraf";
         scrape_interval = "60s";
         metrics_path = "/metrics";
-        static_configs = [
+        http_sd_configs = [
           {
-            targets = map (host: "${host}.r:9273") [
-              # university
-              "ace"
-              "adelaide"
-              "amy"
-              "astrid"
-              "christina"
-              "clara"
-              "dan"
-              "doctor"
-              "donna"
-              "graham"
-              "ian"
-              "irene"
-              "jack"
-              "jackson"
-              "mickey"
-              "river"
-              "rose"
-              "ruby"
-              "ryan"
-              "tegan"
-              "vislor"
-              "wilfred"
-              "xavier"
-              "yasmin"
-            ];
-
-            labels.org = "uni";
+            url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/prometheus-targets/telegraf.json";
+            refresh_interval = "5m";
           }
         ];
       }
