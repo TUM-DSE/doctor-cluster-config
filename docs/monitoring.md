@@ -5,7 +5,7 @@ alerts forwarded to https://alertmanager.dos.cit.tum.de.
 
 ## Adding or removing machines from monitoring
 
-Machine targets are defined in `modules/monitoring/prometheus-targets.nix` and
+Machine targets are defined in [`modules/monitoring/prometheus-targets.nix`](../modules/monitoring/prometheus-targets.nix) and
 automatically published to GitHub releases via GitHub Actions. This allows
 updating monitored machines without redeploying the Prometheus server.
 
