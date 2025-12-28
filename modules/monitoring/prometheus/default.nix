@@ -17,7 +17,7 @@
         metrics_path = "/metrics";
         http_sd_configs = [
           {
-            url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/prometheus-targets/telegraf.json";
+            url = "https://tum-dse.github.io/doctor-cluster-config/telegraf.json";
             refresh_interval = "5m";
           }
         ];
