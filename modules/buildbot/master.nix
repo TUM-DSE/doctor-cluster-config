@@ -36,11 +36,6 @@
       "pogobanane"
     ];
     outputsPath = "/var/www/buildbot/nix-outputs";
-    cachix = {
-      enable = true;
-      name = "tum-dse";
-      auth.authToken.file = config.sops.secrets.cachix-auth-token.path;
-    };
     niks3 = {
       enable = true;
       serverUrl = "https://niks3.dos.cit.tum.de";
@@ -68,7 +63,6 @@
     buildbot-github-oauth-secret = { };
     buildbot-github-app-secret-key = { };
     buildbot-nix-workers = { };
-    cachix-auth-token = { };
     niks3-api-token.sopsFile = ../niks3/secrets.yml;
   };
 
