@@ -20,7 +20,7 @@
         "https://api.github.com/orgs/ls1-courses/actions/runners?per_page=100"
         "https://api.github.com/orgs/ls1-cloud-lab-course/actions/runners?per_page=100"
       ];
-      bearer_token = config.sops.secrets.telegraf-github-token.path;
+      token_file = config.sops.secrets.telegraf-github-token.path;
       headers = {
         Accept = "application/vnd.github.v3+json";
       };
@@ -30,7 +30,7 @@
         "name"
       ];
       json_query = "runners";
-      fielddrop = [
+      fieldexclude = [
         "labels_*"
         "id"
       ];
