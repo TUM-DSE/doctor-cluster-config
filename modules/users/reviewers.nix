@@ -89,7 +89,7 @@ in {
       openssh.authorizedKeys.keys = aranciniRev1;
     };
     # Arancini ASPLOS AE reviewer 2
-    aranciniRev1 = {
+    aranciniRev2 = {
       isNormalUser = true;
       home = "/scratch/aranciniRev2";
       inherit extraGroups;
