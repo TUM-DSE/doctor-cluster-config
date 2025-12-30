@@ -21,6 +21,9 @@ let
   aranciniRev1 = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/RD4fEVQ5lDFu8UDXtBx7HBTcyiUQQAW3qOSfgJZLQ asplos"
   ];
+  aranciniRev2 = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAzr/1ZzUD9QPa6CF3NrtvdG4aw6NZ+qp2jnTXXuNeU asplos"
+  ];
 
   extraGroups = [ "wheel" "docker" "input" ];
 
@@ -97,6 +100,16 @@ in {
       uid = 4301;
       allowedHosts = [ "yasmin" ];
       openssh.authorizedKeys.keys = aranciniRev1;
+    };
+    # Arancini ASPLOS AE reviewer 2
+    aranciniRev2 = {
+      isNormalUser = true;
+      home = "/scratch/aranciniRev2";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4302;
+      allowedHosts = [ "yasmin" ];
+      openssh.authorizedKeys.keys = aranciniRev2;
     };
   };
 
