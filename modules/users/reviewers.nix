@@ -14,6 +14,9 @@ let
   vcxlgenRev1 = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ+H61SEboXJvsB07Hyj002kos3ANkxAIErBTysqbWdsXp3uxbqt8x2k9jxmXsEj29atsbmY/97m6R15SpnXeTNetehI2hq6DGlDY9LJQovyWAVna8OKaH2Zq1Iwn562HVVQP3dlbwAFHaleWjpT7YU7va15tOxSSzaBYWeZK0iMV9AaHol9516fuaueEjYU2DKaF7/4r8ACtrNzi9b/BNHnXg+xJf4eyosTgjfgU8r+K9fxCXp4pswilvWuGFNU4Xl2MjSNkqURcUOMcS+CosKzH+Dd4PBG+TQD7iwU/ImA+WcS/J+PrZNApGiPyQpE6t9A8anke8eih6831m5O1N vcxlgen-ae1"
   ];
+  vcxlgenRev2 = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyhLfOc5KlnzXXEU0qMr1G1iUVEX66nHByQLZfE89iuOJFm+QemesVeDen6T5bK8wPRuLFisjWEQZNGU+LqKoxsmaaKRtRAQyswL71ZYx4u/UgXsR7h4DhT0KMVtOS3pdJRMX5ZPW8jo4qDR+h9S2CmEOG8bzEyCeqMgVo0boybVN+99aR8pCirBAhXjmVjbHzIkV6m3bvJ7R03Ar/5g3KAN26/bG/BLoyi/MAYL8WioLuew3zKhrmP+njK+7qx7EcHgqPsp6ph0TrcXfFiwuoYzdmdNzinRrqwDTN4gEOWluIuIxFLZxI80tLWlaAQEOtj/03tBYR2lXuIwiVd7P/ vcxlgen-ae2"
+  ];
 
   aranciniRev1 = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/RD4fEVQ5lDFu8UDXtBx7HBTcyiUQQAW3qOSfgJZLQ asplos"
@@ -77,6 +80,16 @@ in {
       uid = 4300;
       allowedHosts = [ "xavier" ];
       openssh.authorizedKeys.keys = vcxlgenRev1;
+    };
+    # vCXLGen ASPLOS AE reviewer 2
+    vcxlgenRev2 = {
+      isNormalUser = true;
+      home = "/scratch/vcxlgenRev2";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4303;
+      allowedHosts = [ "xavier" ];
+      openssh.authorizedKeys.keys = vcxlgenRev2;
     };
     # Arancini ASPLOS AE reviewer 1
     aranciniRev1 = {
