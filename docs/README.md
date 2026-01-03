@@ -41,13 +41,9 @@ You may have to restart xrdp-sesman.service for the changes to apply.
 
 # Management Interfaces
 
-Bios and the boot flow can be accessed/observed via "Remote Console" on the IPMI webinterfaces.
+We have dedicated management interfaces (IPMI/BMC) for our servers.
+See [IPMI.md](./IPMI.md) for documentation on how to access the web interface and how to use the CLI tools for power cycling, serial console access, etc.
 
-- use il1 VPN (see Accessing the server, only for staff)
-- goto `https://$hostname-mgmt.dos.cit.tum.de`
-- login credentials are encrypted in the doctor cluster repo `sops secrets.yaml`
-
-To be able to accept self signed certificates in firefox: Go to the website `about:config` and set `network.stricttransportsecurity.preloadlist` to false.
 
 # Hosts
 
@@ -91,11 +87,7 @@ Those servers (or individual devices) are sometimes used exclusively by a single
 - dual socket Xeon 6756E, TDX support
   - [martha](./hosts/martha.md)
 
-**Note**: Some of these servers are equipped with Persistent Memory (PM).
-For information on how to setup the PM in App-Direct mode, please see [here](./SETUP_PM.md)
-
 ## Servers used for NFS/Services
-
 
 ## CI servers
 
