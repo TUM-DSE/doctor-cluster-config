@@ -7,23 +7,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUF8kwXqS/GNlrzJ2unEymDjX9qFi3/bAihzbl9ImBS0FI+09CuKp9UQVPO81PTgalDRHqQ/bk1oG/0GhBu9QPYN6KE4DbqA491mSfoAg1MF+nL04wapEH4q8jbo7sobPNi0+bCc/Efry53/tuAT38K8KI/veCXUuTS2SwdpvqAcRTYW/+lP+4TOcBy07oA12fY7XCOC0zZiNmuSo8tg5drkG7rC9LCoMWI6edOnTE6KAtv+Xwe30I+0Zshi8+zI5jM4/rdoolyG4ukjuoD6gh56TPkT4bcZFy50IsBz+LXN2hRAFv6rZVMZwuwb5zFN1Y+QPciVw9G8S8pwVe0QcL manosgior@manosgior"
   ];
 
-  sandroKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqNR2tsYH2igXjgiOA/yc3CdXqpg70ViICdGk/Acmxu sandro"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIb3uuMqE/xSJ7WL/XpJ6QOj4aSmh0Ga+GtmJl3CDvljGuIeGCKh7YAoqZAi051k5j6ZWowDrcWYHIOU+h0eZCesgCf+CvunlXeUz6XShVMjyZo87f2JPs2Hpb+u/ieLx4wGQvo/Zw89pOly/vqpaX9ZwyIR+U81IAVrHIhqmrTitp+2FwggtaY4FtD6WIyf1hPtrrDecX8iDhnHHuGhATr8etMLwdwQ2kIBx5BBgCoiuW7wXnLUBBVYeO3II957XP/yU82c+DjSVJtejODmRAM/3rk+B7pdF5ShRVVFyB6JJR+Qd1g8iSH+2QXLUy3NM2LN5u5p2oTjUOzoEPWZo7lykZzmIWd/5hjTW9YiHC+A8xsCxQqs87D9HK9hLA6udZ6CGkq4hG/6wFwNjSMnv30IcHZzx6IBihNGbrisrJhLxEiKWpMKYgeemhIirefXA6UxVfiwHg3gJ8BlEBsj0tl/HVARifR2y336YINEn8AsHGhwrPTBFOnBTmfA/VnP1NlWHzXCfVimP6YVvdoGCCnAwvFuJ+ZuxmZ3UzBb2TenZZOzwzV0sUzZk0D1CaSBFJUU3oZNOkDIM6z5lIZgzsyKwb38S8Vs3HYE+Dqpkfsl4yeU5ldc6DwrlVwuSIa4vVus4eWD3gDGFrx98yaqOx17pc4CC9KXk/2TjtJY5xmQ== lassulus"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDB0d0JA20Vqn7I4lCte6Ne2EOmLZyMJyS9yIKJYXNLjbLwkQ4AYoQKantPBkTxR75M09E7d3j5heuWnCjWH45TrfQfe1EOSSC3ppCI6C6aIVlaNs+KhAYZS0m2Y8WkKn+TT5JLEa8yybYVN/RlZPOilpj/1QgjU6CQK+eJ1k/kK+QFXcwN82GDVh5kbTVcKUNp2tiyxFA+z9LY0xFDg/JHif2ROpjJVLQBJ+YPuOXZN5LDnVcuyLWKThjxy5srQ8iDjoxBg7dwLHjby5Mv41K4W61Gq6xM53gDEgfXk4cQhJnmx7jA/pUnsn2ZQDeww3hcc7vRf8soogXXz2KC9maiq0M/svaATsa9Ul4hrKnqPZP9Q8ScSEAUX+VI+x54iWrnW0p/yqBiRAzwsczdPzaQroUFTBxrq8R/n5TFdSHRMX7fYNOeVMjhfNca/gtfw9dYBVquCvuqUuFiRc0I7yK44rrMjjVQRcAbw6F8O7+04qWCmaJ8MPlmApwu2c05VMv9hiJo5p6PnzterRSLCqF6rIdhSnuOwrUIt1s/V+EEZXHCwSaNLaQJnYL0H9YjaIuGz4c8kVzxw4c0B6nl+hqW5y5/B2cuHiumnlRIDKOIzlv8ufhh21iN7QpIsPizahPezGoT1XqvzeXfH4qryo8O4yTN/PWoA+f7o9POU7L6hQ== qubasa"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/3nkqxe8YrDVt615n96A7iC3vvwsiqgpsBYC/bhwfBHu1bAtBmTWVqSKDIdwg7p8TQpIKtAgZ3IJT3BlrnVTeR4RIviLjHjYWW1NBhm+nXi+heThgi5fLciE3lVLVsy5X9Kc1ZPLgLa1In0REOanwbueOD0ESN1yKIDwUUdczw/o3dLDMzanqFHKuSSN4o9Ex2x+MRj9eLsb706s4VSYMo3lirRCJeAOGv1C7Xg1cuepdhIeJsq9aF7vSy15c0nCkWwr8zdY7pbMPYCe5zvIEymZ0UowZ5HQ3NmIZnYDxa4E1PFjDczHdQbVmmGMI80grNwMsHzQ6bynHSPXDoLf4WodXlhS0+9Ju5QavDT6uqZ9uhDBuWC8QNgWUMIJnEaTBFyA0OI1akl8Q2RLC+qnNf5IwItSq+GDwEsB2ZJNW3kOk1kNiCUrBafRYpPaFeP97wzzP4uYlBKAr2SOLrrkf7NFEdw2ihxhDMNnps/ErRJ8U0zdpmalw8mItGyqRULpHjk/wN00rYOdBIhW3G3QJuVgtGnWtGCBG5x70EfMiSEXPD3YSsVVsgKD+v8qr+YiilRRD+N3gaHhiOWA6HgxRNul/P4llk0ktTpb9LoHk2+oooTH5ZuuT/8yF8J4stZt7EIOH+mSOAXG1z0BwnEkQu7pVKwu/oOZpGJTvBrGwww== tv@xu"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBF2naBi6O8+L8U4gfn4of2HycJNaUbO+VM6334hxa77Klldkqs9gUICy7bZDsNQXzas9VPmkBiOhInPO0W8ew0A= ma27"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHhmWL+9n24+jGZYTz2hre9IGAbgLqmDhwNLAIbAJHR4 ma27"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM0eO7S+WlFte9lN4sOoM2XohmOddzMetsSYXH1mJJvR ma27"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICe59qMX2rEa8iTiJhoTa2Yynr/rN9IFS7LMfyT4iToR ma27"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKk7xSy2o102mfJMESHnKfxzgJUNU8Gz9/f/C77W8A4E ma27"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBp2dH2X3dcU1zh+xW3ZsdYROKpJd3n13ssOP092qE mic92"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFuUdiPdq7neZjTSRoc4PuRg8a6M/JBaJ8fjQxPH6uUT 0x4A6F"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOE7oDtq+xt5RuvMigDZMeZQODFr5Otz6HCO8wnI80oo picnoir"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzd1XAB7Pc8Tplur5iV3llOXtvlHru8pLtQlbvHzmt1 picnoir"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMfHjfQMqq+v80gBA8J1D6BDuRvnKg7Ag6EuA1Jel+2M nan"
-  ];
-
   atsushiKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuPk8qYR8pJkAZmG6d+Jh0dJwDx2FuVThZJGI00Djk1mD6qQD0NIAFv29v9nvOX9u5wpMTVAbdC0RMqrmTAgYwJ/kpFe7+Tjr7v/Oi1AlaseBpSOCdAQcmtFdza2y5f0D1AnFuRBTKvdY8ACYbnPhKCqcVH8/9EXYe6UVZQv2Gcdllc7LcZiP/g8bMhF+FB7qOzPFPOCapqMzX0lIEvtaxJb4s9pLWXJJQkIK15IQT8UuB7W3JBQO0+5VMwLpMAPcnVgn/nhTRbytngbbZWyuETmh5XuhI4KX49KC4qrW823Ujf3XXV65QYb5XI/n8Dr6481u2TLRIXkDz5wVTV2Kd atsushi@koshiba-mac.local"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrh1vZu6iNxesJ3zu2K8LYkr+yuvx6gR4SabKp6R5aMjr/qlccpcwBMPqEV+/piHyiZ131Mki7LYLRBCnxwoZ0DTI4j9WMZ4zI2luN9pQGraN6Of+es+mx/XRpcRI4oVmXXzA1n1f+PpGGz0JVx4jq3NbuMbbgv2CgoS9AbErqY1nDfEfcbquj6KiMi3jUckZZ51qKNAWBxvqNV1pIWdLsbxJnIjRaAJ/P2fQHvsyPSYiyh4gwUj8eNyFiU7Ko3JnRHTXCbwx7FTYAp73Ga2w7ZgW4Yt70wiZEiAOthjQj+moT1TfbQF+4tfYS8/jcDMyPBlOTsw6EzS7LWHyR08xP atsushi@atsushi-vb"
@@ -83,10 +66,6 @@ let
 
   franciscoKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCbtiYJVC8KwmoNxBH9O65JgGsCUIfXLWNmAe6ec8Wyzu3XJr4vNVRSLEFHaI6eXc+ynuS87l+CM4QDXSiA2/g2vSKGS+il+yQq9F0WJ6jJZpkQs1hciGakCiPoUCxodqBxDQ6RYZmeE0ZYmD0eXHHU5KRt0HTK33FgjTVEgNdT8cPckJ5v0qLtxOyRfi3N1QhQssxiVf+FQBoMloe+BtzF9bIaXTylojV6I9V7pGTqqnQITZ31uKfRLoLGpWScFDhhFU7rmBO4mBk4q4aUva7KqhDMHSRv3lZeSGGlMRO8EXkhoriy6wAwG9okPo/LM6+mnnuTlhu6TMy5+Eye0YovaayYpSCWiAa5vx0uh8lxdM3Ttxb2MxB3nBlWXyvEI1aYeYDNNQVaUmg483hdho++19xS7aKd0VORQBlNURfMSZ5wSIlmohMXvgi0lzjqLGOSkewWuQKDG4+G+VlDQMPJpX+AcNR2JVw6mIciSK0fx5zCoDVX8MhMCeEQ2IUjZg0= romano@dockingstation03"
-  ];
-
-  evgenyKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLczJN6THjOvvhQ1a61GKPgHAp3+eQohG5oPUzFtyyxK0IvPKOn9nULVhV7iJCmBPX5ZLikKqgWh+C+kvyw/QJID5UKcQxpqFaUnDmuOyS4T3QHYA4+aoBheYiaKiwoD8rgmyoJJ+7CY6Y8a62OLHCosYHemg0QhgOeeZC45mMgbFtECXhpbngq5fRx1D2Y23ddBBIIwkePh8SsJfu86VF9UXqsKn/Lbecx04SjRTtO+zClTKznvNZIkQx2ZKBuDyZ2tmg1kKh0oO0UnplJtM3gJiDWhQMx/Yn9/qSIIHbhff1xdkP2oVRCFqEzX2KKfDesOYkhTrfkyTg1Iw+i/a6ER1sJBSDcK6EsXpap50tIjHjqKu2NBOWR/wMJJy0Sxu8vSuBPD8/h0b/mIlHaLGZWOAp+XLDhBH5iPlaj9OSppQSEEJUDv1ba8p/rzL6FfiFDLKm5JgdV2vWEyyMBAu1GMsYmQNuOAGt5gXpIwP9mklpr3x6tCuZP53RtogCyeU= evgen@LAPTOP-565G8RJ0"
   ];
 
   ilyaKeys = [
@@ -207,17 +186,6 @@ in
         openssh.authorizedKeys.keys = harshanavkisKeys;
       };
 
-      # Dresden
-      # tests nixpkgs on our infra
-      sandro = {
-        isNormalUser = true;
-        home = "/home/sandro";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1009;
-        openssh.authorizedKeys.keys = sandroKeys;
-      };
-
       # Atsushi Koshiba
       atsushi = {
         isNormalUser = true;
@@ -312,17 +280,6 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1028;
         openssh.authorizedKeys.keys = manosKeys;
-      };
-
-      # Evgeny Volynsky
-      # tum
-      evgeny = {
-        isNormalUser = true;
-        home = "/home/evgeny";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1029;
-        openssh.authorizedKeys.keys = evgenyKeys;
       };
 
       # Ilya Meignan--Masson
@@ -494,12 +451,13 @@ in
       "matthias"
       "redha"
       "oguzcan"
+      "evgeny"
+      "sandro"
     ];
 
     nix.settings.trusted-users = [
       "joerg"
       "harshanavkis"
-      "sandro"
       "martin"
     ];
   };
