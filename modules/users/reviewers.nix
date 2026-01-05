@@ -28,6 +28,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAzr/1ZzUD9QPa6CF3NrtvdG4aw6NZ+qp2jnTXXuNeU asplos"
   ];
 
+  fastRev1Key = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbZSdnpG8qR8brKRl44z4YbxeivsgAYermfGzSwscfg artifact-eval" ];
   fastRev4Key = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZlRrs8kBa7RtMrWV59vSViGwpXpojBByyrav2/NcZONN27lMAKmeT/IphU305jOl8zCdhaU0MW+ELNmJ0IrBbum24xXTqWqhI0Ff0W9bGT3fHKCTPNKnKlfqd9JL647u7U/BcUE/oirVraGw7PxwvZcfYbvoB7kQ3jRqbT8R8cHva7/apy5+Eazl40dvY7l01kZETflaoTPX7hPEqQ/3p9HfvgC50kKs8Q/O1QHCT67fqbpszEJrdf6I3L6AM5Jnnrxv6CuHCW3icbvJAHyOejcubUqQwUiEon5wfCnim4Ebh2CfiCbrL5EVWYqkKGrl0QcyCNktaKGW8EndjfuPKoOhwpuh+xgqXy0c48VncfRh1bqYLFxLboiTISZqqdXCrdRrDSGOqTQGTLOHM9WE83+PUuXzldotzmExflCoxi9iffe0Zo1QaYEwIJ56dDfgcc0N6eMQhm/IjOOr31pRIETiAO7UTE9DWyJAUlmpUN5+4PTyqf+/WpqOab+m+ges= Deadpool@MSI"
   ];
@@ -127,6 +128,15 @@ in {
       uid = 4302;
       allowedHosts = [ "yasmin" ];
       openssh.authorizedKeys.keys = aranciniRev2;
+    };
+    fastRev1 = {
+      isNormalUser = true;
+      home = "/scratch/fastRev1";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4311;
+      allowedHosts = [ "irene" ];
+      openssh.authorizedKeys.keys = fastRev1Key;
     };
     fastRev4 = {
       isNormalUser = true;
