@@ -95,6 +95,9 @@ def build_local(c: Any, hosts: str = "") -> None:
                 "--option",
                 "keep-going",
                 "true",
+                "--option",
+                "extra-sandbox-paths",
+                "/var/cache/ccache",
                 "--flake",
                 f".#{h.host}",
             ]
