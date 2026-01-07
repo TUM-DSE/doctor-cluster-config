@@ -21,7 +21,7 @@ let
   ];
 
   maxKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHq8XrpIYVtb/1EHje+Kfys/wM+F/R5xmd54mMRvJwlP maxi@DESKTOP-DBGIHGB"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHO3xtv+H2/Tjad7iNhVkjEjqjmmCgeqRjwmFVorHVRj max@r"
   ];
 
   osmanKeys = [
@@ -186,7 +186,7 @@ in
       expires = "2025-12-31";
     };
 
-    # Maximilian Jäcklein, BSc thesis with Harsha (Resource disaggregation)
+    # Maximilian Jäcklein, MSc student with Harsha (Resource disaggregation)
     max = {
       isNormalUser = true;
       home = "/home/max";
@@ -202,7 +202,7 @@ in
         "graham"
       ];
       openssh.authorizedKeys.keys = maxKeys;
-      expires = "2025-12-31";
+      expires = "2027-12-31";
     };
 
     # Osman Yasar, HiWi working for David on gem5-related implemenations
