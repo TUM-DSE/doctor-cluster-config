@@ -5,6 +5,10 @@
     cacheDir = "/var/cache/ccache";
   };
 
+  systemd.tmpfiles.rules = [
+    "d /var/cache/ccache 0777 root nixbld - -"
+  ];
+
   nix.settings.extra-sandbox-paths = [ config.programs.ccache.cacheDir ];
   nixpkgs.overlays = [
     (self: super: {
