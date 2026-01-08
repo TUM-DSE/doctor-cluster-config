@@ -455,7 +455,7 @@ def deploy_local(c: Any) -> None:
     Deploy NixOS configuration on the same machine. The NixOS configuration is
     selected based on the hostname.
     """
-    c.run("""sudo nixos-rebuild switch --flake .#""")
+    c.run("""sudo nixos-rebuild switch --option extra-sandbox-paths /var/cache/ccache --flake .#""")
 
 
 @task
