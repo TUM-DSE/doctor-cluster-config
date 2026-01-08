@@ -270,7 +270,7 @@ in
       ];
       openssh.authorizedKeys.keys = jannikKeys;
       xrdpAccess = false;
-      expires = "2025-12-31";
+      expires = "2026-07-01";
     };
 
     # Peter Wegmann, MSc thesis with Aleksandra and Manos
@@ -286,7 +286,7 @@ in
       ];
       openssh.authorizedKeys.keys = peterKeys;
       xrdpAccess = false;
-      expires = "2025-12-31";
+      expires = "2026-04-30";
     };
 
     # Neel Mandal, BSc thesis with David (Branch prediction research on gem5)
