@@ -117,45 +117,7 @@ An example of the ```home.nix``` configured for VS Code support is shown in ```h
 
 # IPMI
 
-On our TUM rack machines we have IPMI support.
-
-Generally, you can find the IPMI web interface at
-`https://$HOST-mgmt.dos.cit.tum.de/` (i.e. https://astrid-mgmt.dos.cit.tum.de)
-once the device has been installed in the rack.  These addresses are only
-available through the management network, so you must use the RBG VPN to access them (see [accessing the server](https://github.com/TUM-DSE/doctor-cluster-config/tree/master/docs#accessing-the-server)).
-
-You can also retrieve the IP addresses assigned to the IPMI/BMC firmware by
-running:
-
-```console
-$ ipmitool lan print
-```
-
-on the machine. On the other host (i.e. your laptop) you can run the following command to get a serial console:
-
-```console
-$ inv impi-serial --host <ipmi-ip-address>
-```
-
-The following will reboot the machine:
-
-```console
-$ inv impi-powercycle --host <ipmi-ip-address>
-```
-
-To boot the a machine into bios, use:
-
-```console
-$ inv ipmi-boot-bios --host <ipmi-ip-address>
-```
-
-The IPMI password here is encrypted with
-[sops](https://github.com/mozilla/sops). To decrypt it on your machine, your
-age/pgp fingerprint must be added to `.sops.yaml` in this repository. And one of
-the existing users must re-encrypt `secrets.yml` with your key. 
-
-Then press enter to get a login prompt. The root password for all machines is
-also stored in [secrets.yaml]().
+For information about managing servers via IPMI (power control, serial console, etc.), see [docs/IPMI.md](./docs/IPMI.md).
 
 # Monitoring
 
