@@ -159,7 +159,7 @@ in
         "yasmin"
       ];
       openssh.authorizedKeys.keys = steveKeys;
-      expires = "2025-12-31";
+      expires = "2026-12-31";
     };
 
     # Maximilian Jäcklein, MSc student with Harsha (Resource disaggregation)
