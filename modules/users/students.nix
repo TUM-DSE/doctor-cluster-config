@@ -8,10 +8,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrdEe2/aOcUzaPtkDLJQ8VrcfiF8tNpk02SPLIVrsTywSHrBueOMz/cVR/Dkk7HREkI8iPshIefYogGgXNrwXp4ogu7DFA/5FS58QgrUS/il/LYT1pIcC4URFt0s5UHxvXbVP/zPVVpDZ7AqXLzz0H95csR9mO5eY2CgZh5+haC1dNhBEZK7v2pcsp+TrDzcxKjo5ZjqFAUNRBAT/lMJy2t0Zdm9cnkNFYymC2n57mgve2W9L8mRsMTYdQbwT7S7PgV3605e7bphnvGVl09iSkwkbQZ9oiqvZFdVn9id6tPxlf6wnnMo2YU9fuqRJoF6kKGN5Mvqvmm6bIUW5y9cFjpAniJg7lPY2Dc/em/q5jpdYirnkPnjnjpqdNBKnroRbsNL8bUWPyyZM4seSAIaw61OUQLhJHClUx9sAb3nyWRq6k2PAB1HcBeY9dVgv3b+0ZzNsR52IqEzs3VOZGAS174Kd8FFk7oyV15a1qfyhCzKxNJIbW8AHXh+S7EcVnyYyJguJ/hblUOwsc4Un/3UQkmhTTOkZOb3zZklHM62isA4yA6uAUkCxASgaG0UMtvzeJiynYLr1x4YR2jTKU2VD79n8pcKienJmBH0d80FtnPMiJPZA4EiVSXYAZ1PKbVsSBk47Ia7SmgZr46VX4ha5frAY/kQNzFk9qyImuyPyIyw== kammerme ge35tem"
   ];
 
-  phillipKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFrSp1SOJlgYtZCAplzFgO5l2aP0I23ciZX38hABj9CO p.assmann@nexus.gd"
-  ];
-
   antonKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8AlSd4iLm1XLO9p+xa5xLKHYfORl32wD2rOjSYei9d anton.ge@tum.de"
   ];
@@ -32,10 +28,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfke0RoVMEtj0XjxdjatQgz0RQxs7gaGSgM2OoGBemO chris@deskpin"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL7ghrJVl24UkfnyNOz21jbmrnPImp3+UR4/p2xymbnl chris@deskpin"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDwlqdl/70dJ1ABKwLEdLB6/RDpfE4RVaB+xL3YJ1v3+ chris@kingpin"
-  ];
-
-  victorTKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1bpcpaHwXyU9H2Vsp0cb66J4r3tBwDDy9n+XI++qfe victor.trost@tum.de"
   ];
 
   jannikKeys = [
@@ -154,22 +146,6 @@ in
       expires = "2026-03-31"; # WS26 ends
     };
 
-    # Phillip Assmann, BSc thesis with David (Branch prediction research on gem5)
-    phillip = {
-      isNormalUser = true;
-      home = "/home/phillip";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2069;
-      allowedHosts = [
-        "xavier"
-        "jamie"
-        "yasmin"
-      ];
-      openssh.authorizedKeys.keys = phillipKeys;
-      expires = "2025-12-31";
-    };
-
     # Steve Bambou, BSc thesis with David (Branch prediction research on gem5)
     steve = {
       isNormalUser = true;
@@ -239,22 +215,6 @@ in
       ];
       openssh.authorizedKeys.keys = christianKKeys;
       expires = "2026-12-31";
-    };
-
-    # Victor Trost, BSc thesis with Nicolo (SLICC generator)
-    victor = {
-      isNormalUser = true;
-      home = "/home/victor";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2077;
-      allowedHosts = [
-        "xavier"
-        "jamie"
-        "yasmin"
-      ];
-      openssh.authorizedKeys.keys = victorTKeys;
-      expires = "2025-12-31";
     };
 
     # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
@@ -464,6 +424,7 @@ in
     "paul"
     "paulz"
     "philip"
+    "phillip"
     "raito"
     "raphael"
     "robert"
@@ -476,6 +437,7 @@ in
     "tristan"
     "turkmen"
     "vanda"
+    "victor"
     "vincent"
     "wonbangseo"
     "yihe"
