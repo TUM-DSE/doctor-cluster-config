@@ -75,6 +75,10 @@ let
      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB8Z0mgIBVsM3DdXMBfnxbThcUF0GCm7saPMezjXZMRl yves@rudy.local"
   ];
 
+  chrisKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVrVgCf+jRXaQp5HYTzOie73lhgprzoJg9CvaDRdI0gHCNaKSQkq7wVMcht0kxnA/OcHekDdZsVBRu0VObRr8+8EQFtWeEvvevQ3TLQurz7ZcKvemX2vu6HM1UmWxdvWpPUVPHyjvJzXBYzy1+7NTK71U5uEULbSb06gpJ03bYZkW5VvX9Jew39tKiqUfYDW8moQ6obl93iU8GXETDuSx1YyQlq5sZ3cPryo5AlXjIJI8VFMHMiAHPenr0H/pkArBH0Gt5DeFEylxQVTlZHapR7zxk54pMoVVjXnbFHuGWkV4xSEaItF4FEh93xuydv/5m0JpIYdqWAjHvQZIb2aidhQ0gn7h9WlxT9HHdjfjiRgMfo0MiC3EdVIVDZriX2SOpNyLB5prWpAvXrG8MevlXSUd1vzGShR954jQ8WDjqw5K4X3GzdABn9WsRvkss0bX0+LS4XdpBY8nhWwgYTGYOjn1mGOqGmGeFRBx0bGchSy+fe6ImNR8M0pHH95aYoqPG9SZpoOipN1pseN4r6glA3C9RNQUuXeiyIpa789/Ssp9KPEqq4UlZVJL4SExpSnysZsadv9nwghQlVodZvYZohM5bbDj2E8lgYsBryWvYFWI84AliQxkVlZBL0uhNMa5GxQ/MjiGoE17uOnPTSFiOkpywh62PbtLuiMt1hIScoQ=="
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -372,6 +376,20 @@ in
       ];
       openssh.authorizedKeys.keys = yvesKeys;
       expires = "2026-06-31";
+    };
+
+    # Chris Deininger (Bsc thesis with Felix)
+    chris = {
+      isNormalUser = true;
+      home = "/home/chris";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2092;
+      allowedHosts = [
+        "jamie"
+      ];
+      openssh.authorizedKeys.keys = chrisKeys;
+      expires = "2026-12-31";
     };
   };
 
