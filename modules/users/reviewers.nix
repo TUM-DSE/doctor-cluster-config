@@ -32,6 +32,8 @@ let
 
   fastRev2Key = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKDZanoq86X8H/Sa21icA73+ItU6E5pY4QfeOFd4VSti6PVKskBywDz0e30J0tGDyBHFmFqtiglz4/GscOpPN5Y6WjmVRBS85P0z7NcRRy3fHMT2DmNDFwSze+HZ656ar6CtdejQZZwyWpxCDCrHT93y2c9MCW+yuLvBfmMZjKnm8BsE4Xpx+n3tLSJUJF9xtpowYJGdAKvLTeJ+DxWAwkWgkCdEYGb7QA/rjNexHFxKYZPNZNnQ9uajsmKDGzaYeI6CL4eytuj1JyPdYlfRjhS9WpEzmQuDbjOy+hHW0I0taOSfLsZJPUfFb1LTj3djQ3aVcQC3GNZXNd4QnYPIWSRy5k8QJG1l5aF2ys4e1+59aWFrKXBCaKgnZZsNzwL9R8BZVv1PvgujCJCnnZrUJ6EwdZYw9f4o5nO3Z+r7/J+l9R+ZSEEilLVdFgY7itd3wUsCrgy77a640WlpkgT6aN+W/IImgBmNz3ynzRzb4eaxvzoP2GZciBRNiA1vBs6zk= rohan@Rohans-MacBook-Pro.local" ];
 
+  fastRev5Key = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIOh/qHyYz/OmyrHcsKJ90W5aM+k3H7Ato3tF/HnBKln FAST26AE"];
+
   fastRev4Key = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZlRrs8kBa7RtMrWV59vSViGwpXpojBByyrav2/NcZONN27lMAKmeT/IphU305jOl8zCdhaU0MW+ELNmJ0IrBbum24xXTqWqhI0Ff0W9bGT3fHKCTPNKnKlfqd9JL647u7U/BcUE/oirVraGw7PxwvZcfYbvoB7kQ3jRqbT8R8cHva7/apy5+Eazl40dvY7l01kZETflaoTPX7hPEqQ/3p9HfvgC50kKs8Q/O1QHCT67fqbpszEJrdf6I3L6AM5Jnnrxv6CuHCW3icbvJAHyOejcubUqQwUiEon5wfCnim4Ebh2CfiCbrL5EVWYqkKGrl0QcyCNktaKGW8EndjfuPKoOhwpuh+xgqXy0c48VncfRh1bqYLFxLboiTISZqqdXCrdRrDSGOqTQGTLOHM9WE83+PUuXzldotzmExflCoxi9iffe0Zo1QaYEwIJ56dDfgcc0N6eMQhm/IjOOr31pRIETiAO7UTE9DWyJAUlmpUN5+4PTyqf+/WpqOab+m+ges= Deadpool@MSI"
   ];
@@ -160,6 +162,16 @@ in {
       uid = 4310;
       allowedHosts = [ "irene" ];
       openssh.authorizedKeys.keys = fastRev4Key;
+    };
+
+    fastRev5 = {
+      isNormalUser = true;
+      home = "/scratch/fastRev5";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4313;
+      allowedHosts = [ "irene" ];
+      openssh.authorizedKeys.keys = fastRev5Key;
     };
   };
 
