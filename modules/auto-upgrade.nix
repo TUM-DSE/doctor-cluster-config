@@ -44,7 +44,7 @@
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";
-      OnUnitInactiveSec = "5m";
+      OnUnitInactiveSec = "1d";
     };
   };
 
