@@ -95,7 +95,8 @@ let
     rev = "4fdd6b98e4ff627b80460a0a6fe96c902c46d015"; # branch svsm
     sha256 = "sha256-QYkL8AfG8f0uLfNB8NcpJvPKRCGetivWHGFVehf0XWI=";
     version = "6.11-vc";
-    modDirVersionArg = "6.11.0";
+    localVersion="-svsm-vc-wip";
+    modDirVersionArg = "6.11.0-svsm-vc-wip";
     extraPatches = [ ];
   };
 
@@ -140,6 +141,7 @@ buildLinux (
     ++ extraPatches;
     extraMeta.branch = version;
     ignoreConfigErrors = true;
+    extraMakeFlags = [ "LOCALVERSION=${localVersion}" ];
   }
   // (args.argsOverride or { })
 )

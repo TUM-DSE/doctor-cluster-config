@@ -2,7 +2,8 @@
   imports = [
     ../modules/hardware/poweredge7625.nix
     ../modules/nfs/client.nix
-    ../modules/amd_sev_snp-vanilla.nix
+    #../modules/amd_sev_snp-vanilla.nix
+    ../modules/amd_sev_svsm.nix
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNS0W800676";
@@ -19,6 +20,7 @@
     "nvme.poll_queues=4"
     "nvme_core.multipath=N"
     "amd_iommu=on"
+    "kvm_amd.dump_invalid_vmcb=1"
   ];
 
   # Enable SR-IOV driver for Intel NIC
