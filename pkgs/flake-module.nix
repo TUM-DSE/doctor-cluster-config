@@ -38,8 +38,11 @@
       linux-morello = pkgs.callPackage ./kernels/linux-morello.nix {
         inherit (self.packages.aarch64-linux) clang-morello bintools-morello clang-morello-unwrapped;
       };
-      musl-morello-purecap = pkgs.callPackage ./musl-morello-purecap { inherit (self.packages.aarch64-linux) llvm-morello-purecap; };
-      llvm-morello-purecap = pkgs.callPackage ./llvm-morello-purecap { };
+      linux-morello-headers = pkgs.callPackage ./kernels/linux-morello-headers.nix {
+        inherit (self.packages.aarch64-linux) linux-morello;
+      };
+      musl-morello-purecap = pkgs.callPackage ./musl-morello-purecap { inherit (self.packages.aarch64-linux) clang-morello; };
+      llvm-morello-purecap = pkgs.callPackage ./llvm-morello-purecap { inherit (self.packages.aarch64-linux) clang-morello musl-morello-purecap linux-morello-headers; };
     };
 
   # packages for many targets:
