@@ -1,43 +1,53 @@
-{
-  stdenv,
-  zlib,
-  fetchzip,
-  autoPatchelfHook,
-  llvmPackages_18,
+{ lib
+, gcc13Stdenv
+, fetchFromGitLab
+, cmake
+, ninja
+, python3
+, libxml2
+, ncurses
 }:
-stdenv.mkDerivation {
-  name = "morello-clang";
-  src = fetchzip {
-    url = "https://github.com/TUM-DSE/doctor-cluster-config/releases/download/morello/artifacts.zip";
-    sha256 = "sha256-wKPXKmCP2aNeToTa4goey1uiNcG87o/x3Vt50ukCkgg";
-    stripRoot = false;
-  };
-  installPhase = ''
-    tar -xf llvm-morello-linux-aarch64-clang.tar.gz
-    mv llvm-morello-linux-aarch64/ $out
-  '';
-  buildInputs = [
-    zlib
-    stdenv.cc.cc
-  ];
-  nativeBuildInputs = [ autoPatchelfHook ];
-  doInstallCheck = true;
-  installCheckPhase = ''
-    $out/bin/clang --version
-  '';
-  passthru.isClang = true;
-  passthru.hardeningUnsupportedFlagsByTargetPlatform =
-    targetPlatform:
-    (
-      if builtins.hasAttr "hardeningUnsupportedFlagsByTargetPlatform" llvmPackages_18.clang-unwrapped then
-        llvmPackages_18.clang-unwrapped.hardeningUnsupportedFlagsByTargetPlatform targetPlatform
-      else
-        [ ]
-    )
-    ++ [ "strictoverflow" "stackclashprotection" ];
 
-  meta = {
-    description = "Morello build toolchain";
-    platforms = [ "aarch64-linux" ];
+gcc13Stdenv.mkDerivation rec {
+  pname = "clang-morello";
+  version = "git-17f4965";
+
+  src = fetchFromGitLab {
+    domain = "git.morello-project.org";
+    owner = "morello";
+    repo = "llvm-project";
+    rev = "17f4965c903e0dd94203dbb96ac5d5b931353108";
+    sha256 = "sha256-KQGH1oTc4WnzCCA9tLfIiBMFIj/AQe1vrT+G8kNUTnc="; 
+  };
+
+  nativeBuildInputs = [ cmake ninja python3 ];
+  buildInputs = [ libxml2 ncurses ];
+
+  cmakeDir = "../llvm";
+
+  cmakeFlags = [
+    "-DLLVM_ENABLE_PROJECTS=clang;lld"
+    "-DLLVM_TARGETS_TO_BUILD=AArch64"
+    "-DLLVM_DEFAULT_TARGET_TRIPLE=aarch64-unknown-linux-musl_purecap"
+    
+    "-DCMAKE_BUILD_TYPE=Release"
+    "-DLLVM_ENABLE_ASSERTIONS=ON"
+    "-DLLVM_PARALLEL_LINK_JOBS=1"
+    "-DLLVM_INSTALL_UTILS=ON"
+
+    "-DCLANG_TOOLING_BUILD_AST_INTROSPECTION=OFF"
+    "-DCLANG_ENABLE_STATIC_ANALYZER=OFF"
+    "-DCLANG_ENABLE_ARCMT=OFF"
+    
+    # Silence warnings from newer GCC versions
+    "-DCMAKE_CXX_FLAGS=-Wno-deprecated-declarations"
+  ];
+  enableParallelBuilding = true;
+
+  meta = with lib; {
+    description = "LLVM/Clang Cross-Compiler for Morello Purecap";
+    homepage = "https://git.morello-project.org/morello/llvm-project";
+    license = licenses.asl20;
+    platforms = platforms.unix;
   };
 }

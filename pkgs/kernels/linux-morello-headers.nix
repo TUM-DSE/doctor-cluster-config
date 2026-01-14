@@ -3,7 +3,7 @@
   makeLinuxHeaders
 }:
 makeLinuxHeaders {
-  version = linux-morello.kernel.version;
-  src = linux-morello.kernel.version;
+  version = linux-morello.version;
+  src = linux-morello.src;
 }
 
