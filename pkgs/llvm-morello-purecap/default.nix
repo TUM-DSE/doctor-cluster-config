@@ -45,7 +45,7 @@ stdenv.mkDerivation rec {
   '';
 
   cmakeFlags = [
-    "-DLLVM_ENABLE_RUNTIMES=libcxx;libcxxabi;libunwind"
+    "-DLLVM_ENABLE_RUNTIMES=libcxx;libcxxabi;libunwind;compiler-rt"
     
     "-DCMAKE_BUILD_TYPE=Release"
     "-DCMAKE_C_COMPILER=${clang-morello}/bin/clang"
@@ -55,6 +55,9 @@ stdenv.mkDerivation rec {
     "-DCMAKE_C_COMPILER_WORKS=ON"
     "-DCMAKE_CXX_COMPILER_WORKS=ON"
     "-DCMAKE_ASM_COMPILER_WORKS=ON"
+    "-DCMAKE_C_COMPILER_TARGET=aarch64-linux-musl_purecap"
+    "-DCMAKE_CXX_COMPILER_TARGET=aarch64-linux-musl_purecap"
+    "-DCMAKE_ASM_COMPILER_TARGET=aarch64-linux-musl_purecap"
     
     "-DLLVM_CONFIG_PATH=${clang-morello}/bin/llvm-config"
     
@@ -70,6 +73,15 @@ stdenv.mkDerivation rec {
     "-DLIBCXXABI_ENABLE_EXCEPTIONS=ON"
     "-DLIBUNWIND_ENABLE_EXCEPTIONS=ON"
     "-DLIBCXXABI_USE_LLVM_UNWINDER=ON"
+
+    "-DCOMPILER_RT_BUILD_BUILTINS=ON"
+    "-DCOMPILER_RT_BUILD_SANITIZERS=OFF"
+    "-DCOMPILER_RT_BUILD_XRAY=OFF"
+    "-DCOMPILER_RT_BUILD_LIBFUZZER=OFF"
+    "-DCOMPILER_RT_BUILD_PROFILE=OFF"
+    "-DCOMPILER_RT_BUILD_MEMPROF=OFF"
+    "-DCOMPILER_RT_BUILD_ORC=OFF"
+    "-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON"
   ];
   enableParallelBuilding = true;
 
