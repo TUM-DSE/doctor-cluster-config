@@ -26,7 +26,7 @@ gcc13Stdenv.mkDerivation rec {
   cmakeDir = "../llvm";
 
   cmakeFlags = [
-    "-DLLVM_ENABLE_PROJECTS=clang;lld"
+    "-DLLVM_ENABLE_PROJECTS=clang;lld;lldb"
     "-DLLVM_TARGETS_TO_BUILD=AArch64"
     "-DLLVM_DEFAULT_TARGET_TRIPLE=aarch64-unknown-linux-musl_purecap"
     
