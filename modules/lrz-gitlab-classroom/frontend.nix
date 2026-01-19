@@ -1,5 +1,5 @@
 { pkgs, config, ... }: let
-  lrz-gitlab-classroom = builtins.getFlake "github:pogobanane/lrz-gitlab-classroom/cbaf48abbd0f65096ff466c68dbf9cfda9a6d753";
+  lrz-gitlab-classroom = builtins.getFlake "github:pogobanane/lrz-gitlab-classroom/2f87c07ba6e5e8dfcdedcb40957d20361d34dd33";
   frontend = lrz-gitlab-classroom.packages.${pkgs.system}.frontend;
   user = "lrz-gitlab-teacher";
 in {
