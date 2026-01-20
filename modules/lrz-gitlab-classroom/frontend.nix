@@ -1,5 +1,5 @@
 { pkgs, config, ... }: let
-  lrz-gitlab-classroom = builtins.getFlake "github:pogobanane/lrz-gitlab-classroom/2f87c07ba6e5e8dfcdedcb40957d20361d34dd33";
+  lrz-gitlab-classroom = builtins.getFlake "github:pogobanane/lrz-gitlab-classroom/e8b5806b3784da7cb249539871a8f7d9be6d3a1a";
   frontend = lrz-gitlab-classroom.packages.${pkgs.system}.frontend;
   user = "lrz-gitlab-teacher";
 in {
@@ -51,11 +51,12 @@ in {
     after = [ "network.target" "lrz-gitlab-classroom-frontend.socket" ];
     requires = [ "lrz-gitlab-classroom-frontend.socket" ];
     environment = {
-      TUMONLINE_OAUTH_CLIENT_ID = "";
-      GITLAB_OAUTH_CLIENT_ID = "";
-      GITLAB_OAUTH_SCOPE = "read_user";
+      TUMONLINE_OAUTH_CLIENT_ID = "BRVK3EAY806UPZGIRXSXOYQ8EZCVQMWBOVYAMONGV7ZHAP31FI6WTJ5QQ8GT079X";
+      GITLAB_OAUTH_CLIENT_ID = "70cb25046400aa0cef9222fccdcd8fde6c6cf923b66ed520606339124af555aa";
+      GITLAB_OAUTH_SCOPE = "api"; # "read_user" should be enough? Do we have to change gitlab settings of the client id to make this work?
       STATE_DIRECTORY = "/var/lib/lrz-gitlab-classroom";
       TEMPLATE_PATH = "${frontend}/share/templates/grnvs/";
+      IGNORE_ENROLLMENT_CHECK = "1"; # TODO remove to activate enrollment check
       # Add non-secret env vars here
     };
     script = ''
