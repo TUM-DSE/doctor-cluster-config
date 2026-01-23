@@ -1,0 +1,47 @@
+From: Jiwei Sun <sunjw10@lenovo.com>
+Subject: [PATCH 1/2] PCI: Fix the wrong reading of register fields
+
+The macros PCIE_LNKCTL2_TLS2SPEED() and PCIE_LNKCAP_SLS2SPEED() use full
+register values instead of isolated speed fields, potentially returning
+PCI_SPEED_UNKNOWN. Also, pcie_failed_link_retrain() fails to re-read the
+Link Control 2 Register after modification, preventing execution of the
+2.5GT/s restriction removal code.
+
+Mask register values to keep only the speed fields before passing to
+pcie_set_target_speed() and re-read the Link Control 2 Register when
+needed.
+
+Fixes: de9a6c8d5dbf
+Signed-off-by: Jiwei Sun <sunjw10@lenovo.com>
+---
+ drivers/pci/quirks.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+index 76f4df75b08a..605628c810a5 100644
+--- a/drivers/pci/quirks.c
++++ b/drivers/pci/quirks.c
+@@ -118,11 +118,13 @@ int pcie_failed_link_retrain(struct pci_dev *dev)
+ 		ret = pcie_set_target_speed(dev, PCIE_SPEED_2_5GT, false);
+ 		if (ret) {
+ 			pci_info(dev, "retraining failed\n");
++			oldlnkctl2 &= PCI_EXP_LNKCTL2_TLS;
+ 			pcie_set_target_speed(dev, PCIE_LNKCTL2_TLS2SPEED(oldlnkctl2),
+ 					      true);
+ 			return ret;
+ 		}
+
++		pcie_capability_read_word(dev, PCI_EXP_LNKCTL2, &lnkctl2);
+ 		pcie_capability_read_word(dev, PCI_EXP_LNKSTA, &lnksta);
+ 	}
+
+@@ -133,6 +135,7 @@ int pcie_failed_link_retrain(struct pci_dev *dev)
+
+ 		pci_info(dev, "removing 2.5GT/s downstream link speed restriction\n");
+ 		pcie_capability_read_dword(dev, PCI_EXP_LNKCAP, &lnkcap);
++		lnkcap &= PCI_EXP_LNKCAP_SLS;
+ 		ret = pcie_set_target_speed(dev, PCIE_LNKCAP_SLS2SPEED(lnkcap), false);
+ 		if (ret) {
+ 			pci_info(dev, "retraining failed\n");
+--
+2.34.1

@@ -1,0 +1,48 @@
+From: Jiwei Sun <sunjw10@lenovo.com>
+Subject: [PATCH 2/2] PCI: Fix the PCIe bridge decreasing to Gen 1 during hotplug testing
+
+When we do the quick hot-add/hot-remove test (within 1 second) with a PCIE
+Gen 5 NVMe disk, there is a possibility that the PCIe bridge will decrease
+to 2.5GT/s from 32GT/s.
+
+The issue occurs when a device is hot-removed and pciehp interrupt triggers
+pcie_failed_link_retrain(). During rapid add/remove cycles, if a device is
+re-added before link retraining completes, the target link speed field can
+remain at 0x1 instead of being properly set.
+
+To fix this, restrict the retraining workaround to only ASMedia ASM2824
+devices where it is necessary, rather than applying it universally.
+
+Fixes: a89c82249c37 ("PCI: Work around PCIe link training failures")
+Reported-by: Adrian Huang <ahuang12@lenovo.com>
+Signed-off-by: Jiwei Sun <sunjw10@lenovo.com>
+---
+ drivers/pci/quirks.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+index 605628c810a5..ff04ebd9ae16 100644
+--- a/drivers/pci/quirks.c
++++ b/drivers/pci/quirks.c
+@@ -104,6 +104,9 @@ int pcie_failed_link_retrain(struct pci_dev *dev)
+ 	u16 lnksta, lnkctl2;
+ 	int ret = -ENOTTY;
+
++	if (!pci_match_id(ids, dev))
++		return 0;
++
+ 	if (!pci_is_pcie(dev) || !pcie_downstream_port(dev) ||
+ 	    !pcie_cap_has_lnkctl2(dev) || !dev->link_active_reporting)
+ 		return ret;
+@@ -129,8 +132,7 @@ int pcie_failed_link_retrain(struct pci_dev *dev)
+ 	}
+
+ 	if ((lnksta & PCI_EXP_LNKSTA_DLLLA) &&
+-	    (lnkctl2 & PCI_EXP_LNKCTL2_TLS) == PCI_EXP_LNKCTL2_TLS_2_5GT &&
+-	    pci_match_id(ids, dev)) {
++	    (lnkctl2 & PCI_EXP_LNKCTL2_TLS) == PCI_EXP_LNKCTL2_TLS_2_5GT) {
+ 		u32 lnkcap;
+
+ 		pci_info(dev, "removing 2.5GT/s downstream link speed restriction\n");
+--
+2.34.1
