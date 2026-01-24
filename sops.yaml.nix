@@ -36,6 +36,7 @@ let
       martin
       aleksandra
       thore
+      harshanavkis
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
