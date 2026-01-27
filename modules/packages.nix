@@ -46,6 +46,7 @@
       smartmontools # smartctl
       nvme-cli # nvmectl
       edac-utils # edac-util: memory/pci errors
+      keyutils # keyctl: kernel key management
 
       # cluster management
       inputs.hosthog
