@@ -5,12 +5,11 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/worker.nix
-    #../modules/amd_sev.nix
-    ../modules/amd_sev_snp-6.8.nix
     ../modules/dpdk.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/disko-zfs.nix
     ../modules/kata-container
+    ../modules/amd_sev_snp-vanilla.nix
   ];
 
   boot.hugepages1GB.number = 0;
