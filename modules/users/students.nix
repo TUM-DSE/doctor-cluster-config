@@ -128,6 +128,7 @@ in
       allowedHosts = [
         "graham"
         "eliza"
+        "yasmin"
       ];
       openssh.authorizedKeys.keys = robertBKeys;
       xrdpAccess = true;
