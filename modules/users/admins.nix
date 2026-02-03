@@ -31,6 +31,8 @@ let
 in
 {
   config = {
+    programs.fish.enable = true; # for thores shell to work
+
     users.users = {
       # Jörg Thalheim
       # tum
