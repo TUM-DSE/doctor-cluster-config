@@ -144,11 +144,14 @@ machines. Those machines also are not backed up.
 ## Others
 
 - RBG VMs:
-  - monitoring.dos.cit.tum.de (VM), doctor.r (container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+  - monitoring.dos.cit.tum.de (ubuntu VM itself), doctor.dos.cit.tum.de (nixos container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+    - SSHing into the nixos container that runs all services: use the login.dos.cit.tum.de jumphost as usual, but ssh on doctor.dos.cit.tum.de uses port 2222!
     - [prometheus](https://prometheus.dse.in.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
     - [alertmanager](https://alertmanager.dse.in.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
+  - ls1-coffee.dse.cit.tum.de: coffee backend
+  - web.dse.in.tum.de: public website
   - dosvm1.cit.tum.de: pxeboot
 
 # Storage

@@ -121,7 +121,7 @@ in
         ipv6 = "2a09:80c0:102::25";
         mac = "94:6D:AE:DA:EB:42";
       };
-      # {loki, grafana, prometheus, alertmanager}.dos.cit.tum.de and vmbhatotia43.in.tum.de
+      # {doctor, loki, grafana, prometheus, alertmanager}.dos.cit.tum.de. Hosted on {vmbhatotia43.in.tum.de, monitoring.dos.cit.tum.de}
       doctor = {
         ipv4 = "131.159.102.4";
         ipv6 = "2a09:80c0:102::4";

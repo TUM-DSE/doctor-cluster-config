@@ -72,6 +72,8 @@
 
   services.openssh.extraConfig = ''
     ListenAddress [42:0:3c46:96e2:72f4:be89:d6eb:ab14]
+    ListenAddress 0.0.0.0:2222
+    Port 2222
   '';
   services.openssh.startWhenNeeded = false;
 
