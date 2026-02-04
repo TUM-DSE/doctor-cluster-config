@@ -20,8 +20,7 @@ let
   ];
 
   dimitriosKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHM2c6Z1MvCqi75iKSbZDUCWnNEwxmU9hoXKDCk//qBo dimstav23@lenovo"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAw/oSXaKcjp8NPB17BBna62feYiijT3jv3egYX2+h3/ dimstav23@macbook"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5ulxJK+wvBf1Z3bQxvSIX3gPBA4LUC5tsFPk/BbBnl dimstav23@lenovoT14s"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB8bvCpTxT0Mc/4yv8l4bDvflXUStcwm3MpLXai/O9od dimstav23@lenovo"
   ];
 
