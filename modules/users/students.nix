@@ -83,6 +83,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8+2IgrKrbXjVW5B2ApnA/O58t0/Dt5teYOO+LYI++3 rr@fedora"
   ];
 
+  leonKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICgeUnSJhExrcfINl80baYvn0j9RXTq2QnZhJ3gN1J7V leon@Laptop-Leon"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -409,6 +413,21 @@ in
         "river"
       ];
       openssh.authorizedKeys.keys = raduKeys;
+      expires = "2026-10-31";
+    };
+
+    # Leon Simoniants (BSc thesis with Anatole/Peter)
+    leon = {
+      isNormalUser = true;
+      home = "/home/leon";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2094;
+      allowedHosts = [
+        "wilfred"
+        "river"
+      ];
+      openssh.authorizedKeys.keys = leonKeys;
       expires = "2026-10-31";
     };
   };
