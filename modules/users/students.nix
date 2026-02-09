@@ -399,7 +399,7 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2092;
       allowedHosts = [
-        "jamie"
+        "jack"
       ];
       openssh.authorizedKeys.keys = chrisKeys;
       expires = "2026-12-31";
