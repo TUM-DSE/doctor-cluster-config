@@ -14,6 +14,7 @@ in
 
   virtualisation.docker = {
     enable = true;
+	package = pkgs.docker_25;
     enableOnBoot = true;
     storageDriver = if useOverlayStorageDriver then "overlay2" else "zfs";
     extraOptions = "--userland-proxy=false --ip-masq=true ${
