@@ -1,0 +1,159 @@
+From 142fef292a2e0ae34075447a42fd459b33e228fe Mon Sep 17 00:00:00 2001
+From: Michael Roth <michael.roth@amd.com>
+Date: Thu, 24 Apr 2025 15:03:42 -0500
+Subject: [PATCH 2/2] KVM: SEV: Add KVM_SEV_SNP_ENABLE_REQ_CERTS command
+
+Introduce a new command for KVM_MEMORY_ENCRYPT_OP ioctl that can be used
+to enable fetching of endorsement key certificates from userspace via
+the new KVM_EXIT_SNP_REQ_CERTS exit type. Also introduce a new
+KVM_X86_SEV_SNP_REQ_CERTS KVM device attribute so that userspace can
+query whether the kernel supports the new command/exit.
+
+Suggested-by: Sean Christopherson <seanjc@google.com>
+Reviewed-by: Liam Merwick <liam.merwick@oracle.com>
+Tested-by: Liam Merwick <liam.merwick@oracle.com>
+Signed-off-by: Michael Roth <michael.roth@amd.com>
+---
+ .../virt/kvm/x86/amd-memory-encryption.rst    | 52 ++++++++++++++++++-
+ arch/x86/include/uapi/asm/kvm.h               |  2 +
+ arch/x86/kvm/svm/sev.c                        | 16 ++++++
+ 3 files changed, 69 insertions(+), 1 deletion(-)
+
+diff --git a/Documentation/virt/kvm/x86/amd-memory-encryption.rst b/Documentation/virt/kvm/x86/amd-memory-encryption.rst
+index 1ddb6a86ce7f..543b5e5dd8d4 100644
+--- a/Documentation/virt/kvm/x86/amd-memory-encryption.rst
++++ b/Documentation/virt/kvm/x86/amd-memory-encryption.rst
+@@ -572,6 +572,52 @@ Returns: 0 on success, -negative on error
+ See SNP_LAUNCH_FINISH in the SEV-SNP specification [snp-fw-abi]_ for further
+ details on the input parameters in ``struct kvm_sev_snp_launch_finish``.
+ 
++21. KVM_SEV_SNP_ENABLE_REQ_CERTS
++--------------------------------
++
++The KVM_SEV_SNP_ENABLE_REQ_CERTS command will configure KVM to exit to
++userspace with a ``KVM_EXIT_SNP_REQ_CERTS`` exit type as part of handling
++a guest attestation report, which will to allow userspace to provide a
++certificate corresponding to the endorsement key used by firmware to sign
++that attestation report.
++
++Returns: 0 on success, -negative on error
++
++NOTE: The endorsement key used by firmware may change as a result of
++management activities like updating SEV-SNP firmware or loading new
++endorsement keys, so some care should be taken to keep the returned
++certificate data in sync with the actual endorsement key in use by
++firmware at the time the attestation request is sent to SNP firmware. The
++recommended scheme to do this is to use file locking (e.g. via fcntl()'s
++F_OFD_SETLK) in the following manner:
++
++  - Prior to obtaining/providing certificate data as part of servicing an
++    exit type of ``KVM_EXIT_SNP_REQ_CERTS``, the VMM should obtain a
++    shared/read or exclusive/write lock on the certificate blob file before
++    reading it and returning it to KVM, and continue to hold the lock until
++    the attestation request is actually sent to firmware. To facilitate
++    this, the VMM can set the ``immediate_exit`` flag of kvm_run just after
++    supplying the certificate data, and just before resuming the vCPU.
++    This will ensure the vCPU will exit again to userspace with ``-EINTR``
++    after it finishes fetching the attestation request from firmware, at
++    which point the VMM can safely drop the file lock.
++
++  - Tools/libraries that perform updates to SNP firmware TCB values or
++    endorsement keys (e.g. via /dev/sev interfaces such as ``SNP_COMMIT``,
++    ``SNP_SET_CONFIG``, or ``SNP_VLEK_LOAD``, see
++    Documentation/virt/coco/sev-guest.rst for more details) in such a way
++    that the certificate blob needs to be updated, should similarly take an
++    exclusive lock on the certificate blob for the duration of any updates
++    to endorsement keys or the certificate blob contents to ensure that
++    VMMs using the above scheme will not return certificate blob data that
++    is out of sync with the endorsement key used by firmware at the time
++    the attestation request is actually issued.
++
++This scheme is recommended so that tools can use a fairly generic/natural
++approach to synchronizing firmware/certificate updates via file-locking,
++which should make it easier to maintain interoperability across
++tools/VMMs/vendors.
++
+ Device attribute API
+ ====================
+ 
+@@ -579,11 +625,15 @@ Attributes of the SEV implementation can be retrieved through the
+ ``KVM_HAS_DEVICE_ATTR`` and ``KVM_GET_DEVICE_ATTR`` ioctls on the ``/dev/kvm``
+ device node, using group ``KVM_X86_GRP_SEV``.
+ 
+-Currently only one attribute is implemented:
++The following attributes are currently implemented:
+ 
+ * ``KVM_X86_SEV_VMSA_FEATURES``: return the set of all bits that
+   are accepted in the ``vmsa_features`` of ``KVM_SEV_INIT2``.
+ 
++* ``KVM_X86_SEV_SNP_REQ_CERTS``: return a value of 1 if the kernel supports the
++  ``KVM_EXIT_SNP_REQ_CERTS`` exit, which allows for fetching endorsement key
++  certificates from userspace for each SNP attestation request the guest issues.
++
+ Firmware Management
+ ===================
+ 
+diff --git a/arch/x86/include/uapi/asm/kvm.h b/arch/x86/include/uapi/asm/kvm.h
+index d420c9c066d4..af8b02fd87f3 100644
+--- a/arch/x86/include/uapi/asm/kvm.h
++++ b/arch/x86/include/uapi/asm/kvm.h
+@@ -502,6 +502,7 @@ struct kvm_sync_regs {
+ /* vendor-specific groups and attributes for system fd */
+ #define KVM_X86_GRP_SEV			1
+ #  define KVM_X86_SEV_VMSA_FEATURES	0
++#  define KVM_X86_SEV_SNP_REQ_CERTS	2
+ 
+ struct kvm_vmx_nested_state_data {
+ 	__u8 vmcs12[KVM_STATE_NESTED_VMX_VMCS_SIZE];
+@@ -742,6 +743,7 @@ enum sev_cmd_id {
+ 	KVM_SEV_SNP_LAUNCH_START = 100,
+ 	KVM_SEV_SNP_LAUNCH_UPDATE,
+ 	KVM_SEV_SNP_LAUNCH_FINISH,
++	KVM_SEV_SNP_ENABLE_REQ_CERTS,
+ 
+ 	KVM_SEV_NR_MAX,
+ };
+diff --git a/arch/x86/kvm/svm/sev.c b/arch/x86/kvm/svm/sev.c
+index 25e5b5f93bc3..bb17a9520ea3 100644
+--- a/arch/x86/kvm/svm/sev.c
++++ b/arch/x86/kvm/svm/sev.c
+@@ -2153,6 +2153,9 @@ int sev_dev_get_attr(u32 group, u64 attr, u64 *val)
+ 		*val = sev_supported_vmsa_features;
+ 		return 0;
+ 
++	case KVM_X86_SEV_SNP_REQ_CERTS:
++		*val = sev_snp_enabled ? 1 : 0;
++		return 0;
+ 	default:
+ 		return -ENXIO;
+ 	}
+@@ -2569,6 +2572,16 @@ static int snp_launch_finish(struct kvm *kvm, struct kvm_sev_cmd *argp)
+ 	return ret;
+ }
+ 
++static int snp_enable_certs(struct kvm *kvm)
++{
++	if (kvm->created_vcpus || !sev_snp_guest(kvm))
++		return -EINVAL;
++
++	to_kvm_sev_info(kvm)->snp_certs_enabled = true;
++
++	return 0;
++}
++
+ int sev_mem_enc_ioctl(struct kvm *kvm, void __user *argp)
+ {
+ 	struct kvm_sev_cmd sev_cmd;
+@@ -2674,6 +2687,9 @@ int sev_mem_enc_ioctl(struct kvm *kvm, void __user *argp)
+ 	case KVM_SEV_SNP_LAUNCH_FINISH:
+ 		r = snp_launch_finish(kvm, &sev_cmd);
+ 		break;
++	case KVM_SEV_SNP_ENABLE_REQ_CERTS:
++		r = snp_enable_certs(kvm);
++		break;
+ 	default:
+ 		r = -EINVAL;
+ 		goto out;
+-- 
+2.52.0
+
