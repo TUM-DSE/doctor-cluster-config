@@ -324,6 +324,7 @@ in
         "ian"
         "yasmin"
         "jamie"
+        "vislor"
       ];
       openssh.authorizedKeys.keys = johannaKeys;
       expires = "2027-12-31";
