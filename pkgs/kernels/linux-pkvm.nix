@@ -41,7 +41,27 @@ let
         ignoreConfigErrors = true;
         extraMakeFlags = [ "LOCALVERSION=${localVersion}" ];
       } // (args.argsOverride or { }));
-  pkvm_linux_6_18 = rec {
+  pkvm_6_12 = rec {
+    owner = "intel-staging";
+    repo = "pKVM-IA";
+    # branch: RFC-v6.12
+    rev = "1070072c9e1cb919d7dc93bfc2ff6465e669cae8";
+    sha256 = "sha256-4phTrXLw4Fc6gSwXZei9PSiaFjrDykyRRanfdzmoNlg=";
+    version = "6.12";
+    localVersion = "-pkvm";
+    modDirVersion = "6.12.0${localVersion}";
+    extraPatches = [
+      {
+        name = "pkvm-config";
+        patch = null;
+        extraConfig = ''
+          PKVM_INTEL y
+          PKVM_INTEL_DEBUG y
+        '';
+      }
+    ];
+  };
+  pkvm_6_18 = rec {
     owner = "intel-staging";
     repo = "pKVM-IA";
     # tree/pkvm-pvvmcs-v6.18-wip
@@ -67,4 +87,5 @@ let
   };
 in
 # change here to change kernel
-buildKernel pkvm_linux_6_18
+# buildKernel pkvm_6_12
+buildKernel pkvm_6_18
