@@ -15,7 +15,7 @@ in {
         "hinoki"
         "sakura"
       ];
-      openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIElj3HHoA8A1VoEfsoZ+PCzS02UMYk3ZECP9ABhauD5q";
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIElj3HHoA8A1VoEfsoZ+PCzS02UMYk3ZECP9ABhauD5q"];
       xrdpAccess = false;
       expires = "2026-04-01";
     };
@@ -30,7 +30,7 @@ in {
         "hinoki"
         "sakura"
       ];
-      openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII+RyNU70t92GKIomkkj3LbtdVayrWQHsAHBRUGhwU9j";
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII+RyNU70t92GKIomkkj3LbtdVayrWQHsAHBRUGhwU9j"];
       xrdpAccess = false;
       expires = "2026-04-01";
     };
@@ -45,7 +45,7 @@ in {
         "hinoki"
         "sakura"
       ];
-      openssh.authorizedKeys.keys = "ssh-ed25519 AAAC3NzaC1lZDI1NTE5AAAAIO0shxs+OG4RA2xupSxkWVNLeEwWHe9NtvgnYpPdys7i";
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAC3NzaC1lZDI1NTE5AAAAIO0shxs+OG4RA2xupSxkWVNLeEwWHe9NtvgnYpPdys7i"];
       xrdpAccess = false;
       expires = "2026-04-01";
     };
@@ -60,7 +60,7 @@ in {
         "hinoki"
         "sakura"
       ];
-      openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBrzZVFvw2p2PhwDrdTg7VxcjbuKPil8pZQm4LRMOGUn";
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBrzZVFvw2p2PhwDrdTg7VxcjbuKPil8pZQm4LRMOGUn"];
       xrdpAccess = false;
       expires = "2026-04-01";
     };
