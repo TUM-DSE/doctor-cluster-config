@@ -8,6 +8,7 @@
     ../modules/dpdk.nix
     ../modules/elasticsearch.nix
     ../modules/amd_sev_snp-vanilla-certs.nix
+    ../modules/nvme_hotplug
   ];
 
   networking.hostName = "irene";
