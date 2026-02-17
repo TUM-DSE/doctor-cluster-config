@@ -7,7 +7,7 @@ in {
     # Reviewers for Proteus artifact evaluation
     proteus1 = {
       isNormalUser = true;
-      home = "/home/proteusRev1";
+      home = "/home/proteus1";
       shell = "/run/current-system/sw/bin/bash";
       uid = 4000;
       allowedHosts = [
@@ -22,7 +22,7 @@ in {
 
     proteus2 = {
       isNormalUser = true;
-      home = "/home/proteusRev2";
+      home = "/home/proteus2";
       shell = "/run/current-system/sw/bin/bash";
       uid = 4001;
       allowedHosts = [
@@ -37,7 +37,7 @@ in {
 
     proteus3 = {
       isNormalUser = true;
-      home = "/home/proteusRev3";
+      home = "/home/proteus3";
       shell = "/run/current-system/sw/bin/bash";
       uid = 4002;
       allowedHosts = [
@@ -52,7 +52,7 @@ in {
 
     proteus4 = {
       isNormalUser = true;
-      home = "/home/proteusRev4";
+      home = "/home/proteus4";
       shell = "/run/current-system/sw/bin/bash";
       uid = 4003;
       allowedHosts = [
@@ -64,7 +64,22 @@ in {
       xrdpAccess = false;
       expires = "2026-04-01";
     };
-  };
+
+    proteus_test = {
+      isNormalUser = true;
+      home = "/home/proteus_test";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4004;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFU1ryXV37om9u3ezJYSf2ZdQ4NRUcQWKCN4ZuGwn1ku"];
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
+};
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
