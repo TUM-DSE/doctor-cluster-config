@@ -64,7 +64,6 @@ in {
       xrdpAccess = false;
       expires = "2026-04-01";
     };
-  };
 
     proteus_test = {
       isNormalUser = true;
@@ -80,6 +79,7 @@ in {
       xrdpAccess = false;
       expires = "2026-04-01";
     };
+};
 
   # DANGER ZONE!
   # Make sure all data is backed up before adding user names here. This will
