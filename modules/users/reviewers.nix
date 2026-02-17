@@ -4,6 +4,66 @@ in {
   # Please use a uid in the range between 4000-5000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
+    # Reviewers for Proteus artifact evaluation
+    proteusRev1 = {
+      isNormalUser = true;
+      home = "/home/proteusRev1";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4000;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIElj3HHoA8A1VoEfsoZ+PCzS02UMYk3ZECP9ABhauD5q";
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
+
+    proteusRev2 = {
+      isNormalUser = true;
+      home = "/home/proteusRev2";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4001;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII+RyNU70t92GKIomkkj3LbtdVayrWQHsAHBRUGhwU9j";
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
+
+    proteusRev3 = {
+      isNormalUser = true;
+      home = "/home/proteusRev3";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4002;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = "ssh-ed25519 AAAC3NzaC1lZDI1NTE5AAAAIO0shxs+OG4RA2xupSxkWVNLeEwWHe9NtvgnYpPdys7i";
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
+
+    proteusRev4 = {
+      isNormalUser = true;
+      home = "/home/proteusRev4";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4003;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBrzZVFvw2p2PhwDrdTg7VxcjbuKPil8pZQm4LRMOGUn";
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
   };
 
   # DANGER ZONE!
