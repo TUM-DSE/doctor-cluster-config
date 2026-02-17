@@ -5,7 +5,7 @@ in {
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
     # Reviewers for Proteus artifact evaluation
-    proteusRev1 = {
+    proteus1 = {
       isNormalUser = true;
       home = "/home/proteusRev1";
       shell = "/run/current-system/sw/bin/bash";
@@ -20,7 +20,7 @@ in {
       expires = "2026-04-01";
     };
 
-    proteusRev2 = {
+    proteus2 = {
       isNormalUser = true;
       home = "/home/proteusRev2";
       shell = "/run/current-system/sw/bin/bash";
@@ -35,7 +35,7 @@ in {
       expires = "2026-04-01";
     };
 
-    proteusRev3 = {
+    proteus3 = {
       isNormalUser = true;
       home = "/home/proteusRev3";
       shell = "/run/current-system/sw/bin/bash";
@@ -50,7 +50,7 @@ in {
       expires = "2026-04-01";
     };
 
-    proteusRev4 = {
+    proteus4 = {
       isNormalUser = true;
       home = "/home/proteusRev4";
       shell = "/run/current-system/sw/bin/bash";
