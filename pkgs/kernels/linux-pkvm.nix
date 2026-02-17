@@ -55,6 +55,10 @@ let
         name = "pkvm-config";
         patch = null;
         extraConfig = ''
+          KSM n
+          KVM y
+          KVM_INTEL y
+          INTEL_IOMMU y
           PKVM_INTEL y
           PKVM_INTEL_DEBUG y
         '';
