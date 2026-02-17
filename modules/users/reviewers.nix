@@ -45,7 +45,7 @@ in {
         "hinoki"
         "sakura"
       ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAC3NzaC1lZDI1NTE5AAAAIO0shxs+OG4RA2xupSxkWVNLeEwWHe9NtvgnYpPdys7i"];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO0shxs+OG4RA2xupSxkWVNLeEwWHe9NtvgnYpPdys7i"];
       xrdpAccess = false;
       expires = "2026-04-01";
     };
