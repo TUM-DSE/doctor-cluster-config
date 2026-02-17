@@ -65,6 +65,30 @@ let
       }
     ];
   };
+  pkvm_6_12_pvvmcs = rec {
+    owner = "intel-staging";
+    repo = "pKVM-IA";
+    # branch: pvVMCS-POC-v6.12
+    rev = "b322384ed822b8c9c07554e5839e28b23a26b49c";
+    sha256 = "sha256-dkeYk3d+B9UTwYo5GSTUboB9szH7qgpUBZ4r5daoasQ=";
+    version = "6.12";
+    localVersion = "-pkvm-pvvmcs";
+    modDirVersion = "6.12.0${localVersion}";
+    extraPatches = [
+      {
+        name = "pkvm-config";
+        patch = null;
+        extraConfig = ''
+          KSM n
+          KVM y
+          KVM_INTEL y
+          INTEL_IOMMU y
+          PKVM_INTEL y
+          PKVM_INTEL_DEBUG y
+        '';
+      }
+    ];
+  };
   pkvm_6_18 = rec {
     owner = "intel-staging";
     repo = "pKVM-IA";
