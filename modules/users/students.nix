@@ -472,7 +472,6 @@ in
       expires = "2026-06-30";
     };
   };
-  };
 
   # DANGER ZONE!
   # - Make sure all data is backed up before adding user names here. This will
