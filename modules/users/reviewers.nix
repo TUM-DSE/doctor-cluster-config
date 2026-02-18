@@ -79,6 +79,21 @@ in {
       xrdpAccess = false;
       expires = "2026-04-01";
     };
+
+    proteus5 = {
+      isNormalUser = true;
+      home = "/home/proteus5";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4005;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPUFEbnA6LBX9LTJhCF/fPNWd8LNmHZTOy4jxkoi5pKk"];
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
 };
 
   # DANGER ZONE!
