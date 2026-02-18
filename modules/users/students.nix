@@ -92,6 +92,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOkhv0C1W+x0+M03Huai+BRO9MmW9E+EnCfPXZmRF+Yg jakoblison@MBP-von-Jakob.fritz.box"
   ];
 
+  hernanKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMowVBAs878BvU469/2lPFGrUYHv6t68w6p1m9BKPTG6 hernanl.leon@huawei.com"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -451,6 +455,21 @@ in
       ];
       openssh.authorizedKeys.keys = jakobKeys;
       expires = "2026-12-31";
+    };
+
+   # Hernan Ponce de Leon (Collaborator with Sebastian)
+    hernan = {
+      isNormalUser = true;
+      home = "/home/hernan";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2096;
+      allowedHosts = [
+        "graham"
+        "eliza"
+      ];
+      openssh.authorizedKeys.keys = hernanKeys;
+      expires = "2026-06-30";
     };
   };
 
