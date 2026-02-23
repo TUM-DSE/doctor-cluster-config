@@ -37,6 +37,8 @@ in
     "kvm_intel.pkvm=1"
     "kvm_intel.tdx=1"
     "nohibernate"
+    "kvm_intel.enable_apicv=1"
+    "kvm_intel.enable_ipiv=1"
   ];
 
   programs.ccache.packageNames = [ "zfs_unstable" ];
