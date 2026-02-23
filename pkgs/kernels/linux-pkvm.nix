@@ -89,7 +89,7 @@ let
       }
     ];
   };
-  pkvm_6_18 = rec {
+  pkvm_pvvmcs_6_18 = rec {
     owner = "intel-staging";
     repo = "pKVM-IA";
     # tree/pkvm-pvvmcs-v6.18-wip
@@ -109,6 +109,34 @@ let
         extraConfig = ''
           PKVM_INTEL y
           PKVM_INTEL_DEBUG y
+        '';
+      }
+    ];
+  };
+  pkvm_6_18 = rec {
+    owner = "intel-staging";
+    repo = "pKVM-IA";
+    # pkvm-v6.18
+    rev = "de0cda16b6e2dc53a923ba3b0bc37d855538fd51";
+    sha256 = "sha256-xgw3IYoENL1xAANjNciyYljS6IqdL6CD93mhSTWJpoQ=";
+    version = "6.18";
+    localVersion = "-pkvm";
+    modDirVersion = "6.18.0${localVersion}";
+    extraPatches = [
+      {
+        name = "pkvm-constants-fix";
+        patch = ./pkvm-constants-fix-pkvm-v6.18.patch;
+      }
+      {
+        name = "pkvm-config";
+        patch = null;
+        extraConfig = ''
+          X86_X2APIC y
+          KVM y
+          KVM_INTEL y
+          PKVM_X86 y
+          PKVM_INTEL y
+          PKVM_X86_DEBUG y
         '';
       }
     ];
