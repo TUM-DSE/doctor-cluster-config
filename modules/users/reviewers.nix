@@ -109,6 +109,22 @@ in {
       xrdpAccess = false;
       expires = "2026-04-01";
     };
+
+    proteus7 = {
+      isNormalUser = true;
+      home = "/home/proteus7";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4007;
+      allowedHosts = [
+        "momiji"
+        "hinoki"
+        "sakura"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnp1xqp0+2SfgioqD5eufqWXOV9Kd2jvC2r5i4IehoqWF2fOQBicFzRdDVE1p288HLsLthdMN4PXDTU6eHJOFCye/0sXdAZyp+Au5+QgdVdnOoKq+Xgv+hz+YzBASxnDDoqY/CJQAXYYAUn9MbGaobN77BTj/01VZE2u6nGhqcXpvg4Qhb4s8SGLC16njEL30vSR+QUURrLhF4eoveaqoCUnx9WbQ6ZQsSgROyZIHsgrxPyC3rUYKZq2BA0WbNUm6RwOZjmQ7KaGvjQW2x+57FONY1GMtCl4ldm1ZkbJpQqHuRXul89kf+VrYlwYdZWcXhcmfitSHdx8TYQDo80QV+rkZwKtjePqUae7fzcekevsdyvx7elh6cjb36oWUhpDUVRonhDRWiJ3yGcDS633IDg7ljWlZf+rDV+p1Z95zcg25ciXcS3JRNu1Hj/rwjMfasQj1RbQ+2N7NNpX3K83UX1CDdhgeSGwGZqW4FNH22/USPxn9R9dEfYZYQhZmfCGk="];
+      xrdpAccess = false;
+      expires = "2026-04-01";
+    };
+
 };
 
   # DANGER ZONE!
