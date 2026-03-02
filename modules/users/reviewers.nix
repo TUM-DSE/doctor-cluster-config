@@ -125,6 +125,17 @@ in {
       expires = "2026-04-01";
     };
 
+    gergonemeth = {
+      isNormalUser = true;
+      home = "/home/gergonemeth";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4008;
+      allowedHosts = [
+        "ryan"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAxgj1VQLrGGVRVwk4wEw3t13Yx0BuslofrZYqGYEngd gergonemeth"];
+      expires = "2026-08-01";
+    };
 };
 
   # DANGER ZONE!
