@@ -80,7 +80,7 @@ in
 
 
       root = {
-        initialHashedPassword = lib.mkIf config.users.withSops null;
+        initialHashedPassword = lib.mkIf config.users.withSops (lib.mkForce null);
         hashedPasswordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
         openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys;
       };
