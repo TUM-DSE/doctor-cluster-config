@@ -15,7 +15,7 @@ Parameters to consider for matching cards to slots:
 - 1x Nvidia A40 GPU (high profile, dual slot)
     - jack
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
-    - momiji
+    - office 01.07.60
 - 1x Intel Stratix 10 GX FPGA Development Kit H-Tile (high profile, dual slot)
     - office 01.07.60
 - 1x Intel Agilex 7 FPGA I-Series Development Kit 2x R-Tile and 1x F-Tile (high profile, dual slot)
@@ -31,7 +31,7 @@ Parameters to consider for matching cards to slots:
         - MAC4: 00:0A:35:06:AE:16
     - hinoki
         - MAC: 
-    - amy
+    - office 01.07.60
         - MAC: 00:0A:35:0E:70:60
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
     - momiji
