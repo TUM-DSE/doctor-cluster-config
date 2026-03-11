@@ -130,6 +130,7 @@ in {
       home = "/home/gergonemeth";
       shell = "/run/current-system/sw/bin/bash";
       uid = 4008;
+      inherit extraGroups;
       allowedHosts = [
         "ryan"
       ];
