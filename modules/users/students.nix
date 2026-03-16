@@ -456,6 +456,7 @@ in
         "ian"
         "jamie"
         "xavier"
+        "jack"
       ];
       openssh.authorizedKeys.keys = jakobKeys;
       expires = "2026-12-31";
