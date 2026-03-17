@@ -285,6 +285,7 @@ in
         "jamie"
         "yasmin"
         "jack"
+        "rose"
       ];
       openssh.authorizedKeys.keys = yongjieKeys;
       expires = "2026-06-30";
