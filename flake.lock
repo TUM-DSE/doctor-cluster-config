@@ -250,32 +250,6 @@
         "type": "github"
       }
     },
-    "nix-1": {
-      "inputs": {
-        "flake-compat": [],
-        "flake-parts": [],
-        "git-hooks-nix": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-23-11": [],
-        "nixpkgs-regression": []
-      },
-      "locked": {
-        "lastModified": 1773660962,
-        "narHash": "sha256-R42lllMapZuL+6acVwyBH3A3DULd+GMsyMQWAZoJ21k=",
-        "ref": "refs/heads/main",
-        "rev": "aaa2b0ce0118ec53aa08f093a32c10b2c30aa9f2",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/Mic92/nix-1"
-      },
-      "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/Mic92/nix-1"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -439,7 +413,6 @@
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",
         "niks3": "niks3",
-        "nix-1": "nix-1",
         "nix-index-database": "nix-index-database",
         "nixos-apple-silicon": "nixos-apple-silicon",
         "nixos-generators": "nixos-generators",

@@ -23,8 +23,6 @@ in
 
   config = {
     nix = {
-      package = lib.mkIf (!pkgs.stdenv.hostPlatform.isRiscV)
-        self.inputs.nix-1.packages.${pkgs.stdenv.hostPlatform.system}.nix;
       gc.automatic = true;
       gc.dates = "03:15";
       gc.options = "--delete-older-than 14d";
