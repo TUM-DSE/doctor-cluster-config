@@ -367,16 +367,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1777221070,
-        "narHash": "sha256-dOnSXxxp4qS2M2lEX2KQgGl6nL1W1dDNJe4/4kkDS6w=",
-        "ref": "nixos-25.11-backports",
-        "rev": "f5fc16f79a67b86a38635395a49a385c5b56a772",
+        "lastModified": 1773758894,
+        "narHash": "sha256-zhf9Pv/V6sgh4avbd4Y09463VHbDNmi0NJhkpwvMJk8=",
+        "ref": "mlnx_ofed_final",
+        "rev": "a97ac2a72ee008096bf03b383f1a62dd618f04dc",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       },
       "original": {
-        "ref": "nixos-25.11-backports",
+        "ref": "mlnx_ofed_final",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"

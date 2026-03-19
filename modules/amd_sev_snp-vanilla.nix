@@ -29,6 +29,8 @@
 
     # this parameter exists on 6.9-
     "kvm.gmem_2m_enabled=1"
+	"amd_iommu=off"
+	"pcie_acs_override=downstream,multifunction"
   ];
 
   # enable libvirtd service
