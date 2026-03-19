@@ -1,4 +1,7 @@
-
+{
+config, 
+...
+}:
 {
   imports = [
     ../modules/hardware/poweredge7625.nix
@@ -8,7 +11,7 @@
     #../modules/amd_sev_svsm.nix
     #../modules/amd_sev_svsm_wallet.nix
     ../modules/nvidia.nix
-    ../modules/vfio/iommu-amd.nix
+    #../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
   ];
@@ -25,8 +28,10 @@
   networking.hostName = "jamie";
 
   system.stateVersion = "23.05";
-
   # temporarily disable auto-reboot until the memsafedb eval has finished running
   systemd.timers.auto-reboot.enable = false;
   systemd.services.auto-reboot.enable = false;
+  systemd.services.auto-upgrade.enable = false;
+
+  boot.extraModulePackages = [ config.boot.kernelPackages.mlnx_ofed ];
 }

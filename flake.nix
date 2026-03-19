@@ -9,7 +9,9 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-25.11-backports&shallow=1";
+    #nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-25.11-backports&shallow=1";
+    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=mlnx_ofed_final&shallow=1";
+	#nixpkgs.url = "git+https://github.com/Teofil98/nixpkgs.git?ref=mlnx_cherry_picked&shallow=1";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
