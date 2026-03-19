@@ -956,15 +956,21 @@ def add_server(c: Any, hostname: str) -> None:
     print("Updating sops files")
     update_sops_files(c)
 
-    example_host_config = f"""
-{{
+    example_host_config = f"""{{
+  pkgs,
+  lib,
+  ...
+}}: {{
   imports = [
     ../modules/hardware/placeholder.nix
+    # ../modules/nfs/client.nix
   ];
+
+  disko.rootDisk = "/dev/disk/by-id/nvme-<MANUFACTURER>_<MODEL>_<SERIAL>";
 
   networking.hostName = "{hostname}";
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "25.11";
 }}"""
     print(f"Writing example hosts/{hostname}.nix")
     with open(f"{ROOT}/hosts/{hostname}.nix", "w") as f:
