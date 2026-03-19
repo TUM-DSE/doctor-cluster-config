@@ -358,6 +358,15 @@ in
           ./hosts/steve.nix
         ];
     };
+
+    polly = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
+        computeNodeModules
+        ++ [
+          ./hosts/polly.nix
+        ];
+    };
   };
 
   # Map over the modules to create nixosConfigurations
