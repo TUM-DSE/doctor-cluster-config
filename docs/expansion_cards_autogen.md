@@ -405,6 +405,47 @@ c4:00.0, Non-Volatile memory controller, SK hynix, Platinum P41/PC801 NVMe Solid
 41:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ❌  Slot: 1 type: PCIe gen: 3 status: in use length: long volts: 3.3 bus-ID: 02:00.0   
 02:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
+
+
+### steve.dos.cit.tum.de 
+
+PCI Slots:   
+- ✅  Slot: N/A type: N/A status: available info: M.2 length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: N/A type: N/A status: available info: M.2 length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 1 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ❌  Slot: 2 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 4c:00.0   
+4c:00.0, Ethernet controller, Intel Corporation, Ethernet Controller X550 -r01 -p00, Super Micro Computer Inc, Device 0915  
+- ✅  Slot: 3 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ❌  Slot: 4 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 2a:00.0   
+2a:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-XXV for SFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-XXV-2  
+- ✅  Slot: 5 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 6 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 7 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 8 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 9 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 10 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 11 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 12 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 13 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ✅  Slot: 14 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:00.0   
+ff:00.0, System peripheral, Intel Corporation, Device 324d -p00, Intel Corporation, Device 09a2  
+- ❌  Slot: 15 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 95:00.0   
+95:00.0, Ethernet controller, Mellanox Technologies, MT2910 Family [ConnectX-7] -p00, Mellanox Technologies, Device 0022  
+- ❌  Slot: 15 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 95:00.0   
+95:00.0, Ethernet controller, Mellanox Technologies, MT2910 Family [ConnectX-7] -p00, Mellanox Technologies, Device 0022  
  
 
 ### vislor.dos.cit.tum.de 

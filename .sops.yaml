@@ -526,6 +526,27 @@ creation_rules:
     path_regex: hosts/ryan.yml$
   - key_groups:
       - age:
+          - age15y6tgkcvjejp6d0akr38s9ht3rx9srux3e6g8rvl0ry2qxqre40qutv7dx
+          - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
+          - age1nnm255ah9wa4gpsaq0v023a75lnmlcxszt9lc6az3mtwzxgrucfq45rp7h
+          - age1r8v7gf5wxmggsecapn2ptm3q6gjpyquw2fm3dwhr59jpmyjvzcfqd03zcd
+          - age1et533lu2xqnxl5k332f2q57hqxu8j7j4lrzcannqynfmf9xh2azqfzheu4
+          - age1wtek04smdkn5h7nz5x5dtcjpd4l0srxjru6cpk37wgf0aurnc3sspre2e8
+          - age1grsm7z79fd2jyzqxdarwkastyyhghrjcadj5s06akgca704ztcpshx5qcv
+          - age1tpftd5kz59gqahy9e0778wc06qhams6l29zj2n97khekd3ezwyyqthlpr0
+          - age1alt8n4tq5pyn7atrtqmtkhqn9p8aeanxd55pf07ehqp3mhkdfp6qmj2fpd
+          - age17ve9wnwazsmp2xgvsp27u7clywqwwqynsslyyxa4k0hu8mznf5qq2vmp2c
+          - age1mgk6cnl7dmzu6xqs4k7e5epjjg4ygjtjzy9fxqwnw6u8ygtlvpns79zgdk
+          - age1ku5zg6vzgprhavukpj0f8zjsfe2cxl0g4hceljf62hld8t8fguyqp4qtw7
+          - age1qqe0k440aueynmdtyqxrmyhfgw8cs7a3u3xptaazrgvven5gqsmswf3dnf
+          - age1vetu6glcp8md6uqv05jvyyqej47wumswxzjyaadnmuxh89at6sesrxcxzy
+          - age1z6phh2tdqf2cqq435n3gpd58a3zpn0k88zylqu23gxps2hgk8etspg9g30
+          - age17yvfale9tfad8kscjl63kyxzy46vvjg5lvgkfkg924q4vdpxkczqcaj2vx
+          - age1qt20th9n7v0g9tdkhdvp4ztndvnet0nmv303sc68e38s32q965ysl46ns0
+          - age1k4rx2m3mkd7n3ddtvdyjt6kjeyl2vrtkxwj4pqn7x955f9m6gessega7q2
+    path_regex: hosts/steve.yml$
+  - key_groups:
+      - age:
           - age1gas4e9vr5vajg3j0wkett2fgg2psjrpvw9jl39h3gqg9e4pq4p9s4rj9mx
           - age17n64ahe3wesh8l8lj0zylf4nljdmqn28hvqns2g7hgm9mdkhlsvsjuvkxz
           - age1nnm255ah9wa4gpsaq0v023a75lnmlcxszt9lc6az3mtwzxgrucfq45rp7h
@@ -758,6 +779,7 @@ creation_rules:
           - age122748tt9mu2g7y9g7dj3pn72dgwhytenk6ssccpch5t8z9xqpv6suc3yzx
           - age1q2t8w6qta7v6mhwv3qlfq6un60mj0u8k5j8qp7v37kjkd6008ycs4ecxmt
           - age193d5ln9y7jgn3pk99g0h4p3wggnmm8rwylwq8c8jet4swvy0mf4qhrgxna
+          - age15y6tgkcvjejp6d0akr38s9ht3rx9srux3e6g8rvl0ry2qxqre40qutv7dx
           - age1gas4e9vr5vajg3j0wkett2fgg2psjrpvw9jl39h3gqg9e4pq4p9s4rj9mx
           - age1qt20th9n7v0g9tdkhdvp4ztndvnet0nmv303sc68e38s32q965ysl46ns0
           - age1ulxltkr6kcnhv9mmv3tkc6k7rkmhaamf7yujqt66m0vr0ra3x57qwle0lv

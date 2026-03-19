@@ -349,6 +349,15 @@ in
           ./hosts/eliza.nix
         ];
     };
+
+    steve = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
+        computeNodeModules
+        ++ [
+          ./hosts/steve.nix
+        ];
+    };
   };
 
   # Map over the modules to create nixosConfigurations
