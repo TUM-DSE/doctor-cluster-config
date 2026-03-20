@@ -38,6 +38,7 @@
     ../modules/monitoring/prometheus
     ../modules/monitoring/loki.nix
     ../modules/monitoring/telegraf.nix
+    ../modules/monitoring/grafana-proxy.nix
     ../modules/lrz-gitlab-classroom/frontend.nix
   ];
 
