@@ -1,19 +1,13 @@
-{ self, pkgs, ... }:
-
-let
-  defaultModule = { ... }: {
+{ nixpkgs, nixosSystem, sops-nix, inputs, pkgs }:
+nixosSystem {
+  modules = [{
+    nixpkgs.pkgs = pkgs;
     imports = [
+      "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
       ./base-config.nix
       ./nix-settings.nix
-      self.inputs.sops-nix.nixosModules.default
+      sops-nix.nixosModules.default
+      { _module.args.inputs = inputs; }
     ];
-    _module.args.inputs = self.inputs;
-  };
-in
-self.inputs.nixos-generators.nixosGenerate {
-  inherit pkgs;
-  modules = [
-    defaultModule
-  ];
-  format = "install-iso";
+  }];
 }

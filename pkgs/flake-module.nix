@@ -50,6 +50,8 @@
     {
       pkgs,
       self',
+      system,
+      lib,
       ...
     }:
     {
@@ -59,18 +61,16 @@
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
           inherit (inputs.nixpkgs.lib) nixosSystem;
           extraModules = [
-            self.inputs.nur.nixosModules.nur
-            { _module.args.inputs = self.inputs; }
+            self.inputs.sops-nix.nixosModules.sops
+            { _module.args = { inputs = self.inputs; inherit self; }; }
           ];
         };
 
         netboot-pixie-core = pkgs.callPackage ../modules/netboot/netboot-pixie-core.nix {
           inherit (self'.packages) netboot;
         };
-
-        install-iso = pkgs.callPackage ./install-iso/default.nix {
-          inherit self;
-        };
+      } // lib.optionalAttrs pkgs.stdenv.isLinux {
+        install-iso = self.nixosConfigurations."install-iso-${system}".config.system.build.isoImage;
       };
     };
 }

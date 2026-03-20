@@ -54,7 +54,6 @@ Available tasks:
   print-age-key            Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <hostname>
   print-tinc-key
   reboot                   Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
-  reformat-install-nixos   format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
   run                      Run provided command on the given hosts, if no host list is provided, than the command is run on all hosts.
   update-docs              Regenerate docs for all servers
   update-host-keys          Update host ssh keys in corresponding host.yml

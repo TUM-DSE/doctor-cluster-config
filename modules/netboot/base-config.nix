@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -68,32 +67,6 @@
     ntfsprogs
     ntfs3g
   ];
-
-  systemd.services.hidden-ssh-announce = {
-    description = "irc announce hidden ssh";
-    after = [
-      "tor.service"
-      "network-online.target"
-    ];
-    wants = [ "tor.service" ];
-    wantedBy = [ "multi-user.target" ];
-    script = ''
-      set -efu
-      until test -e /var/lib/tor/onion/ssh/hostname; do
-      echo "still waiting for /var/lib/tor/onion/ssh/hostname"
-      sleep 1
-      done
-      echo "SSH Hidden Service at $(cat /var/lib/tor/onion/ssh/hostname)" | \
-        ${config.nur.repos.mic92.ircsink}/bin/ircsink \
-        --port=6697 --secure --server=irc.hackint.org --nick=nixos-installer --target="#krebs-announce"
-
-    '';
-    serviceConfig = {
-      PrivateTmp = "true";
-      User = "tor";
-      Type = "oneshot";
-    };
-  };
 
   systemd.services.sshd.wantedBy = lib.mkForce [ "multi-user.target" ];
 

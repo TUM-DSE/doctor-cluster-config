@@ -365,5 +365,14 @@ in
     nixosSystem {
       modules = [ module ];
     }
-  ) self.nixosModules;
+  ) self.nixosModules // {
+    install-iso-x86_64-linux = import ./pkgs/install-iso {
+      inherit nixpkgs nixosSystem sops-nix inputs;
+      pkgs = pkgs-x86_64-linux;
+    };
+    install-iso-aarch64-linux = import ./pkgs/install-iso {
+      inherit nixpkgs nixosSystem sops-nix inputs;
+      pkgs = pkgs-aarch64-linux;
+    };
+  };
 }
