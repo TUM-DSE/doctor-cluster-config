@@ -52,7 +52,7 @@ Parameters to consider for matching cards to slots:
 - 2x AMD/Xilinx Alveo V80 FPGA (high profile, dual slot)
     - rose
     - office 01.07.60
-- 9x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+- 8x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
         - MAC2: b4:96:91:a4:1c:f1
@@ -70,8 +70,6 @@ Parameters to consider for matching cards to slots:
         - MAC: b4:96:91:b3:8a:90
     - vislor: single port (vislor-graham)
         - MAC: 30:3e:a7:05:d0:98 
-    - ian: single port (ian-river)
-        - MAC: 30:3e:a7:10:d6:b4
     - martha: single port (martha-jackson)
         - MAC:
 - 7x Broadcom BCM57416 10G NIC (RJ-45)
@@ -94,6 +92,13 @@ Parameters to consider for matching cards to slots:
     - 2x graham: (boot, experiments)
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
+- 2x Mellanox ConnectX-7 200G NIC:
+    - jamie: dual port. (jamie-ian [200G], port 2 not connected)
+        - MAC1: 60:5e:65:c6:79:ec
+        - MAC2: 60:5e:65:c6:79:ed
+    - ian: dual port (ian-jamie [200G], ian-river)
+        - MAC1: 60:5e:65:c6:3c:7c
+        - MAC2: 60:5e:65:c6:3c:7d
 
 Onboard (not listed by [List of slots](#List of slots)):
 
@@ -109,5 +114,5 @@ Onboard (not listed by [List of slots](#List of slots)):
     - vislor: 2 ports RJ-45 (,)
     - martha: 2 ports SFP (uplink, none)
 
-(^ list last updated 08.02.2025)
+(^ list last updated 24.03.2026)
 
