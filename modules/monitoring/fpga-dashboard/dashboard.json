@@ -1,0 +1,1992 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "dse-fpga",
+    "url": "/d/f833d9a0-24ed-4808-bc90-a874dc9173f3/dse-fpga",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2026-03-06T13:14:33Z",
+    "updated": "2026-03-09T09:24:59Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 4,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "dashboard": {
+    "id": 3288663430172672,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 100,
+        "title": "Clara",
+        "type": "row"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "yellow",
+                    "text": "NOT BOUND"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "BOUND"
+                  },
+                  "2": {
+                    "color": "red",
+                    "text": "CRASHED"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "yellow",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "red",
+                  "value": 2
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 0,
+          "y": 1
+        },
+        "id": 1,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_driver_status{host=\"Clara\",fpga=\"U280\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "U280 Driver",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "User"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "NOT USED": {
+                          "color": "dark-blue",
+                          "text": "NOT USED"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "steps": [
+                      {
+                        "color": "dark-blue",
+                        "value": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 3,
+          "y": 1
+        },
+        "id": 31,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "name"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_active_user{host=\"Clara\",fpga=\"U280\"}",
+            "format": "time_series",
+            "instant": true,
+            "legendFormat": "{{user}}"
+          }
+        ],
+        "title": "U280 User",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 50
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 6,
+          "y": 1
+        },
+        "id": 2,
+        "options": {
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "targets": [
+          {
+            "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Clara\",mode=\"idle\"}[1m])) * 100)",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "CPU \u2014 Clara",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 60
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 11,
+          "y": 1
+        },
+        "id": 3,
+        "options": {
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "targets": [
+          {
+            "expr": "((node_memory_MemTotal_bytes{host=\"Clara\"} - node_memory_MemAvailable_bytes{host=\"Clara\"}) / node_memory_MemTotal_bytes{host=\"Clara\"}) * 100",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "Memory \u2014 Clara",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "text",
+                    "text": "NO NIC"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "KERNEL"
+                  },
+                  "2": {
+                    "color": "purple",
+                    "text": "DPDK"
+                  },
+                  "3": {
+                    "color": "yellow",
+                    "text": "UNBOUND"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "text",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "purple",
+                  "value": 2
+                },
+                {
+                  "color": "yellow",
+                  "value": 3
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 16,
+          "y": 1
+        },
+        "id": 35,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_nic100g_status{host=\"Clara\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "E810 NIC",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "dtdurations"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 19,
+          "y": 1
+        },
+        "id": 4,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "time() - node_boot_time_seconds{host=\"Clara\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "Uptime \u2014 Clara",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 5
+        },
+        "id": 101,
+        "title": "Amy",
+        "type": "row"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "yellow",
+                    "text": "NOT BOUND"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "BOUND"
+                  },
+                  "2": {
+                    "color": "red",
+                    "text": "CRASHED"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "yellow",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "red",
+                  "value": 2
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 0,
+          "y": 6
+        },
+        "id": 11,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_driver_status{host=\"Amy\",fpga=\"U280\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "U280 Driver",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "User"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "NOT USED": {
+                          "color": "dark-blue",
+                          "text": "NOT USED"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "steps": [
+                      {
+                        "color": "dark-blue",
+                        "value": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 3,
+          "y": 6
+        },
+        "id": 32,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "name"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_active_user{host=\"Amy\",fpga=\"U280\"}",
+            "format": "time_series",
+            "instant": true,
+            "legendFormat": "{{user}}"
+          }
+        ],
+        "title": "U280 User",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 50
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 6,
+          "y": 6
+        },
+        "id": 12,
+        "options": {
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "targets": [
+          {
+            "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Amy\",mode=\"idle\"}[1m])) * 100)",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "CPU \u2014 Amy",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 60
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 11,
+          "y": 6
+        },
+        "id": 13,
+        "options": {
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "targets": [
+          {
+            "expr": "((node_memory_MemTotal_bytes{host=\"Amy\"} - node_memory_MemAvailable_bytes{host=\"Amy\"}) / node_memory_MemTotal_bytes{host=\"Amy\"}) * 100",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "Memory \u2014 Amy",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "text",
+                    "text": "NO NIC"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "KERNEL"
+                  },
+                  "2": {
+                    "color": "purple",
+                    "text": "DPDK"
+                  },
+                  "3": {
+                    "color": "yellow",
+                    "text": "UNBOUND"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "text",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "purple",
+                  "value": 2
+                },
+                {
+                  "color": "yellow",
+                  "value": 3
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 16,
+          "y": 6
+        },
+        "id": 36,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_nic100g_status{host=\"Amy\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "E810 NIC",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "dtdurations"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 19,
+          "y": 6
+        },
+        "id": 14,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "time() - node_boot_time_seconds{host=\"Amy\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "Uptime \u2014 Amy",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 10
+        },
+        "id": 102,
+        "title": "Rose",
+        "type": "row"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "yellow",
+                    "text": "NOT BOUND"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "BOUND"
+                  },
+                  "2": {
+                    "color": "red",
+                    "text": "CRASHED"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "yellow",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "red",
+                  "value": 2
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 0,
+          "y": 11
+        },
+        "id": 21,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_driver_status{host=\"Rose\",fpga=\"U280\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "U280 Driver",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "User"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "NOT USED": {
+                          "color": "dark-blue",
+                          "text": "NOT USED"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "steps": [
+                      {
+                        "color": "dark-blue",
+                        "value": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 3,
+          "y": 11
+        },
+        "id": 33,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "name"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_active_user{host=\"Rose\",fpga=\"U280\"}",
+            "format": "time_series",
+            "instant": true,
+            "legendFormat": "{{user}}"
+          }
+        ],
+        "title": "U280 User",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "yellow",
+                    "text": "NOT BOUND"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "BOUND"
+                  },
+                  "2": {
+                    "color": "red",
+                    "text": "CRASHED"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "yellow",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "red",
+                  "value": 2
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 6,
+          "y": 11
+        },
+        "id": 22,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_driver_status{host=\"Rose\",fpga=\"V80\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "V80 Driver",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "User"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "NOT USED": {
+                          "color": "dark-blue",
+                          "text": "NOT USED"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "steps": [
+                      {
+                        "color": "dark-blue",
+                        "value": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 9,
+          "y": 11
+        },
+        "id": 34,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "name"
+        },
+        "targets": [
+          {
+            "expr": "server_fpga_active_user{host=\"Rose\",fpga=\"V80\"}",
+            "format": "time_series",
+            "instant": true,
+            "legendFormat": "{{user}}"
+          }
+        ],
+        "title": "V80 User",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 50
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 12,
+          "y": 11
+        },
+        "id": 23,
+        "options": {
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "targets": [
+          {
+            "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Rose\",mode=\"idle\"}[1m])) * 100)",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "CPU \u2014 Rose",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 60
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 15,
+          "y": 11
+        },
+        "id": 24,
+        "options": {
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "targets": [
+          {
+            "expr": "((node_memory_MemTotal_bytes{host=\"Rose\"} - node_memory_MemAvailable_bytes{host=\"Rose\"}) / node_memory_MemTotal_bytes{host=\"Rose\"}) * 100",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "Memory \u2014 Rose",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "text",
+                    "text": "NO NIC"
+                  },
+                  "1": {
+                    "color": "green",
+                    "text": "KERNEL"
+                  },
+                  "2": {
+                    "color": "purple",
+                    "text": "DPDK"
+                  },
+                  "3": {
+                    "color": "yellow",
+                    "text": "UNBOUND"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "text",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                },
+                {
+                  "color": "purple",
+                  "value": 2
+                },
+                {
+                  "color": "yellow",
+                  "value": 3
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 18,
+          "y": 11
+        },
+        "id": 37,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "text": {
+            "titleSize": 12,
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "server_nic100g_status{host=\"Rose\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "E810 NIC",
+        "type": "stat"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "dtdurations"
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 21,
+          "y": 11
+        },
+        "id": 25,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ]
+          },
+          "textMode": "value"
+        },
+        "targets": [
+          {
+            "expr": "time() - node_boot_time_seconds{host=\"Rose\"}",
+            "legendFormat": ""
+          }
+        ],
+        "title": "Uptime \u2014 Rose",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 15
+        },
+        "id": 500,
+        "title": "Reservations",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "bffhp1y5wgkjke"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": "left",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "filterable": false,
+              "inspect": false
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Exclusive"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-text"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "type": "value",
+                      "options": {
+                        "TRUE": {
+                          "text": "Yes",
+                          "color": "red",
+                          "index": 0
+                        },
+                        "FALSE": {
+                          "text": "No",
+                          "color": "green",
+                          "index": 1
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Slack"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-text"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "type": "value",
+                      "options": {
+                        "TRUE": {
+                          "text": "Yes",
+                          "color": "orange",
+                          "index": 0
+                        },
+                        "FALSE": {
+                          "text": "No",
+                          "color": "text",
+                          "index": 1
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Status"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-text"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "type": "value",
+                      "options": {
+                        "Expired": {
+                          "text": "Expired",
+                          "color": "text",
+                          "index": 0
+                        },
+                        "Active": {
+                          "text": "Active",
+                          "color": "green",
+                          "index": 1
+                        },
+                        "Scheduled": {
+                          "text": "Scheduled",
+                          "color": "blue",
+                          "index": 2
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 16
+        },
+        "id": 501,
+        "options": {
+          "showHeader": true,
+          "cellHeight": "sm",
+          "footer": {
+            "show": false
+          },
+          "sortBy": [
+            {
+              "displayName": "Timestamp",
+              "desc": true
+            }
+          ]
+        },
+        "targets": [
+          {
+            "columns": [
+              {
+                "selector": "User ",
+                "text": "User",
+                "type": "string"
+              },
+              {
+                "selector": "Timestamp",
+                "text": "Timestamp",
+                "type": "string"
+              },
+              {
+                "selector": "Hostname",
+                "text": "Hostname",
+                "type": "string"
+              },
+              {
+                "selector": "Resource ",
+                "text": "Resource",
+                "type": "string"
+              },
+              {
+                "selector": "Expires in (in mins)",
+                "text": "Duration (mins)",
+                "type": "number"
+              },
+              {
+                "selector": "Exclusive access \u2728",
+                "text": "Exclusive",
+                "type": "string"
+              },
+              {
+                "selector": "Notify on Slack",
+                "text": "Slack",
+                "type": "string"
+              },
+              {
+                "selector": "Start Time",
+                "text": "Start Time",
+                "type": "string"
+              },
+              {
+                "selector": "Status",
+                "text": "Status",
+                "type": "string"
+              }
+            ],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "bffhp1y5wgkjke"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "refId": "A",
+            "root_selector": "",
+            "source": "url",
+            "type": "csv",
+            "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSREk8147DvpHkJGS1EOjD2iOldG0ElodP7C3Kx0PJBgEs5HnS19CqCx3ZE0v368e9Qe_DtUf6j2KVN/pub?gid=180579678&single=true&output=csv",
+            "url_options": {
+              "method": "GET"
+            }
+          }
+        ],
+        "title": "Reservations",
+        "type": "table",
+        "transformations": [
+          {
+            "id": "filterByValue",
+            "options": {
+              "filters": [
+                {
+                  "config": {
+                    "id": "isNotNull",
+                    "options": {}
+                  },
+                  "fieldName": "User"
+                }
+              ],
+              "match": "all",
+              "type": "include"
+            }
+          },
+          {
+            "id": "filterByValue",
+            "options": {
+              "filters": [
+                {
+                  "config": {
+                    "id": "equal",
+                    "options": {
+                      "value": "Active"
+                    }
+                  },
+                  "fieldName": "Status"
+                },
+                {
+                  "config": {
+                    "id": "equal",
+                    "options": {
+                      "value": "Scheduled"
+                    }
+                  },
+                  "fieldName": "Status"
+                }
+              ],
+              "match": "any",
+              "type": "include"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {},
+              "indexByName": {
+                "User": 0,
+                "Hostname": 1,
+                "Resource": 2,
+                "Timestamp": 3,
+                "Start Time": 4,
+                "Duration (mins)": 5,
+                "Exclusive": 6,
+                "Slack": 7,
+                "Status": 8
+              }
+            }
+          }
+        ]
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 24
+        },
+        "id": 200,
+        "title": "Active User Processes",
+        "type": "row"
+      },
+      {
+        "fieldConfig": {
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Memory"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "decbytes"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Uptime"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "dtdurations"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 25
+        },
+        "id": 5,
+        "targets": [
+          {
+            "expr": "server_process_running{host=~\"Amy|Clara|Rose\"} == 1",
+            "format": "table",
+            "instant": true,
+            "legendFormat": ""
+          },
+          {
+            "expr": "server_process_cpu_percent{host=~\"Amy|Clara|Rose\"}",
+            "format": "table",
+            "instant": true,
+            "legendFormat": ""
+          },
+          {
+            "expr": "server_process_mem_bytes{host=~\"Amy|Clara|Rose\"}",
+            "format": "table",
+            "instant": true,
+            "legendFormat": ""
+          },
+          {
+            "expr": "server_process_elapsed_seconds{host=~\"Amy|Clara|Rose\"}",
+            "format": "table",
+            "instant": true,
+            "legendFormat": ""
+          }
+        ],
+        "title": "Active User Processes",
+        "transformations": [
+          {
+            "id": "seriesToColumns",
+            "options": {
+              "byField": "pid"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true,
+                "Time 1": true,
+                "Time 2": true,
+                "Time 3": true,
+                "Time 4": true,
+                "Value #A": true,
+                "__name__": true,
+                "__name__ 1": true,
+                "__name__ 2": true,
+                "__name__ 3": true,
+                "__name__ 4": true,
+                "command 2": true,
+                "command 3": true,
+                "command 4": true,
+                "host 2": true,
+                "host 3": true,
+                "host 4": true,
+                "instance": true,
+                "instance 1": true,
+                "instance 2": true,
+                "instance 3": true,
+                "instance 4": true,
+                "job": true,
+                "job 1": true,
+                "job 2": true,
+                "job 3": true,
+                "job 4": true,
+                "pid 1": true,
+                "pid 2": true,
+                "pid 3": true,
+                "pid 4": true,
+                "type 2": true,
+                "type 3": true,
+                "type 4": true,
+                "user 2": true,
+                "user 3": true,
+                "user 4": true
+              },
+              "indexByName": {
+                "CPU %": 5,
+                "Command": 4,
+                "Memory": 6,
+                "PID": 2,
+                "Server": 0,
+                "Type": 3,
+                "Uptime": 7,
+                "User": 1
+              },
+              "renameByName": {
+                "Value #B": "CPU %",
+                "Value #C": "Memory",
+                "Value #D": "Uptime",
+                "command 1": "Command",
+                "host 1": "Server",
+                "pid": "PID",
+                "type 1": "Type",
+                "user 1": "User"
+              }
+            }
+          },
+          {
+            "id": "sortBy",
+            "options": {
+              "fields": {},
+              "sort": [
+                {
+                  "desc": true,
+                  "field": "CPU %"
+                }
+              ]
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 33
+        },
+        "id": 300,
+        "title": "System Resources",
+        "type": "row"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "fillOpacity": 10,
+              "lineWidth": 2
+            },
+            "unit": "decbytes"
+          }
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 0,
+          "y": 34
+        },
+        "id": 7,
+        "targets": [
+          {
+            "expr": "(node_memory_MemTotal_bytes{host=~\"Amy|Clara|Rose\"} - node_memory_MemAvailable_bytes{host=~\"Amy|Clara|Rose\"})",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "Memory Usage",
+        "type": "timeseries"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "fillOpacity": 10,
+              "lineWidth": 2
+            },
+            "max": 100,
+            "min": 0,
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 8,
+          "y": 34
+        },
+        "id": 6,
+        "targets": [
+          {
+            "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=~\"Amy|Clara|Rose\",mode=\"idle\"}[1m])) * 100)",
+            "legendFormat": "{{host}}"
+          }
+        ],
+        "title": "CPU Usage Over Time",
+        "type": "timeseries"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "fillOpacity": 10,
+              "lineWidth": 2
+            },
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 16,
+          "y": 34
+        },
+        "id": 10,
+        "targets": [
+          {
+            "expr": "100 - ((node_filesystem_avail_bytes{host=~\"Amy|Clara|Rose\",mountpoint=\"/\",fstype!=\"tmpfs\"} / node_filesystem_size_bytes{host=~\"Amy|Clara|Rose\",mountpoint=\"/\",fstype!=\"tmpfs\"}) * 100)",
+            "legendFormat": "{{host}} /"
+          },
+          {
+            "expr": "100 - ((node_filesystem_avail_bytes{host=~\"Amy|Clara|Rose\",mountpoint=\"/scratch\",fstype!=\"tmpfs\"} / node_filesystem_size_bytes{host=~\"Amy|Clara|Rose\",mountpoint=\"/scratch\",fstype!=\"tmpfs\"}) * 100)",
+            "legendFormat": "{{host}} /scratch"
+          }
+        ],
+        "title": "Disk Usage",
+        "type": "timeseries"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 41
+        },
+        "id": 400,
+        "title": "Network",
+        "type": "row"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "fillOpacity": 20
+            },
+            "unit": "bps"
+          }
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 0,
+          "y": 42
+        },
+        "id": 8,
+        "options": {
+          "legend": {
+            "sortBy": "Name",
+            "sortDesc": false
+          }
+        },
+        "targets": [
+          {
+            "expr": "sum by (host) (rate(node_network_receive_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp65s0f0np0|enp97s0np0|enp1s0f0np0\"}[1m])) * 8",
+            "legendFormat": "{{host}} RX"
+          },
+          {
+            "expr": "sum by (host) (rate(node_network_transmit_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp65s0f0np0|enp97s0np0|enp1s0f0np0\"}[1m])) * 8",
+            "legendFormat": "{{host}} TX"
+          }
+        ],
+        "title": "100G NIC Traffic",
+        "type": "timeseries"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "fillOpacity": 20
+            },
+            "unit": "bps"
+          }
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 12,
+          "y": 42
+        },
+        "id": 9,
+        "options": {
+          "legend": {
+            "sortBy": "Name",
+            "sortDesc": false
+          }
+        },
+        "targets": [
+          {
+            "expr": "sum by (host) (rate(node_network_receive_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp194s0f0np0|enp226s0f0np0|enp161s0f0np0\"}[1m])) * 8",
+            "legendFormat": "{{host}} RX"
+          },
+          {
+            "expr": "sum by (host) (rate(node_network_transmit_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp194s0f0np0|enp226s0f0np0|enp161s0f0np0\"}[1m])) * 8",
+            "legendFormat": "{{host}} TX"
+          }
+        ],
+        "title": "10G Management Traffic",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "10s",
+    "schemaVersion": 39,
+    "tags": [
+      "server",
+      "fpga",
+      "dse"
+    ],
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "timezone": "browser",
+    "title": "DSE-FPGA",
+    "uid": "f833d9a0-24ed-4808-bc90-a874dc9173f3",
+    "version": 10
+  }
+}

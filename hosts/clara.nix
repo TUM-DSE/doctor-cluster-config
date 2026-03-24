@@ -9,6 +9,7 @@
     ../modules/amd_sev_snp.nix
     ../modules/xilinx.nix
     ../modules/xrdp.nix
+    ../modules/monitoring/fpga-dashboard
   ];
 
   networking.hostName = "clara";
