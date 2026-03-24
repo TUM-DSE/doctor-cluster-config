@@ -104,7 +104,6 @@ in
         computeNodeModules
         ++ [
           ./hosts/rose.nix
-          ./modules/monitoring/fpga-dashboard/server-collector.nix
         ];
     };
 
@@ -114,17 +113,15 @@ in
         computeNodeModules
         ++ [
           ./hosts/amy.nix
-          ./modules/monitoring/fpga-dashboard/server-collector.nix
         ];
     };
-
+    
     clara = {
       nixpkgs.pkgs = pkgs-x86_64-linux;
       imports =
         computeNodeModules
         ++ [
           ./hosts/clara.nix
-          ./modules/monitoring/fpga-dashboard
         ];
     };
 
