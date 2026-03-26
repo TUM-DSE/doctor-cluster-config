@@ -354,7 +354,65 @@ No device/PCI ID.
 - ✅  Slot: 6 type: PCIe gen: 3 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: 87:00.0   
- 
+
+
+### polly.dos.cit.tum.de 
+
+PCI Slots:   
+- ❌  Slot: 1 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 71:00.0   
+71:00.0, Ethernet controller, Mellanox Technologies, MT2910 Family [ConnectX-7] -p00, Mellanox Technologies, Device 0022  
+  Slot: 2 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 70:01.2   
+  Slot: 3 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 70:01.3   
+  Slot: 4 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 70:01.4   
+  Slot: 5 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.1   
+  Slot: 6 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.2   
+  Slot: 7 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.3   
+  Slot: 8 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.4   
+- ❌  Slot: 9 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 01:00.0   
+No device/PCI ID.  
+  Slot: 10 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 00:01.2   
+  Slot: 11 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 00:01.3   
+  Slot: 12 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 00:01.4   
+- ❌  Slot: 13 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 11:00.0   
+No device/PCI ID.  
+- ✅  Slot: 14 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 10:01.2   
+No device/PCI ID.  
+- ✅  Slot: 15 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 10:01.3   
+No device/PCI ID.  
+- ✅  Slot: 16 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 10:01.4   
+No device/PCI ID.  
+  Slot: 17 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.1   
+  Slot: 18 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.2   
+  Slot: 19 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.3   
+  Slot: 20 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.4   
+  Slot: 21 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.1   
+  Slot: 22 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.2   
+  Slot: 23 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.3   
+  Slot: 24 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.4   
+  Slot: 25 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: e0:01.1   
+  Slot: 26 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: e0:01.2   
+- ❌  Slot: 27 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: e1:00.0   
+No device/PCI ID.  
+  Slot: 28 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: e0:01.4   
+  Slot: 29 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.1   
+  Slot: 30 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.2   
+  Slot: 31 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.3   
+  Slot: 32 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.4   
+  Slot: 33 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.1   
+  Slot: 34 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.2   
+  Slot: 35 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.3   
+  Slot: 36 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.4   
+- ✅  Slot: 37 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.1   
+No device/PCI ID.  
+- ✅  Slot: 38 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.2   
+01:00.0, 3D controller, NVIDIA Corporation, GB202GL [RTX PRO 6000 Blackwell Server Edition] -ra1 -p00, NVIDIA Corporation, Device 204e  
+- ✅  Slot: 39 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.3   
+No device/PCI ID.  
+- ✅  Slot: 40 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.4   
+No device/PCI ID.  
+  Slot: N/A type: N/A status: unknown length: long volts: 3.3 bus-ID: d0:03.1   
+  Slot: N/A type: N/A status: unknown length: long volts: 3.3 bus-ID: d0:03.2    
+
 
 ### river.dos.cit.tum.de 
 
