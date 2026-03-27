@@ -16,8 +16,9 @@ High-level checklist for adding a new server:
 6. [Add hardware & disko config](#add-disko-config) — wire up ZFS disk layout
 7. [Install NixOS](#install-nixos)
 8. [IPMI / UEFI setup](#ipmi--uefi-setup) — set IPMI password, enable serial over LAN
-9. [Enable NFS](#enable-nfs) — add NFS client module once server is in the server room
-10. [Post-install finalization](#finalizing)
+9. [Prepare for server room](#prepare-for-server-room) — update Struktur DB subnets & MAC, contact RBG
+10. [Enable NFS](#enable-nfs) — add NFS client module once server is in the server room
+11. [Post-install finalization](#finalizing)
 
 ## Physical Setup
 
@@ -193,6 +194,30 @@ ipmitool sol payload enable 1
 
 Also make sure IPMI over LAN is enabled in the BMC web interface and Serial over LAN redirection is enabled in the BIOS/firmware setup page (vendor-specific).
 
+## Prepare for Server Room
+
+### Update Struktur DB
+
+- For `$hostname-mgmt`: the `il01_15` mgmt network does not support IPv6 — change the IP from IPv6 to an IPv4 address first, then switch the network from `il01` to `il01_15`.
+- For `$hostname`: switch the network from `il01` to `il01_16` (data network).
+- Update the MAC address for `$hostname` to the SFP NIC's MAC address (replace the onboard NIC MAC used during initial lab setup).
+
+### Labels
+
+Ensure hostname labels are attached to the front and back of the server before it goes into the server room.
+
+### Contact RBG
+
+Send an email to RBG to request the physical infrastructure for the server room slot. Include:
+
+- Number of power slots needed
+- 1x SFP fiber uplink (data network)
+- 1x CAT ethernet for management/IPMI
+- No redundant SFP links needed
+- Server name and where to find it (normally our HW lab)
+- MAC addresses of the SFP NIC and the mgmt/IPMI NIC
+- Agreed rack location (this should be discussed with RBG before purchasing the server)
+
 ## Enable NFS
 
 Once the server is physically installed in the server room and has network access to the NFS server, add the NFS client module to the host config in `hosts/$hostname.nix`:
@@ -210,8 +235,7 @@ Deploy the updated config to make NFS mounts available.
 
 Once the server is installed in the server room:
 
-- ensure hostname labels are on front and back of the server
-- ensure that the networks in the Struktur DB are set correctly
+- ensure again that the networks in the Struktur DB are set correctly
 - add host to `tasks.py` (`HOSTS` and `MANUFACTURERS`) and commit `inv update-docs`
 - add host to `docs/README.md`
 - fix up warnings in the nixos config
