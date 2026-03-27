@@ -25,11 +25,13 @@
         "jack"
         "jackson"
         "mickey"
+        "polly"
         "river"
         "rose"
         # currently turned off
         #"ruby"
         "ryan"
+        "steve"
         "tegan"
         "vislor"
         "wilfred"
