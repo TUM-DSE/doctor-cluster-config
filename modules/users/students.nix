@@ -50,6 +50,7 @@ let
 
   yongjieKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDkLa3VpTxlK4o49Pf+tGp4sIpKxNwDlqqFoDKxVnfX 87616@Huang"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILLl0MWJcsj7qlJDtO47j2gkIE1Ftjy++dk6GlV6cJZ/ yongjiehuang907@gmail.com"
   ];
 
   florianDKeys = [
