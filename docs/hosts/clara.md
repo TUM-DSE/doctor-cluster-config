@@ -4,20 +4,20 @@
 System:
   Host: clara Kernel: 6.9.0-rc7 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\3rvcdvhhydfmlkjgr7xvq19j3gb5f63z-initrd-linux-6.9-initrd.efi
-    init=/nix/store/sdfv91c52rmpri3gc6nagp3iky3lx77k-nixos-system-clara-25.05.20250930.51fcc5b/init
-    console=ttyS0,115200 console=tty0 kvm_amd.sev=1 kvm_amd.sev_es=1 kvm_amd.sev_snp=1
-    sp5100_tco.blacklist=yes kvm.gmem_2m_enabled=1 hugepagesz=1GB hugepages=8 hugepagesz=2MB
-    hugepages=1000 console=ttyS1,115200n8 console=tty1 nohibernate loglevel=4
+    parameters: initrd=\EFI\nixos\cvmvmsd2kyilbfs61h4130x3ay75jlfs-initrd-linux-6.9-initrd.efi
+    init=/nix/store/s2y84rh25d53kcbg14x26yjs55qpwbkj-nixos-system-clara-25.11.20260123.ac3d985/init
+    console=ttyS0,115200 console=tty0 amd_iommu=off kvm_amd.sev=1 kvm_amd.sev_es=1
+    kvm_amd.sev_snp=1 sp5100_tco.blacklist=yes kvm.gmem_2m_enabled=1 hugepagesz=1GB hugepages=8
+    hugepagesz=2MB hugepages=1000 console=ttyS1,115200n8 console=tty1 nohibernate loglevel=4
     lsm=landlock,yama,bpf
-  Console: N/A DM: LightDM v: 1.32.0 Distro: NixOS 25.05 (Warbler)
+  Console: N/A DM: LightDM v: 1.32.0 Distro: NixOS 25.11 (Xantusia)
 Machine:
   Type: Server System: sysGen www.sysgen.de product: AS -4124GS-TNR v: 0123456789
     serial: E404070X2C04650 Chassis: type: 17 v: 0123456789 serial: C4180AK50A60934
   Mobo: Supermicro model: H12DSG-O-CPU v: 1.01A serial: VM227S600618
     uuid: a2d89200-0a35-11ed-8000-3cecefea4bb0 UEFI: American Megatrends v: 2.4 date: 04/22/2022
 Memory:
-  System RAM: total: 384 GiB available: 377.74 GiB used: 84.84 GiB (22.5%)
+  System RAM: total: 384 GiB available: 377.74 GiB used: 69.37 GiB (18.4%)
   Array-1: capacity: 8 TiB note: check slots: 32 modules: 24 EC: Multi-bit ECC
     max-module-size: 256 GiB note: est.
   Device-1: P1-DIMMA1 type: DDR4 detail: synchronous registered (buffered) size: 16 GiB speed:
@@ -132,7 +132,7 @@ PCI Slots:
   Slot: 5 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: c2:00.0
   Slot: 6 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: c2:00.0
   Slot: 7 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 60:03.1
-  Slot: 8 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 40:01.1
+  Slot: 8 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 41:00.0
   Slot: 9 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 00:01.1
   Slot: 10 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 20:03.1
 CPU:
@@ -148,8 +148,8 @@ CPU:
     14: 1500 15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1500 21: 1500 22: 1500 23: 1500
     24: 1500 25: 1500 26: 1500 27: 1500 28: 1500 29: 1500 30: 1500 31: 1500 32: 1500 33: 1500
     34: 1500 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500 43: 1500
-    44: 1500 45: 1500 46: 1500 47: 1500 48: 1500 bogomips: 254414
-  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
+    44: 1500 45: 1500 46: 1500 47: 1500 48: 1500 bogomips: 254380
+  Flags-basic: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
   Type: itlb_multihit status: Not affected
@@ -169,89 +169,99 @@ CPU:
 Graphics:
   Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel ports: active: VGA-1
     empty: Virtual-1 bus-ID: 62:00.0 chip-ID: 1a03:2000 class-ID: 0300
-  Display: unspecified server: X.org v: 1.21.1.18 driver: gpu: ast tty: 80x40
+  Display: unspecified server: X.org v: 1.21.1.20 driver: gpu: ast tty: 80x40
   Monitor-1: VGA-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
   API: EGL v: 1.5 platforms: device: 0 drv: swrast surfaceless: drv: swrast
     inactive: gbm,wayland,x11
-  API: OpenGL v: 4.5 vendor: mesa v: 25.0.7 note: console (EGL sourced) renderer: llvmpipe (LLVM
-    19.1.7 256 bits)
+  API: OpenGL v: 4.5 vendor: mesa v: 25.2.6 note: console (EGL sourced) renderer: llvmpipe (LLVM
+    21.1.7 256 bits)
   Info: Tools: api: eglinfo,glxinfo de: xfce4-display-settings x11: xdpyinfo, xprop, xrandr
 Audio:
   Message: No device data found.
-  Server-1: PipeWire v: 1.4.7 status: off with: 1: pipewire-pulse status: off 2: wireplumber
+  Server-1: PipeWire v: 1.4.9 status: off with: 1: pipewire-pulse status: off 2: wireplumber
     status: off 3: pipewire-alsa type: plugin tools: pw-cat,pw-cli,wpctl
 Network:
-  Device-1: Broadcom BCM57412 NetXtreme-E 10Gb RDMA Ethernet driver: bnxt_en v: kernel pcie: gen: 3
-    speed: 8 GT/s lanes: 8 port: N/A bus-ID: c2:00.0 chip-ID: 14e4:16d6 class-ID: 0200 temp: 52.0 C
+  Device-1: Intel Ethernet E810-C for QSFP driver: ice v: kernel pcie: gen: 4 speed: 16 GT/s
+    lanes: 16 port: N/A bus-ID: 41:00.0 chip-ID: 8086:1592 class-ID: 0200 temp: 49.0 C
+  IF: enp65s0f0np0 state: down mac: b4:96:91:f2:63:00
+  Device-2: Intel Ethernet E810-C for QSFP driver: ice v: kernel pcie: gen: 4 speed: 16 GT/s
+    lanes: 16 port: N/A bus-ID: 41:00.1 chip-ID: 8086:1592 class-ID: 0200
+  IF: enp65s0f1np1 state: down mac: b4:96:91:f2:63:01
+  Device-3: Broadcom BCM57412 NetXtreme-E 10Gb RDMA Ethernet driver: bnxt_en v: kernel pcie:
+    gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: c2:00.0 chip-ID: 14e4:16d6 class-ID: 0200
+    temp: 53.0 C
   IF: enp194s0f0np0 state: up speed: 10000 Mbps duplex: full mac: 84:16:0c:cc:5a:30
-  Device-2: Broadcom BCM57412 NetXtreme-E 10Gb RDMA Ethernet driver: bnxt_en v: kernel pcie:
+  Device-4: Broadcom BCM57412 NetXtreme-E 10Gb RDMA Ethernet driver: bnxt_en v: kernel pcie:
     gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: c2:00.1 chip-ID: 14e4:16d6 class-ID: 0200
   IF: enp194s0f1np1 state: up speed: 10000 Mbps duplex: full mac: 84:16:0c:cc:5a:31
   IP v4: 169.254.101.27/16 scope: link
-  IP v4: 10.0.0.2/24 scope: global
   IP v6: fe80::8616:cff:fecc:5a31/64 virtual: proto kernel_ll scope: link
-  Device-3: Intel I350 Gigabit Network vendor: Super Micro driver: igb v: kernel pcie: gen: 2
+  Device-5: Intel I350 Gigabit Network vendor: Super Micro driver: igb v: kernel pcie: gen: 2
     speed: 5 GT/s lanes: 1 link-max: lanes: 4 port: f020 bus-ID: e5:00.0 chip-ID: 8086:1521
     class-ID: 0200
   IF: eno1 state: down mac: 3c:ec:ef:ea:4b:b0
-  Device-4: Intel I350 Gigabit Network vendor: Super Micro driver: igb v: kernel pcie: gen: 2
+  Device-6: Intel I350 Gigabit Network vendor: Super Micro driver: igb v: kernel pcie: gen: 2
     speed: 5 GT/s lanes: 1 link-max: lanes: 4 port: f000 bus-ID: e5:00.1 chip-ID: 8086:1521
     class-ID: 0200
   IF: eno2 state: down mac: 3c:ec:ef:ea:4b:b1
-  IF-ID-1: docker0 state: down mac: 02:42:fa:26:48:c6
+  IF-ID-1: br-3879377e177d state: down mac: 1e:c2:10:bd:bd:a6
+  IP v4: 172.19.0.1/16 scope: global broadcast: 172.19.255.255
+  IF-ID-2: br-fff7333610b6 state: down mac: ee:3e:1d:35:12:eb
+  IP v4: 172.18.0.1/16 scope: global broadcast: 172.18.255.255
+  IF-ID-3: docker0 state: down mac: 62:99:03:f5:8b:22
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IF-ID-2: doctor-bridge state: up speed: 10000 Mbps duplex: unknown mac: 84:16:0c:cc:5a:30
+  IF-ID-4: doctor-bridge state: up speed: 10000 Mbps duplex: unknown mac: 84:16:0c:cc:5a:30
   IP v4: 131.159.102.22/24 type: dynamic scope: global
   IP v6: 2a09:80c0:102::22/128 type: dynamic noprefixroute scope: global
   IP v6: fe80::8616:cff:fecc:5a30/64 virtual: proto kernel_ll scope: link
-  IF-ID-3: enp38s0f3u1u2c2 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f
+  IF-ID-5: enp38s0f3u1u2c2 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f
   IP v4: 169.254.3.1/24 type: dynamic scope: global
   IP v6: fe80::bc3a:f2ff:feb6:59f/64 virtual: proto kernel_ll scope: link
-  IF-ID-4: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
+  IF-ID-6: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:e4e9:7814:459b:3f23:f455/16 scope: global
-  Info: services: sshd, systemd-networkd, systemd-timesyncd
+  Info: services: nginx, sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.22
 Bluetooth:
   Device-1: Insyde RNDIS/Ethernet Gadget driver: rndis_host v: kernel type: USB rev: 2.0
     speed: 480 Mb/s lanes: 1 mode: 2.0 bus-ID: 3-1.2:4 chip-ID: 0b1f:03ee class-ID: 0a00
   Report: This feature requires one of these tools: hciconfig/bt-adapter
 RAID:
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.22 TiB
-    allocated: 522 GiB zfs-fs: size: 1.68 TiB free: 1.17 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 1.73 TiB free: 1.06 TiB
+    allocated: 695 GiB zfs-fs: size: 1.68 TiB free: 1 TiB
   Components: Online:
   1: nvme0n1p2 maj-min: 259:3 size: 1.75 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 374.27 GiB (10.7%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.43 TiB used: 555.43 GiB (15.8%)
   ID-1: /dev/nvme0n1 maj-min: 259:1 vendor: Samsung model: MZQL21T9HCJR-00A07 size: 1.75 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64GNA0T724988 fw-rev: GDC5602Q temp: 34.9 C scheme: GPT
-  SMART: yes health: PASSED on: 2y 255d 13h cycles: 150 read-units: 47,699,616 [24.4 TB]
-    written-units: 97,430,577 [49.8 TB]
+    serial: S64GNA0T724988 fw-rev: GDC5602Q temp: 32.9 C scheme: GPT
+  SMART: yes health: PASSED on: 3y 42d 7h cycles: 154 read-units: 54,425,980 [27.8 TB]
+    written-units: 117,968,524 [60.3 TB]
   ID-2: /dev/nvme1n1 maj-min: 259:0 vendor: Samsung model: MZQL21T9HCJR-00A07 size: 1.75 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64GNA0T724991 fw-rev: GDC5602Q temp: 35.9 C
-  SMART: yes health: PASSED on: 2y 255d 13h cycles: 150 read-units: 9,949 [5.09 GB]
+    serial: S64GNA0T724991 fw-rev: GDC5602Q temp: 34.9 C
+  SMART: yes health: PASSED on: 3y 42d 7h cycles: 154 read-units: 11,422 [5.84 GB]
     written-units: 2,107,208 [1.07 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 1.54 TiB used: 374.24 GiB (23.8%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 29.8 MiB (2.9%) fs: vfat
+  ID-1: / raw-size: N/A size: 1.54 TiB used: 555.4 GiB (35.1%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 30.6 MiB (3.0%) fs: vfat
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:2
-  ID-3: /home raw-size: N/A size: 3.43 TiB used: 1.61 TiB (47.0%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 3.47 TiB used: 2.54 TiB (73.3%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 1.17 TiB used: 384 KiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 1 TiB used: 768 KiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu-1: 32 C cpu-2: 34 C mobo: 33 C
+  Src: ipmi System Temperatures: cpu-1: 34 C cpu-2: 35 C mobo: 34 C
   Fan Speeds (rpm): fan-1: 3220 fan-2: 3220 fan-3: 3220 fan-4: 3220 fan-5: 3220 fan-6: 3220
     fan-7: 3220 fan-8: 3220 fan-9: 1260 fan-16: 1260
   Power: 12v: 12.112 5v: 5.020 3.3v: 3.276 vbat: N/A dimm-p1: 1.189 dimm-p2: 1.200
-  Src: lm-sensors System Temperatures: cpu: 34.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 35.2 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 717 Power: uptime: 5d 4h 17m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 147.89 GiB Init: systemd v: 257 default: graphical tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 988 libs: 234 pm: nix-usr pkgs: 0
-    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.38
+  Processes: 846 Power: uptime: 1d 10h 43m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 147.89 GiB Init: systemd v: 258 default: graphical tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 1011 libs: 237 pm: nix-usr pkgs: 0
+    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.39
 ```
 ![hardware topology](clara.lstopo.svg)

@@ -2,11 +2,13 @@
 
 ```
 System:
-  Host: polly Kernel: 6.12.66 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
+  Host: polly Kernel: 6.18.6 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\2qfkgz0p425zj7sj2wnc5hqizpbx150m-initrd-linux-6.12.66-initrd.efi
-    init=/nix/store/lqpylgqb2c0fnsyzr0yym12r1k7j13hr-nixos-system-polly-25.11.20260123.ac3d985/init
-    console=ttyS0,115200 console=tty0 nohibernate root=fstab loglevel=4 lsm=landlock,yama,bpf
+    parameters: initrd=\EFI\nixos\chpdjpxd4p88vbvqv8y2g69q3rb4wvqf-initrd-linux-6.18.6-initrd.efi
+    init=/nix/store/zi9hczdsbbsrhji39f008swwgh69cdah-nixos-system-polly-25.11.20260123.ac3d985/init
+    console=ttyS0,115200 console=tty0 kvm_amd.sev=1 kvm_amd.sev_es=1 kvm_amd.sev_snp=1
+    sp5100_tco.blacklist=yes kvm.gmem_2m_enabled=1 nohibernate root=fstab loglevel=4
+    lsm=landlock,yama,bpf
   Console: N/A Distro: NixOS 25.11 (Xantusia)
 Machine:
   Type: Server System: Giga product: XV23-ZX0-AAJ1-000 v: 0100 serial: GQH156112A0001 Chassis:
@@ -14,7 +16,7 @@ Machine:
   Mobo: Giga model: MZX3-MG0-000 v: 01010101 serial: PJANE100069 part-nu: 01234567890123456789AB
     uuid: f69d0000-f592-11f0-8000-30560f4bedf3 UEFI: GIGABYTE v: R16_F16 date: 01/30/2026
 Memory:
-  System RAM: total: 768 GiB available: 752.05 GiB used: 24.52 GiB (3.3%)
+  System RAM: total: 768 GiB available: 752.08 GiB used: 62.79 GiB (8.3%)
   Array-1: capacity: 12 TiB note: check slots: 24 modules: 12 EC: Multi-bit ECC
     max-module-size: 512 GiB note: est.
   Device-1: DIMM_P0_A0 type: DDR5 detail: synchronous registered (buffered) size: 64 GiB
@@ -115,59 +117,61 @@ CPU:
   Topology: cpus: 2x dies: 12 clusters: 12x1 cores: 192 smt: <unsupported> cache:
     L1: 2x 15 MiB (30 MiB) desc: d-192x48 KiB; i-192x32 KiB L2: 2x 192 MiB (384 MiB)
     desc: 192x1024 KiB L3: 2x 384 MiB (768 MiB) desc: 12x32 MiB
-  Speed (MHz): avg: 1500 min/max: 1500/3700 boost: enabled base/boost: 2250/3700 scaling:
-    driver: acpi-cpufreq governor: schedutil volts: 0.8 V ext-clock: 100 MHz cores: 1: 1500 2: 1500
-    3: 1500 4: 1500 5: 1500 6: 1500 7: 1500 8: 1500 9: 1500 10: 1500 11: 1500 12: 1500 13: 1500
-    14: 1500 15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1500 21: 1500 22: 1500 23: 1500
-    24: 1500 25: 1500 26: 1500 27: 1500 28: 1500 29: 1500 30: 1500 31: 1500 32: 1500 33: 1500
-    34: 1500 35: 1500 36: 1500 37: 1500 38: 1500 39: 1500 40: 1500 41: 1500 42: 1500 43: 1500
-    44: 1500 45: 1500 46: 1500 47: 1500 48: 1500 49: 1500 50: 1500 51: 1500 52: 1500 53: 1500
-    54: 1500 55: 1500 56: 1500 57: 1500 58: 1500 59: 1500 60: 1500 61: 1500 62: 1500 63: 1500
-    64: 1500 65: 1500 66: 1500 67: 1500 68: 1500 69: 1500 70: 1500 71: 1500 72: 1500 73: 1500
-    74: 1500 75: 1500 76: 1500 77: 1500 78: 1500 79: 1500 80: 1500 81: 1500 82: 1500 83: 1500
-    84: 1500 85: 1500 86: 1500 87: 1500 88: 1500 89: 1500 90: 1500 91: 1500 92: 1500 93: 1500
-    94: 1500 95: 1500 96: 1500 97: 1500 98: 1500 99: 1500 100: 1500 101: 1500 102: 1500 103: 1500
-    104: 1500 105: 1500 106: 1500 107: 1500 108: 1500 109: 1500 110: 1500 111: 1500 112: 1500
-    113: 1500 114: 1500 115: 1500 116: 1500 117: 1500 118: 1500 119: 1500 120: 1500 121: 1500
-    122: 1500 123: 1500 124: 1500 125: 1500 126: 1500 127: 1500 128: 1500 129: 1500 130: 1500
-    131: 1500 132: 1500 133: 1500 134: 1500 135: 1500 136: 1500 137: 1500 138: 1500 139: 1500
-    140: 1500 141: 1500 142: 1500 143: 1500 144: 1500 145: 1500 146: 1500 147: 1500 148: 1500
-    149: 1500 150: 1500 151: 1500 152: 1500 153: 1500 154: 1500 155: 1500 156: 1500 157: 1500
-    158: 1500 159: 1500 160: 1500 161: 1500 162: 1500 163: 1500 164: 1500 165: 1500 166: 1500
-    167: 1500 168: 1500 169: 1500 170: 1500 171: 1500 172: 1500 173: 1500 174: 1500 175: 1500
-    176: 1500 177: 1500 178: 1500 179: 1500 180: 1500 181: 1500 182: 1500 183: 1500 184: 1500
-    185: 1500 186: 1500 187: 1500 188: 1500 189: 1500 190: 1500 191: 1500 192: 1500 193: 1500
-    194: 1500 195: 1500 196: 1500 197: 1500 198: 1500 199: 1500 200: 1500 201: 1500 202: 1500
-    203: 1500 204: 1500 205: 1500 206: 1500 207: 1500 208: 1500 209: 1500 210: 1500 211: 1500
-    212: 1500 213: 1500 214: 1500 215: 1500 216: 1500 217: 1500 218: 1500 219: 1500 220: 1500
-    221: 1500 222: 1500 223: 1500 224: 1500 225: 1500 226: 1500 227: 1500 228: 1500 229: 1500
-    230: 1500 231: 1500 232: 1500 233: 1500 234: 1500 235: 1500 236: 1500 237: 1500 238: 1500
-    239: 1500 240: 1500 241: 1500 242: 1500 243: 1500 244: 1500 245: 1500 246: 1500 247: 1500
-    248: 1500 249: 1500 250: 1500 251: 1500 252: 1500 253: 1500 254: 1500 255: 1500 256: 1500
-    257: 1500 258: 1500 259: 1500 260: 1500 261: 1500 262: 1500 263: 1500 264: 1500 265: 1500
-    266: 1500 267: 1500 268: 1500 269: 1500 270: 1500 271: 1500 272: 1500 273: 1500 274: 1500
-    275: 1500 276: 1500 277: 1500 278: 1500 279: 1500 280: 1500 281: 1500 282: 1500 283: 1500
-    284: 1500 285: 1500 286: 1500 287: 1500 288: 1500 289: 1500 290: 1500 291: 1500 292: 1500
-    293: 1500 294: 1500 295: 1500 296: 1500 297: 1500 298: 1500 299: 1500 300: 1500 301: 1500
-    302: 1500 303: 1500 304: 1500 305: 1500 306: 1500 307: 1500 308: 1500 309: 1500 310: 1500
-    311: 1500 312: 1500 313: 1500 314: 1500 315: 1500 316: 1500 317: 1500 318: 1500 319: 1500
-    320: 1500 321: 1500 322: 1500 323: 1500 324: 1500 325: 1500 326: 1500 327: 1500 328: 1500
-    329: 1500 330: 1500 331: 1500 332: 1500 333: 1500 334: 1500 335: 1500 336: 1500 337: 1500
-    338: 1500 339: 1500 340: 1500 341: 1500 342: 1500 343: 1500 344: 1500 345: 1500 346: 1500
-    347: 1500 348: 1500 349: 1500 350: 1500 351: 1500 352: 1500 353: 1500 354: 1500 355: 1500
-    356: 1500 357: 1500 358: 1500 359: 1500 360: 1500 361: 1500 362: 1500 363: 1500 364: 1500
-    365: 1500 366: 1500 367: 1500 368: 1500 369: 1500 370: 1500 371: 1500 372: 1500 373: 1500
-    374: 1500 375: 1500 376: 1500 377: 1500 378: 1500 379: 1500 380: 1500 381: 1500 382: 1500
-    383: 1500 384: 1500 bogomips: 1728115
+  Speed (MHz): avg: 2209 high: 2618 min/max: 1205/3702 boost: enabled base/boost: 2250/3700
+    scaling: driver: amd-pstate-epp governor: performance volts: 0.8 V ext-clock: 100 MHz cores:
+    1: 2618 2: 2618 3: 2618 4: 2618 5: 2618 6: 2618 7: 2618 8: 2618 9: 2618 10: 2618 11: 2618
+    12: 2618 13: 2618 14: 2618 15: 2618 16: 2618 17: 2618 18: 2618 19: 2618 20: 2618 21: 2618
+    22: 2618 23: 2618 24: 2618 25: 2618 26: 2618 27: 2618 28: 2618 29: 2618 30: 2618 31: 2618
+    32: 2618 33: 2618 34: 2618 35: 2618 36: 2618 37: 2618 38: 2618 39: 2618 40: 2618 41: 2618
+    42: 2618 43: 2618 44: 2618 45: 2618 46: 2618 47: 2618 48: 2618 49: 2618 50: 2618 51: 2618
+    52: 2618 53: 2618 54: 2618 55: 2618 56: 2618 57: 2618 58: 2618 59: 2618 60: 2618 61: 2618
+    62: 2618 63: 2618 64: 2618 65: 2618 66: 2618 67: 2618 68: 2618 69: 2618 70: 2618 71: 2618
+    72: 2618 73: 2618 74: 2618 75: 2618 76: 2618 77: 2618 78: 2618 79: 2618 80: 2618 81: 2618
+    82: 2618 83: 2618 84: 2618 85: 2618 86: 2618 87: 2618 88: 2618 89: 2618 90: 2618 91: 2618
+    92: 2618 93: 2618 94: 2618 95: 2618 96: 2618 97: 2618 98: 2618 99: 2618 100: 2618 101: 2618
+    102: 2618 103: 2618 104: 2618 105: 2618 106: 2618 107: 2618 108: 2618 109: 2618 110: 2618
+    111: 2618 112: 2618 113: 2618 114: 2618 115: 2618 116: 2618 117: 2618 118: 2618 119: 2618
+    120: 2618 121: 2618 122: 2618 123: 2618 124: 2618 125: 2618 126: 2618 127: 2618 128: 2618
+    129: 2618 130: 2618 131: 2618 132: 2618 133: 2618 134: 2618 135: 2618 136: 2618 137: 2618
+    138: 2618 139: 2618 140: 2618 141: 2618 142: 2618 143: 2618 144: 2618 145: 2618 146: 2618
+    147: 2618 148: 2618 149: 2618 150: 2618 151: 2618 152: 2618 153: 2618 154: 2618 155: 2618
+    156: 2618 157: 2618 158: 2618 159: 2618 160: 2618 161: 2618 162: 2618 163: 2618 164: 2618
+    165: 2618 166: 2618 167: 2618 168: 2618 169: 2618 170: 2618 171: 2618 172: 2618 173: 2618
+    174: 2618 175: 2618 176: 2618 177: 2618 178: 2618 179: 2618 180: 2618 181: 2618 182: 2618
+    183: 2618 184: 2618 185: 2618 186: 2618 187: 2618 188: 2618 189: 2618 190: 2618 191: 2618
+    192: 2618 193: 1800 194: 1800 195: 1800 196: 1800 197: 1800 198: 1800 199: 1800 200: 1800
+    201: 1800 202: 1800 203: 1800 204: 1800 205: 1800 206: 1800 207: 1800 208: 1800 209: 1800
+    210: 1800 211: 1800 212: 1800 213: 1800 214: 1800 215: 1800 216: 1800 217: 1800 218: 1800
+    219: 1800 220: 1800 221: 1800 222: 1800 223: 1800 224: 1800 225: 1800 226: 1800 227: 1800
+    228: 1800 229: 1800 230: 1800 231: 1800 232: 1800 233: 1800 234: 1800 235: 1800 236: 1800
+    237: 1800 238: 1800 239: 1800 240: 1800 241: 1800 242: 1800 243: 1800 244: 1800 245: 1800
+    246: 1800 247: 1800 248: 1800 249: 1800 250: 1800 251: 1800 252: 1800 253: 1800 254: 1800
+    255: 1800 256: 1800 257: 1800 258: 1800 259: 1800 260: 1800 261: 1800 262: 1800 263: 1800
+    264: 1800 265: 1800 266: 1800 267: 1800 268: 1800 269: 1800 270: 1800 271: 1800 272: 1800
+    273: 1800 274: 1800 275: 1800 276: 1800 277: 1800 278: 1800 279: 1800 280: 1800 281: 1800
+    282: 1800 283: 1800 284: 1800 285: 1800 286: 1800 287: 1800 288: 1800 289: 1800 290: 1800
+    291: 1800 292: 1800 293: 1800 294: 1800 295: 1800 296: 1800 297: 1800 298: 1800 299: 1800
+    300: 1800 301: 1800 302: 1800 303: 1800 304: 1800 305: 1800 306: 1800 307: 1800 308: 1800
+    309: 1800 310: 1800 311: 1800 312: 1800 313: 1800 314: 1800 315: 1800 316: 1800 317: 1800
+    318: 1800 319: 1800 320: 1800 321: 1800 322: 1800 323: 1800 324: 1800 325: 1800 326: 1800
+    327: 1800 328: 1800 329: 1800 330: 1800 331: 1800 332: 1800 333: 1800 334: 1800 335: 1800
+    336: 1800 337: 1800 338: 1800 339: 1800 340: 1800 341: 1800 342: 1800 343: 1800 344: 1800
+    345: 1800 346: 1800 347: 1800 348: 1800 349: 1800 350: 1800 351: 1800 352: 1800 353: 1800
+    354: 1800 355: 1800 356: 1800 357: 1800 358: 1800 359: 1800 360: 1800 361: 1800 362: 1800
+    363: 1800 364: 1800 365: 1800 366: 1800 367: 1800 368: 1800 369: 1800 370: 1800 371: 1800
+    372: 1800 373: 1800 374: 1800 375: 1800 376: 1800 377: 1800 378: 1800 379: 1800 380: 1800
+    381: 1800 382: 1800 383: 1800 384: 1800 bogomips: 1728000
   Flags-basic: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
+  Type: ghostwrite status: Not affected
   Type: indirect_target_selection status: Not affected
   Type: itlb_multihit status: Not affected
   Type: l1tf status: Not affected
   Type: mds status: Not affected
   Type: meltdown status: Not affected
   Type: mmio_stale_data status: Not affected
+  Type: old_microcode status: Not affected
   Type: reg_file_data_sampling status: Not affected
   Type: retbleed status: Not affected
   Type: spec_rstack_overflow mitigation: Reduced Speculation
@@ -180,13 +184,13 @@ CPU:
   Type: tsx_async_abort status: Not affected
   Type: vmscape mitigation: IBPB before exit to userspace
 Graphics:
-  Device-1: NVIDIA GB202GL [RTX PRO 6000 Blackwell Server Edition] driver: N/A
-    alternate: nvidiafb, nouveau non-free: 550-580.xx+ status: current (as of 2025-08)
-    arch: Blackwell code: GB2xx process: TSMC 4np (5nm) built: 2024+ pcie: gen: 5 speed: 32 GT/s
-    lanes: 16 bus-ID: 01:00.0 chip-ID: 10de:2bb5 class-ID: 0302
+  Device-1: NVIDIA GB202GL [RTX PRO 6000 Blackwell Server Edition] driver: vfio-pci v: N/A
+    alternate: nvidiafb,nouveau,nova_core non-free: 550-580.xx+ status: current (as of 2025-08)
+    arch: Blackwell code: GB2xx process: TSMC 4np (5nm) built: 2024+ pcie: gen: 1 speed: 2.5 GT/s
+    lanes: 16 link-max: gen: 5 speed: 32 GT/s bus-ID: 01:00.0 chip-ID: 10de:2bb5 class-ID: 0302
   Device-2: ASPEED Graphics Family vendor: Gigabyte driver: ast v: kernel ports: active: DP-1
     empty: none bus-ID: 53:00.0 chip-ID: 1a03:2000 class-ID: 0300
-  Display: server: No display server data found. Headless machine? tty: 80x40
+  Display: unspecified server: N/A driver: gpu: ast tty: 80x40
   Monitor-1: DP-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
   API: EGL Message: No EGL data available.
   API: OpenGL Message: GL data unavailable in console for root.
@@ -203,7 +207,7 @@ Network:
     speed: 8 GT/s lanes: 4 port: N/A bus-ID: 51:00.1 chip-ID: 8086:1563 class-ID: 0200
   IF: eno2 state: down mac: 30:56:0f:4b:ed:f4
   Device-3: Mellanox MT2910 Family [ConnectX-7] driver: mlx5_core v: kernel pcie: gen: 5
-    speed: 32 GT/s lanes: 16 port: N/A bus-ID: 71:00.0 chip-ID: 15b3:1021 class-ID: 0200 temp: 50.0 C
+    speed: 32 GT/s lanes: 16 port: N/A bus-ID: 71:00.0 chip-ID: 15b3:1021 class-ID: 0200 temp: 49.0 C
   IF: enp113s0f0np0 state: down mac: 60:5e:65:c6:1e:1c
   Device-4: Mellanox MT2910 Family [ConnectX-7] driver: mlx5_core v: kernel pcie: gen: 5
     speed: 32 GT/s lanes: 16 port: N/A bus-ID: 71:00.1 chip-ID: 15b3:1021 class-ID: 0200
@@ -217,42 +221,44 @@ Network:
   Device-6: Intel Ethernet E810-XXV for SFP driver: ice v: kernel pcie: gen: 4 speed: 16 GT/s
     lanes: 8 port: N/A bus-ID: e1:00.1 chip-ID: 8086:159b class-ID: 0200
   IF: enp225s0f1np1 state: down mac: b4:96:91:c3:a2:4d
-  IF-ID-1: docker0 state: down mac: 76:1e:89:ab:9b:c6
+  IF-ID-1: docker0 state: down mac: 12:a6:0b:40:25:0d
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
   IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:ac34:ee4a:4d2d:f10:b5f8/16 scope: global
   Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.36
 RAID:
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.48 TiB
-    allocated: 4.1 GiB zfs-fs: size: 3.38 TiB free: 3.37 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.45 TiB
+    allocated: 37.6 GiB zfs-fs: size: 3.38 TiB free: 3.34 TiB
   Components: Online:
   1: nvme0n1p2 maj-min: 259:2 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.38 TiB used: 3.89 GiB (0.1%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.38 TiB used: 32.35 GiB (0.9%)
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
     serial: S64HNS0WA06423 fw-rev: GDC5602Q temp: 30.9 C scheme: GPT
-  SMART: yes health: PASSED on: 5d 3h cycles: 524 read-units: 2,906,492 [1.48 TB]
-    written-units: 842,439 [431 GB]
+  SMART: yes health: PASSED on: 9d 4h cycles: 524 read-units: 2,922,912 [1.49 TB]
+    written-units: 1,158,917 [593 GB]
 Partition:
-  ID-1: / raw-size: N/A size: 3.38 TiB used: 3.85 GiB (0.1%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 37 MiB (3.6%) fs: vfat
+  ID-1: / raw-size: N/A size: 3.37 TiB used: 32.28 GiB (0.9%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 74.8 MiB (7.3%) fs: vfat
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1
-  ID-3: /tmp raw-size: N/A size: 3.37 TiB used: 256 KiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-3: /home raw-size: N/A size: 3.47 TiB used: 2.54 TiB (73.3%) fs: nfs4
+    remote: nfs:/export/home
+  ID-4: /tmp raw-size: N/A size: 3.34 TiB used: 640 KiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu-1: 53 C cpu-2: 49 C mobo: 26 C
-  Fan Speeds (rpm): cpu: 6150 fan-2: 5250 fan-3: 6150 fan-4: 5250 fan-5: 6150 fan-6: 5250
-    fan-7: 6150 fan-8: 5250
-  Power: 12v: 12.371 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 53.1 C mobo: N/A
+  Src: ipmi System Temperatures: cpu-1: 52 C cpu-2: 50 C mobo: 26 C
+  Fan Speeds (rpm): cpu: 5700 fan-2: 4950 fan-3: 5700 fan-4: 4950 fan-5: 5700 fan-6: 4950
+    fan-7: 5700 fan-8: 4950
+  Power: 12v: 12.460 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
+  Src: lm-sensors System Temperatures: cpu: 52.4 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 4734 Power: uptime: 0h 9m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 300.81 GiB Init: systemd v: 258 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 638 libs: 137 pm: nix-usr pkgs: 0
+  Processes: 4663 Power: uptime: 4d 1h 3m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 300.82 GiB Init: systemd v: 258 default: multi-user tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 733 libs: 161 pm: nix-usr pkgs: 0
     Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.39
 ```
 ![hardware topology](polly.lstopo.svg)
