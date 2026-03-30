@@ -5,6 +5,8 @@
     - H100 (80GB, CC support)
 - jack (Intel Xeon)
     - A40 (48GB)
+- polly (AMD EPYC)
+    - RTX PRO 6000 Blackwell
 
 ## Quick test
 ```

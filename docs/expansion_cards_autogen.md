@@ -4,19 +4,17 @@ Note that ubuntu workstations and servers don't appear in this list.
 
 ### ace.dos.cit.tum.de 
 
-PCI Slots:   
-  Message: No ARM data found for this feature.   
- 
+Error: in fetching expansion card data (host offline?) 
 
 ### adelaide.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: N/A status: available info: M.2 length: short volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 8a:00.0   
 8a:00.0, RAID bus controller, Broadcom / LSI, MegaRAID Tri-Mode SAS3408 -r01 -p00, Super Micro Computer Inc, Device 1b63  
 - ✅  Slot: 2 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 18:00.0   
 18:00.0, Ethernet controller, Intel Corporation, 82599ES 10-Gigabit SFI/SFP+ Network Connection -r01 -p00, Intel Corporation, Ethernet Server Adapter X520-2  
  
@@ -73,7 +71,7 @@ No device/PCI ID.
 
 PCI Slots:   
 - ✅  Slot: N/A type: N/A status: available info: M.2 length: short volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 8a:00.0   
 8a:00.0, RAID bus controller, Broadcom / LSI, MegaRAID Tri-Mode SAS3408 -r01 -p00, Super Micro Computer Inc, Device 1b63  
 - ❌  Slot: 2 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 51:00.0   
@@ -99,8 +97,8 @@ c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme
 c2:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
 - ✅  Slot: 7 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 60:03.1   
 No device/PCI ID.  
-- ✅  Slot: 8 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 40:01.1   
-No device/PCI ID.  
+- ❌  Slot: 8 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 41:00.0   
+41:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
 - ✅  Slot: 9 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 00:01.1   
 No device/PCI ID.  
 - ✅  Slot: 10 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 20:03.1   
@@ -177,7 +175,7 @@ No device/PCI ID.
 - ❌  Slot: 6 type: PCIe gen: 4 status: in use length: short volts: 3.3 bus-ID: 8b:00.0   
 8b:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Samsung Electronics Co Ltd, Device a812  
 - ❌  Slot: 5 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: a0:00.0   
-a0:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
+a0:00.0, Ethernet controller, Mellanox Technologies, MT2910 Family [ConnectX-7] -p00, Mellanox Technologies, Device 0022  
 - ✅  Slot: 7 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: N/A   
 No device/PCI ID.  
 - ✅  Slot: 20 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
@@ -201,20 +199,20 @@ No device/PCI ID.
 - ✅  Slot: 17 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: e3:00.0   
-- ✅  Slot: 16 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
-No device/PCI ID.  
+- ❌  Slot: 16 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
+e4:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
     bus-ID: e4:00.0   
  
 
 ### irene.dos.cit.tum.de 
 
 PCI Slots:   
-- ✅  Slot: 1 type: PCIe gen: 3 status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7   
+- ✅  Slot: N/A type: N/A status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7   
 No device/PCI ID.  
-- ✅  Slot: 2 type: PCIe gen: 3 status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7   
+- ✅  Slot: N/A type: N/A status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7   
 No device/PCI ID.  
-- ✅  Slot: 3 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:1f.7   
-No device/PCI ID.  
+- ❌  Slot: 3 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 00:00.0   
+00:00.0, Host bridge, Advanced Micro Devices, Inc. [AMD], Genoa/Bergamo Root Complex -r01 -p00, Super Micro Computer Inc, Device 1c85  
 - ✅  Slot: 3 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:1f.7   
 No device/PCI ID.  
 - ❌  Slot: 1 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 81:00.0   
@@ -229,20 +227,20 @@ PCI Slots:
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: ca:00.0   
 ca:00.0, 3D controller, NVIDIA Corporation, GA102GL [A40] -ra1 -p00, NVIDIA Corporation, Device 145a  
 - ✅  Slot: 2 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: N/A type: N/A status: in use length: other volts: 3.3 bus-ID: 19:00.0   
 19:00.0, Ethernet controller, Intel Corporation, Ethernet Controller X710 for 10GBASE-T -r02 -p00, Super Micro Computer Inc, Device 1b7b  
 - ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
  
 
 ### jackson.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: N/A status: available info: M.2 length: short volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 8a:00.0   
 8a:00.0, RAID bus controller, Broadcom / LSI, MegaRAID Tri-Mode SAS3408 -r01 -p00, Super Micro Computer Inc, Device 1b63  
 - ❌  Slot: 2 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 51:00.0   
@@ -254,12 +252,12 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 ### jamie.dos.cit.tum.de 
 
 PCI Slots:   
-- ✅  Slot: 3 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
-No device/PCI ID.  
+- ❌  Slot: 3 type: PCIe gen: 4 status: in use length: short volts: 3.3 bus-ID: 64:00.0   
+64:00.0, Ethernet controller, Mellanox Technologies, MT2910 Family [ConnectX-7] -p00, Mellanox Technologies, Device 0022  
 - ❌  Slot: 2 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 21:00.0   
 21:00.0, 3D controller, NVIDIA Corporation, GH100 [H100L 94GB] -ra1 -p00, NVIDIA Corporation, Device 1839  
-- ✅  Slot: 7 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: N/A   
-No device/PCI ID.  
+- ❌  Slot: 7 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: e1:00.0   
+e1:00.0, Non-Volatile memory controller, KIOXIA Corporation, NVMe SSD Controller CM7 -r01 -p02, KIOXIA Corporation, Device 0040  
 - ✅  Slot: 6 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
 No device/PCI ID.  
 - ✅  Slot: 5 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A   
@@ -295,8 +293,8 @@ No device/PCI ID.
 ### martha.dos.cit.tum.de 
 
 PCI Slots:   
-- ❌  Slot: 7 type: PCIe gen: 5 status: in use length: short volts: 3.3 bus-ID: 10:00.0   
-10:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
+- ✅  Slot: 7 type: PCIe gen: 5 status: available length: short volts: 3.3 bus-ID: N/A   
+No device/PCI ID.  
 - ✅  Slot: 9 type: PCIe gen: 5 status: available length: short volts: 3.3 bus-ID: N/A   
 No device/PCI ID.  
 - ❌  Slot: 10 type: N/A status: in use length: other volts: 3.3 bus-ID: 87:00.0   
@@ -356,11 +354,69 @@ No device/PCI ID.
     bus-ID: 87:00.0   
  
 
+### polly.dos.cit.tum.de 
+
+PCI Slots:   
+- ❌  Slot: 1 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 71:00.0   
+71:00.0, Ethernet controller, Mellanox Technologies, MT2910 Family [ConnectX-7] -p00, Mellanox Technologies, Device 0022  
+  Slot: 2 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 70:01.2   
+  Slot: 3 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 70:01.3   
+  Slot: 4 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 70:01.4   
+  Slot: 5 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.1   
+  Slot: 6 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.2   
+  Slot: 7 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.3   
+  Slot: 8 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 60:01.4   
+- ❌  Slot: 9 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 01:00.0   
+No device/PCI ID.  
+  Slot: 10 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 00:01.2   
+  Slot: 11 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 00:01.3   
+  Slot: 12 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 00:01.4   
+- ❌  Slot: 13 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 11:00.0   
+No device/PCI ID.  
+- ✅  Slot: 14 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 10:01.2   
+No device/PCI ID.  
+- ✅  Slot: 15 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 10:01.3   
+No device/PCI ID.  
+- ✅  Slot: 16 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 10:01.4   
+No device/PCI ID.  
+  Slot: 17 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.1   
+  Slot: 18 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.2   
+  Slot: 19 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.3   
+  Slot: 20 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 30:01.4   
+  Slot: 21 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.1   
+  Slot: 22 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.2   
+  Slot: 23 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.3   
+  Slot: 24 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: f0:01.4   
+  Slot: 25 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: e0:01.1   
+  Slot: 26 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: e0:01.2   
+- ❌  Slot: 27 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: e1:00.0   
+No device/PCI ID.  
+  Slot: 28 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: e0:01.4   
+  Slot: 29 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.1   
+  Slot: 30 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.2   
+  Slot: 31 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.3   
+  Slot: 32 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: c0:01.4   
+  Slot: 33 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.1   
+  Slot: 34 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.2   
+  Slot: 35 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.3   
+  Slot: 36 type: PCIe gen: 5 status: unknown length: long volts: 3.3 bus-ID: 80:01.4   
+- ✅  Slot: 37 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.1   
+No device/PCI ID.  
+- ✅  Slot: 38 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.2   
+01:00.0, 3D controller, NVIDIA Corporation, GB202GL [RTX PRO 6000 Blackwell Server Edition] -ra1 -p00, NVIDIA Corporation, Device 204e  
+- ✅  Slot: 39 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.3   
+No device/PCI ID.  
+- ✅  Slot: 40 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: 90:01.4   
+No device/PCI ID.  
+  Slot: N/A type: N/A status: unknown length: long volts: 3.3 bus-ID: d0:03.1   
+  Slot: N/A type: N/A status: unknown length: long volts: 3.3 bus-ID: d0:03.2   
+ 
+
 ### river.dos.cit.tum.de 
 
 PCI Slots:   
 - ✅  Slot: N/A type: N/A status: available info: M.2 length: short volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 8a:00.0   
 8a:00.0, RAID bus controller, Broadcom / LSI, MegaRAID Tri-Mode SAS3408 -r01 -p00, Super Micro Computer Inc, Device 1b63  
 - ❌  Slot: 2 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 51:00.0   
@@ -374,20 +430,20 @@ ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporati
 PCI Slots:   
 - ✅  Slot: 1 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: e0:03.1   
 No device/PCI ID.  
-- ✅  Slot: 2 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: c0:01.1   
-No device/PCI ID.  
+- ❌  Slot: 2 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: c1:00.0   
+c1:00.0, Serial controller, Xilinx Corporation, Device 903f -p01, Xilinx Corporation, Device 0007  
 - ✅  Slot: 3 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 80:01.1   
 No device/PCI ID.  
 - ❌  Slot: 4 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: a1:00.0   
 a1:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57412 NetXtreme-E 10Gb RDMA Ethernet Controller -r01 -p00, Broadcom Inc. and subsidiaries, Device 4124  
 - ✅  Slot: 5 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: c0:03.1   
 c0:03.1, PCI bridge, Advanced Micro Devices, Inc. [AMD], Starship/Matisse GPP Bridge -p00, Advanced Micro Devices, Inc. [AMD], Device 1453  
-- ✅  Slot: 7 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 60:03.1   
-No device/PCI ID.  
+- ❌  Slot: 7 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 61:00.0   
+61:00.0, Processing accelerators, Xilinx Corporation, Device 50b4 -p00, Xilinx Corporation, Device 000e  
 - ✅  Slot: 8 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 40:01.1   
 No device/PCI ID.  
-- ✅  Slot: 9 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 00:01.1   
-No device/PCI ID.  
+- ❌  Slot: 9 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 01:00.0   
+01:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q2  
 - ✅  Slot: 10 type: PCIe gen: 4 status: available length: long volts: 3.3 bus-ID: 20:03.1   
 No device/PCI ID.  
  
@@ -405,7 +461,7 @@ c4:00.0, Non-Volatile memory controller, SK hynix, Platinum P41/PC801 NVMe Solid
 41:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM173X -p02, Dell, EMC PowerEdge Express Flash Ent NVMe AGN MU AIC Gen4 1.6TB  
 - ❌  Slot: 1 type: PCIe gen: 3 status: in use length: long volts: 3.3 bus-ID: 02:00.0   
 02:00.0, Ethernet controller, Broadcom Inc. and subsidiaries, BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller -r01 -p00, Dell, NetXtreme-E 10Gb SFP+ Adapter  
-
+ 
 
 ### steve.dos.cit.tum.de 
 
@@ -467,28 +523,28 @@ No device/PCI ID.
 No device/PCI ID.  
 - ❌  Slot: 4 type: PCIe gen: 4 status: in use length: short volts: 3.3 bus-ID: 81:00.0   
 81:00.0, Ethernet controller, Intel Corporation, Ethernet Controller E810-C for QSFP -r02 -p00, Intel Corporation, Ethernet Network Adapter E810-C-Q1  
-- ❌  Slot: 23 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
+- ❌  Slot: 23 type: PCIe gen: 4 status: in use length: 2.5" drive form factor volts: 3.3   
 02:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, General DC NVMe PM9A3  
     bus-ID: 02:00.0   
-- ❌  Slot: 22 type: PCIe gen: 5 status: in use length: 2.5" drive form factor volts: 3.3   
+- ❌  Slot: 22 type: PCIe gen: 4 status: in use length: 2.5" drive form factor volts: 3.3   
 03:00.0, Non-Volatile memory controller, Samsung Electronics Co Ltd, NVMe SSD Controller PM9A1/PM9A3/980PRO -p02, Samsung Electronics Co Ltd, Device aa0b  
     bus-ID: 03:00.0   
-- ✅  Slot: 20 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+- ✅  Slot: 20 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: 42:00.0   
-- ✅  Slot: 21 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+- ✅  Slot: 21 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: 43:00.0   
-- ✅  Slot: 17 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+- ✅  Slot: 17 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: c1:00.0   
-- ✅  Slot: 16 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+- ✅  Slot: 16 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: c2:00.0   
-- ✅  Slot: 19 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+- ✅  Slot: 19 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: c3:00.0   
-- ✅  Slot: 18 type: PCIe gen: 5 status: available length: 2.5" drive form factor volts: 3.3   
+- ✅  Slot: 18 type: PCIe gen: 4 status: available length: 2.5" drive form factor volts: 3.3   
 No device/PCI ID.  
     bus-ID: c4:00.0   
  
@@ -497,7 +553,7 @@ No device/PCI ID.
 
 PCI Slots:   
 - ✅  Slot: N/A type: N/A status: available info: M.2 length: short volts: 3.3 bus-ID: ff:00.0   
-ff:00.0, System peripheral, Intel Corporation, Device 344c -p00, Intel Corporation, Device 0000  
+ff:00.0, System peripheral, Intel Corporation, Ice Lake CHA Registers -p00, Intel Corporation, Device 0000  
 - ❌  Slot: 1 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 8a:00.0   
 8a:00.0, RAID bus controller, Broadcom / LSI, MegaRAID Tri-Mode SAS3408 -r01 -p00, Super Micro Computer Inc, Device 1b63  
 - ❌  Slot: 2 type: PCIe gen: 4 status: in use length: long volts: 3.3 bus-ID: 51:00.0   

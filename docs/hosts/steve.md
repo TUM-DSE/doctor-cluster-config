@@ -15,7 +15,7 @@ Machine:
   Mobo: Supermicro model: X14DBG-XAP v: 1.00 serial: HM256S003411
     uuid: 8fdd0400-5772-11f0-8000-7cc2559056e9 UEFI: American Megatrends LLC. v: 1.5 date: 12/15/2025
 Memory:
-  System RAM: total: 1024 GiB available: 1007.15 GiB used: 26.63 GiB (2.6%)
+  System RAM: total: 1024 GiB available: 1007.15 GiB used: 82.84 GiB (8.2%)
   Array-1: capacity: 6 TiB slots: 24 modules: 16 EC: Multi-bit ECC max-module-size: 256 GiB
     note: est.
   Device-1: P1-DIMMA1 type: no module installed
@@ -149,7 +149,7 @@ CPU:
 Graphics:
   Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel ports: active: VGA-1
     empty: none bus-ID: 5f:00.0 chip-ID: 1a03:2000 class-ID: 0300
-  Display: unspecified server: N/A driver: gpu: ast tty: 80x40
+  Display: server: No display server data found. Headless machine? tty: 80x40
   Monitor-1: VGA-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
   API: EGL Message: No EGL data available.
   API: OpenGL Message: GL data unavailable in console for root.
@@ -174,7 +174,7 @@ Network:
   IF: ens4039f1 state: down mac: 90:5a:08:30:c8:6f
   Device-5: Mellanox MT2910 Family [ConnectX-7] driver: mlx5_core v: kernel pcie: gen: 5
     speed: 32 GT/s lanes: 8 link-max: lanes: 16 port: N/A bus-ID: 95:00.0 chip-ID: 15b3:1021
-    class-ID: 0200 temp: 50.0 C
+    class-ID: 0200 temp: 51.0 C
   IF: ens3931f0np0 state: down mac: 60:5e:65:c6:82:cc
   Device-6: Mellanox MT2910 Family [ConnectX-7] driver: mlx5_core v: kernel pcie: gen: 5
     speed: 32 GT/s lanes: 8 link-max: lanes: 16 port: N/A bus-ID: 95:00.1 chip-ID: 15b3:1021
@@ -185,40 +185,41 @@ Network:
   IP v6: fe80::2c18:6bff:fe8e:1abc/64 virtual: proto kernel_ll scope: link
   IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:9529:f148:389d:80c:fe85/16 scope: global
-  IF-ID-3: vethffebffc state: up speed: 10000 Mbps duplex: full mac: f2:0a:12:36:f4:a1
+  IF-ID-3: veth70dab1c state: up speed: 10000 Mbps duplex: full mac: aa:97:1a:8f:1b:a1
+  IF-ID-4: vethc9b80db state: up speed: 10000 Mbps duplex: full mac: 2a:14:19:81:fb:a1
   Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.35
 RAID:
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.38 TiB
-    allocated: 102 GiB zfs-fs: size: 3.38 TiB free: 3.28 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 3.34 TiB
+    allocated: 143 GiB zfs-fs: size: 3.38 TiB free: 3.24 TiB
   Components: Online:
   1: nvme0n1p2 maj-min: 259:2 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.38 TiB used: 91.64 GiB (2.7%)
+  Local Storage: total: raw: 3.49 TiB usable: 3.38 TiB used: 129.09 GiB (3.7%)
   ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNN0XA09313 fw-rev: GDC5A02Q temp: 30.9 C scheme: GPT
-  SMART: yes health: PASSED on: 10d 20h cycles: 43 read-units: 1,200,521,741 [614 TB]
-    written-units: 4,658,373 [2.38 TB]
+    serial: S64HNN0XA09313 fw-rev: GDC5A02Q temp: 32.9 C scheme: GPT
+  SMART: yes health: PASSED on: 21d 16h cycles: 43 read-units: 1,200,530,087 [614 TB]
+    written-units: 5,369,048 [2.74 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 3.37 TiB used: 90.69 GiB (2.6%) fs: zfs logical: zroot/root/nixos
+  ID-1: / raw-size: N/A size: 3.36 TiB used: 127.23 GiB (3.7%) fs: zfs logical: zroot/root/nixos
   ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 45.3 MiB (4.4%) fs: vfat
     block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1
-  ID-3: /home raw-size: N/A size: 3.47 TiB used: 2.61 TiB (75.3%) fs: nfs4
+  ID-3: /home raw-size: N/A size: 3.47 TiB used: 2.54 TiB (73.3%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 3.28 TiB used: 256 KiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 3.24 TiB used: 1.4 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
   Src: ipmi System Temperatures: cpu-1: 43 C cpu-2: 44 C mobo: 24 C
   Fan Speeds (rpm): N/A
   Power: 12v: 12.159 5v: N/A 3.3v: 3.387 vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 39.0 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 38.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 4331 Power: uptime: 0h 19m states: freeze,mem suspend: s2idle wakeups: 0
+  Processes: 3451 Power: uptime: 10d 20h 16m states: freeze,mem suspend: s2idle wakeups: 0
     hibernate: disabled image: 402.85 GiB Init: systemd v: 258 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 645 libs: 137 pm: nix-usr pkgs: 0
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 641 libs: 137 pm: nix-usr pkgs: 0
     Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.39
 ```
 ![hardware topology](steve.lstopo.svg)
