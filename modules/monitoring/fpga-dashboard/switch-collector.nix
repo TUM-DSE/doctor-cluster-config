@@ -6,7 +6,7 @@ let
   switchCollectorLoop = pkgs.writeShellScript "switch-collector-loop" ''
     while true; do
       ${pythonEnv}/bin/python3 ${switchCollectorScript} 2>&1 | logger -t switch-collector
-      sleep 30
+      sleep 300
     done
   '';
 in

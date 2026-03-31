@@ -72,6 +72,12 @@
           options.path = ./dashboard.json;
           options.foldersFromFilesStructure = false;
         }
+        {
+          name = "Switch Dashboard";
+          type = "file";
+          options.path = ./switch-dashboard.json;
+          options.foldersFromFilesStructure = false;
+        }
       ];
     };
   };
