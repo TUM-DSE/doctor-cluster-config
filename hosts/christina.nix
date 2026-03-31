@@ -4,6 +4,7 @@
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
     ../modules/vfio/iommu-intel.nix
+    ../modules/monitoring/fpga-dashboard/switch-collector.nix
   ];
 
   boot.hugepages1GB.number = 8;

@@ -1,5 +1,4 @@
 {
-  "id": 3288663430172672,
   "panels": [
     {
       "collapsed": false,
@@ -92,45 +91,16 @@
               {
                 "color": "dark-blue",
                 "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "User"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
-                  {
-                    "options": {
-                      "NOT USED": {
-                        "color": "dark-blue",
-                        "text": "NOT USED"
-                      }
-                    },
-                    "type": "value"
-                  }
-                ]
               },
               {
-                "id": "thresholds",
-                "value": {
-                  "steps": [
-                    {
-                      "color": "dark-blue",
-                      "value": null
-                    }
-                  ]
-                }
+                "color": "yellow",
+                "value": 1
               }
             ]
-          }
-        ]
+          },
+          "noValue": "NOT USED"
+        },
+        "overrides": []
       },
       "gridPos": {
         "h": 4,
@@ -156,10 +126,18 @@
       },
       "targets": [
         {
-          "expr": "server_fpga_active_user{host=\"Clara\",fpga=\"U280\"}",
+          "expr": "server_fpga_user_info{host=\"Clara\",fpga=\"U280\"}",
           "format": "time_series",
           "instant": true,
-          "legendFormat": "{{user}}"
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        },
+        {
+          "expr": "server_fpga_in_use{host=\"Clara\",fpga=\"U280\"} == 0",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "NOT USED",
+          "refId": "B"
         }
       ],
       "title": "U280 User",
@@ -470,45 +448,16 @@
               {
                 "color": "dark-blue",
                 "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "User"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
-                  {
-                    "options": {
-                      "NOT USED": {
-                        "color": "dark-blue",
-                        "text": "NOT USED"
-                      }
-                    },
-                    "type": "value"
-                  }
-                ]
               },
               {
-                "id": "thresholds",
-                "value": {
-                  "steps": [
-                    {
-                      "color": "dark-blue",
-                      "value": null
-                    }
-                  ]
-                }
+                "color": "yellow",
+                "value": 1
               }
             ]
-          }
-        ]
+          },
+          "noValue": "NOT USED"
+        },
+        "overrides": []
       },
       "gridPos": {
         "h": 4,
@@ -534,10 +483,18 @@
       },
       "targets": [
         {
-          "expr": "server_fpga_active_user{host=\"Amy\",fpga=\"U280\"}",
+          "expr": "server_fpga_user_info{host=\"Amy\",fpga=\"U280\"}",
           "format": "time_series",
           "instant": true,
-          "legendFormat": "{{user}}"
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        },
+        {
+          "expr": "server_fpga_in_use{host=\"Amy\",fpga=\"U280\"} == 0",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "NOT USED",
+          "refId": "B"
         }
       ],
       "title": "U280 User",
@@ -848,45 +805,16 @@
               {
                 "color": "dark-blue",
                 "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "User"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
-                  {
-                    "options": {
-                      "NOT USED": {
-                        "color": "dark-blue",
-                        "text": "NOT USED"
-                      }
-                    },
-                    "type": "value"
-                  }
-                ]
               },
               {
-                "id": "thresholds",
-                "value": {
-                  "steps": [
-                    {
-                      "color": "dark-blue",
-                      "value": null
-                    }
-                  ]
-                }
+                "color": "yellow",
+                "value": 1
               }
             ]
-          }
-        ]
+          },
+          "noValue": "NOT USED"
+        },
+        "overrides": []
       },
       "gridPos": {
         "h": 4,
@@ -912,10 +840,18 @@
       },
       "targets": [
         {
-          "expr": "server_fpga_active_user{host=\"Rose\",fpga=\"U280\"}",
+          "expr": "server_fpga_user_info{host=\"Rose\",fpga=\"U280\"}",
           "format": "time_series",
           "instant": true,
-          "legendFormat": "{{user}}"
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        },
+        {
+          "expr": "server_fpga_in_use{host=\"Rose\",fpga=\"U280\"} == 0",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "NOT USED",
+          "refId": "B"
         }
       ],
       "title": "U280 User",
@@ -1001,45 +937,16 @@
               {
                 "color": "dark-blue",
                 "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "User"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
-                  {
-                    "options": {
-                      "NOT USED": {
-                        "color": "dark-blue",
-                        "text": "NOT USED"
-                      }
-                    },
-                    "type": "value"
-                  }
-                ]
               },
               {
-                "id": "thresholds",
-                "value": {
-                  "steps": [
-                    {
-                      "color": "dark-blue",
-                      "value": null
-                    }
-                  ]
-                }
+                "color": "yellow",
+                "value": 1
               }
             ]
-          }
-        ]
+          },
+          "noValue": "NOT USED"
+        },
+        "overrides": []
       },
       "gridPos": {
         "h": 4,
@@ -1065,10 +972,18 @@
       },
       "targets": [
         {
-          "expr": "server_fpga_active_user{host=\"Rose\",fpga=\"V80\"}",
+          "expr": "server_fpga_user_info{host=\"Rose\",fpga=\"V80\"}",
           "format": "time_series",
           "instant": true,
-          "legendFormat": "{{user}}"
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        },
+        {
+          "expr": "server_fpga_in_use{host=\"Rose\",fpga=\"V80\"} == 0",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "NOT USED",
+          "refId": "B"
         }
       ],
       "title": "V80 User",

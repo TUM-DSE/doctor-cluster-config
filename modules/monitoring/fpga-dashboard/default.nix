@@ -72,6 +72,12 @@
           options.path = ./dashboard.json;
           options.foldersFromFilesStructure = false;
         }
+        {
+          name = "Switch Dashboard";
+          type = "file";
+          options.path = ./switch-dashboard.json;
+          options.foldersFromFilesStructure = false;
+        }
       ];
     };
   };
@@ -99,6 +105,10 @@
           {
             targets = [ "rose:9100" ];
             labels.host = "Rose";
+          }
+          {
+            targets = [ "christina:9100" ];
+            labels.host = "Christina";
           }
         ];
       }

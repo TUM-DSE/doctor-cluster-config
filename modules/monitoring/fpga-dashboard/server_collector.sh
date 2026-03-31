@@ -175,15 +175,15 @@ while IFS= read -r line; do
 done < <(lspci 2>/dev/null | grep -i "xilinx\|903f\|5004\|5005\|50b4\|500c\|500d")
 
 # --- 2b. FPGA active user detection ---
-# Check who is actively using each FPGA by looking at:
-#   a) Processes with open handles to /dev/coyote_fpga_* device files
-#   b) Users running program_fpga.sh or vivado in programming mode
-#   c) Users running FPGA user-space apps that opened the device
-echo "# HELP server_fpga_active_user Whether an FPGA is actively in use (1=in use, 0=not used)" >> "$TMP_FILE"
-echo "# TYPE server_fpga_active_user gauge" >> "$TMP_FILE"
+# Two metrics:
+#   server_fpga_in_use{fpga="..."} 0 or 1  — stable time series, no label churn
+#   server_fpga_user_info{fpga="...",user="..."} 1  — only emitted when in use
+echo "# HELP server_fpga_in_use Whether an FPGA is actively in use (1=in use, 0=not used)" >> "$TMP_FILE"
+echo "# TYPE server_fpga_in_use gauge" >> "$TMP_FILE"
+echo "# HELP server_fpga_user_info Info metric for the current FPGA user (only present when in use)" >> "$TMP_FILE"
+echo "# TYPE server_fpga_user_info gauge" >> "$TMP_FILE"
 
 # Build a map of FPGA index -> name from detected FPGAs
-# Coyote device files are /dev/coyote_fpga_N_* where N is the FPGA index
 declare -A fpga_index_to_name
 fpga_idx=0
 while IFS= read -r line; do
@@ -195,27 +195,22 @@ while IFS= read -r line; do
     fpga_idx=$((fpga_idx + 1))
 done < <(lspci 2>/dev/null | grep -i "xilinx\|903f\|5004\|5005\|50b4\|500c\|500d")
 
-# Track which FPGAs have been reported
-declare -A fpga_user_reported
+# Track which FPGAs have a detected user: fpga_name -> username
+declare -A fpga_detected_user
 
 # Method 1: Check /dev/coyote_fpga_* for open file handles
 for devfile in /dev/coyote_fpga_*; do
     [ -e "$devfile" ] || continue
-    # Skip reconfig device files — only check vFPGA files (coyote_fpga_N_vM)
     [[ "$devfile" == *"reconfig"* ]] && continue
-    # Extract FPGA index from device name (e.g., /dev/coyote_fpga_0_v0 -> 0)
     fidx=$(echo "$devfile" | sed -n 's|/dev/coyote_fpga_\([0-9]*\)_.*|\1|p')
     fname="${fpga_index_to_name[$fidx]:-FPGA}"
 
-    # Find who has this device open using fuser
     fuser_out=$(fuser "$devfile" 2>/dev/null)
     if [ -n "$fuser_out" ]; then
-        # Get the first PID that has it open
         fpid=$(echo "$fuser_out" | awk '{print $1}')
         fuser_name=$(ps -o user= -p "$fpid" 2>/dev/null)
         if [ -n "$fuser_name" ] && [[ "$fuser_name" != "root" ]]; then
-            echo "server_fpga_active_user{fpga=\"$fname\",user=\"$fuser_name\"} 1" >> "$TMP_FILE"
-            fpga_user_reported[$fname]=1
+            fpga_detected_user[$fname]="$fuser_name"
         fi
     fi
 done
@@ -224,48 +219,42 @@ done
 while read -r prog_user prog_pid prog_args; do
     [ -z "$prog_user" ] && continue
     [[ "$prog_user" == "root" ]] && continue
-    # Determine which FPGA — default to first FPGA if can't tell
     for fn in "${fpga_index_to_name[@]}"; do
-        if [ -z "${fpga_user_reported[$fn]}" ]; then
-            echo "server_fpga_active_user{fpga=\"$fn\",user=\"$prog_user\"} 1" >> "$TMP_FILE"
-            fpga_user_reported[$fn]=1
+        if [ -z "${fpga_detected_user[$fn]}" ]; then
+            fpga_detected_user[$fn]="$prog_user"
             break
         fi
     done
 done < <(ps -eo user:32,pid,args --no-headers 2>/dev/null | grep -E "program_fpga|auto_fpga\.tcl|sgutil program" | grep -v grep)
 
 # Method 3: Check breadcrumb file from program_fpga.sh
-# program_fpga.sh writes the username to /tmp/fpga_programmed_by after programming
 if [ -f /tmp/fpga_programmed_by ]; then
-    # Check if coyote_driver is loaded
     driver_loaded=$(lsmod 2>/dev/null | grep -c coyote_driver)
-    # Check breadcrumb age (seconds since last modification)
     breadcrumb_age=$(( $(date +%s) - $(stat -c %Y /tmp/fpga_programmed_by 2>/dev/null || echo 0) ))
 
     if [ "$driver_loaded" -eq 0 ]; then
-        # Driver not loaded — user is done, clear breadcrumb
         rm -f /tmp/fpga_programmed_by
     elif [ "$breadcrumb_age" -gt 3600 ]; then
-        # Breadcrumb older than 1 hour — user likely walked away, clear it
         rm -f /tmp/fpga_programmed_by
     else
-        # Driver loaded and breadcrumb is fresh — show the user
         breadcrumb_user=$(cat /tmp/fpga_programmed_by 2>/dev/null | tr -d '[:space:]')
         if [ -n "$breadcrumb_user" ]; then
             for fn in "${fpga_index_to_name[@]}"; do
-                if [ -z "${fpga_user_reported[$fn]}" ]; then
-                    echo "server_fpga_active_user{fpga=\"$fn\",user=\"$breadcrumb_user\"} 1" >> "$TMP_FILE"
-                    fpga_user_reported[$fn]=1
+                if [ -z "${fpga_detected_user[$fn]}" ]; then
+                    fpga_detected_user[$fn]="$breadcrumb_user"
                 fi
             done
         fi
     fi
 fi
 
-# Emit 0 for FPGAs not in use
+# Emit metrics for all detected FPGAs
 for fn in "${fpga_index_to_name[@]}"; do
-    if [ -z "${fpga_user_reported[$fn]}" ]; then
-        echo "server_fpga_active_user{fpga=\"$fn\",user=\"NOT USED\"} 0" >> "$TMP_FILE"
+    if [ -n "${fpga_detected_user[$fn]}" ]; then
+        echo "server_fpga_in_use{fpga=\"$fn\"} 1" >> "$TMP_FILE"
+        echo "server_fpga_user_info{fpga=\"$fn\",user=\"${fpga_detected_user[$fn]}\"} 1" >> "$TMP_FILE"
+    else
+        echo "server_fpga_in_use{fpga=\"$fn\"} 0" >> "$TMP_FILE"
     fi
 done
 
