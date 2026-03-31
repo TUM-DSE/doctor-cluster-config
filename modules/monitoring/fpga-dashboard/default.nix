@@ -100,6 +100,10 @@
             targets = [ "rose:9100" ];
             labels.host = "Rose";
           }
+          {
+            targets = [ "christina:9100" ];
+            labels.host = "Christina";
+          }
         ];
       }
     ];

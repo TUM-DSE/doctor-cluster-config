@@ -4,7 +4,7 @@ let
   serverCollectorScript = ./server_collector.sh;
   serverCollectorLoop = pkgs.writeShellScript "server-collector-loop" ''
     while true; do
-      ${serverCollectorScript} 2>/dev/null
+      ${serverCollectorScript}
       sleep 10
     done
   '';
