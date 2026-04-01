@@ -49,7 +49,7 @@
       keyutils # keyctl: kernel key management
 
       # cluster management
-      inputs.hosthog
+      inputs.hosthog.packages.${stdenv.hostPlatform.system}.default
 
       ipmitool
       # tries to default to soft-float due to out-dated cc-rs
