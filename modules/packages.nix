@@ -49,7 +49,9 @@
       keyutils # keyctl: kernel key management
 
       # cluster management
-      inputs.hosthog.packages.${stdenv.hostPlatform.system}.default
+      (lib.mkIf (
+        !stdenv.hostPlatform.isRiscV
+      ) inputs.hosthog.packages.${stdenv.hostPlatform.system}.default) # fenix doesnt work on riscv
 
       ipmitool
       # tries to default to soft-float due to out-dated cc-rs
