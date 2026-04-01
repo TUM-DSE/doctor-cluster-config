@@ -114,6 +114,10 @@ let
     "ssh key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2BTsVv0YJ48wrV0s9SL4rGJPjaj/vTGMRUExAH9Sj4 db-gitlab"
   ];
 
+  simonwKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwQd4nCBkaiCSXrwNdWbvQdK+MUAMA+t3X/GuRBtoGE simon.weckler@tum.de"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -550,6 +554,21 @@ in
         "xavier"
       ];
       openssh.authorizedKeys.keys = mauriceKeys;
+      expires = "2026-10-30";
+    };
+
+  # Simon Weckler (BSc Thesis w/ Teofil Bodea) 
+    simonw = {
+      isNormalUser = true;
+      home = "/home/simonw";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2101;
+      allowedHosts = [
+        "jamie"
+        "jack"
+      ];
+      openssh.authorizedKeys.keys = simonwKeys;
       expires = "2026-10-30";
     };
 
