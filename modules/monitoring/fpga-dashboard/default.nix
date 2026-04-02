@@ -44,6 +44,7 @@
 
     declarativePlugins = with pkgs.grafanaPlugins; [
       yesoreyeram-infinity-datasource
+      marcusolsson-dynamictext-panel
     ];
 
     provision = {
@@ -78,6 +79,12 @@
           options.path = ./switch-dashboard.json;
           options.foldersFromFilesStructure = false;
         }
+        {
+          name = "Monitoring Dashboard";
+          type = "file";
+          options.path = ./monitoring-dashboard.json;
+          options.foldersFromFilesStructure = false;
+        }
       ];
     };
   };
@@ -109,6 +116,35 @@
           {
             targets = [ "christina:9100" ];
             labels.host = "Christina";
+          }
+        ];
+      }
+      {
+        job_name = "telegraf";
+        scrape_interval = "60s";
+        static_configs = [
+          {
+            targets = [
+              "adelaide:9273"
+              "amy:9273"
+              "astrid:9273"
+              "christina:9273"
+              "clara:9273"
+              "dan:9273"
+              "doctor:9273"
+              "graham:9273"
+              "ian:9273"
+              "irene:9273"
+              "jack:9273"
+              "jackson:9273"
+              "mickey:9273"
+              "river:9273"
+              "rose:9273"
+              "ryan:9273"
+              "vislor:9273"
+              "wilfred:9273"
+              "yasmin:9273"
+            ];
           }
         ];
       }
