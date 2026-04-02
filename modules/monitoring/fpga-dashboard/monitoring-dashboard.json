@@ -1,0 +1,7589 @@
+{
+  "title": "DSE-Monitoring",
+  "uid": "dse-monitoring",
+  "panels": [
+    {
+      "id": 100,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "adelaide"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 101,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "amy"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 102,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "astrid"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 103,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "christina"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 104,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "clara"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 105,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "dan"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 106,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "doctor"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 107,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "donna"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 108,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "graham"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 109,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "ian"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 110,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "irene"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 111,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "jack"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 112,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"adelaide\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"amy\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"astrid\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"christina\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"clara\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"dan\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"doctor\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 120,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"graham\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"ian\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"irene\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"jack\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"adelaide:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"amy:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"astrid:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"christina:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"clara:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"dan:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"doctor:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 132,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"graham:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"ian:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"irene:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"jack:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"adelaide\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"amy\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"astrid\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"christina\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"clara\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"dan\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"doctor\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"donna\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"graham\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"ian\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"irene\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"jack\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"adelaide.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"amy.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"astrid.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"christina.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"clara.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"dan.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"doctor.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"donna.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"graham.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"ian.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"irene.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"jack.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "jackson"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 161,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "mickey"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 162,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "polly"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 163,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "river"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 164,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "rose"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 165,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "ryan"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 166,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "steve"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 167,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "tegan"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 168,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "vislor"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 169,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "wilfred"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 170,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "xavier"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 171,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "yasmin"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 16
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 172,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"jackson\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"mickey\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 175,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"river\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"rose\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"ryan\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 179,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 180,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"vislor\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 181,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"wilfred\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 183,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 13
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"yasmin\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"jackson:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"mickey:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 187,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"river:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"rose:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"ryan:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 191,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 192,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"vislor:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"wilfred:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": []
+    },
+    {
+      "id": 195,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red",
+                  "index": 0
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"yasmin:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"jackson\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"mickey\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 198,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"polly\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"river\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"rose\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"ryan\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"steve\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"tegan\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 204,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"vislor\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"wilfred\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 206,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"xavier\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 207,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 17
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "UNREACHABLE",
+                  "color": "dark-red",
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(ping_result_code{host=\"yasmin\"})",
+          "legendFormat": "Ping",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"jackson.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 209,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"mickey.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 4,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"polly.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 6,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"river.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"rose.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"ryan.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"steve.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 215,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"tegan.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 216,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"vislor.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"wilfred.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 218,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"xavier.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 219,
+      "title": "",
+      "type": "stat",
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 19
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "N/A",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "OK",
+                  "color": "green",
+                  "index": 0
+                },
+                "1": {
+                  "text": "TIMEOUT",
+                  "color": "red",
+                  "index": 1
+                },
+                "2": {
+                  "text": "REFUSED",
+                  "color": "orange",
+                  "index": 2
+                },
+                "3": {
+                  "text": "ERROR",
+                  "color": "dark-red",
+                  "index": 3
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 14
+        },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "max(net_response_result_code{port=\"22\",server=\"yasmin.r\"})",
+          "legendFormat": "SSH",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "title": "Backups",
+      "type": "row",
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "panels": []
+    },
+    {
+      "id": 221,
+      "title": "",
+      "type": "marcusolsson-dynamictext-panel",
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 23
+      },
+      "pluginVersion": "5.6.0",
+      "options": {
+        "content": "\n<div style=\"position:relative; width:100%; height:380px; font-family:monospace;\">\n\n  <!-- BALTHASAR-2 top center -->\n  <div style=\"position:absolute; left:50%; top:10px; transform:translateX(-50%); z-index:2;\">\n    <div id=\"box-balthasar\" style=\"border:1px solid #444; border-radius:6px; width:300px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a472a;\">\n      <div id=\"status-balthasar\" style=\"font-size:36px; color:#fff; font-weight:bold;\">OK</div>\n      <div style=\"font-size:14px; color:#ddd; margin-top:8px;\">Borgbackup: NFS share</div>\n      <div style=\"font-size:11px; color:#999; margin-top:4px;\">BALTHASAR-2</div>\n    </div>\n  </div>\n\n  <!-- CASPER-3 bottom left -->\n  <div style=\"position:absolute; left:calc(50% - 330px); top:210px; z-index:2;\">\n    <div id=\"box-casper\" style=\"border:1px solid #444; border-radius:6px; width:300px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a472a;\">\n      <div id=\"status-casper\" style=\"font-size:36px; color:#fff; font-weight:bold;\">OK</div>\n      <div style=\"font-size:14px; color:#ddd; margin-top:8px;\">Syncoid: home + share</div>\n      <div style=\"font-size:11px; color:#999; margin-top:4px;\">CASPER-3</div>\n    </div>\n  </div>\n\n  <!-- MELCHIOR-1 bottom right -->\n  <div style=\"position:absolute; left:calc(50% + 30px); top:210px; z-index:2;\">\n    <div id=\"box-melchior\" style=\"border:1px solid #444; border-radius:6px; width:300px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a472a;\">\n      <div id=\"status-melchior\" style=\"font-size:36px; color:#fff; font-weight:bold;\">OK</div>\n      <div style=\"font-size:14px; color:#ddd; margin-top:8px;\">Borgbackup: NFS home</div>\n      <div style=\"font-size:11px; color:#999; margin-top:4px;\">MELCHIOR-1</div>\n    </div>\n  </div>\n\n  <!-- Line: BALTHASAR to CASPER -->\n  <div style=\"position:absolute; left:calc(50% - 193px); top:140px; width:193px; height:2px; background:#555; transform-origin:100% 50%; transform:rotate(-21.3deg); z-index:1;\"></div>\n\n  <!-- Line: BALTHASAR to MELCHIOR -->\n  <div style=\"position:absolute; left:50%; top:140px; width:193px; height:2px; background:#555; transform-origin:0% 50%; transform:rotate(21.3deg); z-index:1;\"></div>\n\n  <!-- Line: CASPER to MELCHIOR -->\n  <div style=\"position:absolute; left:calc(50% - 30px); top:274px; width:60px; height:2px; background:#555; z-index:1;\"></div>\n\n</div>\n",
+        "defaultContent": "\n<div style=\"position:relative; width:100%; height:380px; font-family:monospace;\">\n\n  <!-- BALTHASAR-2 top center -->\n  <div style=\"position:absolute; left:50%; top:10px; transform:translateX(-50%); z-index:2;\">\n    <div id=\"box-balthasar\" style=\"border:1px solid #444; border-radius:6px; width:300px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a472a;\">\n      <div id=\"status-balthasar\" style=\"font-size:36px; color:#fff; font-weight:bold;\">OK</div>\n      <div style=\"font-size:14px; color:#ddd; margin-top:8px;\">Borgbackup: NFS share</div>\n      <div style=\"font-size:11px; color:#999; margin-top:4px;\">BALTHASAR-2</div>\n    </div>\n  </div>\n\n  <!-- CASPER-3 bottom left -->\n  <div style=\"position:absolute; left:calc(50% - 330px); top:210px; z-index:2;\">\n    <div id=\"box-casper\" style=\"border:1px solid #444; border-radius:6px; width:300px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a472a;\">\n      <div id=\"status-casper\" style=\"font-size:36px; color:#fff; font-weight:bold;\">OK</div>\n      <div style=\"font-size:14px; color:#ddd; margin-top:8px;\">Syncoid: home + share</div>\n      <div style=\"font-size:11px; color:#999; margin-top:4px;\">CASPER-3</div>\n    </div>\n  </div>\n\n  <!-- MELCHIOR-1 bottom right -->\n  <div style=\"position:absolute; left:calc(50% + 30px); top:210px; z-index:2;\">\n    <div id=\"box-melchior\" style=\"border:1px solid #444; border-radius:6px; width:300px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a472a;\">\n      <div id=\"status-melchior\" style=\"font-size:36px; color:#fff; font-weight:bold;\">OK</div>\n      <div style=\"font-size:14px; color:#ddd; margin-top:8px;\">Borgbackup: NFS home</div>\n      <div style=\"font-size:11px; color:#999; margin-top:4px;\">MELCHIOR-1</div>\n    </div>\n  </div>\n\n  <!-- Line: BALTHASAR to CASPER -->\n  <div style=\"position:absolute; left:calc(50% - 193px); top:140px; width:193px; height:2px; background:#555; transform-origin:100% 50%; transform:rotate(-21.3deg); z-index:1;\"></div>\n\n  <!-- Line: BALTHASAR to MELCHIOR -->\n  <div style=\"position:absolute; left:50%; top:140px; width:193px; height:2px; background:#555; transform-origin:0% 50%; transform:rotate(21.3deg); z-index:1;\"></div>\n\n  <!-- Line: CASPER to MELCHIOR -->\n  <div style=\"position:absolute; left:calc(50% - 30px); top:274px; width:60px; height:2px; background:#555; z-index:1;\"></div>\n\n</div>\n",
+        "everyRow": false,
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "renderMode": "allRows",
+        "afterRender": "\nvar queries = {\n  'balthasar': 'borgbackup-job-nfs-share.service',\n  'melchior': 'borgbackup-job-nfs-home.service',\n  'casper': 'syncoid-home'\n};\nObject.keys(queries).forEach(function(key) {\n  var q = encodeURIComponent('(time() - task_last_run{name=\"' + queries[key] + '\"}) / 3600');\n  fetch('/api/datasources/proxy/1/api/v1/query?query=' + q)\n    .then(function(r) { return r.json(); })\n    .then(function(data) {\n      if (data.data && data.data.result && data.data.result.length > 0) {\n        var hours = parseFloat(data.data.result[0].value[1]);\n        var el = document.getElementById('status-' + key);\n        var box = document.getElementById('box-' + key);\n        if (el && box) {\n          if (hours < 24) {\n            el.textContent = 'OK';\n            box.style.background = '#1a472a';\n          } else if (hours < 48) {\n            el.textContent = 'LATE';\n            box.style.background = '#5a3000';\n          } else {\n            el.textContent = 'FAILED';\n            box.style.background = '#5a0000';\n          }\n        }\n      }\n    })\n    .catch(function() {});\n});\n"
+      },
+      "targets": [],
+      "transparent": true
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 40,
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timezone": "browser"
+}
