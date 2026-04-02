@@ -8,9 +8,9 @@
       "description": "**Port 1** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 0,
+        "h": 4,
+        "w": 1.5,
+        "x": 0.0,
         "y": 0
       },
       "fieldConfig": {
@@ -42,7 +42,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -57,68 +57,14 @@
       "transparent": false
     },
     {
-      "id": 602,
-      "title": "",
-      "description": "**Port 2** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 2,
-        "y": 0
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
-          "legendFormat": "2",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 603,
       "title": "",
       "description": "**Port 3** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 4,
+        "h": 4,
+        "w": 1.5,
+        "x": 1.5,
         "y": 0
       },
       "fieldConfig": {
@@ -150,7 +96,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -165,68 +111,14 @@
       "transparent": false
     },
     {
-      "id": 604,
-      "title": "",
-      "description": "**Port 4** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 6,
-        "y": 0
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
-          "legendFormat": "4",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 605,
       "title": "",
       "description": "**Port 5** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 8,
+        "h": 4,
+        "w": 1.5,
+        "x": 3.0,
         "y": 0
       },
       "fieldConfig": {
@@ -258,7 +150,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -273,68 +165,14 @@
       "transparent": false
     },
     {
-      "id": 606,
-      "title": "",
-      "description": "**Port 6** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 10,
-        "y": 0
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
-          "legendFormat": "6",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 607,
       "title": "",
       "description": "**Port 7** \u2014 QSFP28 100G\n\nConnected: `\"Amy E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 12,
+        "h": 4,
+        "w": 1.5,
+        "x": 4.5,
         "y": 0
       },
       "fieldConfig": {
@@ -366,7 +204,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -381,68 +219,14 @@
       "transparent": false
     },
     {
-      "id": 608,
-      "title": "",
-      "description": "**Port 8** \u2014 QSFP28 100G\n\nConnected: `\"Clara E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 14,
-        "y": 0
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
-          "legendFormat": "8",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 609,
       "title": "",
       "description": "**Port 9** \u2014 QSFP28 100G\n\nConnected: `\"Rose U280 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 16,
+        "h": 4,
+        "w": 1.5,
+        "x": 6.0,
         "y": 0
       },
       "fieldConfig": {
@@ -474,7 +258,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -489,68 +273,14 @@
       "transparent": false
     },
     {
-      "id": 610,
-      "title": "",
-      "description": "**Port 10** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 18,
-        "y": 0
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
-          "legendFormat": "10",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 611,
       "title": "",
       "description": "**Port 11** \u2014 QSFP28 100G\n\nConnected: `\"Clara FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 20,
+        "h": 4,
+        "w": 1.5,
+        "x": 7.5,
         "y": 0
       },
       "fieldConfig": {
@@ -582,7 +312,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -597,14 +327,14 @@
       "transparent": false
     },
     {
-      "id": 612,
+      "id": 613,
       "title": "",
-      "description": "**Port 12** \u2014 QSFP28 100G\n\nConnected: `\"Amy FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "description": "**Port 13** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 22,
+        "h": 4,
+        "w": 1.5,
+        "x": 9.0,
         "y": 0
       },
       "fieldConfig": {
@@ -636,61 +366,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
-          "legendFormat": "12",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
-      "id": 613,
-      "title": "",
-      "description": "**Port 13** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 0,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -705,69 +381,15 @@
       "transparent": false
     },
     {
-      "id": 614,
-      "title": "",
-      "description": "**Port 14** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 2,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
-          "legendFormat": "14",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 615,
       "title": "",
       "description": "**Port 15** \u2014 QSFP28 100G\n\nConnected: `\"Rose V80 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 4,
-        "y": 3
+        "h": 4,
+        "w": 1.5,
+        "x": 10.5,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -798,7 +420,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -813,69 +435,15 @@
       "transparent": false
     },
     {
-      "id": 616,
-      "title": "",
-      "description": "**Port 16** \u2014 QSFP28 100G\n\nConnected: `\"Rose E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 6,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
-          "legendFormat": "16",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 617,
       "title": "",
       "description": "**Port 17** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 8,
-        "y": 3
+        "h": 4,
+        "w": 1.5,
+        "x": 12.0,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -906,7 +474,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -921,69 +489,15 @@
       "transparent": false
     },
     {
-      "id": 618,
-      "title": "",
-      "description": "**Port 18** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 10,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
-          "legendFormat": "18",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 619,
       "title": "",
       "description": "**Port 19** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 12,
-        "y": 3
+        "h": 4,
+        "w": 1.5,
+        "x": 13.5,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1014,7 +528,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1029,69 +543,15 @@
       "transparent": false
     },
     {
-      "id": 620,
-      "title": "",
-      "description": "**Port 20** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 14,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
-          "legendFormat": "20",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 621,
       "title": "",
       "description": "**Port 21** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 16,
-        "y": 3
+        "h": 4,
+        "w": 1.5,
+        "x": 15.0,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1122,7 +582,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1137,69 +597,15 @@
       "transparent": false
     },
     {
-      "id": 622,
-      "title": "",
-      "description": "**Port 22** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 18,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
-          "legendFormat": "22",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 623,
       "title": "",
       "description": "**Port 23** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 20,
-        "y": 3
+        "h": 4,
+        "w": 1.5,
+        "x": 16.5,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1230,7 +636,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1245,69 +651,15 @@
       "transparent": false
     },
     {
-      "id": 624,
-      "title": "",
-      "description": "**Port 24** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 22,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
-          "legendFormat": "24",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 625,
       "title": "",
       "description": "**Port 25** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 0,
-        "y": 6
+        "h": 4,
+        "w": 1.5,
+        "x": 18.0,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1338,7 +690,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1353,69 +705,15 @@
       "transparent": false
     },
     {
-      "id": 626,
-      "title": "",
-      "description": "**Port 26** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 2,
-        "y": 6
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
-          "legendFormat": "26",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 627,
       "title": "",
       "description": "**Port 27** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 4,
-        "y": 6
+        "h": 4,
+        "w": 1.5,
+        "x": 19.5,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1446,7 +744,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1461,69 +759,15 @@
       "transparent": false
     },
     {
-      "id": 628,
-      "title": "",
-      "description": "**Port 28** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 6,
-        "y": 6
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
-          "legendFormat": "28",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 629,
       "title": "",
       "description": "**Port 29** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 8,
-        "y": 6
+        "h": 4,
+        "w": 1.5,
+        "x": 21.0,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1554,7 +798,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1569,69 +813,15 @@
       "transparent": false
     },
     {
-      "id": 630,
-      "title": "",
-      "description": "**Port 30** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
-      "type": "stat",
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 10,
-        "y": 6
-      },
-      "fieldConfig": {
-        "defaults": {
-          "thresholds": {
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "#37872d",
-                "value": 1
-              }
-            ]
-          },
-          "noValue": "\u2013"
-        },
-        "overrides": []
-      },
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "text": {
-          "titleSize": 10,
-          "valueSize": 16
-        },
-        "textMode": "name"
-      },
-      "targets": [
-        {
-          "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
-          "legendFormat": "30",
-          "refId": "A",
-          "instant": true
-        }
-      ],
-      "transparent": false
-    },
-    {
       "id": 631,
       "title": "",
       "description": "**Port 31** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 12,
-        "y": 6
+        "h": 4,
+        "w": 1.5,
+        "x": 22.5,
+        "y": 0
       },
       "fieldConfig": {
         "defaults": {
@@ -1662,7 +852,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1677,15 +867,15 @@
       "transparent": false
     },
     {
-      "id": 632,
+      "id": 602,
       "title": "",
-      "description": "**Port 32** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 2** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
       "type": "stat",
       "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 14,
-        "y": 6
+        "h": 4,
+        "w": 1.5,
+        "x": 0.0,
+        "y": 4
       },
       "fieldConfig": {
         "defaults": {
@@ -1716,7 +906,817 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
+          "legendFormat": "2",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 604,
+      "title": "",
+      "description": "**Port 4** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 1.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
+          "legendFormat": "4",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 606,
+      "title": "",
+      "description": "**Port 6** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 3.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
+          "legendFormat": "6",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 608,
+      "title": "",
+      "description": "**Port 8** \u2014 QSFP28 100G\n\nConnected: `\"Clara E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 4.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
+          "legendFormat": "8",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 610,
+      "title": "",
+      "description": "**Port 10** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 6.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
+          "legendFormat": "10",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 612,
+      "title": "",
+      "description": "**Port 12** \u2014 QSFP28 100G\n\nConnected: `\"Amy FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 7.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
+          "legendFormat": "12",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 614,
+      "title": "",
+      "description": "**Port 14** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 9.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
+          "legendFormat": "14",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 616,
+      "title": "",
+      "description": "**Port 16** \u2014 QSFP28 100G\n\nConnected: `\"Rose E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 10.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
+          "legendFormat": "16",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 618,
+      "title": "",
+      "description": "**Port 18** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 12.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
+          "legendFormat": "18",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 620,
+      "title": "",
+      "description": "**Port 20** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 13.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
+          "legendFormat": "20",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 622,
+      "title": "",
+      "description": "**Port 22** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 15.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
+          "legendFormat": "22",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 624,
+      "title": "",
+      "description": "**Port 24** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 16.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
+          "legendFormat": "24",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 626,
+      "title": "",
+      "description": "**Port 26** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 18.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
+          "legendFormat": "26",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 628,
+      "title": "",
+      "description": "**Port 28** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 19.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
+          "legendFormat": "28",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 630,
+      "title": "",
+      "description": "**Port 30** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 21.0,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
+          "legendFormat": "30",
+          "refId": "A",
+          "instant": true
+        }
+      ],
+      "transparent": false
+    },
+    {
+      "id": 632,
+      "title": "",
+      "description": "**Port 32** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
+      "gridPos": {
+        "h": 4,
+        "w": 1.5,
+        "x": 22.5,
+        "y": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1737,9 +1737,9 @@
       "type": "stat",
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 16,
-        "y": 6
+        "w": 1.5,
+        "x": 0,
+        "y": 8
       },
       "fieldConfig": {
         "defaults": {
@@ -1770,7 +1770,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1791,9 +1791,9 @@
       "type": "stat",
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 18,
-        "y": 6
+        "w": 1.5,
+        "x": 1.5,
+        "y": 8
       },
       "fieldConfig": {
         "defaults": {
@@ -1824,7 +1824,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 16
+          "valueSize": 18
         },
         "textMode": "name"
       },
@@ -1841,10 +1841,6 @@
   ],
   "refresh": "5m",
   "schemaVersion": 40,
-  "tags": [
-    "monitoring",
-    "switch"
-  ],
   "time": {
     "from": "now-1h",
     "to": "now"
