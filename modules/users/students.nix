@@ -570,6 +570,7 @@ in
         "jamie"
         "jack"
         "polly"
+	"ian"
       ];
       openssh.authorizedKeys.keys = simonwKeys;
       expires = "2026-10-30";
