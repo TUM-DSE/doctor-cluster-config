@@ -34,12 +34,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
   ];
 
-  peterKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEQXgzXZD88m4eXmr1R1mWTVhtknjHrhRzJfWa4d9xU wegii@idontcare"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1heCt0ca+MMrSbLPtZBKp67u9QslGURHhYu3VOvxxIzIjzH44yTBHdXXC6slhr8XbTrDEDJfg1fCXFgtGF/DmZXlgP5mIOfGI7lfN/ZoRXaBYewOGiTnvJ8in7efZ0B4eIu0FfVtvlWsfWhqCnv3S4XfW30gOkzaioq1UQMDfZqNoBjT/kXck9CGppK8hN6SRk3BS5JbEk0FxEyfo3UKDWucfqTvlMnvziGrN3sQuxAZ8Ou0YsNccK7HxbcYVjCAMCU4C0ZNNvUNFmo5rumVzo19Ga2bO4TEcNi4Qdi8/eg3S7CJ2OW0xWgaCRLgKQiagD2FgWDiUS0icDST5Vm472tHEmtoxpLHOYYdXJW/9o/6WfK7t5WKMWwR945V3tNBQMyeUbuxC4s0CJLgxybYX5FiAgfmCKMEU62zKQtddY5WUIU2uuCnn3kq8dD9YSQ+O/o/ui+S3zjInKqDyIVhyaOeGKeHN2CaJMrdeXeKn3B6IBiN026XqhkZFKuF9B00= q673178@LPTP2044167"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLB9H6gajDsEPi40M4VTDbLZAZzLOJYp/pffDrbhcrN peter.wegmann@yahoo.de"
-  ];
-
   neelKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
   ];
@@ -257,22 +251,6 @@ in
       openssh.authorizedKeys.keys = jannikKeys;
       xrdpAccess = false;
       expires = "2026-07-01";
-    };
-
-    # Peter Wegmann, MSc thesis with Aleksandra and Manos
-    peter = {
-      isNormalUser = true;
-      home = "/home/peter";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2081;
-      allowedHosts = [
-        "jamie"
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = peterKeys;
-      xrdpAccess = false;
-      expires = "2026-04-30";
     };
 
     # Neel Mandal, BSc thesis with David (Branch prediction research on gem5)
