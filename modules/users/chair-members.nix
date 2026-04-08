@@ -120,6 +120,12 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPGx6ZevvIeVpRzN5CmUuC7dskP/8sFsYJUA165reuYP5TGb9FDnDvd1VtV+rr12lvXCbqbB5vFkbtWCFQ5qblSoNuqD3fhwL6/+tF8WVUy1TvxfpXAUpIiByIukIGF6zIw4KVwcv54jEy11quxb5+MIYY0fR+GOfG0AiHjmr56c09xvzRIa4jDVDyXjwYE4FMw4X1oXv2S3puaXa3OPRExP9uUNV95KuqPDGkuetoDeqmK17MR9yb9xKvW4F2nEMc8jG34QmZlos5XGxxqJz1krQJODF35zYDWz9nje15Xk0PRkOgde0AVKHHI9SmyH9pAtCrMyc6ch1YL6z0z/0BumEbZ20JYnvxuFGxbnEX0tCoM9Vvq8KaUKkbwaeEZWeWC5pOnLLsIOSJqLdoisUNCCb3OfkXfTnSoP1235+jrH5m/rOCYsERQ0wkaC9sQwSxK2eYpdD897XY1cXDveqoKx5tV/gUR6gho1SSRJHF8k7gZ4nDu3eNmiX/uQcpOoRAEyCp5jgJMgDucr9I81DODOX3G+KdvUiawB/lOf2CQX0NTBhxo74Fqy+P4NB0T7nWQ/0n2X9XNjtiMGRh+NmRUqZQvtglOuRGjZ9OOXBL+zhSraYQGO8GsyLhVLYmXrNhYH39qRl2XfkjgyynfuOe8TuL9GW2UBDA3d3dx7dLXQ== panda@Anubhavs-MacBook-Pro.local"
   ];
 
+  peterKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEQXgzXZD88m4eXmr1R1mWTVhtknjHrhRzJfWa4d9xU wegii@idontcare"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1heCt0ca+MMrSbLPtZBKp67u9QslGURHhYu3VOvxxIzIjzH44yTBHdXXC6slhr8XbTrDEDJfg1fCXFgtGF/DmZXlgP5mIOfGI7lfN/ZoRXaBYewOGiTnvJ8in7efZ0B4eIu0FfVtvlWsfWhqCnv3S4XfW30gOkzaioq1UQMDfZqNoBjT/kXck9CGppK8hN6SRk3BS5JbEk0FxEyfo3UKDWucfqTvlMnvziGrN3sQuxAZ8Ou0YsNccK7HxbcYVjCAMCU4C0ZNNvUNFmo5rumVzo19Ga2bO4TEcNi4Qdi8/eg3S7CJ2OW0xWgaCRLgKQiagD2FgWDiUS0icDST5Vm472tHEmtoxpLHOYYdXJW/9o/6WfK7t5WKMWwR945V3tNBQMyeUbuxC4s0CJLgxybYX5FiAgfmCKMEU62zKQtddY5WUIU2uuCnn3kq8dD9YSQ+O/o/ui+S3zjInKqDyIVhyaOeGKeHN2CaJMrdeXeKn3B6IBiN026XqhkZFKuF9B00= q673178@LPTP2044167"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLB9H6gajDsEPi40M4VTDbLZAZzLOJYp/pffDrbhcrN peter.wegmann@yahoo.de"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -401,6 +407,18 @@ in
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = anubhavKeys;
         xrdpAccess = true;
+      };
+
+      # Peter Wegmann
+      peter = {
+        isNormalUser = true;
+        home = "/home/peter";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2081;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = peterKeys;
+        xrdpAccess = false;
       };
 
       # add staff to root account as well
