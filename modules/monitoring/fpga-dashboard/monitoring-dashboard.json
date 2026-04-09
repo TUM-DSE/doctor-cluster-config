@@ -897,7 +897,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"donna\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 120,
@@ -1650,7 +1657,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"donna:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 132,
@@ -4437,7 +4451,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"polly\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 175,
@@ -4630,7 +4651,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"steve\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 179,
@@ -4673,7 +4701,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"tegan\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 180,
@@ -4816,7 +4851,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "system_uptime{host=\"xavier\"} / 86400",
+          "legendFormat": "Uptime",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 183,
@@ -5069,7 +5111,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"polly:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 187,
@@ -5342,7 +5391,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"steve:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 191,
@@ -5405,7 +5461,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"tegan:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 192,
@@ -5608,7 +5671,14 @@
         },
         "textMode": "auto"
       },
-      "targets": []
+      "targets": [
+        {
+          "expr": "up{job=\"telegraf\",instance=\"xavier:9273\"}",
+          "legendFormat": "Telegraf",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     },
     {
       "id": 195,

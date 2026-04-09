@@ -1,5 +1,33 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
+let
+  monitoredHosts = [
+    "adelaide"
+    "amy"
+    "astrid"
+    "christina"
+    "clara"
+    "dan"
+    "doctor"
+    "donna"
+    "graham"
+    "ian"
+    "irene"
+    "jack"
+    "jackson"
+    "mickey"
+    "polly"
+    "river"
+    "rose"
+    "ryan"
+    "steve"
+    "tegan"
+    "vislor"
+    "wilfred"
+    "xavier"
+    "yasmin"
+  ];
+in
 {
   imports = [
     ./server-collector.nix
@@ -124,32 +152,34 @@
         scrape_interval = "60s";
         static_configs = [
           {
-            targets = [
-              "adelaide:9273"
-              "amy:9273"
-              "astrid:9273"
-              "christina:9273"
-              "clara:9273"
-              "dan:9273"
-              "doctor:9273"
-              "graham:9273"
-              "ian:9273"
-              "irene:9273"
-              "jack:9273"
-              "jackson:9273"
-              "mickey:9273"
-              "river:9273"
-              "rose:9273"
-              "ryan:9273"
-              "vislor:9273"
-              "wilfred:9273"
-              "yasmin:9273"
-            ];
+            targets = map (host: "${host}:9273") monitoredHosts;
           }
         ];
       }
     ];
   };
+
+  # Telegraf ping and SSH checks for all monitored hosts
+  services.telegraf.extraConfig.inputs.ping = map (host: {
+    method = "native";
+    urls = [ "6.${host}.r" ];
+    ipv6 = true;
+    count = 3;
+    tags = {
+      inherit host;
+    };
+  }) monitoredHosts;
+
+  services.telegraf.extraConfig.inputs.net_response = map (host: {
+    protocol = "tcp";
+    address = "${host}.r:22";
+    send = "SSH-2.0-Telegraf";
+    expect = "SSH-2.0";
+    timeout = "10s";
+    tags = {
+      host = "${host}.r";
+    };
+  }) monitoredHosts;
 
   # Nginx reverse proxy for Grafana (HTTP on port 80)
   services.nginx = {
