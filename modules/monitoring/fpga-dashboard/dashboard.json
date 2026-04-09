@@ -1852,11 +1852,7 @@
   ],
   "refresh": "10s",
   "schemaVersion": 39,
-  "tags": [
-    "server",
-    "fpga",
-    "dse"
-  ],
+  "tags": [],
   "time": {
     "from": "now-5m",
     "to": "now"
