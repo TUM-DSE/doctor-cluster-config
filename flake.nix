@@ -104,6 +104,8 @@
                   "donna"
                   "yasmin"
                   "ace"
+                  "eliza"
+                  "joy"
                 ];
                 machinesPerSystem = {
                   inherit aarch64-linux;
