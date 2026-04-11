@@ -20,12 +20,17 @@
       pkgs.coreutils
       pkgs.curl
     ];
+    # buildbot publishes under checks.<buildPlatform.system>, not the
+    # runtime arch. For native hosts the two coincide, but cross-compiled
+    # boards (ruby/tegan: riscv64 built via pkgsCross on x86_64) would
+    # otherwise look for a riscv64-linux key that never exists. Baking the
+    # build platform in at eval time keeps the URL in lockstep with
+    # flake.nix's machinesPerSystem.
     script = ''
       set -euo pipefail
 
-      arch=$(uname -m)
       hostname=$(uname -n)
-      p=$(curl -fsSL "https://buildbot.dse.in.tum.de/nix-outputs/TUM-DSE/doctor-cluster-config/master/$arch-linux.nixos-$hostname")
+      p=$(curl -fsSL "https://buildbot.dse.in.tum.de/nix-outputs/TUM-DSE/doctor-cluster-config/master/${pkgs.stdenv.buildPlatform.system}.nixos-$hostname")
 
       if [[ "$(readlink /run/current-system)" == "$p" ]]; then
         echo "Already at $p, nothing to do"
