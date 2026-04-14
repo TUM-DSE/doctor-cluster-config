@@ -37,6 +37,7 @@ let
       aleksandra
       thore
       harshanavkis
+      halalboro
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
