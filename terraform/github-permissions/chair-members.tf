@@ -13,6 +13,7 @@ locals {
     "Sabanic-P",      # Patrick Sabanic
     "Meandres",       # Ilya Meignan--Masson
     "gustifix",       # Felix Gust
+    "halalboro",      # Anubhav Panda
   ])
   internship = toset([
   ])
