@@ -105,7 +105,7 @@ let
   ];
 
   mauriceKeys = [
-    "ssh key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2BTsVv0YJ48wrV0s9SL4rGJPjaj/vTGMRUExAH9Sj4 db-gitlab"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2BTsVv0YJ48wrV0s9SL4rGJPjaj/vTGMRUExAH9Sj4 db-gitlab"
   ];
 
   simonwKeys = [
