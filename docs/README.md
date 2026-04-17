@@ -6,6 +6,11 @@ There are several ways to access the servers:
 - Via SSH jump host: **recommended for ssh**, **required for students**
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dos.cit.tum.de`
+  - Alternatively, add the following to your `~/.ssh/config`:
+  ```
+  Host *.dos.cit.tum.de !login.dos.cit.tum.de
+    ProxyJump tunnel@login.dos.cit.tum.de
+  ```
   - Keys are uploaded via the machine astrid whenever nixos configuration is updated.
   - You can generate an SSH config file for all TUM hosts with [this script](./gen-ssh-config.sh), providing your username as an argument
 - VPN provided by RBG: **recommended for admins**
