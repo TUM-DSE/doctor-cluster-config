@@ -108,6 +108,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwQd4nCBkaiCSXrwNdWbvQdK+MUAMA+t3X/GuRBtoGE simon.weckler@tum.de"
   ];
 
+  denizKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEhDutzyQHLW+UqWpQ84A+q6bY2KUrLFgLjPlKOWzL3 denizmersinlioglu2005@gmail.com"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -534,6 +538,20 @@ in
       expires = "2026-10-30";
     };
 
+    # Deniz Mersinlioğlu (B.Sc. thesis w/ Martin)
+    deniz = {
+      isNormalUser = true;
+      home = "/home/deniz";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2102;
+      allowedHosts = [
+        "graham"
+        "eliza"
+      ];
+      openssh.authorizedKeys.keys = denizKeys;
+      expires = "2026-09-30";
+    };
   };
 
   # DANGER ZONE!
