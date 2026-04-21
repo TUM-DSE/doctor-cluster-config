@@ -7,6 +7,8 @@
     - A40 (48GB)
 - polly (AMD EPYC)
     - RTX PRO 6000 Blackwell
+- steve (Intel Xeon)
+    - H200 (141GB, CC support)
 
 ## Quick test
 ```
