@@ -9,6 +9,11 @@
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNN0XA09313";
 
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
   networking.hostName = "steve";
 
   system.stateVersion = "22.11";
