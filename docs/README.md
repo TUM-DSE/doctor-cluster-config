@@ -52,7 +52,8 @@ See [IPMI.md](./IPMI.md) for documentation on how to access the web interface an
 
 # Hosts
 
-- [Expansion cards and slots](./expansion_cards.md)
+- [Expansion cards and PCI slots](./expansion_cards.md) in general 
+- [GPUs](./gpu.md) in particular
 - [Network graph](./hosts/graph.md) (see also networking notes in "Expansion cards and slots")
 
 ## AMD-Epyc servers
