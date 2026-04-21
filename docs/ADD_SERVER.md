@@ -240,6 +240,7 @@ Once the server is installed in the server room:
 - add host to `docs/README.md`
 - fix up warnings in the nixos config
 - add the host to monitoring in [`modules/monitoring/prometheus-targets.nix`](../modules/monitoring/prometheus-targets.nix) (see [monitoring.md](./monitoring.md))
+- Document new NICs, FPGAs, GPUs etc in [cards](./expansion_cards.md) or [GPUs](./gpu.md) 
 
 ## Obsolete: legacy pre-partitioned install
 
