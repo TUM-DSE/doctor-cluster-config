@@ -478,7 +478,7 @@ in
       home = "/home/martinLi";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
-      uid = 2098;
+      uid = 2065;
       allowedHosts = [ 
         "irene"
         "polly"
