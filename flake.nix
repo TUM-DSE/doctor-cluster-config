@@ -106,6 +106,7 @@
                   "ace"
                   "eliza"
                   "joy"
+                  "install-iso-aarch64-linux"
                 ];
                 machinesPerSystem = {
                   inherit aarch64-linux;
