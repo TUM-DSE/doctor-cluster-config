@@ -104,6 +104,9 @@
                   "donna"
                   "yasmin"
                   "ace"
+                  "eliza"
+                  "joy"
+                  "install-iso-aarch64-linux"
                 ];
                 machinesPerSystem = {
                   inherit aarch64-linux;
@@ -113,7 +116,22 @@
                 };
                 nixosMachines = lib.mapAttrs' (n: lib.nameValuePair "nixos-${n}") (
                   lib.genAttrs (machinesPerSystem.${system} or [ ]) (
-                    name: self.nixosConfigurations.${name}.config.system.build.toplevel
+                    name:
+                    let
+                      cfg = self.nixosConfigurations.${name};
+                      buildSystem = cfg.pkgs.stdenv.buildPlatform.system;
+                    in
+                    # The manual aarch64-linux list above must agree with
+                    # the pkgs assigned in configurations.nix; when it
+                    # drifted (eliza, joy) buildbot published the closure
+                    # under the wrong checks.<system> key and the on-host
+                    # auto-upgrade 404'd indefinitely. Compare against
+                    # buildPlatform so cross-compiled hosts (e.g. the
+                    # riscv64 boards built via pkgsCross on x86_64) stay
+                    # under the system that actually has builders.
+                    assert lib.assertMsg (buildSystem == system)
+                      "nixosConfigurations.${name} builds on ${buildSystem} but is listed under checks.${system}; fix machinesPerSystem in flake.nix";
+                    cfg.config.system.build.toplevel
                   )
                 );
                 devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
