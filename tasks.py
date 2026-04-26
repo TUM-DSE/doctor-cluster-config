@@ -725,7 +725,11 @@ def check_expired_accounts():
     for match in re.finditer(user_pattern, content, re.DOTALL):
         username = match.group(1)
         expires_str = match.group(2)
-        expires_date = datetime.strptime(expires_str, "%Y-%m-%d").date()
+        try:
+            expires_date = datetime.strptime(expires_str, "%Y-%m-%d").date()
+        except ValueError as e:
+            msg = f"Invalid expires date {expires_str!r} for user {username!r} in {students_file}: {e}"
+            raise ValueError(msg) from e
 
         # Skip if this is inside a comment
         # Check if the line with expires is commented

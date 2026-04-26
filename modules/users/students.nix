@@ -381,7 +381,7 @@ in
         "xavier"
       ];
       openssh.authorizedKeys.keys = yvesKeys;
-      expires = "2026-06-31";
+      expires = "2026-06-30";
     };
 
     # Chris Deininger (Bsc thesis with Felix)
