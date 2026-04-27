@@ -5,7 +5,13 @@ let
   switchCollectorScript = ./switch_collector.py;
   switchCollectorLoop = pkgs.writeShellScript "switch-collector-loop" ''
     while true; do
-      ${pythonEnv}/bin/python3 ${switchCollectorScript} 2>&1 | logger -t switch-collector
+      # Clear any stale picocom lock from a crashed previous run
+      rm -f /var/lock/LCK..ttyUSB0
+
+      # Hard timeout: if the script hangs (serial stuck, login loop), kill it
+      # so the outer loop can retry. 120s is well under the 300s cadence.
+      timeout --kill-after=10s 120s \
+        ${pythonEnv}/bin/python3 ${switchCollectorScript} 2>&1 | logger -t switch-collector
       sleep 300
     done
   '';
@@ -30,7 +36,7 @@ in
     description = "Adric N8550-32C Switch Metrics Collector";
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.picocom ];
+    path = with pkgs; [ picocom coreutils ];
     serviceConfig = {
       ExecStart = switchCollectorLoop;
       Restart = "always";

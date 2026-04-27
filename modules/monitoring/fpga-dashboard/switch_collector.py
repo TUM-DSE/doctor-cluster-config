@@ -109,6 +109,12 @@ def parse_interface_summary(output):
             else:
                 continue
 
+            # Prefer the switch's own port description (set via
+            # `interface 100gigaethernet 1/0/X; description "..."`);
+            # fall back to PORT_LABELS for ports without a switch-side description.
+            switch_descr = descr if descr and descr != "-" else ""
+            label = switch_descr or PORT_LABELS.get(iface, "")
+
             port = {
                 "interface": iface,
                 "type": port_type,
@@ -116,7 +122,7 @@ def parse_interface_summary(output):
                 "admin": admin,
                 "oper": oper,
                 "mode": mode,
-                "label": PORT_LABELS.get(iface, ""),
+                "label": label,
             }
             ports.append(port)
     return ports

@@ -4,8 +4,8 @@
   "panels": [
     {
       "id": 601,
-      "title": "",
-      "description": "**Port 1** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 1",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -27,7 +27,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 1",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -49,7 +50,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"1\"}",
-          "legendFormat": "1",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -58,8 +59,8 @@
     },
     {
       "id": 603,
-      "title": "",
-      "description": "**Port 3** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 3",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -81,7 +82,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 3",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -103,7 +105,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"3\"}",
-          "legendFormat": "3",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -112,8 +114,8 @@
     },
     {
       "id": 605,
-      "title": "",
-      "description": "**Port 5** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 5",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -135,7 +137,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 5",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -157,7 +160,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"5\"}",
-          "legendFormat": "5",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -166,8 +169,8 @@
     },
     {
       "id": 607,
-      "title": "",
-      "description": "**Port 7** \u2014 QSFP28 100G\n\nConnected: `\"Amy E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 7",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -189,7 +192,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 7",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -211,7 +215,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"7\"}",
-          "legendFormat": "7",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -220,8 +224,8 @@
     },
     {
       "id": 609,
-      "title": "",
-      "description": "**Port 9** \u2014 QSFP28 100G\n\nConnected: `\"Rose U280 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "title": "Port 9",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -243,7 +247,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 9",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -265,7 +270,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"9\"}",
-          "legendFormat": "9",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -274,8 +279,8 @@
     },
     {
       "id": 611,
-      "title": "",
-      "description": "**Port 11** \u2014 QSFP28 100G\n\nConnected: `\"Clara FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "title": "Port 11",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -297,7 +302,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 11",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -319,7 +325,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"11\"}",
-          "legendFormat": "11",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -328,8 +334,8 @@
     },
     {
       "id": 613,
-      "title": "",
-      "description": "**Port 13** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 13",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -351,7 +357,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 13",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -373,7 +380,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"13\"}",
-          "legendFormat": "13",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -382,8 +389,8 @@
     },
     {
       "id": 615,
-      "title": "",
-      "description": "**Port 15** \u2014 QSFP28 100G\n\nConnected: `\"Rose V80 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "title": "Port 15",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -405,7 +412,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 15",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -427,7 +435,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"15\"}",
-          "legendFormat": "15",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -436,8 +444,8 @@
     },
     {
       "id": 617,
-      "title": "",
-      "description": "**Port 17** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 17",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -459,7 +467,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 17",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -481,7 +490,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"17\"}",
-          "legendFormat": "17",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -490,8 +499,8 @@
     },
     {
       "id": 619,
-      "title": "",
-      "description": "**Port 19** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 19",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -513,7 +522,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 19",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -535,7 +545,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"19\"}",
-          "legendFormat": "19",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -544,8 +554,8 @@
     },
     {
       "id": 621,
-      "title": "",
-      "description": "**Port 21** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 21",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -567,7 +577,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 21",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -589,7 +600,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"21\"}",
-          "legendFormat": "21",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -598,8 +609,8 @@
     },
     {
       "id": 623,
-      "title": "",
-      "description": "**Port 23** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 23",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -621,7 +632,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 23",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -643,7 +655,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"23\"}",
-          "legendFormat": "23",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -652,8 +664,8 @@
     },
     {
       "id": 625,
-      "title": "",
-      "description": "**Port 25** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 25",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -675,7 +687,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 25",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -697,7 +710,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"25\"}",
-          "legendFormat": "25",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -706,8 +719,8 @@
     },
     {
       "id": 627,
-      "title": "",
-      "description": "**Port 27** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 27",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -729,7 +742,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 27",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -751,7 +765,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"27\"}",
-          "legendFormat": "27",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -760,8 +774,8 @@
     },
     {
       "id": 629,
-      "title": "",
-      "description": "**Port 29** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 29",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -783,7 +797,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 29",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -805,7 +820,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"29\"}",
-          "legendFormat": "29",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -814,8 +829,8 @@
     },
     {
       "id": 631,
-      "title": "",
-      "description": "**Port 31** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 31",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -837,7 +852,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 31",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -859,7 +875,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"31\"}",
-          "legendFormat": "31",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -868,8 +884,8 @@
     },
     {
       "id": 602,
-      "title": "",
-      "description": "**Port 2** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 2",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -891,7 +907,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 2",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -913,7 +930,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
-          "legendFormat": "2",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -922,8 +939,8 @@
     },
     {
       "id": 604,
-      "title": "",
-      "description": "**Port 4** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 4",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -945,7 +962,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 4",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -967,7 +985,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
-          "legendFormat": "4",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -976,8 +994,8 @@
     },
     {
       "id": 606,
-      "title": "",
-      "description": "**Port 6** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 6",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -999,7 +1017,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 6",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1021,7 +1040,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
-          "legendFormat": "6",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1030,8 +1049,8 @@
     },
     {
       "id": 608,
-      "title": "",
-      "description": "**Port 8** \u2014 QSFP28 100G\n\nConnected: `\"Clara E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 8",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1053,7 +1072,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 8",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1075,7 +1095,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
-          "legendFormat": "8",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1084,8 +1104,8 @@
     },
     {
       "id": 610,
-      "title": "",
-      "description": "**Port 10** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 10",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1107,7 +1127,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 10",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1129,7 +1150,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
-          "legendFormat": "10",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1138,8 +1159,8 @@
     },
     {
       "id": 612,
-      "title": "",
-      "description": "**Port 12** \u2014 QSFP28 100G\n\nConnected: `\"Amy FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "title": "Port 12",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1161,7 +1182,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 12",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1183,7 +1205,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
-          "legendFormat": "12",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1192,8 +1214,8 @@
     },
     {
       "id": 614,
-      "title": "",
-      "description": "**Port 14** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 14",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1215,7 +1237,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 14",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1237,7 +1260,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
-          "legendFormat": "14",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1246,8 +1269,8 @@
     },
     {
       "id": 616,
-      "title": "",
-      "description": "**Port 16** \u2014 QSFP28 100G\n\nConnected: `\"Rose E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 16",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1269,7 +1292,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 16",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1291,7 +1315,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
-          "legendFormat": "16",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1300,8 +1324,8 @@
     },
     {
       "id": 618,
-      "title": "",
-      "description": "**Port 18** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 18",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1323,7 +1347,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 18",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1345,7 +1370,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
-          "legendFormat": "18",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1354,8 +1379,8 @@
     },
     {
       "id": 620,
-      "title": "",
-      "description": "**Port 20** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 20",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1377,7 +1402,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 20",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1399,7 +1425,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
-          "legendFormat": "20",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1408,8 +1434,8 @@
     },
     {
       "id": 622,
-      "title": "",
-      "description": "**Port 22** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 22",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1431,7 +1457,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 22",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1453,7 +1480,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
-          "legendFormat": "22",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1462,8 +1489,8 @@
     },
     {
       "id": 624,
-      "title": "",
-      "description": "**Port 24** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 24",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1485,7 +1512,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 24",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1507,7 +1535,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
-          "legendFormat": "24",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1516,8 +1544,8 @@
     },
     {
       "id": 626,
-      "title": "",
-      "description": "**Port 26** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 26",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1539,7 +1567,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 26",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1561,7 +1590,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
-          "legendFormat": "26",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1570,8 +1599,8 @@
     },
     {
       "id": 628,
-      "title": "",
-      "description": "**Port 28** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 28",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1593,7 +1622,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 28",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1615,7 +1645,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
-          "legendFormat": "28",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1624,8 +1654,8 @@
     },
     {
       "id": 630,
-      "title": "",
-      "description": "**Port 30** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 30",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1647,7 +1677,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 30",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1669,7 +1700,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
-          "legendFormat": "30",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1678,8 +1709,8 @@
     },
     {
       "id": 632,
-      "title": "",
-      "description": "**Port 32** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 32",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1701,7 +1732,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 32",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1723,7 +1755,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"32\"}",
-          "legendFormat": "32",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1732,8 +1764,8 @@
     },
     {
       "id": 633,
-      "title": "",
-      "description": "**Port 33** \u2014 SFP+ 10G\n\nConnected: `\"Amy Broadcom\"`\n\nSpeed: 10 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 33",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 3,
@@ -1755,7 +1787,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 33",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1777,7 +1810,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"33\"}",
-          "legendFormat": "33",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
@@ -1786,8 +1819,8 @@
     },
     {
       "id": 634,
-      "title": "",
-      "description": "**Port 34** \u2014 SFP+ 10G\n\nConnected: `\"Clara Broadcom\"`\n\nSpeed: 10 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "title": "Port 34",
+      "description": "",
       "type": "stat",
       "gridPos": {
         "h": 3,
@@ -1809,7 +1842,8 @@
               }
             ]
           },
-          "noValue": "\u2013"
+          "noValue": "Port 34",
+          "displayName": "${__field.labels.label}"
         },
         "overrides": []
       },
@@ -1831,7 +1865,7 @@
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"34\"}",
-          "legendFormat": "34",
+          "legendFormat": "{{label}}",
           "refId": "A",
           "instant": true
         }
