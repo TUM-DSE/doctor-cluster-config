@@ -10,8 +10,10 @@ let
 
       # Hard timeout: if the script hangs (serial stuck, login loop), kill it
       # so the outer loop can retry. 120s is well under the 300s cadence.
+      # stdout/stderr go to journald via systemd; view with `journalctl -u switch-collector`.
       timeout --kill-after=10s 120s \
-        ${pythonEnv}/bin/python3 ${switchCollectorScript} 2>&1 | logger -t switch-collector
+        ${pythonEnv}/bin/python3 ${switchCollectorScript} || \
+        echo "switch-collector run failed with exit $?"
       sleep 300
     done
   '';
