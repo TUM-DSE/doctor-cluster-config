@@ -128,6 +128,75 @@ def parse_interface_summary(output):
     return ports
 
 
+def parse_running_config(output):
+    """Parse 'show running-config' output, return per-interface config dict.
+
+    Returns: {iface: {"link_type": ..., "vlan": ..., "fec": ..., "flow_control": ...}}
+    where iface is in the short form ('100ge1/0/10', '10ge1/0/33').
+
+    Defaults applied when a setting is absent from the stanza:
+      flow_control: "disabled"
+      fec:          "none"
+      link_type:    "access"
+      vlan:         "1"
+    """
+    configs = {}
+    current_iface = None
+    current = None
+
+    # Map running-config interface header to short-form name.
+    # `interface 100gigaethernet 1/0/10` -> `100ge1/0/10`
+    # `interface 10gigaethernet 1/0/33`  -> `10ge1/0/33`
+    iface_re = re.compile(r"^interface\s+(\d+)gigaethernet\s+(\S+)")
+
+    def flush():
+        if current_iface is not None:
+            # Apply defaults for missing fields
+            current.setdefault("link_type", "access")
+            current.setdefault("vlan", "1")
+            current.setdefault("fec", "none")
+            current.setdefault("flow_control", "disabled")
+            configs[current_iface] = current
+
+    for raw in output.splitlines():
+        line = raw.rstrip()
+        # End of stanza: a bare '!' at column 0
+        if line == "!":
+            flush()
+            current_iface = None
+            current = None
+            continue
+
+        m = iface_re.match(line)
+        if m:
+            # Starting a new interface stanza; flush any pending
+            flush()
+            speed, suffix = m.group(1), m.group(2)
+            current_iface = f"{speed}ge{suffix}"
+            current = {}
+            continue
+
+        if current is None:
+            continue
+
+        stripped = line.strip()
+        if not stripped:
+            continue
+
+        if stripped == "flow-control enable":
+            current["flow_control"] = "enabled"
+        elif stripped.startswith("fec mode "):
+            current["fec"] = stripped.split(None, 2)[2]
+        elif stripped.startswith("port link-type "):
+            current["link_type"] = stripped.split(None, 2)[2]
+        elif stripped.startswith("port default vlan "):
+            current["vlan"] = stripped.split()[-1]
+
+    # Flush trailing stanza if file didn't end with '!'
+    flush()
+    return configs
+
+
 def parse_interface_detail(output):
     """Parse detailed 'show interface 100gigaethernet 1/0/X' output."""
     info = {}
@@ -162,16 +231,23 @@ def parse_interface_detail(output):
     return info
 
 
-def write_metrics(ports, port_details):
+PORT_TYPE_HUMAN = {
+    "100ge": "QSFP28 100G",
+    "10ge": "SFP+ 10G",
+    "mgmt": "Management",
+}
+
+
+def write_metrics(ports, port_details, port_configs):
     """Write Prometheus metrics to textfile."""
     lines = []
-    lines.append("# HELP switch_port_up Whether the switch port link is up (1=up, 0=down)")
+    lines.append("# HELP switch_port_up Switch port link state (1=up, 0=down). Carries per-port config as labels (link_type, config_vlan, fec, flow_control, port_type_human).")
     lines.append("# TYPE switch_port_up gauge")
-    lines.append("# HELP switch_port_admin Whether the switch port is admin enabled (1=up, 0=down)")
+    lines.append("# HELP switch_port_admin Switch port admin state (1=enabled, 0=disabled). Same label set as switch_port_up.")
     lines.append("# TYPE switch_port_admin gauge")
     lines.append("# HELP switch_port_speed_mbps Port speed in Mbps")
     lines.append("# TYPE switch_port_speed_mbps gauge")
-    lines.append("# HELP switch_port_vlan Port PVID VLAN")
+    lines.append("# HELP switch_port_vlan Port PVID VLAN (live, from show interface)")
     lines.append("# TYPE switch_port_vlan gauge")
     lines.append("# HELP switch_port_input_rate_bps Port input rate in bits per second")
     lines.append("# TYPE switch_port_input_rate_bps gauge")
@@ -184,23 +260,38 @@ def write_metrics(ports, port_details):
         pnum = port["number"]
         label = port["label"]
 
-        labels = f'port="{iface}",type="{ptype}",number="{pnum}",label="{label}"'
+        # Build the canonical label set used on switch_port_up / switch_port_admin.
+        # Includes per-port config (fec, flow_control, link_type, config_vlan, port_type_human)
+        # so the Grafana dashboard can render tooltips from a single query.
+        cfg = port_configs.get(iface, {})
+        canon_labels = (
+            f'port="{iface}",type="{ptype}",number="{pnum}",label="{label}",'
+            f'port_type_human="{PORT_TYPE_HUMAN.get(ptype, ptype)}",'
+            f'link_type="{cfg.get("link_type", "access")}",'
+            f'config_vlan="{cfg.get("vlan", "1")}",'
+            f'fec="{cfg.get("fec", "none")}",'
+            f'flow_control="{cfg.get("flow_control", "disabled")}"'
+        )
+
+        # Detail-only metrics keep the slim label set (so old dashboards keep matching).
+        slim_labels = f'port="{iface}",type="{ptype}",number="{pnum}",label="{label}"'
+
         oper_val = 1 if port["oper"] == "up" else 0
         admin_val = 1 if port["admin"] == "up" else 0
 
-        lines.append(f"switch_port_up{{{labels}}} {oper_val}")
-        lines.append(f"switch_port_admin{{{labels}}} {admin_val}")
+        lines.append(f"switch_port_up{{{canon_labels}}} {oper_val}")
+        lines.append(f"switch_port_admin{{{canon_labels}}} {admin_val}")
 
         # Add detailed metrics if available
         detail = port_details.get(iface, {})
         if "speed_mbps" in detail:
-            lines.append(f"switch_port_speed_mbps{{{labels}}} {detail['speed_mbps']}")
+            lines.append(f"switch_port_speed_mbps{{{slim_labels}}} {detail['speed_mbps']}")
         if "vlan" in detail:
-            lines.append(f"switch_port_vlan{{{labels}}} {detail['vlan']}")
+            lines.append(f"switch_port_vlan{{{slim_labels}}} {detail['vlan']}")
         if "input_rate_bps" in detail:
-            lines.append(f"switch_port_input_rate_bps{{{labels}}} {detail['input_rate_bps']}")
+            lines.append(f"switch_port_input_rate_bps{{{slim_labels}}} {detail['input_rate_bps']}")
         if "output_rate_bps" in detail:
-            lines.append(f"switch_port_output_rate_bps{{{labels}}} {detail['output_rate_bps']}")
+            lines.append(f"switch_port_output_rate_bps{{{slim_labels}}} {detail['output_rate_bps']}")
 
     content = "\n".join(lines) + "\n"
 
@@ -225,6 +316,11 @@ def main():
         ports = parse_interface_summary(summary_output)
         print(f"Found {len(ports)} ports", file=sys.stderr)
 
+        # Get per-port config (FEC, flow-control, link-type, VLAN) in one shot
+        running_config_output = run_command(child, "show running-config")
+        port_configs = parse_running_config(running_config_output)
+        print(f"Parsed running-config for {len(port_configs)} interfaces", file=sys.stderr)
+
         # Get detailed info for active ports only (to minimize serial time)
         port_details = {}
         for port in ports:
@@ -238,7 +334,7 @@ def main():
                 port_details[iface] = parse_interface_detail(detail_output)
 
         # Write metrics
-        write_metrics(ports, port_details)
+        write_metrics(ports, port_details, port_configs)
         print(f"Wrote metrics for {len(ports)} ports ({len(port_details)} with details)", file=sys.stderr)
 
     finally:
