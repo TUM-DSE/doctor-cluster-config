@@ -24,6 +24,14 @@ in
         xilinxName = "vitis";
         runScript = "vitis";
       })
+      # Versal-targeted variant: Vivado/Vitis 2025.1.
+      # Required for V80 (the routed-locked static checkpoint Coyote ships
+      # is built with Vivado 2024.2+, so 2023.2 cannot link against it).
+      (packages.xilinx-env.override {
+        xilinxName = "versal-shell";
+        runScript = "bash";
+        vivadoVersion = "2025.1";
+      })
       packages.xntools-core
     ];
 
