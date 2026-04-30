@@ -5,6 +5,7 @@
     ../modules/hardware/poweredge-r440.nix
     ../modules/disko-zfs.nix
     ../modules/nfs/client.nix
+    ../modules/copy-fail-patch.nix
 
     ../modules/jumphost
     ../modules/buildbot/master.nix
