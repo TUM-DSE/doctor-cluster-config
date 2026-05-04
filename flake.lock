@@ -2,9 +2,6 @@
   "nodes": {
     "buildbot-nix": {
       "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
         "hercules-ci-effects": "hercules-ci-effects",
         "nixpkgs": [
           "nixpkgs"
@@ -14,11 +11,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777184952,
-        "narHash": "sha256-i+2vWeCydljTb6OHZuGL3l/9YCD0SbM+j9RlhsQmaxk=",
+        "lastModified": 1777786184,
+        "narHash": "sha256-r/5XbINmbz8QPFhJdYyUNciPM5d1BPc+noYtjNyyjwE=",
         "owner": "nix-community",
         "repo": "buildbot-nix",
-        "rev": "46cb08dffdd9b7856cb69a1f82bc679e5374b33e",
+        "rev": "5231608a7492f3d0d03bd9e6220e4ca2fd63b030",
         "type": "github"
       },
       "original": {
@@ -97,6 +94,27 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
+          "buildbot-nix",
+          "hercules-ci-effects",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775087534,
+        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-parts",
+        "type": "indirect"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
           "nixpkgs"
         ]
       },
@@ -132,10 +150,7 @@
     },
     "hercules-ci-effects": {
       "inputs": {
-        "flake-parts": [
-          "buildbot-nix",
-          "flake-parts"
-        ],
+        "flake-parts": "flake-parts",
         "nixpkgs": [
           "buildbot-nix",
           "nixpkgs"
@@ -407,7 +422,7 @@
       "inputs": {
         "buildbot-nix": "buildbot-nix",
         "disko": "disko",
-        "flake-parts": "flake-parts",
+        "flake-parts": "flake-parts_2",
         "flake-registry": "flake-registry",
         "home-manager": "home-manager",
         "hosthog": "hosthog",
