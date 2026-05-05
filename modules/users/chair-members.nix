@@ -125,6 +125,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAJgek7Zr0teEJNbXcA64IY5OEN94DrCpitGMM1eVZot wegii@wegiidse.local"
   ];
 
+  simonkKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrdEe2/aOcUzaPtkDLJQ8VrcfiF8tNpk02SPLIVrsTywSHrBueOMz/cVR/Dkk7HREkI8iPshIefYogGgXNrwXp4ogu7DFA/5FS58QgrUS/il/LYT1pIcC4URFt0s5UHxvXbVP/zPVVpDZ7AqXLzz0H95csR9mO5eY2CgZh5+haC1dNhBEZK7v2pcsp+TrDzcxKjo5ZjqFAUNRBAT/lMJy2t0Zdm9cnkNFYymC2n57mgve2W9L8mRsMTYdQbwT7S7PgV3605e7bphnvGVl09iSkwkbQZ9oiqvZFdVn9id6tPxlf6wnnMo2YU9fuqRJoF6kKGN5Mvqvmm6bIUW5y9cFjpAniJg7lPY2Dc/em/q5jpdYirnkPnjnjpqdNBKnroRbsNL8bUWPyyZM4seSAIaw61OUQLhJHClUx9sAb3nyWRq6k2PAB1HcBeY9dVgv3b+0ZzNsR52IqEzs3VOZGAS174Kd8FFk7oyV15a1qfyhCzKxNJIbW8AHXh+S7EcVnyYyJguJ/hblUOwsc4Un/3UQkmhTTOkZOb3zZklHM62isA4yA6uAUkCxASgaG0UMtvzeJiynYLr1x4YR2jTKU2VD79n8pcKienJmBH0d80FtnPMiJPZA4EiVSXYAZ1PKbVsSBk47Ia7SmgZr46VX4ha5frAY/kQNzFk9qyImuyPyIyw== kammerme ge35tem"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -339,6 +343,17 @@ in
         uid = 2000;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = julianKeys;
+      };
+
+      # Simon Kammermeier
+      simonk = {
+        isNormalUser = true;
+        home = "/home/simonk";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2017;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = simonkKeys;
       };
 
       #  Nathaniel Tornow
