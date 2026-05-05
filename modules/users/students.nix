@@ -294,7 +294,7 @@ in
       expires = "2026-10-31";
     };
 
-   # Jakob Lison (BSc thesis with David)
+    # Jakob Lison (BSc thesis with David)
     jakob = {
       isNormalUser = true;
       home = "/home/jakob";
@@ -311,7 +311,7 @@ in
       expires = "2026-12-31";
     };
 
-   # Hernan Ponce de Leon (Collaborator with Sebastian)
+    # Hernan Ponce de Leon (Collaborator with Sebastian)
     hernan = {
       isNormalUser = true;
       home = "/home/hernan";
@@ -326,7 +326,7 @@ in
       expires = "2026-06-30";
     };
 
-  # Sandra Stankovic, MSc student working w/ Manos (thesis to finish in Sept 2026)
+    # Sandra Stankovic, MSc student working w/ Manos (thesis to finish in Sept 2026)
     sandra = {
       isNormalUser = true;
       home = "/home/sandra";
@@ -338,14 +338,14 @@ in
       expires = "2026-10-30";
     };
 
-  # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
+    # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
     martinLi = {
       isNormalUser = true;
       home = "/home/martinLi";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2065;
-      allowedHosts = [ 
+      allowedHosts = [
         "irene"
         "polly"
         "xavier"
@@ -353,15 +353,15 @@ in
       openssh.authorizedKeys.keys = martinLiKeys;
       expires = "2026-10-30";
     };
-  
-  # Samuel Khuon, BSc student working w/ Ilya (can be removed after October 2026)
+
+    # Samuel Khuon, BSc student working w/ Ilya (can be removed after October 2026)
     samuel = {
       isNormalUser = true;
       home = "/home/samuel";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2099;
-      allowedHosts = [ 
+      allowedHosts = [
         "irene"
         "polly"
         "xavier"
@@ -369,15 +369,15 @@ in
       openssh.authorizedKeys.keys = samuelKeys;
       expires = "2026-10-30";
     };
-  
-  # Maurice Scholtes, GR student working w/ Ilya (can be removed after October 2026)
+
+    # Maurice Scholtes, GR student working w/ Ilya (can be removed after October 2026)
     maurice = {
       isNormalUser = true;
       home = "/home/maurice";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/bash";
       uid = 2100;
-      allowedHosts = [ 
+      allowedHosts = [
         "irene"
         "polly"
         "xavier"
@@ -386,7 +386,7 @@ in
       expires = "2026-10-30";
     };
 
-  # Simon Weckler (BSc Thesis w/ Teofil Bodea) 
+    # Simon Weckler (BSc Thesis w/ Teofil Bodea)
     simonw = {
       isNormalUser = true;
       home = "/home/simonw";
@@ -397,8 +397,8 @@ in
         "jamie"
         "jack"
         "polly"
-		"ian"
-		"steve"
+        "ian"
+        "steve"
       ];
       openssh.authorizedKeys.keys = simonwKeys;
       expires = "2026-10-30";
@@ -504,11 +504,11 @@ in
     "laurent"
     "dominik"
     "robertB"
-	  "iljag"
-	  "benedikt2"
-	  "micha2"
-	  "yves"
-	  "neel"
-	  "neelm"
+    "iljag"
+    "benedikt2"
+    "micha2"
+    "yves"
+    "neel"
+    "neelm"
   ];
 }
