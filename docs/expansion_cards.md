@@ -99,6 +99,8 @@ Parameters to consider for matching cards to slots:
     - ian: dual port (ian-jamie [200G], ian-river)
         - MAC1: 60:5e:65:c6:3c:7c
         - MAC2: 60:5e:65:c6:3c:7d
+    - polly (,)
+    - steve (,)
 
 Onboard (not listed by [List of slots](#List of slots)):
 
