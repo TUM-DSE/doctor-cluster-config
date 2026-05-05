@@ -30,14 +30,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
   ];
 
-  neelKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
-  ];
-
-  neelmKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWozsDBs44KjRUHgFuipUeh/CAbiYnjpqHI9COuYpAv neelm@Neels-PC"
-  ];
-
   yongjieKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDkLa3VpTxlK4o49Pf+tGp4sIpKxNwDlqqFoDKxVnfX 87616@Huang"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILLl0MWJcsj7qlJDtO47j2gkIE1Ftjy++dk6GlV6cJZ/ yongjiehuang907@gmail.com"
@@ -204,22 +196,6 @@ in
       expires = "2026-07-01";
     };
 
-    # Neel Mandal, BSc thesis with David (Branch prediction research on gem5)
-    neel = {
-      isNormalUser = true;
-      home = "/home/neel";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2083;
-      allowedHosts = [
-        "xavier"
-        "jamie"
-        "yasmin"
-      ];
-      openssh.authorizedKeys.keys = neelKeys;
-      expires = "2026-12-31";
-    };
-
     # Yongjie Huang, Remote student working with David (Branch prediction research on gem5)
     yongjie = {
       isNormalUser = true;
@@ -255,22 +231,6 @@ in
       openssh.authorizedKeys.keys = florianDKeys;
       expires = "2027-11-06";
 
-    };
-
-    # Neel Mandal, BSc thesis with David (Branch prediction research on gem5) (recreate user due to UID conficts with syslab)
-    neelm = {
-      isNormalUser = true;
-      home = "/home/neelm";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2086;
-      allowedHosts = [
-        "xavier"
-        "jamie"
-        "yasmin"
-      ];
-      openssh.authorizedKeys.keys = neelmKeys;
-      expires = "2026-12-31";
     };
 
     # Johanna Latzel, MSc theis with Patrick (ARM CCA and Unikernels)
@@ -547,6 +507,8 @@ in
 	"iljag",
 	"benedikt2",
 	"micha2",
-	"yves"
+	"yves",
+	"neel",
+	"neelm"
   ];
 }
