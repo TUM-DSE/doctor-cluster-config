@@ -503,12 +503,12 @@ in
     "shu"
     "laurent"
     "dominik"
-    "robertB",
-	"iljag",
-	"benedikt2",
-	"micha2",
-	"yves",
-	"neel",
-	"neelm"
+    "robertB"
+	  "iljag"
+	  "benedikt2"
+	  "micha2"
+	  "yves"
+	  "neel"
+	  "neelm"
   ];
 }
