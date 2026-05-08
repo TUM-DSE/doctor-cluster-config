@@ -76,6 +76,7 @@ let
       ./modules/doctor-VMs.nix
       ./modules/lawful-access
       ./modules/nix-index.nix
+      ./modules/no-nouveau.nix
     ];
 
   pkgsForSystem = system: import nixpkgs {
