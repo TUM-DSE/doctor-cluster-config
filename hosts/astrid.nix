@@ -6,6 +6,7 @@
     ../modules/disko-zfs.nix
     ../modules/nfs/client.nix
     ../modules/copy-fail-patch.nix
+    ../modules/dirty-frag-patch.nix
 
     ../modules/jumphost
     ../modules/buildbot/master.nix
