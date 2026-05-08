@@ -17,6 +17,7 @@
   boot.kernelParams = [
     "amd_iommu=off"
     "pci=noacs"
+    "nvme_core.multipath=N"
   ];
 
   boot.extraModprobeConfig = ''
