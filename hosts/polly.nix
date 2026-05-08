@@ -14,5 +14,14 @@
 
   networking.hostName = "polly";
 
+  boot.kernelParams = [
+    "amd_iommu=off"
+    "pci=noacs"
+  ];
+
+  boot.extraModprobeConfig = ''
+    options nvidia NVreg_RegistryDwords="RMForceStaticBar1=1;RmForceDisableIomapWC=1;"
+  '';
+
   system.stateVersion = "25.11";
 }
