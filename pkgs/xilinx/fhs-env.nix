@@ -1,8 +1,18 @@
 { buildFHSEnv
 , runScript ? "bash -c"
 , xilinxName ? "xilinx-env"
+, vivadoVersion ? "2023.2"
 ,
 }:
+let
+  # Map Vivado version to its top-level settings64.sh.
+  # Sourcing this single file pulls in Vivado + Vitis (+ Vitis HLS, which is
+  # bundled inside Vitis from 2024.x onward) + Model Composer + DocNav.
+  settingsScript =
+    if vivadoVersion == "2023.2" then "/share/xilinx/Vitis/2023.2/settings64.sh"
+    else if vivadoVersion == "2025.1" then "/share/xilinx/2025.1/Vivado/settings64.sh"
+    else throw "fhs-env.nix: unsupported vivadoVersion ${vivadoVersion}";
+in
 buildFHSEnv {
   name = xilinxName;
   inherit runScript;
@@ -23,6 +33,8 @@ buildFHSEnv {
       # in buildFHSEnv, we just install both variants
       ncurses'
       (ncurses'.override { unicodeSupport = false; })
+      # Vivado 2025.1 looks for libtinfo.so.6, which lives in ncurses6 (the default `ncurses`).
+      ncurses
       xorg.libXext
       xorg.libX11
       xorg.libXrender
@@ -80,6 +92,6 @@ buildFHSEnv {
     ];
   multiPkgs = ps: [];
   profile = ''
-    source /share/xilinx/Vitis/2023.2/settings64.sh
+    source ${settingsScript}
   '';
 }
