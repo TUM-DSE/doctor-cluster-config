@@ -8,6 +8,7 @@
     ../modules/nfs/client.nix
     ../modules/amd_sev_snp-vanilla.nix
     ../modules/nvidia.nix
+    ../modules/nvme-trace
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNS0WA06423";
