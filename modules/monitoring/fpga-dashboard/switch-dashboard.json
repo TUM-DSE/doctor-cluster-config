@@ -5,8 +5,8 @@
     {
       "id": 601,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 1** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -14,42 +14,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"1\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "1",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 603,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 3** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -57,42 +68,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"3\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "3",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 605,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 5** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -100,42 +122,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"5\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "5",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 607,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 7** \u2014 QSFP28 100G\n\nConnected: `\"Amy E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -143,42 +176,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"7\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "7",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 609,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 9** \u2014 QSFP28 100G\n\nConnected: `\"Rose U280 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -186,42 +230,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"9\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "9",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 611,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 11** \u2014 QSFP28 100G\n\nConnected: `\"Clara FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -229,42 +284,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"11\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "11",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 613,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 13** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -272,42 +338,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"13\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "13",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 615,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 15** \u2014 QSFP28 100G\n\nConnected: `\"Rose V80 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -315,42 +392,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"15\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "15",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 617,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 17** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -358,42 +446,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"17\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "17",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 619,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 19** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -401,42 +500,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"19\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "19",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 621,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 21** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -444,42 +554,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"21\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "21",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 623,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 23** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -487,42 +608,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"23\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "23",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 625,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 25** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -530,42 +662,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"25\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "25",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 627,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 27** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -573,42 +716,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"27\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "27",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 629,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 29** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -616,42 +770,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"29\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "29",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 631,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 31** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -659,42 +824,53 @@
         "y": 0
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"31\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "31",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 602,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 2** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -702,42 +878,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "2",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 604,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 4** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -745,42 +932,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "4",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 606,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 6** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -788,42 +986,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "6",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 608,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 8** \u2014 QSFP28 100G\n\nConnected: `\"Clara E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -831,42 +1040,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "8",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 610,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 10** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -874,42 +1094,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "10",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 612,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 12** \u2014 QSFP28 100G\n\nConnected: `\"Amy FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -917,42 +1148,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "12",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 614,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 14** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -960,42 +1202,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "14",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 616,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 16** \u2014 QSFP28 100G\n\nConnected: `\"Rose E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1003,42 +1256,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "16",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 618,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 18** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1046,42 +1310,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "18",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 620,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 20** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1089,42 +1364,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "20",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 622,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 22** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1132,42 +1418,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "22",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 624,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 24** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1175,42 +1472,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "24",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 626,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 26** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1218,42 +1526,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "26",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 628,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 28** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1261,42 +1580,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "28",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 630,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 30** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1304,42 +1634,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "30",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 632,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 32** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 4,
         "w": 1.5,
@@ -1347,42 +1688,53 @@
         "y": 4
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"32\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "32",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 633,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 33** \u2014 SFP+ 10G\n\nConnected: `\"Amy Broadcom\"`\n\nSpeed: 10 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 3,
         "w": 1.5,
@@ -1390,42 +1742,53 @@
         "y": 8
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"33\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "33",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     },
     {
       "id": 634,
       "title": "",
-      "description": "",
-      "type": "marcusolsson-dynamictext-panel",
+      "description": "**Port 34** \u2014 SFP+ 10G\n\nConnected: `\"Clara Broadcom\"`\n\nSpeed: 10 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "type": "stat",
       "gridPos": {
         "h": 3,
         "w": 1.5,
@@ -1433,36 +1796,47 @@
         "y": 8
       },
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "thresholds": {
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "#37872d",
+                "value": 1
+              }
+            ]
+          },
+          "noValue": "\u2013"
+        },
         "overrides": []
       },
       "options": {
-        "content": "<div style=\"background:{{#if (eq Value \\\"1\\\")}}#37872d{{else}}#1f3247{{/if}};border-radius:4px;padding:6px 4px;text-align:center;color:white;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;cursor:default;\" title=\"Port {{number}} \u2014 {{port_type_human}}&#10;Connected: {{#if label}}{{label}}{{else}}\u2014{{/if}}&#10;Link: {{#if (eq Value \\\"1\\\")}}up{{else}}down{{/if}}&#10;VLAN: {{config_vlan}} ({{link_type}})&#10;FEC: {{fec}}&#10;Flow control: {{flow_control}}\">{{number}}</div>",
-        "defaultContent": "<div style=\"background:#1f3247;border-radius:4px;padding:6px 4px;text-align:center;color:#888;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;\">\u2013</div>",
-        "renderMode": "everyRow",
-        "editor": {
-          "format": "auto",
-          "language": "html"
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
         },
-        "editors": [],
-        "helpers": "",
-        "styles": "",
-        "afterRender": "",
-        "externalStyles": [],
-        "contentPartials": [],
-        "wrap": true,
-        "status": ""
+        "text": {
+          "titleSize": 10,
+          "valueSize": 18
+        },
+        "textMode": "name"
       },
       "targets": [
         {
           "expr": "switch_port_up{host=\"Christina\",number=\"34\"}",
-          "format": "table",
-          "instant": true,
-          "refId": "A"
+          "legendFormat": "34",
+          "refId": "A",
+          "instant": true
         }
       ],
-      "transparent": false,
-      "pluginVersion": "6.1.0"
+      "transparent": false
     }
   ],
   "refresh": "5m",

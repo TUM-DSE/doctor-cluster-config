@@ -137,7 +137,9 @@ fpga_name_for_devid() {
         903f|500c|500d) echo "U280" ;;
         9038) echo "U250" ;;
         5004|5005) echo "U250" ;;
-        50b4) echo "V80" ;;
+        # V80 reports different IDs depending on shell/board variant:
+        # 50b4 (early shell), b03f (current Coyote shell on Rose).
+        50b4|b03f) echo "V80" ;;
         *) echo "FPGA" ;;
     esac
 }
@@ -172,7 +174,7 @@ while IFS= read -r line; do
     else
         echo "server_fpga_driver_status{fpga=\"$fpga_name\",pci=\"$pci_addr\"} 0" >> "$TMP_FILE"
     fi
-done < <(lspci 2>/dev/null | grep -i "xilinx\|903f\|5004\|5005\|50b4\|500c\|500d")
+done < <(lspci 2>/dev/null | grep -i "xilinx\|903f\|5004\|5005\|50b4\|b03f\|500c\|500d")
 
 # --- 2b. FPGA active user detection ---
 # Two metrics:
@@ -193,7 +195,7 @@ while IFS= read -r line; do
     did=$(lspci -n -s "$pa" 2>/dev/null | awk '{print $3}' | cut -d: -f2)
     fpga_index_to_name[$fpga_idx]=$(fpga_name_for_devid "$did")
     fpga_idx=$((fpga_idx + 1))
-done < <(lspci 2>/dev/null | grep -i "xilinx\|903f\|5004\|5005\|50b4\|500c\|500d")
+done < <(lspci 2>/dev/null | grep -i "xilinx\|903f\|5004\|5005\|50b4\|b03f\|500c\|500d")
 
 # Track which FPGAs have a detected user: fpga_name -> username
 declare -A fpga_detected_user
