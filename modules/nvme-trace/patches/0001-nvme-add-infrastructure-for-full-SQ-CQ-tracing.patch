@@ -1,0 +1,528 @@
+From a5b836c8435e97dc04899d45fc9f05c91c74fbfa Mon Sep 17 00:00:00 2001
+From: Thore Sommer <public@thson.de>
+Date: Tue, 12 May 2026 20:42:36 +0200
+Subject: [PATCH] nvme: add infrastructure for full SQ/CQ tracing
+
+---
+ drivers/nvme/host/Kconfig     |  13 ++
+ drivers/nvme/host/pci.c       | 322 +++++++++++++++++++++++++++++++++-
+ drivers/nvme/host/pci_trace.h |  99 +++++++++++
+ 3 files changed, 432 insertions(+), 2 deletions(-)
+ create mode 100644 drivers/nvme/host/pci_trace.h
+
+diff --git a/drivers/nvme/host/Kconfig b/drivers/nvme/host/Kconfig
+index 31974c7dd20c..bbf6353866c6 100644
+--- a/drivers/nvme/host/Kconfig
++++ b/drivers/nvme/host/Kconfig
+@@ -14,6 +14,19 @@ config BLK_DEV_NVME
+ 	  To compile this driver as a module, choose M here: the
+ 	  module will be called nvme.
+ 
++config NVME_PCI_TRACE
++	bool "NVMe PCI high-performance relay tracing"
++	depends on BLK_DEV_NVME && RELAY && DEBUG_FS
++	help
++	  Enables relay-based binary tracing of every NVMe PCI I/O submission
++	  and completion event.  Captures full 64-byte SQEs including PRP/SGL
++	  descriptor tables, CQEs with status and result, and nanosecond
++	  timestamps.  Per-device enable/disable is controlled via debugfs.
++	  The implementation is interrupt-safe and suitable for high-IOPS
++	  workloads.  Intended for workload capture and replay research.
++
++	  If unsure, say N.
++
+ config NVME_MULTIPATH
+ 	bool "NVMe multipath support"
+ 	depends on NVME_CORE
+diff --git a/drivers/nvme/host/pci.c b/drivers/nvme/host/pci.c
+index 9fd04cd7c5cb..b9f20ba433a6 100644
+--- a/drivers/nvme/host/pci.c
++++ b/drivers/nvme/host/pci.c
+@@ -31,6 +31,12 @@
+ #include "trace.h"
+ #include "nvme.h"
+ 
++#ifdef CONFIG_NVME_PCI_TRACE
++#include <linux/relay.h>
++#include <linux/debugfs.h>
++#include "pci_trace.h"
++#endif
++
+ #define SQ_SIZE(q)	((q)->q_depth << (q)->sqes)
+ #define CQ_SIZE(q)	((q)->q_depth * sizeof(struct nvme_completion))
+ 
+@@ -334,6 +340,12 @@ struct nvme_dev {
+ 	unsigned int nr_allocated_queues;
+ 	unsigned int nr_write_queues;
+ 	unsigned int nr_poll_queues;
++#ifdef CONFIG_NVME_PCI_TRACE
++	struct rchan    *trace_chan;    /* relay channel, per-CPU bufs per dev */
++	struct dentry   *trace_dir;    /* debugfs dir: nvme_trace/nvmeN/ */
++	atomic_t         trace_enabled; /* 0=off, 1=on; checked on every I/O */
++	atomic_t         trace_seq;    /* per-device record sequence counter */
++#endif
+ 	struct nvme_descriptor_pools descriptor_pools[];
+ };
+ 
+@@ -446,6 +458,290 @@ struct nvme_iod {
+ 	struct nvme_sgl_desc *meta_descriptor;
+ };
+ 
++#ifdef CONFIG_NVME_PCI_TRACE
++
++/* -----------------------------------------------------------------------
++ * Relay-based NVMe I/O tracing infrastructure.
++ *
++ * One relay channel per NVMe controller with per-CPU ring buffers
++ * (is_global=0).  Each CPU writes only to its own buffer so no cross-CPU
++ * locking is needed.  local_irq_save() guards relay_reserve() to prevent
++ * a hardirq completion handler racing with a softirq/process submission
++ * on the same CPU.  Buffers operate in no-overwrite mode: when a
++ * subbuffer is full the record is silently dropped rather than stalling
++ * or wrapping.
++ *
++ * Userspace interface under /sys/kernel/debug/nvme_trace/nvmeN/:
++ *   enable      - write "1" to start tracing, "0" to stop
++ *   trace<cpu>  - per-CPU relay ring-buffer file, one per possible CPU
++ * ----------------------------------------------------------------------- */
++
++/* Shared parent dir /sys/kernel/debug/nvme_trace/, created once on first use. */
++static struct dentry *nvme_trace_root_dir;
++
++static struct dentry *nvme_trace_create_buf_file(const char *filename,
++		struct dentry *parent, umode_t mode,
++		struct rchan_buf *buf, int *is_global)
++{
++	*is_global = 0;
++	return debugfs_create_file(filename, mode, parent, buf,
++				   &relay_file_operations);
++}
++
++static int nvme_trace_remove_buf_file(struct dentry *dentry)
++{
++	debugfs_remove(dentry);
++	return 0;
++}
++
++/* Drop data silently on overflow — never block, never overwrite old data. */
++static int nvme_trace_subbuf_start(struct rchan_buf *buf, void *subbuf,
++		void *prev_subbuf)
++{
++	return !relay_buf_full(buf);
++}
++
++static const struct rchan_callbacks nvme_trace_rchan_cb = {
++	.subbuf_start    = nvme_trace_subbuf_start,
++	.create_buf_file = nvme_trace_create_buf_file,
++	.remove_buf_file = nvme_trace_remove_buf_file,
++};
++
++static void nvme_pci_trace_init(struct nvme_dev *dev)
++{
++	char ctrl_name[32];
++
++	atomic_set(&dev->trace_enabled, 0);
++	atomic_set(&dev->trace_seq, 0);
++
++	/* Create /sys/kernel/debug/nvme_trace/ once, shared across devices. */
++	if (!nvme_trace_root_dir) {
++		nvme_trace_root_dir = debugfs_create_dir("nvme_trace", NULL);
++		if (IS_ERR_OR_NULL(nvme_trace_root_dir)) {
++			pr_warn("nvme_trace: failed to create debugfs root dir\n");
++			nvme_trace_root_dir = NULL;
++			return;
++		}
++	}
++
++	/* Per-device subdirectory: /sys/kernel/debug/nvme_trace/nvme0/ */
++	snprintf(ctrl_name, sizeof(ctrl_name), "nvme%d", dev->ctrl.instance);
++	dev->trace_dir = debugfs_create_dir(ctrl_name, nvme_trace_root_dir);
++	if (IS_ERR_OR_NULL(dev->trace_dir)) {
++		dev_warn(dev->ctrl.device,
++			 "nvme_trace: failed to create debugfs dir nvme_trace/%s\n",
++			 ctrl_name);
++		dev->trace_dir = NULL;
++		return;
++	}
++
++	debugfs_create_atomic_t("enable", 0644, dev->trace_dir,
++				&dev->trace_enabled);
++
++	/*
++	 * 256 KiB subbuffers x 8 = 2 MiB ring per CPU.  relay_open() creates
++	 * one debugfs file per possible CPU: trace0, trace1, ...
++	 */
++	dev->trace_chan = relay_open("trace", dev->trace_dir,
++				     256 * 1024, 8,
++				     &nvme_trace_rchan_cb, NULL);
++	if (!dev->trace_chan) {
++		dev_warn(dev->ctrl.device, "nvme_trace: relay_open failed\n");
++		debugfs_remove_recursive(dev->trace_dir);
++		dev->trace_dir = NULL;
++		return;
++	}
++
++	dev_info(dev->ctrl.device,
++		 "nvme_trace: ready, %u CPUs, 256 KiB x 8 subbuf/CPU, no-overwrite\n"
++		 "  control: /sys/kernel/debug/nvme_trace/%s/enable\n"
++		 "  data:    /sys/kernel/debug/nvme_trace/%s/trace<cpu>\n",
++		 num_possible_cpus(), ctrl_name, ctrl_name);
++}
++
++static void nvme_pci_trace_cleanup(struct nvme_dev *dev)
++{
++	/* Disable first so no new writers enter after we free. */
++	atomic_set(&dev->trace_enabled, 0);
++
++	if (dev->trace_chan) {
++		relay_close(dev->trace_chan);
++		dev->trace_chan = NULL;
++	}
++	if (dev->trace_dir) {
++		debugfs_remove_recursive(dev->trace_dir);
++		dev->trace_dir = NULL;
++	}
++}
++
++/*
++ * Count PRP list entries that live in iod->descriptors[].
++ * PRP1 is already in the SQE; this counts the entries in the linked
++ * PRP list pages (pointed to by prp2 in the SQE).
++ *
++ * Each list page stores (CTRL_PAGE_SIZE/8 - 1) data entries; the last
++ * slot in a full page is a pointer to the next page and is NOT counted.
++ */
++static u16 nvme_trace_count_prp_entries(const struct nvme_iod *iod)
++{
++	u64 prp1_dma = le64_to_cpu(iod->cmd.common.dptr.prp1);
++	u32 prp1_covered = NVME_CTRL_PAGE_SIZE -
++			   (prp1_dma & (NVME_CTRL_PAGE_SIZE - 1));
++	u32 remaining;
++
++	if (iod->total_len <= prp1_covered)
++		return 0;  /* all data in PRP1 (or PRP1+direct PRP2) */
++
++	remaining = iod->total_len - prp1_covered;
++	return (u16)min_t(u32, DIV_ROUND_UP(remaining, NVME_CTRL_PAGE_SIZE),
++			  4096U);
++}
++
++/*
++ * Copy PRP list entries from chained descriptor pages into a flat buffer.
++ * Skips the chain-pointer slot at index (entries_per_page) in each page.
++ */
++static void nvme_trace_copy_prp(const struct nvme_iod *iod,
++				__le64 *out, u16 nr)
++{
++	/* -1: last slot of a full page is a chain pointer, not a data entry */
++	const int ppe = (int)(NVME_CTRL_PAGE_SIZE / sizeof(__le64)) - 1;
++	int d;
++
++	for (d = 0; d < iod->nr_descriptors && nr > 0; d++) {
++		const __le64 *page = iod->descriptors[d];
++		int take = min_t(int, ppe, (int)nr);
++
++		memcpy(out, page, (size_t)take * sizeof(__le64));
++		out += take;
++		nr  -= (u16)take;
++	}
++}
++
++/*
++ * Copy SGL data descriptors from iod->descriptors[0].
++ * The LAST_SEG chain entry is at index nr_entries and is NOT copied.
++ */
++static void nvme_trace_copy_sgl(const struct nvme_iod *iod,
++				struct nvme_trace_sgl_desc *out, u16 nr)
++{
++	if (iod->nr_descriptors > 0) {
++		const struct nvme_sgl_desc *src = iod->descriptors[0];
++		unsigned int i;
++
++		for (i = 0; i < nr; i++) {
++			out[i].addr     = src[i].addr;
++			out[i].length   = src[i].length;
++			memset(out[i].reserved, 0, sizeof(out[i].reserved));
++			out[i].type     = src[i].type;
++		}
++	}
++}
++
++static void nvme_pci_trace_emit_submit(struct nvme_queue *nvmeq,
++				       struct request *req,
++				       struct nvme_iod *iod)
++{
++	struct nvme_dev *dev = nvmeq->dev;
++	bool use_sgl  = !!(iod->cmd.common.flags & NVME_CMD_SGL_METABUF);
++	bool single   = !!(iod->flags & IOD_SINGLE_SEGMENT);
++	u16  nr_entries = 0;
++	size_t extra, total;
++	struct nvme_trace_submit *rec;
++	unsigned long flags;
++	u64 ts;
++
++	if (!use_sgl && !single && iod->nr_descriptors > 0)
++		nr_entries = nvme_trace_count_prp_entries(iod);
++	else if (use_sgl && !single && iod->nr_descriptors > 0)
++		nr_entries = (u16)blk_rq_nr_phys_segments(req);
++
++	extra = use_sgl ? (size_t)nr_entries * sizeof(struct nvme_trace_sgl_desc)
++			: (size_t)nr_entries * sizeof(__le64);
++	total = sizeof(*rec) + extra;
++
++	ts = ktime_get_ns();
++
++	/*
++	 * local_irq_save: prevent a hardirq completion handler from racing
++	 * with this submission path on the same CPU's relay buffer.
++	 * No cross-CPU lock needed — relay uses per-CPU buffers.
++	 */
++	local_irq_save(flags);
++	rec = relay_reserve(dev->trace_chan, total);
++	if (!rec) {
++		local_irq_restore(flags);
++		return;
++	}
++
++	rec->hdr.magic        = cpu_to_le32(NVME_TRACE_MAGIC);
++	rec->hdr.version      = NVME_TRACE_VERSION;
++	rec->hdr.type         = NVME_TRACE_SUBMIT;
++	rec->hdr.len          = cpu_to_le16((u16)total);
++	rec->hdr.timestamp_ns = cpu_to_le64(ts);
++	rec->hdr.seq          = cpu_to_le32((u32)atomic_inc_return(&dev->trace_seq));
++	rec->hdr.ctrl_id      = (u8)dev->ctrl.instance;
++	rec->hdr.qid          = (u8)nvmeq->qid;
++	rec->hdr.cid          = iod->cmd.common.command_id;
++
++	memcpy(rec->sqe, &iod->cmd, 64);
++	rec->data_len       = cpu_to_le32((u32)iod->total_len);
++	rec->meta_len       = cpu_to_le32((u32)iod->meta_total_len);
++	rec->use_sgl        = use_sgl ? 1 : 0;
++	rec->single_segment = single  ? 1 : 0;
++	rec->nr_entries     = cpu_to_le16(nr_entries);
++
++	if (nr_entries > 0) {
++		void *tail = (u8 *)rec + sizeof(*rec);
++
++		if (use_sgl)
++			nvme_trace_copy_sgl(iod, tail, nr_entries);
++		else
++			nvme_trace_copy_prp(iod, tail, nr_entries);
++	}
++
++	local_irq_restore(flags);
++}
++
++static void nvme_pci_trace_emit_complete(struct nvme_queue *nvmeq,
++					 const struct nvme_completion *cqe,
++					 struct request *req)
++{
++	struct nvme_dev *dev = nvmeq->dev;
++	struct nvme_trace_complete *rec;
++	unsigned long flags;
++	u64 ts = ktime_get_ns();
++
++	/* See nvme_pci_trace_emit_submit for locking rationale. */
++	local_irq_save(flags);
++	rec = relay_reserve(dev->trace_chan, sizeof(*rec));
++	if (!rec) {
++		local_irq_restore(flags);
++		return;
++	}
++
++	rec->hdr.magic        = cpu_to_le32(NVME_TRACE_MAGIC);
++	rec->hdr.version      = NVME_TRACE_VERSION;
++	rec->hdr.type         = NVME_TRACE_COMPLETE;
++	rec->hdr.len          = cpu_to_le16(sizeof(*rec));
++	rec->hdr.timestamp_ns = cpu_to_le64(ts);
++	rec->hdr.seq          = cpu_to_le32((u32)atomic_inc_return(&dev->trace_seq));
++	rec->hdr.ctrl_id      = (u8)dev->ctrl.instance;
++	rec->hdr.qid          = (u8)nvmeq->qid;
++	rec->hdr.cid          = READ_ONCE(cqe->command_id);
++
++	rec->result  = cpu_to_le64(le64_to_cpu(cqe->result.u64));
++	rec->sq_head = cqe->sq_head;
++	rec->sq_id   = cqe->sq_id;
++	rec->status  = cqe->status;
++	rec->retries = nvme_req(req)->retries;
++	rec->pad     = 0;
++
++	local_irq_restore(flags);
++}
++
++#endif /* CONFIG_NVME_PCI_TRACE */
++
+ static inline unsigned int nvme_dbbuf_size(struct nvme_dev *dev)
+ {
+ 	return dev->nr_allocated_queues * 8 * dev->db_stride;
+@@ -1424,6 +1720,10 @@ static blk_status_t nvme_queue_rq(struct blk_mq_hw_ctx *hctx,
+ 	ret = nvme_prep_rq(req);
+ 	if (unlikely(ret))
+ 		return ret;
++#ifdef CONFIG_NVME_PCI_TRACE
++	if (atomic_read(&dev->trace_enabled))
++		nvme_pci_trace_emit_submit(nvmeq, req, iod);
++#endif
+ 	spin_lock(&nvmeq->sq_lock);
+ 	nvme_sq_copy_cmd(nvmeq, &iod->cmd);
+ 	nvme_write_sq_db(nvmeq, bd->last);
+@@ -1474,10 +1774,16 @@ static void nvme_queue_rqs(struct rq_list *rqlist)
+ 			nvme_submit_cmds(nvmeq, &submit_list);
+ 		nvmeq = req->mq_hctx->driver_data;
+ 
+-		if (nvme_prep_rq_batch(nvmeq, req))
++		if (nvme_prep_rq_batch(nvmeq, req)) {
++#ifdef CONFIG_NVME_PCI_TRACE
++			if (atomic_read(&nvmeq->dev->trace_enabled))
++				nvme_pci_trace_emit_submit(nvmeq, req,
++						blk_mq_rq_to_pdu(req));
++#endif
+ 			rq_list_add_tail(&submit_list, req);
+-		else
++		} else {
+ 			rq_list_add_tail(&requeue_list, req);
++		}
+ 	}
+ 
+ 	if (nvmeq)
+@@ -1556,6 +1862,10 @@ static inline void nvme_handle_cqe(struct nvme_queue *nvmeq,
+ 	}
+ 
+ 	trace_nvme_sq(req, cqe->sq_head, nvmeq->sq_tail);
++#ifdef CONFIG_NVME_PCI_TRACE
++	if (atomic_read(&nvmeq->dev->trace_enabled))
++		nvme_pci_trace_emit_complete(nvmeq, cqe, req);
++#endif
+ 	if (!nvme_try_complete_req(req, cqe->status, cqe->result) &&
+ 	    !blk_mq_add_to_batch(req, iob,
+ 				 nvme_req(req)->status != NVME_SC_SUCCESS,
+@@ -3792,6 +4102,10 @@ static int nvme_probe(struct pci_dev *pdev, const struct pci_device_id *id)
+ 
+ 	pci_set_drvdata(pdev, dev);
+ 
++#ifdef CONFIG_NVME_PCI_TRACE
++	nvme_pci_trace_init(dev);
++#endif
++
+ 	nvme_start_ctrl(&dev->ctrl);
+ 	nvme_put_ctrl(&dev->ctrl);
+ 	flush_work(&dev->ctrl.scan_work);
+@@ -3853,6 +4167,10 @@ static void nvme_remove(struct pci_dev *pdev)
+ {
+ 	struct nvme_dev *dev = pci_get_drvdata(pdev);
+ 
++#ifdef CONFIG_NVME_PCI_TRACE
++	nvme_pci_trace_cleanup(dev);
++#endif
++
+ 	nvme_change_ctrl_state(&dev->ctrl, NVME_CTRL_DELETING);
+ 	pci_set_drvdata(pdev, NULL);
+ 
+diff --git a/drivers/nvme/host/pci_trace.h b/drivers/nvme/host/pci_trace.h
+new file mode 100644
+index 000000000000..58e9fec19ebb
+--- /dev/null
++++ b/drivers/nvme/host/pci_trace.h
+@@ -0,0 +1,99 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * NVMe PCI relay-based I/O tracing — binary record format.
++ *
++ * This header is designed to be included by both kernel (pci.c) and
++ * userspace parsers.  All multi-byte fields are little-endian.
++ *
++ * Record layout:
++ *   Every record begins with struct nvme_trace_hdr (24 bytes).
++ *   For NVME_TRACE_SUBMIT the fixed struct nvme_trace_submit follows,
++ *   then nr_entries variable-length PRP (__le64) or SGL descriptor entries.
++ *   For NVME_TRACE_COMPLETE the fixed struct nvme_trace_complete follows.
++ *
++ * Framing: use hdr.len to skip to the next record.  hdr.magic provides a
++ * sanity check against partial reads and buffer wrap artefacts.
++ */
++#ifndef _NVME_PCI_TRACE_H
++#define _NVME_PCI_TRACE_H
++
++#ifdef __KERNEL__
++#include <linux/types.h>
++#else
++#include <stdint.h>
++typedef uint8_t  u8;
++typedef uint16_t u16;
++typedef uint32_t u32;
++typedef uint64_t u64;
++typedef uint16_t __le16;
++typedef uint32_t __le32;
++typedef uint64_t __le64;
++#endif
++
++#define NVME_TRACE_MAGIC   0x4E564D45U  /* "NVME" */
++#define NVME_TRACE_VERSION 1
++
++enum nvme_trace_type {
++	NVME_TRACE_SUBMIT   = 0,
++	NVME_TRACE_COMPLETE = 1,
++};
++
++/*
++ * Common record header — 24 bytes.
++ * Present at the start of every record.
++ */
++struct nvme_trace_hdr {
++	__le32 magic;         /* NVME_TRACE_MAGIC */
++	u8     version;       /* NVME_TRACE_VERSION */
++	u8     type;          /* enum nvme_trace_type */
++	__le16 len;           /* total record length in bytes (incl. header) */
++	__le64 timestamp_ns;  /* ktime_get_ns() captured at hook entry */
++	__le32 seq;           /* per-device monotonic counter */
++	u8     ctrl_id;       /* nvme_ctrl.instance */
++	u8     qid;           /* submission/completion queue ID, 0 = admin */
++	__le16 cid;           /* command ID from SQE / CQE */
++} __attribute__((__packed__));
++
++/*
++ * Submission record — fixed part is 100 bytes, followed by nr_entries
++ * variable-length data:
++ *   PRP mode: nr_entries × sizeof(__le64) bytes of PRP list entries
++ *   SGL mode: nr_entries × sizeof(struct nvme_trace_sgl_desc) bytes
++ *
++ * The complete 64-byte SQE is embedded verbatim so the dptr (prp1/prp2
++ * or sgl) is always present, even for single-segment transfers where
++ * nr_entries is zero.
++ */
++struct nvme_trace_submit {
++	struct nvme_trace_hdr hdr;
++	u8     sqe[64];        /* raw Submission Queue Entry */
++	__le32 data_len;       /* total data transfer length (iod->total_len) */
++	__le32 meta_len;       /* metadata length (iod->meta_total_len), 0 if none */
++	u8     use_sgl;        /* 0 = PRP mode, 1 = SGL mode */
++	u8     single_segment; /* 1 if IOD_SINGLE_SEGMENT (no descriptor pages) */
++	__le16 nr_entries;     /* entries following this struct */
++	/* variable tail: nr_entries × 8 B (PRP) or nr_entries × 16 B (SGL) */
++} __attribute__((__packed__));
++
++/* SGL descriptor as captured from iod->descriptors[] */
++struct nvme_trace_sgl_desc {
++	__le64 addr;
++	__le32 length;
++	u8     reserved[3];
++	u8     type;
++} __attribute__((__packed__));
++
++/*
++ * Completion record — fixed size 40 bytes.
++ */
++struct nvme_trace_complete {
++	struct nvme_trace_hdr hdr;
++	__le64 result;     /* union nvme_result cast to u64 */
++	__le16 sq_head;    /* CQE dw2 sq_head */
++	__le16 sq_id;      /* CQE dw2 sq_id */
++	__le16 status;     /* CQE dw3 status */
++	u8     retries;    /* nvme_req(req)->retries */
++	u8     pad;
++} __attribute__((__packed__));
++
++#endif /* _NVME_PCI_TRACE_H */
+-- 
+2.54.0
+
