@@ -89,9 +89,24 @@ buildFHSEnv {
       (lib.hiPrio gcc)
       unzip
       nettools
+
+      # `gmake` shim: Vivado's PLM bitgen flow (write_device_image -> embedded BSP
+      # build for the Versal_PLM) shells out to `gmake`. On Linux this is the
+      # BSD alias for GNU make and isn't shipped by gnumake. Symlinking it into
+      # a tiny writeShellScriptBin gets it onto PATH.
+      (pkgs.writeShellScriptBin "gmake" ''exec ${pkgs.gnumake}/bin/make "$@"'')
     ];
   multiPkgs = ps: [];
   profile = ''
     source ${settingsScript}
+
+    # Auto-detect Xilinx license file by hostname. Licenses live in /share/xilinx/licenses/
+    # and follow the convention Xilinx_<host>.lic.
+    if [ -z "$XILINXD_LICENSE_FILE" ]; then
+      _host_lic="/share/xilinx/licenses/Xilinx_$(hostname).lic"
+      if [ -f "$_host_lic" ]; then
+        export XILINXD_LICENSE_FILE="$_host_lic"
+      fi
+    fi
   '';
 }
