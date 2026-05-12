@@ -1,6 +1,6 @@
 # Expansion cards and slots
 
-Note also the auto-generated [PCI slots](./expansion_cards_autogen.md) enoumeration.
+Note also the auto-generated [PCI slots](./expansion_cards_autogen.md) enoumeration and [GPU list](./gpu.md).
 
 Parameters to consider for matching cards to slots:
 
@@ -10,10 +10,6 @@ Parameters to consider for matching cards to slots:
 
 ## List of cards
 
-- 1x Nvidia H100 GPU (high profile, dual slot)
-    - jamie
-- 1x Nvidia A40 GPU (high profile, dual slot)
-    - jack
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
     - office 01.07.60
 - 1x Intel Stratix 10 GX FPGA Development Kit H-Tile (high profile, dual slot)
