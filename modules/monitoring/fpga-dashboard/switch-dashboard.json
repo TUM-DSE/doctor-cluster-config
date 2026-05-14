@@ -5,7 +5,7 @@
     {
       "id": 601,
       "title": "",
-      "description": "**Port 1** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 1**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -59,7 +59,7 @@
     {
       "id": 603,
       "title": "",
-      "description": "**Port 3** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 3**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -113,7 +113,7 @@
     {
       "id": 605,
       "title": "",
-      "description": "**Port 5** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 5**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -167,7 +167,7 @@
     {
       "id": 607,
       "title": "",
-      "description": "**Port 7** \u2014 QSFP28 100G\n\nConnected: `\"Amy E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 7**\n\nConnected: Amy E810",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -221,7 +221,7 @@
     {
       "id": 609,
       "title": "",
-      "description": "**Port 9** \u2014 QSFP28 100G\n\nConnected: `\"Rose U280 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "description": "**Port 9**\n\nConnected: Rose U280 FPGA",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -275,7 +275,7 @@
     {
       "id": 611,
       "title": "",
-      "description": "**Port 11** \u2014 QSFP28 100G\n\nConnected: `\"Clara FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "description": "**Port 11**\n\nConnected: Clara FPGA",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -329,7 +329,7 @@
     {
       "id": 613,
       "title": "",
-      "description": "**Port 13** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 13**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -383,7 +383,7 @@
     {
       "id": 615,
       "title": "",
-      "description": "**Port 15** \u2014 QSFP28 100G\n\nConnected: `\"Rose V80 FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "description": "**Port 15**\n\nConnected: Rose V80 FPGA",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -437,7 +437,7 @@
     {
       "id": 617,
       "title": "",
-      "description": "**Port 17** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 17**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -491,7 +491,7 @@
     {
       "id": 619,
       "title": "",
-      "description": "**Port 19** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 19**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -545,7 +545,7 @@
     {
       "id": 621,
       "title": "",
-      "description": "**Port 21** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 21**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -599,7 +599,7 @@
     {
       "id": 623,
       "title": "",
-      "description": "**Port 23** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 23**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -653,7 +653,7 @@
     {
       "id": 625,
       "title": "",
-      "description": "**Port 25** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 25**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -707,7 +707,7 @@
     {
       "id": 627,
       "title": "",
-      "description": "**Port 27** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 27**\n\nConnected: Unknown device",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -761,7 +761,7 @@
     {
       "id": 629,
       "title": "",
-      "description": "**Port 29** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 29**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -815,7 +815,7 @@
     {
       "id": 631,
       "title": "",
-      "description": "**Port 31** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 31**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -869,7 +869,7 @@
     {
       "id": 602,
       "title": "",
-      "description": "**Port 2** \u2014 QSFP28 100G\n\nConnected: `\"Unknown device\"`\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 2**\n\nConnected: Unknown device",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -923,7 +923,7 @@
     {
       "id": 604,
       "title": "",
-      "description": "**Port 4** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 4**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -977,7 +977,7 @@
     {
       "id": 606,
       "title": "",
-      "description": "**Port 6** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 6**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1031,7 +1031,7 @@
     {
       "id": 608,
       "title": "",
-      "description": "**Port 8** \u2014 QSFP28 100G\n\nConnected: `\"Clara E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 8**\n\nConnected: Clara E810",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1085,7 +1085,7 @@
     {
       "id": 610,
       "title": "",
-      "description": "**Port 10** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 10**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1139,7 +1139,7 @@
     {
       "id": 612,
       "title": "",
-      "description": "**Port 12** \u2014 QSFP28 100G\n\nConnected: `\"Amy FPGA\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: RS-FEC\n\nFlow control: Enabled",
+      "description": "**Port 12**\n\nConnected: Amy FPGA",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1193,7 +1193,7 @@
     {
       "id": 614,
       "title": "",
-      "description": "**Port 14** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 14**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1247,7 +1247,7 @@
     {
       "id": 616,
       "title": "",
-      "description": "**Port 16** \u2014 QSFP28 100G\n\nConnected: `\"Rose E810\"`\n\nSpeed: 100 Gbps\n\nVLAN: 100\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 16**\n\nConnected: Rose E810",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1301,7 +1301,7 @@
     {
       "id": 618,
       "title": "",
-      "description": "**Port 18** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 18**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1355,7 +1355,7 @@
     {
       "id": 620,
       "title": "",
-      "description": "**Port 20** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 20**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1409,7 +1409,7 @@
     {
       "id": 622,
       "title": "",
-      "description": "**Port 22** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 22**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1463,7 +1463,7 @@
     {
       "id": 624,
       "title": "",
-      "description": "**Port 24** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 24**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1517,7 +1517,7 @@
     {
       "id": 626,
       "title": "",
-      "description": "**Port 26** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 26**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1571,7 +1571,7 @@
     {
       "id": 628,
       "title": "",
-      "description": "**Port 28** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 28**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1625,7 +1625,7 @@
     {
       "id": 630,
       "title": "",
-      "description": "**Port 30** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 30**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1679,7 +1679,7 @@
     {
       "id": 632,
       "title": "",
-      "description": "**Port 32** \u2014 QSFP28 100G\n\nConnected: \u2014\n\nSpeed: 100 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 32**\n\nConnected: \u2014",
       "type": "stat",
       "gridPos": {
         "h": 4,
@@ -1733,7 +1733,7 @@
     {
       "id": 633,
       "title": "",
-      "description": "**Port 33** \u2014 SFP+ 10G\n\nConnected: `\"Amy Broadcom\"`\n\nSpeed: 10 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 33**\n\nConnected: Amy Broadcom",
       "type": "stat",
       "gridPos": {
         "h": 3,
@@ -1787,7 +1787,7 @@
     {
       "id": 634,
       "title": "",
-      "description": "**Port 34** \u2014 SFP+ 10G\n\nConnected: `\"Clara Broadcom\"`\n\nSpeed: 10 Gbps\n\nVLAN: 1\n\nFEC: None\n\nFlow control: Disabled",
+      "description": "**Port 34**\n\nConnected: Clara Broadcom",
       "type": "stat",
       "gridPos": {
         "h": 3,
@@ -1837,6 +1837,8098 @@
         }
       ],
       "transparent": false
+    },
+    {
+      "id": 1000,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 0.0,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "1"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1001,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 0.0,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"1\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 0.0,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"1\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 0.0,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"1\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 0.0,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"1\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 1.41,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "2"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1006,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 1.41,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 1.41,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 1.41,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 1.41,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"2\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1010,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 2.82,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "3"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1011,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 2.82,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"3\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1012,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 2.82,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"3\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1013,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 2.82,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"3\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1014,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 2.82,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"3\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 4.23,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "4"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1016,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 4.23,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1017,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 4.23,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1018,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 4.23,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1019,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 4.23,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"4\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1020,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 5.64,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "5"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1021,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 5.64,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"5\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1022,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 5.64,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"5\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1023,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 5.64,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"5\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1024,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 5.64,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"5\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1025,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 7.05,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "6"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1026,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 7.05,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1027,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 7.05,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1028,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 7.05,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1029,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 7.05,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"6\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1030,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 8.46,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "7"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1031,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 8.46,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"7\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1032,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 8.46,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"7\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1033,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 8.46,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"7\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1034,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 8.46,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"7\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1035,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 9.87,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "8"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1036,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 9.87,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1037,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 9.87,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1038,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 9.87,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1039,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 9.87,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"8\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1040,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 11.28,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "9"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1041,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 11.28,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"9\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1042,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 11.28,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"9\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1043,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 11.28,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"9\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1044,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 11.28,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"9\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1045,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 12.69,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "10"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1046,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 12.69,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1047,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 12.69,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1048,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 12.69,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1049,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 12.69,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"10\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1050,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 14.1,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "11"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1051,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 14.1,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"11\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1052,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 14.1,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"11\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1053,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 14.1,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"11\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1054,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 14.1,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"11\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1055,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 15.51,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "12"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1056,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 15.51,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1057,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 15.51,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1058,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 15.51,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1059,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 15.51,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"12\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1060,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 16.92,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "13"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1061,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 16.92,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"13\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1062,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 16.92,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"13\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1063,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 16.92,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"13\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1064,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 16.92,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"13\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1065,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 18.33,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "14"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1066,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 18.33,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1067,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 18.33,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1068,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 18.33,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1069,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 18.33,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"14\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1070,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 19.74,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "15"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1071,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 19.74,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"15\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1072,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 19.74,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"15\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1073,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 19.74,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"15\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1074,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 19.74,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"15\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1075,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 21.15,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "16"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1076,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 21.15,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1077,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 21.15,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1078,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 21.15,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1079,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 21.15,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"16\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1080,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 22.56,
+        "y": 12,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "17"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1081,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 22.56,
+        "y": 13,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"17\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1082,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 22.56,
+        "y": 15,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"17\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1083,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 22.56,
+        "y": 17,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"17\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1084,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 22.56,
+        "y": 19,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"17\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1085,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 0.0,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "18"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1086,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 0.0,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1087,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 0.0,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1088,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 0.0,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1089,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 0.0,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"18\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1090,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 1.41,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "19"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1091,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 1.41,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"19\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1092,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 1.41,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"19\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1093,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 1.41,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"19\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1094,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 1.41,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"19\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1095,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 2.82,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "20"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1096,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 2.82,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1097,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 2.82,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1098,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 2.82,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1099,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 2.82,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"20\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1100,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 4.23,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "21"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1101,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 4.23,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"21\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1102,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 4.23,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"21\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1103,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 4.23,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"21\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1104,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 4.23,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"21\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1105,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 5.64,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "22"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1106,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 5.64,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1107,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 5.64,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1108,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 5.64,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1109,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 5.64,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"22\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1110,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 7.05,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "23"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1111,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 7.05,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"23\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1112,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 7.05,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"23\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1113,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 7.05,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"23\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1114,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 7.05,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"23\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1115,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 8.46,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "24"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1116,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 8.46,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1117,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 8.46,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1118,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 8.46,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1119,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 8.46,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"24\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1120,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 9.87,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "25"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1121,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 9.87,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"25\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1122,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 9.87,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"25\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1123,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 9.87,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"25\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1124,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 9.87,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"25\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1125,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 11.28,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "26"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1126,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 11.28,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1127,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 11.28,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1128,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 11.28,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1129,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 11.28,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"26\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1130,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 12.69,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "27"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1131,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 12.69,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"27\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1132,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 12.69,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"27\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1133,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 12.69,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"27\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1134,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 12.69,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"27\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1135,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 14.1,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "28"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1136,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 14.1,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1137,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 14.1,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1138,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 14.1,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1139,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 14.1,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"28\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1140,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 15.51,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "29"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1141,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 15.51,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"29\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1142,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 15.51,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"29\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1143,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 15.51,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"29\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1144,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 15.51,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"29\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1145,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 16.92,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "30"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1146,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 16.92,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1147,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 16.92,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1148,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 16.92,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1149,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 16.92,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"30\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1150,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 18.33,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "31"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1151,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 18.33,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"31\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1152,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 18.33,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"31\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1153,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 18.33,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"31\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1154,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 18.33,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"31\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1155,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 19.74,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "32"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1156,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 19.74,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"32\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1157,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 19.74,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"32\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1158,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 19.74,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"32\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1159,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 19.74,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"32\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1160,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 21.15,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "33"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1161,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 21.15,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"33\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1162,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 21.15,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"33\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1163,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 21.15,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"33\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1164,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 21.15,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"33\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1165,
+      "type": "stat",
+      "title": "",
+      "gridPos": {
+        "x": 22.56,
+        "y": 23,
+        "w": 1.41,
+        "h": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a2a3e",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "34"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 10,
+          "valueSize": 14
+        },
+        "textMode": "value"
+      },
+      "targets": []
+    },
+    {
+      "id": 1166,
+      "type": "stat",
+      "title": "VLAN",
+      "gridPos": {
+        "x": 22.56,
+        "y": 24,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"34\"}",
+          "legendFormat": "{{config_vlan}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1167,
+      "type": "stat",
+      "title": "Speed",
+      "gridPos": {
+        "x": 22.56,
+        "y": 26,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"34\"}",
+          "legendFormat": "{{port_type_human}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1168,
+      "type": "stat",
+      "title": "FEC",
+      "gridPos": {
+        "x": 22.56,
+        "y": 28,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"34\"}",
+          "legendFormat": "{{fec}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "id": 1169,
+      "type": "stat",
+      "title": "Flow",
+      "gridPos": {
+        "x": 22.56,
+        "y": 30,
+        "w": 1.41,
+        "h": 2
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "N/A"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "text": {
+          "titleSize": 8,
+          "valueSize": 12
+        },
+        "textMode": "name"
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\",number=\"34\"}",
+          "legendFormat": "{{flow_control}}",
+          "refId": "A",
+          "instant": true
+        }
+      ]
     }
   ],
   "refresh": "5m",
