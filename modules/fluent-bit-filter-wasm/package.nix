@@ -22,13 +22,11 @@ wasiPkgs.rustPlatform.buildRustPackage {
 
   nativeBuildInputs = [ buildPackages.lld ];
 
-  postPatch = ''
-    mkdir -p .cargo
-    cat > .cargo/config.toml <<EOF
-    [target.wasm32-wasip1]
-    linker = "wasm-ld"
-    EOF
-  '';
+  # nix cargo hooks set CARGO_TARGET_WASM32_WASIP1_LINKER to clang wrapper,
+  # but rustc passes wasm-ld flags (-flavor wasm, --export, etc.) directly
+  # to the linker, which clang doesn't understand. RUSTFLAGS -Clinker
+  # takes precedence over the env var.
+  RUSTFLAGS = "-Clinker=${buildPackages.lld}/bin/wasm-ld";
 
   # cdylib for wasm32-wasi produces a .wasm file.
   postInstall = ''
