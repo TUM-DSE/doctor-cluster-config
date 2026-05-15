@@ -53,6 +53,10 @@
     retiolum.url = "github:Mic92/retiolum";
     retiolum.inputs.nixpkgs.follows = "nixpkgs";
 
+    tincr.url = "github:Mic92/tincr";
+    tincr.inputs.nixpkgs.follows = "nixpkgs";
+    tincr.inputs.treefmt-nix.follows = "treefmt-nix";
+
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
     srvos.inputs.nixpkgs.follows = "nixpkgs";
