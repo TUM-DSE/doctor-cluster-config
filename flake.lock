@@ -69,6 +69,29 @@
         "type": "github"
       }
     },
+    "fast-nix-gc": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778829034,
+        "narHash": "sha256-rezIgc+Dye1hBFBOW+yGXhNhoj/FpQQO+guZu904TVg=",
+        "owner": "Mic92",
+        "repo": "fast-nix-gc",
+        "rev": "6c6c4e7edaf7e58c4d549d3cda3b74ebddb240b1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "fast-nix-gc",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -422,6 +445,7 @@
       "inputs": {
         "buildbot-nix": "buildbot-nix",
         "disko": "disko",
+        "fast-nix-gc": "fast-nix-gc",
         "flake-parts": "flake-parts_2",
         "flake-registry": "flake-registry",
         "home-manager": "home-manager",
