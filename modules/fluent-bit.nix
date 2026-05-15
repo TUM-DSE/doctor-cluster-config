@@ -7,7 +7,7 @@
 let
   passwordFile = config.sops.secrets.promtail-password.path;
 
-  wasmFilter = pkgs.callPackage ./fluent-bit-filter-wasm/package.nix {};
+  wasmFilter = pkgs.callPackage ./fluent-bit-filter-go/package.nix {};
 
   labelKeys = [
     "host"
@@ -66,7 +66,7 @@ in
             name = "wasm";
             match = "journal";
             wasm_path = "${wasmFilter}/lib/fluent_bit_journal_filter.wasm";
-            function_name = "filter_journal";
+            function_name = "go_filter";
             accessible_paths = ".";
           }
           {
