@@ -39,6 +39,8 @@ let
     srvos.nixosModules.mixins-terminfo
     srvos.nixosModules.mixins-nix-experimental
 
+    inputs.fast-nix-gc.nixosModules.default
+
     sops-nix.nixosModules.sops
     ({ pkgs
      , config

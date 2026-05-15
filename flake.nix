@@ -64,6 +64,10 @@
     hosthog.inputs.nixpkgs.follows = "nixpkgs";
     hosthog.inputs.flake-parts.follows = "flake-parts";
 
+    fast-nix-gc.url = "github:Mic92/fast-nix-gc";
+    fast-nix-gc.inputs.nixpkgs.follows = "nixpkgs";
+    fast-nix-gc.inputs.treefmt-nix.follows = "treefmt-nix";
+
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
   };
