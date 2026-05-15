@@ -7,6 +7,8 @@
 let
   passwordFile = config.sops.secrets.promtail-password.path;
 
+  wasmFilter = pkgs.callPackage ./fluent-bit-filter-wasm/package.nix {};
+
   labelKeys = [
     "host"
     "unit"
@@ -20,60 +22,6 @@ let
     "container_name"
   ];
 
-  luaFilter = pkgs.writeText "fluent-bit-journal.lua" ''
-    function process(tag, timestamp, record)
-      local msg = record["MESSAGE"]
-
-      -- noise drops (matching the old promtail config)
-      if msg ~= nil then
-        if string.find(msg, "ignored inotify event for", 1, true)
-          or string.find(msg, "PCC check channel failed for ss", 1, true)
-          or string.find(msg, "hwmon hwmon1: Undervoltage detected!", 1, true)
-          or string.find(msg, "hwmon hwmon1: Voltage normalised", 1, true)
-          or string.find(msg, "refused connection: IN=", 1, true)
-        then
-          return -1, timestamp, record
-        end
-      end
-
-      -- unit label: fall back to transport (audit/kernel) like promtail did
-      local unit = record["_SYSTEMD_UNIT"]
-      if unit == nil or unit == "" then
-        unit = record["_TRANSPORT"]
-      end
-      -- collapse session-1234.scope -> session.scope to keep label cardinality low
-      if unit ~= nil then
-        unit = string.gsub(unit, "^session%-%d+%.scope$", "session.scope")
-      end
-
-      -- coredump enrichment so the loki ruler alert keeps firing
-      local coredump_unit
-      local cgroup = record["COREDUMP_CGROUP"]
-      if cgroup ~= nil then
-        coredump_unit = string.match(cgroup, "([^/]+)$")
-        local exe = record["COREDUMP_EXE"] or "?"
-        local uid = record["COREDUMP_UID"] or "?"
-        local gid = record["COREDUMP_GID"] or "?"
-        local cmd = record["COREDUMP_CMDLINE"] or "?"
-        msg = string.format(
-          "%s core dumped (user: %s/%s, command: %s)",
-          exe, uid, gid, cmd
-        )
-      end
-
-      local out = {
-        MESSAGE = msg,
-        host = record["_HOSTNAME"],
-        unit = unit,
-        coredump_unit = coredump_unit,
-        priority = record["PRIORITY"],
-        syslog_identifier = record["SYSLOG_IDENTIFIER"],
-        pid = record["_PID"],
-        container_name = record["CONTAINER_NAME"],
-      }
-      return 2, timestamp, out
-    end
-  '';
 in
 {
   sops.secrets = lib.mkIf (config.users.withSops) {
@@ -115,10 +63,11 @@ in
             "multiline.parser" = "go,python,java";
           }
           {
-            name = "lua";
+            name = "wasm";
             match = "journal";
-            script = "${luaFilter}";
-            call = "process";
+            wasm_path = "${wasmFilter}/lib/fluent_bit_journal_filter.wasm";
+            function_name = "filter_journal";
+            accessible_paths = ".";
           }
           {
             name = "throttle";
