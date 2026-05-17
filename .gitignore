@@ -6,3 +6,4 @@ terraform/github-permissions/.terraform/
 terraform.tfstate.backup
 .terraform.lock.hcl
 __pycache__
+/modules/fluent-bit-filter-wasm/target
