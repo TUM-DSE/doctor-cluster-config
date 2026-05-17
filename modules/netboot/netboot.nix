@@ -5,7 +5,7 @@
 }:
 let
   bootSystem = nixosSystem {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     modules = [
       ./base-config.nix
       ./zfs.nix

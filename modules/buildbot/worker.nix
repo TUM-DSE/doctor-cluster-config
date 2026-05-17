@@ -35,6 +35,6 @@
 
   # niks3 for uploading build results to cache
   systemd.services.buildbot-worker.path = [
-    inputs.niks3.packages.${pkgs.system}.default
+    inputs.niks3.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
