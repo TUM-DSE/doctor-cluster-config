@@ -23,7 +23,7 @@ let
     ./modules/auto-upgrade.nix
     ./modules/hosts.nix
     ./modules/network.nix
-    ./modules/promtail.nix
+    ./modules/fluent-bit.nix
     ./modules/zsh.nix
     ./modules/systemd.nix
     ./modules/cleanup.nix
