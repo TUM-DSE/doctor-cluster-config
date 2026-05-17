@@ -7,7 +7,9 @@
 
   services.tinc.networks.retiolum = {
     # Rust rewrite, drop-in for tinc_pre on the NixOS module's argv.
-    package = inputs.tincr.packages.${pkgs.stdenv.hostPlatform.system}.tincd;
+    package = pkgs.callPackage "${inputs.tincr}/nix/tincd.nix" {
+      craneLib = inputs.tincr.inputs.crane.mkLib pkgs;
+    };
     extraConfig = "StrictSubnets yes";
     ed25519PrivateKeyFile = lib.mkIf (
       config.sops.secrets ? "tinc-key"
