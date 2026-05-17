@@ -278,23 +278,19 @@
     },
     "niks3": {
       "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
         "nixpkgs": [
           "nixpkgs"
         ],
-        "process-compose": "process-compose",
         "treefmt-nix": [
           "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1778422863,
-        "narHash": "sha256-REDH5/tk0lbufKsFeT2oR3Mc2tGmNH7VZkE2Qnmj2oM=",
+        "lastModified": 1778839878,
+        "narHash": "sha256-S2nSP6YWUz8I2uRZuAY93FoAAUa9TiZetLzjBv1n5vk=",
         "owner": "Mic92",
         "repo": "niks3",
-        "rev": "be78b25ef529d58b7bf44152c4d5da17aab4a9b7",
+        "rev": "c29f3641de064545d75f00318cd45bea2b4ea1d0",
         "type": "github"
       },
       "original": {
@@ -418,21 +414,6 @@
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
-      }
-    },
-    "process-compose": {
-      "locked": {
-        "lastModified": 1767863885,
-        "narHash": "sha256-XXekPAxzbv1DmHFo3Elmj/vDnvWc1V0jdDUvM0/Wf7k=",
-        "owner": "Platonic-Systems",
-        "repo": "process-compose-flake",
-        "rev": "99bea96cf269cfd235833ebdf645b567069fd398",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Platonic-Systems",
-        "repo": "process-compose-flake",
-        "type": "github"
       }
     },
     "retiolum": {
