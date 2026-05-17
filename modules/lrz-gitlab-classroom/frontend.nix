@@ -1,6 +1,6 @@
 { pkgs, config, ... }: let
   lrz-gitlab-classroom = builtins.getFlake "github:pogobanane/lrz-gitlab-classroom/e8b5806b3784da7cb249539871a8f7d9be6d3a1a";
-  frontend = lrz-gitlab-classroom.packages.${pkgs.system}.frontend;
+  frontend = lrz-gitlab-classroom.packages.${pkgs.stdenv.hostPlatform.system}.frontend;
   user = "lrz-gitlab-teacher";
 in {
   services.nginx.virtualHosts."assignments.dos.cit.tum.de" = {

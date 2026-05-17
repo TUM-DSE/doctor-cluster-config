@@ -40,7 +40,7 @@
       enable = true;
       serverUrl = "https://niks3.dos.cit.tum.de";
       authTokenFile = config.sops.secrets.niks3-api-token.path;
-      package = inputs.niks3.packages.${pkgs.system}.default;
+      package = inputs.niks3.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
   };
 
