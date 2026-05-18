@@ -1845,7 +1845,7 @@
       "gridPos": {
         "x": 0.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -1887,7 +1887,7 @@
       "gridPos": {
         "x": 0.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -1936,7 +1936,7 @@
       "gridPos": {
         "x": 0.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -1985,7 +1985,7 @@
       "gridPos": {
         "x": 0.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2034,7 +2034,7 @@
       "gridPos": {
         "x": 0.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2081,9 +2081,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 1.41,
+        "x": 1.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -2123,9 +2123,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 1.41,
+        "x": 1.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2172,9 +2172,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 1.41,
+        "x": 1.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2221,9 +2221,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 1.41,
+        "x": 1.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2270,9 +2270,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 1.41,
+        "x": 1.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2319,9 +2319,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 2.82,
+        "x": 3.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -2361,9 +2361,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 2.82,
+        "x": 3.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2410,9 +2410,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 2.82,
+        "x": 3.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2459,9 +2459,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 2.82,
+        "x": 3.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2508,9 +2508,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 2.82,
+        "x": 3.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2557,9 +2557,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 4.23,
+        "x": 4.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -2599,9 +2599,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 4.23,
+        "x": 4.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2648,9 +2648,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 4.23,
+        "x": 4.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2697,9 +2697,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 4.23,
+        "x": 4.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2746,9 +2746,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 4.23,
+        "x": 4.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2795,9 +2795,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 5.64,
+        "x": 6.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -2837,9 +2837,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 5.64,
+        "x": 6.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2886,9 +2886,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 5.64,
+        "x": 6.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2935,9 +2935,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 5.64,
+        "x": 6.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -2984,9 +2984,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 5.64,
+        "x": 6.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3033,9 +3033,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 7.05,
+        "x": 7.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -3075,9 +3075,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 7.05,
+        "x": 7.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3124,9 +3124,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 7.05,
+        "x": 7.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3173,9 +3173,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 7.05,
+        "x": 7.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3222,9 +3222,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 7.05,
+        "x": 7.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3271,9 +3271,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 8.46,
+        "x": 9.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -3313,9 +3313,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 8.46,
+        "x": 9.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3362,9 +3362,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 8.46,
+        "x": 9.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3411,9 +3411,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 8.46,
+        "x": 9.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3460,9 +3460,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 8.46,
+        "x": 9.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3509,9 +3509,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 9.87,
+        "x": 10.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -3551,9 +3551,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 9.87,
+        "x": 10.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3600,9 +3600,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 9.87,
+        "x": 10.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3649,9 +3649,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 9.87,
+        "x": 10.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3698,9 +3698,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 9.87,
+        "x": 10.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3747,9 +3747,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 11.28,
+        "x": 12.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -3789,9 +3789,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 11.28,
+        "x": 12.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3838,9 +3838,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 11.28,
+        "x": 12.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3887,9 +3887,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 11.28,
+        "x": 12.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3936,9 +3936,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 11.28,
+        "x": 12.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -3985,9 +3985,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 12.69,
+        "x": 13.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -4027,9 +4027,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 12.69,
+        "x": 13.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4076,9 +4076,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 12.69,
+        "x": 13.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4125,9 +4125,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 12.69,
+        "x": 13.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4174,9 +4174,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 12.69,
+        "x": 13.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4223,9 +4223,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 14.1,
+        "x": 15.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -4265,9 +4265,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 14.1,
+        "x": 15.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4314,9 +4314,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 14.1,
+        "x": 15.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4363,9 +4363,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 14.1,
+        "x": 15.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4412,9 +4412,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 14.1,
+        "x": 15.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4461,9 +4461,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 15.51,
+        "x": 16.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -4503,9 +4503,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 15.51,
+        "x": 16.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4552,9 +4552,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 15.51,
+        "x": 16.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4601,9 +4601,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 15.51,
+        "x": 16.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4650,9 +4650,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 15.51,
+        "x": 16.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4699,9 +4699,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 16.92,
+        "x": 18.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -4741,9 +4741,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 16.92,
+        "x": 18.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4790,9 +4790,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 16.92,
+        "x": 18.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4839,9 +4839,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 16.92,
+        "x": 18.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4888,9 +4888,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 16.92,
+        "x": 18.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -4937,9 +4937,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 18.33,
+        "x": 19.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -4979,9 +4979,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 18.33,
+        "x": 19.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5028,9 +5028,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 18.33,
+        "x": 19.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5077,9 +5077,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 18.33,
+        "x": 19.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5126,9 +5126,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 18.33,
+        "x": 19.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5175,9 +5175,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 19.74,
+        "x": 21.0,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -5217,9 +5217,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 19.74,
+        "x": 21.0,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5266,9 +5266,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 19.74,
+        "x": 21.0,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5315,9 +5315,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 19.74,
+        "x": 21.0,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5364,9 +5364,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 19.74,
+        "x": 21.0,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5413,9 +5413,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 21.15,
+        "x": 22.5,
         "y": 12,
-        "w": 1.41,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -5455,9 +5455,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 21.15,
+        "x": 22.5,
         "y": 13,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5504,9 +5504,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 21.15,
+        "x": 22.5,
         "y": 15,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5553,9 +5553,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 21.15,
+        "x": 22.5,
         "y": 17,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5602,9 +5602,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 21.15,
+        "x": 22.5,
         "y": 19,
-        "w": 1.41,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5651,9 +5651,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 22.56,
-        "y": 12,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -5693,9 +5693,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 22.56,
-        "y": 13,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5742,9 +5742,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 22.56,
-        "y": 15,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5791,9 +5791,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 22.56,
-        "y": 17,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5840,9 +5840,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 22.56,
-        "y": 19,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5889,9 +5889,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 23,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -5931,9 +5931,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 0.0,
-        "y": 24,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -5980,9 +5980,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 0.0,
-        "y": 26,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6029,9 +6029,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 0.0,
-        "y": 28,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6078,9 +6078,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 0.0,
-        "y": 30,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6127,9 +6127,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 1.41,
-        "y": 23,
-        "w": 1.41,
+        "x": 3.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -6169,9 +6169,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 1.41,
-        "y": 24,
-        "w": 1.41,
+        "x": 3.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6218,9 +6218,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 1.41,
-        "y": 26,
-        "w": 1.41,
+        "x": 3.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6267,9 +6267,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 1.41,
-        "y": 28,
-        "w": 1.41,
+        "x": 3.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6316,9 +6316,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 1.41,
-        "y": 30,
-        "w": 1.41,
+        "x": 3.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6365,9 +6365,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 2.82,
-        "y": 23,
-        "w": 1.41,
+        "x": 4.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -6407,9 +6407,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 2.82,
-        "y": 24,
-        "w": 1.41,
+        "x": 4.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6456,9 +6456,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 2.82,
-        "y": 26,
-        "w": 1.41,
+        "x": 4.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6505,9 +6505,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 2.82,
-        "y": 28,
-        "w": 1.41,
+        "x": 4.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6554,9 +6554,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 2.82,
-        "y": 30,
-        "w": 1.41,
+        "x": 4.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6603,9 +6603,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 4.23,
-        "y": 23,
-        "w": 1.41,
+        "x": 6.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -6645,9 +6645,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 4.23,
-        "y": 24,
-        "w": 1.41,
+        "x": 6.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6694,9 +6694,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 4.23,
-        "y": 26,
-        "w": 1.41,
+        "x": 6.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6743,9 +6743,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 4.23,
-        "y": 28,
-        "w": 1.41,
+        "x": 6.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6792,9 +6792,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 4.23,
-        "y": 30,
-        "w": 1.41,
+        "x": 6.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6841,9 +6841,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 5.64,
-        "y": 23,
-        "w": 1.41,
+        "x": 7.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -6883,9 +6883,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 5.64,
-        "y": 24,
-        "w": 1.41,
+        "x": 7.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6932,9 +6932,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 5.64,
-        "y": 26,
-        "w": 1.41,
+        "x": 7.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -6981,9 +6981,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 5.64,
-        "y": 28,
-        "w": 1.41,
+        "x": 7.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7030,9 +7030,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 5.64,
-        "y": 30,
-        "w": 1.41,
+        "x": 7.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7079,9 +7079,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 7.05,
-        "y": 23,
-        "w": 1.41,
+        "x": 9.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -7121,9 +7121,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 7.05,
-        "y": 24,
-        "w": 1.41,
+        "x": 9.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7170,9 +7170,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 7.05,
-        "y": 26,
-        "w": 1.41,
+        "x": 9.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7219,9 +7219,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 7.05,
-        "y": 28,
-        "w": 1.41,
+        "x": 9.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7268,9 +7268,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 7.05,
-        "y": 30,
-        "w": 1.41,
+        "x": 9.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7317,9 +7317,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 8.46,
-        "y": 23,
-        "w": 1.41,
+        "x": 10.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -7359,9 +7359,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 8.46,
-        "y": 24,
-        "w": 1.41,
+        "x": 10.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7408,9 +7408,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 8.46,
-        "y": 26,
-        "w": 1.41,
+        "x": 10.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7457,9 +7457,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 8.46,
-        "y": 28,
-        "w": 1.41,
+        "x": 10.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7506,9 +7506,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 8.46,
-        "y": 30,
-        "w": 1.41,
+        "x": 10.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7555,9 +7555,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 9.87,
-        "y": 23,
-        "w": 1.41,
+        "x": 12.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -7597,9 +7597,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 9.87,
-        "y": 24,
-        "w": 1.41,
+        "x": 12.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7646,9 +7646,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 9.87,
-        "y": 26,
-        "w": 1.41,
+        "x": 12.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7695,9 +7695,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 9.87,
-        "y": 28,
-        "w": 1.41,
+        "x": 12.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7744,9 +7744,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 9.87,
-        "y": 30,
-        "w": 1.41,
+        "x": 12.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7793,9 +7793,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 11.28,
-        "y": 23,
-        "w": 1.41,
+        "x": 13.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -7835,9 +7835,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 11.28,
-        "y": 24,
-        "w": 1.41,
+        "x": 13.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7884,9 +7884,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 11.28,
-        "y": 26,
-        "w": 1.41,
+        "x": 13.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7933,9 +7933,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 11.28,
-        "y": 28,
-        "w": 1.41,
+        "x": 13.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -7982,9 +7982,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 11.28,
-        "y": 30,
-        "w": 1.41,
+        "x": 13.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8031,9 +8031,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 12.69,
-        "y": 23,
-        "w": 1.41,
+        "x": 15.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -8073,9 +8073,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 12.69,
-        "y": 24,
-        "w": 1.41,
+        "x": 15.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8122,9 +8122,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 12.69,
-        "y": 26,
-        "w": 1.41,
+        "x": 15.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8171,9 +8171,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 12.69,
-        "y": 28,
-        "w": 1.41,
+        "x": 15.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8220,9 +8220,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 12.69,
-        "y": 30,
-        "w": 1.41,
+        "x": 15.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8269,9 +8269,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 14.1,
-        "y": 23,
-        "w": 1.41,
+        "x": 16.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -8311,9 +8311,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 14.1,
-        "y": 24,
-        "w": 1.41,
+        "x": 16.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8360,9 +8360,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 14.1,
-        "y": 26,
-        "w": 1.41,
+        "x": 16.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8409,9 +8409,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 14.1,
-        "y": 28,
-        "w": 1.41,
+        "x": 16.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8458,9 +8458,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 14.1,
-        "y": 30,
-        "w": 1.41,
+        "x": 16.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8507,9 +8507,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 15.51,
-        "y": 23,
-        "w": 1.41,
+        "x": 18.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -8549,9 +8549,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 15.51,
-        "y": 24,
-        "w": 1.41,
+        "x": 18.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8598,9 +8598,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 15.51,
-        "y": 26,
-        "w": 1.41,
+        "x": 18.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8647,9 +8647,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 15.51,
-        "y": 28,
-        "w": 1.41,
+        "x": 18.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8696,9 +8696,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 15.51,
-        "y": 30,
-        "w": 1.41,
+        "x": 18.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8745,9 +8745,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 16.92,
-        "y": 23,
-        "w": 1.41,
+        "x": 19.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -8787,9 +8787,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 16.92,
-        "y": 24,
-        "w": 1.41,
+        "x": 19.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8836,9 +8836,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 16.92,
-        "y": 26,
-        "w": 1.41,
+        "x": 19.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8885,9 +8885,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 16.92,
-        "y": 28,
-        "w": 1.41,
+        "x": 19.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8934,9 +8934,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 16.92,
-        "y": 30,
-        "w": 1.41,
+        "x": 19.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -8983,9 +8983,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 18.33,
-        "y": 23,
-        "w": 1.41,
+        "x": 21.0,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -9025,9 +9025,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 18.33,
-        "y": 24,
-        "w": 1.41,
+        "x": 21.0,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9074,9 +9074,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 18.33,
-        "y": 26,
-        "w": 1.41,
+        "x": 21.0,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9123,9 +9123,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 18.33,
-        "y": 28,
-        "w": 1.41,
+        "x": 21.0,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9172,9 +9172,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 18.33,
-        "y": 30,
-        "w": 1.41,
+        "x": 21.0,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9221,9 +9221,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 19.74,
-        "y": 23,
-        "w": 1.41,
+        "x": 22.5,
+        "y": 21,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -9263,9 +9263,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 19.74,
-        "y": 24,
-        "w": 1.41,
+        "x": 22.5,
+        "y": 22,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9312,9 +9312,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 19.74,
-        "y": 26,
-        "w": 1.41,
+        "x": 22.5,
+        "y": 24,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9361,9 +9361,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 19.74,
-        "y": 28,
-        "w": 1.41,
+        "x": 22.5,
+        "y": 26,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9410,9 +9410,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 19.74,
-        "y": 30,
-        "w": 1.41,
+        "x": 22.5,
+        "y": 28,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9459,9 +9459,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 21.15,
-        "y": 23,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 30,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -9501,9 +9501,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 21.15,
-        "y": 24,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 31,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9550,9 +9550,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 21.15,
-        "y": 26,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 33,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9599,9 +9599,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 21.15,
-        "y": 28,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 35,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9648,9 +9648,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 21.15,
-        "y": 30,
-        "w": 1.41,
+        "x": 0.0,
+        "y": 37,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9697,9 +9697,9 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 22.56,
-        "y": 23,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 30,
+        "w": 1.5,
         "h": 1
       },
       "fieldConfig": {
@@ -9739,9 +9739,9 @@
       "type": "stat",
       "title": "VLAN",
       "gridPos": {
-        "x": 22.56,
-        "y": 24,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 31,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9788,9 +9788,9 @@
       "type": "stat",
       "title": "Speed",
       "gridPos": {
-        "x": 22.56,
-        "y": 26,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 33,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9837,9 +9837,9 @@
       "type": "stat",
       "title": "FEC",
       "gridPos": {
-        "x": 22.56,
-        "y": 28,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 35,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
@@ -9886,9 +9886,9 @@
       "type": "stat",
       "title": "Flow",
       "gridPos": {
-        "x": 22.56,
-        "y": 30,
-        "w": 1.41,
+        "x": 1.5,
+        "y": 37,
+        "w": 1.5,
         "h": 2
       },
       "fieldConfig": {
