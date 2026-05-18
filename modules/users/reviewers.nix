@@ -14,7 +14,7 @@ in {
       allowedHosts = [
         "clara"
       ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIElj3HHoA8A1VoEfsoZ+PCzS02UMYk3ZECP9ABhauD5q"];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG56Z/2dBbSrYhh2hGyZbH+z18+MSbFoqSkMK1tUr3NV osdi26ae"];
       xrdpAccess = false;
       expires = "2026-07-01";
     };
@@ -27,36 +27,23 @@ in {
       allowedHosts = [
         "clara"
       ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIElj3HHoA8A1VoEfsoZ+PCzS02UMYk3ZECP9ABhauD5q"];
-      xrdpAccess = false;
-      expires = "2026-07-01";
-    };
-
-    ushellRev3 = {
-      isNormalUser = true;
-      home = "/home/ushellRev3";
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4012;
-      allowedHosts = [
-        "clara"
-      ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG56Z/2dBbSrYhh2hGyZbH+z18+MSbFoqSkMK1tUr3NV osdi26ae"];
-      xrdpAccess = false;
-      expires = "2026-07-01";
-    };
-
-    ushellRev4 = {
-      isNormalUser = true;
-      home = "/home/ushellRev4";
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4013;
-      allowedHosts = [
-        "clara"
-      ];
       openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDF9C0ykOLWR21I54RxD/JV/Jo5Gs7m/xFNIHExQmrvcbYjaPOAH+wmBU48LwtHRdBRBXq/zgafJmz0GZIolBsjO0zITQ9EcleEuXHhLHlklnuROzxaOqRUJda9pBAgaQzpdXaSuCZy2gc+LkoJ2egzYLJjKkizIE6nZOBcjjB3cZhRaUe3rnQO4km9I++ovAMnNElwHaz4YypJ8LtxDhOm+ylpu2lfKWqZ5FeL7+8s1iT/a/V7kZ5MkfJvxuOqHuoKd+u5F6MjHC/SQXHS4bveJiBAqBnjZEIdum/cKz1Ba29hXAdSK4OmE7/jhiv8+p7yFfWos8XWI3dMIsbW7OlDQLjQxU5Rjf4Q9Uho8Tl/tW8puwlWTxqSQDlkG9rEeMw1ufmjO2CQUxYh4iscmncgPCScdJWhrsGSUmsciB5bfQRb0vOQ9BRBzMIc1VGF75A/nVFPBotseL0yu2/4/IeJ2V+ISl3WouDAvbFmhJTP4S8lLkZzOvJG1blEPSF4WxE= osdi26@Ubuntu22
 "];
       xrdpAccess = false;
       expires = "2026-07-01";
+    };
+
+    ushell_test = {
+      isNormalUser = true;
+      home = "/home/ushell_test";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4015;
+      allowedHosts = [
+        "clara"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJVzqi89INx1APSfhVdJj8HbDew4LZJzqDo931VdPAH3 nix-os-thinkpad"];
+      xrdpAccess = false;
+      expires = "2026-04-01";
     };
 
     # Reviewers for Proteus artifact evaluation
