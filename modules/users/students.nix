@@ -362,23 +362,6 @@ in
       expires = "2026-10-30";
     };
 
-    # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
-    # Second account to get rid of annoying permission issues
-    mrtn = {
-      isNormalUser = true;
-      home = "/home/mrtn";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2104;
-      allowedHosts = [
-        "irene"
-        "polly"
-        "xavier"
-      ];
-      openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2026-10-30";
-    };
-
     # Samuel Khuon, BSc student working w/ Ilya (can be removed after October 2026)
     samuel = {
       isNormalUser = true;
@@ -457,6 +440,23 @@ in
         "steve"
       ];
       openssh.authorizedKeys.keys = tuncKeys;
+      expires = "2026-10-30";
+    };
+
+    # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
+    # Second account to get rid of annoying permission issues
+    mrtn = {
+      isNormalUser = true;
+      home = "/home/mrtn";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2104;
+      allowedHosts = [
+        "irene"
+        "polly"
+        "xavier"
+      ];
+      openssh.authorizedKeys.keys = martinLiKeys;
       expires = "2026-10-30";
     };
 
