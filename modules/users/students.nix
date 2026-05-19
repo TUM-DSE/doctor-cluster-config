@@ -88,6 +88,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+deOcBdufU6Ug+T9DflHrBeQ9cBo6Yl/YjQ+22CaLsd8ZF60nAUQddwu5VXGs5gcK2IUtL9UUpuWgMhSrQHJ5K5Bh1fYQsLFmiH5TFfQAQhO9UIwlJTy8+H89R07Lbro0wWe3/eVf0sAqtlkmcnjZuGg43eJ3sMFtjcwU9w+KZs1lQhC4v/D0W264ZOs+I8FhWCWab7aZMWm7UTxJmc6aq4mcOzqNnMBQarQmjIvVIO3kfsUtyj9ZmfW5hLsF0miB1Gol+W6ZpoK44UorMJN5tUNdoT8jz4Cze4Ohe+rXDgoygvIX7uw6R9eJ4mi9zrl0itEnLHhdPs4CnltrIyAMFauotbp8S1PhUnLTGot2kjJ/0QmG+KkSDKHa8UuMqE76kpxhZ+EbqI03dpFCyl2/7VKiybNwfPyRX7P0ZwFEpoCJt5ckYPnLViNka9HvTg9rk22ofVXshNcX76BpVankSdm18rNzXj3B8Ggd3ue3+lnVzsB9Zz0hKc3njq5j1hU= batu6@Batu"
   ];
 
+  jakubKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuhXm9XnaDqxxYyGNEKBgwF5cgw+9NzMe0RjnOWWWVY399LmQr+MM4KRLs6KhRlXrG3nJ/ymc8ecY7wm79HECRmbg7HwfsJSE0cZSu+JR6HVOmwLJXYfPDL65TOf1HeSVGBrCmsnnbHBknodxsrcagLtM9yAVzClRLTylnmAzRBtHCVVqpyWlrkdLvfFDp+ddSMssjA06zrXOaasJl6BdGFnMnoa02sVh2/Fr2nsxOm/5WVnnrVEzIRw//a1Mzf/CL8YPAdtcoWNrms9lyc/i32X1Lxof8BreBLt6OskcAzSpYf5cHq1fBfSEig3yndWia1YPC0UKvSis7kABw9LyuyrbdD+VofSPsEJdqnDBMLUuH3Qw3m/KyzGBG+AfjBgj+LsjgS6ZV/dZ5Liyse0PGhpF1UmUvhS/5IEN1aETlikWU2Sq7sBDPWVWOrLLY6WRtpOFLeCqP527oY3OJPVI4B3vAOlKnzsMdJmL262f9hQJwRq6YLNhDh4Tp3mXR0Ms= jakubantoni1@gmail.com"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -454,6 +458,21 @@ in
       ];
       openssh.authorizedKeys.keys = tuncKeys;
       expires = "2026-10-30";
+    };
+
+    # Jakub Gonera (GR w/ Martin)
+    jakub = {
+      isNormalUser = true;
+      home = "/home/jakub";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2104;
+      allowedHosts = [
+        "graham"
+        "eliza"
+      ];
+      openssh.authorizedKeys.keys = jakubKeys;
+      expires = "2026-09-30";
     };
   };
 
