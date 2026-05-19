@@ -466,7 +466,7 @@ in
       home = "/home/jakub";
       inherit extraGroups;
       shell = "/run/current-system/sw/bin/zsh";
-      uid = 2104;
+      uid = 2105;
       allowedHosts = [
         "graham"
         "eliza"
