@@ -1843,10 +1843,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 0.0,
+        "x": 0,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -1874,7 +1874,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -1883,11 +1883,11 @@
     {
       "id": 1001,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 0,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -1916,9 +1916,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -1932,11 +1932,11 @@
     {
       "id": 1002,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 0,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -1965,9 +1965,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -1981,11 +1981,11 @@
     {
       "id": 1003,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 0,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2014,9 +2014,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2030,11 +2030,11 @@
     {
       "id": 1004,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 0,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2063,9 +2063,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2081,10 +2081,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 1.5,
+        "x": 2,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -2112,7 +2112,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -2121,11 +2121,11 @@
     {
       "id": 1006,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 2,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2154,9 +2154,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2170,11 +2170,11 @@
     {
       "id": 1007,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 2,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2203,9 +2203,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2219,11 +2219,11 @@
     {
       "id": 1008,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 2,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2252,9 +2252,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2268,11 +2268,11 @@
     {
       "id": 1009,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 2,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2301,9 +2301,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2319,10 +2319,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 3.0,
+        "x": 4,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -2350,7 +2350,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -2359,11 +2359,11 @@
     {
       "id": 1011,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 4,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2392,9 +2392,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2408,11 +2408,11 @@
     {
       "id": 1012,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 4,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2441,9 +2441,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2457,11 +2457,11 @@
     {
       "id": 1013,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 4,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2490,9 +2490,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2506,11 +2506,11 @@
     {
       "id": 1014,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 4,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2539,9 +2539,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2557,10 +2557,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 4.5,
+        "x": 6,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -2588,7 +2588,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -2597,11 +2597,11 @@
     {
       "id": 1016,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 6,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2630,9 +2630,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2646,11 +2646,11 @@
     {
       "id": 1017,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 6,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2679,9 +2679,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2695,11 +2695,11 @@
     {
       "id": 1018,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 6,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2728,9 +2728,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2744,11 +2744,11 @@
     {
       "id": 1019,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 6,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2777,9 +2777,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2795,10 +2795,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 6.0,
+        "x": 8,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -2826,7 +2826,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -2835,11 +2835,11 @@
     {
       "id": 1021,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 8,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2868,9 +2868,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2884,11 +2884,11 @@
     {
       "id": 1022,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 8,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2917,9 +2917,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2933,11 +2933,11 @@
     {
       "id": 1023,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 8,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -2966,9 +2966,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -2982,11 +2982,11 @@
     {
       "id": 1024,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 8,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3015,9 +3015,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3033,10 +3033,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 7.5,
+        "x": 10,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -3064,7 +3064,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -3073,11 +3073,11 @@
     {
       "id": 1026,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 10,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3106,9 +3106,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3122,11 +3122,11 @@
     {
       "id": 1027,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 10,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3155,9 +3155,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3171,11 +3171,11 @@
     {
       "id": 1028,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 10,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3204,9 +3204,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3220,11 +3220,11 @@
     {
       "id": 1029,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 10,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3253,9 +3253,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3271,10 +3271,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 9.0,
+        "x": 12,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -3302,7 +3302,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -3311,11 +3311,11 @@
     {
       "id": 1031,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 12,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3344,9 +3344,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3360,11 +3360,11 @@
     {
       "id": 1032,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 12,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3393,9 +3393,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3409,11 +3409,11 @@
     {
       "id": 1033,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 12,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3442,9 +3442,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3458,11 +3458,11 @@
     {
       "id": 1034,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 12,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3491,9 +3491,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3509,10 +3509,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 10.5,
+        "x": 14,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -3540,7 +3540,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -3549,11 +3549,11 @@
     {
       "id": 1036,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 14,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3582,9 +3582,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3598,11 +3598,11 @@
     {
       "id": 1037,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 14,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3631,9 +3631,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3647,11 +3647,11 @@
     {
       "id": 1038,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 14,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3680,9 +3680,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3696,11 +3696,11 @@
     {
       "id": 1039,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 14,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3729,9 +3729,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3747,10 +3747,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 12.0,
+        "x": 16,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -3778,7 +3778,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -3787,11 +3787,11 @@
     {
       "id": 1041,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 16,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3820,9 +3820,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3836,11 +3836,11 @@
     {
       "id": 1042,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 16,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3869,9 +3869,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3885,11 +3885,11 @@
     {
       "id": 1043,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 16,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3918,9 +3918,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3934,11 +3934,11 @@
     {
       "id": 1044,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 16,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -3967,9 +3967,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -3985,10 +3985,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 13.5,
+        "x": 18,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -4016,7 +4016,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -4025,11 +4025,11 @@
     {
       "id": 1046,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 18,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4058,9 +4058,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4074,11 +4074,11 @@
     {
       "id": 1047,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 18,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4107,9 +4107,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4123,11 +4123,11 @@
     {
       "id": 1048,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 18,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4156,9 +4156,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4172,11 +4172,11 @@
     {
       "id": 1049,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 18,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4205,9 +4205,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4223,10 +4223,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 15.0,
+        "x": 20,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -4254,7 +4254,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -4263,11 +4263,11 @@
     {
       "id": 1051,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 20,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4296,9 +4296,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4312,11 +4312,11 @@
     {
       "id": 1052,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 20,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4345,9 +4345,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4361,11 +4361,11 @@
     {
       "id": 1053,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 20,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4394,9 +4394,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4410,11 +4410,11 @@
     {
       "id": 1054,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 20,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4443,9 +4443,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4461,10 +4461,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 16.5,
+        "x": 22,
         "y": 12,
-        "w": 1.5,
-        "h": 1
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -4492,7 +4492,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -4501,11 +4501,11 @@
     {
       "id": 1056,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 22,
+        "y": 14,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4534,9 +4534,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4550,11 +4550,11 @@
     {
       "id": 1057,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 22,
+        "y": 16,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4583,9 +4583,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4599,11 +4599,11 @@
     {
       "id": 1058,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 22,
+        "y": 18,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4632,9 +4632,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4648,11 +4648,11 @@
     {
       "id": 1059,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 22,
+        "y": 20,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4681,9 +4681,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4699,10 +4699,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 12,
-        "w": 1.5,
-        "h": 1
+        "x": 0,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -4730,7 +4730,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -4739,11 +4739,11 @@
     {
       "id": 1061,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 0,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4772,9 +4772,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4788,11 +4788,11 @@
     {
       "id": 1062,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 0,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4821,9 +4821,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4837,11 +4837,11 @@
     {
       "id": 1063,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 0,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4870,9 +4870,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4886,11 +4886,11 @@
     {
       "id": 1064,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 0,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -4919,9 +4919,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -4937,10 +4937,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 12,
-        "w": 1.5,
-        "h": 1
+        "x": 2,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -4968,7 +4968,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -4977,11 +4977,11 @@
     {
       "id": 1066,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 2,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5010,9 +5010,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5026,11 +5026,11 @@
     {
       "id": 1067,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 2,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5059,9 +5059,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5075,11 +5075,11 @@
     {
       "id": 1068,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 2,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5108,9 +5108,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5124,11 +5124,11 @@
     {
       "id": 1069,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 2,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5157,9 +5157,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5175,10 +5175,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 12,
-        "w": 1.5,
-        "h": 1
+        "x": 4,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -5206,7 +5206,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -5215,11 +5215,11 @@
     {
       "id": 1071,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 13,
-        "w": 1.5,
+        "x": 4,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5248,9 +5248,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5264,11 +5264,11 @@
     {
       "id": 1072,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 15,
-        "w": 1.5,
+        "x": 4,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5297,9 +5297,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5313,11 +5313,11 @@
     {
       "id": 1073,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 17,
-        "w": 1.5,
+        "x": 4,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5346,9 +5346,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5362,11 +5362,11 @@
     {
       "id": 1074,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 19,
-        "w": 1.5,
+        "x": 4,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5395,9 +5395,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5413,10 +5413,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 12,
-        "w": 1.5,
-        "h": 1
+        "x": 6,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -5444,7 +5444,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -5453,11 +5453,11 @@
     {
       "id": 1076,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 13,
-        "w": 1.5,
+        "x": 6,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5486,9 +5486,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5502,11 +5502,11 @@
     {
       "id": 1077,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 15,
-        "w": 1.5,
+        "x": 6,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5535,9 +5535,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5551,11 +5551,11 @@
     {
       "id": 1078,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 17,
-        "w": 1.5,
+        "x": 6,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5584,9 +5584,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5600,11 +5600,11 @@
     {
       "id": 1079,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 19,
-        "w": 1.5,
+        "x": 6,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5633,9 +5633,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5651,10 +5651,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 8,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -5682,7 +5682,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -5691,11 +5691,11 @@
     {
       "id": 1081,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 8,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5724,9 +5724,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5740,11 +5740,11 @@
     {
       "id": 1082,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 8,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5773,9 +5773,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5789,11 +5789,11 @@
     {
       "id": 1083,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 8,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5822,9 +5822,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5838,11 +5838,11 @@
     {
       "id": 1084,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 8,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5871,9 +5871,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5889,10 +5889,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 10,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -5920,7 +5920,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -5929,11 +5929,11 @@
     {
       "id": 1086,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 10,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -5962,9 +5962,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -5978,11 +5978,11 @@
     {
       "id": 1087,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 10,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6011,9 +6011,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6027,11 +6027,11 @@
     {
       "id": 1088,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 10,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6060,9 +6060,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6076,11 +6076,11 @@
     {
       "id": 1089,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 10,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6109,9 +6109,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6127,10 +6127,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 12,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -6158,7 +6158,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -6167,11 +6167,11 @@
     {
       "id": 1091,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 12,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6200,9 +6200,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6216,11 +6216,11 @@
     {
       "id": 1092,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 12,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6249,9 +6249,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6265,11 +6265,11 @@
     {
       "id": 1093,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 12,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6298,9 +6298,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6314,11 +6314,11 @@
     {
       "id": 1094,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 3.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 12,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6347,9 +6347,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6365,10 +6365,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 14,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -6396,7 +6396,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -6405,11 +6405,11 @@
     {
       "id": 1096,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 14,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6438,9 +6438,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6454,11 +6454,11 @@
     {
       "id": 1097,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 14,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6487,9 +6487,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6503,11 +6503,11 @@
     {
       "id": 1098,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 14,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6536,9 +6536,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6552,11 +6552,11 @@
     {
       "id": 1099,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 4.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 14,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6585,9 +6585,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6603,10 +6603,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 16,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -6634,7 +6634,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -6643,11 +6643,11 @@
     {
       "id": 1101,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 16,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6676,9 +6676,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6692,11 +6692,11 @@
     {
       "id": 1102,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 16,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6725,9 +6725,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6741,11 +6741,11 @@
     {
       "id": 1103,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 16,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6774,9 +6774,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6790,11 +6790,11 @@
     {
       "id": 1104,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 6.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 16,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6823,9 +6823,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6841,10 +6841,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 18,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -6872,7 +6872,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -6881,11 +6881,11 @@
     {
       "id": 1106,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 18,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6914,9 +6914,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6930,11 +6930,11 @@
     {
       "id": 1107,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 18,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -6963,9 +6963,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -6979,11 +6979,11 @@
     {
       "id": 1108,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 18,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7012,9 +7012,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7028,11 +7028,11 @@
     {
       "id": 1109,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 7.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 18,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7061,9 +7061,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7079,10 +7079,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 20,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -7110,7 +7110,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -7119,11 +7119,11 @@
     {
       "id": 1111,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 20,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7152,9 +7152,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7168,11 +7168,11 @@
     {
       "id": 1112,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 20,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7201,9 +7201,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7217,11 +7217,11 @@
     {
       "id": 1113,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 20,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7250,9 +7250,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7266,11 +7266,11 @@
     {
       "id": 1114,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 9.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 20,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7299,9 +7299,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7317,10 +7317,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 22,
+        "y": 23,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -7348,7 +7348,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -7357,11 +7357,11 @@
     {
       "id": 1116,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 22,
+        "y": 25,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7390,9 +7390,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7406,11 +7406,11 @@
     {
       "id": 1117,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 22,
+        "y": 27,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7439,9 +7439,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7455,11 +7455,11 @@
     {
       "id": 1118,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 22,
+        "y": 29,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7488,9 +7488,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7504,11 +7504,11 @@
     {
       "id": 1119,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 10.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 22,
+        "y": 31,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7537,9 +7537,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7555,10 +7555,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 0,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -7586,7 +7586,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -7595,11 +7595,11 @@
     {
       "id": 1121,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 0,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7628,9 +7628,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7644,11 +7644,11 @@
     {
       "id": 1122,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 0,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7677,9 +7677,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7693,11 +7693,11 @@
     {
       "id": 1123,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 0,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7726,9 +7726,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7742,11 +7742,11 @@
     {
       "id": 1124,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 12.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 0,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7775,9 +7775,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7793,10 +7793,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 2,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -7824,7 +7824,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -7833,11 +7833,11 @@
     {
       "id": 1126,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 2,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7866,9 +7866,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7882,11 +7882,11 @@
     {
       "id": 1127,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 2,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7915,9 +7915,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7931,11 +7931,11 @@
     {
       "id": 1128,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 2,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -7964,9 +7964,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -7980,11 +7980,11 @@
     {
       "id": 1129,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 13.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 2,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8013,9 +8013,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8031,10 +8031,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 4,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -8062,7 +8062,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -8071,11 +8071,11 @@
     {
       "id": 1131,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 4,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8104,9 +8104,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8120,11 +8120,11 @@
     {
       "id": 1132,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 4,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8153,9 +8153,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8169,11 +8169,11 @@
     {
       "id": 1133,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 4,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8202,9 +8202,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8218,11 +8218,11 @@
     {
       "id": 1134,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 15.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 4,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8251,9 +8251,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8269,10 +8269,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 6,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -8300,7 +8300,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -8309,11 +8309,11 @@
     {
       "id": 1136,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 6,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8342,9 +8342,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8358,11 +8358,11 @@
     {
       "id": 1137,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 6,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8391,9 +8391,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8407,11 +8407,11 @@
     {
       "id": 1138,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 6,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8440,9 +8440,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8456,11 +8456,11 @@
     {
       "id": 1139,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 16.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 6,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8489,9 +8489,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8507,10 +8507,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 8,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -8538,7 +8538,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -8547,11 +8547,11 @@
     {
       "id": 1141,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 8,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8580,9 +8580,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8596,11 +8596,11 @@
     {
       "id": 1142,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 8,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8629,9 +8629,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8645,11 +8645,11 @@
     {
       "id": 1143,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 8,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8678,9 +8678,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8694,11 +8694,11 @@
     {
       "id": 1144,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 18.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 8,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8727,9 +8727,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8745,10 +8745,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 10,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -8776,7 +8776,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -8785,11 +8785,11 @@
     {
       "id": 1146,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 10,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8818,9 +8818,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8834,11 +8834,11 @@
     {
       "id": 1147,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 10,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8867,9 +8867,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8883,11 +8883,11 @@
     {
       "id": 1148,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 10,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8916,9 +8916,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8932,11 +8932,11 @@
     {
       "id": 1149,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 19.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 10,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -8965,9 +8965,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -8983,10 +8983,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 12,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -9014,7 +9014,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -9023,11 +9023,11 @@
     {
       "id": 1151,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 22,
-        "w": 1.5,
+        "x": 12,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9056,9 +9056,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9072,11 +9072,11 @@
     {
       "id": 1152,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 24,
-        "w": 1.5,
+        "x": 12,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9105,9 +9105,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9121,11 +9121,11 @@
     {
       "id": 1153,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 26,
-        "w": 1.5,
+        "x": 12,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9154,9 +9154,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9170,11 +9170,11 @@
     {
       "id": 1154,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 21.0,
-        "y": 28,
-        "w": 1.5,
+        "x": 12,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9203,9 +9203,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9221,10 +9221,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 21,
-        "w": 1.5,
-        "h": 1
+        "x": 14,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -9252,7 +9252,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -9261,11 +9261,11 @@
     {
       "id": 1156,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 22,
-        "w": 1.5,
+        "x": 14,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9294,9 +9294,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9310,11 +9310,11 @@
     {
       "id": 1157,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 24,
-        "w": 1.5,
+        "x": 14,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9343,9 +9343,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9359,11 +9359,11 @@
     {
       "id": 1158,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 26,
-        "w": 1.5,
+        "x": 14,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9392,9 +9392,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9408,11 +9408,11 @@
     {
       "id": 1159,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 22.5,
-        "y": 28,
-        "w": 1.5,
+        "x": 14,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9441,9 +9441,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9459,10 +9459,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 30,
-        "w": 1.5,
-        "h": 1
+        "x": 16,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -9490,7 +9490,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -9499,11 +9499,11 @@
     {
       "id": 1161,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 31,
-        "w": 1.5,
+        "x": 16,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9532,9 +9532,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9548,11 +9548,11 @@
     {
       "id": 1162,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 33,
-        "w": 1.5,
+        "x": 16,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9581,9 +9581,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9597,11 +9597,11 @@
     {
       "id": 1163,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 35,
-        "w": 1.5,
+        "x": 16,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9630,9 +9630,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9646,11 +9646,11 @@
     {
       "id": 1164,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 0.0,
-        "y": 37,
-        "w": 1.5,
+        "x": 16,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9679,9 +9679,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9697,10 +9697,10 @@
       "type": "stat",
       "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 30,
-        "w": 1.5,
-        "h": 1
+        "x": 18,
+        "y": 34,
+        "w": 2,
+        "h": 2
       },
       "fieldConfig": {
         "defaults": {
@@ -9728,7 +9728,7 @@
         },
         "text": {
           "titleSize": 10,
-          "valueSize": 14
+          "valueSize": 16
         },
         "textMode": "value"
       },
@@ -9737,11 +9737,11 @@
     {
       "id": 1166,
       "type": "stat",
-      "title": "VLAN",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 31,
-        "w": 1.5,
+        "x": 18,
+        "y": 36,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9770,9 +9770,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9786,11 +9786,11 @@
     {
       "id": 1167,
       "type": "stat",
-      "title": "Speed",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 33,
-        "w": 1.5,
+        "x": 18,
+        "y": 38,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9819,9 +9819,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9835,11 +9835,11 @@
     {
       "id": 1168,
       "type": "stat",
-      "title": "FEC",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 35,
-        "w": 1.5,
+        "x": 18,
+        "y": 40,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9868,9 +9868,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {
@@ -9884,11 +9884,11 @@
     {
       "id": 1169,
       "type": "stat",
-      "title": "Flow",
+      "title": "",
       "gridPos": {
-        "x": 1.5,
-        "y": 37,
-        "w": 1.5,
+        "x": 18,
+        "y": 42,
+        "w": 2,
         "h": 2
       },
       "fieldConfig": {
@@ -9917,9 +9917,9 @@
         },
         "text": {
           "titleSize": 8,
-          "valueSize": 12
+          "valueSize": 14
         },
-        "textMode": "name"
+        "textMode": "auto"
       },
       "targets": [
         {

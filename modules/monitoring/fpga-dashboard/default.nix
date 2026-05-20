@@ -150,19 +150,25 @@ in
       {
         job_name = "telegraf";
         scrape_interval = "60s";
-        static_configs = [
-          {
-            targets = map (host: "${host}:9273") monitoredHosts;
-          }
-        ];
+        # One static_config per host so each scrape result carries a `host` label.
+        # This lets the dashboard query `up{job="telegraf",host="X"}` instead of
+        # `up{job="telegraf",instance="X:9273"}` — consistent with the other tile
+        # queries (uptime/ping/SSH) which all filter by `host`.
+        static_configs = map (host: {
+          targets = [ "${host}.dos.cit.tum.de:9273" ];
+          labels.host = host;
+        }) monitoredHosts;
       }
     ];
   };
 
-  # Telegraf ping and SSH checks for all monitored hosts
+  # Telegraf ping and SSH checks for all monitored hosts.
+  # Uses *.dos.cit.tum.de rather than the retiolum (.r) mesh because retiolum
+  # has unresolved key-sync issues across multiple peers; the dos.cit network
+  # is the authoritative reachability path and works for every host that's up.
   services.telegraf.extraConfig.inputs.ping = map (host: {
     method = "native";
-    urls = [ "6.${host}.r" ];
+    urls = [ "${host}.dos.cit.tum.de" ];
     ipv6 = true;
     count = 3;
     tags = {
@@ -172,12 +178,12 @@ in
 
   services.telegraf.extraConfig.inputs.net_response = map (host: {
     protocol = "tcp";
-    address = "${host}.r:22";
+    address = "${host}.dos.cit.tum.de:22";
     send = "SSH-2.0-Telegraf";
     expect = "SSH-2.0";
     timeout = "10s";
     tags = {
-      host = "${host}.r";
+      inherit host;
     };
   }) monitoredHosts;
 
