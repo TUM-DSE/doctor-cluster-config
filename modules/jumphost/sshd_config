@@ -16,7 +16,7 @@ Match User tunnel
   PermitTTY no
   PasswordAuthentication no
 
-Match User deploy
+Match User deploy-keys
   ForceCommand sudo /usr/local/bin/update-tunnel-keys
   PasswordAuthentication no
   PermitTunnel no
