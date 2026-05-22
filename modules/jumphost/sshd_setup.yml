@@ -39,14 +39,18 @@
        block: "{{ lookup('file', './sshd_config') }}"
        path: /etc/ssh/sshd_config
      register: sshd_conf
-   - name: add SSH ca cert
+   - name: add SSH host certificates
      copy:
-       dest: /etc/ssh/login-cert.pub
+       dest: "/etc/ssh/{{ item }}"
        owner: root
        group: root
        mode: '0644'
        content: |
-         {{ lookup('file', './../sshd/certs/login-cert.pub') }}
+         {{ lookup('file', './../sshd/certs/' + item) }}
+     loop:
+       - login-cert.pub
+       - login-ecdsa-cert.pub
+       - login-rsa-cert.pub
      register: ssh_cert
    - name: reload sshd
      service:
