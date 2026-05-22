@@ -4,6 +4,10 @@ AuthorizedKeysFile %h/.ssh/authorized_keys %h/.ssh/authorized_keys2 /etc/ssh/aut
 
 # see https://github.com/TUM-DSE/doctor-cluster-config/blob/master/modules/sshd/certs/login-cert.pub
 HostCertificate /etc/ssh/login-cert.pub
+# Cluster-CA signed certificates (principals: login.dos.cit.tum.de, login.dse.in.tum.de),
+# bound to the ecdsa/rsa host keys so the ITO-signed ed25519 certificate stays untouched.
+HostCertificate /etc/ssh/login-ecdsa-cert.pub
+HostCertificate /etc/ssh/login-rsa-cert.pub
 
 # Increase number of connections for deployment scripts
 MaxStartups 64:30:256
