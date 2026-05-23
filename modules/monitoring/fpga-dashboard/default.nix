@@ -150,14 +150,17 @@ in
       {
         job_name = "telegraf";
         scrape_interval = "60s";
-        # One static_config per host so each scrape result carries a `host` label.
-        # This lets the dashboard query `up{job="telegraf",host="X"}` instead of
-        # `up{job="telegraf",instance="X:9273"}` — consistent with the other tile
-        # queries (uptime/ping/SSH) which all filter by `host`.
-        static_configs = map (host: {
-          targets = [ "${host}.dos.cit.tum.de:9273" ];
-          labels.host = host;
-        }) monitoredHosts;
+        # Don't set `labels.host` here: Telegraf already tags every metric with
+        # `host=<system hostname>`, AND probe inputs (ping/net_response) override
+        # `host` with the probed target. A scrape-time `labels.host` would
+        # collide with those, getting renamed to `exported_host` and breaking
+        # the dashboard queries. Dashboard's `up{job="telegraf",...}` filters by
+        # `instance` since `up` is Prometheus-generated and has no `host` label.
+        static_configs = [
+          {
+            targets = map (host: "${host}.dos.cit.tum.de:9273") monitoredHosts;
+          }
+        ];
       }
     ];
   };
