@@ -1169,7 +1169,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"adelaide\"}",
+          "expr": "up{job=\"telegraf\",instance=\"adelaide.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1239,7 +1239,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"amy\"}",
+          "expr": "up{job=\"telegraf\",instance=\"amy.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1309,7 +1309,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"astrid\"}",
+          "expr": "up{job=\"telegraf\",instance=\"astrid.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1379,7 +1379,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"christina\"}",
+          "expr": "up{job=\"telegraf\",instance=\"christina.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1449,7 +1449,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"clara\"}",
+          "expr": "up{job=\"telegraf\",instance=\"clara.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1519,7 +1519,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"dan\"}",
+          "expr": "up{job=\"telegraf\",instance=\"dan.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1589,7 +1589,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"doctor\"}",
+          "expr": "up{job=\"telegraf\",instance=\"doctor.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1659,7 +1659,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"donna\"}",
+          "expr": "up{job=\"telegraf\",instance=\"donna.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1729,7 +1729,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"graham\"}",
+          "expr": "up{job=\"telegraf\",instance=\"graham.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1799,7 +1799,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"ian\"}",
+          "expr": "up{job=\"telegraf\",instance=\"ian.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1869,7 +1869,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"irene\"}",
+          "expr": "up{job=\"telegraf\",instance=\"irene.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -1939,7 +1939,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"jack\"}",
+          "expr": "up{job=\"telegraf\",instance=\"jack.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -4973,7 +4973,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"jackson\"}",
+          "expr": "up{job=\"telegraf\",instance=\"jackson.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5043,7 +5043,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"mickey\"}",
+          "expr": "up{job=\"telegraf\",instance=\"mickey.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5113,7 +5113,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"polly\"}",
+          "expr": "up{job=\"telegraf\",instance=\"polly.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5183,7 +5183,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"river\"}",
+          "expr": "up{job=\"telegraf\",instance=\"river.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5253,7 +5253,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"rose\"}",
+          "expr": "up{job=\"telegraf\",instance=\"rose.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5323,7 +5323,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"ryan\"}",
+          "expr": "up{job=\"telegraf\",instance=\"ryan.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5393,7 +5393,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"steve\"}",
+          "expr": "up{job=\"telegraf\",instance=\"steve.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5463,7 +5463,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"tegan\"}",
+          "expr": "up{job=\"telegraf\",instance=\"tegan.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5533,7 +5533,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"vislor\"}",
+          "expr": "up{job=\"telegraf\",instance=\"vislor.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5603,7 +5603,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"wilfred\"}",
+          "expr": "up{job=\"telegraf\",instance=\"wilfred.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5673,7 +5673,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"xavier\"}",
+          "expr": "up{job=\"telegraf\",instance=\"xavier.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
@@ -5743,7 +5743,7 @@
       },
       "targets": [
         {
-          "expr": "up{job=\"telegraf\",host=\"yasmin\"}",
+          "expr": "up{job=\"telegraf\",instance=\"yasmin.dos.cit.tum.de:9273\"}",
           "legendFormat": "Telegraf",
           "refId": "A",
           "instant": true
