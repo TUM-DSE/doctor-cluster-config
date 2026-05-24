@@ -35,6 +35,20 @@ in {
       expires = "2026-07-01";
     };
 
+    ushellRev3 = {
+      isNormalUser = true;
+      home = "/home/ushellRev3";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4012;
+      allowedHosts = [
+        "amy"
+        "clara"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFRlcr8LOQksTVCkz72/8//bovE+FXgc3D44VGJpsvaA maryam.ghorbanvirdi@gmail.com"];
+      xrdpAccess = false;
+      expires = "2026-07-01";
+    };
+
     ushell_test = {
       isNormalUser = true;
       home = "/home/ushell_test";
