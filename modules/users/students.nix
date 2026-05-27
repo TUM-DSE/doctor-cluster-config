@@ -455,6 +455,7 @@ in
         "irene"
         "polly"
         "xavier"
+        "eliza"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
       expires = "2026-10-30";
