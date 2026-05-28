@@ -92,6 +92,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuhXm9XnaDqxxYyGNEKBgwF5cgw+9NzMe0RjnOWWWVY399LmQr+MM4KRLs6KhRlXrG3nJ/ymc8ecY7wm79HECRmbg7HwfsJSE0cZSu+JR6HVOmwLJXYfPDL65TOf1HeSVGBrCmsnnbHBknodxsrcagLtM9yAVzClRLTylnmAzRBtHCVVqpyWlrkdLvfFDp+ddSMssjA06zrXOaasJl6BdGFnMnoa02sVh2/Fr2nsxOm/5WVnnrVEzIRw//a1Mzf/CL8YPAdtcoWNrms9lyc/i32X1Lxof8BreBLt6OskcAzSpYf5cHq1fBfSEig3yndWia1YPC0UKvSis7kABw9LyuyrbdD+VofSPsEJdqnDBMLUuH3Qw3m/KyzGBG+AfjBgj+LsjgS6ZV/dZ5Liyse0PGhpF1UmUvhS/5IEN1aETlikWU2Sq7sBDPWVWOrLLY6WRtpOFLeCqP527oY3OJPVI4B3vAOlKnzsMdJmL262f9hQJwRq6YLNhDh4Tp3mXR0Ms= jakubantoni1@gmail.com"
   ];
 
+  ivanlKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBmF08VOHT7d+J8krUhC/FZjFsQOgG1ikZ3mddzQj2q7 ivan@Moster"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -474,6 +478,22 @@ in
       ];
       openssh.authorizedKeys.keys = jakubKeys;
       expires = "2026-09-30";
+    };
+
+    # Ivan Logvynenko, Bsc thesis working w/ Anatole (can be removed after October 2026)
+    ivanl = {
+      isNormalUser = true;
+      home = "/home/ivanl";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2106;
+      allowedHosts = [
+        "xavier"
+        "jamie"
+        "steve"
+      ];
+      openssh.authorizedKeys.keys = ivanlKeys;
+      expires = "2026-10-30";
     };
   };
 
