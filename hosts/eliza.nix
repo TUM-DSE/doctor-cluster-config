@@ -25,4 +25,5 @@
   systemd.user.extraConfig = ''
     DefaultLimitNOFILE=8192
   '';
+services.envfs.enable = true;
 }
