@@ -46,4 +46,7 @@
       };
     };
   };
+  # temporarily disable auto-reboot until the ricochet eval has finished running
+  systemd.timers.auto-reboot.enable = false;
+  systemd.services.auto-reboot.enable = false;
 }
