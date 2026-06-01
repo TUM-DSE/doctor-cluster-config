@@ -1,9 +1,5 @@
 { ... }:
 let
-  gierensKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
-  ];
-
   sandraKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGNAM728FNAtQhvAih1kirZszXRISD4wI+yxoifgRH1C sandras@tum.de"
   ];
@@ -111,18 +107,6 @@ in
   # for new students please use a uid in the range between 2000-3000
   # You can set `users.users.<name>.allowedHosts` to restrict access to certain machines.
   users.users = {
-    # Sandro Gierens, MSc student working w/ Masa (thesis finished in Dec 2025, continuing to work on the project for a few months)
-    gierens = {
-      isNormalUser = true;
-      home = "/home/gierens";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2003;
-      allowedHosts = [ "all" ];
-      openssh.authorizedKeys.keys = gierensKeys;
-      expires = "2026-04-30";
-    };
-
     # Anton Ge, BSc thesis on uintr deleted after SS25
     anton = {
       isNormalUser = true;
