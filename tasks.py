@@ -453,12 +453,30 @@ def deploy_host(c: Any, host: str) -> None:
 
 
 @task
-def deploy_local(c: Any) -> None:
+def deploy_local(c: Any, kexec: bool = False) -> None:
     """
     Deploy NixOS configuration on the same machine. The NixOS configuration is
-    selected based on the hostname.
+    selected based on the hostname. Pass --kexec to reboot via kexec after deployment.
     """
     c.run("""sudo nixos-rebuild switch --flake .#""")
+    if kexec:
+        c.run("sudo systemctl disable --now --runtime auto-upgrade.timer")
+        result = c.run("loginctl list-sessions -j", hide=True)
+        sessions = json.loads(result.stdout)
+        current_user = os.environ.get("USER", "")
+        other_sessions = [
+            s for s in sessions
+            if s.get("class") == "user" and s.get("user") != current_user
+        ]
+        if other_sessions:
+            print("Other users are currently logged in:")
+            for s in other_sessions:
+                print(f"  {s.get('user')} (session {s.get('session')}, tty {s.get('tty')})")
+            answer = input("Proceed with kexec anyway? [y/N] ").strip().lower()
+            if answer != "y":
+                print("Skipping kexec.")
+                return
+        c.run("sudo systemctl kexec")
 
 
 @task
