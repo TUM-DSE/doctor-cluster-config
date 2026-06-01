@@ -1,3 +1,8 @@
+From a5b836c8435e97dc04899d45fc9f05c91c74fbfa Mon Sep 17 00:00:00 2001
+From: Thore Sommer <public@thson.de>
+Date: Tue, 12 May 2026 20:42:36 +0200
+Subject: [PATCH] nvme: add infrastructure for full SQ/CQ tracing
+
 ---
  drivers/nvme/host/Kconfig     |  13 ++
  drivers/nvme/host/pci.c       | 322 +++++++++++++++++++++++++++++++++-
