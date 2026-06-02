@@ -30,6 +30,7 @@ let
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
+    ./modules/copy-fail-patch.nix
 
     disko.nixosModules.disko
 
