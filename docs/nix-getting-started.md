@@ -49,12 +49,14 @@ Add `.direnv` to your `.gitignore`.
 
 ### Installation
 
-
 ```bash
-nix-shell '<home-manager>' -A install
+mkdir -p $HOME/.config/home-manager
+cd $HOME/.config/home-manager
+nix flake init --template github:TUM-DSE/doctor-cluster-config#home-manager
+$EDITOR flake.nix home.nix
+nix run $HOME/.config/home-manager#switch
 ```
 
-Installing home manager should create a `.config/home-manager/home.nix`. Alternatively, you can also check [../templates/README.md](../templates/README.md).
+This creates a `.config/home-manager/home.nix` and a locked `flake.nix`. You can also check [../templates/README.md](../templates/README.md).
 
-- **Apply Changes:** Run `home-manager switch` to update your configuration.
-
+- **Apply Changes:** Run `nix run $HOME/.config/home-manager#switch` to update your configuration.
