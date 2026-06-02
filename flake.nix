@@ -98,7 +98,7 @@
           ./templates
         ];
         perSystem =
-          { self', system, ... }:
+          { self', system, pkgs, ... }:
           {
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
@@ -141,8 +141,24 @@
                   )
                 );
                 devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
+                # Users run home-manager standalone against the system
+                # registry pins, so home-manager/nixpkgs skew breaks
+                # `home-manager switch` without failing any host build.
+                homeManager = {
+                  home-manager-eval =
+                    (inputs.home-manager.lib.homeManagerConfiguration {
+                      inherit pkgs;
+                      modules = [
+                        {
+                          home.username = "ci";
+                          home.homeDirectory = "/home/ci";
+                          home.stateVersion = "26.05";
+                        }
+                      ];
+                    }).activationPackage;
+                };
               in
-              nixosMachines // devShells;
+              nixosMachines // devShells // homeManager;
           };
       }
     )).config.flake;
