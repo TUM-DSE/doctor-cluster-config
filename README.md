@@ -95,23 +95,27 @@ nixpkgs versions. To upgrade use:
 $ nix flake update
 ```
 
-Than commit `flake.lock`.
+Then commit `flake.lock`.
 
 # Home-manager
 
 To install home-manager for a user simply run:
 
 ``` console
-$ nix-shell '<home-manager>' -A install
+$ mkdir -p $HOME/.config/home-manager
+$ cd $HOME/.config/home-manager
+$ nix flake init --template github:TUM-DSE/doctor-cluster-config#home-manager
+$ $EDITOR flake.nix home.nix
+$ nix run $HOME/.config/home-manager#switch
 ```
 
-This will initiate your home-manager and will generate a file similar to the one in ```home/.config/nixpkgs/home.nix```
+This will initiate your home-manager and will generate a file similar to the one in `home/.config/nixpkgs/home.nix`
 
 # Visual Studio Code Server support in NixOS
 
 You can use [this](https://github.com/msteen/nixos-vscode-server) to enable support for VS Code Server in NixOS.
 
-An example of the ```home.nix``` configured for VS Code support is shown in ```home/.config/nixpkgs/home.nix```.
+An example of the `home.nix` configured for VS Code support is shown in `home/.config/nixpkgs/home.nix`.
 
 
 # IPMI
