@@ -44,6 +44,7 @@ in
     };
 
     virtualisation.docker.enable = true;
+    virtualisation.docker.package = pkgs.docker_25; # docker 25 is the last version where kata-container's networking works (https://github.com/kata-containers/kata-containers/issues/12284)
     virtualisation.docker.daemon.settings = {
       runtimes.kata-qemu.runtimeType = "${kata-runtime}/bin/containerd-shim-kata-v2";
       runtimes.kata-qemu.options = {
