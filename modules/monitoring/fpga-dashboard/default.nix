@@ -44,6 +44,10 @@ in
       };
       security = {
         disable_gravatar = true;
+        # 26.05 removed the implicit default. This instance only serves
+        # anonymous read-only dashboards and stores no secrets in its DB,
+        # so keeping the well-known previous default is fine.
+        secret_key = "SW2YcwTIb9zpOOhoPsMm";
       };
       users = {
         allow_sign_up = false;

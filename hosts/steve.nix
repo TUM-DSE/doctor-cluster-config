@@ -1,4 +1,4 @@
-
+{ pkgs, ... }:
 {
   imports = [
     ../modules/hardware/supermicro-322GA-NR.nix
@@ -12,7 +12,7 @@
 
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
   };
 
   networking.hostName = "steve";
