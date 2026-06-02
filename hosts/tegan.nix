@@ -18,6 +18,8 @@
   boot.kernelPackages = lib.mkForce (pkgs.linuxPackagesFor (
     pkgs.callPackage "${inputs.nixos-hardware}/milkv/pioneer/linux.nix" {
       inherit (config.boot) kernelPatches;
+      # 6.6.20 vendor kernel predates GCC 14/15: C23-by-default breaks it.
+      stdenv = pkgs.gcc13Stdenv;
     }
   ));
 
