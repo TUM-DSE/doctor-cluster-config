@@ -1,9 +1,9 @@
 {
   description = "Home Manager configuration";
 
-  # update flake.lock to the latest 25.11 inputs: `nix flake update`
+  # update flake.lock to the latest inputs: `nix flake update`
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
