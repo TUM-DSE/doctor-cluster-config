@@ -96,6 +96,11 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBmF08VOHT7d+J8krUhC/FZjFsQOgG1ikZ3mddzQj2q7 ivan@Moster"
   ];
 
+	alexKeys = [
+		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvpwaPg39D9JvEtzKbCUAfYxLjSU2bCg+zCb+N0iI3P alex.bartelt@tum.de"
+		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
+	];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -493,6 +498,21 @@ in
         "steve"
       ];
       openssh.authorizedKeys.keys = ivanlKeys;
+      expires = "2026-10-30";
+    };
+    
+		# Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
+    alex = {
+      isNormalUser = true;
+      home = "/home/alex";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2107;
+      allowedHosts = [
+        "graham"
+        "eliza"
+      ];
+      openssh.authorizedKeys.keys = alexKeys;
       expires = "2026-10-30";
     };
   };
