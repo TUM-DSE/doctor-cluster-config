@@ -1,0 +1,15 @@
+[package]
+name = "ngx-http-s3-auth"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[lib]
+name = "ngx_http_s3_auth"
+path = "src/lib.rs"
+crate-type = ["lib", "staticlib"]
+
+[dependencies]
+ngx = { version = "0.5.1", default-features = false, features = ["std"] }
+s3-sigv4 = { path = "../sigv4" }
