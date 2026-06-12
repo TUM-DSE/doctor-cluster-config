@@ -3,15 +3,14 @@
 # - niks3.dos.cit.tum.de → astrid:5752 (for niks3 push)
 # - cache.dos.cit.tum.de → S3 with auth (for nix client reads)
 #
-# S3 auth uses njs with AWS SigV4 signing.
-# Reference: https://github.com/nginxinc/nginx-aws-signature
-{ config, pkgs, ... }:
-let
-  njsScripts = pkgs.runCommand "nginx-njs-scripts" {} ''
-    mkdir -p $out
-    cp ${./s3_auth.js} $out/s3_auth.js
-  '';
-in
+# S3 auth uses a Rust nginx module (./nginx-s3-auth) that exposes AWS SigV4
+# signing variables.
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   # Load S3 credentials from shared niks3 secrets
   sops.secrets.niks3-s3-access-key.sopsFile = ./secrets.yml;
@@ -31,22 +30,18 @@ in
     };
   };
 
-  # Enable njs module for S3 auth
-  services.nginx.additionalModules = [ pkgs.nginxModules.njs ];
-
-  # Global nginx config for njs
-  services.nginx.appendHttpConfig = ''
-    js_path ${njsScripts};
-    js_import s3 from s3_auth.js;
-  '';
+  # Rust module providing $s3v4_authorization and $s3v4_amz_date
+  services.nginx.additionalModules = [ (pkgs.callPackage ./nginx-s3-auth/package.nix { }) ];
 
   # Public cache endpoint - proxies to TUM S3 with authentication
   services.nginx.virtualHosts."cache.dos.cit.tum.de" = {
     forceSSL = true;
     enableACME = true;
     extraConfig = ''
-      js_set $s3_auth_header s3.authHeader;
-      js_set $s3_amz_date s3.amzDate;
+      s3_auth_access_key_file /run/nginx/s3-access-key;
+      s3_auth_secret_key_file /run/nginx/s3-secret-key;
+      s3_auth_host dos-s3-1.s3.ito.cit.tum.de;
+      s3_auth_region global;
     '';
     locations."= /" = {
       return = "302 /index.html";
@@ -54,10 +49,14 @@ in
     locations."/" = {
       proxyPass = "https://dos-s3-1.s3.ito.cit.tum.de";
       extraConfig = ''
+        # Public read-only cache: never forward mutating requests to S3.
+        limit_except GET {
+          deny all;
+        }
         proxy_ssl_server_name on;
         proxy_set_header Host dos-s3-1.s3.ito.cit.tum.de;
-        proxy_set_header Authorization $s3_auth_header;
-        proxy_set_header x-amz-date $s3_amz_date;
+        proxy_set_header Authorization $s3v4_authorization;
+        proxy_set_header x-amz-date $s3v4_amz_date;
         proxy_set_header x-amz-content-sha256 UNSIGNED-PAYLOAD;
         proxy_hide_header x-amz-id-2;
         proxy_hide_header x-amz-request-id;
@@ -67,14 +66,13 @@ in
     };
   };
 
-  # Copy S3 credentials to /run/nginx for njs to read
-  systemd.services.nginx.serviceConfig.ExecStartPre = let
+  # Copy S3 credentials to /run/nginx for nginx to read at config load.
+  # Must run before NixOS's nginx-pre-start (nginx -t), which needs the files.
+  systemd.services.nginx.serviceConfig.ExecStartPre = lib.mkBefore (let
     script = pkgs.writeShellScript "nginx-s3-credentials" ''
-      mkdir -p /run/nginx
-      cp ${config.sops.secrets.niks3-s3-access-key.path} /run/nginx/s3-access-key
-      cp ${config.sops.secrets.niks3-s3-secret-key.path} /run/nginx/s3-secret-key
-      chown nginx:nginx /run/nginx/s3-access-key /run/nginx/s3-secret-key
-      chmod 400 /run/nginx/s3-access-key /run/nginx/s3-secret-key
+      install -d /run/nginx
+      install -o nginx -g nginx -m 400 ${config.sops.secrets.niks3-s3-access-key.path} /run/nginx/s3-access-key
+      install -o nginx -g nginx -m 400 ${config.sops.secrets.niks3-s3-secret-key.path} /run/nginx/s3-secret-key
     '';
-  in [ "+${script}" ];
+  in [ "+${script}" ]);
 }

@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762806692,
-        "narHash": "sha256-JhgQIwJe0U2vxj+pu+Sgm+VLgNqucpXtZYGKZOgkQdc=",
+        "lastModified": 1768505959,
+        "narHash": "sha256-oFCx/ApQ+S1/apUKWsvT9vq+Eo1m2vINWEDkW7/nckA=",
         "owner": "nixos-cuda",
         "repo": "cuda-legacy",
-        "rev": "9856d70acc3e2ae9081930b33d946326e07f1482",
+        "rev": "86ad7e2c2e314f0234539cbbc66b5cd7746bcd32",
         "type": "github"
       },
       "original": {
@@ -171,17 +171,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1777894865,
-        "narHash": "sha256-agINDb/tr4v2uaVmgE/i0dY1M2JJdzUI/Caup/MWEGU=",
+        "lastModified": 1780361225,
+        "narHash": "sha256-wnV9ttf4fPWNonBIQmvlrSlNpQYgx5HgWWd007mwIFA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9c6f1307e1d76a2285d8001e1b8bc281bfe15dac",
+        "rev": "e28654b71096e08c019d4861ca26acb646f583d8",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "release-26.05",
         "repo": "home-manager",
-        "rev": "9c6f1307e1d76a2285d8001e1b8bc281bfe15dac",
         "type": "github"
       }
     },
@@ -217,10 +217,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1766570671,
-        "narHash": "sha256-zg74OJgzgHEptuTkJIBz0cywfQGnqYv/5XvO+7UEEQI=",
+        "lastModified": 1780404819,
+        "narHash": "sha256-ByM0l0eZByUMzf9lzVE9j3RDtYqb8Dp3EMeWDhc+zDY=",
         "ref": "no-overlay",
-        "rev": "766fad88909ca604bbeb780e94f4195bdd1b392e",
+        "rev": "111f61a5c17af4d2769681c83a10d191ef2cc15b",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
@@ -342,7 +342,9 @@
     },
     "nixos-hardware": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1780310866,
@@ -360,29 +362,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1767892417,
-        "narHash": "sha256-8bW3q88CEg2u4hSP66Vf4lpbLonHz7hqDNBMcCY7E9U=",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre924538.3497aa5c9457/nixexprs.tar.xz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1778940495,
-        "narHash": "sha256-73HPm+mxHcFLyKjpZKgHQ/CIDXHCFl7h7A5oRq0YqMc=",
-        "ref": "nixos-25.11-backports",
-        "rev": "ce56a0cf964598eaecc6fbd573b83c3c041823e8",
+        "lastModified": 1780405895,
+        "narHash": "sha256-jJDGhYAriet7RA6OPqAgLZ0IK/+rNbCi2j4BUXPlWfc=",
+        "ref": "nixos-26.05-backports",
+        "rev": "c33606e163dc55e985b1ec9a87a22694a081da47",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       },
       "original": {
-        "ref": "nixos-25.11-backports",
+        "ref": "nixos-26.05-backports",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
@@ -424,7 +413,7 @@
         "nixos-apple-silicon": "nixos-apple-silicon",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",

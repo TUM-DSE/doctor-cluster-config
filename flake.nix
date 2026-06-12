@@ -9,7 +9,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-25.11-backports&shallow=1";
+    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-26.05-backports&shallow=1";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +20,7 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager/9c6f1307e1d76a2285d8001e1b8bc281bfe15dac";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
@@ -41,6 +41,7 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
 
     jetpack-nixos.url = "git+https://github.com/TUM-DSE/jetpack-nixos.git?shallow=1&ref=no-overlay";
     jetpack-nixos.inputs.nixpkgs.follows = "nixpkgs";

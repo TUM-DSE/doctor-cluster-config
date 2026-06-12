@@ -1,4 +1,4 @@
-
+{ pkgs, ... }:
 {
   imports = [
     ../modules/hardware/poweredge7625.nix
@@ -19,7 +19,7 @@
 
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
   };
 
   networking.hostName = "jamie";

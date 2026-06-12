@@ -1,7 +1,17 @@
 { pkgs, lib, ... }:
 let
   linux = pkgs.callPackage ../pkgs/kernels/linux-sev-snp.nix { };
-  linuxPackages = lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
+  linuxPackages = lib.recurseIntoAttrs (
+    (pkgs.linuxPackagesFor linux).extend (
+      _final: prev: {
+        # Kernel modules inherit the kernel's gcc13 stdenv (see
+        # linux-sev-snp.nix), but sysdig's userland half links
+        # gcc15-built libraries (onetbb), which needs the matching
+        # libstdc++. The kmod part still gets -std=gnu11 from Kbuild.
+        sysdig = prev.sysdig.override { stdenv = pkgs.stdenv; };
+      }
+    )
+  );
 in
 {
   # Configuration for AMD SEV-SNP with AMD versions' kernel
