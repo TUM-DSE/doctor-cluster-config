@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"runtime"
 	"strings"
 	"unsafe"
 )
@@ -47,6 +48,12 @@ type outputRecord struct {
 //export go_filter
 func go_filter(tag *uint8, tag_len uint, time_sec uint, time_nsec uint, record *uint8, record_len uint) *uint8 {
 	brecord := unsafe.Slice(record, record_len)
+
+	// The wasm instance is persistent for the lifetime of fluent-bit and
+	// wasm linear memory never shrinks. Without an explicit collection per
+	// call, TinyGo's heap slowly grows until it hits the 4GB wasm32 limit
+	// and panics with "runtime error: out of memory", dropping records.
+	defer runtime.GC()
 
 	result := processRecord(string(brecord))
 	if result == "" {

@@ -102,6 +102,9 @@ in
 
   systemd.services.fluent-bit = lib.mkIf (config.users.withSops) {
     serviceConfig = {
+      # Safety net: the wasm filter instance is persistent and wasm linear
+      # memory never shrinks, so restart daily to bound memory growth.
+      RuntimeMaxSec = "1d";
       StateDirectory = "fluent-bit";
       RuntimeDirectory = "fluent-bit";
       LoadCredential = "loki-password:${passwordFile}";
