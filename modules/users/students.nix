@@ -97,6 +97,10 @@ let
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
 	];
 
+  senadKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -497,6 +501,23 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = alexKeys;
+      expires = "2026-10-30";
+    };
+
+    # Senad Lemes, DB chair student working w/ Dimitris (can be removed after October 2026)
+    senad = {
+      isNormalUser = true;
+      home = "/home/senad";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2108;
+      allowedHosts = [
+        "jamie"
+        "jack"
+        "polly"
+        "steve"
+      ];
+      openssh.authorizedKeys.keys = senadKeys;
       expires = "2026-10-30";
     };
   };
