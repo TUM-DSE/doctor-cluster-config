@@ -8,7 +8,6 @@
     ../modules/copy-fail-patch.nix
 
     ../modules/jumphost
-    ../modules/buildbot/master.nix
     ../modules/niks3
   ];
 
