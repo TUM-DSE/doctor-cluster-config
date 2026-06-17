@@ -59,6 +59,11 @@ let
       sops.defaultSopsFile = lib.mkIf (builtins.pathExists sopsFile) sopsFile;
 
       time.timeZone = "UTC";
+
+      # Our pools are imported via cache file / explicit pool lists, so we do
+      # not need to force-import the root pool. Silences the 26.11 deprecation
+      # warning and follows the upcoming default.
+      boot.zfs.forceImportRoot = false;
     })
     retiolum.nixosModules.retiolum
   ];
