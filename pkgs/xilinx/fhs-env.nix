@@ -35,14 +35,13 @@ buildFHSEnv {
       (ncurses'.override { unicodeSupport = false; })
       # Vivado 2025.1 looks for libtinfo.so.6, which lives in ncurses6 (the default `ncurses`).
       ncurses
-      xorg.libXext
-      xorg.libX11
-      xorg.libXrender
-      xorg.libXtst
-      xorg.libXi
-      xorg.libXft
-      xorg.libxcb
-      xorg.libxcb
+      libxext
+      libx11
+      libxrender
+      libxtst
+      libxi
+      libxft
+      libxcb
       # common requirements
       freetype
       fontconfig
