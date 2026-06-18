@@ -11,6 +11,7 @@
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
+    ../modules/tribuchet
   ];
 
   simd.arch = "znver4";
