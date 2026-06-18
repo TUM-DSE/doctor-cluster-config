@@ -253,6 +253,27 @@
         "type": "github"
       }
     },
+    "nix-darwin_2": {
+      "inputs": {
+        "nixpkgs": [
+          "tribuchet",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781242433,
+        "narHash": "sha256-bchLZZ3sRn740zyvD2icZSnNoTaanN0nw7l6fjVXO+E=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "aabb2037edfc0f210723b72cd5f528aab5dd3f0b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -418,7 +439,8 @@
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "tincr": "tincr",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix",
+        "tribuchet": "tribuchet"
       }
     },
     "rust-analyzer-src": {
@@ -519,6 +541,27 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "tribuchet": {
+      "inputs": {
+        "nix-darwin": "nix-darwin_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781702065,
+        "narHash": "sha256-Hfz/gD6D0tf/i+PhmDo1E3O+f8OXgR2e56xnnXWoE88=",
+        "owner": "Mic92",
+        "repo": "tribuchet",
+        "rev": "fa0cba3574bc47db04b55e3f819b166162e4836a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "tribuchet",
         "type": "github"
       }
     }
