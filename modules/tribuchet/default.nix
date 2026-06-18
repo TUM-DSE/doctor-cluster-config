@@ -1,3 +1,5 @@
+# tribuchet build worker for the hub on eve. Serves this host's native
+# system; max-jobs defaults to the host's core count in tribuchet.
 {
   config,
   pkgs,
@@ -9,17 +11,15 @@
 
   # worker.key is signed by the CA generated on eve (clan vars generator
   # "tribuchet" in the dotfiles repo); ca.crt and worker.crt are public
-  # and committed next to this module.
-  # default sopsFile is hosts/eliza.yml
+  # and committed next to this module. The default sopsFile is the
+  # importing host's hosts/<host>.yml.
   sops.secrets."tribuchet-worker-key" = { };
 
   services.tribuchet-worker = {
     enable = true;
     settings = {
       hub = "https://eve.thalheim.io:7437";
-      # eliza is aarch64; it builds aarch64-linux natively for the hub.
-      systems = [ "aarch64-linux" ];
-      max-jobs = 8;
+      systems = [ pkgs.stdenv.hostPlatform.system ];
       max-log-size = 67108864;
       ca-cert = ./ca.crt;
       cert = ./worker.crt;
