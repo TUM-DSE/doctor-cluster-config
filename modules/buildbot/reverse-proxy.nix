@@ -4,8 +4,10 @@
     forceSSL = true;
     enableACME = true;
 
+    # Proxy to graham's nginx (port 80), which serves the nixbot UI plus the
+    # /nix-outputs/ tree consumed by auto-upgrade.
     locations."/" = {
-      proxyPass = "http://buildbot-master:8010";
+      proxyPass = "http://buildbot-master";
       proxyWebsockets = true;
       extraConfig = ''
         # Webhook deliveries can exceed nginx's 1m default
