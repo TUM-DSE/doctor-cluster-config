@@ -53,6 +53,11 @@
         limit_except GET {
           deny all;
         }
+        # Stream NARs straight from S3. Buffering would spool large objects
+        # into nginx's proxy_temp dir, which on doctor lives on a tiny tmpfs
+        # /tmp (PrivateTmp) and fills up under concurrent fetches.
+        proxy_buffering off;
+        proxy_request_buffering off;
         proxy_ssl_server_name on;
         proxy_set_header Host dos-s3-1.s3.ito.cit.tum.de;
         proxy_set_header Authorization $s3v4_authorization;
