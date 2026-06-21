@@ -30,7 +30,7 @@
       set -euo pipefail
 
       hostname=$(uname -n)
-      p=$(curl -fsSL "https://buildbot.dse.in.tum.de/nix-outputs/TUM-DSE/doctor-cluster-config/master/${pkgs.stdenv.buildPlatform.system}.nixos-$hostname")
+      p=$(curl -fsSL "https://buildbot.dse.in.tum.de/nix-outputs/github/TUM-DSE/doctor-cluster-config/master/${pkgs.stdenv.buildPlatform.system}.nixos-$hostname")
 
       if [[ "$(readlink /run/current-system)" == "$p" ]]; then
         echo "Already at $p, nothing to do"

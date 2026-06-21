@@ -16,8 +16,13 @@
     domain = "buildbot.dse.in.tum.de";
     # Behind doctor's TLS reverse proxy; generate https:// URLs.
     useHTTPS = true;
-    # External reverse proxy handles TLS, so do not manage nginx here.
-    nginx.enable = false;
+    # Manage the local nginx vhost so it serves /nix-outputs/ (consumed by
+    # auto-upgrade) alongside the proxied UI. doctor terminates TLS, so no
+    # ACME/forceSSL here; this vhost stays plain http on port 80.
+    nginx = {
+      enable = true;
+      enableACME = false;
+    };
 
     buildSystems = [
       "i686-linux"
@@ -85,8 +90,7 @@
     niks3-api-token.sopsFile = ../niks3/secrets.yml;
   };
 
-  # nixbot listens on its TCP port; doctor's reverse proxy connects to it.
-  networking.firewall.allowedTCPPorts = [
-    config.services.nixbot.port
-  ];
+  # nixbot's managed nginx vhost listens on port 80; doctor's reverse proxy
+  # connects to it (and through it to /nix-outputs/).
+  networking.firewall.allowedTCPPorts = [ 80 ];
 }
