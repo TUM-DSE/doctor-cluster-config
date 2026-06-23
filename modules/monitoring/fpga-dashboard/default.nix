@@ -53,7 +53,7 @@ in
         allow_sign_up = false;
         allow_org_create = false;
         viewers_can_edit = false;
-        home_page = "/d/f833d9a0-24ed-4808-bc90-a874dc9173f3/dse-fpga";
+        home_page = "/d/dse-monitoring/dse-monitoring";
       };
       analytics = {
         reporting_enabled = false;
