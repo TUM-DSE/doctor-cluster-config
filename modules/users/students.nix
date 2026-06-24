@@ -39,10 +39,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
   ];
 
-  johannaKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIUFhOLikx/MHcvyj0lqcKvfzG7Hj5HFmAtIX2FuQZbksWD3wR8TCv+tTi62j34ez2KuS8I2CxaEs8RLgR2ScBL2N5YjzbLjGeLapjPyY5EMJHlIp3XGq4/TWBPsdgKu5FjWa6CcsX4i8uCXeOVIut6IsT/9RUtSsOH98XWSh73naHGVzspNMInyZxR/uBM5cZXQl4k4wGT8XL1UFypPspWj/ScoYC1U8nRj3+sArXW3RzYtX1NI5jQF94DZbBod518rzXOPATuDoLJcrarQjpd9px6uNIiFkg7u9qs3ws41Fw2Wy/atDerE/xvSLidAjLHeIfGoK+MXkYA9GK8A5RKDqHv9erest76kkHg1xH7fiDVIRS22Qjcj+6h69k8wwKsJtwUx7J0hDtGFpBuRJyQnN4OdzAbnpiRK43KUdAN8R4gbYO6+ooCOuAKjjV/ZZIeZyE/jg9MOy1oIRFbVb/JXWaRkGylphASgsqslBP2kh6mHz9PQu9Qs7aSmQnRjx6dJ99tbSvCWVoqfMhgAccFYELGA6iU8rPDDygqL/GaWX+mu7h2kB/M1jFLb9XcEVgSaV0HT2zkKBczncEFyAe2jg/MjR2qhbKMnSDJMfbAdMNPfGzqybkIGw8iwyIXz7tAje4o7hGl8i2PDb/xFH/jEaLY83JDzZPShVeepLRIw== johan@DESKTOP-BE42OA9"
-  ];
-
   chrisKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVrVgCf+jRXaQp5HYTzOie73lhgprzoJg9CvaDRdI0gHCNaKSQkq7wVMcht0kxnA/OcHekDdZsVBRu0VObRr8+8EQFtWeEvvevQ3TLQurz7ZcKvemX2vu6HM1UmWxdvWpPUVPHyjvJzXBYzy1+7NTK71U5uEULbSb06gpJ03bYZkW5VvX9Jew39tKiqUfYDW8moQ6obl93iU8GXETDuSx1YyQlq5sZ3cPryo5AlXjIJI8VFMHMiAHPenr0H/pkArBH0Gt5DeFEylxQVTlZHapR7zxk54pMoVVjXnbFHuGWkV4xSEaItF4FEh93xuydv/5m0JpIYdqWAjHvQZIb2aidhQ0gn7h9WlxT9HHdjfjiRgMfo0MiC3EdVIVDZriX2SOpNyLB5prWpAvXrG8MevlXSUd1vzGShR954jQ8WDjqw5K4X3GzdABn9WsRvkss0bX0+LS4XdpBY8nhWwgYTGYOjn1mGOqGmGeFRBx0bGchSy+fe6ImNR8M0pHH95aYoqPG9SZpoOipN1pseN4r6glA3C9RNQUuXeiyIpa789/Ssp9KPEqq4UlZVJL4SExpSnysZsadv9nwghQlVodZvYZohM5bbDj2E8lgYsBryWvYFWI84AliQxkVlZBL0uhNMa5GxQ/MjiGoE17uOnPTSFiOkpywh62PbtLuiMt1hIScoQ=="
   ];
@@ -248,23 +244,6 @@ in
       openssh.authorizedKeys.keys = florianDKeys;
       expires = "2027-11-06";
 
-    };
-
-    # Johanna Latzel, MSc theis with Patrick (ARM CCA and Unikernels)
-    johanna = {
-      isNormalUser = true;
-      home = "/home/johanna";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2087;
-      allowedHosts = [
-        "ian"
-        "yasmin"
-        "jamie"
-        "vislor"
-      ];
-      openssh.authorizedKeys.keys = johannaKeys;
-      expires = "2027-12-31";
     };
 
     # Chris Deininger (Bsc thesis with Felix)
@@ -607,5 +586,6 @@ in
     "yves"
     "neel"
     "neelm"
+    "johanna"
   ];
 }
