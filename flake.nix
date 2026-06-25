@@ -9,7 +9,7 @@
   # To update all inputs:
   # $ nix flake update
   inputs = {
-    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-25.11-backports&shallow=1";
+    nixpkgs.url = "git+https://github.com/TUM-DSE/nixpkgs.git?ref=nixos-26.05-backports&shallow=1";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,20 +20,18 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    buildbot-nix.url = "github:nix-community/buildbot-nix";
-    buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
-    buildbot-nix.inputs.flake-parts.follows = "flake-parts";
-    buildbot-nix.inputs.treefmt-nix.follows = "treefmt-nix";
+    nixbot.url = "github:Mic92/nixbot";
+    nixbot.inputs.nixpkgs.follows = "nixpkgs";
+    nixbot.inputs.treefmt-nix.follows = "treefmt-nix";
 
     niks3.url = "github:Mic92/niks3";
     niks3.inputs.nixpkgs.follows = "nixpkgs";
-    niks3.inputs.flake-parts.follows = "flake-parts";
     niks3.inputs.treefmt-nix.follows = "treefmt-nix";
 
     nixos-generators = {
@@ -43,6 +41,7 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
 
     jetpack-nixos.url = "git+https://github.com/TUM-DSE/jetpack-nixos.git?shallow=1&ref=no-overlay";
     jetpack-nixos.inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +51,13 @@
 
     retiolum.url = "github:Mic92/retiolum";
     retiolum.inputs.nixpkgs.follows = "nixpkgs";
+
+    tincr.url = "github:Mic92/tincr";
+    tincr.inputs.nixpkgs.follows = "nixpkgs";
+    tincr.inputs.treefmt-nix.follows = "treefmt-nix";
+
+    tribuchet.url = "github:Mic92/tribuchet";
+    tribuchet.inputs.nixpkgs.follows = "nixpkgs";
 
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
@@ -64,6 +70,10 @@
     hosthog.url = "github:pogobanane/hosthog";
     hosthog.inputs.nixpkgs.follows = "nixpkgs";
     hosthog.inputs.flake-parts.follows = "flake-parts";
+
+    fast-nix-gc.url = "github:Mic92/fast-nix-gc";
+    fast-nix-gc.inputs.nixpkgs.follows = "nixpkgs";
+    fast-nix-gc.inputs.treefmt-nix.follows = "treefmt-nix";
 
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
@@ -92,7 +102,7 @@
           ./templates
         ];
         perSystem =
-          { self', system, ... }:
+          { self', system, pkgs, ... }:
           {
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
@@ -104,6 +114,9 @@
                   "donna"
                   "yasmin"
                   "ace"
+                  "eliza"
+                  "joy"
+                  "install-iso-aarch64-linux"
                 ];
                 machinesPerSystem = {
                   inherit aarch64-linux;
@@ -113,12 +126,43 @@
                 };
                 nixosMachines = lib.mapAttrs' (n: lib.nameValuePair "nixos-${n}") (
                   lib.genAttrs (machinesPerSystem.${system} or [ ]) (
-                    name: self.nixosConfigurations.${name}.config.system.build.toplevel
+                    name:
+                    let
+                      cfg = self.nixosConfigurations.${name};
+                      buildSystem = cfg.pkgs.stdenv.buildPlatform.system;
+                    in
+                    # The manual aarch64-linux list above must agree with
+                    # the pkgs assigned in configurations.nix; when it
+                    # drifted (eliza, joy) buildbot published the closure
+                    # under the wrong checks.<system> key and the on-host
+                    # auto-upgrade 404'd indefinitely. Compare against
+                    # buildPlatform so cross-compiled hosts (e.g. the
+                    # riscv64 boards built via pkgsCross on x86_64) stay
+                    # under the system that actually has builders.
+                    assert lib.assertMsg (buildSystem == system)
+                      "nixosConfigurations.${name} builds on ${buildSystem} but is listed under checks.${system}; fix machinesPerSystem in flake.nix";
+                    cfg.config.system.build.toplevel
                   )
                 );
                 devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
+                # Users run home-manager standalone against the system
+                # registry pins, so home-manager/nixpkgs skew breaks
+                # `home-manager switch` without failing any host build.
+                homeManager = {
+                  home-manager-eval =
+                    (inputs.home-manager.lib.homeManagerConfiguration {
+                      inherit pkgs;
+                      modules = [
+                        {
+                          home.username = "ci";
+                          home.homeDirectory = "/home/ci";
+                          home.stateVersion = "26.05";
+                        }
+                      ];
+                    }).activationPackage;
+                };
               in
-              nixosMachines // devShells;
+              nixosMachines // devShells // homeManager;
           };
       }
     )).config.flake;

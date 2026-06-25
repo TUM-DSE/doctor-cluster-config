@@ -23,7 +23,7 @@ let
     ./modules/auto-upgrade.nix
     ./modules/hosts.nix
     ./modules/network.nix
-    ./modules/promtail.nix
+    ./modules/fluent-bit.nix
     ./modules/zsh.nix
     ./modules/systemd.nix
     ./modules/cleanup.nix
@@ -38,6 +38,8 @@ let
     srvos.nixosModules.mixins-telegraf
     srvos.nixosModules.mixins-terminfo
     srvos.nixosModules.mixins-nix-experimental
+
+    inputs.fast-nix-gc.nixosModules.default
 
     sops-nix.nixosModules.sops
     ({ pkgs
@@ -57,6 +59,11 @@ let
       sops.defaultSopsFile = lib.mkIf (builtins.pathExists sopsFile) sopsFile;
 
       time.timeZone = "UTC";
+
+      # Our pools are imported via cache file / explicit pool lists, so we do
+      # not need to force-import the root pool. Silences the 26.11 deprecation
+      # warning and follows the upcoming default.
+      boot.zfs.forceImportRoot = false;
     })
     retiolum.nixosModules.retiolum
   ];
@@ -76,6 +83,7 @@ let
       ./modules/doctor-VMs.nix
       ./modules/lawful-access
       ./modules/nix-index.nix
+      ./modules/no-nouveau.nix
     ];
 
   pkgsForSystem = system: import nixpkgs {
@@ -356,6 +364,15 @@ in
         computeNodeModules
         ++ [
           ./hosts/steve.nix
+        ];
+    };
+
+    polly = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
+        computeNodeModules
+        ++ [
+          ./hosts/polly.nix
         ];
     };
   };

@@ -37,6 +37,7 @@ let
       aleksandra
       thore
       harshanavkis
+      halalboro
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
@@ -58,7 +59,7 @@ let
     builtins.mapAttrs (name: value: (map (x: keys.machines.${x}) value)) {
       "modules/nfs/secrets.yml$" = [ "mickey" "dan" ];
       "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
-      "modules/niks3/secrets.yml$" = [ "astrid" "doctor" ];
+      "modules/niks3/secrets.yml$" = [ "astrid" "doctor" "graham" ];
 
       "modules/users/xrdp-passwords.yml$" = [
         "amy"

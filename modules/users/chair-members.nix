@@ -120,6 +120,19 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPGx6ZevvIeVpRzN5CmUuC7dskP/8sFsYJUA165reuYP5TGb9FDnDvd1VtV+rr12lvXCbqbB5vFkbtWCFQ5qblSoNuqD3fhwL6/+tF8WVUy1TvxfpXAUpIiByIukIGF6zIw4KVwcv54jEy11quxb5+MIYY0fR+GOfG0AiHjmr56c09xvzRIa4jDVDyXjwYE4FMw4X1oXv2S3puaXa3OPRExP9uUNV95KuqPDGkuetoDeqmK17MR9yb9xKvW4F2nEMc8jG34QmZlos5XGxxqJz1krQJODF35zYDWz9nje15Xk0PRkOgde0AVKHHI9SmyH9pAtCrMyc6ch1YL6z0z/0BumEbZ20JYnvxuFGxbnEX0tCoM9Vvq8KaUKkbwaeEZWeWC5pOnLLsIOSJqLdoisUNCCb3OfkXfTnSoP1235+jrH5m/rOCYsERQ0wkaC9sQwSxK2eYpdD897XY1cXDveqoKx5tV/gUR6gho1SSRJHF8k7gZ4nDu3eNmiX/uQcpOoRAEyCp5jgJMgDucr9I81DODOX3G+KdvUiawB/lOf2CQX0NTBhxo74Fqy+P4NB0T7nWQ/0n2X9XNjtiMGRh+NmRUqZQvtglOuRGjZ9OOXBL+zhSraYQGO8GsyLhVLYmXrNhYH39qRl2XfkjgyynfuOe8TuL9GW2UBDA3d3dx7dLXQ== panda@Anubhavs-MacBook-Pro.local"
   ];
 
+  peterKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEQXgzXZD88m4eXmr1R1mWTVhtknjHrhRzJfWa4d9xU wegii@idontcare"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAJgek7Zr0teEJNbXcA64IY5OEN94DrCpitGMM1eVZot wegii@wegiidse.local"
+  ];
+
+  simonkKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrdEe2/aOcUzaPtkDLJQ8VrcfiF8tNpk02SPLIVrsTywSHrBueOMz/cVR/Dkk7HREkI8iPshIefYogGgXNrwXp4ogu7DFA/5FS58QgrUS/il/LYT1pIcC4URFt0s5UHxvXbVP/zPVVpDZ7AqXLzz0H95csR9mO5eY2CgZh5+haC1dNhBEZK7v2pcsp+TrDzcxKjo5ZjqFAUNRBAT/lMJy2t0Zdm9cnkNFYymC2n57mgve2W9L8mRsMTYdQbwT7S7PgV3605e7bphnvGVl09iSkwkbQZ9oiqvZFdVn9id6tPxlf6wnnMo2YU9fuqRJoF6kKGN5Mvqvmm6bIUW5y9cFjpAniJg7lPY2Dc/em/q5jpdYirnkPnjnjpqdNBKnroRbsNL8bUWPyyZM4seSAIaw61OUQLhJHClUx9sAb3nyWRq6k2PAB1HcBeY9dVgv3b+0ZzNsR52IqEzs3VOZGAS174Kd8FFk7oyV15a1qfyhCzKxNJIbW8AHXh+S7EcVnyYyJguJ/hblUOwsc4Un/3UQkmhTTOkZOb3zZklHM62isA4yA6uAUkCxASgaG0UMtvzeJiynYLr1x4YR2jTKU2VD79n8pcKienJmBH0d80FtnPMiJPZA4EiVSXYAZ1PKbVsSBk47Ia7SmgZr46VX4ha5frAY/kQNzFk9qyImuyPyIyw== kammerme ge35tem"
+  ];
+
+  gierensKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -336,6 +349,17 @@ in
         openssh.authorizedKeys.keys = julianKeys;
       };
 
+      # Simon Kammermeier
+      simonk = {
+        isNormalUser = true;
+        home = "/home/simonk";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2017;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = simonkKeys;
+      };
+
       #  Nathaniel Tornow
       nate = {
         isNormalUser = true;
@@ -401,6 +425,30 @@ in
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = anubhavKeys;
         xrdpAccess = true;
+      };
+
+      # Peter Wegmann
+      peter = {
+        isNormalUser = true;
+        home = "/home/peter";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2081;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = peterKeys;
+        xrdpAccess = false;
+      };
+
+      # Sandro Gierens
+      gierens = {
+        isNormalUser = true;
+        home = "/home/gierens";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2003;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = gierensKeys;
+        xrdpAccess = false;
       };
 
       # add staff to root account as well

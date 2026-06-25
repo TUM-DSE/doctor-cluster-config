@@ -1,0 +1,12 @@
+[package]
+name = "s3-sigv4"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[dependencies]
+hex = "0.4"
+hmac = "0.12"
+sha2 = "0.10"
+time = { version = "0.3", default-features = false, features = ["std"] }

@@ -20,6 +20,7 @@
     glib
     gtk2
     gtk3
+    icu
     libGL
     libappindicator-gtk3
     libdrm
@@ -33,21 +34,21 @@
     pango
     pipewire
     systemd
-    xorg.libX11
-    xorg.libXScrnSaver
-    xorg.libXcomposite
-    xorg.libXcursor
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libxkbfile
-    xorg.libxshmfence
-    xorg.libXft
-    xorg.libxcb
+    libx11
+    libxscrnsaver
+    libxcomposite
+    libxcursor
+    libxdamage
+    libxext
+    libxfixes
+    libxi
+    libxrandr
+    libxrender
+    libxtst
+    libxkbfile
+    libxshmfence
+    libxft
+    libxcb
     zlib
     (lib.lowPrio ncurses5) # xgdb from xilinx vitis
     ncurses

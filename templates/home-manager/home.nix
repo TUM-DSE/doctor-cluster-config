@@ -8,7 +8,7 @@
       htop
     ];
 
-    home.stateVersion = "23.11";
+    home.stateVersion = "25.11";
     home.username = username;
     home.homeDirectory = "/home/${username}";
     xdg.cacheHome = "/scratch/${username}/.cache";

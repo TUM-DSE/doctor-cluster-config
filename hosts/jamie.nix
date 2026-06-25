@@ -1,4 +1,4 @@
-
+{ pkgs, ... }:
 {
   imports = [
     ../modules/hardware/poweredge7625.nix
@@ -11,6 +11,7 @@
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
+    ../modules/tribuchet
   ];
 
   simd.arch = "znver4";
@@ -19,14 +20,10 @@
 
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
   };
 
   networking.hostName = "jamie";
 
   system.stateVersion = "23.05";
-
-  # temporarily disable auto-reboot until the memsafedb eval has finished running
-  systemd.timers.auto-reboot.enable = false;
-  systemd.services.auto-reboot.enable = false;
 }

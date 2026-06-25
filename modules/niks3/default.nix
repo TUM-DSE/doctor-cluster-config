@@ -38,7 +38,11 @@
       issuer = "https://token.actions.githubusercontent.com";
       audience = "https://niks3.dos.cit.tum.de";
       boundClaims = {
-        repository_owner = [ "TUM-DSE" ];
+        repository = [
+          "TUM-DSE/*"
+          # Dogfooding the GitHub Action's own CI.
+          "Mic92/niks3-action"
+        ];
       };
     };
 

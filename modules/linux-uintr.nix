@@ -1,7 +1,17 @@
 { pkgs, lib, ... }:
 let
     linux_uintr = pkgs.callPackage ../pkgs/kernels/linux-uintr.nix { };
-    linuxPackages_uintr = lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux_uintr);
+    linuxPackages_uintr = lib.recurseIntoAttrs (
+      (pkgs.linuxPackagesFor linux_uintr).extend (
+        _final: prev: {
+          # Kernel modules inherit the kernel's gcc13 stdenv (see
+          # linux-uintr.nix), but sysdig's userland half links
+          # gcc15-built libraries (onetbb), which needs the matching
+          # libstdc++. The kmod part still gets -std=gnu11 from Kbuild.
+          sysdig = prev.sysdig.override { stdenv = pkgs.stdenv; };
+        }
+      )
+    );
 in
 {
     boot.kernelPackages = lib.mkForce linuxPackages_uintr;

@@ -260,6 +260,7 @@ HOSTS = [
     "martha.dos.cit.tum.de",
     "eliza.dos.cit.tum.de",
     "steve.dos.cit.tum.de",
+    "polly.dos.cit.tum.de",
 ]
 
 # used for different IPMI power readings
@@ -289,6 +290,9 @@ MANUFACTURERS = dict(
             "eliza.dos.cit.tum.de",
             "steve.dos.cit.tum.de",
         ],
+        "gigabyte": [
+            "polly.dos.cit.tum.de"
+        ]
     }
 )
 
@@ -449,12 +453,30 @@ def deploy_host(c: Any, host: str) -> None:
 
 
 @task
-def deploy_local(c: Any) -> None:
+def deploy_local(c: Any, kexec: bool = False) -> None:
     """
     Deploy NixOS configuration on the same machine. The NixOS configuration is
-    selected based on the hostname.
+    selected based on the hostname. Pass --kexec to reboot via kexec after deployment.
     """
     c.run("""sudo nixos-rebuild switch --flake .#""")
+    if kexec:
+        c.run("sudo systemctl disable --now --runtime auto-upgrade.timer")
+        result = c.run("loginctl list-sessions -j", hide=True)
+        sessions = json.loads(result.stdout)
+        current_user = os.environ.get("USER", "")
+        other_sessions = [
+            s for s in sessions
+            if s.get("class") == "user" and s.get("user") != current_user
+        ]
+        if other_sessions:
+            print("Other users are currently logged in:")
+            for s in other_sessions:
+                print(f"  {s.get('user')} (session {s.get('session')}, tty {s.get('tty')})")
+            answer = input("Proceed with kexec anyway? [y/N] ").strip().lower()
+            if answer != "y":
+                print("Skipping kexec.")
+                return
+        c.run("sudo systemctl kexec")
 
 
 @task
@@ -721,7 +743,11 @@ def check_expired_accounts():
     for match in re.finditer(user_pattern, content, re.DOTALL):
         username = match.group(1)
         expires_str = match.group(2)
-        expires_date = datetime.strptime(expires_str, "%Y-%m-%d").date()
+        try:
+            expires_date = datetime.strptime(expires_str, "%Y-%m-%d").date()
+        except ValueError as e:
+            msg = f"Invalid expires date {expires_str!r} for user {username!r} in {students_file}: {e}"
+            raise ValueError(msg) from e
 
         # Skip if this is inside a comment
         # Check if the line with expires is commented

@@ -49,6 +49,7 @@
     [agent.kata]
     kernel_modules=[]
     dial_timeout = 45
+    debug_console_enabled = true
     [runtime]
     internetworking_model="tcfilter"
     disable_guest_seccomp=true
@@ -85,6 +86,7 @@
     [agent.kata]
     kernel_modules=[]
     dial_timeout = 45
+    debug_console_enabled = true
     [runtime]
     internetworking_model="tcfilter"
     disable_guest_seccomp=true
@@ -118,6 +120,7 @@
     [agent.kata]
     kernel_modules=[]
     dial_timeout = 45
+    debug_console_enabled = true
     [runtime]
     internetworking_model="tcfilter"
     disable_guest_seccomp=true
@@ -175,6 +178,7 @@
     [agent.kata]
     kernel_modules=[]
     dial_timeout = 90
+    debug_console_enabled = true
     [runtime]
     internetworking_model="tcfilter"
     disable_guest_seccomp=true
