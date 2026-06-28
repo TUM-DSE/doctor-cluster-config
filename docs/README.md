@@ -102,8 +102,8 @@ Those servers (or individual devices) are sometimes used exclusively by a single
 ## CI servers
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab.
-Astrid also hosts the buildbot master server with Graham as the buildbot worker.
-See [buildbot.md](./buildbot.md) for documentation on how to add repositories and checks.
+Graham runs the nixbot CI service (doctor reverse-proxies it; eliza is an aarch64 remote builder).
+See [nixbot.md](./nixbot.md) for documentation on how to add repositories and checks.
 
 - [astrid](./hosts/astrid.md)
 - [dan](./hosts/dan.md), nfs backup
