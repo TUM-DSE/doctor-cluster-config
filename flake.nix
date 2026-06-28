@@ -40,6 +40,8 @@
       inputs.nixlib.follows = "nixpkgs";
     };
 
+    crane.url = "github:ipetkov/crane";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -55,9 +57,11 @@
     tincr.url = "github:Mic92/tincr";
     tincr.inputs.nixpkgs.follows = "nixpkgs";
     tincr.inputs.treefmt-nix.follows = "treefmt-nix";
+    tincr.inputs.crane.follows = "crane";
 
     tribuchet.url = "github:Mic92/tribuchet";
     tribuchet.inputs.nixpkgs.follows = "nixpkgs";
+    tribuchet.inputs.crane.follows = "crane";
 
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant
