@@ -62,6 +62,7 @@
     },
     "fast-nix-gc": {
       "inputs": {
+        "nix-darwin": "nix-darwin",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -70,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780385651,
-        "narHash": "sha256-Pe7Dt8Jxqt8OLpnYEXeJwwrksSYL3e0MfJk7TLazJRQ=",
+        "lastModified": 1782555524,
+        "narHash": "sha256-bc7MIBFxpUwEbA4LAolqtGwE9tQLR3770npYeSnqsfA=",
         "owner": "Mic92",
         "repo": "fast-nix-gc",
-        "rev": "428ada9af024350676cba3e2ca6c1332ea4ef026",
+        "rev": "f1b896ed2e910197cf804718c608e48df04933e6",
         "type": "github"
       },
       "original": {
@@ -235,6 +236,27 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
+          "fast-nix-gc",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781761792,
+        "narHash": "sha256-rCPytmKNjctLloB6UgK5CRrHSwV4b0ygxtJLPPp8R14=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "a1fa429e945becaf60468600daf649be4ba0350c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "nix-darwin_2": {
+      "inputs": {
+        "nixpkgs": [
           "retiolum",
           "nixpkgs"
         ]
@@ -253,7 +275,7 @@
         "type": "github"
       }
     },
-    "nix-darwin_2": {
+    "nix-darwin_3": {
       "inputs": {
         "nixpkgs": [
           "tribuchet",
@@ -400,7 +422,7 @@
     },
     "retiolum": {
       "inputs": {
-        "nix-darwin": "nix-darwin",
+        "nix-darwin": "nix-darwin_2",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -552,7 +574,7 @@
         "crane": [
           "crane"
         ],
-        "nix-darwin": "nix-darwin_2",
+        "nix-darwin": "nix-darwin_3",
         "nixpkgs": [
           "nixpkgs"
         ]
