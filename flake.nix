@@ -165,8 +165,19 @@
                       ];
                     }).activationPackage;
                 };
+                # Pin all flake inputs into the binary cache so that
+                # offline/auto-upgrade hosts can fetch them without
+                # re-resolving every git input on each rebuild.
+                flakeInputs = {
+                  flake-inputs = pkgs.linkFarm "flake-inputs" (
+                    lib.mapAttrsToList (name: input: {
+                      inherit name;
+                      path = input.outPath;
+                    }) (lib.filterAttrs (_: input: input ? outPath) inputs)
+                  );
+                };
               in
-              nixosMachines // devShells // homeManager;
+              nixosMachines // devShells // homeManager // flakeInputs;
           };
       }
     )).config.flake;
