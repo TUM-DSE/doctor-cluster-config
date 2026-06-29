@@ -19,6 +19,7 @@
     httpAddr = "[::]:5752";
 
     cacheUrl = "https://cache.dos.cit.tum.de";
+    serverUrl = "https://niks3.dos.cit.tum.de";
 
     # TUM ITO S3 configuration
     s3 = {
