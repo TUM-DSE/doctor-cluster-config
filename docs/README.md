@@ -339,6 +339,60 @@ If the RGB group asks which networks to connect your machine to, tell them `il01
 
 A graph of how the servers are connected right now can be found [here](./hosts/graph.md).
 
-## Names left to pick
+# Server rack layout
 
--
+Physical position of each server in our racks. For host roles and software
+configuration see [README.md](./README.md); for per-host expansion cards see
+[expansion_cards.md](./expansion_cards.md).
+
+> **Last visually verified:** 2026-07-30 
+
+---
+
+## Room view — all racks
+
+```
+┌───────────┐  ┌──┐  ┌──┐  ┌──┐  ┌───────────┐  ┌───────────┐
+│           │  │  │  │  │  │  │  │           │  │  vislor   │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │   rose    │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │    amy    │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │   clara   │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │  momiji   │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │  jackson  │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │ christina │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │ adelaide  │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │  wilfred  │
+├───────────┤  │  │  │  │  │  │  │           │  ├───────────┤
+│   steve   │  │  │  │  │  │  │  │           │  │   river   │
+├───────────┤  │  │  │  │  │  │  │           │  ├───────────┤
+│   eliza   │  │  │  │  │  │  │  │           │  │   jack    │
+├───────────┤  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │    dan    │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │  astrid   │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │  mickey   │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │   ryan    │
+│           │  │  │  │  │  │  │  │           │  ├───────────┤
+│           │  │  │  │  │  │  │  │           │  │  graham   │
+│           │  │  │  │  │  │  │  ├───────────┤  ├───────────┤
+│           │  │  │  │  │  │  │  │  martha   │  │  yasmin   │
+│           │  │  │  │  │  │  │  ├───────────┤  ├───────────┤
+│           │  │  │  │  │  │  │  │  sakura   │  │  hinoki   │
+│           │  │  │  │  │  │  │  ├───────────┤  ├───────────┤
+│           │  │  │  │  │  │  │  │   irene   │  │    ian    │
+│           │  │  │  │  │  │  │  ├───────────┤  ├───────────┤
+│           │  │  │  │  │  │  │  │  xavier   │  │   jamie   │
+└───────────┘  └──┘  └──┘  └──┘  └───────────┘  └───────────┘
+   leftmost                                         rightmost (left row from room entry)
+```
+

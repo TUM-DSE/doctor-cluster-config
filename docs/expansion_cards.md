@@ -1,6 +1,6 @@
 # Expansion cards and slots
 
-Note also the auto-generated [PCI slots](./expansion_cards_autogen.md) enoumeration and [GPU list](./gpu.md).
+Note also the auto-generated [PCI slots](./expansion_cards_autogen.md) enumeration, [GPU list](./gpu.md), [Intel FPGA setup](./intel-fpgas.md), and [Adric switch](./adric.md) (which the NIC/FPGA ports below connect to).
 
 Parameters to consider for matching cards to slots:
 
@@ -9,6 +9,8 @@ Parameters to consider for matching cards to slots:
     - internal/external: does the slot need to be accessible from the outside (to plug cables in)
 
 ## List of cards
+
+Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.md](./intel-fpgas.md).
 
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
     - office 01.07.60
@@ -19,36 +21,40 @@ Parameters to consider for matching cards to slots:
 - 1x (Intel) Napatech F2070X Infrastructure Processing Unit (IPU) (high profile, dual slot)
     - TBD
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-    - sakura (sakura-sakura, loopback)
-        - SN: 501211207MON
+    - sakura
         - MAC1: 00:0A:35:06:AE:13
-        - MAC2: 00:0A:35:06:AE:14
-        - MAC3: 00:0A:35:06:AE:15
-        - MAC4: 00:0A:35:06:AE:16
     - hinoki
         - MAC: 
-    - office 01.07.60
-        - MAC: 00:0A:35:0E:70:60
+    - momiji
+        - MAC: 00:0A:35:0E:70:60 
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
     - momiji
-        - MAC1: 00:0A:35:0C:EF:30
+        - MAC1: 00:0A:35:0C:EF:30 (momiji-adric10)
         - MAC2: 00:0A:35:0C:EF:31
     - clara
-        - MAC1: 00:0A:35:0E:24:F2
+        - MAC1: 00:0A:35:0E:24:F2 (clara-adric11)
         - MAC2: 00:0A:35:0E:24:F3
     - rose
-        - MAC1: 00:0A:35:0E:24:E6
+        - MAC1: 00:0A:35:0E:24:E6 (clara-adric9)
         - MAC2: 00:0A:35:0E:24:E7
     - amy
-        - MAC1: 00:0A:35:0E:24:D6
+        - MAC1: 00:0A:35:0E:24:D6 (clara-adric12)
         - MAC2: 00:0A:35:0E:24:D7
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC
     - office 01.07.060
     - firmware bundle_id 1.1.1.1021
 - 2x AMD/Xilinx Alveo V80 FPGA (high profile, dual slot)
     - rose
+        - MAC1: 00:0A:35:26:07:40 (rose-adric15)
+        - MAC2: 00:0A:35:26:07:41
+        - MAC3: 00:0A:35:26:07:42
+        - MAC4: 00:0A:35:26:07:43 (rose-clara)
     - clara
-- 8x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+        - MAC1: 
+        - MAC2: 
+        - MAC3: 
+        - MAC4: 
+- 10x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
         - MAC2: b4:96:91:a4:1c:f1
@@ -62,8 +68,12 @@ Parameters to consider for matching cards to slots:
         - MAC: b4:96:91:b3:8b:04
     - river: single port. (river-christina)
         - MAC: b4:96:91:b3:8b:3c
-    - amy: single port. (amy-wilfred)
+    - amy: single port. (amy-adric7)
         - MAC: b4:96:91:b3:8a:90
+    - clara: single port. (amy-adric8)
+        - MAC: b4:96:91:f2:63:00  
+    - rose: single port. (amy-adric16)
+        - MAC: b4:96:91:aa:95:68
     - vislor: single port (vislor-graham)
         - MAC: 30:3e:a7:05:d0:98 
     - martha: single port (martha-jackson)
@@ -72,9 +82,9 @@ Parameters to consider for matching cards to slots:
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,none)
 - 3x BCM57412 10G NIC (SFP+)
-    - clara (internet/uplink, clara-craig2)
+    - clara (internet/uplink, clara-adric34)
     - rose (internet/uplink, none)
-    - amy (internet/uplink, amy-craig1)
+    - amy (internet/uplink, amy-adric33)
 - 5x Intel X550 10G NIC (RJ-45)
     - adelaide (chistina-adelaide, christina-adelaide)
     - christina (adelaide-chistina, adelaide-christina)
@@ -112,5 +122,5 @@ Onboard (not listed by [List of slots](#List of slots)):
     - vislor: 2 ports RJ-45 (,)
     - martha: 2 ports SFP (uplink, none)
 
-(^ list last updated 24.03.2026)
+(^ list last updated 29.06.2026)
 
