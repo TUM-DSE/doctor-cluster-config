@@ -237,7 +237,7 @@ Once the server is installed in the server room:
 
 - ensure again that the networks in the Struktur DB are set correctly
 - add host to `tasks.py` (`HOSTS` and `MANUFACTURERS`) and commit `inv update-docs`
-- add host to `docs/README.md`
+- add host to `docs/README.md` and update the file's `Server rack layout`
 - fix up warnings in the nixos config
 - add the host to monitoring in [`modules/monitoring/prometheus-targets.nix`](../modules/monitoring/prometheus-targets.nix) (see [monitoring.md](./monitoring.md))
 - Document new NICs, FPGAs, GPUs etc in [cards](./expansion_cards.md) or [GPUs](./gpu.md) 
