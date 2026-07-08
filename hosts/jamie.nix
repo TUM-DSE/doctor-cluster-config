@@ -14,6 +14,10 @@
     ../modules/tribuchet
   ];
 
+  # H100 runs in Confidential Compute mode for SEV-SNP passthrough; the host
+  # driver cannot initialize it, so CDI generation fails and breaks activation.
+  hardware.nvidia-container-toolkit.enable = false;
+
   simd.arch = "znver4";
 
   disko.rootDisk = "/dev/disk/by-id/nvme-SAMSUNG_MZQL23T8HCLS-00A07_S64HNJ0X815786";
