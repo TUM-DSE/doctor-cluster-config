@@ -43,6 +43,19 @@ in {
       openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGfmK0t9PXFJ+NhSQ4r0biriq7f+694olUQrl4sVb7Qy btbferret2"];
       expires = "2026-09-01";
     };
+
+    ccsRev1 = {
+      isNormalUser = true;
+      home = "/home/ccsRev1";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4016;
+      inherit extraGroups;
+      allowedHosts = [
+        "vislor"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIdZhGHv8KmIqRvColCrRwGJSsMZp7TojZvXO0IUeKLbn9IDVefgNq352dW7/LhQUK6Pda/ukPiBf/B0pzlqt9R5gYfrV6tcQkEaVcNOLj14s0SMQ7tPwgah1W8KddMNnA5+xZ7n8rWRUuYpMdXX+1QokxFLJCEDERXbTZ/CzFjrjalsAWv0IeaxMzq+Z2HfuKTmMnEGH56BTYkF+iayddtV00ZR5pOMZhtL4pkhFYTSnZpn9GEeSSpFx2nKCvf+iVN0h4umtSmL5d1cgZ4cBhKPsjIAfaqitzcoerEWSM0yMGowXyBPJyTbjrtYcv9dG/g7mdLtkXzBfxDf021/QQpotVty5OwsdWC3KW5EJKRseGYWV7dIQA9QSR6dJI7FatoJBAXeM8+XiHYFEfa4Lm3Z5OEn4tft1pMWRbk8t/orWWz88UtXS3xCBh2UQlWS0H/4BDE9cGJ/si/YjCBFBXJ+KA1mxNMByyHpB4SgNnrta+DRRwBtLF6iF73HWi9UP+jDQaLzzl+eCKPpWtJXGIYYyV7oJXAm0nsdS1WbyTo1PO4rhuowe89e4H7GuvecbWwA6vAZaFCX0cfMzwgzpT6Pmf2hpHF+j7rFlTa1qLW+3/FvkkMr3uictL6HEy/YagtjQUNfE1lqb/tJeRens5ss4GlvzjYMi/S8mrWHa5yw=="];
+      expires = "2026-08-01";
+    };
 };
 
   # DANGER ZONE!
