@@ -48,7 +48,7 @@ in {
       isNormalUser = true;
       home = "/home/ccsRev1";
       shell = "/run/current-system/sw/bin/bash";
-      uid = 4011;
+      uid = 4016;
       inherit extraGroups;
       allowedHosts = [
         "vislor"
