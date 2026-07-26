@@ -76,6 +76,10 @@
     hosthog.inputs.nixpkgs.follows = "nixpkgs";
     hosthog.inputs.flake-parts.follows = "flake-parts";
 
+    zfs-dedup.url = "github:Mic92/zfs-dedup";
+    zfs-dedup.inputs.nixpkgs.follows = "nixpkgs";
+    zfs-dedup.inputs.treefmt-nix.follows = "treefmt-nix";
+
     fast-nix-gc.url = "github:Mic92/fast-nix-gc";
     fast-nix-gc.inputs.nixpkgs.follows = "nixpkgs";
     fast-nix-gc.inputs.treefmt-nix.follows = "treefmt-nix";

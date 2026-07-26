@@ -1,5 +1,7 @@
 { lib, config, ... }:
 {
+  imports = [ ./zfs-dedup.nix ];
+
   options = {
     disko.rootDisk = lib.mkOption {
       type = lib.types.str;

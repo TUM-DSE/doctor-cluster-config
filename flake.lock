@@ -423,10 +423,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1783336023,
-        "narHash": "sha256-2jSdfozltXxD+3zibuRT14m0Q4FrPlsqFMYY7HiouS4=",
+        "lastModified": 1785044677,
+        "narHash": "sha256-uvEmjzCnNcTDX6v77qTXZ816zwOs/r/cV0PdLhevJnM=",
         "ref": "nixos-26.05-backports",
-        "rev": "21033b66851dc248cdaaa1b1adae5a200cb1635a",
+        "rev": "bb63ce244df9885e2469358ddf3384648c44e7ca",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
@@ -482,7 +482,8 @@
         "srvos": "srvos",
         "tincr": "tincr",
         "treefmt-nix": "treefmt-nix",
-        "tribuchet": "tribuchet"
+        "tribuchet": "tribuchet",
+        "zfs-dedup": "zfs-dedup"
       }
     },
     "rust-analyzer-src": {
@@ -612,6 +613,29 @@
       "original": {
         "owner": "Mic92",
         "repo": "tribuchet",
+        "type": "github"
+      }
+    },
+    "zfs-dedup": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784497479,
+        "narHash": "sha256-dtgpxSCdlMSst3e6RmZ6Bn0ZwCKSrUzQmqFYNbOwuHY=",
+        "owner": "Mic92",
+        "repo": "zfs-dedup",
+        "rev": "4bf6d89cdd5ac01c55ec638c8fd70913bdf4d550",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "zfs-dedup",
         "type": "github"
       }
     }
