@@ -343,16 +343,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1783336777,
-        "narHash": "sha256-4qAtBEgZU+g5gF7AGGo6bAV5oR+iotdRgok/sceAIwA=",
+        "lastModified": 1784982595,
+        "narHash": "sha256-CY9KZwI0vkBlI2sPEsqPNIgnU4xd2Nt2RwzkMG96Xvs=",
         "owner": "Mic92",
         "repo": "nixbot",
-        "rev": "6aff97dd8d6762a3be2810689d14bed98a6488f0",
+        "rev": "b057cd65774c0ddecbc8a1e79e680fd96e9fb612",
         "type": "github"
       },
       "original": {
         "owner": "Mic92",
-        "ref": "scheduler-perf",
         "repo": "nixbot",
         "type": "github"
       }
@@ -423,10 +422,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1783336023,
-        "narHash": "sha256-2jSdfozltXxD+3zibuRT14m0Q4FrPlsqFMYY7HiouS4=",
+        "lastModified": 1785061954,
+        "narHash": "sha256-dDPWLJLeiC9HHUy7Ckb/9GXxXaCEZTlSEXDS6snYXw4=",
         "ref": "nixos-26.05-backports",
-        "rev": "21033b66851dc248cdaaa1b1adae5a200cb1635a",
+        "rev": "6ad659c367130b866a07cbad4e6235127030e315",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
@@ -482,7 +481,8 @@
         "srvos": "srvos",
         "tincr": "tincr",
         "treefmt-nix": "treefmt-nix",
-        "tribuchet": "tribuchet"
+        "tribuchet": "tribuchet",
+        "zfs-dedup": "zfs-dedup"
       }
     },
     "rust-analyzer-src": {
@@ -612,6 +612,29 @@
       "original": {
         "owner": "Mic92",
         "repo": "tribuchet",
+        "type": "github"
+      }
+    },
+    "zfs-dedup": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784497479,
+        "narHash": "sha256-dtgpxSCdlMSst3e6RmZ6Bn0ZwCKSrUzQmqFYNbOwuHY=",
+        "owner": "Mic92",
+        "repo": "zfs-dedup",
+        "rev": "4bf6d89cdd5ac01c55ec638c8fd70913bdf4d550",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "zfs-dedup",
         "type": "github"
       }
     }

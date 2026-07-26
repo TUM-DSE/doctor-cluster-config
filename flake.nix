@@ -26,7 +26,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixbot.url = "github:Mic92/nixbot/scheduler-perf";
+    nixbot.url = "github:Mic92/nixbot";
     nixbot.inputs.nixpkgs.follows = "nixpkgs";
     nixbot.inputs.treefmt-nix.follows = "treefmt-nix";
 
@@ -75,6 +75,10 @@
     hosthog.url = "github:pogobanane/hosthog";
     hosthog.inputs.nixpkgs.follows = "nixpkgs";
     hosthog.inputs.flake-parts.follows = "flake-parts";
+
+    zfs-dedup.url = "github:Mic92/zfs-dedup";
+    zfs-dedup.inputs.nixpkgs.follows = "nixpkgs";
+    zfs-dedup.inputs.treefmt-nix.follows = "treefmt-nix";
 
     fast-nix-gc.url = "github:Mic92/fast-nix-gc";
     fast-nix-gc.inputs.nixpkgs.follows = "nixpkgs";
