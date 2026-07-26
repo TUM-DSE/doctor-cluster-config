@@ -343,16 +343,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1783336777,
-        "narHash": "sha256-4qAtBEgZU+g5gF7AGGo6bAV5oR+iotdRgok/sceAIwA=",
+        "lastModified": 1784982595,
+        "narHash": "sha256-CY9KZwI0vkBlI2sPEsqPNIgnU4xd2Nt2RwzkMG96Xvs=",
         "owner": "Mic92",
         "repo": "nixbot",
-        "rev": "6aff97dd8d6762a3be2810689d14bed98a6488f0",
+        "rev": "b057cd65774c0ddecbc8a1e79e680fd96e9fb612",
         "type": "github"
       },
       "original": {
         "owner": "Mic92",
-        "ref": "scheduler-perf",
         "repo": "nixbot",
         "type": "github"
       }
@@ -423,10 +422,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785044677,
-        "narHash": "sha256-uvEmjzCnNcTDX6v77qTXZ816zwOs/r/cV0PdLhevJnM=",
+        "lastModified": 1785046519,
+        "narHash": "sha256-ygYNh+rulBa2JGn5dd8ZSfXDRv/+dk0TYML6lhqmHbk=",
         "ref": "nixos-26.05-backports",
-        "rev": "bb63ce244df9885e2469358ddf3384648c44e7ca",
+        "rev": "51ea3c3b2af6d4c9bc5cd5292d553210b977a21d",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
