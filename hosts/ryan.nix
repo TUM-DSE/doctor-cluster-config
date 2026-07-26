@@ -22,9 +22,6 @@
   networking.hostName = "ryan";
   disko.rootDisk = "/dev/disk/by-id/nvme-eui.36314130547000630025384100000002";
 
-  # reclaim space from duplicate blocks via block cloning
-  services.zfs-dedup.timer.enable = true;
-
   # 10GbE NICs for network benchmarks:
   # Broadcom BCM57416 NetXtreme-E Dual-Media
   # - e4:3d:1a:72:00:f0

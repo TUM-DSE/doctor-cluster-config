@@ -15,6 +15,9 @@
     };
   };
   config = {
+    # reclaim space from duplicate blocks (e.g. docker image layers) via block cloning
+    services.zfs-dedup.timer.enable = true;
+
     disko.devices = {
       disk = {
         vdb = {
