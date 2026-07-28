@@ -289,6 +289,7 @@ in
         "river"
         "christina"
         "adelaide"
+        "jackson"
       ];
       openssh.authorizedKeys.keys = raduKeys;
       expires = "2026-10-31";
