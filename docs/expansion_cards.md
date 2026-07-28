@@ -58,15 +58,15 @@ Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.m
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
         - MAC2: b4:96:91:a4:1c:f1
-    - jackson: dual port. (jackson-adric2,jackson-martha)
+    - jackson: dual port. (jackson-christina,jackson-christina)
         - MAC1: b4:96:91:a4:1b:88
         - MAC2: b4:96:91:a4:1b:89
-    - christina: dual port. (christina-river)
+    - christina: dual port. (christina-jackson,christina-jackson)
         - MAC1:
         - MAC2:
     - wilfred: single port. (wilfred-amy)
         - MAC: b4:96:91:b3:8b:04
-    - river: single port. (river-christina)
+    - river: single port. ()
         - MAC: b4:96:91:b3:8b:3c
     - amy: single port. (amy-adric7)
         - MAC: b4:96:91:b3:8a:90
@@ -86,11 +86,11 @@ Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.m
     - rose (internet/uplink, none)
     - amy (internet/uplink, amy-adric33)
 - 5x Intel X550 10G NIC (RJ-45)
-    - adelaide (chistina-adelaide, christina-adelaide)
-    - christina (adelaide-chistina, adelaide-christina)
+    - adelaide (wilfred-adelaide, wilfred-adelaide)
+    - christina (river-chistina, river-christina)
     - jackson 
-    - river (wilfred-river, wilfred-river)
-    - wilfred (river-wilfred, river-wilfred)
+    - river (christina-river, christina-river)
+    - wilfred (adelaide-wilfred, adelaide-wilfred)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?) - in former bill/nardole servers
 - 1x Intel X710 10G NIC (SFI/SFP+?)
     - jack
