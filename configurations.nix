@@ -27,6 +27,7 @@ let
     ./modules/zsh.nix
     ./modules/systemd.nix
     ./modules/cleanup.nix
+    ./modules/zfs-dedup.nix
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
