@@ -13,22 +13,30 @@
         "--served-model-name"
         "qwen3-30b-a3b-instruct"
         "--host"
-        "0.0.0.0"
+        "::"
         "--port"
         "8000"
         "--max-model-len"
-        "32768"
+        "98304"
         "--gpu-memory-utilization"
-        "0.92"
+        "0.94"
+        # Required for OpenAI-style tool/function calling (e.g. coding agents)
+        "--enable-auto-tool-choice"
+        "--tool-call-parser"
+        "hermes"
       ];
-      ports = [ "8000:8000" ];
       volumes = [ "/var/lib/vllm/huggingface:/root/.cache/huggingface" ];
       extraOptions = [
         "--device=nvidia.com/gpu=all"
         "--ipc=host"
+        # Host networking so the API is reachable over IPv6 (retiolum) as well;
+        # docker port publishing without userland-proxy is IPv4-only.
+        "--network=host"
       ];
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 8000 ];
 
   systemd.tmpfiles.rules = [ "d /var/lib/vllm/huggingface 0755 root root -" ];
 }
