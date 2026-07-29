@@ -1,7 +1,5 @@
 { lib, config, ... }:
 {
-  imports = [ ./zfs-dedup.nix ];
-
   options = {
     disko.rootDisk = lib.mkOption {
       type = lib.types.str;
@@ -15,9 +13,6 @@
     };
   };
   config = {
-    # reclaim space from duplicate blocks (e.g. docker image layers) via block cloning
-    services.zfs-dedup.timer.enable = true;
-
     disko.devices = {
       disk = {
         vdb = {

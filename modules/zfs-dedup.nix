@@ -11,12 +11,17 @@ let
 in
 {
   options.services.zfs-dedup = {
-    timer.enable = lib.mkEnableOption "periodic zfs-dedup run over all mounted ZFS datasets";
+    timer.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = config.boot.zfs.enabled;
+      defaultText = lib.literalExpression "config.boot.zfs.enabled";
+      description = "Periodic zfs-dedup run over all mounted ZFS datasets";
+    };
   };
 
   config = {
     # available on all ZFS hosts for manual runs
-    environment.systemPackages = [ package ];
+    environment.systemPackages = lib.mkIf config.boot.zfs.enabled [ package ];
 
     systemd.services.zfs-dedup = lib.mkIf cfg.timer.enable {
       description = "Offline ZFS block-level deduplication";
