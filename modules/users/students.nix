@@ -55,10 +55,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOkhv0C1W+x0+M03Huai+BRO9MmW9E+EnCfPXZmRF+Yg jakoblison@MBP-von-Jakob.fritz.box"
   ];
 
-  hernanKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMowVBAs878BvU469/2lPFGrUYHv6t68w6p1m9BKPTG6 hernanl.leon@huawei.com"
-  ];
-
   martinLiKeys = [
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABCmZLhiHvPWTbyaInI0XBqpbHi5OUdymVr42r2ganFA/7eGfsTi4BN5heBmPkHlay5g/Pl1I0YYJsEF1tdIffqtAGn8riy6BK8cJ76ABl8ZSPQdoVlOuncXzn32BrjJ2kr9BAfCV21WeC2SfpCRYj3sCWZFA2PknSoEfh0kzOTEW22Vg== mrtn@nix-nb"
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBACZkmXdEDbg/5gtbANAYQfSaFKEluiGuQpa6MCA+msQIx2lr/1M7+Lmcf3sWG3kYyYJZFZ+6+sUmUFqgeJWN6jOogGSfK/OEyY/zKdrIqcSIsvoHREhG/10VXSbGWv+MS9FjxuT4AO40FLRF5pq8cGQgUcm3khAknF4yQ6TtJQyxU4OOw== mrtn@cronus"
@@ -331,21 +327,6 @@ in
       expires = "2026-12-31";
     };
 
-    # Hernan Ponce de Leon (Collaborator with Sebastian)
-    hernan = {
-      isNormalUser = true;
-      home = "/home/hernan";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2096;
-      allowedHosts = [
-        "graham"
-        "eliza"
-      ];
-      openssh.authorizedKeys.keys = hernanKeys;
-      expires = "2026-06-30";
-    };
-
     # Sandra Stankovic, MSc student working w/ Manos (thesis to finish in Sept 2026)
     sandra = {
       isNormalUser = true;
@@ -503,8 +484,8 @@ in
       openssh.authorizedKeys.keys = ivanlKeys;
       expires = "2026-10-30";
     };
-    
-		# Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
+
+    # Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
     alex = {
       isNormalUser = true;
       home = "/home/alex";
@@ -563,7 +544,7 @@ in
       openssh.authorizedKeys.keys = marcKeys;
       expires = "2026-09-01";
     };
-    
+
     # Andrei Dolmatov, BSc thesis w/ Aleksandra (can be removed after Oct 2026)
     andrei = {
       isNormalUser = true;
@@ -668,5 +649,6 @@ in
     "yves"
     "neel"
     "neelm"
+    "hernan"
   ];
 }
