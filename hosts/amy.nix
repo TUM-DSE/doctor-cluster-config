@@ -7,6 +7,7 @@
 
     ../modules/xilinx.nix
     ../modules/xrdp.nix
+    ../modules/monitoring/fpga-dashboard/server-collector.nix
 
     ../modules/amd_sev_snp.nix
     # ../modules/vfio/iommu-amd.nix

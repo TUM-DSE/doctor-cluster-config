@@ -8,6 +8,7 @@
     ../modules/intel-fpgas.nix
     ../modules/xilinx.nix
     ../modules/xrdp.nix
+    ../modules/monitoring/fpga-dashboard/server-collector.nix
 
     ../modules/amd_sev_snp.nix
     #../modules/amd_sev_svsm.nix

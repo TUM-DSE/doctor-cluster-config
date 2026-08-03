@@ -22,12 +22,22 @@ in
   imports = [ ./builder.nix ];
 
   config = {
+    services.fast-nix-gc = {
+      enable = true;
+      automatic = true;
+      dates = "03:15";
+      deleteOlderThan = "14d";
+    };
+
+    services.fast-nix-optimise = {
+      enable = true;
+      automatic = true;
+      dates = "04:15";
+    };
+
     nix = {
-      package = lib.mkIf (!pkgs.stdenv.hostPlatform.isRiscV)
-        self.inputs.nix-1.packages.${pkgs.stdenv.hostPlatform.system}.nix;
-      gc.automatic = true;
-      gc.dates = "03:15";
-      gc.options = "--delete-older-than 14d";
+      # Replaced by services.fast-nix-optimise; srvos enables this by default.
+      optimise.automatic = lib.mkForce false;
 
       # https://github.com/NixOS/nix/issues/719
 
@@ -38,10 +48,7 @@ in
         fsync-metadata = lib.boolToString (
           !config.boot.isContainer or config.fileSystems."/".fsType != "zfs"
         );
-        substituters = [
-          "https://nix-community.cachix.org"
-          "https://cache.dos.cit.tum.de"
-        ];
+        substituters = [ "https://cache.dos.cit.tum.de" ];
         system-features = [
           "benchmark"
           "big-parallel"

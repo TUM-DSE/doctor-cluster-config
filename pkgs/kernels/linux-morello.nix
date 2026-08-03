@@ -10,6 +10,7 @@
   openssl,
   elfutils,
   zlib,
+  stdenv,
   ...
 }@args:
 let
@@ -19,6 +20,16 @@ let
     ln -s ${lib.getLib openssl}/lib/* $out
     ln -s ${lib.getLib elfutils}/lib/* $out
     ln -s ${lib.getLib zlib}/lib/* $out
+  '';
+
+  clang-hybrid = runCommand "clang-hybrid" {} ''
+    mkdir -p $out/bin
+    
+    # Create the wrapper script
+    echo "#!${stdenv.shell}" > $out/bin/clang
+    echo "exec ${clang-morello-unwrapped}/bin/clang -target aarch64-linux-gnu \"\$@\"" >> $out/bin/clang
+    
+    chmod +x $out/bin/clang
   '';
 
   buildMorelloKernel =
@@ -38,13 +49,7 @@ let
         inherit version modDirVersion;
 
         src = fetchFromGitLab {
-          inherit
-            domain
-            owner
-            repo
-            rev
-            sha256
-            ;
+          inherit domain owner repo rev sha256;
         };
 
         defconfig = "morello_pcuabi_defconfig";
@@ -52,7 +57,8 @@ let
         extraMakeFlags = [
           "LLVM=1"
           "LLVM_IAS=1"
-          "CC=${clang-morello-unwrapped}/bin/clang"
+
+          "CC=${clang-hybrid}/bin/clang"
           "LD=${clang-morello-unwrapped}/bin/ld.lld"
           "AR=${clang-morello-unwrapped}/bin/llvm-ar"
           "HOSTAR=${clang-morello-unwrapped}/bin/llvm-ar"
@@ -61,9 +67,9 @@ let
           "OBJCOPY=${clang-morello-unwrapped}/bin/llvm-objcopy"
           "OBJDUMP=${clang-morello-unwrapped}/bin/llvm-objdump"
           "READELF=${clang-morello-unwrapped}/bin/llvm-readelf"
-          "HOSTLD=${bintools-morello}/bin/ld.lld"
-          "HOSTCC=${clang-morello}/bin/clang"
-          "HOSTCXX=${clang-morello}/bin/clang++"
+          "HOSTLD=ld"
+          "HOSTCC=gcc"
+          "HOSTCXX=g++"
           # openssl is not added to rpath of ./certs/extract-cert
           "HOSTLDFLAGS=-Wl,--rpath=${rpath}"
         ];

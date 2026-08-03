@@ -1,5 +1,10 @@
-The documenation for all hosts lives in [docs/](docs/). 
-The corresponding nixos configuration is in [hosts/](hosts/).
+The documenation for all hosts lives in [docs/](docs/). The corresponding nixos configuration is in [hosts/](hosts/).
+
+Live cluster monitoring is at [grafana.dos.cit.tum.de](https://grafana.dos.cit.tum.de):
+
+- **DSE-Monitoring** — host reachability & backups
+- **DSE-FPGA** — FPGA cards status
+- **DSE-Switch** — ToR switch port state
 
 # New to NixOS?
 
@@ -54,7 +59,6 @@ Available tasks:
   print-age-key            Scans for the host key via ssh an converts it to age, i.e. inv scan-age-keys --host <hostname>
   print-tinc-key
   reboot                   Reboot hosts. example usage: fab --hosts clara.r,donna.r reboot
-  reformat-install-nixos   format disks and install nixos, i.e.: inv install-nixos --hostname amy --dhcp-interface eth0
   run                      Run provided command on the given hosts, if no host list is provided, than the command is run on all hosts.
   update-docs              Regenerate docs for all servers
   update-host-keys          Update host ssh keys in corresponding host.yml
@@ -70,18 +74,8 @@ $ inv deploy
 
 # Add new users
 
-Add chair members to [./modules/chair-members.nix](./modules/users/chair-members.nix) and students to [./modules/users/students.nix](./modules/users/students.nix).
-
-For chair members use a uid in the 1000-2000. For new students use a uid in the
-2000-3000 range. Check that the uid is unique across both files and in the
-range between to avoid conflicts.
-
-If you need to give reviewers access i.e. for artifact evaluation, add them to
-[./modules/users/reviewers.nix](./modules/users/reviewers.nix).  We use the
-uid range 4000-5000 there. By using `users.users.<username>.allowedHosts` it's
-possible to limit the hosts these users can access. To access the machine, they
-can use the ssh tunnel as described in
-[here](./docs/hosts#accessing-the-server).
+See the step-by-step guide in [docs/ADD_USER.md](docs/ADD_USER.md) for adding
+chair members, students and reviewers.
 
 # Add new servers
 
@@ -96,66 +90,32 @@ nixpkgs versions. To upgrade use:
 $ nix flake update
 ```
 
-Than commit `flake.lock`.
+Then commit `flake.lock`.
 
 # Home-manager
 
 To install home-manager for a user simply run:
 
 ``` console
-$ nix-shell '<home-manager>' -A install
+$ mkdir -p $HOME/.config/home-manager
+$ cd $HOME/.config/home-manager
+$ nix flake init --template github:TUM-DSE/doctor-cluster-config#home-manager
+$ $EDITOR flake.nix home.nix
+$ nix run $HOME/.config/home-manager#switch
 ```
 
-This will initiate your home-manager and will generate a file similar to the one in ```home/.config/nixpkgs/home.nix```
+This will initiate your home-manager and will generate a file similar to the one in `home/.config/nixpkgs/home.nix`
 
 # Visual Studio Code Server support in NixOS
 
 You can use [this](https://github.com/msteen/nixos-vscode-server) to enable support for VS Code Server in NixOS.
 
-An example of the ```home.nix``` configured for VS Code support is shown in ```home/.config/nixpkgs/home.nix```.
+An example of the `home.nix` configured for VS Code support is shown in `home/.config/nixpkgs/home.nix`.
 
 
 # IPMI
 
-On our TUM rack machines we have IPMI support.
-
-Generally, you can find the IPMI web interface at
-`https://$HOST-mgmt.dos.cit.tum.de/` (i.e. https://astrid-mgmt.dos.cit.tum.de)
-once the device has been installed in the rack.  These addresses are only
-available through the management network, so you must use the RBG VPN to access them (see [accessing the server](https://github.com/TUM-DSE/doctor-cluster-config/tree/master/docs#accessing-the-server)).
-
-You can also retrieve the IP addresses assigned to the IPMI/BMC firmware by
-running:
-
-```console
-$ ipmitool lan print
-```
-
-on the machine. On the other host (i.e. your laptop) you can run the following command to get a serial console:
-
-```console
-$ inv impi-serial --host <ipmi-ip-address>
-```
-
-The following will reboot the machine:
-
-```console
-$ inv impi-powercycle --host <ipmi-ip-address>
-```
-
-To boot the a machine into bios, use:
-
-```console
-$ inv ipmi-boot-bios --host <ipmi-ip-address>
-```
-
-The IPMI password here is encrypted with
-[sops](https://github.com/mozilla/sops). To decrypt it on your machine, your
-age/pgp fingerprint must be added to `.sops.yaml` in this repository. And one of
-the existing users must re-encrypt `secrets.yml` with your key. 
-
-Then press enter to get a login prompt. The root password for all machines is
-also stored in [secrets.yaml]().
+For information about managing servers via IPMI (power control, serial console, etc.), see [docs/IPMI.md](./docs/IPMI.md).
 
 # Monitoring
 
@@ -163,5 +123,5 @@ Hosts are monitored here: https://grafana.thalheim.io/d/Y3JuredMz/monitoring?org
 
 # CI
 
-All machines are build by [buildbot](https://buildbot.dse.in.tum.de/) using [buildbot-nix](https://github.com/nix-community/buildbot-nix).
-The resulting builds are uploaded to https://cache.dos.cit.tum.de from where machines can download them while upgrading.
+All machines are build by [nixbot](https://buildbot.dse.in.tum.de/) (the standalone rewrite of [buildbot-nix](https://github.com/Mic92/nixbot)).
+The resulting builds are uploaded to https://niks3.dos.cit.tum.de from where machines can download them while upgrading.

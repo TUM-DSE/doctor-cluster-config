@@ -1,16 +1,22 @@
-
+{ pkgs, ... }:
 {
   imports = [
     ../modules/hardware/poweredge7625.nix
     ../modules/nfs/client.nix
     #../modules/amd_sev_snp.nix
-    ../modules/amd_sev_svsm.nix
+    ../modules/amd_sev_snp-vanilla.nix
+    #../modules/amd_sev_svsm.nix
     #../modules/amd_sev_svsm_wallet.nix
-    #../modules/nvidia.nix
+    ../modules/nvidia.nix
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
+    ../modules/tribuchet
   ];
+
+  # H100 runs in Confidential Compute mode for SEV-SNP passthrough; the host
+  # driver cannot initialize it, so CDI generation fails and breaks activation.
+  hardware.nvidia-container-toolkit.enable = false;
 
   simd.arch = "znver4";
 
@@ -18,7 +24,7 @@
 
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
   };
 
   networking.hostName = "jamie";

@@ -1,4 +1,4 @@
-{ buildLinux, fetchFromGitHub, ... }@args:
+{ buildLinux, fetchFromGitHub, gcc13Stdenv, ... }@args:
 let
 
   svsm_preview_hv_1 = {
@@ -86,6 +86,8 @@ let
 in
 with snp_kernel;
 buildLinux (args // rec {
+  # Predates GCC 14/15: C23-by-default breaks the build.
+  stdenv = gcc13Stdenv;
   inherit version;
   modDirVersion =
     if (snp_kernel.modDirVersionArg == null) then

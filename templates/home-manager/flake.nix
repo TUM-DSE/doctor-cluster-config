@@ -1,39 +1,59 @@
 {
   description = "Home Manager configuration";
 
-  # update flake.lock to latest nixos-23.11: `nix flake update`
+  # update flake.lock to the latest inputs: `nix flake update`
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       ...
     }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       username = "jdoe";
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+
+      mkHomeConfiguration =
+        system:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./home.nix ];
+          extraSpecialArgs = {
+            inherit username;
+          };
+        };
+
+      homeConfigurationsBySystem = forAllSystems mkHomeConfiguration;
     in
     {
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home.nix ];
-        extraSpecialArgs = {
-          inherit username;
-        };
-      };
+      homeConfigurations = nixpkgs.lib.mapAttrs' (
+        system: homeConfiguration:
+        nixpkgs.lib.nameValuePair "${username}-${system}" homeConfiguration
+      ) homeConfigurationsBySystem;
 
-      apps.${system}."switch-${username}-hm" = {
-        type = "app";
-        program = "${self.homeConfigurations.${username}.activationPackage}/activate";
-      };
+      apps = forAllSystems (
+        system:
+        let
+          switchApp = {
+            type = "app";
+            program = "${homeConfigurationsBySystem.${system}.activationPackage}/activate";
+          };
+        in
+        {
+          "switch-${username}-hm" = switchApp;
+          switch = switchApp;
+        }
+      );
     };
 }

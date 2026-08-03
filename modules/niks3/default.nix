@@ -19,6 +19,7 @@
     httpAddr = "[::]:5752";
 
     cacheUrl = "https://cache.dos.cit.tum.de";
+    serverUrl = "https://niks3.dos.cit.tum.de";
 
     # TUM ITO S3 configuration
     s3 = {
@@ -38,7 +39,11 @@
       issuer = "https://token.actions.githubusercontent.com";
       audience = "https://niks3.dos.cit.tum.de";
       boundClaims = {
-        repository_owner = [ "TUM-DSE" ];
+        repository = [
+          "TUM-DSE/*"
+          # Dogfooding the GitHub Action's own CI.
+          "Mic92/niks3-action"
+        ];
       };
     };
 

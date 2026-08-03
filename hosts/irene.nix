@@ -7,7 +7,7 @@
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
     ../modules/elasticsearch.nix
-    ../modules/amd_sev_snp-vanilla.nix
+    ../modules/amd_sev_snp-vanilla-certs.nix
   ];
 
   networking.hostName = "irene";

@@ -28,6 +28,8 @@
     terminal_output serial
   '';
 
+
+
   systemd.network.networks =
     lib.mapAttrs'
       (num: _:
@@ -64,6 +66,10 @@
 
   documentation.enable = false;
   documentation.nixos.options.warningsAreErrors = false;
+
+  # Needed because sops key for the host is not available in the iso image.
+  # If not explicitly disabled the root login will fail because the password is not setup.
+  users.withSops = lib.mkForce false;
 
   environment.systemPackages = with pkgs; [
     diskrsync

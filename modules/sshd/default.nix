@@ -23,6 +23,14 @@ in
     !builtins.pathExists cert && config.networking.hostName != "nixos" # we dont care about nixos netboot/installer images
   ) "No ssh certificate found at ${toString cert}";
 
+  # The jumphost presents an ITO-signed certificate on its ed25519 host key,
+  # while our cluster CA only signed its ecdsa/rsa host keys. Prefer those
+  # algorithms so host verification can use the cluster CA below.
+  programs.ssh.extraConfig = ''
+    Host login.dos.cit.tum.de login.dse.in.tum.de
+      HostKeyAlgorithms ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com
+  '';
+
   programs.ssh.knownHosts.ssh-ca = {
     certAuthority = true;
     hostNames = [

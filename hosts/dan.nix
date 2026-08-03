@@ -5,6 +5,7 @@
     ../modules/disko-zfs.nix
     ../modules/disko-nfs-storage.nix
     ../modules/nfs/server-backup.nix
+    ../modules/copy-fail-patch.nix
   ];
   disko.rootDisk = "/dev/disk/by-id/nvme-Dell_Ent_NVMe_P5600_MU_U.2_1.6TB_PHAB1234003F1P9SGN";
   # TODO: migrate to native mountpoints

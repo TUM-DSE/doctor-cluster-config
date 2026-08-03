@@ -20,11 +20,8 @@ let
   ];
 
   dimitriosKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8PDKvdmcJIyd5C7XfCEKXQdbVv8f1sy3+/jl0EEyQA17xVU00lR9my36QLk9R6YKRo1EF2CHf9jNrQ6q3+cZJJEX4uv0gdicYiISy9+aPBAOEiQ6bfatxQmYMXOwv3Hv7EP5rEmPPCwFR8neLQEAvXjY/yucIeyAPqKFNU73OH8rqR++AmUQGAi7LGCVTYYQQ+uTBHR5H7YcvyzElDgGBWgxWJRzU+hm410BjItHYtP51dQejqKLGWCqp6r3slgWdZ9Lg/tytv5fzl19JiOV61TQ83hmgtsdXn7pgzp9OFAOXClYm0P6DwMdO/bRDp003zzO6/jS1Hphi4gvYxnrXlEFebzqLG6AMhoR6BUgPSUmQQZFedxxQC6WAGrSt2loZp739Tf1vJtF4Ep+WRb/DITss1VRYYxjPExgETM7BGqVICEdrqkM+aERxUbkfy2HbFdzP1J4P3wXGFuKtBUuEyvmT4eE4D+Zlfh7lhGw3IXkNj+YEeLigGnqVACvCUqa3HyLNwXB/4m4GRN5/noEi5I8VKgTxdrycRdSsBd4gNIOf0QjtVAD6CGkmWQURh28GD4Plyaz+H8BAsaWuH3aX4wIyV6+6rfPyO5T5rgIMxJkYoD6lWupwY1qO36KSC7A4sS0HcAPR16EZghMcMC4FNy4PGLIlUuwJ7KJd0Ptlyw== dimitrios.stavrakakis@hotmail.com"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGaFuDu8EM/hA5UtAc3Q+0zXvRcwT6P6TZhtps/3R518 dimstav23@Spam"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDafd2SX0Mi6kiKXNaSYmMO71dFIVbBGLpaMt/MO4uzoX8rihtud4CIbCXm8iO+I/p7c8e5lfkyJbnmJsXS6VfkohP4K36V0r0ZQhXhU01KpgC86z8uAnPGowuvGQGseMPG5lR5qAC4keENx1wiIn+fP5N7xUNVQTLc9KKNswLYwzEj6hRvI+ZoUybNuEieqb251vcFzGGZ/+i8PyEJ8xhxql91QtmxKHeZTn1ogbr1AAlWFESnhvxY1ky48BKKAKSD9kEXB+iszjd6a2DvilD0C60b9yPeSRsKVAXhuy+/swcFs0ly5KV3FNWDKV9KGJP1aaRSgX0RE6C5MCdbjARv dimstav23@Spam"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOtq2p1WbvKsV63p1+GhgfDxMmN3dFUL+IM1/HcWSqJ dimstav23@gmail.com"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHM2c6Z1MvCqi75iKSbZDUCWnNEwxmU9hoXKDCk//qBo dimstav23@lenovo"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5ulxJK+wvBf1Z3bQxvSIX3gPBA4LUC5tsFPk/BbBnl dimstav23@lenovoT14s"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB8bvCpTxT0Mc/4yv8l4bDvflXUStcwm3MpLXai/O9od dimstav23@lenovo"
   ];
 
   felixKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtPYKJOWfanR0dTkoQuYWA7XtiiPiVTYqpldjIuEk4w" ];
@@ -41,6 +38,7 @@ let
     "sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDCKzDeT4zRveNXCt3D2+pllN/3HaY9iPTO86Rn5CDHW chenjiyang1991@gmail.com"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8gXtpJq6uxzK2fWP5GkF1O2ESetKBbDNRjvzvG/yfFbyaTlwtC1JRydC7gbZKLSAVBk1mjO2tNbQ413rpqP9qVufPu68Wj0T2ZzfxtVGdBhk8j/AlG7s71KoH0mu57MLt5Ar2L9tLPLJChmzJP/bc5mIDlPUtiJ7+n3nVU3DsFRt+w13cQ+iHAvTxKVTjPVacrIorhHAeUw4KOD3wnuPEtYqzFnmizzDFFxP2AoivC5aQ0xtIgdoCSG1YBvn3SQzaF55JnO8wmk+OMJ8EKucwkdf6JyoTM/3oh1wxHOSj9jaIfLT4YDonDcPgivbueWxQj7Qjos31P9Ult5Uy7hLtgfVNbXAzjjSkQGQYt06/WNORSJJ5jdTdODjXRfDHXBudugEM3J8fspyHGaViPaHujkiNheRK9OR58zIG6omXwraMYbXqACQvOqZ74r3nOE8MxNdGhSq5GsiDJ/lNYh5XWCbMt8+NtmhbUAcMYbtLSLcPKyX8zTdjAM+JN37neKuS94vZCigh8V3AwHx/PGh8W7pkWHYwXmNeiWgBsbWcckzoY+OSCDj1zTUsDioMefvVM4gESMdfq/Uw1XhKyO2adnooQKDNVNPlXdYORQaLyfEuEecNHmBQ8Lsdc8IwXUG2AHwPXG5E7N8Gqo6ArTJAPfao6eGAoAUFmaKRg0GL4Q== chenjiyang1991@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqpz+1+6rNq5ez911qwLxtnt0R+Wvq3iesmupf3Q8A4 victus-linux-22.04"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAp9gxiT7WqXaCr5PTxRt96j0subOaeuT5xvna0VpspD chenjiyang1991@gmail.com"
   ];
 
   cmainasKeys = [
@@ -72,10 +70,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFjTHpdkrcZhIU1caiNi1n+NeSWMqhfeW2ookRJzMxaBXZ7CLLJWtzmNl/E76PDUdU97Kok+z49V0xPkNzJOAhc9a3mUjldJZHtqEXTnXMcr6CUqRHRh/0Jo7Q/xmfPn58IKjptLpgBZP9eZQQ4fqhQmuOcFvWF/v/NQV1rdqs4n5FbMd7W0CG7DJhz4Oh2Z8JgTP5g7VpxCK10Q148a9CKDBXB/PoVKHGHLdklCglv8spSCUT/BANymOdAiqpySOVg5QJmbojyHSD73NW3apmo6Ey2YfCsfVaUVuE/VmESOzvNLRW2WBHX6/8+8evUs/kwlTvE4deWBPd2/KPpqpwXT6JwiwXiUwxWs6n15fLd08pqf/5wbNMA0kLtM2xskPGykxMVu+CZBSw4O8tiufFodEaC3BAwBObtEWqaHI+wURQaDfRdZP6uBWvgeyL4LuUwuZzmP3oW38qqjOtlP1h9CNaE7W1iFQSBijnsSAkLVP4rXo6A8+LTBj2qS5R/Ks= meandres@kushana"
   ];
 
-  anatoleKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqbnkl4OVgJGhO/CRhPnnMCsHGAE77jnbpWMoCLniKNgqLVwPBpevfJed9gwmrUdUKnAdvKP/+EIUMydjqC1VkYVXB0oNWd372hpxOmu9lYziXwQA7m0R2b8VhKwE3KXg2kZfDq8vW35ZQ5F/jGmMwBVSRuYP2cBo0BBMlEniYhgiPlUT7TzPttx0TmSCDUCj9CaSZ3rAGbyjT7ezcFFAQQEMd0EYvSa04B12EpYNLKf1rIcMrEEOUn7pwwF1kbpSLvVeP+0FnxokxiSlKKCKNMB2igE4ahJI2XH2HMTb20Ce/NKwGU79ZwWnwtsjXJV+qoqmh5VSyzKlwfBvELLNR anatole@MSI_GX740"
-  ];
-
   teofilKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINkwdkIadTpo9JCWnxwtTiQu/PmQW7W4wAYZtVNGAqZK" ];
 
   nicoloKeys = [
@@ -90,6 +84,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHGipyrOUVsSJNF2b944RUj1ywfdKqsgAhJW4rBbyjOPV2gx5LVLB5M9Cq71WBJIdmxOJ1slAtHhb0QI6JFjCTU= Martin Fink"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOGSE0pCqFTlMQVPNM6sPQjdb3BON7rJwWc+KrMajb8A martin@doctor"
   ];
 
   nateKeys = [
@@ -98,10 +93,6 @@ let
 
   aleksandraKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMq8uZ112OCsUx/gjZFhO4pJv/qpm80SHNp7dOrstevY aswierkowska@aswierkowska-thinkpad"
-  ];
-
-  thoreKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQCP93wmHUCOKn5W42KnzyBQBjltRp5RU23WbAMlgy5 TUM"
   ];
 
   theoKeys = [
@@ -116,6 +107,7 @@ let
   andersKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvxKVGEeM9rh1CJYothgKcOvNrAxKHYOD9K2tX8wcsr"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfzGHxcRgfwt3SZ0iTY+stOgi2yAORrBpnwJ1tCMn7h"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHarwtrhSHJPwahvpHKsO7PN9OGpjnvvZ7UcB2umaNRS"
   ];
 
   dennisKeys = [
@@ -126,6 +118,20 @@ let
   anubhavKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbDrBEK7kwqqutJ9Y1naVLO1txdy+uKar5FGxxGWvKb02RrJefAizJ+7FSqmTIrLEWQPs9yhfVWUk8jlH8PxxroPD2m89BztAaCr9c3RUWAU/PWsJKB3gxDownYC3uZt/4j8DIwnBMKMq8fJt9GQ3O36XxZ2OSJp7kJ1vbKhYYXyMoGfZnDJMo+zfFJkJNfoLb1HR1IIHAmM7dvF5s997VuDMprJ3PqnIVp+zQc/QpPlBHSpRYI9WxOtSo+kdF0yA1GbtbnY76A/IeapDWVfhUR2cEKyCIia0Y4Rgv57W7Hnu5kKTWm3jpUyMTkcAji/rrvrNjvmSybFv9xqlXL0cCwSStQ1TgE59M8WYIxTNtThGhVfD5EfnnPixU6AQmJT7oLp7F8k2Jy7JBTMM9qM06Xy4vhkDE2OyyUSZ596GoWotqa7pcRXGLzm7Z2zSmIUGVW84VA2t/A+ZynghXYJtG7MwQWSSf0RHV8lUDsRQAmImTsToONVXZtqq6pzOY6c= anubhav@anubhav-ROG"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPGx6ZevvIeVpRzN5CmUuC7dskP/8sFsYJUA165reuYP5TGb9FDnDvd1VtV+rr12lvXCbqbB5vFkbtWCFQ5qblSoNuqD3fhwL6/+tF8WVUy1TvxfpXAUpIiByIukIGF6zIw4KVwcv54jEy11quxb5+MIYY0fR+GOfG0AiHjmr56c09xvzRIa4jDVDyXjwYE4FMw4X1oXv2S3puaXa3OPRExP9uUNV95KuqPDGkuetoDeqmK17MR9yb9xKvW4F2nEMc8jG34QmZlos5XGxxqJz1krQJODF35zYDWz9nje15Xk0PRkOgde0AVKHHI9SmyH9pAtCrMyc6ch1YL6z0z/0BumEbZ20JYnvxuFGxbnEX0tCoM9Vvq8KaUKkbwaeEZWeWC5pOnLLsIOSJqLdoisUNCCb3OfkXfTnSoP1235+jrH5m/rOCYsERQ0wkaC9sQwSxK2eYpdD897XY1cXDveqoKx5tV/gUR6gho1SSRJHF8k7gZ4nDu3eNmiX/uQcpOoRAEyCp5jgJMgDucr9I81DODOX3G+KdvUiawB/lOf2CQX0NTBhxo74Fqy+P4NB0T7nWQ/0n2X9XNjtiMGRh+NmRUqZQvtglOuRGjZ9OOXBL+zhSraYQGO8GsyLhVLYmXrNhYH39qRl2XfkjgyynfuOe8TuL9GW2UBDA3d3dx7dLXQ== panda@Anubhavs-MacBook-Pro.local"
+  ];
+
+  peterKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEQXgzXZD88m4eXmr1R1mWTVhtknjHrhRzJfWa4d9xU wegii@idontcare"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAJgek7Zr0teEJNbXcA64IY5OEN94DrCpitGMM1eVZot wegii@wegiidse.local"
+  ];
+
+  simonkKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDrdEe2/aOcUzaPtkDLJQ8VrcfiF8tNpk02SPLIVrsTywSHrBueOMz/cVR/Dkk7HREkI8iPshIefYogGgXNrwXp4ogu7DFA/5FS58QgrUS/il/LYT1pIcC4URFt0s5UHxvXbVP/zPVVpDZ7AqXLzz0H95csR9mO5eY2CgZh5+haC1dNhBEZK7v2pcsp+TrDzcxKjo5ZjqFAUNRBAT/lMJy2t0Zdm9cnkNFYymC2n57mgve2W9L8mRsMTYdQbwT7S7PgV3605e7bphnvGVl09iSkwkbQZ9oiqvZFdVn9id6tPxlf6wnnMo2YU9fuqRJoF6kKGN5Mvqvmm6bIUW5y9cFjpAniJg7lPY2Dc/em/q5jpdYirnkPnjnjpqdNBKnroRbsNL8bUWPyyZM4seSAIaw61OUQLhJHClUx9sAb3nyWRq6k2PAB1HcBeY9dVgv3b+0ZzNsR52IqEzs3VOZGAS174Kd8FFk7oyV15a1qfyhCzKxNJIbW8AHXh+S7EcVnyYyJguJ/hblUOwsc4Un/3UQkmhTTOkZOb3zZklHM62isA4yA6uAUkCxASgaG0UMtvzeJiynYLr1x4YR2jTKU2VD79n8pcKienJmBH0d80FtnPMiJPZA4EiVSXYAZ1PKbVsSBk47Ia7SmgZr46VX4ha5frAY/kQNzFk9qyImuyPyIyw== kammerme ge35tem"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDnOOXo9kw1ewyZKWFjiU368/SaaD9egPeQzrqFrrw0r Simon Kammermeier Laptop"
+  ];
+
+  gierensKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
   extraGroups = [
@@ -184,6 +190,7 @@ in
         shell = "/run/current-system/sw/bin/zsh";
         uid = 1005;
         openssh.authorizedKeys.keys = harshanavkisKeys;
+        xrdpAccess = true;
       };
 
       # Atsushi Koshiba
@@ -296,17 +303,6 @@ in
         openssh.authorizedKeys.keys = ilyaKeys;
       };
 
-      # Anatole Lefort
-      # tum
-      anatole = {
-        isNormalUser = true;
-        home = "/home/anatole";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1031;
-        openssh.authorizedKeys.keys = anatoleKeys;
-      };
-
       # Teofil Bodea
       # tum
       teofil = {
@@ -354,6 +350,17 @@ in
         openssh.authorizedKeys.keys = julianKeys;
       };
 
+      # Simon Kammermeier
+      simonk = {
+        isNormalUser = true;
+        home = "/home/simonk";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2017;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = simonkKeys;
+      };
+
       #  Nathaniel Tornow
       nate = {
         isNormalUser = true;
@@ -374,17 +381,6 @@ in
         uid = 2029;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = aleksandraKeys;
-      };
-
-      # Thore Sommer
-      thore = {
-        isNormalUser = true;
-        home = "/home/thore";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/fish";
-        uid = 2030;
-        allowedHosts = [ "all" ];
-        openssh.authorizedKeys.keys = thoreKeys;
       };
 
       # Theofilos Augoustis
@@ -430,6 +426,30 @@ in
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = anubhavKeys;
         xrdpAccess = true;
+      };
+
+      # Peter Wegmann
+      peter = {
+        isNormalUser = true;
+        home = "/home/peter";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2081;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = peterKeys;
+        xrdpAccess = false;
+      };
+
+      # Sandro Gierens
+      gierens = {
+        isNormalUser = true;
+        home = "/home/gierens";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2003;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = gierensKeys;
+        xrdpAccess = false;
       };
 
       # add staff to root account as well

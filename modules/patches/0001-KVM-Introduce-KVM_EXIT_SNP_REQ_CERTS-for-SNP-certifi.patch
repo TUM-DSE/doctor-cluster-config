@@ -1,0 +1,243 @@
+From 642afbe098536a6ae2bcbf8a1fee76186f02cf58 Mon Sep 17 00:00:00 2001
+From: Michael Roth <michael.roth@amd.com>
+Date: Thu, 13 Jun 2024 18:10:06 -0500
+Subject: [PATCH 1/2] KVM: Introduce KVM_EXIT_SNP_REQ_CERTS for SNP
+ certificate-fetching
+
+For SEV-SNP, the host can optionally provide a certificate table to the
+guest when it issues an attestation request to firmware (see GHCB 2.0
+specification regarding "SNP Extended Guest Requests"). This certificate
+table can then be used to verify the endorsement key used by firmware to
+sign the attestation report.
+
+While it is possible for guests to obtain the certificates through other
+means, handling it via the host provides more flexibility in being able
+to keep the certificate data in sync with the endorsement key throughout
+host-side operations that might resulting in the endorsement key
+changing.
+
+In the case of KVM, userspace will be responsible for fetching the
+certificate table and keeping it in sync with any modifications to the
+endorsement key by other userspace management tools. Define a new
+KVM_EXIT_SNP_REQ_CERTS event where userspace is provided with the GPA of
+the buffer the guest has provided as part of the attestation request so
+that userspace can write the certificate data into it while relying on
+filesystem-based locking to keep the certificates up-to-date relative to
+the endorsement keys installed/utilized by firmware at the time the
+certificates are fetched.
+
+Reviewed-by: Liam Merwick <liam.merwick@oracle.com>
+Tested-by: Liam Merwick <liam.merwick@oracle.com>
+Tested-by: Dionna Glaze <dionnaglaze@google.com>
+Signed-off-by: Michael Roth <michael.roth@amd.com>
+[Melody: Update the documentation scheme about how file locking is
+         expected to happen.]
+Signed-off-by: Melody Wang <huibo.wang@amd.com>
+Signed-off-by: Michael Roth <michael.roth@amd.com>
+---
+ Documentation/virt/kvm/api.rst | 44 ++++++++++++++++++++++++
+ arch/x86/kvm/svm/sev.c         | 62 ++++++++++++++++++++++++++++++----
+ arch/x86/kvm/svm/svm.h         |  1 +
+ include/uapi/linux/kvm.h       |  9 +++++
+ 4 files changed, 110 insertions(+), 6 deletions(-)
+
+diff --git a/Documentation/virt/kvm/api.rst b/Documentation/virt/kvm/api.rst
+index 57061fa29e6a..c9379af9fd03 100644
+--- a/Documentation/virt/kvm/api.rst
++++ b/Documentation/virt/kvm/api.rst
+@@ -7318,6 +7318,50 @@ Please note that the kernel is allowed to use the kvm_run structure as the
+ primary storage for certain register types. Therefore, the kernel may use the
+ values in kvm_run even if the corresponding bit in kvm_dirty_regs is not set.
+ 
++::
++
++		/* KVM_EXIT_SNP_REQ_CERTS */
++		struct kvm_exit_snp_req_certs {
++			__u64 gpa;
++			__u64 npages;
++			__u64 ret;
++		};
++
++KVM_EXIT_SNP_REQ_CERTS indicates an SEV-SNP guest with certificate-fetching
++enabled (see KVM_SEV_SNP_ENABLE_REQ_CERTS) has generated an Extended Guest
++Request NAE #VMGEXIT (SNP_GUEST_REQUEST) with message type MSG_REPORT_REQ,
++i.e. has requested an attestation report from firmware, and would like the
++certificate data corresponding the attestation report signature to be
++provided by the hypervisor as part of the request.
++
++To allow for userspace to provide the certificate, the 'gpa' and 'npages'
++are forwarded verbatim from the guest request (the RAX and RBX GHCB fields
++respectively).  'ret' is not an "output" from KVM, and is always '0' on
++exit.  KVM verifies the 'gpa' is 4KiB aligned prior to exiting to userspace,
++but otherwise the information from the guest isn't validated.
++
++Upon the next KVM_RUN, e.g. after userspace has serviced the request (or not),
++KVM will complete the #VMGEXIT, using the 'ret' field to determine whether to
++signal success or failure to the guest, and on failure, what reason code will
++be communicated via SW_EXITINFO2.  If 'ret' is set to an unsupported value (see
++the table below), KVM_RUN will fail with -EINVAL.  For a 'ret' of 'ENOSPC', KVM
++also consumes the 'npages' field, i.e. userspace can use the field to inform
++the guest of the number of pages needed to hold all the certificate data.
++
++The supported 'ret' values and their respective SW_EXITINFO2 encodings:
++
++  ======     =============================================================
++  0          0x0, i.e. success.  KVM will emit an SNP_GUEST_REQUEST command
++             to SNP firmware.
++  ENOSPC     0x0000000100000000, i.e. not enough guest pages to hold the
++             certificate table and certificate data.  KVM will also set the
++             RBX field in the GHBC to 'npages'.
++  EAGAIN     0x0000000200000000, i.e. the host is busy and the guest should
++             retry the request.
++  EIO        0xffffffff00000000, for all other errors (this return code is
++             a KVM-defined hypervisor value, as allowed by the GHCB)
++  ======     =============================================================
++
+ 
+ .. _cap_enable:
+ 
+diff --git a/arch/x86/kvm/svm/sev.c b/arch/x86/kvm/svm/sev.c
+index 0835c664fbfd..25e5b5f93bc3 100644
+--- a/arch/x86/kvm/svm/sev.c
++++ b/arch/x86/kvm/svm/sev.c
+@@ -41,6 +41,16 @@
+ 
+ #define GHCB_HV_FT_SUPPORTED	(GHCB_HV_FT_SNP | GHCB_HV_FT_SNP_AP_CREATION)
+ 
++/*
++ * The GHCB spec essentially states that all non-zero error codes other than
++ * those explicitly defined above should be treated as an error by the guest.
++ * Define a generic error to cover that case, and choose a value that is not
++ * likely to overlap with new explicit error codes should more be added to
++ * the GHCB spec later. KVM will use this to report generic errors when
++ * handling SNP guest requests.
++ */
++#define SNP_GUEST_VMM_ERR_GENERIC       (~0U)
++
+ /* enable/disable SEV support */
+ static bool sev_enabled = true;
+ module_param_named(sev, sev_enabled, bool, 0444);
+@@ -4144,6 +4154,36 @@ static int snp_handle_guest_req(struct vcpu_svm *svm, gpa_t req_gpa, gpa_t resp_
+ 	return ret;
+ }
+ 
++static int snp_req_certs_err(struct vcpu_svm *svm, u32 vmm_error)
++{
++	ghcb_set_sw_exit_info_2(svm->sev_es.ghcb, SNP_GUEST_ERR(vmm_error, 0));
++
++	return 1; /* resume guest */
++}
++
++static int snp_complete_req_certs(struct kvm_vcpu *vcpu)
++{
++	struct vcpu_svm *svm = to_svm(vcpu);
++	struct vmcb_control_area *control = &svm->vmcb->control;
++
++	switch (READ_ONCE(vcpu->run->snp_req_certs.ret)) {
++	case 0:
++		return snp_handle_guest_req(svm, control->exit_info_1,
++					    control->exit_info_2);
++	case ENOSPC:
++		vcpu->arch.regs[VCPU_REGS_RBX] = vcpu->run->snp_req_certs.npages;
++		return snp_req_certs_err(svm, SNP_GUEST_VMM_ERR_INVALID_LEN);
++	case EAGAIN:
++		return snp_req_certs_err(svm, SNP_GUEST_VMM_ERR_BUSY);
++	case EIO:
++		return snp_req_certs_err(svm, SNP_GUEST_VMM_ERR_GENERIC);
++	default:
++		break;
++	}
++
++	return -EINVAL;
++}
++
+ static int snp_handle_ext_guest_req(struct vcpu_svm *svm, gpa_t req_gpa, gpa_t resp_gpa)
+ {
+ 	struct kvm *kvm = svm->vcpu.kvm;
+@@ -4159,14 +4199,15 @@ static int snp_handle_ext_guest_req(struct vcpu_svm *svm, gpa_t req_gpa, gpa_t r
+ 	/*
+ 	 * As per GHCB spec, requests of type MSG_REPORT_REQ also allow for
+ 	 * additional certificate data to be provided alongside the attestation
+-	 * report via the guest-provided data pages indicated by RAX/RBX. The
+-	 * certificate data is optional and requires additional KVM enablement
+-	 * to provide an interface for userspace to provide it, but KVM still
+-	 * needs to be able to handle extended guest requests either way. So
+-	 * provide a stub implementation that will always return an empty
+-	 * certificate table in the guest-provided data pages.
++	 * report via the guest-provided data pages indicated by RAX/RBX. If
++	 * userspace enables KVM_EXIT_SNP_REQ_CERTS, then exit to userspace
++	 * to give userspace an opportunity to provide the certificate data
++	 * before issuing/completing the attestation request. Otherwise, return
++	 * an empty certificate table in the guest-provided data pages and
++	 * handle the attestation request immediately.
+ 	 */
+ 	if (msg_type == SNP_MSG_REPORT_REQ) {
++		struct kvm_sev_info *sev = &to_kvm_svm(kvm)->sev_info;
+ 		struct kvm_vcpu *vcpu = &svm->vcpu;
+ 		u64 data_npages;
+ 		gpa_t data_gpa;
+@@ -4180,6 +4221,15 @@ static int snp_handle_ext_guest_req(struct vcpu_svm *svm, gpa_t req_gpa, gpa_t r
+ 		if (!PAGE_ALIGNED(data_gpa))
+ 			goto request_invalid;
+ 
++		if (sev->snp_certs_enabled) {
++			vcpu->run->exit_reason = KVM_EXIT_SNP_REQ_CERTS;
++			vcpu->run->snp_req_certs.gpa = data_gpa;
++			vcpu->run->snp_req_certs.npages = data_npages;
++			vcpu->run->snp_req_certs.ret = 0;
++			vcpu->arch.complete_userspace_io = snp_complete_req_certs;
++			return 0;
++		}
++
+ 		/*
+ 		 * As per GHCB spec (see "SNP Extended Guest Request"), the
+ 		 * certificate table is terminated by 24-bytes of zeroes.
+diff --git a/arch/x86/kvm/svm/svm.h b/arch/x86/kvm/svm/svm.h
+index e66a16e59b1a..00ed05591624 100644
+--- a/arch/x86/kvm/svm/svm.h
++++ b/arch/x86/kvm/svm/svm.h
+@@ -115,6 +115,7 @@ struct kvm_sev_info {
+ 	void *guest_resp_buf;   /* Bounce buffer for SNP Guest Request output */
+ 	struct mutex guest_req_mutex; /* Must acquire before using bounce buffers */
+ 	cpumask_var_t have_run_cpus; /* CPUs that have done VMRUN for this VM. */
++	bool snp_certs_enabled;	/* SNP certificate-fetching support. */
+ };
+ 
+ #define SEV_POLICY_NODBG	BIT_ULL(0)
+diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
+index 52f6000ab020..ed051d587f50 100644
+--- a/include/uapi/linux/kvm.h
++++ b/include/uapi/linux/kvm.h
+@@ -135,6 +135,12 @@ struct kvm_xen_exit {
+ 	} u;
+ };
+ 
++struct kvm_exit_snp_req_certs {
++	__u64 gpa;
++	__u64 npages;
++	__u64 ret;
++};
++
+ #define KVM_S390_GET_SKEYS_NONE   1
+ #define KVM_S390_SKEYS_MAX        1048576
+ 
+@@ -179,6 +185,7 @@ struct kvm_xen_exit {
+ #define KVM_EXIT_LOONGARCH_IOCSR  38
+ #define KVM_EXIT_MEMORY_FAULT     39
+ #define KVM_EXIT_TDX              40
++#define KVM_EXIT_SNP_REQ_CERTS    42
+ 
+ /* For KVM_EXIT_INTERNAL_ERROR */
+ /* Emulate instruction failed. */
+@@ -474,6 +481,8 @@ struct kvm_run {
+ 			};
+ 		} tdx;
+ 		/* Fix the size of the union. */
++		/* KVM_EXIT_SNP_REQ_CERTS */
++		struct kvm_exit_snp_req_certs snp_req_certs;
+ 		char padding[256];
+ 	};
+ 
+-- 
+2.52.0
+

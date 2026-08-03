@@ -1,0 +1,32 @@
+---
+# The monitoring VM hosts the `doctor` nspawn container with
+# VirtualEthernet=no, so the container shares this host's network namespace and
+# ens192. LRZ only hands out IPv6 via DHCPv6 reservations for registered
+# physical hosts, so this VM never gets a lease and has no global IPv6 address.
+# Outbound IPv6 then falls back to the non-routable tinc address and
+# black-holes. Assign the cluster's reserved address statically on the host so
+# the container's lifecycle cannot tear down the interface.
+- name: Configure static IPv6 on the monitoring host
+  hosts: all
+  become: yes
+  vars:
+    ipv6_address: "2a09:80c0:102::4/64"
+  tasks:
+    - name: Drop in static IPv6 netplan config
+      copy:
+        dest: /etc/netplan/99-static-ipv6.yaml
+        owner: root
+        group: root
+        mode: "0600"
+        content: |
+          network:
+            version: 2
+            ethernets:
+              ens192:
+                addresses:
+                  - "{{ ipv6_address }}"
+      register: netplan_cfg
+
+    - name: Apply netplan
+      command: netplan apply
+      when: netplan_cfg.changed

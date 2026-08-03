@@ -1,6 +1,6 @@
 # Expansion cards and slots
 
-Note also the auto-generated [PCI slots](./expansion_cards_autogen.md) enoumeration.
+Note also the auto-generated [PCI slots](./expansion_cards_autogen.md) enumeration, [GPU list](./gpu.md), [Intel FPGA setup](./intel-fpgas.md), and [Adric switch](./adric.md) (which the NIC/FPGA ports below connect to).
 
 Parameters to consider for matching cards to slots:
 
@@ -10,12 +10,10 @@ Parameters to consider for matching cards to slots:
 
 ## List of cards
 
-- 1x Nvidia H100 GPU (high profile, dual slot)
-    - jamie
-- 1x Nvidia A40 GPU (high profile, dual slot)
-    - jack
+Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.md](./intel-fpgas.md).
+
 - 1x Intel Arria 10 GX FPGA Development Kit (high profile, dual slot)
-    - momiji
+    - office 01.07.60
 - 1x Intel Stratix 10 GX FPGA Development Kit H-Tile (high profile, dual slot)
     - office 01.07.60
 - 1x Intel Agilex 7 FPGA I-Series Development Kit 2x R-Tile and 1x F-Tile (high profile, dual slot)
@@ -23,69 +21,76 @@ Parameters to consider for matching cards to slots:
 - 1x (Intel) Napatech F2070X Infrastructure Processing Unit (IPU) (high profile, dual slot)
     - TBD
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
-    - sakura (sakura-sakura, loopback)
-        - SN: 501211207MON
+    - sakura
         - MAC1: 00:0A:35:06:AE:13
-        - MAC2: 00:0A:35:06:AE:14
-        - MAC3: 00:0A:35:06:AE:15
-        - MAC4: 00:0A:35:06:AE:16
     - hinoki
         - MAC: 
-    - amy
-        - MAC: 00:0A:35:0E:70:60
+    - momiji
+        - MAC: 00:0A:35:0E:70:60 
 - 4x AMD/Xilinx Alveo U280 FPGA (high profile, dual slot)
     - momiji
-        - MAC1: 00:0A:35:0C:EF:30
+        - MAC1: 00:0A:35:0C:EF:30 (momiji-adric10)
         - MAC2: 00:0A:35:0C:EF:31
     - clara
-        - MAC1: 00:0A:35:0E:24:F2
+        - MAC1: 00:0A:35:0E:24:F2 (clara-adric11)
         - MAC2: 00:0A:35:0E:24:F3
     - rose
-        - MAC1: 00:0A:35:0E:24:E6
+        - MAC1: 00:0A:35:0E:24:E6 (clara-adric9)
         - MAC2: 00:0A:35:0E:24:E7
     - amy
-        - MAC1: 00:0A:35:0E:24:D6
+        - MAC1: 00:0A:35:0E:24:D6 (clara-adric12)
         - MAC2: 00:0A:35:0E:24:D7
 - 3x AMD/Xilinx Alveo SN1022 100GbE SmartNIC
     - office 01.07.060
     - firmware bundle_id 1.1.1.1021
-- 1x AMD/Xilinx Alveo V80 FPGA (high profile, dual slot)
+- 2x AMD/Xilinx Alveo V80 FPGA (high profile, dual slot)
     - rose
-- 9x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
+        - MAC1: 00:0A:35:26:07:40 (rose-adric15)
+        - MAC2: 00:0A:35:26:07:41
+        - MAC3: 00:0A:35:26:07:42
+        - MAC4: 00:0A:35:26:07:43 (rose-clara)
+    - clara
+        - MAC1: 
+        - MAC2: 
+        - MAC3: 
+        - MAC4: 
+- 10x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
         - MAC2: b4:96:91:a4:1c:f1
-    - jackson: dual port. (jackson-adric2,jackson-martha)
+    - jackson: dual port. (jackson-christina,jackson-christina)
         - MAC1: b4:96:91:a4:1b:88
         - MAC2: b4:96:91:a4:1b:89
-    - christina: dual port. (christina-river)
+    - christina: dual port. (christina-jackson,christina-jackson)
         - MAC1:
         - MAC2:
     - wilfred: single port. (wilfred-amy)
         - MAC: b4:96:91:b3:8b:04
-    - river: single port. (river-christina)
+    - river: single port. ()
         - MAC: b4:96:91:b3:8b:3c
-    - amy: single port. (amy-wilfred)
+    - amy: single port. (amy-adric7)
         - MAC: b4:96:91:b3:8a:90
+    - clara: single port. (amy-adric8)
+        - MAC: b4:96:91:f2:63:00  
+    - rose: single port. (amy-adric16)
+        - MAC: b4:96:91:aa:95:68
     - vislor: single port (vislor-graham)
         - MAC: 30:3e:a7:05:d0:98 
-    - ian: single port (ian-river)
-        - MAC: 30:3e:a7:10:d6:b4
     - martha: single port (martha-jackson)
         - MAC:
 - 7x Broadcom BCM57416 10G NIC (RJ-45)
     - graham: dual port. RJ-45 (graham-graham,graham-graham)
     - ryan: dual port. RJ-45 (ryan-ryan,none)
 - 3x BCM57412 10G NIC (SFP+)
-    - clara (internet/uplink, clara-craig2)
+    - clara (internet/uplink, clara-adric34)
     - rose (internet/uplink, none)
-    - amy (internet/uplink, amy-craig1)
+    - amy (internet/uplink, amy-adric33)
 - 5x Intel X550 10G NIC (RJ-45)
-    - adelaide (chistina-adelaide, christina-adelaide)
-    - christina (adelaide-chistina, adelaide-christina)
+    - adelaide (wilfred-adelaide, wilfred-adelaide)
+    - christina (river-chistina, river-christina)
     - jackson 
-    - river (wilfred-river, wilfred-river)
-    - wilfred (river-wilfred, river-wilfred)
+    - river (christina-river, christina-river)
+    - wilfred (adelaide-wilfred, adelaide-wilfred)
 - 2x Mellanox ConnectX-4 10G NIC (SFI/SFP+?) - in former bill/nardole servers
 - 1x Intel X710 10G NIC (SFI/SFP+?)
     - jack
@@ -93,6 +98,15 @@ Parameters to consider for matching cards to slots:
     - 2x graham: (boot, experiments)
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
+- 2x Mellanox ConnectX-7 200G NIC:
+    - jamie: dual port. (jamie-ian [200G], port 2 not connected)
+        - MAC1: 60:5e:65:c6:79:ec
+        - MAC2: 60:5e:65:c6:79:ed
+    - ian: dual port (ian-jamie [200G], ian-river)
+        - MAC1: 60:5e:65:c6:3c:7c
+        - MAC2: 60:5e:65:c6:3c:7d
+    - polly (,)
+    - steve (,)
 
 Onboard (not listed by [List of slots](#List of slots)):
 
@@ -108,5 +122,5 @@ Onboard (not listed by [List of slots](#List of slots)):
     - vislor: 2 ports RJ-45 (,)
     - martha: 2 ports SFP (uplink, none)
 
-(^ list last updated 08.02.2025)
+(^ list last updated 29.06.2026)
 

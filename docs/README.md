@@ -6,6 +6,11 @@ There are several ways to access the servers:
 - Via SSH jump host: **recommended for ssh**, **required for students**
   - We have one Proxy jump host that contains all SSH keys that are added to the nixos configuration i.e. in modules/users.nix
   - Reproducible example: `SSH_AUTH_SOCK= ssh -v -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i <path/to/privkey> -W %h:%p" <yourusername>@graham.dos.cit.tum.de`
+  - Alternatively, add the following to your `~/.ssh/config`:
+  ```
+  Host *.dos.cit.tum.de !login.dos.cit.tum.de
+    ProxyJump tunnel@login.dos.cit.tum.de
+  ```
   - Keys are uploaded via the machine astrid whenever nixos configuration is updated.
   - You can generate an SSH config file for all TUM hosts with [this script](./gen-ssh-config.sh), providing your username as an argument
 - VPN provided by RBG: **recommended for admins**
@@ -47,7 +52,8 @@ See [IPMI.md](./IPMI.md) for documentation on how to access the web interface an
 
 # Hosts
 
-- [Expansion cards and slots](./expansion_cards.md)
+- [Expansion cards and PCI slots](./expansion_cards.md) in general 
+- [GPUs](./gpu.md) in particular
 - [Network graph](./hosts/graph.md) (see also networking notes in "Expansion cards and slots")
 
 ## AMD-Epyc servers
@@ -67,6 +73,8 @@ Our epyc servers are shared devices on which many users usually work concurrentl
   - [rose](./hosts/rose.md)
 - dual NUMA node (AMD EPYC 9334)
   - [vislor](./hosts/vislor.md)
+- dual NUMA node (AMD EPYC 9965)
+  - [polly](./hosts/polly.md)
 
 ## Intel Xeon servers
 
@@ -86,14 +94,16 @@ Those servers (or individual devices) are sometimes used exclusively by a single
   - [ian](./hosts/ian.md)
 - dual socket Xeon 6756E, TDX support
   - [martha](./hosts/martha.md)
+- dual socket Xeon 6980P, TDX not enabled
+  - [steve](./hosts/steve.md)
 
 ## Servers used for NFS/Services
 
 ## CI servers
 
 Those serve as a github action runner for Systemprogramming + cloud systems lab.
-Astrid also hosts the buildbot master server with Graham as the buildbot worker.
-See [buildbot.md](./buildbot.md) for documentation on how to add repositories and checks.
+Graham runs the nixbot CI service (doctor reverse-proxies it; eliza is an aarch64 remote builder).
+See [nixbot.md](./nixbot.md) for documentation on how to add repositories and checks.
 
 - [astrid](./hosts/astrid.md)
 - [dan](./hosts/dan.md), nfs backup
@@ -144,11 +154,14 @@ machines. Those machines also are not backed up.
 ## Others
 
 - RBG VMs:
-  - monitoring.dos.cit.tum.de (VM), doctor.r (container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+  - monitoring.dos.cit.tum.de (ubuntu VM itself), doctor.dos.cit.tum.de (nixos container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+    - SSHing into the nixos container that runs all services: use the login.dos.cit.tum.de jumphost as usual, but ssh on doctor.dos.cit.tum.de uses port 2222!
     - [prometheus](https://prometheus.dse.in.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
     - [alertmanager](https://alertmanager.dse.in.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
+  - ls1-coffee.dse.cit.tum.de: coffee backend
+  - web.dse.in.tum.de: public website
   - dosvm1.cit.tum.de: pxeboot
 
 # Storage
@@ -326,6 +339,62 @@ If the RGB group asks which networks to connect your machine to, tell them `il01
 
 A graph of how the servers are connected right now can be found [here](./hosts/graph.md).
 
-## Names left to pick
+# Server rack layout
 
--
+Physical position of each server in our racks. For per-host expansion cards see
+[expansion_cards.md](./expansion_cards.md).
+
+> **Last visually verified:** 2026-07-30 
+
+## Room view — all racks
+
+<div align="center">
+
+<pre>
+┌───────────────┐   ┌────┐   ┌────┐   ┌────┐   ┌───────────────┐   ┌───────────────┐
+│               │   │    │   │    │   │    │   │               │   │     vislor    │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │    rose (F)   │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │    amy (F)    │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │   clara (F)   │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │   momiji (F)  │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │    jackson    │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │ christina (S) │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │    adelaide   │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │    wilfred    │
+├───────────────┤   │    │   │    │   │    │   │               │   ├───────────────┤
+│   steve (G)   │   │    │   │    │   │    │   │               │   │     river     │
+├───────────────┤   │    │   │    │   │    │   │               │   ├───────────────┤
+│     eliza     │   │    │   │    │   │    │   │               │   │    jack (G)   │
+├───────────────┤   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │      dan      │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │     astrid    │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │     mickey    │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │      ryan     │
+│               │   │    │   │    │   │    │   │               │   ├───────────────┤
+│               │   │    │   │    │   │    │   │               │   │     graham    │
+│               │   │    │   │    │   │    │   ├───────────────┤   ├───────────────┤
+│               │   │    │   │    │   │    │   │     martha    │   │     yasmin    │
+│               │   │    │   │    │   │    │   ├───────────────┤   ├───────────────┤
+│               │   │    │   │    │   │    │   │   sakura (F)  │   │   hinoki (F)  │
+│               │   │    │   │    │   │    │   ├───────────────┤   ├───────────────┤
+│               │   │    │   │    │   │    │   │     irene     │   │      ian      │
+│               │   │    │   │    │   │    │   ├───────────────┤   ├───────────────┤
+│               │   │    │   │    │   │    │   │     xavier    │   │   jamie (G)   │
+└───────────────┘   └────┘   └────┘   └────┘   └───────────────┘   └───────────────┘
+  leftmost                                                           rightmost
+                                                                 (left row from entry)
+</pre>
+
+</div>
+

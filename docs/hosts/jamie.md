@@ -4,19 +4,19 @@
 System:
   Host: jamie Kernel: 6.11.0 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\f6y4q0vbzgd8ckfk6milamdpvhc4zf76-initrd-linux-6.11-initrd.efi
-    init=/nix/store/0m1gxfivs2fjbv3kmajpxglqqr1n8g58-nixos-system-jamie-25.05.20250930.51fcc5b/init
+    parameters: initrd=\EFI\nixos\sjr0jv1k08z2vr5mgkv9kmgwz92q35l6-initrd-linux-6.11-vc-initrd.efi
+    init=/nix/store/k2idq76j2bn7xcqjmjkygw8r55pc7na1-nixos-system-jamie-25.11.20260123.ac3d985/init
     amd_iommu=on console=ttyS0,115200 console=tty0 kvm_amd.sev=1 kvm_amd.sev_es=1
     kvm_amd.sev_snp=1 sp5100_tco.blacklist=yes nohibernate loglevel=4 lsm=landlock,yama,bpf
-  Console: pty pts/1 Distro: NixOS 25.05 (Warbler)
+  Console: N/A Distro: NixOS 25.11 (Xantusia)
 Machine:
   Type: Server System: Dell product: PowerEdge R7625 v: N/A serial: 4SV6R74 Chassis: type: 23
     serial: 4SV6R74
   Mobo: Dell model: 0M7YXP v: A01 serial: .4SV6R74.VNFCV004BJ00F6.
     part-nu: SKU=0AF9;ModelName=PowerEdge R7625 uuid: 4c4c4544-0053-5610-8036-b4c04f523734 UEFI: Dell
-    v: 1.10.6 date: 12/06/2024
+    v: 1.15.3 date: 10/29/2025
 Memory:
-  System RAM: total: 1.5 TiB available: 1.47 TiB used: 733.32 GiB (48.7%)
+  System RAM: total: 1.5 TiB available: 1.47 TiB used: 109.32 GiB (7.3%)
   Array-1: capacity: 6 TiB slots: 24 modules: 24 EC: Multi-bit ECC max-module-size: 256 GiB
     note: est.
   Device-1: A1 type: DDR5 detail: synchronous registered (buffered) size: 64 GiB speed:
@@ -92,9 +92,9 @@ Memory:
     spec: 5600 MT/s actual: 4800 MT/s volts: curr: 1.1 min: 1.1 max: 1.1 width (bits): data: 64
     total: 80 manufacturer: 80CE000080CE part-no: M321R8GA0PB0-CWMKJ serial: 50E68C5D
 PCI Slots:
-  Slot: 3 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A
+  Slot: 3 type: PCIe gen: 4 status: in use length: short volts: 3.3 bus-ID: 64:00.0
   Slot: 2 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 21:00.0
-  Slot: 7 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: N/A
+  Slot: 7 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: e1:00.0
   Slot: 6 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A
   Slot: 5 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A
   Slot: 4 type: PCIe gen: 4 status: available length: short volts: 3.3 bus-ID: N/A
@@ -117,11 +117,11 @@ PCI Slots:
 CPU:
   Info: model: AMD EPYC 9654 bits: 64 type: MT MCP SMP arch: Zen 4 gen: 4 level: v4 note: check
     built: 2022+ process: TSMC n5 (5nm) family: 0x19 (25) model-id: 0x11 (17) stepping: 1
-    microcode: 0xA101148
+    microcode: 0xA101158
   Topology: cpus: 2x dies: 12 clusters: 12x1 cores: 96 threads: 192 tpc: 2 smt: enabled cache:
     L1: 2x 6 MiB (12 MiB) desc: d-96x32 KiB; i-96x32 KiB L2: 2x 96 MiB (192 MiB) desc: 96x1024 KiB
     L3: 2x 384 MiB (768 MiB) desc: 12x32 MiB
-  Speed (MHz): avg: 1500 min/max: 1500/2400 boost: enabled base/boost: 2400/4400 scaling:
+  Speed (MHz): avg: 1500 min/max: 1500/3708 boost: enabled base/boost: 2400/4400 scaling:
     driver: acpi-cpufreq governor: schedutil volts: 1.8 V ext-clock: 32000 MHz cores: 1: 1500 2: 1500
     3: 1500 4: 1500 5: 1500 6: 1500 7: 1500 8: 1500 9: 1500 10: 1500 11: 1500 12: 1500 13: 1500
     14: 1500 15: 1500 16: 1500 17: 1500 18: 1500 19: 1500 20: 1500 21: 1500 22: 1500 23: 1500
@@ -164,8 +164,8 @@ CPU:
     356: 1500 357: 1500 358: 1500 359: 1500 360: 1500 361: 1500 362: 1500 363: 1500 364: 1500
     365: 1500 366: 1500 367: 1500 368: 1500 369: 1500 370: 1500 371: 1500 372: 1500 373: 1500
     374: 1500 375: 1500 376: 1500 377: 1500 378: 1500 379: 1500 380: 1500 381: 1500 382: 1500
-    383: 1500 384: 1500 bogomips: 1843196
-  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
+    383: 1500 384: 1500 bogomips: 1843203
+  Flags-basic: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
   Type: itlb_multihit status: Not affected
@@ -184,7 +184,7 @@ CPU:
   Type: tsx_async_abort status: Not affected
 Graphics:
   Device-1: NVIDIA GH100 [H100L 94GB] driver: vfio-pci v: N/A alternate: nvidiafb,nouveau
-    non-free: 550-570.xx+ status: current (as of 2025-04) arch: Hopper code: GH1xx
+    non-free: 550-580.xx+ status: current (as of 2025-08) arch: Hopper code: GH1xx
     process: TSMC n4 (5nm) built: 2022+ pcie: gen: 5 speed: 32 GT/s lanes: 16 bus-ID: 21:00.0
     chip-ID: 10de:2321 class-ID: 0302
   Device-2: Matrox Systems Integrated G200eW3 Graphics driver: mgag200 v: kernel ports:
@@ -214,59 +214,70 @@ Network:
     pcie: gen: 2 speed: 5 GT/s lanes: 1 link-max: lanes: 2 port: N/A bus-ID: 63:00.1
     chip-ID: 14e4:165f class-ID: 0200
   IF: eno8403 state: down mac: c4:cb:e1:e8:d7:9b
-  IF-ID-1: br_guardian state: up speed: 10000 Mbps duplex: unknown mac: 76:47:65:55:9c:f7
+  Device-5: Mellanox MT2910 Family [ConnectX-7] driver: mlx5_core v: kernel pcie: gen: 4
+    speed: 16 GT/s lanes: 16 link-max: gen: 5 speed: 32 GT/s port: N/A bus-ID: 64:00.0
+    chip-ID: 15b3:1021 class-ID: 0200 temp: 54.0 C
+  IF: ens3f0np0 state: down mac: 60:5e:65:c6:79:ec
+  Device-6: Mellanox MT2910 Family [ConnectX-7] driver: mlx5_core v: kernel pcie: gen: 4
+    speed: 16 GT/s lanes: 16 link-max: gen: 5 speed: 32 GT/s port: N/A bus-ID: 64:00.1
+    chip-ID: 15b3:1021 class-ID: 0200
+  IF: ens3f1np1 state: down mac: 60:5e:65:c6:79:ed
+  IF-ID-1: br-6cb7168c1301 state: down mac: 02:42:97:1c:3b:fe
+  IP v4: 172.18.0.1/16 scope: global broadcast: 172.18.255.255
+  IF-ID-2: br-7c483f55c4a7 state: down mac: 02:42:a1:0f:85:4a
+  IP v4: 172.19.0.1/16 scope: global broadcast: 172.19.255.255
+  IF-ID-3: br-f308183d56a8 state: down mac: 02:42:ad:70:55:a9
+  IP v4: 172.20.0.1/16 scope: global broadcast: 172.20.255.255
+  IF-ID-4: br_teofil state: down mac: 2a:f5:54:9c:79:a7
   IP v4: 192.168.32.1/24 scope: global
-  IP v6: fe80::7447:65ff:fe55:9cf7/64 virtual: proto kernel_ll scope: link
-  IF-ID-2: docker0 state: up speed: 10000 Mbps duplex: unknown mac: 02:42:2e:f3:48:9b
+  IP v6: fe80::28f5:54ff:fe9c:79a7/64 virtual: proto kernel_ll scope: link
+  IF-ID-5: docker0 state: down mac: 02:42:1d:48:03:d9
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IP v6: fe80::42:2eff:fef3:489b/64 virtual: proto kernel_ll scope: link
-  IF-ID-3: guardian state: up speed: 10000 Mbps duplex: full mac: 6a:d1:cc:7e:4b:62
-  IP v4: 169.254.82.17/16 scope: link
-  IP v6: fe80::68d1:ccff:fe7e:4b62/64 virtual: proto kernel_ll scope: link
-  IF-ID-4: guardian_2 state: down mac: 4a:73:95:ee:3d:77
-  IF-ID-5: tap0_patrick state: up speed: 10000 Mbps duplex: full mac: e2:1f:d5:95:18:d3
-  IP v4: 192.168.27.1/24 scope: global
-  IP v6: fe80::e01f:d5ff:fe95:18d3/64 virtual: proto kernel_ll scope: link
-  IF-ID-6: tap_host state: down mac: de:c2:e2:8c:49:2b
-  IP v4: 192.168.32.30/24 scope: global
-  IF-ID-7: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
+  IP v6: fe80::42:1dff:fe48:3d9/64 virtual: proto kernel_ll scope: link
+  IF-ID-6: tap0_teofil state: down mac: 3a:de:7c:4b:dd:89
+  IP v6: fe80::38de:7cff:fe4b:dd89/64 virtual: proto kernel_ll scope: link
+  IF-ID-7: tap1_teofil state: down mac: 42:42:d5:ba:e9:e6
+  IF-ID-8: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:1003:e7a4:477e:c945:697c/16 scope: global
-  IF-ID-8: vethbf0d302 state: up speed: 10000 Mbps duplex: full mac: 16:98:ba:07:34:ae
-  IF-ID-9: vethe50c3e6 state: up speed: 10000 Mbps duplex: full mac: ba:52:00:02:a3:35
-  Info: services: nginx, sshd, systemd-networkd, systemd-timesyncd
+  Info: services: sshd, systemd-networkd, systemd-timesyncd
   WAN IP: 131.159.102.32
 RAID:
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 1.47 TiB
-    allocated: 2.02 TiB zfs-fs: size: 3.95 TiB free: 1.36 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 642 GiB
+    allocated: 2.86 TiB zfs-fs: size: 4.5 TiB free: 531.27 GiB
   Components: Online:
-  1: nvme0n1p2 maj-min: 259:2 size: 3.49 TiB
+  1: nvme0n1p2 maj-min: 259:4 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 3.49 TiB usable: 3.95 TiB used: 1.76 TiB (44.6%)
-  ID-1: /dev/nvme0n1 maj-min: 259:0 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
+  Local Storage: total: raw: 6.99 TiB usable: 7.99 TiB used: 3.16 TiB (39.6%)
+  ID-1: /dev/nvme0n1 maj-min: 259:2 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNJ0X815786 fw-rev: GDC5A02Q temp: 34.9 C scheme: GPT
-  SMART: yes health: PASSED on: 187d 2h cycles: 17 read-units: 10,439,444 [5.34 TB]
-    written-units: 37,069,078 [18.9 TB]
+    serial: S64HNJ0X815786 fw-rev: GDC5A02Q temp: 32.9 C scheme: GPT
+  SMART: yes health: PASSED on: 338d 19h cycles: 33 read-units: 42,011,768 [21.5 TB]
+    written-units: 132,591,725 [67.8 TB]
+  ID-2: /dev/nvme1n1 maj-min: 259:1 vendor: KIOXIA model: KCMYXRUG3T84 size: 3.49 TiB block-size:
+    physical: 4096 B logical: 512 B tech: SSD serial: 8F30A0240LM3 fw-rev: 1UETE106
+    temp: 37 ° (310 K) C
+  SMART: yes health: PASSED on: 82d 1h cycles: 25 read-units: 2,454,315,059 [1.25 PB]
+    written-units: 3,407,611,867 [1.74 PB]
 Partition:
-  ID-1: / raw-size: N/A size: 3.06 TiB used: 1.71 TiB (55.7%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 60.2 MiB (5.9%) fs: vfat
-    block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:1
-  ID-3: /home raw-size: N/A size: 3.43 TiB used: 1.61 TiB (47.0%) fs: nfs4
+  ID-1: / raw-size: N/A size: 3.68 TiB used: 3.16 TiB (85.9%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 63.8 MiB (6.2%) fs: vfat
+    block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:3
+  ID-3: /home raw-size: N/A size: 3.47 TiB used: 2.54 TiB (73.3%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 1.36 TiB used: 512 KiB (0.0%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 531.27 GiB used: 256 KiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: N/A mobo: 37 C
-  Fan Speeds (rpm): cpu: 6600 fan-27: 5760 fan-42: 6600 fan-43: 5640 fan-58: 6600 fan-59: 5760
-    fan-74: 6480 fan-75: 5880 fan-90: 6480 fan-91: 5640 fan-106: 6480 fan-107: 5880
+  Src: ipmi System Temperatures: cpu: N/A mobo: 41 C
+  Fan Speeds (rpm): cpu: 7320 fan-27: 6480 fan-42: 7200 fan-43: 6360 fan-58: 7200 fan-59: 6360
+    fan-74: 7080 fan-75: 6480 fan-90: 7200 fan-91: 6480 fan-106: 7200 fan-107: 6480
   Power: 12v: N/A 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 75.2 C mobo: 53.0 C
+  Src: lm-sensors System Temperatures: cpu: 81.8 C mobo: 53.0 C
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 4705 Power: uptime: 2h 30m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 602.09 GiB Init: systemd v: 257 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 699 libs: 161 pm: nix-usr pkgs: 0
-    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.38
+  Processes: 4928 Power: uptime: 1h 25m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 602.09 GiB Init: systemd v: 258 default: multi-user tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 739 libs: 161 pm: nix-usr pkgs: 0
+    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.39
 ```
 ![hardware topology](jamie.lstopo.svg)

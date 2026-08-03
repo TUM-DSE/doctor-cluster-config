@@ -18,10 +18,9 @@
   # x11 requires modesetting to be disabled
   hardware.nvidia-jetpack.modesetting.enable = false;
 
-  # Enable Docker with NVIDIA GPU support
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableNvidia = true;
+  # Enable NVIDIA GPU support in containers (podman/docker via CDI)
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Example: run container with GPU access
-  # $ docker run --rm --device=nvidia.com/gpu=all nvcr.io/nvidia/l4t-pytorch:r35.1.0-pth1.11-py3
+  # $ podman run --rm --device=nvidia.com/gpu=all nvcr.io/nvidia/l4t-pytorch:r35.1.0-pth1.11-py3
 }

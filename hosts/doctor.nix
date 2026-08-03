@@ -38,6 +38,9 @@
     ../modules/monitoring/prometheus
     ../modules/monitoring/loki.nix
     ../modules/monitoring/telegraf.nix
+    ../modules/monitoring/grafana-proxy.nix
+    # disabled for now since the download is gone
+    #../modules/lrz-gitlab-classroom/frontend.nix
   ];
 
   simd.arch = "broadwell";
@@ -71,6 +74,8 @@
 
   services.openssh.extraConfig = ''
     ListenAddress [42:0:3c46:96e2:72f4:be89:d6eb:ab14]
+    ListenAddress 0.0.0.0:2222
+    Port 2222
   '';
   services.openssh.startWhenNeeded = false;
 

@@ -20,5 +20,5 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   virtualisation.docker.enable = true;
-  hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.enable = lib.mkDefault true;
 }

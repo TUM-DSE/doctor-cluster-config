@@ -5,16 +5,16 @@
   tasks:
    - name: Add user to deploy ssh keys via sftp
      user:
-      name: deploy
+      name: deploy-keys
       state: present
       shell: /bin/sh
       home: /
       system: yes
       createhome: no
-   - name: Allow deploy user to update tunnel keys
+   - name: Allow deploy-keys user to update tunnel keys
      community.general.sudoers:
        name: update-tunnel-keys
-       user: deploy
+       user: deploy-keys
        commands: /usr/local/bin/update-tunnel-keys
    - name: Add command to deploy tunnel keys
      copy:
@@ -39,14 +39,18 @@
        block: "{{ lookup('file', './sshd_config') }}"
        path: /etc/ssh/sshd_config
      register: sshd_conf
-   - name: add SSH ca cert
+   - name: add SSH host certificates
      copy:
-       dest: /etc/ssh/login-cert.pub
+       dest: "/etc/ssh/{{ item }}"
        owner: root
        group: root
        mode: '0644'
        content: |
-         {{ lookup('file', './../sshd/certs/login-cert.pub') }}
+         {{ lookup('file', './../sshd/certs/' + item) }}
+     loop:
+       - login-cert.pub
+       - login-ecdsa-cert.pub
+       - login-rsa-cert.pub
      register: ssh_cert
    - name: reload sshd
      service:
@@ -67,14 +71,26 @@
        group: root
        mode: '0644'
        state: touch
-   - name: Add ssh key for deploy user
+   - name: Add ssh key for deploy-keys user
      copy:
-       dest: /etc/ssh/authorized_keys.d/deploy
+       dest: /etc/ssh/authorized_keys.d/deploy-keys
        owner: root
        group: root
        mode: '0644'
        content: |
          ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpkqkEz8grxBHfDecJwTHi14lcaZOgUA5HbKP/2tdia
+
+   - name: Allow deploy-keys through pam_access
+     lineinfile:
+       path: /etc/security/access.conf
+       line: "+:deploy-keys:ALL"
+       insertbefore: "^-:ALL:ALL"
+
+   - name: Allow tunnel through pam_access
+     lineinfile:
+       path: /etc/security/access.conf
+       line: "+:tunnel:ALL"
+       insertbefore: "^-:ALL:ALL"
 
    - name: Update and upgrade apt packages for security updates
      apt:

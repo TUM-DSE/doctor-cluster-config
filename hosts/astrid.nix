@@ -5,10 +5,11 @@
     ../modules/hardware/poweredge-r440.nix
     ../modules/disko-zfs.nix
     ../modules/nfs/client.nix
+    ../modules/copy-fail-patch.nix
 
     ../modules/jumphost
-    ../modules/buildbot/master.nix
     ../modules/niks3
+    ../modules/postgresql.nix
   ];
 
   disko.rootDisk = "/dev/disk/by-id/nvme-Dell_Ent_NVMe_P5600_MU_U.2_1.6TB_PHAB123301411P9SGN";

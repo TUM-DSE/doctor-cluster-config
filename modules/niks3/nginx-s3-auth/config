@@ -1,0 +1,20 @@
+# shellcheck source=auto/rust
+. $ngx_addon_dir/auto/rust
+
+# ngx_addon_name determines the build directory and should be set before
+# any modules are defined
+ngx_addon_name=ngx_http_s3_auth_module
+
+if [ $HTTP = YES ]; then
+    ngx_module_type=HTTP
+    ngx_module_name=ngx_http_s3_auth_module
+    ngx_module_incs=
+    ngx_module_deps=
+    ngx_module_libs=
+
+    ngx_rust_target_type=LIB
+    ngx_rust_target_name=ngx_http_s3_auth
+    ngx_rust_target_features=
+
+    ngx_rust_module
+fi

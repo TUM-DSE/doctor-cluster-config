@@ -1,5 +1,7 @@
-{ pkgs, lib, fetchFromGitHub, buildLinux, modDirVersionArg ? null, ... }@args:
+{ pkgs, lib, fetchFromGitHub, buildLinux, gcc13Stdenv, modDirVersionArg ? null, ... }@args:
 buildLinux (args // rec {
+    # Predates GCC 14/15: C23-by-default breaks the build.
+    stdenv = gcc13Stdenv;
     version = "6.0";
     modDirVersion = "6.0.0";
     # modDirVersion = "6.6.56";

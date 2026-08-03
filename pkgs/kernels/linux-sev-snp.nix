@@ -1,9 +1,13 @@
-{ buildLinux, fetchFromGitHub, ... }@args:
+{ buildLinux, fetchFromGitHub, gcc13Stdenv, ... }@args:
 let
   buildSNPKernel = { owner, repo, rev, sha256, version, modDirVersion, extraPatches ? [ ] }:
     buildLinux
       (args // rec {
         inherit version modDirVersion;
+
+        # These research kernels predate GCC 14/15; C23-by-default breaks
+        # them (bool/false are keywords now).
+        stdenv = gcc13Stdenv;
 
         src = fetchFromGitHub {
           inherit owner repo rev sha256;

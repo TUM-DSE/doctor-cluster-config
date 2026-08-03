@@ -15,12 +15,15 @@
         inherit (self.packages.x86_64-linux) xrt;
         inherit (pkgs.linuxPackages_6_8) kernel;
       };
+      coyote-driver = pkgs.callPackage ./xilinx/coyote-driver.nix {
+        src = inputs.coyote;
+        inherit (pkgs.linuxPackages_6_8) kernel;
+      };
       xntools-core = pkgs.callPackage ./xilinx/xntools-core.nix { };
 
       firmware-sn1000 = pkgs.callPackage ./xilinx/firmware-sn1000.nix { };
 
       xilinx-env = pkgs.callPackage ./xilinx/fhs-env.nix { };
-      coyote-env = pkgs.callPackage ./xilinx/coyote-env.nix { };
       xilinx-firmware = pkgs.callPackage ./xilinx/firmware.nix { };
       xilinx-cable-drivers = pkgs.callPackage ./xilinx/cable-drivers { };
       intel-cable-drivers = pkgs.callPackage ./intel-fpgas/cable-drivers { };
@@ -38,8 +41,11 @@
       linux-morello = pkgs.callPackage ./kernels/linux-morello.nix {
         inherit (self.packages.aarch64-linux) clang-morello bintools-morello clang-morello-unwrapped;
       };
-      musl-morello-purecap = pkgs.callPackage ./musl-morello-purecap { inherit (self.packages.aarch64-linux) llvm-morello-purecap; };
-      llvm-morello-purecap = pkgs.callPackage ./llvm-morello-purecap { };
+      linux-morello-headers = pkgs.callPackage ./kernels/linux-morello-headers.nix {
+        inherit (self.packages.aarch64-linux) linux-morello;
+      };
+      musl-morello-purecap = pkgs.callPackage ./musl-morello-purecap { inherit (self.packages.aarch64-linux) clang-morello; };
+      llvm-morello-purecap = pkgs.callPackage ./llvm-morello-purecap { inherit (self.packages.aarch64-linux) clang-morello musl-morello-purecap linux-morello-headers; };
     };
 
   # packages for many targets:
@@ -47,6 +53,8 @@
     {
       pkgs,
       self',
+      system,
+      lib,
       ...
     }:
     {
@@ -56,18 +64,16 @@
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
           inherit (inputs.nixpkgs.lib) nixosSystem;
           extraModules = [
-            self.inputs.nur.nixosModules.nur
-            { _module.args.inputs = self.inputs; }
+            self.inputs.sops-nix.nixosModules.sops
+            { _module.args = { inputs = self.inputs; inherit self; }; }
           ];
         };
 
         netboot-pixie-core = pkgs.callPackage ../modules/netboot/netboot-pixie-core.nix {
           inherit (self'.packages) netboot;
         };
-
-        install-iso = pkgs.callPackage ./install-iso/default.nix {
-          inherit self;
-        };
+      } // lib.optionalAttrs pkgs.stdenv.isLinux {
+        install-iso = self.nixosConfigurations."install-iso-${system}".config.system.build.isoImage;
       };
     };
 }

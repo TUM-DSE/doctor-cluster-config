@@ -2,23 +2,22 @@
 
 ```
 System:
-  Host: irene Kernel: 6.16.9 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
+  Host: irene Kernel: 6.18.6 arch: x86_64 bits: 64 compiler: gcc v: 14.3.0 clocksource: tsc
     avail: hpet,acpi_pm
-    parameters: initrd=\EFI\nixos\n7niang3czzxqqv9p9j8wjfzg9jgxb64-initrd-linux-6.16.9-initrd.efi
-    init=/nix/store/d1w72gx5hgdlkzvk8gga9pf3gmx3rwxp-nixos-system-irene-25.05.20250930.51fcc5b/init
+    parameters: initrd=\EFI\nixos\jyicfip9xgx0fdbki9gw5fgi0lf6dbnq-initrd-linux-6.18.6-initrd.efi
+    init=/nix/store/bvyxywy5779zdcvxkh0jsz3561jqgzhx-nixos-system-irene-25.11.20260123.ac3d985/init
     amd_iommu=on console=ttyS0,115200 console=tty0 kvm_amd.sev=1 kvm_amd.sev_es=1
     kvm_amd.sev_snp=1 sp5100_tco.blacklist=yes kvm.gmem_2m_enabled=1 hugepagesz=1GB hugepages=0
     hugepagesz=2MB hugepages=1000 console=ttyS1,115200n8 console=tty1 nohibernate loglevel=4
     lsm=landlock,yama,bpf
-  Console: N/A Distro: NixOS 25.05 (Warbler)
+  Console: N/A Distro: NixOS 25.11 (Xantusia)
 Machine:
   Type: Kvm System: Supermicro product: AS -2015CS-TNR v: 0123456789 serial: E508280X4300377
     Chassis: type: 1 v: 0123456789 serial: CLA26FM43BD0327
   Mobo: Supermicro model: H13SSW v: 1.01A serial: WM236S605732 part-nu: 091715D9
-    uuid: 34417400-15b6-11ee-8000-3cecefe3e11d UEFI: American Megatrends LLC. v: 1.6a
-    date: 01/24/2024
+    uuid: 34417400-15b6-11ee-8000-3cecefe3e11d UEFI: American Megatrends LLC. v: 3.7 date: 10/09/2025
 Memory:
-  System RAM: total: 768 GiB available: 752.2 GiB used: 54.19 GiB (7.2%)
+  System RAM: total: 768 GiB available: 752.19 GiB used: 55.01 GiB (7.3%)
   Array-1: capacity: 6 TiB note: check slots: 12 modules: 12 EC: Multi-bit ECC
     max-module-size: 512 GiB note: est.
   Device-1: DIMMA1 type: DDR5 detail: synchronous registered (buffered) size: 64 GiB
@@ -58,16 +57,16 @@ Memory:
     speed: 4800 MT/s volts: curr: 1.1 min: 1.1 max: 1.1 width (bits): data: 64 total: 80
     manufacturer: SK Hynix part-no: HMCG94MEBRA123N serial: 80AD012321767E93CB
 PCI Slots:
-  Slot: 1 type: PCIe gen: 3 status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7
-  Slot: 2 type: PCIe gen: 3 status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7
-  Slot: 3 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:1f.7
+  Slot: N/A type: N/A status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7
+  Slot: N/A type: N/A status: available info: M.2 length: long volts: 3.3 bus-ID: ff:1f.7
+  Slot: 3 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 00:00.0
   Slot: 3 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:1f.7
   Slot: 1 type: PCIe gen: 5 status: in use length: long volts: 3.3 bus-ID: 81:00.0
   Slot: 2 type: PCIe gen: 5 status: available length: long volts: 3.3 bus-ID: ff:1f.7
 CPU:
   Info: model: AMD EPYC 9654P socket: SP5 bits: 64 type: MT MCP arch: Zen 4 gen: 4 level: v4
     note: check built: 2022+ process: TSMC n5 (5nm) family: 0x19 (25) model-id: 0x11 (17) stepping: 1
-    microcode: 0xA10113E
+    microcode: 0xA101158
   Topology: cpus: 1x dies: 12 clusters: 12x1 cores: 96 threads: 192 tpc: 2 smt: enabled cache:
     L1: 6 MiB desc: d-96x32 KiB; i-96x32 KiB L2: 96 MiB desc: 96x1024 KiB L3: 384 MiB desc: 12x32 MiB
   Speed (MHz): avg: 2400 min/max: 1500/3709 boost: disabled base/boost: 2400/3700 scaling:
@@ -92,8 +91,8 @@ CPU:
     167: 2400 168: 2400 169: 2400 170: 2400 171: 2400 172: 2400 173: 2400 174: 2400 175: 2400
     176: 2400 177: 2400 178: 2400 179: 2400 180: 2400 181: 2400 182: 2400 183: 2400 184: 2400
     185: 2400 186: 2400 187: 2400 188: 2400 189: 2400 190: 2400 191: 2400 192: 2400
-    bogomips: 921592
-  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
+    bogomips: 920171
+  Flags-basic: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
   Vulnerabilities:
   Type: gather_data_sampling status: Not affected
   Type: ghostwrite status: Not affected
@@ -112,12 +111,12 @@ CPU:
   Type: spectre_v2 mitigation: Retpolines; IBPB: conditional; IBRS_FW; STIBP: always-on; RSB
     filling; PBRSB-eIBRS: Not affected; BHI: Not affected
   Type: srbds status: Not affected
-  Type: tsa status: Vulnerable: No microcode
+  Type: tsa mitigation: Clear CPU buffers
   Type: tsx_async_abort status: Not affected
   Type: vmscape mitigation: IBPB before exit to userspace
 Graphics:
   Device-1: ASPEED Graphics Family vendor: Super Micro driver: ast v: kernel ports: active: VGA-1
-    empty: none bus-ID: cb:00.0 chip-ID: 1a03:2000 class-ID: 0300
+    empty: none bus-ID: cd:00.0 chip-ID: 1a03:2000 class-ID: 0300
   Display: unspecified server: N/A driver: gpu: ast tty: 80x40
   Monitor-1: VGA-1 size-res: N/A in console modes: max: 1024x768 min: 640x480
   API: EGL Message: No EGL data available.
@@ -141,16 +140,20 @@ Network:
   Device-4: Intel Ethernet X710 for 10 Gigabit SFP+ vendor: Super Micro driver: i40e v: kernel
     pcie: gen: 3 speed: 8 GT/s lanes: 8 port: N/A bus-ID: 81:00.3 chip-ID: 8086:104e class-ID: 0200
   IF: enp129s0f3np3 state: down mac: 7c:c2:55:25:d0:c7
-  Device-5: Intel Ethernet Virtual Function 700 Series vendor: Super Micro driver: vfio-pci
-    v: N/A modules: iavf port: N/A bus-ID: 81:02.0 chip-ID: 8086:154c class-ID: 0200
-  Device-6: Intel Ethernet Virtual Function 700 Series vendor: Super Micro driver: iavf v: kernel
-    port: N/A bus-ID: 81:02.1 chip-ID: 8086:154c class-ID: 0200
-  IF: enp129s0f0v1 state: down mac: 2a:33:7e:69:2a:b1
-  IF-ID-1: docker0 state: down mac: 02:42:2a:54:31:33
+  Device-5: Intel Ethernet E810-C for QSFP driver: N/A modules: ice pcie: gen: 4 speed: 16 GT/s
+    lanes: 16 port: N/A bus-ID: c1:00.0 chip-ID: 8086:1592 class-ID: 0200
+  IF-ID-1: br-a5417615d297 state: down mac: 1e:d3:4f:2b:7a:c6
+  IP v4: 172.18.0.1/16 scope: global broadcast: 172.18.255.255
+  IF-ID-2: docker0 state: down mac: f6:ea:44:11:59:ca
   IP v4: 172.17.0.1/16 scope: global broadcast: 172.17.255.255
-  IF-ID-2: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
+  IP v6: fe80::f4ea:44ff:fe11:59ca/64 virtual: proto kernel_ll scope: link
+  IF-ID-3: fc-br0 state: down mac: 86:80:84:e2:41:52
+  IP v4: 172.17.0.1/16 scope: global
+  IP v6: fe80::b8d7:6aff:fee2:3fd0/64 virtual: proto kernel_ll scope: link
+  IF-ID-4: fc-tap-9 state: down mac: ea:1c:55:f7:92:b8
+  IF-ID-5: tinc.retiolum state: unknown speed: 10000 Mbps duplex: full mac: N/A
   IP v6: 42:0:3c46:b965:c30d:8b13:bcc7:59e8/16 scope: global
-  IF-ID-3: usb0 state: unknown speed: -1 duplex: half mac: be:3a:f2:b6:05:9f
+  IF-ID-6: usb0 state: unknown speed: -1 duplex: unknown mac: be:3a:f2:b6:05:9f
   IP v4: 169.254.3.1/24 type: dynamic scope: global
   IP v6: fe80::bc3a:f2ff:feb6:59f/64 virtual: proto kernel_ll scope: link
   Info: services: sshd, systemd-networkd, systemd-timesyncd
@@ -160,51 +163,61 @@ Bluetooth:
     speed: 480 Mb/s lanes: 1 mode: 2.0 bus-ID: 1-1.2:4 chip-ID: 0b1f:03ee class-ID: 0a00
   Report: This feature requires one of these tools: hciconfig/bt-adapter
 RAID:
-  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 1.22 TiB
-    allocated: 2.26 TiB zfs-fs: size: 3.41 TiB free: 1.11 TiB
+  Device-1: zroot type: zfs status: ONLINE level: linear raw: size: 3.48 TiB free: 1.71 TiB
+    allocated: 1.78 TiB zfs-fs: size: 3.38 TiB free: 1.6 TiB
   Components: Online:
-  1: nvme0n1p2 maj-min: 259:6 size: 3.49 TiB
+  1: nvme4n1p2 maj-min: 259:12 size: 3.49 TiB
 Drives:
-  Local Storage: total: raw: 13.97 TiB usable: 13.89 TiB used: 1.77 TiB (12.7%)
-  ID-1: /dev/nvme0n1 maj-min: 259:2 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
-    block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNE0T804198 fw-rev: GDC5A02Q temp: 30.9 C scheme: GPT
-  SMART: yes health: PASSED on: 1y 209d 19h cycles: 36 read-units: 53,255,191 [27.2 TB]
-    written-units: 74,046,129 [37.9 TB]
-  ID-2: /dev/nvme1n1 maj-min: 259:1 vendor: KIOXIA model: KCMYXRUG3T84 size: 3.49 TiB block-size:
+  Local Storage: total: raw: 20.96 TiB usable: 20.85 TiB used: 1.73 TiB (8.3%)
+  ID-1: /dev/nvme0n1 maj-min: 259:7 vendor: KIOXIA model: KCMYXRUG3T84 size: 3.49 TiB block-size:
+    physical: 4096 B logical: 512 B tech: SSD serial: 8F30A0220LM3 fw-rev: 1UETE106
+    temp: 30 ° (303 K) C
+  SMART: yes health: PASSED on: 101d 6h cycles: 15 read-units: 1,065,296,677 [545 TB]
+    written-units: 1,294,634,269 [662 TB]
+  ID-2: /dev/nvme1n1 maj-min: 259:6 vendor: KIOXIA model: KCMYXRUG3T84 size: 3.49 TiB block-size:
+    physical: 4096 B logical: 512 B tech: SSD serial: 8F30A0080LM3 fw-rev: 1UETE106
+    temp: 33 ° (306 K) C
+  SMART: yes health: PASSED on: 109d 23h cycles: 14 read-units: 507,012,950 [259 TB]
+    written-units: 165,001,046 [84.4 TB]
+  ID-3: /dev/nvme2n1 maj-min: 259:2 vendor: KIOXIA model: KCMYXRUG3T84 size: 3.49 TiB block-size:
     physical: 4096 B logical: 512 B tech: SSD serial: XDL0A0BH0LM3 fw-rev: 1UETE103
-    temp: 34 ° (307 K) C
-  SMART: yes health: PASSED on: 1y 201d 23h cycles: 36 read-units: 3,336,196,747 [1.70 PB]
-    written-units: 1,588,794,739 [813 TB]
-  ID-3: /dev/nvme2n1 maj-min: 259:4 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
+    temp: 32 ° (305 K) C
+  SMART: yes health: PASSED on: 1y 309d 16h cycles: 68 read-units: 3,443,235,519 [1.76 PB]
+    written-units: 1,629,679,730 [834 TB]
+  ID-4: /dev/nvme3n1 maj-min: 259:9 vendor: KIOXIA model: KCMYXRUG3T84 size: 3.49 TiB block-size:
+    physical: 4096 B logical: 512 B tech: SSD serial: 4FB0A0CT0LM3 fw-rev: 1UETE104
+    temp: 27 ° (300 K) C
+  SMART: yes health: PASSED on: 107d 1h cycles: 16 read-units: 218,154,261 [111 TB]
+    written-units: 95,087,750 [48.6 TB]
+  ID-5: /dev/nvme4n1 maj-min: 259:10 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
     block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNT0X115371 fw-rev: GDC5A02Q temp: 29.9 C
-  SMART: yes health: PASSED on: 264d 22h cycles: 27 read-units: 42,350,754 [21.6 TB]
-    written-units: 73,091,682 [37.4 TB]
-  ID-4: /dev/nvme3n1 maj-min: 259:3 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
-    block-size: physical: 4096 B logical: 512 B speed: 63.2 Gb/s lanes: 4 tech: SSD
-    serial: S64HNT0X115370 fw-rev: GDC5A02Q temp: 32.9 C
-  SMART: yes health: PASSED on: 345d 5h cycles: 12 read-units: 15,977,976 [8.18 TB]
-    written-units: 42,607,760 [21.8 TB]
+    serial: S64HNE0T804198 fw-rev: GDC5A02Q temp: 33.9 C scheme: GPT
+  SMART: yes health: PASSED on: 1y 361d 13h cycles: 52 read-units: 133,701,847 [68.4 TB]
+    written-units: 138,056,075 [70.6 TB]
+  ID-6: /dev/nvme5n1 maj-min: 259:8 vendor: Samsung model: MZQL23T8HCLS-00A07 size: 3.49 TiB
+    block-size: physical: 4096 B logical: 4096 B speed: 63.2 Gb/s lanes: 4 tech: SSD
+    serial: S64HNT0X115371 fw-rev: GDC5A02Q temp: 32.9 C
+  SMART: yes health: PASSED on: 1y 51d 16h cycles: 43 read-units: 66,910,738 [34.2 TB]
+    written-units: 105,478,394 [54.0 TB]
 Partition:
-  ID-1: / raw-size: N/A size: 2.87 TiB used: 1.76 TiB (61.3%) fs: zfs logical: zroot/root/nixos
-  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 62.3 MiB (6.1%) fs: vfat
-    block-size: 512 B dev: /dev/nvme0n1p1 maj-min: 259:5
-  ID-3: /home raw-size: N/A size: 3.43 TiB used: 1.61 TiB (47.0%) fs: nfs4
+  ID-1: / raw-size: N/A size: 3.24 TiB used: 1.64 TiB (50.6%) fs: zfs logical: zroot/root/nixos
+  ID-2: /boot raw-size: 1024 MiB size: 1022 MiB (99.80%) used: 32.7 MiB (3.2%) fs: vfat
+    block-size: 512 B dev: /dev/nvme4n1p1 maj-min: 259:11
+  ID-3: /home raw-size: N/A size: 3.47 TiB used: 2.54 TiB (73.3%) fs: nfs4
     remote: nfs:/export/home
-  ID-4: /tmp raw-size: N/A size: 1.12 TiB used: 4.08 GiB (0.4%) fs: zfs logical: zroot/root/tmp
+  ID-4: /tmp raw-size: N/A size: 1.6 TiB used: 1.1 MiB (0.0%) fs: zfs logical: zroot/root/tmp
 Swap:
   Alert: No swap data was found.
 Sensors:
-  Src: ipmi System Temperatures: cpu: 51 C mobo: 24 C
-  Fan Speeds (rpm): cpu: 5180 fan-3: 5180 fan-5: 5320
+  Src: ipmi System Temperatures: cpu: 53 C mobo: 24 C
+  Fan Speeds (rpm): cpu: 5460 fan-3: 5460 fan-5: 5460
   Power: 12v: 12.083 5v: N/A 3.3v: N/A vbat: N/A dimm-p1: N/A dimm-p2: N/A
-  Src: lm-sensors System Temperatures: cpu: 51.9 C mobo: N/A
+  Src: lm-sensors System Temperatures: cpu: 53.6 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Processes: 2209 Power: uptime: 1d 4h 15m states: freeze,mem suspend: s2idle wakeups: 0
-    hibernate: disabled image: 300.87 GiB Init: systemd v: 257 default: multi-user tool: systemctl
-  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 701 libs: 160 pm: nix-usr pkgs: 0
-    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.38
+  Processes: 2380 Power: uptime: 11d 20h 12m states: freeze,mem suspend: s2idle wakeups: 0
+    hibernate: disabled image: 300.87 GiB Init: systemd v: 258 default: multi-user tool: systemctl
+  Packages: pm: nix-default pkgs: 0 pm: nix-sys pkgs: 741 libs: 161 pm: nix-usr pkgs: 0
+    Compilers: gcc: 14.3.0 Client: Sudo v: 1.9.17p2 inxi: 3.3.39
 ```
 ![hardware topology](irene.lstopo.svg)
