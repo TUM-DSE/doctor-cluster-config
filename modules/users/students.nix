@@ -108,6 +108,10 @@ let
   marcKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvkAAmA8/jcrUWyCmVLpXm0zVK0FiH5s92NNL6ZjWb4 space@George"
   ];
+  
+  andreiKeys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCc6kci58KP0YherG/i+yLZg5w5+EoVDSdPwp2rbEVRX2zn0ZuEruSFd1S0xR3oucXJnu7a4HlfdOn9eBJsIXr9MB2PJA0KSHUz1hN5RwpwuYO/KoWKQeKgDoHb5cydWKzrL+PsD15rs0Inq/AAHRwEELW6hQuCnuyzhC6HI4phYHgd3QZxahvMCaLz2C1Wwp3m/v0xkjG/0fjyBxyrcwNSeL/YINSNOKnXkKkZtAnSBCOPiQuHE+TpM3UedzlNHCGHRkwlTbHxpeHzB/bD5RV1oDmcnrjfHubszD7KjjkK3fRPb2TgQ8jeovwaclve2Dfh87bp1dqFOARL59wlmLVGlGi3ADkB2PiEu0zkAVjoXimRXw2J7SrOS1UvGlhbPEu7Y1PCjg6hkIZhWnxwJlOZRBLKCQf6P9wlrm/hAhvKr+rauU7tz0RlY2S5eXSBMDtQuGLWwzZDFoukDv1BLPTY0p4ya6AdryvZyMIlsIcDG45Am+rGxZcMGUNtvzda+CJhILr2P51xp6v/yZVDRNHsEhiBFEIHKleNL8/ZFZksnQ93b2kGg8VFYPb6M9RC50Vy/oNY6FxJCqzk6Q7CymXTlSSYeIWPlBekyvnOgder26hcg+nhxY0kZIlhsdjCCDaJoiu/rYXgIBW0M6yjmcH9I1l3pTISjZuN3fl5Uu2QnQ== dabokva@gmail.com"
+  ];
 
   extraGroups = [
     "wheel"
@@ -558,6 +562,20 @@ in
       ];
       openssh.authorizedKeys.keys = marcKeys;
       expires = "2026-09-01";
+    };
+    
+    # Andrei Dolmatov, BSc thesis w/ Aleksandra (can be removed after Oct 2026)
+    andrei = {
+      isNormalUser = true;
+      home = "/home/andrei";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2012;
+      allowedHosts = [
+        "jamie"
+      ];
+      openssh.authorizedKeys.keys = andreiKeys;
+      expires = "2026-10-31";
     };
   };
 
