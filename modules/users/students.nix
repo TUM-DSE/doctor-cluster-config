@@ -230,7 +230,7 @@ in
         "steve"
       ];
       openssh.authorizedKeys.keys = yongjieKeys;
-      expires = "2026-06-30";
+      expires = "2026-09-30";
     };
 
     # DB chair PhD working on compiler stuff. Uses the Risc V board for experiments
