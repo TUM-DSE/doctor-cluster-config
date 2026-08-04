@@ -30,6 +30,7 @@
       "aarch64-linux"
     ];
     evalWorkerCount = 32;
+    evalMaxMemorySize = 4096;
 
     # Keep buildbot-era check names so existing branch protection rules match.
     statusContextPrefix = "buildbot";
