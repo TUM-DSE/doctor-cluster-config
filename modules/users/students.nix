@@ -343,7 +343,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = hernanKeys;
-      expires = "2026-06-30";
+      expires = "2026-10-31";
     };
 
     # Sandra Stankovic, MSc student working w/ Manos (thesis to finish in Sept 2026)
