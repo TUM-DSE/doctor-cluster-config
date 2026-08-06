@@ -224,7 +224,7 @@
         ${pkgs.zfs}/bin/zfs destroy -r nfs-data/share@borg || true
 
         cat > /var/log/telegraf/borgbackup-job-nfs-share.service <<EOF
-        task,frequency=daily last_run=$(date +%s)i,exit_status=''${exitStatus}i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+        task,frequency=daily last_run=$(date +%s)i,exit_status=''${exitStatus}i
         EOF
       '';
 
@@ -285,7 +285,7 @@
         ${pkgs.zfs}/bin/zfs destroy -r nfs-home/home@borg || true
 
         cat > /var/log/telegraf/borgbackup-job-nfs-home.service <<EOF
-        task,frequency=daily last_run=$(date +%s)i,exit_status=''${exitStatus}i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+        task,frequency=daily last_run=$(date +%s)i,exit_status=''${exitStatus}i
         EOF
       '';
 
