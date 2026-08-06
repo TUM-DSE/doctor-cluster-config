@@ -12,6 +12,12 @@
           annotations.description = "status of ${name} is unknown: no data for a day";
         })
       )
+      // {
+        BorgbackupJobFailed = {
+          expr = ''task_exit_status{name=~"borgbackup-job-.*"} != 0'';
+          annotations.description = "{{$labels.name}} on {{$labels.host}} failed with exit status {{$value}}";
+        };
+      }
       // (lib.genAttrs
         [
           "syncoid-home"
