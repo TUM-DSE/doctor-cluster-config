@@ -38,6 +38,8 @@ let
       thore
       harshanavkis
       halalboro
+      gierens
+      simonk
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
