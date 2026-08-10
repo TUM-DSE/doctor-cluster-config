@@ -309,6 +309,7 @@ in
       allowedHosts = [
         "wilfred"
         "river"
+        "christina"
       ];
       openssh.authorizedKeys.keys = leonKeys;
       expires = "2026-10-31";
