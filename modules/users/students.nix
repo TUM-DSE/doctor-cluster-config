@@ -574,6 +574,7 @@ in
       uid = 2012;
       allowedHosts = [
         "jamie"
+	"jack"
       ];
       openssh.authorizedKeys.keys = andreiKeys;
       expires = "2026-10-31";
