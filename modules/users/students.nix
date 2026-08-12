@@ -537,20 +537,6 @@ in
       expires = "2026-10-30";
     };
 
-    # Kilian Markl, MSc thesis working w/ Anders (can be removed after Jan 2027)
-    kilian = {
-      isNormalUser = true;
-      home = "/home/kilian";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2109;
-      allowedHosts = [
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = kilianKeys;
-      expires = "2027-03-01";
-    };
-
     # Marc, Student internship working w/ David (can be removed after Sep 2026)
     marc = {
       isNormalUser = true;
@@ -578,6 +564,20 @@ in
       ];
       openssh.authorizedKeys.keys = andreiKeys;
       expires = "2026-10-31";
+    };
+    
+    # Kilian Markl, MSc thesis working w/ Anders (can be removed after Jan 2027)
+    markl = {
+      isNormalUser = true;
+      home = "/home/markl";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2113;
+      allowedHosts = [
+        "graham"
+      ];
+      openssh.authorizedKeys.keys = kilianKeys;
+      expires = "2027-03-01";
     };
   };
 
@@ -610,6 +610,7 @@ in
     "justusvonderbeek"
     "kai"
     "kamilk"
+    "kilian"
     "konrad"
     "konradH"
     "konstantin"
