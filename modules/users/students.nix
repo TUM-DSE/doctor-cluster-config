@@ -586,6 +586,7 @@ in
   # delete all data of the associated user
   # - If you reactivate a user, then make sure to use the same uid as before
   # to avoid any permission issues
+  # - Garbage collect deleted users manually one year after deletion to free the username again
   users.deletedUsers = [
     "alexa"
     "alexander"
