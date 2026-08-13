@@ -39,7 +39,8 @@
     ../modules/monitoring/loki.nix
     ../modules/monitoring/telegraf.nix
     ../modules/monitoring/grafana-proxy.nix
-    ../modules/lrz-gitlab-classroom/frontend.nix
+    # disabled for now since the download is gone
+    #../modules/lrz-gitlab-classroom/frontend.nix
   ];
 
   simd.arch = "broadwell";

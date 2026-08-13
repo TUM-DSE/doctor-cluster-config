@@ -22,6 +22,8 @@
 
   boot.hugepages1GB.number = 8;
 
+  hardware.xilinx.coyote-driver.enable = true;
+
   simd.arch = "znver3";
   system.stateVersion = "22.11";
 

@@ -15,6 +15,10 @@
         inherit (self.packages.x86_64-linux) xrt;
         inherit (pkgs.linuxPackages_6_8) kernel;
       };
+      coyote-driver = pkgs.callPackage ./xilinx/coyote-driver.nix {
+        src = inputs.coyote;
+        inherit (pkgs.linuxPackages_6_8) kernel;
+      };
       xntools-core = pkgs.callPackage ./xilinx/xntools-core.nix { };
 
       firmware-sn1000 = pkgs.callPackage ./xilinx/firmware-sn1000.nix { };

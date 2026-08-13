@@ -17,13 +17,14 @@
 
   services.tribuchet-worker = {
     enable = true;
+    # delivered via systemd LoadCredential; the sops secret stays root-owned
+    keyFile = config.sops.secrets."tribuchet-worker-key".path;
     settings = {
       hub = "https://eve.thalheim.io:7437";
       systems = [ pkgs.stdenv.hostPlatform.system ];
       max-log-size = 67108864;
       ca-cert = ./ca.crt;
       cert = ./worker.crt;
-      key = config.sops.secrets."tribuchet-worker-key".path;
     };
   };
 }

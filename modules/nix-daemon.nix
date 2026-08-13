@@ -48,10 +48,7 @@ in
         fsync-metadata = lib.boolToString (
           !config.boot.isContainer or config.fileSystems."/".fsType != "zfs"
         );
-        substituters = [
-          "https://nix-community.cachix.org"
-          "https://cache.dos.cit.tum.de"
-        ];
+        substituters = [ "https://cache.dos.cit.tum.de" ];
         system-features = [
           "benchmark"
           "big-parallel"

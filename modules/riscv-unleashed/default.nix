@@ -39,7 +39,10 @@
       extraConfig = ''
         CPU_IDLE y
         CPU_FREQ y
-        CPU_FREQ_DEFAULT_GOV_USERSPACE y
+        # Do not force the default governor: nixpkgs already answers the
+        # "Default CPUFreq governor" choice with performance, and setting a
+        # second default here makes generate-config.pl abort with
+        # "conflicting answers". The userspace governor stays available below.
         CPU_FREQ_GOV_PERFORMANCE y
         CPU_FREQ_GOV_USERSPACE y
         CPU_FREQ_GOV_ONDEMAND y

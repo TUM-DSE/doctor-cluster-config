@@ -27,6 +27,7 @@ let
     ./modules/zsh.nix
     ./modules/systemd.nix
     ./modules/cleanup.nix
+    ./modules/zfs-dedup.nix
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
@@ -81,7 +82,7 @@ let
       ./modules/mosh.nix
       ./modules/qemu-bridge.nix
       ./modules/doctor-VMs.nix
-      ./modules/lawful-access
+      # ./modules/lawful-access
       ./modules/nix-index.nix
       ./modules/no-nouveau.nix
     ];

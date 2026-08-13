@@ -182,20 +182,21 @@
       path = [ pkgs.zfs ];
       serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
       serviceConfig.PrivateDevices = false; # ZFS needs access to /dev/zfs
+      # writable mountpoint for the ZFS snapshot (rest of /run is read-only)
+      serviceConfig.RuntimeDirectory = "borgbackup/nfs-share";
     };
 
     services.borgbackup.jobs.nfs-share = {
-      paths = [ "/export/share/.zfs/snapshot/borg" ];
+      paths = [ "/run/borgbackup/nfs-share" ];
       repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-share";
       exclude = [
         # large memory traces
-        "/export/share/redha/traces"
+        "/run/borgbackup/nfs-share/redha/traces"
         # vm images
-        "/export/share/cmainas/**/*.img"
-        "/export/share/martinL/**/*.img"
+        "/run/borgbackup/nfs-share/cmainas/**/*.img"
+        "/run/borgbackup/nfs-share/martinL/**/*.img"
         # large google traces
-        "/export/share/cmainas/traces"
-        # node modules
+        "/run/borgbackup/nfs-share/cmainas/traces"
         "**/node_modules"
       ];
       extraCreateArgs = [ "--exclude-caches" ];
@@ -208,25 +209,27 @@
       environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-share-ssh.path}";
       preHook = ''
         set -x
-        # Create ZFS snapshot before backup
+        # Mount the snapshot explicitly instead of using the .zfs/snapshot
+        # automount, whose device/inode can change mid-backup and make borg
+        # skip the tree with "file type or inode changed".
+        # clean up leftovers from a previous failed run
+        ${pkgs.util-linux}/bin/umount /run/borgbackup/nfs-share 2>/dev/null || true
+        ${pkgs.zfs}/bin/zfs destroy -r nfs-data/share@borg 2>/dev/null || true
         ${pkgs.zfs}/bin/zfs snapshot -r nfs-data/share@borg
-        # Ensure snapshot is accessible
-        ls /export/share/.zfs/snapshot/borg/ > /dev/null
+        ${pkgs.util-linux}/bin/mount -t zfs -o ro nfs-data/share@borg /run/borgbackup/nfs-share
       '';
 
       postHook = ''
-        exitStatus=$?
-
-        # Destroy ZFS snapshot after backup
+        ${pkgs.util-linux}/bin/umount /run/borgbackup/nfs-share || true
         ${pkgs.zfs}/bin/zfs destroy -r nfs-data/share@borg || true
 
         cat > /var/log/telegraf/borgbackup-job-nfs-share.service <<EOF
-        task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+        task,frequency=daily last_run=$(date +%s)i,exit_status=''${exitStatus}i
         EOF
       '';
 
       prune.keep = {
-        within = "1d"; # Keep all archives from the last day
+        within = "1d";
         daily = 7;
         weekly = 4;
         monthly = 0;
@@ -237,10 +240,12 @@
       path = [ pkgs.zfs ];
       serviceConfig.ReadWritePaths = [ "/var/log/telegraf" ];
       serviceConfig.PrivateDevices = false; # ZFS needs access to /dev/zfs
+      # writable mountpoint for the ZFS snapshot (rest of /run is read-only)
+      serviceConfig.RuntimeDirectory = "borgbackup/nfs-home";
     };
 
     services.borgbackup.jobs.nfs-home = {
-      paths = [ "/export/home/.zfs/snapshot/borg" ];
+      paths = [ "/run/borgbackup/nfs-home" ];
       repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-home";
       encryption = {
         mode = "repokey";
@@ -252,47 +257,40 @@
         "*.pyc"
         "*.swp"
         "*.o"
-        "/export/home/*/.direnv"
-        "/export/home/*/.cache"
-        "/export/home/*/.npm"
-        "/export/home/*/.m2"
-        "/export/home/*/.gradle"
-        "/export/home/*/.opam"
-        "/export/home/*/.clangd"
+        "/run/borgbackup/nfs-home/*/.direnv"
+        "/run/borgbackup/nfs-home/*/.cache"
+        "/run/borgbackup/nfs-home/*/.npm"
+        "/run/borgbackup/nfs-home/*/.m2"
+        "/run/borgbackup/nfs-home/*/.gradle"
+        "/run/borgbackup/nfs-home/*/.opam"
+        "/run/borgbackup/nfs-home/*/.clangd"
         "**/node_modules"
-
-        # these users have qemu images in their home directories, which causes borgbackup to fail
-        # /export/home/gierens/images/guest.qcow2: file changed while we backed it up
-        # /export/home/simonk/ubuntu-riscv64.img: file changed while we backed it up
-        # /export/home/patrick/vmuxio/VMs/.nfs00000000000ec37a00000003: file changed while we backed it up
-        # /export/home/patrick/vmuxio/VMs/.nfs00000000000ec7e900000004: file changed while we backed it up
-        "/export/home/gierens/"
-        "/export/home/simonk/"
-        "/export/home/patrick/"
       ];
       extraCreateArgs = [ "--exclude-caches" ];
       environment.BORG_RSH = "ssh -i ${config.sops.secrets.tum-borgbackup-home-ssh.path}";
       preHook = ''
         set -x
-        # Create ZFS snapshot before backup
+        # Mount the snapshot explicitly instead of using the .zfs/snapshot
+        # automount, whose device/inode can change mid-backup and make borg
+        # skip the tree with "file type or inode changed".
+        # clean up leftovers from a previous failed run
+        ${pkgs.util-linux}/bin/umount /run/borgbackup/nfs-home 2>/dev/null || true
+        ${pkgs.zfs}/bin/zfs destroy -r nfs-home/home@borg 2>/dev/null || true
         ${pkgs.zfs}/bin/zfs snapshot -r nfs-home/home@borg
-        # Ensure snapshot is accessible
-        ls /export/home/.zfs/snapshot/borg/ > /dev/null
+        ${pkgs.util-linux}/bin/mount -t zfs -o ro nfs-home/home@borg /run/borgbackup/nfs-home
       '';
 
       postHook = ''
-        exitStatus=$?
-
-        # Destroy ZFS snapshot after backup
+        ${pkgs.util-linux}/bin/umount /run/borgbackup/nfs-home || true
         ${pkgs.zfs}/bin/zfs destroy -r nfs-home/home@borg || true
 
         cat > /var/log/telegraf/borgbackup-job-nfs-home.service <<EOF
-        task,frequency=daily last_run=$(date +%s)i,state="$([[ $exitStatus == 0 ]] && echo ok || echo fail)"
+        task,frequency=daily last_run=$(date +%s)i,exit_status=''${exitStatus}i
         EOF
       '';
 
       prune.keep = {
-        within = "1d"; # Keep all archives from the last day
+        within = "1d";
         daily = 7;
         weekly = 4;
         monthly = 0;

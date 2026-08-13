@@ -5,7 +5,9 @@
     ../modules/nvidia.nix
     ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
+    ../modules/vllm.nix
   ];
+
 
   networking.hostName = "jack";
 
@@ -13,10 +15,11 @@
 
   system.stateVersion = "21.11";
 
-  fileSystems."/ssd_extension" = {
-    device = "ssd_extension/scratch";
-    fsType = "zfs";
-  };
+  # no longer present
+  #fileSystems."/ssd_extension" = {
+  #  device = "ssd_extension/scratch";
+  #  fsType = "zfs";
+  #};
 
-  boot.zfs.extraPools = [ "ssd_extension" ];
+  #boot.zfs.extraPools = [ "ssd_extension" ];
 }
