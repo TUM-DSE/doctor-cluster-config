@@ -1,12 +1,56 @@
 {
   "panels": [
     {
+      "id": 1171,
+      "type": "row",
+      "title": "FPGA Server Network Topology",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 1172,
+      "type": "marcusolsson-dynamictext-panel",
+      "title": "",
+      "gridPos": {
+        "x": 0,
+        "y": 1,
+        "w": 24,
+        "h": 18
+      },
+      "targets": [
+        {
+          "expr": "switch_port_up{host=\"Christina\"}",
+          "instant": true,
+          "format": "table",
+          "refId": "A"
+        }
+      ],
+      "options": {
+        "content": "<div style=\"width:100%; padding:8px; background:#0b0e14;\">\n<svg viewBox=\"0 0 1300 570\" preserveAspectRatio=\"xMidYMid meet\" style=\"width:100%; height:auto; display:block;\" xmlns=\"http://www.w3.org/2000/svg\">\n  <defs>\n    <marker id=\"aUp\"   viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#37872d\"/></marker>\n    <marker id=\"aDn\"   viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#8a1a1a\"/></marker>\n    <marker id=\"aIdle\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#dfa817\"/></marker>\n  </defs>\n\n  <rect x=\"1030\" y=\"20\" width=\"10\" height=\"10\" rx=\"5\" fill=\"#37872d\"/>\n  <text x=\"1045\" y=\"29\" fill=\"#8899a8\" font-family=\"Inter,sans-serif\" font-size=\"11\">UP</text>\n  <rect x=\"1080\" y=\"20\" width=\"10\" height=\"10\" rx=\"5\" fill=\"#dfa817\"/>\n  <text x=\"1095\" y=\"29\" fill=\"#8899a8\" font-family=\"Inter,sans-serif\" font-size=\"11\">IDLE</text>\n  <rect x=\"1140\" y=\"20\" width=\"10\" height=\"10\" rx=\"5\" fill=\"#8a1a1a\"/>\n  <text x=\"1155\" y=\"29\" fill=\"#8899a8\" font-family=\"Inter,sans-serif\" font-size=\"11\">DOWN</text>\n  <line x1=\"1215\" y1=\"25\" x2=\"1245\" y2=\"25\" stroke=\"#c7a8ff\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/>\n  <rect x=\"0\" y=\"0\" width=\"1\" height=\"1\" fill=\"none\"/>\n  <text x=\"1252\" y=\"29\" fill=\"#8899a8\" font-family=\"Inter,sans-serif\" font-size=\"11\">b2b</text>\n\n  <!-- AMY -->\n  <rect x=\"40\" y=\"45\" width=\"330\" height=\"285\" rx=\"8\" fill=\"#161a20\" stroke=\"#2a3038\" stroke-width=\"1.2\"/>\n  <text x=\"205\" y=\"68\" fill=\"#7ec8ff\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"15\" text-anchor=\"middle\">AMY</text>\n  <text x=\"205\" y=\"82\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">131.159.102.20 \u00b7 NixOS</text>\n  <rect x=\"55\" y=\"98\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"205\" y=\"118\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">E810 100G</text>\n  <text x=\"205\" y=\"131\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Intel QSFP</text>\n  <rect x=\"184\" y=\"136\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/7'}}\"/><text x=\"205\" y=\"150\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n  <rect x=\"55\" y=\"170\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"205\" y=\"190\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">U280 FPGA</text>\n  <text x=\"205\" y=\"203\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Coyote (IOMMU)</text>\n  <rect x=\"157\" y=\"208\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\"/><text x=\"178\" y=\"222\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P1</text><rect x=\"211\" y=\"208\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/12'}}\"/><text x=\"232\" y=\"222\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n  <rect x=\"55\" y=\"242\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"205\" y=\"262\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">BCM 10G</text>\n  <text x=\"205\" y=\"275\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">management</text>\n  <rect x=\"184\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '10ge1/0/33'}}\"/><text x=\"205\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n\n  <!-- CLARA -->\n  <rect x=\"470\" y=\"45\" width=\"330\" height=\"357\" rx=\"8\" fill=\"#161a20\" stroke=\"#2a3038\" stroke-width=\"1.2\"/>\n  <text x=\"635\" y=\"68\" fill=\"#7ec8ff\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"15\" text-anchor=\"middle\">CLARA</text>\n  <text x=\"635\" y=\"82\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">131.159.102.22 \u00b7 NixOS</text>\n  <rect x=\"485\" y=\"98\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"635\" y=\"118\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">E810 100G</text>\n  <text x=\"635\" y=\"131\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Intel QSFP</text>\n  <rect x=\"614\" y=\"136\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/8'}}\"/><text x=\"635\" y=\"150\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n  <rect x=\"485\" y=\"170\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"635\" y=\"190\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">U280 FPGA</text>\n  <text x=\"635\" y=\"203\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Coyote (IOMMU)</text>\n  <rect x=\"614\" y=\"208\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/11'}}\"/><text x=\"635\" y=\"222\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text><rect x=\"738\" y=\"208\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"#3a2f4d\"/><text x=\"759\" y=\"222\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P1</text>\n  <rect x=\"485\" y=\"242\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"635\" y=\"262\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">V80 FPGA</text>\n  <text x=\"635\" y=\"275\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Coyote (AVED)</text>\n  <rect x=\"498\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\"/><text x=\"519\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text><rect x=\"578\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\"/><text x=\"599\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P1</text><rect x=\"658\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\"/><text x=\"679\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P2</text><rect x=\"738\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"#3a2f4d\"/><text x=\"759\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P3</text>\n  <rect x=\"485\" y=\"314\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"635\" y=\"334\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">BCM 10G</text>\n  <text x=\"635\" y=\"347\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">management</text>\n  <rect x=\"614\" y=\"352\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '10ge1/0/34'}}\"/><text x=\"635\" y=\"366\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n\n  <!-- ROSE -->\n  <rect x=\"900\" y=\"45\" width=\"330\" height=\"285\" rx=\"8\" fill=\"#161a20\" stroke=\"#2a3038\" stroke-width=\"1.2\"/>\n  <text x=\"1065\" y=\"68\" fill=\"#7ec8ff\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"15\" text-anchor=\"middle\">ROSE</text>\n  <text x=\"1065\" y=\"82\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">131.159.102.21 \u00b7 NixOS</text>\n  <rect x=\"915\" y=\"98\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"1065\" y=\"118\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">E810 100G</text>\n  <text x=\"1065\" y=\"131\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Intel QSFP</text>\n  <rect x=\"1044\" y=\"136\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/16'}}\"/><text x=\"1065\" y=\"150\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n  <rect x=\"915\" y=\"170\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"1065\" y=\"190\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">U280 FPGA</text>\n  <text x=\"1065\" y=\"203\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Coyote (IOMMU)</text>\n  <rect x=\"920\" y=\"208\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"#3a2f4d\"/><text x=\"941\" y=\"222\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P1</text><rect x=\"1044\" y=\"208\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/9'}}\"/><text x=\"1065\" y=\"222\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n  <rect x=\"915\" y=\"242\" width=\"300\" height=\"64\" rx=\"6\" fill=\"#1a1f26\" stroke=\"#2f3742\"/>\n  <text x=\"1065\" y=\"262\" fill=\"#e6edf3\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"12\" text-anchor=\"middle\">V80 FPGA</text>\n  <text x=\"1065\" y=\"275\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"10\" text-anchor=\"middle\">Coyote (AVED)</text>\n  <rect x=\"920\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"#3a2f4d\"/><text x=\"941\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P3</text><rect x=\"999\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\"/><text x=\"1020\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P1</text><rect x=\"1084\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\"/><text x=\"1105\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P2</text><rect x=\"1168\" y=\"280\" width=\"42\" height=\"22\" rx=\"3\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/15'}}\"/><text x=\"1189\" y=\"294\" fill=\"#c7d1dc\" font-family=\"monospace\" font-weight=\"700\" font-size=\"11\" text-anchor=\"middle\">P0</text>\n\n  <!-- B2B plain dashed -->\n  <line x1=\"780\" y1=\"219\" x2=\"920\" y2=\"219\" stroke=\"#c7a8ff\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/>\n  <line x1=\"780\" y1=\"291\" x2=\"920\" y2=\"291\" stroke=\"#c7a8ff\" stroke-width=\"1.8\" stroke-dasharray=\"6 4\"/>\n\n  <!-- WIRES -->\n  <line x1=\"226\" y1=\"147\" x2=\"390\" y2=\"147\" stroke=\"{{dotColor data '100ge1/0/7'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"390\" y1=\"147\" x2=\"390\" y2=\"440\" stroke=\"{{dotColor data '100ge1/0/7'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"390\" y1=\"440\" x2=\"297\" y2=\"440\" stroke=\"{{dotColor data '100ge1/0/7'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"297\" y1=\"440\" x2=\"297\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/7'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/7'}})\"/>\n  <line x1=\"253\" y1=\"219\" x2=\"380\" y2=\"219\" stroke=\"{{dotColor data '100ge1/0/12'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"380\" y1=\"219\" x2=\"380\" y2=\"390\" stroke=\"{{dotColor data '100ge1/0/12'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"380\" y1=\"390\" x2=\"205\" y2=\"390\" stroke=\"{{dotColor data '100ge1/0/12'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"205\" y1=\"390\" x2=\"205\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/12'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/12'}})\"/>\n  <line x1=\"184\" y1=\"291\" x2=\"30\" y2=\"291\" stroke=\"{{dotColor data '10ge1/0/33'}}\" stroke-width=\"1.5\"/>\n  <line x1=\"30\" y1=\"291\" x2=\"30\" y2=\"340\" stroke=\"{{dotColor data '10ge1/0/33'}}\" stroke-width=\"1.5\"/>\n  <line x1=\"30\" y1=\"340\" x2=\"113\" y2=\"340\" stroke=\"{{dotColor data '10ge1/0/33'}}\" stroke-width=\"1.5\"/>\n  <line x1=\"113\" y1=\"340\" x2=\"113\" y2=\"490\" stroke=\"{{dotColor data '10ge1/0/33'}}\" stroke-width=\"1.5\" marker-end=\"url(#{{arrowFor data '10ge1/0/33'}})\"/>\n  <line x1=\"614\" y1=\"147\" x2=\"450\" y2=\"147\" stroke=\"{{dotColor data '100ge1/0/8'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"450\" y1=\"147\" x2=\"450\" y2=\"440\" stroke=\"{{dotColor data '100ge1/0/8'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"450\" y1=\"440\" x2=\"543\" y2=\"440\" stroke=\"{{dotColor data '100ge1/0/8'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"543\" y1=\"440\" x2=\"543\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/8'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/8'}})\"/>\n  <line x1=\"614\" y1=\"219\" x2=\"460\" y2=\"219\" stroke=\"{{dotColor data '100ge1/0/11'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"460\" y1=\"219\" x2=\"460\" y2=\"390\" stroke=\"{{dotColor data '100ge1/0/11'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"460\" y1=\"390\" x2=\"635\" y2=\"390\" stroke=\"{{dotColor data '100ge1/0/11'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"635\" y1=\"390\" x2=\"635\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/11'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/11'}})\"/>\n  <line x1=\"656\" y1=\"363\" x2=\"810\" y2=\"363\" stroke=\"{{dotColor data '10ge1/0/34'}}\" stroke-width=\"1.5\"/>\n  <line x1=\"810\" y1=\"363\" x2=\"810\" y2=\"400\" stroke=\"{{dotColor data '10ge1/0/34'}}\" stroke-width=\"1.5\"/>\n  <line x1=\"810\" y1=\"400\" x2=\"727\" y2=\"400\" stroke=\"{{dotColor data '10ge1/0/34'}}\" stroke-width=\"1.5\"/>\n  <line x1=\"727\" y1=\"400\" x2=\"727\" y2=\"490\" stroke=\"{{dotColor data '10ge1/0/34'}}\" stroke-width=\"1.5\" marker-end=\"url(#{{arrowFor data '10ge1/0/34'}})\"/>\n  <line x1=\"1086\" y1=\"147\" x2=\"1260\" y2=\"147\" stroke=\"{{dotColor data '100ge1/0/16'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1260\" y1=\"147\" x2=\"1260\" y2=\"440\" stroke=\"{{dotColor data '100ge1/0/16'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1260\" y1=\"440\" x2=\"1157\" y2=\"440\" stroke=\"{{dotColor data '100ge1/0/16'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1157\" y1=\"440\" x2=\"1157\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/16'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/16'}})\"/>\n  <line x1=\"1086\" y1=\"219\" x2=\"1250\" y2=\"219\" stroke=\"{{dotColor data '100ge1/0/9'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1250\" y1=\"219\" x2=\"1250\" y2=\"390\" stroke=\"{{dotColor data '100ge1/0/9'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1250\" y1=\"390\" x2=\"1065\" y2=\"390\" stroke=\"{{dotColor data '100ge1/0/9'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1065\" y1=\"390\" x2=\"1065\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/9'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/9'}})\"/>\n  <line x1=\"1210\" y1=\"291\" x2=\"1240\" y2=\"291\" stroke=\"{{dotColor data '100ge1/0/15'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1240\" y1=\"291\" x2=\"1240\" y2=\"340\" stroke=\"{{dotColor data '100ge1/0/15'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"1240\" y1=\"340\" x2=\"973\" y2=\"340\" stroke=\"{{dotColor data '100ge1/0/15'}}\" stroke-width=\"1.8\"/>\n  <line x1=\"973\" y1=\"340\" x2=\"973\" y2=\"490\" stroke=\"{{dotColor data '100ge1/0/15'}}\" stroke-width=\"1.8\" marker-end=\"url(#{{arrowFor data '100ge1/0/15'}})\"/>\n\n\n  <!-- WIRES -->\n  <!-- WIRES -->\n  <!-- WIRES -->\n  <!-- WIRES -->\n  <rect x=\"0\" y=\"0\" width=\"1\" height=\"1\" fill=\"none\"/>\n  <line x1=\"40\"   y1=\"430\" x2=\"1230\" y2=\"430\" stroke=\"#3a4550\" stroke-width=\"1.5\"/>\n  <line x1=\"40\"   y1=\"560\" x2=\"1230\" y2=\"560\" stroke=\"#3a4550\" stroke-width=\"1.5\"/>\n  <line x1=\"40\"   y1=\"430\" x2=\"40\"   y2=\"560\" stroke=\"#3a4550\" stroke-width=\"1.5\"/>\n  <line x1=\"1230\" y1=\"430\" x2=\"1230\" y2=\"560\" stroke=\"#3a4550\" stroke-width=\"1.5\"/>\n  <rect x=\"0\" y=\"0\" width=\"1\" height=\"1\" fill=\"none\"/>\n  <text x=\"55\" y=\"450\" fill=\"#7ec8ff\" font-family=\"Inter,sans-serif\" font-weight=\"600\" font-size=\"13\">adric \u00b7 N8550-32C</text>\n  <rect x=\"0\" y=\"0\" width=\"1\" height=\"1\" fill=\"none\"/>\n  <rect x=\"75\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '10ge1/0/33'}}\"/><text x=\"113\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">33</text><text x=\"113\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">BCM</text>\n  <rect x=\"167\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/12'}}\"/><text x=\"205\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">12</text><text x=\"205\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">U280</text>\n  <rect x=\"259\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/7'}}\"/><text x=\"297\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">7</text><text x=\"297\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">E810</text>\n  <rect x=\"505\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/8'}}\"/><text x=\"543\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">8</text><text x=\"543\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">E810</text>\n  <rect x=\"597\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/11'}}\"/><text x=\"635\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">11</text><text x=\"635\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">U280</text>\n  <rect x=\"689\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '10ge1/0/34'}}\"/><text x=\"727\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">34</text><text x=\"727\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">BCM</text>\n  <rect x=\"935\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/15'}}\"/><text x=\"973\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">15</text><text x=\"973\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">V80</text>\n  <rect x=\"1027\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/9'}}\"/><text x=\"1065\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">9</text><text x=\"1065\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">U280</text>\n  <rect x=\"1119\" y=\"490\" width=\"76\" height=\"46\" rx=\"4\" stroke=\"#3a4550\" fill=\"{{portFill data '100ge1/0/16'}}\"/><text x=\"1157\" y=\"509\" fill=\"#e6edf3\" font-family=\"monospace\" font-weight=\"700\" font-size=\"14\" text-anchor=\"middle\">16</text><text x=\"1157\" y=\"525\" fill=\"#8899a8\" font-family=\"monospace\" font-size=\"11\" text-anchor=\"middle\">E810</text>\n</svg>\n</div>",
+        "defaultContent": "default loading...",
+        "renderMode": "allRowsOrFirst",
+        "everyRow": false,
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "helpers": "\nvar FPGA_PORTS = {'100ge1/0/9':1,'100ge1/0/10':1,'100ge1/0/11':1,'100ge1/0/12':1,'100ge1/0/15':1};\ncontext.handlebars.registerHelper('findPort', function(rows, iface) {\n  if (!Array.isArray(rows)) return null;\n  return rows.find(function(r) { return r && r.port === iface; }) || null;\n});\ncontext.handlebars.registerHelper('dotColor', function(rows, iface) {\n  var r = context.handlebars.helpers.findPort(rows, iface);\n  if (!r) return '#555';\n  if ((+r.Value) > 0) return '#37872d';\n  return FPGA_PORTS[iface] ? '#dfa817' : '#8a1a1a';\n});\ncontext.handlebars.registerHelper('portFill', function(rows, iface) {\n  var r = context.handlebars.helpers.findPort(rows, iface);\n  if (!r) return '#242830';\n  if ((+r.Value) > 0) return '#1e3a20';\n  return FPGA_PORTS[iface] ? '#3d2f10' : '#3a1a1a';\n});\ncontext.handlebars.registerHelper('arrowFor', function(rows, iface) {\n  var r = context.handlebars.helpers.findPort(rows, iface);\n  if (!r) return 'aDn';\n  if ((+r.Value) > 0) return 'aUp';\n  return FPGA_PORTS[iface] ? 'aIdle' : 'aDn';\n});\n",
+        "afterRender": ""
+      }
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 27
       },
       "id": 100,
       "title": "Clara",
@@ -56,7 +100,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 1
+        "y": 28
       },
       "id": 1,
       "options": {
@@ -106,7 +150,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 1
+        "y": 28
       },
       "id": 31,
       "options": {
@@ -188,7 +232,7 @@
         "h": 4,
         "w": 3,
         "x": 6,
-        "y": 1
+        "y": 28
       },
       "id": 26,
       "options": {
@@ -238,7 +282,7 @@
         "h": 4,
         "w": 3,
         "x": 9,
-        "y": 1
+        "y": 28
       },
       "id": 38,
       "options": {
@@ -305,7 +349,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 1
+        "y": 28
       },
       "id": 2,
       "options": {
@@ -352,7 +396,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 1
+        "y": 28
       },
       "id": 3,
       "options": {
@@ -422,7 +466,7 @@
         "h": 4,
         "w": 3,
         "x": 18,
-        "y": 1
+        "y": 28
       },
       "id": 35,
       "options": {
@@ -467,7 +511,7 @@
         "h": 4,
         "w": 3,
         "x": 21,
-        "y": 1
+        "y": 28
       },
       "id": 4,
       "options": {
@@ -495,7 +539,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 32
       },
       "id": 101,
       "title": "Amy",
@@ -545,7 +589,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 6
+        "y": 33
       },
       "id": 11,
       "options": {
@@ -595,7 +639,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 6
+        "y": 33
       },
       "id": 32,
       "options": {
@@ -662,7 +706,7 @@
         "h": 4,
         "w": 5,
         "x": 6,
-        "y": 6
+        "y": 33
       },
       "id": 12,
       "options": {
@@ -709,7 +753,7 @@
         "h": 4,
         "w": 5,
         "x": 11,
-        "y": 6
+        "y": 33
       },
       "id": 13,
       "options": {
@@ -779,7 +823,7 @@
         "h": 4,
         "w": 3,
         "x": 16,
-        "y": 6
+        "y": 33
       },
       "id": 36,
       "options": {
@@ -824,7 +868,7 @@
         "h": 4,
         "w": 5,
         "x": 19,
-        "y": 6
+        "y": 33
       },
       "id": 14,
       "options": {
@@ -852,7 +896,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 37
       },
       "id": 102,
       "title": "Rose",
@@ -902,7 +946,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 11
+        "y": 38
       },
       "id": 21,
       "options": {
@@ -952,7 +996,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 11
+        "y": 38
       },
       "id": 33,
       "options": {
@@ -1034,7 +1078,7 @@
         "h": 4,
         "w": 3,
         "x": 6,
-        "y": 11
+        "y": 38
       },
       "id": 22,
       "options": {
@@ -1084,7 +1128,7 @@
         "h": 4,
         "w": 3,
         "x": 9,
-        "y": 11
+        "y": 38
       },
       "id": 34,
       "options": {
@@ -1151,7 +1195,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 11
+        "y": 38
       },
       "id": 23,
       "options": {
@@ -1198,7 +1242,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 11
+        "y": 38
       },
       "id": 24,
       "options": {
@@ -1268,7 +1312,7 @@
         "h": 4,
         "w": 3,
         "x": 18,
-        "y": 11
+        "y": 38
       },
       "id": 37,
       "options": {
@@ -1313,7 +1357,7 @@
         "h": 4,
         "w": 3,
         "x": 21,
-        "y": 11
+        "y": 38
       },
       "id": 25,
       "options": {
@@ -1341,7 +1385,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 42
       },
       "id": 500,
       "title": "Reservations",
@@ -1477,7 +1521,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 43
       },
       "id": 501,
       "options": {
@@ -1517,9 +1561,9 @@
               "type": "string"
             },
             {
-              "selector": "Expires in (in mins)",
-              "text": "Duration (mins)",
-              "type": "number"
+              "selector": "Expires in (mins/hours/days)",
+              "text": "Duration",
+              "type": "string"
             },
             {
               "selector": "Exclusive access \u2728",
@@ -1568,40 +1612,15 @@
             "filters": [
               {
                 "config": {
-                  "id": "isNotNull",
-                  "options": {}
+                  "id": "regex",
+                  "options": {
+                    "value": ".+"
+                  }
                 },
                 "fieldName": "User"
               }
             ],
             "match": "all",
-            "type": "include"
-          }
-        },
-        {
-          "id": "filterByValue",
-          "options": {
-            "filters": [
-              {
-                "config": {
-                  "id": "equal",
-                  "options": {
-                    "value": "Active"
-                  }
-                },
-                "fieldName": "Status"
-              },
-              {
-                "config": {
-                  "id": "equal",
-                  "options": {
-                    "value": "Scheduled"
-                  }
-                },
-                "fieldName": "Status"
-              }
-            ],
-            "match": "any",
             "type": "include"
           }
         },
@@ -1615,7 +1634,7 @@
               "Resource": 2,
               "Timestamp": 3,
               "Start Time": 4,
-              "Duration (mins)": 5,
+              "Duration": 5,
               "Exclusive": 6,
               "Slack": 7,
               "Status": 8
@@ -1630,7 +1649,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 51
       },
       "id": 200,
       "title": "Active User Processes",
@@ -1669,7 +1688,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 52
       },
       "id": 5,
       "targets": [
@@ -1791,7 +1810,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 60
       },
       "id": 300,
       "title": "System Resources",
@@ -1811,7 +1830,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 34
+        "y": 61
       },
       "id": 7,
       "targets": [
@@ -1839,7 +1858,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 34
+        "y": 61
       },
       "id": 6,
       "targets": [
@@ -1883,7 +1902,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 34
+        "y": 61
       },
       "id": 10,
       "targets": [
@@ -1905,7 +1924,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 68
       },
       "id": 400,
       "title": "Network",
@@ -1924,7 +1943,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 69
       },
       "id": 8,
       "options": {
@@ -1959,7 +1978,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 69
       },
       "id": 9,
       "options": {
