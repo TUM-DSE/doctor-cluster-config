@@ -1,5 +1,9 @@
 {
   imports = [ ./hostfile.nix ];
+
+  security.acme.defaults.email = "joerg.letsencrypt@thalheim.io";
+  security.acme.acceptTerms = true;
+
   services.nginx.virtualHosts."buildbot.dse.in.tum.de" = {
     forceSSL = true;
     enableACME = true;
