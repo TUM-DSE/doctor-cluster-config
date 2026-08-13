@@ -94,7 +94,8 @@
         loginUsers = lib.filterAttrs (_n: v: v.isNormalUser) config.users.users;
       in
       (lib.mapAttrsToList (n: _v: "d /export/share/${n} 0755 ${n} users -") loginUsers)
-      ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers);
+      ++ (builtins.map (n: "R /export/share/${n} - - - - -") config.users.deletedUsers)
+      ++ (builtins.map (n: "R /export/home/${n} - - - - -") config.users.deletedUsers);
 
     boot.zfs.extraPools = [
       "nfs-data"
