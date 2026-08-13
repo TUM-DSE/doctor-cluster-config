@@ -65,7 +65,10 @@ in
       unified_alerting.enabled = false;
       snapshots.external_enabled = false;
       news.news_feed_enabled = false;
-      panels.disable_sanitize_html = false;
+      # Allow SVG (topology diagrams in Business Text panels). Dashboards are
+      # provisioned from Nix; no user-supplied HTML enters the panels, so the
+      # normal XSS risk from this flag doesn't apply here.
+      panels.disable_sanitize_html = true;
       "auth.anonymous" = {
         enabled = true;
         org_role = "Viewer";
