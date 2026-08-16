@@ -896,18 +896,14 @@ def generate_tinc_key(c: Any, hostname: str) -> None:
     """
     with tempfile.TemporaryDirectory() as tmp:
         c.run(
-            f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-keys",
+            f"nix shell --inputs-from . nixpkgs#tinc_pre -c tinc --batch --config {tmp} generate-ed25519-keys",
             echo=True,
         )
         ed25519_key = (Path(tmp) / "ed25519_key.priv").read_text()
         ed25519_pubkey = (Path(tmp) / "ed25519_key.pub").read_text()
-        rsa_key = (Path(tmp) / "rsa_key.priv").read_text()
-        rsa_pubkey = (Path(tmp) / "rsa_key.pub").read_text()
         keys = {
             "tinc-key": ed25519_key,
             "tinc-pubkey": ed25519_pubkey,
-            "tinc-legacy-key": rsa_key,
-            "tinc-legacy-pubkey": rsa_pubkey,
         }
         for key, value in keys.items():
             c.run(

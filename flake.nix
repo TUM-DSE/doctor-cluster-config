@@ -51,8 +51,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    retiolum.url = "github:Mic92/retiolum";
-    retiolum.inputs.nixpkgs.follows = "nixpkgs";
+    kartei.url = "github:krebs/kartei";
+    kartei.inputs.nixpkgs.follows = "nixpkgs";
+    kartei.inputs.tincr.follows = "tincr";
 
     tincr.url = "github:Mic92/tincr";
     tincr.inputs.nixpkgs.follows = "nixpkgs";

@@ -3,7 +3,7 @@ let
   inherit
     (inputs)
     nixpkgs
-    retiolum
+    kartei
     sops-nix
     nixos-hardware
     srvos
@@ -66,7 +66,7 @@ let
       # warning and follows the upcoming default.
       boot.zfs.forceImportRoot = false;
     })
-    retiolum.nixosModules.retiolum
+    kartei.nixosModules.retiolum
   ];
 
   computeNodeModules =

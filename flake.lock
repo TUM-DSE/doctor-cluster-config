@@ -227,6 +227,29 @@
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
       }
     },
+    "kartei": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "tincr": [
+          "tincr"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786888845,
+        "narHash": "sha256-TbrP4WusqVwY1t5Dg8z4pT37FIrL6DxcCSoALA6hxgY=",
+        "owner": "krebs",
+        "repo": "kartei",
+        "rev": "ec8e3b5a69404dea72cdf4391d39b5ad3594378f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krebs",
+        "repo": "kartei",
+        "type": "github"
+      }
+    },
     "niks3": {
       "inputs": {
         "nixpkgs": [
@@ -272,27 +295,6 @@
       }
     },
     "nix-darwin_2": {
-      "inputs": {
-        "nixpkgs": [
-          "retiolum",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1751313918,
-        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
-    "nix-darwin_3": {
       "inputs": {
         "nixpkgs": [
           "tribuchet",
@@ -437,27 +439,6 @@
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       }
     },
-    "retiolum": {
-      "inputs": {
-        "nix-darwin": "nix-darwin_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1781520557,
-        "narHash": "sha256-Y+YZ43PGRMCFFntIcm72Iqrb/mtaKmcMHGr91dFkE9k=",
-        "owner": "Mic92",
-        "repo": "retiolum",
-        "rev": "940e6ba573d3dc05e918b9f1d0ac489dfeb05f11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "retiolum",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "coyote": "coyote",
@@ -469,6 +450,7 @@
         "home-manager": "home-manager",
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",
+        "kartei": "kartei",
         "niks3": "niks3",
         "nix-index-database": "nix-index-database",
         "nixbot": "nixbot",
@@ -476,7 +458,6 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "tincr": "tincr",
@@ -593,7 +574,7 @@
         "crane": [
           "crane"
         ],
-        "nix-darwin": "nix-darwin_3",
+        "nix-darwin": "nix-darwin_2",
         "nixpkgs": [
           "nixpkgs"
         ],
