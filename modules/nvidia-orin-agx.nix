@@ -6,7 +6,10 @@
   # tpm-tis does not exists;
   boot.initrd.systemd.tpm2.enable = false;
 
-  boot.initrd.systemd.emergencyAccess = "$6$ezQIHzACzYp4zwHi$IAsJI6zHUXYuhv0NVlk5CiRj1B8DT/yGzjSFev2ZjovvSHkY4/YJ2/c9gnJvc7T7nF/0jt9icihJXpAuvsciS.";
+  # Passwordless: the emergency shell is only reachable via the local debug
+  # UART, and it is our recovery path of last resort (the previous password
+  # hash had no known plaintext, locking us out during recovery).
+  boot.initrd.systemd.emergencyAccess = true;
   boot.initrd.availableKernelModules = [ "nvme" "usbhid" "usb_storage" "sdhci_tegra" ];
 
   hardware.nvidia-jetpack.enable = true;

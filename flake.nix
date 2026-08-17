@@ -51,8 +51,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    retiolum.url = "github:Mic92/retiolum";
-    retiolum.inputs.nixpkgs.follows = "nixpkgs";
+    kartei.url = "github:krebs/kartei";
+    kartei.inputs.nixpkgs.follows = "nixpkgs";
+    kartei.inputs.tincr.follows = "tincr";
 
     tincr.url = "github:Mic92/tincr";
     tincr.inputs.nixpkgs.follows = "nixpkgs";
@@ -184,8 +185,50 @@
                     }) (lib.filterAttrs (_: input: input ? outPath) inputs)
                   );
                 };
+                # Cache the riscv64 cross toolchain (build-time only deps,
+                # otherwise never pushed to the binary cache by buildbot).
+                crossToolchains = lib.optionalAttrs (system == "x86_64-linux") {
+                  riscv64-cross-toolchain =
+                    let
+                      crossPkgs = self.nixosConfigurations.ruby.pkgs;
+                    in
+                    pkgs.linkFarm "riscv64-cross-toolchain" [
+                      {
+                        name = "cc";
+                        path = crossPkgs.stdenv.cc;
+                      }
+                      {
+                        name = "bintools";
+                        path = crossPkgs.stdenv.cc.bintools;
+                      }
+                      {
+                        name = "gcc-unwrapped";
+                        path = crossPkgs.stdenv.cc.cc;
+                      }
+                      {
+                        name = "binutils-unwrapped";
+                        path = crossPkgs.stdenv.cc.bintools.bintools;
+                      }
+                      {
+                        name = "pkg-config";
+                        path = crossPkgs.buildPackages.pkg-config;
+                      }
+                      {
+                        name = "rustc";
+                        path = crossPkgs.buildPackages.rustc;
+                      }
+                      {
+                        name = "cargo";
+                        path = crossPkgs.buildPackages.cargo;
+                      }
+                      {
+                        name = "stdenv";
+                        path = crossPkgs.stdenv;
+                      }
+                    ];
+                };
               in
-              nixosMachines // devShells // homeManager // flakeInputs;
+              nixosMachines // devShells // homeManager // flakeInputs // crossToolchains;
           };
       }
     )).config.flake;

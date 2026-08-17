@@ -44,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768505959,
-        "narHash": "sha256-oFCx/ApQ+S1/apUKWsvT9vq+Eo1m2vINWEDkW7/nckA=",
+        "lastModified": 1779836515,
+        "narHash": "sha256-X/AwJZeTjxetRM7JG2BXeffKa1PIg/uo8AP5TX/+kb0=",
         "owner": "nixos-cuda",
         "repo": "cuda-legacy",
-        "rev": "86ad7e2c2e314f0234539cbbc66b5cd7746bcd32",
+        "rev": "baf22622e1114bb36412e5cebe2303f302edb882",
         "type": "github"
       },
       "original": {
@@ -212,10 +212,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783333684,
-        "narHash": "sha256-s+0glGnUOz7Y5v7rYuYRFYdd1Pv/qWzmj+Mxu3zdjrU=",
+        "lastModified": 1786742115,
+        "narHash": "sha256-CsmoIGIIxkyVfbOWBXabtJrsurMFzapL/DYGsBsHFdY=",
         "ref": "no-overlay",
-        "rev": "8714882ef563df77c99ae574d1bc7628d9440b50",
+        "rev": "67c18bf5a61c1a4c3e18c17f2803bb84f825ff34",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
@@ -225,6 +225,29 @@
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
+      }
+    },
+    "kartei": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "tincr": [
+          "tincr"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786953376,
+        "narHash": "sha256-EhcbMLnQ+pwIVuDjgTAgRdfsZ1wMbzfTxRg9g6KXk5E=",
+        "owner": "krebs",
+        "repo": "kartei",
+        "rev": "c993b17f45cab35b16d512e0f3e1d3049ec76e99",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krebs",
+        "repo": "kartei",
+        "type": "github"
       }
     },
     "niks3": {
@@ -272,27 +295,6 @@
       }
     },
     "nix-darwin_2": {
-      "inputs": {
-        "nixpkgs": [
-          "retiolum",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1751313918,
-        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
-    "nix-darwin_3": {
       "inputs": {
         "nixpkgs": [
           "tribuchet",
@@ -437,27 +439,6 @@
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
       }
     },
-    "retiolum": {
-      "inputs": {
-        "nix-darwin": "nix-darwin_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1781520557,
-        "narHash": "sha256-Y+YZ43PGRMCFFntIcm72Iqrb/mtaKmcMHGr91dFkE9k=",
-        "owner": "Mic92",
-        "repo": "retiolum",
-        "rev": "940e6ba573d3dc05e918b9f1d0ac489dfeb05f11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "retiolum",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "coyote": "coyote",
@@ -469,6 +450,7 @@
         "home-manager": "home-manager",
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",
+        "kartei": "kartei",
         "niks3": "niks3",
         "nix-index-database": "nix-index-database",
         "nixbot": "nixbot",
@@ -476,7 +458,6 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "tincr": "tincr",
@@ -555,11 +536,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784891761,
-        "narHash": "sha256-RxOmu+01Hc6YFjcvyQ8DRpX48s+CZIp6VPxyWSIo7HU=",
+        "lastModified": 1786953226,
+        "narHash": "sha256-Us4O3IXk6gw/4VZFH43Enew0umXhhpPO1/oKueqvQKk=",
         "owner": "Mic92",
         "repo": "tincr",
-        "rev": "bf6bcf30e0990fe0c0afc7dec1b3767a73cd9aa9",
+        "rev": "46290b12ad1db1e4cfbc234ad037080dbe045487",
         "type": "github"
       },
       "original": {
@@ -593,7 +574,7 @@
         "crane": [
           "crane"
         ],
-        "nix-darwin": "nix-darwin_3",
+        "nix-darwin": "nix-darwin_2",
         "nixpkgs": [
           "nixpkgs"
         ],
