@@ -90,7 +90,7 @@ in
           local.directory = "${config.services.loki.dataDir}/ruler";
         };
         rule_path = "${config.services.loki.dataDir}/rules";
-        alertmanager_url = "http://alertmanager.r";
+        alertmanager_url = "http://localhost:9093";
       };
 
       query_range.cache_results = true;
