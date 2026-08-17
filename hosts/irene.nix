@@ -6,7 +6,6 @@
     ../modules/nfs/client.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
-    ../modules/elasticsearch.nix
     ../modules/amd_sev_snp-vanilla-certs.nix
   ];
 
