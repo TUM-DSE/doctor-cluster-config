@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   monitoredHosts = [
@@ -33,6 +33,15 @@ in
     ./server-collector.nix
   ];
 
+  # Grafana admin password — sourced from sops-encrypted file (never committed in plaintext).
+  # The secrets.yml here is decryptable by clara's machine key + all admins.
+  sops.secrets."grafana-admin-password" = {
+    sopsFile = ./secrets.yml;
+    owner = "grafana";
+    # Grafana reads $__file{...} at startup.
+    restartUnits = [ "grafana.service" ];
+  };
+
   # Grafana service
   services.grafana = {
     enable = true;
@@ -44,9 +53,9 @@ in
       };
       security = {
         disable_gravatar = true;
-        # 26.05 removed the implicit default. This instance only serves
-        # anonymous read-only dashboards and stores no secrets in its DB,
-        # so keeping the well-known previous default is fine.
+        admin_user = "admin";
+        admin_password = "$__file{${config.sops.secrets."grafana-admin-password".path}}";
+        # Static secret for signed URLs / cookies. Doesn't gate login (that's admin_password).
         secret_key = "SW2YcwTIb9zpOOhoPsMm";
       };
       users = {
@@ -78,7 +87,6 @@ in
     };
 
     declarativePlugins = with pkgs.grafanaPlugins; [
-      yesoreyeram-infinity-datasource
       marcusolsson-dynamictext-panel
     ];
 
@@ -91,12 +99,6 @@ in
           type = "prometheus";
           url = "http://127.0.0.1:9090";
           isDefault = true;
-          editable = false;
-        }
-        {
-          name = "Infinity";
-          type = "yesoreyeram-infinity-datasource";
-          uid = "bffhp1y5wgkjke";
           editable = false;
         }
       ];
