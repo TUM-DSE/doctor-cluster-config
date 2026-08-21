@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   monitoredHosts = [
@@ -33,6 +33,22 @@ in
     ./server-collector.nix
   ];
 
+  # Grafana admin password + secret_key — sourced from sops (never committed in plaintext).
+  # secrets.yml is decryptable by clara's machine key + all admins.
+  # secret_key rotation invalidates existing sessions and encrypted-secret payloads;
+  # for this deployment the DB only holds a Prometheus datasource with no auth, so
+  # rotating loses nothing.
+  sops.secrets."grafana-admin-password" = {
+    sopsFile = ./secrets.yml;
+    owner = "grafana";
+    restartUnits = [ "grafana.service" ];
+  };
+  sops.secrets."grafana-secret-key" = {
+    sopsFile = ./secrets.yml;
+    owner = "grafana";
+    restartUnits = [ "grafana.service" ];
+  };
+
   # Grafana service
   services.grafana = {
     enable = true;
@@ -44,10 +60,12 @@ in
       };
       security = {
         disable_gravatar = true;
-        # 26.05 removed the implicit default. This instance only serves
-        # anonymous read-only dashboards and stores no secrets in its DB,
-        # so keeping the well-known previous default is fine.
-        secret_key = "SW2YcwTIb9zpOOhoPsMm";
+        admin_user = "admin";
+        admin_password = "$__file{${config.sops.secrets."grafana-admin-password".path}}";
+        # Signs session cookies and encrypts stored datasource secrets. Rotating
+        # invalidates active sessions. Previous value was Grafana's stock
+        # defaults.ini value, i.e. the world default — cookie-forgery gate open.
+        secret_key = "$__file{${config.sops.secrets."grafana-secret-key".path}}";
       };
       users = {
         allow_sign_up = false;
@@ -78,7 +96,6 @@ in
     };
 
     declarativePlugins = with pkgs.grafanaPlugins; [
-      yesoreyeram-infinity-datasource
       marcusolsson-dynamictext-panel
     ];
 
@@ -91,12 +108,6 @@ in
           type = "prometheus";
           url = "http://127.0.0.1:9090";
           isDefault = true;
-          editable = false;
-        }
-        {
-          name = "Infinity";
-          type = "yesoreyeram-infinity-datasource";
-          uid = "bffhp1y5wgkjke";
           editable = false;
         }
       ];
