@@ -212,6 +212,16 @@ in
         proxyPass = "http://127.0.0.1:3000";
         proxyWebsockets = true;
         recommendedProxySettings = true;
+        # Restrict ingress to the doctor reverse proxy (which enforces htpasswd)
+        # and localhost. Blocks direct hits to clara:80 from the rest of the
+        # DSE network / internet, which would otherwise bypass htpasswd.
+        extraConfig = ''
+          allow 127.0.0.1;
+          allow ::1;
+          allow 131.159.102.4;
+          allow 2a09:80c0:102::4;
+          deny all;
+        '';
       };
     };
   };
