@@ -561,6 +561,7 @@ in
       allowedHosts = [
         "jamie"
 	"jack"
+	"steve"
       ];
       openssh.authorizedKeys.keys = andreiKeys;
       expires = "2026-10-31";
