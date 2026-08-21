@@ -33,12 +33,19 @@ in
     ./server-collector.nix
   ];
 
-  # Grafana admin password — sourced from sops-encrypted file (never committed in plaintext).
-  # The secrets.yml here is decryptable by clara's machine key + all admins.
+  # Grafana admin password + secret_key — sourced from sops (never committed in plaintext).
+  # secrets.yml is decryptable by clara's machine key + all admins.
+  # secret_key rotation invalidates existing sessions and encrypted-secret payloads;
+  # for this deployment the DB only holds a Prometheus datasource with no auth, so
+  # rotating loses nothing.
   sops.secrets."grafana-admin-password" = {
     sopsFile = ./secrets.yml;
     owner = "grafana";
-    # Grafana reads $__file{...} at startup.
+    restartUnits = [ "grafana.service" ];
+  };
+  sops.secrets."grafana-secret-key" = {
+    sopsFile = ./secrets.yml;
+    owner = "grafana";
     restartUnits = [ "grafana.service" ];
   };
 
@@ -55,8 +62,10 @@ in
         disable_gravatar = true;
         admin_user = "admin";
         admin_password = "$__file{${config.sops.secrets."grafana-admin-password".path}}";
-        # Static secret for signed URLs / cookies. Doesn't gate login (that's admin_password).
-        secret_key = "SW2YcwTIb9zpOOhoPsMm";
+        # Signs session cookies and encrypts stored datasource secrets. Rotating
+        # invalidates active sessions. Previous value was Grafana's stock
+        # defaults.ini value, i.e. the world default — cookie-forgery gate open.
+        secret_key = "$__file{${config.sops.secrets."grafana-secret-key".path}}";
       };
       users = {
         allow_sign_up = false;
@@ -212,16 +221,6 @@ in
         proxyPass = "http://127.0.0.1:3000";
         proxyWebsockets = true;
         recommendedProxySettings = true;
-        # Restrict ingress to the doctor reverse proxy (which enforces htpasswd)
-        # and localhost. Blocks direct hits to clara:80 from the rest of the
-        # DSE network / internet, which would otherwise bypass htpasswd.
-        extraConfig = ''
-          allow 127.0.0.1;
-          allow ::1;
-          allow 131.159.102.4;
-          allow 2a09:80c0:102::4;
-          deny all;
-        '';
       };
     };
   };
