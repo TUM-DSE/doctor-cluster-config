@@ -44,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768505959,
-        "narHash": "sha256-oFCx/ApQ+S1/apUKWsvT9vq+Eo1m2vINWEDkW7/nckA=",
+        "lastModified": 1779836515,
+        "narHash": "sha256-X/AwJZeTjxetRM7JG2BXeffKa1PIg/uo8AP5TX/+kb0=",
         "owner": "nixos-cuda",
         "repo": "cuda-legacy",
-        "rev": "86ad7e2c2e314f0234539cbbc66b5cd7746bcd32",
+        "rev": "baf22622e1114bb36412e5cebe2303f302edb882",
         "type": "github"
       },
       "original": {
@@ -212,10 +212,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783333684,
-        "narHash": "sha256-s+0glGnUOz7Y5v7rYuYRFYdd1Pv/qWzmj+Mxu3zdjrU=",
+        "lastModified": 1786742115,
+        "narHash": "sha256-CsmoIGIIxkyVfbOWBXabtJrsurMFzapL/DYGsBsHFdY=",
         "ref": "no-overlay",
-        "rev": "8714882ef563df77c99ae574d1bc7628d9440b50",
+        "rev": "67c18bf5a61c1a4c3e18c17f2803bb84f825ff34",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
@@ -225,6 +225,29 @@
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/jetpack-nixos.git"
+      }
+    },
+    "kartei": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "tincr": [
+          "tincr"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786953376,
+        "narHash": "sha256-EhcbMLnQ+pwIVuDjgTAgRdfsZ1wMbzfTxRg9g6KXk5E=",
+        "owner": "krebs",
+        "repo": "kartei",
+        "rev": "c993b17f45cab35b16d512e0f3e1d3049ec76e99",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krebs",
+        "repo": "kartei",
+        "type": "github"
       }
     },
     "niks3": {
@@ -272,27 +295,6 @@
       }
     },
     "nix-darwin_2": {
-      "inputs": {
-        "nixpkgs": [
-          "retiolum",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1751313918,
-        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
-    "nix-darwin_3": {
       "inputs": {
         "nixpkgs": [
           "tribuchet",
@@ -343,11 +345,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785671702,
-        "narHash": "sha256-wwhItmpu4E7FrdvFQZwBXkTCN1hnm8QuT/y712MF+e8=",
+        "lastModified": 1786958857,
+        "narHash": "sha256-AeyUgSCpWXzjIWPHSaXDexIgr2oIUjYuH2FuaUBlnVU=",
         "owner": "Mic92",
         "repo": "nixbot",
-        "rev": "5eabc926b26f45d014d062ac47b4511c4e0cf197",
+        "rev": "e0c4a0f0c00a79af749de74c09586a7e673b8405",
         "type": "github"
       },
       "original": {
@@ -422,10 +424,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785061954,
-        "narHash": "sha256-dDPWLJLeiC9HHUy7Ckb/9GXxXaCEZTlSEXDS6snYXw4=",
+        "lastModified": 1786899015,
+        "narHash": "sha256-EMh/O/P5ZCH0YuG/oZSkZgxJ0ehvJcPc5E6yWaGebmc=",
         "ref": "nixos-26.05-backports",
-        "rev": "6ad659c367130b866a07cbad4e6235127030e315",
+        "rev": "a56f5cf1d2b6888c319e7cd3b2c88d08c706c06e",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
@@ -435,27 +437,6 @@
         "shallow": true,
         "type": "git",
         "url": "https://github.com/TUM-DSE/nixpkgs.git"
-      }
-    },
-    "retiolum": {
-      "inputs": {
-        "nix-darwin": "nix-darwin_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1781520557,
-        "narHash": "sha256-Y+YZ43PGRMCFFntIcm72Iqrb/mtaKmcMHGr91dFkE9k=",
-        "owner": "Mic92",
-        "repo": "retiolum",
-        "rev": "940e6ba573d3dc05e918b9f1d0ac489dfeb05f11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "retiolum",
-        "type": "github"
       }
     },
     "root": {
@@ -469,6 +450,7 @@
         "home-manager": "home-manager",
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",
+        "kartei": "kartei",
         "niks3": "niks3",
         "nix-index-database": "nix-index-database",
         "nixbot": "nixbot",
@@ -476,7 +458,6 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "retiolum": "retiolum",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "tincr": "tincr",
@@ -529,11 +510,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786328979,
-        "narHash": "sha256-S0CnOYq0H8oTQB6mN+PwP9qRGgSJ4WW0DLeIrcAF1rw=",
+        "lastModified": 1786933611,
+        "narHash": "sha256-FhNVyQZuDvWOozJ1mNuFJ/LY62r3PtBC+kzQNzdi400=",
         "owner": "numtide",
         "repo": "srvos",
-        "rev": "2077eec5063fce46b8c9e0754c4753542bb4f5f9",
+        "rev": "3fea6d6ca2b90b9e86b36b0dc23abc8f92cf5b9f",
         "type": "github"
       },
       "original": {
@@ -555,11 +536,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784891761,
-        "narHash": "sha256-RxOmu+01Hc6YFjcvyQ8DRpX48s+CZIp6VPxyWSIo7HU=",
+        "lastModified": 1787218720,
+        "narHash": "sha256-NjbFf8aeeq/UwJbXQDhdIDKKbx2lZNtlP2N9PNYIfdg=",
         "owner": "Mic92",
         "repo": "tincr",
-        "rev": "bf6bcf30e0990fe0c0afc7dec1b3767a73cd9aa9",
+        "rev": "265a084383b28fd5a6ad675bcd14e4bf50ed874d",
         "type": "github"
       },
       "original": {
@@ -575,11 +556,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784369104,
-        "narHash": "sha256-47cxbcZODibHv3rELFQ9vZly0vUNkND/atn/U7HLeb0=",
+        "lastModified": 1786901030,
+        "narHash": "sha256-WSFCsDSE5ffgD2MqzkM2CYjeFiKhRF/dJUN8uedb6YE=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "df3c0640565d04a0261253cdd89fce78ec50168a",
+        "rev": "27b3b12a8e6375f28ebe122f07d230ca5459bbfa",
         "type": "github"
       },
       "original": {
@@ -593,7 +574,7 @@
         "crane": [
           "crane"
         ],
-        "nix-darwin": "nix-darwin_3",
+        "nix-darwin": "nix-darwin_2",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -602,11 +583,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786443843,
-        "narHash": "sha256-3jD/0Cij3zvJYp/gEivFxiPHn4zChcdzCmusr0DvFWs=",
+        "lastModified": 1786709152,
+        "narHash": "sha256-fpzHXUzxLl+FtF/flvyha7DSczK6BhLeSEGPsIhCwBc=",
         "owner": "Mic92",
         "repo": "tribuchet",
-        "rev": "5b546b70e78f467eda98cd0fe80dd6435f3f66c7",
+        "rev": "44fc84692d358eb98c5170fffb078f0eeba40251",
         "type": "github"
       },
       "original": {

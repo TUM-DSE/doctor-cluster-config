@@ -25,6 +25,7 @@ in
 
     systemd.services.zfs-dedup = lib.mkIf cfg.timer.enable {
       description = "Offline ZFS block-level deduplication";
+      path = [ config.boot.zfs.package ];
       serviceConfig = {
         Type = "oneshot";
         ExecStart = "${package}/bin/zfs-dedup";

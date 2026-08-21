@@ -10,7 +10,13 @@ let
     proxy_set_header X-Forwarded-Proto $scheme;
   '';
 in
+{ config, ... }:
 {
+  sops.secrets.monitoring-basic-auth = {
+    sopsFile = ../secrets.yml;
+    owner = "nginx";
+  };
+
   security.acme.defaults.email = "joerg.letsencrypt@thalheim.io";
   security.acme.acceptTerms = true;
 
@@ -27,12 +33,14 @@ in
     virtualHosts."prometheus.dse.in.tum.de" = {
       forceSSL = true;
       enableACME = true;
+      basicAuthFile = config.sops.secrets.monitoring-basic-auth.path;
       locations."/".extraConfig = proxy "prometheus";
     };
 
     virtualHosts."alertmanager.dse.in.tum.de" = {
       forceSSL = true;
       enableACME = true;
+      basicAuthFile = config.sops.secrets.monitoring-basic-auth.path;
       locations."/".extraConfig = proxy "alertmanager";
     };
   };

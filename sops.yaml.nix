@@ -63,6 +63,7 @@ let
       "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
       "modules/niks3/secrets.yml$" = [ "astrid" "doctor" "graham" ];
       "modules/monitoring/fpga-dashboard/secrets.yml$" = [ "clara" ];
+      "modules/monitoring/secrets.yml$" = [ "doctor" ];
 
       "modules/users/xrdp-passwords.yml$" = [
         "amy"
