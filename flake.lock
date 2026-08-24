@@ -32,6 +32,21 @@
         "type": "github"
       }
     },
+    "crane_2": {
+      "locked": {
+        "lastModified": 1787326676,
+        "narHash": "sha256-lWhBbBvC05/xwivKBBiM2YNizpmgqCgyOIzomvRuwxs=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "692f7e9ef2ece8125b466f66f2af532b3edaed0d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "cuda-legacy": {
       "inputs": {
         "flake-parts": [
@@ -229,19 +244,21 @@
     },
     "kartei": {
       "inputs": {
+        "crane": "crane_2",
         "nixpkgs": [
           "nixpkgs"
         ],
         "tincr": [
           "tincr"
-        ]
+        ],
+        "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1786953376,
-        "narHash": "sha256-EhcbMLnQ+pwIVuDjgTAgRdfsZ1wMbzfTxRg9g6KXk5E=",
+        "lastModified": 1787495604,
+        "narHash": "sha256-qeas8dcuzKCbnhEm7KJM22TVi9HGbRup5hlNjGgSdWg=",
         "owner": "krebs",
         "repo": "kartei",
-        "rev": "c993b17f45cab35b16d512e0f3e1d3049ec76e99",
+        "rev": "705580625a2e3eec52ac95d8f6fa81560390cc50",
         "type": "github"
       },
       "original": {
@@ -461,7 +478,7 @@
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "tincr": "tincr",
-        "treefmt-nix": "treefmt-nix",
+        "treefmt-nix": "treefmt-nix_2",
         "tribuchet": "tribuchet",
         "zfs-dedup": "zfs-dedup"
       }
@@ -550,6 +567,27 @@
       }
     },
     "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "kartei",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786901030,
+        "narHash": "sha256-WSFCsDSE5ffgD2MqzkM2CYjeFiKhRF/dJUN8uedb6YE=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "27b3b12a8e6375f28ebe122f07d230ca5459bbfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
