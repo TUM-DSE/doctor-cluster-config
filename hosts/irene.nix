@@ -6,7 +6,7 @@
     ../modules/nfs/client.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
-    ../modules/amd_sev_snp-vanilla-certs.nix
+    ../modules/amd_sev_snp.nix
   ];
 
   networking.hostName = "irene";

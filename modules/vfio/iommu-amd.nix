@@ -5,7 +5,6 @@
     vfio = {
       enable = true;
       iommuType = "amd";
-      iommuDebugFs = true;
     };
   };
 }
