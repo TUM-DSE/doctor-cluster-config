@@ -140,6 +140,8 @@ Ace is currently running Debian. To add users, see [these instructions](./morell
 
 - [joy](./hosts/joy.md)
 
+## OrangePi Ultra (ARM64)
+
 ## FPGA-servers
 
 Each of these machines is equipped with an Alveo U50 FPGA card. Those servers
