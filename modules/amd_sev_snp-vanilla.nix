@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
-  # Use 6.16 (or newer) kernel
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.9
+  # srvos' latest-zfs-kernel mixin picks the newest kernel this zfs supports
+  # (>= 6.16 needed).
+  boot.zfs.package = pkgs.zfs_unstable;
 
   boot.kernelPatches = [
       {
