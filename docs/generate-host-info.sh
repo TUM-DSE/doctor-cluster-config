@@ -5,7 +5,7 @@ report="$hostname.md"
 lstopo="$hostname.lstopo.svg"
 echo -e "# ${hostname}\n" > "$report"
 echo "\`\`\`" >> "$report"
-if [[ "$hostname" == sakura || "$hostname" == hinoki || "$hostname" == momiji ]]; then
+if [[ "$hostname" == sakura || "$hostname" == hinoki || "$hostname" == orangepi || "$hostname" == momiji ]]; then
   # this is an ubuntu host
   ssh "$1" -- sudo inxi -F -a -i --slots -xxx -c0 -Z -i -m >> "$report"
 elif [[ "$hostname" == sarah ]]; then
