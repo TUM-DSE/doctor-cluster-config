@@ -1,0 +1,87 @@
+From 15383cfb4718375e117ccfe40b4a6ac2808de72f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=C3=B6rg=20Thalheim?= <joerg@thalheim.io>
+Date: Thu, 27 Aug 2026 03:18:19 +0200
+Subject: [PATCH] driver: fix build with Linux >= 6.13
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Since 6.15 kbuild ignores EXTRA_CFLAGS, so our include paths got lost
+and the build failed with missing headers. ccflags-y works on all
+kernels we care about; while at it use $(src) rather than $(PWD),
+which points at the kernel tree when evaluated by kbuild.
+
+6.13 wants a string literal for MODULE_IMPORT_NS() and 7.1 renamed
+dma_buf_attach_ops.move_notify to invalidate_mappings.
+
+Build-tested on 6.6, 6.12, 6.18 and 7.1.
+
+Signed-off-by: Jörg Thalheim <joerg@thalheim.io>
+---
+ driver/Makefile              | 6 +++---
+ driver/src/coyote_driver.c   | 4 ++++
+ driver/src/vfpga/vfpga_gup.c | 6 +++++-
+ 3 files changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/driver/Makefile b/driver/Makefile
+index 3f86196a..8010d5a3 100644
+--- a/driver/Makefile
++++ b/driver/Makefile
+@@ -32,10 +32,10 @@ coyote_driver-objs += src/coyote_sysfs.o
+ 
+ ifeq ($(TARGET_PLATFORM), versal)
+ coyote_driver-objs += src/platform/pci_qdma.o
+-EXTRA_CFLAGS += -DPLATFORM_VERSAL
++ccflags-y += -DPLATFORM_VERSAL
+ else ifeq ($(TARGET_PLATFORM), ultrascale_plus)
+ coyote_driver-objs += src/platform/pci_xdma.o
+-EXTRA_CFLAGS += -DPLATFORM_ULTRASCALE_PLUS
++ccflags-y += -DPLATFORM_ULTRASCALE_PLUS
+ else
+ $(error "Unsupported TARGET_PLATFORM specified. Supported options are: ultrascale_plus, versal")
+ endif
+@@ -57,7 +57,7 @@ coyote_driver-objs += src/vfpga/vfpga_uisr.o
+ KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+ 
+ BUILD_DIR := $(shell pwd)/build
+-EXTRA_CFLAGS += -std=gnu11 -Wno-declaration-after-statement -I$(PWD)/include -I$(PWD)/include/reconfig -I$(PWD)/include/vfpga -I$(PWD)/include/platform 
++ccflags-y += -std=gnu11 -Wno-declaration-after-statement -I$(src)/include -I$(src)/include/reconfig -I$(src)/include/vfpga -I$(src)/include/platform
+ 
+ # To avoid polluting the source files with a bunch of build (*.o, *.mod etc.) files, the source files are temporarily copied to the build folder for compilation
+ all:
+diff --git a/driver/src/coyote_driver.c b/driver/src/coyote_driver.c
+index 544301f1..1f1df5dc 100644
+--- a/driver/src/coyote_driver.c
++++ b/driver/src/coyote_driver.c
+@@ -50,7 +50,11 @@ module_param(en_hmm, bool, 0000);
+ MODULE_PARM_DESC(en_hmm, "Enable HMM");
+ 
+ // Include the DMA Buffer mechanism to enable peer-to-peer DMA transfers between FPGAs and GPUs
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 13, 0)
++MODULE_IMPORT_NS("DMA_BUF");
++#else
+ MODULE_IMPORT_NS(DMA_BUF);
++#endif
+ 
+ static int __init coyote_init(void) {
+     pr_info("Loading Coyote PCIe driver...\n");
+diff --git a/driver/src/vfpga/vfpga_gup.c b/driver/src/vfpga/vfpga_gup.c
+index 5ab37cdc..d325c52e 100644
+--- a/driver/src/vfpga/vfpga_gup.c
++++ b/driver/src/vfpga/vfpga_gup.c
+@@ -764,7 +764,11 @@ int sync_user_pages(struct vfpga_dev *device, uint64_t vaddr, uint32_t len, int3
+ 
+ const struct dma_buf_attach_ops gpu_importer_ops = {
+     .allow_peer2peer = true,
+-    .move_notify = p2p_move_notify 
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(7, 1, 0)
++    .invalidate_mappings = p2p_move_notify
++#else
++    .move_notify = p2p_move_notify
++#endif
+ };
+ 
+ void p2p_move_notify(struct dma_buf_attachment *attach) {
+-- 
+2.54.0
+

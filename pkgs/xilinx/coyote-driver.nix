@@ -24,6 +24,7 @@ stdenv.mkDerivation {
     runHook preBuild
     cp -r ${src}/driver ./driver
     chmod -R u+w ./driver
+    patch -p1 < ${./coyote-driver-linux-7.1.patch}
     cd ./driver
     make -j"$NIX_BUILD_CORES" \
       KERNELDIR="${kernelDir}" \
