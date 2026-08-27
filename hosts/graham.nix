@@ -9,7 +9,7 @@
     ../modules/vfio/iommu-amd.nix
     ../modules/disko-zfs.nix
     ../modules/kata-container
-    ../modules/amd_sev_snp-vanilla.nix
+    ../modules/amd_sev_snp.nix
   ];
 
   boot.hugepages1GB.number = 0;

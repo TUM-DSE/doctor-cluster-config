@@ -8,9 +8,7 @@
     ../modules/nfs/client.nix
     ../modules/nfs
     ../modules/xilinx.nix
-    # ../modules/amd_sev.nix
     ../modules/amd_sev_svsm_wallet.nix
-    #../modules/amd_sev_snp.nix
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container

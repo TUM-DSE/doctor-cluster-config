@@ -101,8 +101,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
   ];
 
-  kilianKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCfTtZ0EFmMhku7SE3fks6CgglMkrqr5I504IDpYnSJIVW5pcyCXQoPnNzch3lVRMUZrtgVPH/opLo8FqckLQXBKYbD81FYetnEixpbfq9YAbDyaI23xYG3wWxcLD0SUjqW48pnUhFaXcpt42oOY0LYeVpt97i1FtoPUnqMhdp5rDeDWsJNAVhNP4O1AslEeqPp9EFkqGMdLoncD2bS1CqUfjQXssHwmUEnqUg6nkO8tV0qiAzqmcbJjq/C5j+55208nXpMH0684DtNrTznK8IodpR7p0CDtQfOaKROYr/ZNcZCx4SZv9wOOA1lCZm0Z/SlJlAESXNa8dq0hyf/8Y2+KBkzFfZ3XdRr0hLVVEZ5kxGMXPOKtVFAJ2upRREtu+WMr8zRs34WitW3BkfBPCJis+/jp/AoJCFfXZk+NombQUNoVqNp19imCxQku6OtId9O5x4vnxcehjx1BiS9ZPKsrPnhoG25ZMS2eVj01xvae9NE2oJYeQQSJmyaW9IzBm06LpRG/3NokXXGf56yPXrsF57H2wDik6ifrgGpMnMZY2gn7pPTFTOpLCCmYb4ny24nKHb01xvxF5UcJaT6Y+9xYivxpEUv9PLs7EOQBw0tJoH3U0njVrSchMmxCxIbNKLJo+bhdL8bbTIUof3KI++jwhHSNRlpq5RHNAtj9cVFIQ== kilianm@nixos"
+  marklKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAION7iphhIKOVJ1XgdUZfjdvfxbxa8nTudbHb4QnD0nck kilianm@eris"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt8GnOlC14rFzJaTe/R8tnRwVZd+myw84GkakVn+TSH kilianm@sedna"
   ];
 
   marcKeys = [
@@ -577,7 +578,7 @@ in
       allowedHosts = [
         "graham"
       ];
-      openssh.authorizedKeys.keys = kilianKeys;
+      openssh.authorizedKeys.keys = marklKeys;
       expires = "2027-03-01";
     };
   };
