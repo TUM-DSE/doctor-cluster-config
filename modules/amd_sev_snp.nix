@@ -1,37 +1,17 @@
-{ pkgs, lib, ... }:
-let
-  linux = pkgs.callPackage ../pkgs/kernels/linux-sev-snp.nix { };
-  linuxPackages = lib.recurseIntoAttrs (
-    (pkgs.linuxPackagesFor linux).extend (
-      _final: prev: {
-        # Kernel modules inherit the kernel's gcc13 stdenv (see
-        # linux-sev-snp.nix), but sysdig's userland half links
-        # gcc15-built libraries (onetbb), which needs the matching
-        # libstdc++. The kmod part still gets -std=gnu11 from Kbuild.
-        sysdig = prev.sysdig.override { stdenv = pkgs.stdenv; };
-      }
-    )
-  );
-in
+{ pkgs, ... }:
 {
-  # Configuration for AMD SEV-SNP with AMD versions' kernel
-
-  boot.kernelPackages = lib.mkForce linuxPackages;
-  boot.zfs.package = pkgs.zfs_unstable; # needed for 6.9
+  # SEV-SNP host support is upstream since 6.11 and the required config
+  # options (AMD_MEM_ENCRYPT, KVM_AMD_SEV, CRYPTO_DEV_CCP*, VFIO_DEVICE_CDEV)
+  # are enabled in the stock nixpkgs kernel, so no rebuild is needed.
+  # srvos' latest-zfs-kernel mixin picks the newest kernel zfs_unstable supports.
+  boot.zfs.package = pkgs.zfs_unstable;
 
   boot.kernelParams = [
-    #"mem_encrypt=on"
-    "amd_iommu=off"
     "kvm_amd.sev=1"
     "kvm_amd.sev_es=1"
     "kvm_amd.sev_snp=1"
-    #"kvm.mmio_caching=on"
     "sp5100_tco.blacklist=yes"
-
-    # this parameter exists on 6.9-
-    "kvm.gmem_2m_enabled=1"
   ];
 
-  # enable libvirtd service
   virtualisation.libvirtd.enable = true;
 }

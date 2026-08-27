@@ -11,7 +11,6 @@
     ../modules/monitoring/fpga-dashboard/server-collector.nix
 
     ../modules/amd_sev_snp.nix
-    #../modules/amd_sev_svsm.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
     # ../modules/zokelmannvms.nix # ZFS pool import fails currently

@@ -6,7 +6,6 @@
     vfio = {
       enable = true;
       iommuType = "intel";
-      iommuDebugFs = true;
     };
   };
 }

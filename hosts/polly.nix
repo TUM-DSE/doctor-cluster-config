@@ -6,7 +6,7 @@
   imports = [
     ../modules/hardware/gigabyte-xv23-zx0.nix
     ../modules/nfs/client.nix
-    ../modules/amd_sev_snp-vanilla.nix
+    ../modules/amd_sev_snp.nix
     ../modules/nvidia.nix
   ];
 
