@@ -30,15 +30,6 @@ in
                 Requires user to also have a password set.
               '';
             };
-            options.citLogin = lib.mkOption {
-              type = lib.types.nullOr lib.types.str;
-              default = null;
-              example = "thalheim";
-              description = ''
-                RBG/CIT login (uid on ldap.cit.tum.de, the one for login.dos.cit.tum.de),
-                *not* the TUM-ID. Grants access to grafana/prometheus on doctor.
-              '';
-            };
             options.allowedHosts = lib.mkOption {
               type = lib.types.listOf lib.types.str;
               # for students and reviewers, we have an explicit list of allowed hosts
