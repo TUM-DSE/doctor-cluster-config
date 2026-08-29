@@ -113,9 +113,13 @@ in
           }
         ];
         storage.local.path = "/var/lib/authelia-main/db.sqlite3";
-        # No SMTP relay yet: the one-time code for registering a passkey ends up
-        # here, so an admin has to hand it out (`tail /var/lib/authelia-main/notifications.txt`).
-        notifier.filesystem.filename = "/var/lib/authelia-main/notifications.txt";
+        # postfix on the Ubuntu host (shared netns) relays via mailrelay.cit.tum.de
+        notifier.smtp = {
+          address = "smtp://127.0.0.1:25";
+          sender = "DSE monitoring <authelia@dosvm5.cit.tum.de>";
+          disable_require_tls = true;
+          disable_starttls = true;
+        };
 
         access_control = {
           default_policy = "deny";

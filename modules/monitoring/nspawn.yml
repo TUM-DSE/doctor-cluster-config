@@ -14,6 +14,12 @@
         update_cache: yes
         cache_valid_time: 86400
 
+    # RBG image ships postfix on 127.0.0.1:25 relaying via mailrelay.cit.tum.de;
+    # authelia in the container uses it (shared netns).
+    - name: Local mail relay
+      apt:
+        name: postfix
+
     # shared netns: the container runs its own rpcbind/statd for the NFSv3 borg mount
     - name: No rpcbind on the host
       apt:

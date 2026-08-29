@@ -76,6 +76,14 @@ in
         config_file = toString ldapConfig;
       };
       "auth.anonymous".enabled = false;
+      # postfix on the Ubuntu host, see authelia.nix
+      smtp = {
+        enabled = true;
+        host = "127.0.0.1:25";
+        from_address = "grafana@dosvm5.cit.tum.de";
+        from_name = "DSE monitoring";
+        skip_verify = true;
+      };
       analytics = {
         reporting_enabled = false;
         check_for_updates = false;
