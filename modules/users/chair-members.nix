@@ -163,6 +163,7 @@ in
       # Dimitris Stavrakakis
       dimitrios = {
         isNormalUser = true;
+        citLogin = "stavraka";
         home = "/home/dimitrios";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -173,6 +174,7 @@ in
       # Felix Gust
       felix = {
         isNormalUser = true;
+        citLogin = "gustf";
         home = "/home/felix";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -185,6 +187,7 @@ in
       # Harshavardhan Unnibhavi
       harshanavkis = {
         isNormalUser = true;
+        citLogin = "unnibhav";
         home = "/home/harshanavkis";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -196,6 +199,7 @@ in
       # Atsushi Koshiba
       atsushi = {
         isNormalUser = true;
+        citLogin = "koshiba";
         home = "/home/atsushi";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -207,6 +211,7 @@ in
       # Martin Fink
       martin = {
         isNormalUser = true;
+        citLogin = "finkma";
         home = "/home/martin";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -217,6 +222,7 @@ in
       # Jiyang Chen
       chenjiyang = {
         isNormalUser = true;
+        citLogin = "cji";
         home = "/home/chenjiyang";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -238,6 +244,7 @@ in
       # Masanori Misono
       masa = {
         isNormalUser = true;
+        citLogin = "miso";
         home = "/home/masa";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -248,6 +255,7 @@ in
       # Sebastian Reimers
       sebastian = {
         isNormalUser = true;
+        citLogin = "rse";
         home = "/home/sebastian";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -259,6 +267,7 @@ in
       # tum
       francisco = {
         isNormalUser = true;
+        citLogin = "romf";
         home = "/home/francisco";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -271,6 +280,7 @@ in
       # tum
       patrick = {
         isNormalUser = true;
+        citLogin = "sabanic";
         home = "/home/patrick";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -282,6 +292,7 @@ in
       # tum
       manos = {
         isNormalUser = true;
+        citLogin = "gie";
         home = "/home/manosgior";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -293,6 +304,7 @@ in
       # tum
       ilya = {
         isNormalUser = true;
+        citLogin = "meig";
         home = "/home/ilya";
         extraGroups = extraGroups ++ [
           "kvm"
@@ -307,6 +319,7 @@ in
       # tum
       teofil = {
         isNormalUser = true;
+        citLogin = "bte";
         home = "/home/teofil";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -319,6 +332,7 @@ in
       # tum
       nicolo = {
         isNormalUser = true;
+        citLogin = "carpn";
         home = "/home/nicolo";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -330,6 +344,7 @@ in
       # tum
       david = {
         isNormalUser = true;
+        citLogin = "scdav";
         home = "/home/david";
         extraGroups = extraGroups ++ [
           "kvm"
@@ -342,6 +357,7 @@ in
       # Julian Pritzi
       julian = {
         isNormalUser = true;
+        citLogin = "pritzi";
         home = "/home/julian";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -353,6 +369,7 @@ in
       # Simon Kammermeier
       simonk = {
         isNormalUser = true;
+        citLogin = "kammerme";
         home = "/home/simonk";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -364,6 +381,7 @@ in
       #  Nathaniel Tornow
       nate = {
         isNormalUser = true;
+        citLogin = "tornow";
         home = "/home/nate";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -386,6 +404,7 @@ in
       # Theofilos Augoustis
       theo = {
         isNormalUser = true;
+        citLogin = "augo";
         home = "/home/theo";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -419,6 +438,7 @@ in
       # Anubhav Panda
       anubhav = {
         isNormalUser = true;
+        citLogin = "paan";
         home = "/home/anubhav";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -431,6 +451,7 @@ in
       # Peter Wegmann
       peter = {
         isNormalUser = true;
+        citLogin = "wegmannp";
         home = "/home/peter";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";
@@ -443,6 +464,7 @@ in
       # Sandro Gierens
       gierens = {
         isNormalUser = true;
+        citLogin = "gierens";
         home = "/home/gierens";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";

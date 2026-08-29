@@ -157,7 +157,7 @@ machines. Those machines also are not backed up.
 
 - RBG VMs:
   - dosvm5.cit.tum.de (ubuntu VM itself), doctor.dos.cit.tum.de (nixos container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
-    - [grafana](https://grafana.dos.cit.tum.de) - login with CIT/RBG account (LDAP), dosvm5 admins get grafana admin
+    - [grafana](https://grafana.dos.cit.tum.de) - login with your RBG/CIT account (same as for login.dos.cit.tum.de, not the TUM-ID). Only users with `citLogin` set in modules/users/*.nix are allowed; dosvm5 admins get grafana admin
     - prometheus/alertmanager are behind [authelia](https://auth.dos.cit.tum.de): CIT/RBG LDAP password or passkey. The one-time code needed to register a passkey lands in `/var/lib/authelia-main/notifications.txt` on doctor.
     - SSHing into the nixos container that runs all services: use the login.dos.cit.tum.de jumphost as usual, but ssh on doctor.dos.cit.tum.de uses port 2222!
     - [prometheus](https://prometheus.dos.cit.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
