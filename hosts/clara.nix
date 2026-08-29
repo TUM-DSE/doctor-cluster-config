@@ -9,7 +9,7 @@
     ../modules/amd_sev_snp.nix
     ../modules/xilinx.nix
     ../modules/xrdp.nix
-    # ../modules/monitoring/fpga-dashboard # see email to admins from 13.08.2026
+    ../modules/monitoring/fpga-dashboard/server-collector.nix
   ];
 
   networking.hostName = "clara";

@@ -121,8 +121,13 @@ in
         ipv6 = "2a09:80c0:102::25";
         mac = "94:6D:AE:DA:EB:42";
       };
-      # {doctor, loki, grafana, prometheus, alertmanager}.dos.cit.tum.de. Hosted on {vmbhatotia43.in.tum.de, monitoring.dos.cit.tum.de}
+      # {doctor, loki, grafana, prometheus, alertmanager}.dos.cit.tum.de. nspawn container on dosvm5.cit.tum.de
       doctor = {
+        ipv4 = "131.159.102.39";
+        ipv6 = "2a09:80c0:102::39";
+      };
+      # vmbhatotia43.in.tum.de, forwards to doctor until DNS is moved
+      doctorold = {
         ipv4 = "131.159.102.4";
         ipv6 = "2a09:80c0:102::4";
       };

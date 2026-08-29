@@ -6,11 +6,9 @@
 # Outbound IPv6 then falls back to the non-routable tinc address and
 # black-holes. Assign the cluster's reserved address statically on the host so
 # the container's lifecycle cannot tear down the interface.
-- name: Configure static IPv6 on the monitoring host
+- name: Configure static IPv6 on the monitoring host (ipv6_address from inventory)
   hosts: all
   become: yes
-  vars:
-    ipv6_address: "2a09:80c0:102::4/64"
   tasks:
     - name: Drop in static IPv6 netplan config
       copy:

@@ -38,6 +38,7 @@ in
       # tum
       joerg = {
         isNormalUser = true;
+        citLogin = "thalheim";
         home = "/home/joerg";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -50,6 +51,7 @@ in
       # tum
       okelmann = {
         isNormalUser = true;
+        citLogin = "okelmann";
         home = "/home/okelmann";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/zsh";
@@ -60,6 +62,7 @@ in
       # Thore Sommer: wants to improve monitoring
       thore = {
         isNormalUser = true;
+        citLogin = "soth";
         home = "/home/thore";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/fish";
@@ -71,6 +74,7 @@ in
       # Anatole Lefort: Works on web stuff for students hosted on the monitoring VM
       anatole = {
         isNormalUser = true;
+        citLogin = "lefo";
         home = "/home/anatole";
         inherit extraGroups;
         shell = "/run/current-system/sw/bin/bash";

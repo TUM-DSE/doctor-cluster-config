@@ -445,6 +445,26 @@ def deploy_doctor(c: Any) -> None:
 
 
 @task
+def deploy_doctor_old(c: Any) -> None:
+    """
+    Deploy to doctorold (previous monitoring VM, forwards to doctor)
+    """
+    host = DeployHost(
+        "graham.dos.cit.tum.de",
+        user="root",
+        forward_agent=True,
+        command_prefix="doctorold",
+        meta=dict(
+            target_user="root",
+            target_host="doctorold.r",
+            flake_attr="doctorold",
+            flake_path="/var/lib/nixos-config",
+        ),
+    )
+    deploy_nixos([host])
+
+
+@task
 def deploy_host(c: Any, host: str) -> None:
     """
     Deploy to a single host, i.e. inv deploy-host --host 192.168.1.2
