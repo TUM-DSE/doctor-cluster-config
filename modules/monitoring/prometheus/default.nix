@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   sops.secrets.alertmanager = { };
 
@@ -21,6 +21,18 @@
             refresh_interval = "5m";
           }
         ];
+      }
+      {
+        # node_exporter textfile metrics from fpga-dashboard/{server,switch}-collector.nix;
+        # capitalized host labels are what the FPGA/switch dashboards query.
+        job_name = "node";
+        static_configs = map (host: {
+          targets = [ "${host}.r:9100" ];
+          labels.host = let
+            first = builtins.substring 0 1 host;
+            rest = builtins.substring 1 (-1) host;
+          in (lib.toUpper first) + rest;
+        }) [ "amy" "christina" "clara" "rose" ];
       }
     ];
     alertmanagers = [ { static_configs = [ { targets = [ "localhost:9093" ]; } ]; } ];

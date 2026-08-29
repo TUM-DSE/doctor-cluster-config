@@ -1,0 +1,125 @@
+---
+# Runs a NixOS configuration as a systemd-nspawn container sharing the VM's
+# network namespace. See apply.sh for the first install.
+- name: NixOS doctor container on the RBG Ubuntu VM
+  hosts: all
+  become: yes
+  vars:
+    # `machine` comes from the inventory
+    root: "/var/lib/machines/{{ machine }}"
+  tasks:
+    - name: Install systemd-nspawn
+      apt:
+        name: systemd-container
+        update_cache: yes
+        cache_valid_time: 86400
+
+    # shared netns: the container runs its own rpcbind/statd for the NFSv3 borg mount
+    - name: No rpcbind on the host
+      apt:
+        name: [rpcbind, nfs-common]
+        state: absent
+        purge: yes
+
+    - name: nspawn config directories
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - /etc/systemd/nspawn
+        - "/etc/systemd/system/systemd-nspawn@{{ machine }}.service.d"
+
+    - name: nspawn unit settings
+      copy:
+        dest: "/etc/systemd/nspawn/{{ machine }}.nspawn"
+        mode: "0644"
+        content: |
+          [Exec]
+          Boot=yes
+          Capability=all
+          PrivateUsers=no
+          # nix sandbox and the NFS mount for the borg repos happen inside
+          SystemCallFilter=add_key keyctl bpf @mount
+
+          [Network]
+          VirtualEthernet=no
+      notify: restart container
+
+    - name: nspawn service overrides
+      copy:
+        dest: "/etc/systemd/system/systemd-nspawn@{{ machine }}.service.d/override.conf"
+        mode: "0644"
+        content: |
+          [Service]
+          # NixOS (systemd >= 258) refuses to boot on the legacy hierarchy
+          Environment=SYSTEMD_NSPAWN_UNIFIED_HIERARCHY=1
+          # tinc needs /dev/net/tun
+          DeviceAllow=/dev/net/tun rwm
+      notify: restart container
+
+    - name: Check for existing rootfs
+      stat:
+        path: "{{ root }}/sbin/init"
+      register: rootfs
+
+    - name: Create machine directory
+      file:
+        path: "{{ root }}"
+        state: directory
+        mode: "0755"
+
+    - name: Unpack NixOS tarball
+      unarchive:
+        src: "{{ tarball }}"
+        dest: "{{ root }}"
+      when: not rootfs.stat.exists and tarball is defined
+
+    - fail:
+        msg: "{{ root }} is empty, rerun with -e tarball=path/to/nixos-system-x86_64-linux.tar.xz"
+      when: not rootfs.stat.exists and tarball is not defined
+
+    # sops-nix derives the age identity from this key; without it no secrets
+    # (tinc key, grafana, authelia, ...) can be decrypted on first boot.
+    - name: Decrypt ssh host keys locally
+      command: sops --extract '["ssh_host_{{ item }}_key"]' -d {{ playbook_dir }}/../../hosts/{{ machine }}.yml
+      register: hostkeys
+      loop: [ed25519, rsa]
+      delegate_to: localhost
+      become: no
+      changed_when: false
+      no_log: true
+
+    - name: /etc/ssh in container
+      file:
+        path: "{{ root }}/etc/ssh"
+        state: directory
+        mode: "0755"
+
+    - name: Install ssh host keys into container
+      copy:
+        dest: "{{ root }}/etc/ssh/ssh_host_{{ item.item }}_key"
+        content: "{{ item.stdout }}\n"
+        mode: "0600"
+        force: no
+      loop: "{{ hostkeys.results }}"
+      no_log: true
+
+    - name: Enable and start container
+      systemd:
+        name: "systemd-nspawn@{{ machine }}.service"
+        enabled: yes
+        state: started
+        daemon_reload: yes
+
+    - name: Enable machines.target
+      systemd:
+        name: machines.target
+        enabled: yes
+
+  handlers:
+    - name: restart container
+      systemd:
+        name: "systemd-nspawn@{{ machine }}.service"
+        state: restarted
+        daemon_reload: yes

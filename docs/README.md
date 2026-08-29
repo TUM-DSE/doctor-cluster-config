@@ -156,11 +156,14 @@ machines. Those machines also are not backed up.
 ## Others
 
 - RBG VMs:
-  - monitoring.dos.cit.tum.de (ubuntu VM itself), doctor.dos.cit.tum.de (nixos container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+  - dosvm5.cit.tum.de (ubuntu VM itself), doctor.dos.cit.tum.de (nixos container in VM) [doctor.nix](../hosts/doctor.nix): borg backup target, monitoring
+    - [grafana](https://grafana.dos.cit.tum.de) - login with CIT/RBG account (LDAP), dosvm5 admins get grafana admin
+    - prometheus/alertmanager are behind [authelia](https://auth.dos.cit.tum.de): CIT/RBG LDAP password or passkey. The one-time code needed to register a passkey lands in `/var/lib/authelia-main/notifications.txt` on doctor.
     - SSHing into the nixos container that runs all services: use the login.dos.cit.tum.de jumphost as usual, but ssh on doctor.dos.cit.tum.de uses port 2222!
-    - [prometheus](https://prometheus.dse.in.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
-    - [alertmanager](https://alertmanager.dse.in.tum.de)
+    - [prometheus](https://prometheus.dos.cit.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
+    - [alertmanager](https://alertmanager.dos.cit.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
+  - doctorold (vmbhatotia43.in.tum.de, 131.159.102.4): previous monitoring VM, only forwards :80/:443 to doctor.r until the CNAMEs point to dosvm5
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
   - ls1-coffee.dse.cit.tum.de: coffee backend
   - web.dse.in.tum.de: public website

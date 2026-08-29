@@ -9,14 +9,13 @@ let
     proxy_set_header X-Forwarded-Port 443;
     proxy_set_header X-Forwarded-Proto $scheme;
   '';
-in
-{ config, ... }:
-{
-  sops.secrets.monitoring-basic-auth = {
-    sopsFile = ../secrets.yml;
-    owner = "nginx";
+  redirect = to: {
+    forceSSL = true;
+    enableACME = true;
+    globalRedirect = to;
   };
-
+in
+{
   security.acme.defaults.email = "joerg.letsencrypt@thalheim.io";
   security.acme.acceptTerms = true;
 
@@ -30,18 +29,20 @@ in
       "@alertmanager".extraConfig = "server localhost:9093;";
     };
 
-    virtualHosts."prometheus.dse.in.tum.de" = {
+    virtualHosts."prometheus.dos.cit.tum.de" = {
       forceSSL = true;
       enableACME = true;
-      basicAuthFile = config.sops.secrets.monitoring-basic-auth.path;
+      authelia = true;
       locations."/".extraConfig = proxy "prometheus";
     };
+    virtualHosts."prometheus.dse.in.tum.de" = redirect "prometheus.dos.cit.tum.de";
 
-    virtualHosts."alertmanager.dse.in.tum.de" = {
+    virtualHosts."alertmanager.dos.cit.tum.de" = {
       forceSSL = true;
       enableACME = true;
-      basicAuthFile = config.sops.secrets.monitoring-basic-auth.path;
+      authelia = true;
       locations."/".extraConfig = proxy "alertmanager";
     };
+    virtualHosts."alertmanager.dse.in.tum.de" = redirect "alertmanager.dos.cit.tum.de";
   };
 }

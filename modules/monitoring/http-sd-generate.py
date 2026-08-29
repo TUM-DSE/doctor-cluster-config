@@ -119,7 +119,7 @@ def main() -> None:
                 '  timeout = "10s"',
                 "  [inputs.net_response.tags]",
                 f'    org = "{org}"',
-                f'    host = "{host}"',
+                f'    host = "{host.removesuffix(".r")}"',
                 "",
             ]
         )

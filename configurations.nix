@@ -107,6 +107,15 @@ in
         ];
     };
 
+    doctorold = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
+        commonModules
+        ++ [
+          ./hosts/doctorold.nix
+        ];
+    };
+
     rose = {
       nixpkgs.pkgs = pkgs-x86_64-linux;
       imports =
