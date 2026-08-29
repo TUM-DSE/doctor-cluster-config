@@ -3,7 +3,6 @@
     ../modules/nspawn-container.nix
     ../modules/borgbackup-repos
     ../modules/buildbot/reverse-proxy.nix
-    ../modules/niks3/reverse-proxy.nix
     ../modules/monitoring/prometheus
     ../modules/monitoring/loki.nix
     ../modules/monitoring/telegraf.nix

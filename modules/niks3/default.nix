@@ -1,13 +1,17 @@
-# niks3 binary cache server configuration
+# niks3 binary cache server on nixcache
 #
-# Required secrets in hosts/graham.yml:
-#   niks3-s3-access-key: S3 access key
-#   niks3-s3-secret-key: S3 secret key
-#   niks3-api-token: API token (min 36 chars), generate with:
-#     openssl rand -base64 32
-#   niks3-signing-key: Nix signing key, generate with:
-#     nix key generate-secret --key-name cache.dos.cit.tum.de-1
+# niks3.dos.cit.tum.de: push API (GitHub OIDC / API token)
+# cache.dos.cit.tum.de: public read path; niks3's read proxy serves narinfos
+#   and 307-redirects NARs to presigned URLs on the TUM ITO S3.
+#
+# Required secrets in ./secrets.yml:
+#   niks3-s3-access-key, niks3-s3-secret-key
+#   niks3-api-token: openssl rand -base64 32
+#   niks3-signing-key: nix key generate-secret --key-name cache.dos.cit.tum.de-1
 { config, inputs, ... }:
+let
+  cfg = config.services.niks3;
+in
 {
   imports = [
     inputs.niks3.nixosModules.niks3
@@ -15,13 +19,11 @@
 
   services.niks3 = {
     enable = true;
-    # Listen on all interfaces - TLS termination is done by reverse proxy on doctor
-    httpAddr = "[::]:5752";
+    httpAddr = "127.0.0.1:5752";
 
     cacheUrl = "https://cache.dos.cit.tum.de";
     serverUrl = "https://niks3.dos.cit.tum.de";
 
-    # TUM ITO S3 configuration
     s3 = {
       endpoint = "s3.ito.cit.tum.de";
       bucket = "dos-s3-1";
@@ -31,28 +33,40 @@
     };
 
     apiTokenFile = config.sops.secrets.niks3-api-token.path;
-
     signKeyFiles = [ config.sops.secrets.niks3-signing-key.path ];
 
-    # GitHub Actions OIDC authentication
     oidc.providers.github = {
       issuer = "https://token.actions.githubusercontent.com";
       audience = "https://niks3.dos.cit.tum.de";
-      boundClaims = {
-        repository = [
-          "TUM-DSE/*"
-          # Dogfooding the GitHub Action's own CI.
-          "Mic92/niks3-action"
-        ];
-      };
+      boundClaims.repository = [
+        "TUM-DSE/*"
+        # Dogfooding the GitHub Action's own CI.
+        "Mic92/niks3-action"
+      ];
     };
 
-    # TLS termination handled by reverse proxy on doctor
-    nginx.enable = false;
+    # bucket is private; no read rule configured, so reads stay unauthenticated
+    readProxy = {
+      enable = true;
+      redirectTTL = "1h";
+    };
+
+    nginx = {
+      enable = true;
+      domain = "niks3.dos.cit.tum.de";
+    };
   };
 
-  # Allow doctor reverse proxy to reach niks3
-  networking.firewall.allowedTCPPorts = [ 5752 ];
+  services.nginx.virtualHosts."cache.dos.cit.tum.de" = {
+    forceSSL = true;
+    enableACME = true;
+    locations."/" = {
+      proxyPass = "http://${cfg.httpAddr}";
+      extraConfig = ''
+        limit_except GET { deny all; }
+      '';
+    };
+  };
 
   sops.secrets.niks3-s3-access-key = {
     sopsFile = ./secrets.yml;

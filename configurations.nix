@@ -107,6 +107,15 @@ in
         ];
     };
 
+    nixcache = {
+      nixpkgs.pkgs = pkgs-x86_64-linux;
+      imports =
+        commonModules
+        ++ [
+          ./hosts/nixcache.nix
+        ];
+    };
+
     doctorold = {
       nixpkgs.pkgs = pkgs-x86_64-linux;
       imports =
