@@ -1,15 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 let
-  allowedUids = lib.concatMapStrings (u: "(uid=${u})") config.monitoring.citLogins;
   # https://wiki.ito.cit.tum.de/bin/view/CIT/ITO/Docs/Guides/LDAP-Apps/
-  # Anonymous bind, only reachable from CIT IP ranges.
+  # Anonymous bind, only reachable from CIT IP ranges. rbgOrgZug=DOS is our chair.
   ldapConfig = (pkgs.formats.toml { }).generate "ldap.toml" {
     servers = [
       {
         host = "ldap.cit.tum.de";
         port = 636;
         use_ssl = true;
-        search_filter = "(&(objectClass=rbgAccount)(uid=%s)(|${allowedUids}))";
+        search_filter = "(&(objectClass=rbgAccount)(uid=%s)(rbgOrgZug=DOS))";
         search_base_dns = [ "ou=dir,dc=cit,dc=tum,dc=de" ];
         attributes = {
           username = "uid";
@@ -33,8 +32,6 @@ let
   };
 in
 {
-  imports = [ ./cit-logins.nix ];
-
   sops.secrets.grafana-admin-password = {
     sopsFile = ./secrets.yml;
     owner = "grafana";

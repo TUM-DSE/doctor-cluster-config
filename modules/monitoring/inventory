@@ -1,8 +1,9 @@
-[monitoring]
+[rbg_vms]
 # reach RBG VMs via the jumphost: ssh -J tunnel@login.dos.cit.tum.de
 dosvm5.cit.tum.de machine=doctor ipv6_address=2a09:80c0:102::39/64
+dosvm4.cit.tum.de machine=nixcache ipv6_address=2a09:80c0:102::38/64
 vmbhatotia43.in.tum.de machine=doctorold ipv6_address=2a09:80c0:102::4/64
 
-[monitoring:vars]
+[rbg_vms:vars]
 ansible_user=thalheim
 ansible_ssh_common_args=-J tunnel@login.dos.cit.tum.de

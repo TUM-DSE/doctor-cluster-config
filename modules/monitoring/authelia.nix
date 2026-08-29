@@ -1,14 +1,12 @@
 { config, lib, pkgs, ... }:
 let
   domain = "auth.dos.cit.tum.de";
-  allowedUids = lib.concatMapStrings (u: "(uid=${u})") config.monitoring.citLogins;
   # login form labels; https://www.authelia.com/reference/guides/server-asset-overrides/
   assets = pkgs.runCommand "authelia-assets" { } ''
     mkdir -p $out/locales/en
     cp ${builtins.toFile "portal.json" (builtins.toJSON {
       "Username" = "RBG/CIT login (as for login.dos.cit.tum.de, not TUM-ID)";
       "Password" = "RBG/CIT password";
-      "Sign in" = "Sign in — access is granted via citLogin in doctor-cluster-config";
     })} $out/locales/en/portal.json
   '';
   secret = name: {
@@ -48,8 +46,6 @@ in
       )
     );
   };
-
-  imports = [ ./cit-logins.nix ];
 
   config = {
     sops.secrets.authelia-jwt-secret = secret "authelia-jwt-secret";
@@ -94,7 +90,7 @@ in
             permit_unauthenticated_bind = true;
             base_dn = "ou=dir,dc=cit,dc=tum,dc=de";
             additional_users_dn = "ou=users";
-            users_filter = "(&(objectClass=rbgAccount)({username_attribute}={input})(|${allowedUids}))";
+            users_filter = "(&(objectClass=rbgAccount)({username_attribute}={input})(rbgOrgZug=DOS))";
             additional_groups_dn = "ou=groups";
             groups_filter = "(&(objectClass=posixGroup)(memberUid={username}))";
             attributes = {

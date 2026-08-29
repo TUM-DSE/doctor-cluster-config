@@ -127,6 +127,11 @@ in
         ipv4 = "131.159.102.39";
         ipv6 = "2a09:80c0:102::39";
       };
+      # {cache,niks3}.dos.cit.tum.de, nspawn container on dosvm4.cit.tum.de
+      nixcache = {
+        ipv4 = "131.159.102.38";
+        ipv6 = "2a09:80c0:102::38";
+      };
       # vmbhatotia43.in.tum.de, forwards to doctor until DNS is moved
       doctorold = {
         ipv4 = "131.159.102.4";

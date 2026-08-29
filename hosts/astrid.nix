@@ -7,7 +7,6 @@
     ../modules/nfs/client.nix
 
     ../modules/jumphost
-    ../modules/niks3
     ../modules/postgresql.nix
   ];
 
