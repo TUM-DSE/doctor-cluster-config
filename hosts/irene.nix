@@ -19,6 +19,11 @@
   };
   powerManagement.cpuFreqGovernor = "performance";
 
+  # Dead KIOXIA CM7-R (#1796). Keep nvme off it. Hot-removing it resets the machine.
+  boot.initrd.services.udev.rules = ''
+    ACTION=="add", SUBSYSTEM=="pci", KERNEL=="0000:c5:00.0", ATTR{vendor}=="0x1e0f", ATTR{driver_override}="pci-stub"
+  '';
+
   system.stateVersion = "22.11";
   simd.arch = "znver4";
   services.envfs.enable = true;
