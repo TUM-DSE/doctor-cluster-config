@@ -21,4 +21,9 @@
   system.stateVersion = "21.11";
 
   networking.doctor-bridge.enable = true;
+
+  # Onboard X550 (eno1/eno2) tx-hang loop panics the kernel (#1798). Keep ixgbe off it.
+  boot.initrd.services.udev.rules = ''
+    ACTION=="add", SUBSYSTEM=="pci", KERNEL=="0000:01:00.[01]", ATTR{vendor}=="0x8086", ATTR{driver_override}="pci-stub"
+  '';
 }
