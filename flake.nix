@@ -59,6 +59,7 @@
     tincr.inputs.nixpkgs.follows = "nixpkgs";
     tincr.inputs.treefmt-nix.follows = "treefmt-nix";
     tincr.inputs.crane.follows = "crane";
+    tincr.inputs.fenix.follows = "hosthog/fenix";
 
     tribuchet.url = "github:Mic92/tribuchet";
     tribuchet.inputs.crane.follows = "crane";
