@@ -65,6 +65,12 @@ let
       # not need to force-import the root pool. Silences the 26.11 deprecation
       # warning and follows the upcoming default.
       boot.zfs.forceImportRoot = false;
+
+      # Let mixins-latest-zfs-kernel pick linux_latest instead of the LTS
+      # kernel. linux 6.18.45 breaks bnxt_en (page_pool_create_percpu()
+      # fails with -EINVAL, NIC never comes up) which took eliza, mickey,
+      # astrid and dan offline; 7.1.x is known good on amy/clara/ian.
+      boot.zfs.package = pkgs.zfs_unstable;
     })
     kartei.nixosModules.retiolum
   ];

@@ -545,6 +545,10 @@
         "crane": [
           "crane"
         ],
+        "fenix": [
+          "hosthog",
+          "fenix"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -553,11 +557,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787218720,
-        "narHash": "sha256-NjbFf8aeeq/UwJbXQDhdIDKKbx2lZNtlP2N9PNYIfdg=",
+        "lastModified": 1788080144,
+        "narHash": "sha256-bbcp5fOPimxXR4KQPfv2qNVOa2sqaXB7YNHPoG19bPI=",
         "owner": "Mic92",
         "repo": "tincr",
-        "rev": "265a084383b28fd5a6ad675bcd14e4bf50ed874d",
+        "rev": "3277b0821d119480f8a1567a4c11903e9dfd6587",
         "type": "github"
       },
       "original": {

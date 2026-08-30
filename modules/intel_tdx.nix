@@ -1,9 +1,5 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 {
-  # srvos' latest-zfs-kernel mixin picks the newest kernel this zfs supports
-  # (>= 6.18 needed for TDX kexec).
-  boot.zfs.package = pkgs.zfs_unstable;
-
   boot.kernelPatches = [
     {
       name = "tdx-config";
