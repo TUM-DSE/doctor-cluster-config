@@ -191,7 +191,8 @@
 
     services.borgbackup.jobs.nfs-share = {
       paths = [ "/run/borgbackup/nfs-share" ];
-      repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-share";
+      # :22 on doctor.r is the Ubuntu VM (dosvm5), the NixOS container listens on :2222
+      repo = "ssh://il1dsenixosbk@doctor.r:2222/mnt/backup/nfs-share";
       exclude = [
         # large memory traces
         "/run/borgbackup/nfs-share/redha/traces"
@@ -249,7 +250,7 @@
 
     services.borgbackup.jobs.nfs-home = {
       paths = [ "/run/borgbackup/nfs-home" ];
-      repo = "il1dsenixosbk@doctor.r:/mnt/backup/nfs-home";
+      repo = "ssh://il1dsenixosbk@doctor.r:2222/mnt/backup/nfs-home";
       encryption = {
         mode = "repokey";
         passCommand = "cat ${config.sops.secrets.tum-borgbackup-password.path}";

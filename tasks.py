@@ -68,11 +68,15 @@ def deploy_nixos(hosts: List[DeployHost]) -> None:
             if target_user:
                 target_host = f"{target_user}@{target_host}"
             cmd.extend(["--target-host", target_host])
+        env = {}
+        ssh_port = h.meta.get("ssh_port")
+        if ssh_port:
+            env["NIX_SSHOPTS"] = f"-p {ssh_port}"
 
-        ret = h.run(cmd, check=False)
+        ret = h.run(cmd, check=False, extra_env=env)
         # re-retry switch if the first time fails
         if ret.returncode != 0:
-            ret = h.run(cmd)
+            ret = h.run(cmd, extra_env=env)
 
     g.run_function(deploy)
 
@@ -424,24 +428,40 @@ def deploy_ace(c: Any) -> None:
     deploy_nixos([host])
 
 
-@task
-def deploy_doctor(c: Any) -> None:
+def nspawn_container_host(name: str) -> DeployHost:
     """
-    Deploy to doctor
+    NixOS nspawn container inside an RBG Ubuntu VM (modules/nspawn-container.nix).
+    :22 is the Ubuntu host, the container's sshd listens on :2222.
     """
-    host = DeployHost(
+    return DeployHost(
         "graham.dos.cit.tum.de",
         user="root",
         forward_agent=True,
-        command_prefix="doctor",
+        command_prefix=name,
         meta=dict(
             target_user="root",
-            target_host="doctor.r",
-            flake_attr="doctor",
+            target_host=f"{name}.r",
+            ssh_port=2222,
+            flake_attr=name,
             flake_path="/var/lib/nixos-config",
         ),
     )
-    deploy_nixos([host])
+
+
+@task
+def deploy_doctor(c: Any) -> None:
+    """
+    Deploy to doctor (monitoring + borg repos, container on dosvm5)
+    """
+    deploy_nixos([nspawn_container_host("doctor")])
+
+
+@task
+def deploy_nixcache(c: Any) -> None:
+    """
+    Deploy to nixcache (cache.dos.cit.tum.de/niks3, container on dosvm4)
+    """
+    deploy_nixos([nspawn_container_host("nixcache")])
 
 
 @task
