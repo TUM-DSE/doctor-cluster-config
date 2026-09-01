@@ -1,5 +1,4 @@
-# tribuchet build worker for the hub on eve. Serves this host's native
-# system; max-jobs defaults to the host's core count in tribuchet.
+# tribuchet build worker for the hub on eve
 {
   config,
   pkgs,
@@ -7,24 +6,30 @@
   ...
 }:
 {
-  imports = [ inputs.tribuchet.nixosModules.default ];
+  imports = [ inputs.flakelet.nixosModules.flakelet ];
 
-  # worker.key is signed by the CA generated on eve (clan vars generator
-  # "tribuchet" in the dotfiles repo); ca.crt and worker.crt are public
-  # and committed next to this module. The default sopsFile is the
-  # importing host's hosts/<host>.yml.
+  # signed by the CA from eve's clan vars generator "tribuchet"
   sops.secrets."tribuchet-worker-key" = { };
 
-  services.tribuchet-worker = {
+  # the worker imports build inputs through the nix-daemon unsigned
+  nix.settings.trusted-users = [ "tribuchet" ];
+
+  services.flakelets = {
     enable = true;
-    # delivered via systemd LoadCredential; the sops secret stays root-owned
-    keyFile = config.sops.secrets."tribuchet-worker-key".path;
-    settings = {
-      hub = "https://eve.thalheim.io:7437";
-      systems = [ pkgs.stdenv.hostPlatform.system ];
-      max-log-size = 67108864;
-      ca-cert = ./ca.crt;
-      cert = ./worker.crt;
+    services.tribuchet-worker = {
+      flake = "github:Mic92/tribuchet";
+      output = "flakelets.worker";
+      autoUpdate.enable = true;
+      settings = {
+        keyFile = config.sops.secrets."tribuchet-worker-key".path;
+        worker = {
+          hub = "https://eve.thalheim.io:7437";
+          systems = [ pkgs.stdenv.hostPlatform.system ];
+          max-log-size = 67108864;
+          ca-cert = "${./ca.crt}";
+          cert = "${./worker.crt}";
+        };
+      };
     };
   };
 }
