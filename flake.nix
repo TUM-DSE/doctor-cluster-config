@@ -61,10 +61,8 @@
     tincr.inputs.crane.follows = "crane";
     tincr.inputs.fenix.follows = "hosthog/fenix";
 
-    tribuchet.url = "github:Mic92/tribuchet";
-    tribuchet.inputs.crane.follows = "crane";
-    tribuchet.inputs.nixpkgs.follows = "nixpkgs";
-    tribuchet.inputs.treefmt-nix.follows = "treefmt-nix";
+    flakelet.url = "github:Mic92/flakelet";
+    flakelet.inputs.nixpkgs.follows = "nixpkgs";
 
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant

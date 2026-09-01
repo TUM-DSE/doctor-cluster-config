@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "adios": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772186395,
+        "narHash": "sha256-NshyMZYZwjKMLKEX0eDf9Fcekq8MFNFk02wW5knzlZU=",
+        "owner": "adisbladis",
+        "repo": "adios",
+        "rev": "6a54071689ec9ec784a16e4eec8ddb864eca2982",
+        "type": "github"
+      },
+      "original": {
+        "owner": "adisbladis",
+        "repo": "adios",
+        "type": "github"
+      }
+    },
     "coyote": {
       "flake": false,
       "locked": {
@@ -174,6 +190,27 @@
         "type": "github"
       }
     },
+    "flakelet": {
+      "inputs": {
+        "adios": "adios",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788292392,
+        "narHash": "sha256-f/06YkoGOsJq9msglQKMJyzK3rQYmPVFhyN0y1FsHLU=",
+        "owner": "Mic92",
+        "repo": "flakelet",
+        "rev": "5ce75ca90e28cf84b66ea40eacc3b0d1c7f06b3f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "flakelet",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -303,27 +340,6 @@
         "owner": "nix-darwin",
         "repo": "nix-darwin",
         "rev": "15abb8c98f336cd8bd840d71059adebabe60bf04",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
-    "nix-darwin_2": {
-      "inputs": {
-        "nixpkgs": [
-          "tribuchet",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1786845137,
-        "narHash": "sha256-oQFip+v0luP8NIxJzmiW4Wu8bILsbFWom5l0zonl8hQ=",
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "rev": "4cff07de74b50e64bdd68cd4e722ab5b6b35ee48",
         "type": "github"
       },
       "original": {
@@ -464,6 +480,7 @@
         "fast-nix-gc": "fast-nix-gc",
         "flake-parts": "flake-parts",
         "flake-registry": "flake-registry",
+        "flakelet": "flakelet",
         "home-manager": "home-manager",
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",
@@ -479,7 +496,6 @@
         "srvos": "srvos",
         "tincr": "tincr",
         "treefmt-nix": "treefmt-nix_2",
-        "tribuchet": "tribuchet",
         "zfs-dedup": "zfs-dedup"
       }
     },
@@ -608,33 +624,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "tribuchet": {
-      "inputs": {
-        "crane": [
-          "crane"
-        ],
-        "nix-darwin": "nix-darwin_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "treefmt-nix": [
-          "treefmt-nix"
-        ]
-      },
-      "locked": {
-        "lastModified": 1787858127,
-        "narHash": "sha256-UtSTRLO5zR+YMED4zx+XVbe2SHbsuWJ7CKup5AJCFuY=",
-        "owner": "Mic92",
-        "repo": "tribuchet",
-        "rev": "261d795b8d18bfdb1f398d8faa90434da5970be6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "tribuchet",
         "type": "github"
       }
     },
