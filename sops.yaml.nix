@@ -61,7 +61,8 @@ let
     builtins.mapAttrs (name: value: (map (x: keys.machines.${x}) value)) {
       "modules/nfs/secrets.yml$" = [ "mickey" "dan" ];
       "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
-      "modules/niks3/secrets.yml$" = [ "nixcache" ];
+      # graham: nixbot pushes to niks3 with the api token
+      "modules/niks3/secrets.yml$" = [ "nixcache" "graham" ];
       "modules/monitoring/secrets.yml$" = [ "doctor" ];
 
       "modules/users/xrdp-passwords.yml$" = [
