@@ -63,6 +63,11 @@
 
     flakelet.url = "github:Mic92/flakelet";
     flakelet.inputs.nixpkgs.follows = "nixpkgs";
+    flakelet-relay.url = "github:Mic92/flakelet-relay";
+    flakelet-relay.inputs.nixpkgs.follows = "nixpkgs";
+    flakelet-relay.inputs.flakelet.follows = "flakelet";
+    flakelet-relay.inputs.crane.follows = "crane";
+    flakelet-relay.inputs.treefmt-nix.follows = "treefmt-nix";
 
     srvos.url = "github:numtide/srvos";
     # actually not used when using the modules but than nothing ever will try to fetch this nixpkgs variant

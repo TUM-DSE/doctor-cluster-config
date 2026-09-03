@@ -1,6 +1,7 @@
 # tribuchet build worker for the hub on eve
 {
   config,
+  lib,
   pkgs,
   inputs,
   ...
@@ -8,8 +9,30 @@
 {
   imports = [
     inputs.flakelet.nixosModules.flakelet
+    inputs.flakelet-relay.nixosModules.agent
     ../flakelet-deploy.nix
   ];
+
+  # Agent identity for the relays on eve/eva: ACME cert for <host>.r
+  # from step-ca (ca.r) over retiolum, http-01 answered by lego itself.
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = lib.mkDefault "joerg.letsencrypt@thalheim.io";
+    certs."${config.networking.hostName}.r" = {
+      server = config.retiolum.ca.acmeURL;
+      listenHTTP = ":80";
+      reloadServices = [ "flakelet-agent.service" ];
+    };
+  };
+  networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 80 ];
+
+  services.flakelet-agent = {
+    enable = true;
+    relaySrv = "thalheim.io";
+    certFile = "/var/lib/acme/${config.networking.hostName}.r/fullchain.pem";
+    keyFile = "/var/lib/acme/${config.networking.hostName}.r/key.pem";
+    flakelets = [ "tribuchet-worker" ];
+  };
 
   # eve's step-ca ssh user CA (dotfiles vars step-ssh-user-ca)
   services.flakeletDeploy = {
