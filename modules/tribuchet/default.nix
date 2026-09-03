@@ -26,6 +26,10 @@
   };
   networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 80 ];
 
+  systemd.services.flakelet-agent = rec {
+    wants = [ "acme-${config.networking.hostName}.r.service" ];
+    after = wants;
+  };
   services.flakelet-agent = {
     enable = true;
     relaySrv = "thalheim.io";
