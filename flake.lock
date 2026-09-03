@@ -211,6 +211,35 @@
         "type": "github"
       }
     },
+    "flakelet-relay": {
+      "inputs": {
+        "crane": [
+          "crane"
+        ],
+        "flakelet": [
+          "flakelet"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788434055,
+        "narHash": "sha256-+RkMP2t3CMqKTqrPYf2UoI6bHtSvxkJfXnKAJATMycM=",
+        "owner": "Mic92",
+        "repo": "flakelet-relay",
+        "rev": "fd8e7602b89ed9135322f08dbba49d6a0d93bb38",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "flakelet-relay",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -481,6 +510,7 @@
         "flake-parts": "flake-parts",
         "flake-registry": "flake-registry",
         "flakelet": "flakelet",
+        "flakelet-relay": "flakelet-relay",
         "home-manager": "home-manager",
         "hosthog": "hosthog",
         "jetpack-nixos": "jetpack-nixos",

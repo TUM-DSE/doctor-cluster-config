@@ -73,6 +73,7 @@ let
       boot.zfs.package = pkgs.zfs_unstable;
     })
     kartei.nixosModules.retiolum
+    kartei.nixosModules.ca
   ];
 
   computeNodeModules =
