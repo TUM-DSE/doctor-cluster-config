@@ -10,7 +10,6 @@
   imports = [
     inputs.flakelet.nixosModules.flakelet
     inputs.flakelet-relay.nixosModules.agent
-    ../flakelet-deploy.nix
   ];
 
   # Agent identity for the relays on eve/eva: ACME cert for <host>.r
@@ -38,11 +37,6 @@
     flakelets = [ "tribuchet-worker" ];
   };
 
-  # eve's step-ca ssh user CA (dotfiles vars step-ssh-user-ca)
-  services.flakeletDeploy = {
-    caPublicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO8BeUknHHUL6H1AGJjubrNS2Q56a/5/chabONTMSJ4l step-ca ssh user ca";
-    services.tribuchet-worker.principals = [ "repo:github:Mic92/tribuchet:ref:refs/heads/main" ];
-  };
 
   # signed by the CA from eve's clan vars generator "tribuchet"
   sops.secrets."tribuchet-worker-key" = { };
