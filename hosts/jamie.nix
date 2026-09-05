@@ -3,13 +3,13 @@
   imports = [
     ../modules/hardware/poweredge7625.nix
     ../modules/nfs/client.nix
-    #../modules/amd_sev_snp.nix
-    #../modules/amd_sev_snp-vanilla.nix
-    # restored below master 3c88c9d9 ("drop unclaimed custom
-    # kernels"): jamie runs the veritas SVSM host kernel (6.11-vc)
-    ../modules/amd_sev_svsm.nix
-    #../modules/amd_sev_svsm_wallet.nix
-    #../modules/nvidia
+    # Native-GPU window (patrick, 2026-09-04): the veritas SVSM host
+    # kernel (6.11-vc, amd_sev_svsm.nix) breaks native CUDA (cuInit=3),
+    # so jamie runs the default kernel with the nvidia host driver for
+    # now. Swap amd_sev_svsm.nix back in for veritas work.
+    ../modules/amd_sev_snp.nix
+    #../modules/amd_sev_svsm.nix
+    ../modules/nvidia
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
@@ -33,8 +33,8 @@
 
   system.stateVersion = "23.05";
 
-  # temporarily disable auto-reboot until the memsafedb eval has finished running                                                                                             
-  systemd.timers.auto-reboot.enable = false;                                                                                                                                  
-  systemd.services.auto-reboot.enable = false;                                                                                                                                
-  systemd.services.auto-upgrade.enable = false;
+  # Teofil (6f783a9e, 2026-09-02): no auto-reboot while veritas
+  # experiments run on jamie.
+  systemd.timers.auto-reboot.enable = false;
+  systemd.services.auto-reboot.enable = false;
 }
