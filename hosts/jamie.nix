@@ -9,7 +9,7 @@
     # kernels"): jamie runs the veritas SVSM host kernel (6.11-vc)
     ../modules/amd_sev_svsm.nix
     #../modules/amd_sev_svsm_wallet.nix
-    #../modules/nvidia.nix
+    #../modules/nvidia
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container

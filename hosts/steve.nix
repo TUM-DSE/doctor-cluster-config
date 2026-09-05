@@ -4,7 +4,7 @@
     ../modules/hardware/supermicro-322GA-NR.nix
     ../modules/nfs/client.nix
     ../modules/nfs
-    ../modules/nvidia.nix
+    ../modules/nvidia
     ../modules/vfio/iommu-intel.nix
     ../modules/ccache.nix
   ];

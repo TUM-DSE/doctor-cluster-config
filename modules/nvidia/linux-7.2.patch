@@ -1,0 +1,123 @@
+--- a/kernel-open/nvidia-drm/nvidia-drm-conftest.h
++++ b/kernel-open/nvidia-drm/nvidia-drm-conftest.h
+@@ -97,6 +97,42 @@
+ #endif
+ 
+ /*
++ * Linux v7.2 renamed 'struct drm_atomic_state' to 'struct drm_atomic_commit'
++ * (and the drm_atomic_state_* helpers to drm_atomic_commit_*). The field names
++ * in the various *_funcs vtables (atomic_state_alloc/clear/free, atomic_check,
++ * atomic_commit, ...) were NOT renamed, so only the type tag and the helper
++ * functions the driver calls need remapping. This header is included before
++ * any <drm/...> header, so the remap covers both the driver sources (which use
++ * the old names) and keeps the kernel headers (which use the new names)
++ * unaffected.
++ */
++#include <linux/version.h>
++#if !defined(NV_BSD) && (LINUX_VERSION_CODE >= KERNEL_VERSION(7, 2, 0))
++
++#define drm_atomic_state                 drm_atomic_commit
++#define drm_atomic_state_alloc           drm_atomic_commit_alloc
++#define drm_atomic_state_clear           drm_atomic_commit_clear
++#define drm_atomic_state_init            drm_atomic_commit_init
++#define drm_atomic_state_put             drm_atomic_commit_put
++#define drm_atomic_state_free            drm_atomic_commit_free
++#define drm_atomic_state_default_clear   drm_atomic_commit_default_clear
++#define drm_atomic_state_default_release drm_atomic_commit_default_release
++
++/*
++ * The plane and CRTC atomic_check callbacks now take a
++ * 'struct drm_atomic_commit *' argument. conftest.sh probes their signature by
++ * compiling a snippet that references the old 'struct drm_atomic_state' type;
++ * that no longer matches, so it wrongly selects the pre-v5.11
++ * (drm_plane_state / drm_crtc_state) signature. Force the "atomic state arg"
++ * code paths on so the driver uses the drm_atomic_state (== drm_atomic_commit)
++ * signature the kernel expects; the remap above then aligns the types.
++ */
++#define NV_DRM_CRTC_ATOMIC_CHECK_HAS_ATOMIC_STATE_ARG
++#define NV_DRM_PLANE_ATOMIC_CHECK_HAS_ATOMIC_STATE_ARG
++
++#endif
++
++/*
+  * Adapt to quirks in FreeBSD's Linux kernel compatibility layer.
+  */
+ #if defined(NV_BSD)
+--- a/kernel-open/nvidia/os-interface.c
++++ b/kernel-open/nvidia/os-interface.c
+@@ -729,8 +729,7 @@
+ void NV_API_CALL os_get_current_process_name(char *buf, NvU32 len)
+ {
+     task_lock(current);
+-    strncpy(buf, current->comm, len - 1);
+-    buf[len - 1] = '\0';
++    strscpy(buf, current->comm, len);
+     task_unlock(current);
+ }
+ 
+--- a/kernel-open/nvidia/linux_nvswitch.c
++++ b/kernel-open/nvidia/linux_nvswitch.c
+@@ -2038,7 +2038,7 @@
+         return -NVL_ERR_GENERIC;
+     }
+ 
+-    strncpy(regkey_val, regkey_val_start, regkey_val_len);
++    memcpy(regkey_val, regkey_val_start, regkey_val_len);
+     regkey_val[regkey_val_len] = '\0';
+ 
+     if (nvswitch_os_strtouint(regkey_val, data) != 0)
+@@ -2393,7 +2393,19 @@
+     NvLength length
+ )
+ {
+-    return strncpy(dest, src, length);
++    /*
++     * strncpy() was removed from the kernel in 7.2; open-code it to
++     * preserve its exact semantics (zero-pad to length, no forced
++     * NUL-termination) for the callers in nv-kernel.o.
++     */
++    NvLength i;
++
++    for (i = 0; i < length && src[i] != '\0'; i++)
++        dest[i] = src[i];
++    for (; i < length; i++)
++        dest[i] = '\0';
++
++    return dest;
+ }
+ 
+ int
+--- a/kernel-open/nvidia-modeset/nvidia-modeset-linux.c
++++ b/kernel-open/nvidia-modeset/nvidia-modeset-linux.c
+@@ -666,7 +666,19 @@
+ 
+ char* nvkms_strncpy(char *dest, const char *src, size_t n)
+ {
+-    return strncpy(dest, src, n);
++    /*
++     * strncpy() was removed from the kernel in 7.2; open-code it to
++     * preserve its exact semantics (zero-pad to n, no forced
++     * NUL-termination) for the callers in nv-modeset-kernel.o.
++     */
++    size_t i;
++
++    for (i = 0; i < n && src[i] != '\0'; i++)
++        dest[i] = src[i];
++    for (; i < n; i++)
++        dest[i] = '\0';
++
++    return dest;
+ }
+ 
+ void nvkms_usleep(NvU64 usec)
+--- a/kernel-open/nvidia-uvm/uvm_pmm_gpu.c
++++ b/kernel-open/nvidia-uvm/uvm_pmm_gpu.c
+@@ -2804,7 +2804,7 @@
+             size_t size;
+             size_t align;
+             if (level == 0) {
+-                strncpy(chunk_split_cache[level].name, "uvm_gpu_chunk_t", sizeof(chunk_split_cache[level].name) - 1);
++                strscpy(chunk_split_cache[level].name, "uvm_gpu_chunk_t", sizeof(chunk_split_cache[level].name));
+                 size = sizeof(uvm_gpu_chunk_t);
+                 align = __alignof__(uvm_gpu_chunk_t);
+             } else {
