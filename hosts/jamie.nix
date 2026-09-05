@@ -33,8 +33,6 @@
 
   system.stateVersion = "23.05";
 
-  # Teofil (6f783a9e, 2026-09-02): no auto-reboot while veritas
-  # experiments run on jamie.
-  systemd.timers.auto-reboot.enable = false;
-  systemd.services.auto-reboot.enable = false;
+  # No kernel reboots during the veritas experiments (Teofil, 6f783a9e).
+  dse.autoReboot.pauseUntil = "2026-09-12";
 }

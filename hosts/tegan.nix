@@ -48,7 +48,6 @@
       };
     };
   };
-  # temporarily disable auto-reboot until the ricochet eval has finished running
-  systemd.timers.auto-reboot.enable = false;
-  systemd.services.auto-reboot.enable = false;
+  # No kernel reboots during the ricochet eval (Ilya, 96f90ab2, off since 2026-05-29).
+  dse.autoReboot.pauseUntil = "2026-10-05";
 }
