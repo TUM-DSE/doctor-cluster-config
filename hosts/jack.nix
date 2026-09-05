@@ -2,7 +2,7 @@
   imports = [
     ../modules/hardware/supermicro-120U-TNR.nix
     ../modules/nfs/client.nix
-    ../modules/nvidia.nix
+    ../modules/nvidia
     ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
     ../modules/vllm.nix
