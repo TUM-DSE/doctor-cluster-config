@@ -114,6 +114,10 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCc6kci58KP0YherG/i+yLZg5w5+EoVDSdPwp2rbEVRX2zn0ZuEruSFd1S0xR3oucXJnu7a4HlfdOn9eBJsIXr9MB2PJA0KSHUz1hN5RwpwuYO/KoWKQeKgDoHb5cydWKzrL+PsD15rs0Inq/AAHRwEELW6hQuCnuyzhC6HI4phYHgd3QZxahvMCaLz2C1Wwp3m/v0xkjG/0fjyBxyrcwNSeL/YINSNOKnXkKkZtAnSBCOPiQuHE+TpM3UedzlNHCGHRkwlTbHxpeHzB/bD5RV1oDmcnrjfHubszD7KjjkK3fRPb2TgQ8jeovwaclve2Dfh87bp1dqFOARL59wlmLVGlGi3ADkB2PiEu0zkAVjoXimRXw2J7SrOS1UvGlhbPEu7Y1PCjg6hkIZhWnxwJlOZRBLKCQf6P9wlrm/hAhvKr+rauU7tz0RlY2S5eXSBMDtQuGLWwzZDFoukDv1BLPTY0p4ya6AdryvZyMIlsIcDG45Am+rGxZcMGUNtvzda+CJhILr2P51xp6v/yZVDRNHsEhiBFEIHKleNL8/ZFZksnQ93b2kGg8VFYPb6M9RC50Vy/oNY6FxJCqzk6Q7CymXTlSSYeIWPlBekyvnOgder26hcg+nhxY0kZIlhsdjCCDaJoiu/rYXgIBW0M6yjmcH9I1l3pTISjZuN3fl5Uu2QnQ== dabokva@gmail.com"
   ];
 
+  wangcKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsL3xmJQaFDcQW4z267XU+IkVG/v3xVGfjEWopZ41// wangc@DESKTOP-H7SJ4J3"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -580,6 +584,20 @@ in
       ];
       openssh.authorizedKeys.keys = marklKeys;
       expires = "2027-03-01";
+    };
+
+    # Chuyang Wang, BSc thesis w/ Masa and Sandro (can be removed after March 2027)
+    wangc = {
+      isNormalUser = true;
+      home = "/home/wangc";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2114;
+      allowedHosts = [
+        "ian"
+      ];
+      openssh.authorizedKeys.keys = wangcKeys;
+      expires = "2027-03-31";
     };
   };
 
