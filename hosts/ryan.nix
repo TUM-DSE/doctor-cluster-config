@@ -8,13 +8,14 @@
     ../modules/nfs/client.nix
     ../modules/nfs
     ../modules/xilinx.nix
-    ../modules/amd_sev_svsm_wallet.nix
+    ../modules/amd_sev_svsm.nix
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
 
     # since the disk failure, ryan is partitioned with disko
     ../modules/disko-zfs.nix
+
   ];
 
   networking.hostName = "ryan";
