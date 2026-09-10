@@ -126,8 +126,10 @@ for key in "${!proc_pid[@]}"; do
 done
 
 # --- 2. FPGA status (supports multiple FPGAs per server) ---
-# Driver status: 0=not bound, 1=bound, 2=crashed
-echo "# HELP server_fpga_driver_status FPGA driver status (0=not bound, 1=bound, 2=crashed)" >> "$TMP_FILE"
+# Driver status: 0=not bound, 1=bound, 2=crash logged recently.
+# 0 is normal for an idle card: coyote_driver is loaded on demand via
+# `coyote-load` after programming the FPGA, not at boot.
+echo "# HELP server_fpga_driver_status FPGA driver status (0=not bound, 1=bound, 2=crash logged in the last 5min)" >> "$TMP_FILE"
 echo "# TYPE server_fpga_driver_status gauge" >> "$TMP_FILE"
 
 # Map PCI device IDs to FPGA names
@@ -144,11 +146,39 @@ fpga_name_for_devid() {
     esac
 }
 
-# Check for recent driver crash in dmesg (last 60 seconds)
+# How far back to look for a crash. The previous version claimed "last 60
+# seconds" but had no time filter at all -- it grepped the last 200 dmesg
+# *lines*, so on a quiet host a single old event stayed in view indefinitely
+# and the flag latched on forever.
+CRASH_WINDOW="5 min ago"
+
+# Report a genuinely dead or wedged driver. Deliberately narrow:
+#
+#   - "AMC OUTPUT ... Initialisation ERROR" is the V80's firmware console
+#     relayed through the healthy ami driver, not a driver fault.
+#   - "AMD-Vi ... IO_PAGE_FAULT" / "DMAR:" are IOMMU events raised by a
+#     workload DMAing to an unmapped address; the driver stays bound.
+#
+# Both fire in normal operation, and matching them is what produced permanent
+# false "crashed" readings on clara and amy.
 driver_crashed() {
-    local pci="$1"
-    dmesg --time-format iso 2>/dev/null | tail -200 | \
-        grep -qi "${pci}.*\(error\|crash\|fault\|oops\|panic\|timeout.*dma\)" && return 0
+    local pci="$1" drv="$2" log
+    log=$(dmesg --time-format iso --since "$CRASH_WINDOW" 2>/dev/null \
+          | grep -vE 'AMC OUTPUT|AMD-Vi|DMAR:')
+
+    # (a) hard failure logged against this PCI address
+    printf '%s\n' "$log" \
+      | grep -qiE "${pci//./\\.}.*(probe failed|failed to probe|panic|hardware error|link is down)" && return 0
+
+    # (b) kernel oops whose stack frames name this driver's module. The BUG:
+    #     line and the "[module]" frame are on different lines, so match the
+    #     oops block rather than a single line.
+    if [ -n "$drv" ] && [ "$drv" != "driver" ]; then
+        printf '%s\n' "$log" \
+          | grep -E -A20 '(BUG:|Oops|kernel NULL pointer|Call Trace)' \
+          | grep -qF "[${drv}]" && return 0
+    fi
+
     return 1
 }
 
@@ -167,7 +197,7 @@ while IFS= read -r line; do
     # Check driver binding
     fpga_driver=$(basename "$(readlink -f /sys/bus/pci/devices/0000:${pci_addr}/driver 2>/dev/null)" 2>/dev/null)
 
-    if driver_crashed "$pci_addr"; then
+    if driver_crashed "$pci_addr" "$fpga_driver"; then
         echo "server_fpga_driver_status{fpga=\"$fpga_name\",pci=\"$pci_addr\"} 2" >> "$TMP_FILE"
     elif [ -n "$fpga_driver" ] && [ "$fpga_driver" != "driver" ]; then
         echo "server_fpga_driver_status{fpga=\"$fpga_name\",pci=\"$pci_addr\"} 1" >> "$TMP_FILE"

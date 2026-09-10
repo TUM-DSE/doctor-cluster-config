@@ -360,7 +360,7 @@
       },
       "targets": [
         {
-          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Clara\",mode=\"idle\"}[1m])) * 100)",
+          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Clara\",mode=\"idle\"}[5m])) * 100)",
           "legendFormat": "{{host}}"
         }
       ],
@@ -717,7 +717,7 @@
       },
       "targets": [
         {
-          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Amy\",mode=\"idle\"}[1m])) * 100)",
+          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Amy\",mode=\"idle\"}[5m])) * 100)",
           "legendFormat": "{{host}}"
         }
       ],
@@ -1206,7 +1206,7 @@
       },
       "targets": [
         {
-          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Rose\",mode=\"idle\"}[1m])) * 100)",
+          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=\"Rose\",mode=\"idle\"}[5m])) * 100)",
           "legendFormat": "{{host}}"
         }
       ],
@@ -1599,7 +1599,7 @@
       "id": 6,
       "targets": [
         {
-          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=~\"Amy|Clara|Rose\",mode=\"idle\"}[1m])) * 100)",
+          "expr": "100 - (avg by (host) (rate(node_cpu_seconds_total{host=~\"Amy|Clara|Rose\",mode=\"idle\"}[5m])) * 100)",
           "legendFormat": "{{host}}"
         }
       ],
@@ -1690,11 +1690,11 @@
       },
       "targets": [
         {
-          "expr": "sum by (host) (rate(node_network_receive_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp65s0f0np0|enp97s0np0|enp1s0f0np0\"}[1m])) * 8",
+          "expr": "sum by (host) (rate(node_network_receive_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp65s0f0np0|enp97s0np0|enp1s0f0np0\"}[5m])) * 8",
           "legendFormat": "{{host}} RX"
         },
         {
-          "expr": "sum by (host) (rate(node_network_transmit_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp65s0f0np0|enp97s0np0|enp1s0f0np0\"}[1m])) * 8",
+          "expr": "sum by (host) (rate(node_network_transmit_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp65s0f0np0|enp97s0np0|enp1s0f0np0\"}[5m])) * 8",
           "legendFormat": "{{host}} TX"
         }
       ],
@@ -1725,11 +1725,11 @@
       },
       "targets": [
         {
-          "expr": "sum by (host) (rate(node_network_receive_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp194s0f0np0|enp226s0f0np0|enp161s0f0np0\"}[1m])) * 8",
+          "expr": "sum by (host) (rate(node_network_receive_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp194s0f0np0|enp226s0f0np0|enp161s0f0np0\"}[5m])) * 8",
           "legendFormat": "{{host}} RX"
         },
         {
-          "expr": "sum by (host) (rate(node_network_transmit_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp194s0f0np0|enp226s0f0np0|enp161s0f0np0\"}[1m])) * 8",
+          "expr": "sum by (host) (rate(node_network_transmit_bytes_total{host=~\"Amy|Clara|Rose\",device=~\"enp194s0f0np0|enp226s0f0np0|enp161s0f0np0\"}[5m])) * 8",
           "legendFormat": "{{host}} TX"
         }
       ],
