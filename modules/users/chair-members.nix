@@ -449,7 +449,7 @@ in
         isNormalUser = true;
         home = "/home/gierens";
         inherit extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
+        shell = "/run/current-system/sw/bin/bash";
         uid = 2003;
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = gierensKeys;
