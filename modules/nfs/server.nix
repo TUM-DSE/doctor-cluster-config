@@ -141,6 +141,9 @@
       enable = true;
       # every 15 minutes
       interval = "*:0/15";
+      # -i instead of -I: don't replicate intermediate snapshots (@borg,
+      # zfs-auto-snap) to the backup, where nothing would ever prune them.
+      commonArgs = [ "--no-stream" ];
       commands."nfs-home/home" = {
         target = "syncoid@nfs-backup:nfs-home/home";
         sshKey = config.sops.secrets.syncoid.path;
