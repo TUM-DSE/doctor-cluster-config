@@ -13,12 +13,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCn1Vx2/JLKXn/o362Rt3nAX4RJNwuO04kt9yw3GQkID4PevH9yW4UYQGjk2pu5DaPku9fRk0M5A40gS+4j4YC0ALnzJn8ZXpHqSD9OmJ1mt+3oWsrb+MOo7zPKHnR/Zy975JHBKv3C905K/6qFkpAnQer7DuHQHY8DfxgGlhhrfpqnV3BI9wO4A/Pn75wUOcLCf29Z+Z0YQrfikeyMEDKk1cEl3V+IWWOpdjckQAyAH8pJv1hN4BjWndW7Gk36TOykVU1SF8SIuhu13jLzf8ZiUrVK0UnJGPp6zTTwTQ7FChf3uKXHEviSR8ARIfFjBNht7z65ooVZDhyUfjmZVn5u0PpIfs9DNPE7B2rqHShHfHgicfVBJZ2eJH5pnhP6Yqmg56Q8Gmj6X8Jz4Ffc3LE3UTWRVNzOoP54baocTz2R974infbOjNt4aPJ5mzsK6bgIi4W6XlMq+Pk+DsoQUk/2a2T0bNGMpMdq/1Y5WaVnvZnP7WjqIvqIzVZyD8A4CPc= atsushi@hinoki"
   ];
 
-  dimitraKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUXap/inau3PgwfwwzA/xgjPFwMIDNlNlQ6FDPxUS1bFxvLUewLlP7tHEjlU4aCe5/KPqtbnEOuU3ZBRBPiGAXA1WxIofQH4GLD9kUoxQXk3n9budu7Ni0Mc7fk4B4yKA6hAxdy78FDbWyJe7UMYhFvDJs9+A7HnxishLKrea3LjDVxW/2dhpIDOj7jKDJKh56m8WQn7Msb1w02f7o0J46EA49y1hlJFuGjLHSYwx5O7flFh2tyKiARDuriqp64rSLONWXmOWDX8d+JcnIZJGrMXxTWIuuqxkdsw0tvi7g/msDQrn8DVGX2sRxoGYksKMrMhYAAAoLiwH0Zi2777DZ demy@ubuntu"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDkFay+8y99fYWHXCn3JJG+iuA9UN4oEdUD2l4C5oyE+j9gIpc1m4TzNYOmBHmvZRKKwhrHKr8ORHdtm26+iQCkV2j5/AuununfsuXr/pL+Zmm+muKgVPdtturCEEa5uzfEiuFHa2BiwW4FarBu1pC/Oc35R8NOByDAPe190iOS4kf1JhlhbOjUHjf7b823FwDfqAteNVINyNoIBWG/yJBv9Xzlr62G2DNkUo9VLreANCgTwuLwP1q3gxavlUNIDsZYJ+k1TdjB0OK1T7MgCvz4gUIjLadYgnMi9qGeq5eiJxmcK1VUDenlY1rzKpTbt3pZwgFO9OX4OxGWczCSbKImi0UdpbsMoVnIHm6xe2Y+c54/AgeVztsWeD4L9PArrdjBaXkcy/ALs+xNhQEJgPZifU6PkL9c1PP++n7IozLZSTHex2WdXAqxsXTeEuE7ldpzAQL5Hnj3qsaIcdrccd9iWslfSBnWxFjqE3+bPe71I+1c1sdI0hP7OGQng+8ReKS6hL7LkzsJlDfI6k/WUg299K4Xq/ljqE7rT9K6/qxe8E2bBvo18DhgZ0WhPuwsDpGyZm9DwnYDN8Xuv5QutzPYyuGmm65YNjJ9I7Dhq4npKXVtZGZI/46KsvDqr6StLKyCNZywxdMFW3FN01+QWtRWNPCBJlYTE3r1pveEkM26Q== demy@ubuntu"
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAZ8RRWQz/Sy8L+H6eUQJOROlV733U/Ir32SaQP+rLrQGfkqE3oguRDtHfj6NEA98q7eaQDx9v57EUpHe9rTDDF/JSjoOsbWEF90M7mMTqBjFAb742pB/CVOplyhnniZh22vruu+GC6hBjd4cg9Qw6IPueZLB4f1nkXSCboW0YY3I4Gaq9DFlk2Gi8G1VQv1tYa5+6i9eOEW/+h2VUQkHtCbNYFnt/5wlsTkP6Gh6MeBRkrUQMOgNmYfJhPtE0ZLTkrTs7BZCW5i5CE68kXyYWh2WHLKM1Z3vw1SA2MuEpQPdoKRwpiQf+ZoWeciVd9+1RXcS7PAWcOJg854I9RyRhDlErAS1ENmO3ivqEYo2FNd+Sin+/uvG0c8IJONJMZyWOnaLb+dLfV0/0EdAo1htFLFefp83DtK9r1QcYoFgAL7kwYk9Ox4R9CDt3y/UueMbmWC3W+jSyUm03LZJkJa0tXkKE0cZYcajoH2cdSWjZdUbhr00jBjzJoovGb1tKw2k= dimitra@rose"
-  ];
-
   dimitriosKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5ulxJK+wvBf1Z3bQxvSIX3gPBA4LUC5tsFPk/BbBnl dimstav23@lenovoT14s"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB8bvCpTxT0Mc/4yv8l4bDvflXUStcwm3MpLXai/O9od dimstav23@lenovo"
@@ -39,10 +33,6 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8gXtpJq6uxzK2fWP5GkF1O2ESetKBbDNRjvzvG/yfFbyaTlwtC1JRydC7gbZKLSAVBk1mjO2tNbQ413rpqP9qVufPu68Wj0T2ZzfxtVGdBhk8j/AlG7s71KoH0mu57MLt5Ar2L9tLPLJChmzJP/bc5mIDlPUtiJ7+n3nVU3DsFRt+w13cQ+iHAvTxKVTjPVacrIorhHAeUw4KOD3wnuPEtYqzFnmizzDFFxP2AoivC5aQ0xtIgdoCSG1YBvn3SQzaF55JnO8wmk+OMJ8EKucwkdf6JyoTM/3oh1wxHOSj9jaIfLT4YDonDcPgivbueWxQj7Qjos31P9Ult5Uy7hLtgfVNbXAzjjSkQGQYt06/WNORSJJ5jdTdODjXRfDHXBudugEM3J8fspyHGaViPaHujkiNheRK9OR58zIG6omXwraMYbXqACQvOqZ74r3nOE8MxNdGhSq5GsiDJ/lNYh5XWCbMt8+NtmhbUAcMYbtLSLcPKyX8zTdjAM+JN37neKuS94vZCigh8V3AwHx/PGh8W7pkWHYwXmNeiWgBsbWcckzoY+OSCDj1zTUsDioMefvVM4gESMdfq/Uw1XhKyO2adnooQKDNVNPlXdYORQaLyfEuEecNHmBQ8Lsdc8IwXUG2AHwPXG5E7N8Gqo6ArTJAPfao6eGAoAUFmaKRg0GL4Q== chenjiyang1991@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqpz+1+6rNq5ez911qwLxtnt0R+Wvq3iesmupf3Q8A4 victus-linux-22.04"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAp9gxiT7WqXaCr5PTxRt96j0subOaeuT5xvna0VpspD chenjiyang1991@gmail.com"
-  ];
-
-  cmainasKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/UeXK/s6ZU9cp05safmSmiQ+kwLacZcDipO4/3aEiYjkq6Nf9/OLINLhg0QbPhvXLwJRh7CuEBkWOSNQx+u5rcemHA8GnhVIfWCoUSMEiZma4W3DvkzuLSxmaT9LZGZGOZkHJV6uNF1QnVeOyD0oafXiivVMow6Rr/HLIruvHfaM2xxj2EJsRdkXHHyBveXc44l/FAWfljU5DrpyLo03D4UI2Ko63MP02YLuNmZU2Rnb4LAPdFzJ6sGf1DX0UIabKvOBj/MJqzfZvRhmU3z2MuKDK97JbV2WiQhBm4NOd61Iid35nlODgRhL8CGArwrk86vufEtHndWy5DRwg0M7q/DvEYd7iNXDN8DKca+6UtQsNBTa8a5eOZuBvMAXsEWpBwKaIjpTVw9NeJd9Yt52Wj+LNRtChJJr5Z8UltC9TWFkyiJPNVfxuNhagW+OgmzK/LKXAGp2l+24U1ntBTdT9PONg2LWpxbfHGsYfhC4FWyE/HzJ5vSC6rGOdACjPYFFiAh5VsbLOTPrlF6Xu40Plm/BiFAE/Cr1n16LFu2sPe1PlKs+1pdhStTN0GzlV1y6VmFPmcYecpB/K7ZV0gJOe2ERqyb8yOqJp50evcwtzF3ZJKR9qRMjOXycOwdqigDU3+nCKHrWz6XwYkHUwLZ7ydJVDbzwT7rDlc871kRm7Nw=="
   ];
 
   masaKeys = [
@@ -153,17 +143,6 @@ in
   config = {
     # admin uids in this range (1000 and 1008) but not in this file
     users.users = {
-      # Dimitra Giantsidi
-      # edinburgh
-      dimitra = {
-        isNormalUser = true;
-        home = "/home/dimitra";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1001;
-        openssh.authorizedKeys.keys = dimitraKeys;
-      };
-
       # Dimitris Stavrakakis
       dimitrios = {
         isNormalUser = true;
@@ -227,16 +206,6 @@ in
         uid = 1019;
         openssh.authorizedKeys.keys = chenjiyangKeys;
         xrdpAccess = true;
-      };
-
-      # Charalampos Mainas
-      cmainas = {
-        isNormalUser = true;
-        home = "/home/cmainas";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/bash";
-        uid = 1020;
-        openssh.authorizedKeys.keys = cmainasKeys;
       };
 
       # Masanori Misono
@@ -490,6 +459,8 @@ in
       "oguzcan"
       "evgeny"
       "sandro"
+      "dimitra"
+      "cmainas"
     ];
 
     nix.settings.trusted-users = [

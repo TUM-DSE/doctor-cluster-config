@@ -197,10 +197,7 @@
         # large memory traces
         "/run/borgbackup/nfs-share/redha/traces"
         # vm images
-        "/run/borgbackup/nfs-share/cmainas/**/*.img"
         "/run/borgbackup/nfs-share/martinL/**/*.img"
-        # large google traces
-        "/run/borgbackup/nfs-share/cmainas/traces"
         "**/node_modules"
       ];
       extraCreateArgs = [ "--exclude-caches" ];
