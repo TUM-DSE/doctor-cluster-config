@@ -2,7 +2,6 @@ locals {
   chair_members = toset([
     "AtsushiKoshiba", # Atsushi Koshiba
     "bhatotia",       # Pramod Bhatotia
-    "dgiantsidi",     # Dimitra Giantsidi
     "dimstav23",      # Dimitris Stavrakakis
     "harshanavkis",   # Harshavardhan Unnibhavi
     "manosgior",      # Emmanouil (Manos) Giortamis

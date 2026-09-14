@@ -23,7 +23,6 @@ let
       joerg
       joerg-mac
       peter
-      cmainas
       dimitrios
       atsushi
       patrick
