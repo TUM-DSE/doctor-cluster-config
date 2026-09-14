@@ -27,11 +27,11 @@ let
       atsushi
       patrick
       francisco
-      mmisono
+      masa
       ilya
       felix
       anatole
-      jiyang
+      chenjiyang
       martin
       aleksandra
       thore
