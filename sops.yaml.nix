@@ -36,7 +36,7 @@ let
       aleksandra
       thore
       harshanavkis
-      halalboro
+      anubhav
       gierens
       simonk
     ];
