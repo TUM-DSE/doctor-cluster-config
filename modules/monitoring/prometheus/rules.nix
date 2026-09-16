@@ -13,6 +13,28 @@
         })
       )
       // {
+        GradingBackupStale = {
+          expr = "grading_backup_age_seconds > 129600";
+          annotations.description = "Grading backup on Astrid has not completed for 36 hours";
+        };
+        GradingMonitoringStale = {
+          expr = "time() - grading_last_run > 900";
+          annotations.description = "Grading health collection on Astrid has stopped";
+        };
+        GradingServiceFailed = {
+          expr = "{__name__=~\"grading_(postgresql|migrate|web|tasks|github|backup|sync|web_provision)_failed\"} > 0";
+          annotations.description = "A grading maintenance service failed on Astrid";
+        };
+        GradingQueueStalled = {
+          expr = "grading_queue_oldest_seconds > 3600 or grading_leases_stale > 0 or grading_locks_pending > 0 or grading_metrics_failed > 0";
+          for = "15m";
+          annotations.description = "Grading queue, worker metrics, or deadline locking needs attention";
+        };
+        GradingTaskFailures = {
+          expr = "grading_tasks_failed > 0 or grading_provisioning_failed > 0";
+          for = "15m";
+          annotations.description = "The grading service reports failed tasks or repository provisioning";
+        };
         BorgbackupJobFailed = {
           expr = ''task_exit_status{name=~"borgbackup-job-.*"} != 0'';
           annotations.description = "{{$labels.name}} on {{$labels.host}} failed with exit status {{$value}}";

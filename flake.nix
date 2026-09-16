@@ -92,6 +92,8 @@
 
     coyote.url = "github:Mic92/Coyote/f4b0bd03901e11e2f266ad619e3bd46eacd72f54"; # https://github.com/fpgasystems/Coyote/pull/236
     coyote.flake = false;
+
+    srg-grading.url = "git+https://github.com/martin-fink/srg-grading.git";
   };
 
   outputs =

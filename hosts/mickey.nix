@@ -1,6 +1,7 @@
 { lib, ...}: {
   imports = [
     ../modules/k3s/agent.nix
+    ../modules/grading
     ../modules/hardware/poweredge-r440.nix
     ../modules/disko-zfs.nix
     ../modules/disko-nfs-storage.nix
@@ -15,6 +16,10 @@
 
   services.nfs-server.interface = "enp94s0f0np0";
   services.nfs-server.backupPublickey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOpFka8+cr1lvC0bzMqdqP1RRIvnD+nb3Mog56hGGkB5"; # dan
+
+  services.grading-worker = {
+    enable = true;
+  };
 
   networking.hostName = "mickey";
 
