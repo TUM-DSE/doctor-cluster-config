@@ -3,7 +3,8 @@
   # Runs as a Docker container because nixpkgs has no maintained CUDA-enabled
   # vLLM package. FP8 checkpoint (~28GiB) is used to fit the 48GB A40
   # (weight-only FP8-Marlin kernels on Ampere). Only 16 of 64 layers keep a
-  # KV cache (hybrid attention), so with fp8 KV the full 262144 context fits.
+  # KV cache (hybrid attention). With the vision tower loaded and encoder
+  # cache reserved, fp8 KV leaves room for ~131k context on a single request.
   # Flags follow https://recipes.vllm.ai/Qwen/Qwen3.8-27B
   virtualisation.oci-containers = {
     backend = "docker";
@@ -14,14 +15,18 @@
         "Qwen/Qwen3.8-27B-FP8"
         "--served-model-name"
         "qwen3.8-27b"
-        # Text-only serving; skips loading the vision tower to leave VRAM for KV.
-        "--language-model-only"
+        # Cap multimodal items per prompt so vLLM's encoder profiling run
+        # reserves less VRAM; video is disabled entirely.
+        "--limit-mm-per-prompt"
+        ''{"image":4,"video":0}''
+        "--mm-processor-cache-gb"
+        "1"
         "--host"
         "::"
         "--port"
         "8000"
         "--max-model-len"
-        "262144"
+        "131072"
         "--kv-cache-dtype"
         "fp8"
         "--gpu-memory-utilization"
