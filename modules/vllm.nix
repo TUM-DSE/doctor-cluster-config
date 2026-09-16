@@ -42,8 +42,6 @@
         # Always report token usage (incl. prefix-cache hits) to clients.
         "--enable-force-include-usage"
         "--enable-prompt-tokens-details"
-        # Per-request log lines drown the journal; metrics cover this.
-        "--disable-log-requests"
         "--disable-uvicorn-access-log"
         # Built-in MTP draft head; dense 27B decode is bandwidth-bound on the A40.
         "--speculative-config"
