@@ -1,0 +1,24 @@
+name: Bump CONFIG_VERSION
+# See modules/no-downgrade.nix: machines refuse to switch to a configuration
+# with a lower CONFIG_VERSION than the one they are running.
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Bump
+        run: |
+          date -u +%Y%m%d > CONFIG_VERSION
+          if git diff --quiet; then exit 0; fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "CONFIG_VERSION: bump to $(cat CONFIG_VERSION)" CONFIG_VERSION
+          git push
