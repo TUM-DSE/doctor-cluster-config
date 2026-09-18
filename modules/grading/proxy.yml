@@ -1,0 +1,98 @@
+---
+- name: Configure the grading nginx proxy
+  hosts: all
+  become: true
+  tasks:
+    - name: Install nginx and security updates
+      ansible.builtin.apt:
+        name: [nginx, unattended-upgrades]
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Create proxy configuration directory
+      ansible.builtin.file:
+        path: /etc/grading
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Retain the existing internal CA trust
+      ansible.builtin.copy:
+        src: /var/lib/grading-tls/ca.crt
+        dest: /etc/grading/ca.crt
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Reload nginx
+
+    - name: Verify the grading backend
+      ansible.builtin.uri:
+        url: https://astrid.dos.cit.tum.de:3000/readyz
+        ca_path: /etc/grading/ca.crt
+        status_code: 200
+      when: not ansible_check_mode
+
+    - name: Install the proxy site
+      ansible.builtin.copy:
+        content: |
+          server {
+              listen 80;
+              listen [::]:80;
+              server_name grading.dos.cit.tum.de;
+              return 301 https://grading.dos.cit.tum.de$request_uri;
+          }
+          server {
+              listen 443 ssl;
+              listen [::]:443 ssl;
+              server_name grading.dos.cit.tum.de;
+              ssl_certificate /etc/pira-client/live/host:f:dosvm7.cit.tum.de.fullchain.pem;
+              ssl_certificate_key /etc/pira-client/live/host:f:dosvm7.cit.tum.de.privkey.pem;
+              ssl_protocols TLSv1.2 TLSv1.3;
+              client_max_body_size 16m;
+              # OAuth callback query parameters must not appear in access logs.
+              access_log off;
+              location /internal/ { return 404; }
+              location / {
+                  proxy_pass https://astrid.dos.cit.tum.de:3000;
+                  proxy_ssl_server_name on;
+                  proxy_ssl_name astrid.dos.cit.tum.de;
+                  proxy_ssl_verify on;
+                  proxy_ssl_trusted_certificate /etc/grading/ca.crt;
+                  proxy_set_header Host grading.dos.cit.tum.de;
+                  proxy_set_header X-Forwarded-Proto https;
+                  proxy_set_header X-Forwarded-For $remote_addr;
+                  proxy_set_header X-Real-IP $remote_addr;
+              }
+          }
+        dest: /etc/nginx/sites-available/grading.conf
+        mode: '0644'
+      notify: Reload nginx
+
+    - name: Enable the grading site
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/grading.conf
+        dest: /etc/nginx/sites-enabled/grading.conf
+        state: link
+      notify: Reload nginx
+
+    - name: Disable the nginx default site
+      ansible.builtin.file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      notify: Reload nginx
+
+    - name: Enable security updates
+      ansible.builtin.systemd_service:
+        name: unattended-upgrades.service
+        enabled: true
+        state: started
+
+    - name: Apply nginx changes
+      ansible.builtin.meta: flush_handlers
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.shell: nginx -t && systemctl enable --now nginx && systemctl reload nginx
+      changed_when: true
