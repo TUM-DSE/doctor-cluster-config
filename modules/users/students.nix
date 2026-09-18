@@ -364,7 +364,7 @@ in
       expires = "2026-10-30";
     };
 
-    # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
+    # Martin Lindbuechl, GR student working w/ Ilya
     martinLi = {
       isNormalUser = true;
       home = "/home/martinLi";
@@ -375,9 +375,10 @@ in
         "irene"
         "polly"
         "xavier"
+        "joy"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2026-10-30";
+      expires = "2027-03-30";
     };
 
     # Samuel Khuon, BSc student working w/ Ilya (can be removed after October 2026)
