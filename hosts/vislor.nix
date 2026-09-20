@@ -25,5 +25,5 @@
   boot.kernelModules = [
     "iavf"
   ];
-
+  services.envfs.enable = true;
 }
