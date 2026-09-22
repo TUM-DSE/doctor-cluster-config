@@ -90,7 +90,7 @@
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
 
-    coyote.url = "github:Mic92/Coyote/f4b0bd03901e11e2f266ad619e3bd46eacd72f54"; # https://github.com/fpgasystems/Coyote/pull/236
+    coyote.url = "github:Mic92/Coyote/64d9203292167a9d06b28c4edb71bd6602571453"; # https://github.com/fpgasystems/Coyote/pulls?q=author%3AMic92+driver
     coyote.flake = false;
 
     srg-grading.url = "git+https://github.com/martin-fink/srg-grading.git";
