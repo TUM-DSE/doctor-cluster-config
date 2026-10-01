@@ -5,6 +5,7 @@
     ../modules/nfs/client.nix
     ../modules/dpdk.nix
     ../modules/vfio/iommu-intel.nix
+    ../modules/gitlab-runner.nix
   ];
 
   networking.hostName = "jackson";
