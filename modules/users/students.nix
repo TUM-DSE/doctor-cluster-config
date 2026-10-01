@@ -118,6 +118,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsL3xmJQaFDcQW4z267XU+IkVG/v3xVGfjEWopZ41// wangc@DESKTOP-H7SJ4J3"
   ];
 
+  diegoKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMkWoCSEZ9snNafLouS66P7VSPUdkD5haLMTGE3lvd4w diegosanchez@diego-hplaptop15da0xxx"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -573,6 +577,22 @@ in
       expires = "2026-10-31";
     };
     
+    # Diego Lopez, GR w/ Aleksandra (can be removed after Feb 2027)
+    diego = {
+      isNormalUser = true;
+      home = "/home/diego";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2013;
+      allowedHosts = [
+        "rose"
+	"amy"
+	"clara"
+      ];
+      openssh.authorizedKeys.keys = diegoKeys;
+      expires = "2027-03-01";
+    };
+    
     # Kilian Markl, MSc thesis working w/ Anders (can be removed after Jan 2027)
     markl = {
       isNormalUser = true;
@@ -694,4 +714,5 @@ in
     "neel"
     "neelm"
   ];
+
 }
