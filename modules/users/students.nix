@@ -496,7 +496,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = jakubKeys;
-      expires = "2026-09-30";
+      expires = "2026-11-30";
     };
 
     # Ivan Logvynenko, Bsc thesis working w/ Anatole (can be removed after October 2026)
