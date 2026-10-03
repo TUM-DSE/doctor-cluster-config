@@ -88,10 +88,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBmF08VOHT7d+J8krUhC/FZjFsQOgG1ikZ3mddzQj2q7 ivan@Moster"
   ];
 
-	alexKeys = [
-		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvpwaPg39D9JvEtzKbCUAfYxLjSU2bCg+zCb+N0iI3P alex.bartelt@tum.de"
-		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
-	];
+  alexKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvpwaPg39D9JvEtzKbCUAfYxLjSU2bCg+zCb+N0iI3P alex.bartelt@tum.de"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
+  ];
 
   senadKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
@@ -491,8 +491,8 @@ in
       openssh.authorizedKeys.keys = ivanlKeys;
       expires = "2026-10-30";
     };
-    
-		# Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
+
+    # Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
     alex = {
       isNormalUser = true;
       home = "/home/alex";
@@ -533,13 +533,13 @@ in
       uid = 2012;
       allowedHosts = [
         "jamie"
-	"jack"
-	"steve"
+        "jack"
+        "steve"
       ];
       openssh.authorizedKeys.keys = andreiKeys;
       expires = "2026-10-31";
     };
-    
+
     # Diego Lopez, GR w/ Aleksandra (can be removed after Feb 2027)
     diego = {
       isNormalUser = true;
@@ -549,13 +549,13 @@ in
       uid = 2013;
       allowedHosts = [
         "rose"
-	"amy"
-	"clara"
+        "amy"
+        "clara"
       ];
       openssh.authorizedKeys.keys = diegoKeys;
       expires = "2027-03-01";
     };
-    
+
     # Kilian Markl, MSc thesis working w/ Anders (can be removed after Jan 2027)
     markl = {
       isNormalUser = true;
