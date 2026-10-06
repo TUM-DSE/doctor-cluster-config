@@ -45,15 +45,15 @@ Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.m
     - firmware bundle_id 1.1.1.1021
 - 2x AMD/Xilinx Alveo V80 FPGA (high profile, dual slot)
     - rose
-        - MAC1: 00:0A:35:26:07:40 (rose-adric15)
+        - MAC1: 00:0A:35:26:07:40
         - MAC2: 00:0A:35:26:07:41
         - MAC3: 00:0A:35:26:07:42
         - MAC4: 00:0A:35:26:07:43 (rose-clara)
-    - clara
-        - MAC1: 
-        - MAC2: 
-        - MAC3: 
-        - MAC4: 
+    - clara (BDF 81:00.0, Serial XFL1A3A2MN3U, AMC 2.4.0 READY)
+        - MAC1: 00:0A:35:26:32:E0
+        - MAC2: 00:0A:35:26:32:E1
+        - MAC3: 00:0A:35:26:32:E2
+        - MAC4: 00:0A:35:26:32:E3
 - 10x Intel E810-C 100GbE NIC (high and low profile, dual and single port, single slot)
     - graham: dual port. (graham-adric1,graham-vislor)
         - MAC1: b4:96:91:a4:1c:f0
@@ -99,14 +99,14 @@ Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.m
     - 1x ryan: (boot)
     - 1x adelaide: (experiments)
 - 2x Mellanox ConnectX-7 200G NIC:
-    - jamie: dual port. (jamie-ian [200G], port 2 not connected)
+    - jamie: dual port. (not connected)
         - MAC1: 60:5e:65:c6:79:ec
         - MAC2: 60:5e:65:c6:79:ed
-    - ian: dual port (ian-jamie [200G], ian-river)
+    - ian: dual port (ian-river)
         - MAC1: 60:5e:65:c6:3c:7c
         - MAC2: 60:5e:65:c6:3c:7d
     - polly (,)
-    - steve (,)
+    - steve: dual port. (steve-steve [200G loopback], steve-steve [200G loopback])
 
 Onboard (not listed by [List of slots](#List of slots)):
 

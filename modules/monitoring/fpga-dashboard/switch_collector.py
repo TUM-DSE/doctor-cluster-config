@@ -24,7 +24,6 @@ PORT_LABELS = {
     "100ge1/0/10": "Momiji U280 FPGA",
     "100ge1/0/11": "Clara U280 FPGA",
     "100ge1/0/12": "Amy U280 FPGA",
-    "100ge1/0/15": "Rose V80 FPGA",
     "100ge1/0/16": "Rose E810",
     "10ge1/0/33":  "Amy Broadcom 10G",
     "10ge1/0/34":  "Clara Broadcom 10G",
