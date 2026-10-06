@@ -70,6 +70,19 @@ in {
       expires = "2026-10-30";
     };
 
+    cvmstore2 = {
+      isNormalUser = true;
+      home = "/home/cvmstore2";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4018;
+      inherit extraGroups;
+      allowedHosts = [
+        "vislor"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMyln/6skEj9CVOzo2xv6HDY6QhRYg+m1uZF5eQchvZD"];
+      expires = "2026-10-30";
+    };
+
 };
 
   # DANGER ZONE!
