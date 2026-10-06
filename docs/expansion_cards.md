@@ -17,7 +17,7 @@ Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.m
 - 1x Intel Stratix 10 GX FPGA Development Kit H-Tile (high profile, dual slot)
     - office 01.07.60
 - 1x Intel Agilex 7 FPGA I-Series Development Kit 2x R-Tile and 1x F-Tile (high profile, dual slot)
-    - office 01.07.60
+    - hardware room (inside a workstation)
 - 1x (Intel) Napatech F2070X Infrastructure Processing Unit (IPU) (high profile, dual slot)
     - TBD
 - 3x AMD/Xilinx Alveo U50 FPGA (low profile, single slot)
@@ -49,7 +49,7 @@ Intel FPGAs (Arria/Stratix/Agilex) — toolchain and usage notes: [intel-fpgas.m
         - MAC2: 00:0A:35:26:07:41
         - MAC3: 00:0A:35:26:07:42
         - MAC4: 00:0A:35:26:07:43 (rose-clara)
-    - clara (BDF 81:00.0, Serial XFL1A3A2MN3U, AMC 2.4.0 READY)
+    - amy (Serial XFL1A3A2MN3U, AMC 2.4.0; moved from clara 2026-10, BDF reassigned on amy)
         - MAC1: 00:0A:35:26:32:E0
         - MAC2: 00:0A:35:26:32:E1
         - MAC3: 00:0A:35:26:32:E2
