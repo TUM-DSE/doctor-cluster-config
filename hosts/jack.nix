@@ -5,6 +5,7 @@
     ../modules/nvidia
     ../modules/vfio/iommu-intel.nix
     ../modules/dpdk.nix
+    ../modules/vllm.nix
   ];
 
 
