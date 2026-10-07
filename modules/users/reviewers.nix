@@ -82,6 +82,45 @@ in {
       openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMyln/6skEj9CVOzo2xv6HDY6QhRYg+m1uZF5eQchvZD"];
       expires = "2026-10-30";
     };
+    focacciaRevA = {
+      isNormalUser = true;
+      home = "/home/focacciaRevA";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4019;
+      inherit extraGroups;
+      allowedHosts = [
+        "eliza"
+	"adelaide"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPCxMNnGtqCx1yf166b6lsfIzTS54I7KwH7+8Zf7IXM7"];
+      expires = "2026-11-30";
+    };
+    focacciaRevB = {
+      isNormalUser = true;
+      home = "/home/focacciaRevB";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4020;
+      inherit extraGroups;
+      allowedHosts = [
+        "eliza"
+	"adelaide"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwFcz8vOBJyKsuiLYoySnVFSF7EAsCm8P89BNgb6luS"];
+      expires = "2026-11-30";
+    };
+    focacciaRevC = {
+      isNormalUser = true;
+      home = "/home/focacciaRevC";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4021;
+      inherit extraGroups;
+      allowedHosts = [
+        "eliza"
+	"adelaide"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCgYTyg+BwGTA3tmcAyZ3azop/KjZQ6/hTszxAsQEjIOdzC1WmZcOrFvJwMYuwe3OKWjVLCGD4XtjJSwN1dys7PM8e2nAtzCkPbrGVp+A/V6YGC0JnEHlYSVoYJxnxJR9PhqLop1BljCtLtAto8fenJCHLc2yzy0QUp6+NhFR9QcJn0Jhlq8v34C3mQzgy/vFNSYWwY+U/b9oatZty7HKP4oFB9P2kyYmN0AW00e+WIGr5okaUivJvBPaeOtqVDJZaTJIghmjOXmXTU/RmiQIq4iMRVy0tDjtESwJ8Y0UtUhOa3Eh7NsKKHtsGNajXTcqXsN64jsZkcEE6KQV+NbybXO6NBzpIQ3vkowsYbQ2spjpxZ5MiST+tVyRWKPsPQFs2K0eXSsMVBFil/8IhhtjNFJLRT3rBxzhx3v+FDvuZqzTDz62Dgylf9HilyvtA1vT9Z548RvTnzTcbZl5avZ1fxI1kPetCntCrqTN0EtoKfoTVNurnO2z3Wg+ZQoFssZnxSsi9GSIQRuRmHm+TAW1QMJr93HygBeR+Y0QM6iKAAmeut+KewxEWOuju+e09VvDn3WosCu9Qb44471+E6J7Pms8aYSGTRI53En3xaBYGTq/kC9X2ZlrPUM/v98lVOdGVYb8DLXari8iQsYEylAsxM/EG9/A0rcn20kfubeH3oYw== reviewer"];
+      expires = "2026-11-30";
+    };
 
 };
 
