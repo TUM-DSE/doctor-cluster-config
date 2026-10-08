@@ -40,6 +40,7 @@ let
       halalboro
       gierens
       simonk
+      theo
     ];
     all = builtins.attrValues (keys.users // keys.machines);
   };
