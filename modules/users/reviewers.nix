@@ -82,6 +82,20 @@ in {
       openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMyln/6skEj9CVOzo2xv6HDY6QhRYg+m1uZF5eQchvZD"];
       expires = "2026-10-30";
     };
+
+    cvmstore3 = {
+      isNormalUser = true;
+      home = "/home/cvmstore3";
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 4022;
+      inherit extraGroups;
+      allowedHosts = [
+        "vislor"
+      ];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJWsBuj3ERKItgjFwKp8AXpAzgIUNARQILiqwIk9BVSC"];
+      expires = "2026-10-30";
+    };
+  
     focacciaRevA = {
       isNormalUser = true;
       home = "/home/focacciaRevA";
