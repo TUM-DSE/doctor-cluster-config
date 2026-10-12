@@ -114,6 +114,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMkWoCSEZ9snNafLouS66P7VSPUdkD5haLMTGE3lvd4w diegosanchez@diego-hplaptop15da0xxx"
   ];
 
+  minyaoKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII6NPDc3iWN4ClsPLYzEARLAKhF0vkYhJSYOPVmnEysg minyao@minyaodeMacBook-Air.local"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -581,6 +585,20 @@ in
         "ian"
       ];
       openssh.authorizedKeys.keys = wangcKeys;
+      expires = "2027-03-31";
+    };
+
+    # Min-Yao Chang, BSc exchange student w/ Teofil (can be removed after March 2027)
+    minyao = {
+      isNormalUser = true;
+      home = "/home/minyao";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2115;
+      allowedHosts = [
+        "vislor"
+      ];
+      openssh.authorizedKeys.keys = minyaoKeys;
       expires = "2027-03-31";
     };
   };
