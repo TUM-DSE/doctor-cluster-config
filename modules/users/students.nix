@@ -286,7 +286,7 @@ in
       expires = "2026-12-31";
     };
 
-    # Radu Raceala (BSc thesis with Anatole/Peter)
+    # Radu Raceala (GR with Simon/Ilya)
     radu = {
       isNormalUser = true;
       home = "/home/radu";
@@ -299,6 +299,7 @@ in
         "christina"
         "adelaide"
         "jackson"
+        "joy"
       ];
       openssh.authorizedKeys.keys = raduKeys;
       expires = "2026-10-31";
