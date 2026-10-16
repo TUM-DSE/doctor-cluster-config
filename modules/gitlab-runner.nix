@@ -16,7 +16,10 @@
         authenticationTokenConfigFile = config.sops.secrets.gitlab-runner-compiler-hw-lab.path;
         dockerImage = "debian:stable";
         dockerPullPolicy = "always";
-        dockerAllowedImages = [ "gitlab.lrz.de:5005/compiler-hw-lab/infra:*" ];
+        dockerAllowedImages = [ 
+          "gitlab.lrz.de:5005/compiler-hw-lab/infra:*"
+          "gitlab.lrz.de:5005/compiler-hw-lab/infra/*:*"
+        ];
         limit = 6;
         registrationFlags = [
           "--docker-cpus 6"
