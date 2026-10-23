@@ -76,10 +76,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwQd4nCBkaiCSXrwNdWbvQdK+MUAMA+t3X/GuRBtoGE simon.weckler@tum.de"
   ];
 
-  denizKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEhDutzyQHLW+UqWpQ84A+q6bY2KUrLFgLjPlKOWzL3 denizmersinlioglu2005@gmail.com"
-  ];
-
   tuncKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+deOcBdufU6Ug+T9DflHrBeQ9cBo6Yl/YjQ+22CaLsd8ZF60nAUQddwu5VXGs5gcK2IUtL9UUpuWgMhSrQHJ5K5Bh1fYQsLFmiH5TFfQAQhO9UIwlJTy8+H89R07Lbro0wWe3/eVf0sAqtlkmcnjZuGg43eJ3sMFtjcwU9w+KZs1lQhC4v/D0W264ZOs+I8FhWCWab7aZMWm7UTxJmc6aq4mcOzqNnMBQarQmjIvVIO3kfsUtyj9ZmfW5hLsF0miB1Gol+W6ZpoK44UorMJN5tUNdoT8jz4Cze4Ohe+rXDgoygvIX7uw6R9eJ4mi9zrl0itEnLHhdPs4CnltrIyAMFauotbp8S1PhUnLTGot2kjJ/0QmG+KkSDKHa8UuMqE76kpxhZ+EbqI03dpFCyl2/7VKiybNwfPyRX7P0ZwFEpoCJt5ckYPnLViNka9HvTg9rk22ofVXshNcX76BpVankSdm18rNzXj3B8Ggd3ue3+lnVzsB9Zz0hKc3njq5j1hU= batu6@Batu"
   ];
@@ -92,10 +88,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBmF08VOHT7d+J8krUhC/FZjFsQOgG1ikZ3mddzQj2q7 ivan@Moster"
   ];
 
-	alexKeys = [
-		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvpwaPg39D9JvEtzKbCUAfYxLjSU2bCg+zCb+N0iI3P alex.bartelt@tum.de"
-		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
-	];
+  alexKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvpwaPg39D9JvEtzKbCUAfYxLjSU2bCg+zCb+N0iI3P alex.bartelt@tum.de"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
+  ];
 
   senadKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
@@ -106,16 +102,20 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt8GnOlC14rFzJaTe/R8tnRwVZd+myw84GkakVn+TSH kilianm@sedna"
   ];
 
-  marcKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvkAAmA8/jcrUWyCmVLpXm0zVK0FiH5s92NNL6ZjWb4 space@George"
-  ];
-  
   andreiKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCc6kci58KP0YherG/i+yLZg5w5+EoVDSdPwp2rbEVRX2zn0ZuEruSFd1S0xR3oucXJnu7a4HlfdOn9eBJsIXr9MB2PJA0KSHUz1hN5RwpwuYO/KoWKQeKgDoHb5cydWKzrL+PsD15rs0Inq/AAHRwEELW6hQuCnuyzhC6HI4phYHgd3QZxahvMCaLz2C1Wwp3m/v0xkjG/0fjyBxyrcwNSeL/YINSNOKnXkKkZtAnSBCOPiQuHE+TpM3UedzlNHCGHRkwlTbHxpeHzB/bD5RV1oDmcnrjfHubszD7KjjkK3fRPb2TgQ8jeovwaclve2Dfh87bp1dqFOARL59wlmLVGlGi3ADkB2PiEu0zkAVjoXimRXw2J7SrOS1UvGlhbPEu7Y1PCjg6hkIZhWnxwJlOZRBLKCQf6P9wlrm/hAhvKr+rauU7tz0RlY2S5eXSBMDtQuGLWwzZDFoukDv1BLPTY0p4ya6AdryvZyMIlsIcDG45Am+rGxZcMGUNtvzda+CJhILr2P51xp6v/yZVDRNHsEhiBFEIHKleNL8/ZFZksnQ93b2kGg8VFYPb6M9RC50Vy/oNY6FxJCqzk6Q7CymXTlSSYeIWPlBekyvnOgder26hcg+nhxY0kZIlhsdjCCDaJoiu/rYXgIBW0M6yjmcH9I1l3pTISjZuN3fl5Uu2QnQ== dabokva@gmail.com"
   ];
 
   wangcKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsL3xmJQaFDcQW4z267XU+IkVG/v3xVGfjEWopZ41// wangc@DESKTOP-H7SJ4J3"
+  ];
+
+  diegoKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMkWoCSEZ9snNafLouS66P7VSPUdkD5haLMTGE3lvd4w diegosanchez@diego-hplaptop15da0xxx"
+  ];
+
+  minyaoKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII6NPDc3iWN4ClsPLYzEARLAKhF0vkYhJSYOPVmnEysg minyao@minyaodeMacBook-Air.local"
   ];
 
   extraGroups = [
@@ -286,7 +286,7 @@ in
       expires = "2026-12-31";
     };
 
-    # Radu Raceala (BSc thesis with Anatole/Peter)
+    # Radu Raceala (GR with Simon/Ilya)
     radu = {
       isNormalUser = true;
       home = "/home/radu";
@@ -299,6 +299,7 @@ in
         "christina"
         "adelaide"
         "jackson"
+        "joy"
       ];
       openssh.authorizedKeys.keys = raduKeys;
       expires = "2026-10-31";
@@ -364,7 +365,7 @@ in
       expires = "2026-10-30";
     };
 
-    # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
+    # Martin Lindbuechl, GR student working w/ Ilya
     martinLi = {
       isNormalUser = true;
       home = "/home/martinLi";
@@ -375,9 +376,10 @@ in
         "irene"
         "polly"
         "xavier"
+        "joy"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2026-10-30";
+      expires = "2027-03-30";
     };
 
     # Samuel Khuon, BSc student working w/ Ilya (can be removed after October 2026)
@@ -430,21 +432,6 @@ in
       expires = "2026-10-30";
     };
 
-    # Deniz Mersinlioğlu (B.Sc. thesis w/ Martin)
-    deniz = {
-      isNormalUser = true;
-      home = "/home/deniz";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2102;
-      allowedHosts = [
-        "graham"
-        "eliza"
-      ];
-      openssh.authorizedKeys.keys = denizKeys;
-      expires = "2026-09-30";
-    };
-
     # Tunc Batu Basaran (B.Sc. thesis w/ Nicolo)
     tunc = {
       isNormalUser = true;
@@ -491,7 +478,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = jakubKeys;
-      expires = "2026-09-30";
+      expires = "2026-11-30";
     };
 
     # Ivan Logvynenko, Bsc thesis working w/ Anatole (can be removed after October 2026)
@@ -509,8 +496,8 @@ in
       openssh.authorizedKeys.keys = ivanlKeys;
       expires = "2026-10-30";
     };
-    
-		# Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
+
+    # Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
     alex = {
       isNormalUser = true;
       home = "/home/alex";
@@ -542,20 +529,6 @@ in
       expires = "2026-10-30";
     };
 
-    # Marc, Student internship working w/ David (can be removed after Sep 2026)
-    marc = {
-      isNormalUser = true;
-      home = "/home/marc";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2110;
-      allowedHosts = [
-        "jamie"
-      ];
-      openssh.authorizedKeys.keys = marcKeys;
-      expires = "2026-09-01";
-    };
-    
     # Andrei Dolmatov, BSc thesis w/ Aleksandra (can be removed after Oct 2026)
     andrei = {
       isNormalUser = true;
@@ -565,13 +538,29 @@ in
       uid = 2012;
       allowedHosts = [
         "jamie"
-	"jack"
-	"steve"
+        "jack"
+        "steve"
       ];
       openssh.authorizedKeys.keys = andreiKeys;
       expires = "2026-10-31";
     };
-    
+
+    # Diego Lopez, GR w/ Aleksandra (can be removed after Feb 2027)
+    diego = {
+      isNormalUser = true;
+      home = "/home/diego";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2013;
+      allowedHosts = [
+        "rose"
+        "amy"
+        "clara"
+      ];
+      openssh.authorizedKeys.keys = diegoKeys;
+      expires = "2027-03-01";
+    };
+
     # Kilian Markl, MSc thesis working w/ Anders (can be removed after Jan 2027)
     markl = {
       isNormalUser = true;
@@ -597,6 +586,20 @@ in
         "ian"
       ];
       openssh.authorizedKeys.keys = wangcKeys;
+      expires = "2027-03-31";
+    };
+
+    # Min-Yao Chang, BSc exchange student w/ Teofil (can be removed after March 2027)
+    minyao = {
+      isNormalUser = true;
+      home = "/home/minyao";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2115;
+      allowedHosts = [
+        "vislor"
+      ];
+      openssh.authorizedKeys.keys = minyaoKeys;
       expires = "2027-03-31";
     };
   };
@@ -692,5 +695,8 @@ in
     "yves"
     "neel"
     "neelm"
+    "deniz"
+    "marc"
   ];
+
 }

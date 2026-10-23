@@ -45,7 +45,25 @@ in
                 List of hosts the user is allowed to login. If "all", all hosts are allowed
               '';
             };
-            config = {
+            config =
+              let
+                # uid-derived so ranges match across hosts (NFS home)
+                subIdStart = 100000 + (config.uid - 1000) * 65536;
+                hasSubId = config.isNormalUser && config.uid != null;
+              in
+              {
+              subUidRanges = lib.mkIf hasSubId [
+                {
+                  startUid = subIdStart;
+                  count = 65536;
+                }
+              ];
+              subGidRanges = lib.mkIf hasSubId [
+                {
+                  startGid = subIdStart;
+                  count = 65536;
+                }
+              ];
               shell = lib.mkIf (
                 !(builtins.elem "all" config.allowedHosts)
                 && !(builtins.elem globalConfig.networking.hostName config.allowedHosts)

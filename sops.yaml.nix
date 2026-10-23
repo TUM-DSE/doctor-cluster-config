@@ -23,21 +23,20 @@ let
       joerg
       joerg-mac
       peter
-      cmainas
       dimitrios
       atsushi
       patrick
       francisco
-      mmisono
+      masa
       ilya
       felix
       anatole
-      jiyang
+      chenjiyang
       martin
       aleksandra
       thore
       harshanavkis
-      halalboro
+      anubhav
       gierens
       simonk
       theo

@@ -21,6 +21,7 @@ let
     ./modules/packages.nix
     ./modules/nix-daemon.nix
     ./modules/auto-upgrade.nix
+    ./modules/no-downgrade.nix
     ./modules/hosts.nix
     ./modules/network.nix
     ./modules/fluent-bit.nix
