@@ -73,6 +73,8 @@ in
       ++ lib.optional config.hardware.xilinx.coyote-driver.enable coyote-driver;
     # coyote_driver is loaded manually (via `coyote-load`) after programming the FPGA,
     # so no boot.kernelModules entry.
+    #
+    # NOTE: omitting boot.kernelModules is NOT sufficient to keep it unloaded.
 
     # hardware.graphics.extraPackages = [ packages.xrt ];
   };

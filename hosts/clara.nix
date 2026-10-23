@@ -24,6 +24,10 @@
 
   hardware.xilinx.coyote-driver.enable = true;
 
+  # Keep coyote_driver available to `coyote-load`/modprobe, but stop udev from
+  # binding it automatically. 
+  boot.blacklistedKernelModules = [ "coyote_driver" ];
+
   simd.arch = "znver3";
   system.stateVersion = "22.11";
 
