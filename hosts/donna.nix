@@ -29,6 +29,9 @@ in
   # Provide the asahi packages directly without using the overlay mechanism
   hardware.asahi.pkgs = lib.mkForce asahiPkgs;
 
+  # linux-asahi tracks mainline closely; stable zfs regularly lags behind it.
+  boot.zfs.package = pkgs.zfs_unstable;
+
   # Override latest-zfs kernel with linux-asahi
   boot.kernelPackages = lib.mkForce (
     asahiPkgs.linux-asahi.override {
