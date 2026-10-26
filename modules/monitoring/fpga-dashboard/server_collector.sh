@@ -136,11 +136,14 @@ echo "# TYPE server_fpga_driver_status gauge" >> "$TMP_FILE"
 fpga_name_for_devid() {
     local devid="$1"
     case "$devid" in
-        903f|500c|500d) echo "U280" ;;
+        # U280 reports different IDs depending on shell/board variant:
+        # 903f/500c/500d (older shells), d00c (clara's shell), 913f (current
+        # Coyote/Loom shell on amy+rose, driver loom_coyote).
+        903f|500c|500d|d00c|913f) echo "U280" ;;
         9038) echo "U250" ;;
         5004|5005) echo "U250" ;;
         # V80 reports different IDs depending on shell/board variant:
-        # 50b4 (early shell), b03f (current Coyote shell on Rose).
+        # 50b4 (early shell), b03f (current Coyote shell on amy+rose).
         50b4|b03f) echo "V80" ;;
         *) echo "FPGA" ;;
     esac
