@@ -116,7 +116,12 @@ def main() -> None:
                 f'  address = "{host}:22"',
                 '  send = "SSH-2.0-Telegraf"',
                 '  expect = "SSH-2.0"',
-                '  timeout = "10s"',
+                # A live SSH handshake completes in well under 1s; keep this short so
+                # that down hosts don't stall the serial gather of all targets. With a
+                # 10s timeout, a few unreachable hosts made the ping/net_response gather
+                # overrun telegraf's interval, so those series intermittently dropped
+                # out of the exposition and the monitoring dashboard showed N/A.
+                '  timeout = "2s"',
                 "  [inputs.net_response.tags]",
                 f'    org = "{org}"',
                 f'    host = "{host.removesuffix(".r")}"',
