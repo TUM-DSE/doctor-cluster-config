@@ -76,6 +76,7 @@ in
         shell = "/run/current-system/sw/bin/bash";
         uid = 1031;
         openssh.authorizedKeys.keys = anatoleKeys;
+        xrdpAccess = true;
       };
 
 
