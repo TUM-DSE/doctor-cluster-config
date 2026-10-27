@@ -118,6 +118,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII6NPDc3iWN4ClsPLYzEARLAKhF0vkYhJSYOPVmnEysg minyao@minyaodeMacBook-Air.local"
   ];
 
+  pyuhalaKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM9iLGmi0efAp3bbx8epXkmdxf7msqJQqrhywZWiJYcI petersonyuhala@gmail.com"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -601,6 +605,20 @@ in
       ];
       openssh.authorizedKeys.keys = minyaoKeys;
       expires = "2027-03-31";
+    };
+
+    # Peterson Yuhala, UBC PostDoc working with Reto (can be removed at the end of 2027)
+    pyuhala = {
+      isNormalUser = true;
+      home = "/home/pyuhala";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2116;
+      allowedHosts = [
+        "xavier"
+      ];
+      openssh.authorizedKeys.keys = pyuhalaKeys;
+      expires = "2027-12-31";
     };
   };
 
