@@ -128,6 +128,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHd8sv/lztuBI59iI5Pp4P6P/K0TkK9GyN8hS045pyK+ ilgaz@ilgazs-MacBook-Air.local"
   ];
 
+  achretoKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBz7oC0k49ZIFNxupIWDkYH89RCjen7LzmF75cn33P2Z achreto@reto-ethernet.dos.cit.tum.de"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -436,7 +440,16 @@ in
         openssh.authorizedKeys.keys = ilgazKeys;
       };
 
-
+      # Reto Achermann
+      achreto = {
+        isNormalUser = true;
+        home = "/home/achreto";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2008;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = achretoKeys;
+      };
 
       # add staff to root account as well
       root.openssh.authorizedKeys.keys =
