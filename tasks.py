@@ -253,6 +253,7 @@ HOSTS = [
     "river.dos.cit.tum.de",
     "jack.dos.cit.tum.de",
     "clara.dos.cit.tum.de",
+    "clockwork.dos.cit.tum.de",
     "amy.dos.cit.tum.de",
     "rose.dos.cit.tum.de",
     "vislor.dos.cit.tum.de",
