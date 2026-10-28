@@ -56,45 +56,6 @@ in {
       openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIdZhGHv8KmIqRvColCrRwGJSsMZp7TojZvXO0IUeKLbn9IDVefgNq352dW7/LhQUK6Pda/ukPiBf/B0pzlqt9R5gYfrV6tcQkEaVcNOLj14s0SMQ7tPwgah1W8KddMNnA5+xZ7n8rWRUuYpMdXX+1QokxFLJCEDERXbTZ/CzFjrjalsAWv0IeaxMzq+Z2HfuKTmMnEGH56BTYkF+iayddtV00ZR5pOMZhtL4pkhFYTSnZpn9GEeSSpFx2nKCvf+iVN0h4umtSmL5d1cgZ4cBhKPsjIAfaqitzcoerEWSM0yMGowXyBPJyTbjrtYcv9dG/g7mdLtkXzBfxDf021/QQpotVty5OwsdWC3KW5EJKRseGYWV7dIQA9QSR6dJI7FatoJBAXeM8+XiHYFEfa4Lm3Z5OEn4tft1pMWRbk8t/orWWz88UtXS3xCBh2UQlWS0H/4BDE9cGJ/si/YjCBFBXJ+KA1mxNMByyHpB4SgNnrta+DRRwBtLF6iF73HWi9UP+jDQaLzzl+eCKPpWtJXGIYYyV7oJXAm0nsdS1WbyTo1PO4rhuowe89e4H7GuvecbWwA6vAZaFCX0cfMzwgzpT6Pmf2hpHF+j7rFlTa1qLW+3/FvkkMr3uictL6HEy/YagtjQUNfE1lqb/tJeRens5ss4GlvzjYMi/S8mrWHa5yw=="];
       expires = "2026-08-01";
     };
-
-    cvmstore1 = {
-      isNormalUser = true;
-      home = "/home/cvmstore1";
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4017;
-      inherit extraGroups;
-      allowedHosts = [
-        "vislor"
-      ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJj9qn7zAwmQmwWjrqJRZVrwhuwfrLXGKZB+fPR4AKr"];
-      expires = "2026-10-30";
-    };
-
-    cvmstore2 = {
-      isNormalUser = true;
-      home = "/home/cvmstore2";
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4018;
-      inherit extraGroups;
-      allowedHosts = [
-        "vislor"
-      ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMyln/6skEj9CVOzo2xv6HDY6QhRYg+m1uZF5eQchvZD"];
-      expires = "2026-10-30";
-    };
-
-    cvmstore3 = {
-      isNormalUser = true;
-      home = "/home/cvmstore3";
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 4022;
-      inherit extraGroups;
-      allowedHosts = [
-        "vislor"
-      ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJWsBuj3ERKItgjFwKp8AXpAzgIUNARQILiqwIk9BVSC"];
-      expires = "2026-10-30";
-    };
   
     focacciaRevA = {
       isNormalUser = true;
@@ -179,5 +140,8 @@ in {
     "proteus5"
     "proteus6"
     "proteus7"
+    "cvmstore1"
+    "cvmstore2"
+    "cvmstore3"
   ];
 }
