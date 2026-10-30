@@ -513,7 +513,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = alexKeys;
-      expires = "2026-10-30";
+      expires = "2026-12-30";
     };
 
     # Senad Lemes, DB chair student working w/ Dimitris (can be removed after October 2026)
