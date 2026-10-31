@@ -74,6 +74,7 @@ let
         "joy"
         "jamie"
         "ryan"
+        "xavier"
       ];
     };
 
