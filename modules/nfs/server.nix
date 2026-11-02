@@ -64,8 +64,7 @@
           #config.networking.doctorwho.hosts.sarah.ipv6
           config.networking.doctorwho.hosts.donna.ipv6
           config.networking.doctorwho.hosts.joy.ipv6
-          # Allow the OrangePiUltra to fetch from the NFS
-          "2a09:80c0:38::26"
+          config.networking.doctorwho.hosts.clockwork.ipv6
         ];
         # offset 27 has historically reasons
         exportHome = lib.imap0 (

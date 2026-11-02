@@ -126,6 +126,7 @@
             checks =
               let
                 aarch64-linux = [
+                  "clockwork"
                   "donna"
                   "yasmin"
                   "ace"

@@ -16,6 +16,7 @@ let
 
   raduKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8+2IgrKrbXjVW5B2ApnA/O58t0/Dt5teYOO+LYI++3 rr@fedora"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINQXz3kK3tTLQB2aHZ2IktVLfapJhKSjxwVOK8DNPwln rr@fedora"
   ];
 
   hernanKeys = [
@@ -147,15 +148,13 @@ in
       shell = "/run/current-system/sw/bin/bash";
       uid = 2093;
       allowedHosts = [
-        "wilfred"
-        "river"
-        "christina"
-        "adelaide"
-        "jackson"
+        "steve"
+        "eliza"
         "joy"
+        "clockwork"
       ];
       openssh.authorizedKeys.keys = raduKeys;
-      expires = "2026-10-31";
+      expires = "2027-05-31";
     };
 
     # Hernan Ponce de Leon (Collaborator with Sebastian)
@@ -171,23 +170,6 @@ in
       ];
       openssh.authorizedKeys.keys = hernanKeys;
       expires = "2026-10-31";
-    };
-
-    # Martin Lindbuechl, GR student working w/ Ilya
-    martinLi = {
-      isNormalUser = true;
-      home = "/home/martinLi";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2065;
-      allowedHosts = [
-        "irene"
-        "polly"
-        "xavier"
-        "joy"
-      ];
-      openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2027-03-30";
     };
 
     # Maurice Scholtes, GR student working w/ Ilya (can be removed after October 2026)
@@ -222,8 +204,7 @@ in
       expires = "2026-10-30";
     };
 
-    # Martin Lindbuechl, GR student working w/ Ilya (can be removed after October 2026)
-    # Second account to get rid of annoying permission issues
+    # Martin Lindbuechl, MSc student working w/ Ilya (can be removed after June 2027)
     mrtn = {
       isNormalUser = true;
       home = "/home/mrtn";
@@ -232,12 +213,13 @@ in
       uid = 2104;
       allowedHosts = [
         "irene"
-        "polly"
-        "xavier"
+        "steve"
         "eliza"
+        "joy"
+        "clockwork"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2026-10-30";
+      expires = "2026-05-31";
     };
 
     # Jakub Gonera (GR w/ Martin)
@@ -267,7 +249,7 @@ in
         "eliza"
       ];
       openssh.authorizedKeys.keys = alexKeys;
-      expires = "2026-10-30";
+      expires = "2026-12-30";
     };
 
     # Senad Lemes, DB chair student working w/ Dimitris (can be removed after October 2026)
@@ -481,6 +463,7 @@ in
     "neelm"
     "deniz"
     "marc"
+    "martinLi"
   ];
 
 }

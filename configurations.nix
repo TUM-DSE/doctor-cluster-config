@@ -160,6 +160,15 @@ in
         ];
     };
 
+    clockwork = {
+      nixpkgs.pkgs = pkgs-aarch64-linux;
+      imports =
+        computeNodeModules
+        ++ [
+          ./hosts/clockwork.nix
+        ];
+    };
+
     yasmin = {
       nixpkgs.pkgs = pkgs-aarch64-linux;
       imports =

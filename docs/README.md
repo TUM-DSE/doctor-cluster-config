@@ -142,6 +142,9 @@ Ace is currently running Debian. To add users, see [these instructions](./morell
 
 ## OrangePi Ultra (ARM64)
 
+- [clockwork](./hosts/clockwork.md): Orange Pi 5 Ultra (RK3588), in the hardware lab
+  - No UEFI and no IPMI. See [orangepi-5-ultra.md](./orangepi-5-ultra.md) for the hardware notes and the install procedure.
+
 ## FPGA-servers
 
 Each of these machines is equipped with an Alveo U50 FPGA card. Those servers
