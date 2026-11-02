@@ -305,7 +305,7 @@ in
         "clockwork"
       ];
       openssh.authorizedKeys.keys = raduKeys;
-      expires = "2026-10-31";
+      expires = "2027-05-31";
     };
 
     # Leon Simoniants (BSc thesis with Anatole/Peter)
@@ -449,7 +449,7 @@ in
         "clockwork"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2026-10-30";
+      expires = "2026-05-31";
     };
 
     # Jakub Gonera (GR w/ Martin)
