@@ -219,7 +219,7 @@ in
         "clockwork"
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
-      expires = "2026-05-31";
+      expires = "2027-05-31";
     };
 
     # Jakub Gonera (GR w/ Martin)
