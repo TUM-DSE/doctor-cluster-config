@@ -74,6 +74,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM9iLGmi0efAp3bbx8epXkmdxf7msqJQqrhywZWiJYcI petersonyuhala@gmail.com"
   ];
 
+  sebastianroggKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7bi9+G3iAqkye5M4wL5qi4A+BoToLd1kmoAka4EEBe sebastianrogg-defer"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -355,6 +359,21 @@ in
       ];
       openssh.authorizedKeys.keys = pyuhalaKeys;
       expires = "2027-12-31";
+    };
+
+    # Sebastian Rogg, BSc thesis w/ Peter W. (can be removed after Mai 2027)
+    sebastianrogg = {
+      isNormalUser = true;
+      home = "/home/sebastianrogg";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2333;
+      allowedHosts = [
+        "jamie"
+        "steve"
+      ];
+      openssh.authorizedKeys.keys = sebastianroggKeys;
+      expires = "2027-04-30";
     };
   };
 
