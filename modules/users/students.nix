@@ -78,6 +78,11 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7bi9+G3iAqkye5M4wL5qi4A+BoToLd1kmoAka4EEBe sebastianrogg-defer"
   ];
 
+  florianKeys = [
+    "ssh-ed25519 AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIIRNKR0dU1OVVLPrGCCWR7LkBEtcV+bvDdx3uG7/DvkpAAAACXNzaDpsb2dpbg==  sk-ssh-ed25519@openssh.com"
+    "ssh-ed25519 AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIB2L5+55IgmPP3rw5XAbbQYAM1wHyDXhah2XBFq3krzWAAAACXNzaDpsb2dpbg==  sk-ssh-ed25519@openssh.com"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -375,6 +380,21 @@ in
       openssh.authorizedKeys.keys = sebastianroggKeys;
       expires = "2027-04-30";
     };
+
+    # Florian Freudiger, MSc thesis w/ Sandro and Masa (can be removed after May 2027)
+    florian = {
+      isNormalUser = true;
+      home = "/home/florian";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/zsh";
+      uid = 2033;
+      allowedHosts = [
+        "ian"
+        "clara"
+      ];
+      openssh.authorizedKeys.keys = florianKeys;
+      expires = "2027-05-30";
+    };
   };
 
   # DANGER ZONE!
@@ -408,7 +428,6 @@ in
     "eaypek"
     "eliza"
     "emil"
-    "florian"
     "fritz"
     "hanwenliu"
     "he"
