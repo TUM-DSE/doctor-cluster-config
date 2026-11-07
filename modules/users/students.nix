@@ -15,21 +15,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINQXz3kK3tTLQB2aHZ2IktVLfapJhKSjxwVOK8DNPwln rr@fedora"
   ];
 
-  hernanKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMowVBAs878BvU469/2lPFGrUYHv6t68w6p1m9BKPTG6 hernanl.leon@huawei.com"
-  ];
-
   martinLiKeys = [
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABCmZLhiHvPWTbyaInI0XBqpbHi5OUdymVr42r2ganFA/7eGfsTi4BN5heBmPkHlay5g/Pl1I0YYJsEF1tdIffqtAGn8riy6BK8cJ76ABl8ZSPQdoVlOuncXzn32BrjJ2kr9BAfCV21WeC2SfpCRYj3sCWZFA2PknSoEfh0kzOTEW22Vg== mrtn@nix-nb"
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBACZkmXdEDbg/5gtbANAYQfSaFKEluiGuQpa6MCA+msQIx2lr/1M7+Lmcf3sWG3kYyYJZFZ+6+sUmUFqgeJWN6jOogGSfK/OEyY/zKdrIqcSIsvoHREhG/10VXSbGWv+MS9FjxuT4AO40FLRF5pq8cGQgUcm3khAknF4yQ6TtJQyxU4OOw== mrtn@cronus"
-  ];
-
-  mauriceKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2BTsVv0YJ48wrV0s9SL4rGJPjaj/vTGMRUExAH9Sj4 db-gitlab"
-  ];
-
-  tuncKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+deOcBdufU6Ug+T9DflHrBeQ9cBo6Yl/YjQ+22CaLsd8ZF60nAUQddwu5VXGs5gcK2IUtL9UUpuWgMhSrQHJ5K5Bh1fYQsLFmiH5TFfQAQhO9UIwlJTy8+H89R07Lbro0wWe3/eVf0sAqtlkmcnjZuGg43eJ3sMFtjcwU9w+KZs1lQhC4v/D0W264ZOs+I8FhWCWab7aZMWm7UTxJmc6aq4mcOzqNnMBQarQmjIvVIO3kfsUtyj9ZmfW5hLsF0miB1Gol+W6ZpoK44UorMJN5tUNdoT8jz4Cze4Ohe+rXDgoygvIX7uw6R9eJ4mi9zrl0itEnLHhdPs4CnltrIyAMFauotbp8S1PhUnLTGot2kjJ/0QmG+KkSDKHa8UuMqE76kpxhZ+EbqI03dpFCyl2/7VKiybNwfPyRX7P0ZwFEpoCJt5ckYPnLViNka9HvTg9rk22ofVXshNcX76BpVankSdm18rNzXj3B8Ggd3ue3+lnVzsB9Zz0hKc3njq5j1hU= batu6@Batu"
   ];
 
   jakubKeys = [
