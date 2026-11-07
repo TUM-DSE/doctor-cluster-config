@@ -116,22 +116,6 @@ in
       expires = "2026-12-31";
     };
 
-    # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
-    jannik = {
-      isNormalUser = true;
-      home = "/home/jannik";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2080;
-      allowedHosts = [
-        "jamie"
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = jannikKeys;
-      xrdpAccess = false;
-      expires = "2026-07-01";
-    };
-
     # DB chair PhD working on compiler stuff. Uses the Risc V board for experiments
     # Ask Ilya before removing :pray:
     florianD = {
@@ -164,53 +148,6 @@ in
       ];
       openssh.authorizedKeys.keys = raduKeys;
       expires = "2027-05-31";
-    };
-
-    # Hernan Ponce de Leon (Collaborator with Sebastian)
-    hernan = {
-      isNormalUser = true;
-      home = "/home/hernan";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2096;
-      allowedHosts = [
-        "graham"
-        "eliza"
-      ];
-      openssh.authorizedKeys.keys = hernanKeys;
-      expires = "2026-10-31";
-    };
-
-    # Maurice Scholtes, GR student working w/ Ilya (can be removed after October 2026)
-    maurice = {
-      isNormalUser = true;
-      home = "/home/maurice";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2100;
-      allowedHosts = [
-        "irene"
-        "polly"
-        "xavier"
-      ];
-      openssh.authorizedKeys.keys = mauriceKeys;
-      expires = "2026-10-30";
-    };
-
-    # Tunc Batu Basaran (B.Sc. thesis w/ Nicolo)
-    tunc = {
-      isNormalUser = true;
-      home = "/home/tunc";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2103;
-      allowedHosts = [
-        "xavier"
-        "jamie"
-        "steve"
-      ];
-      openssh.authorizedKeys.keys = tuncKeys;
-      expires = "2026-10-30";
     };
 
     # Martin Lindbuechl, MSc student working w/ Ilya (can be removed after June 2027)
@@ -259,39 +196,6 @@ in
       ];
       openssh.authorizedKeys.keys = alexKeys;
       expires = "2026-12-30";
-    };
-
-    # Senad Lemes, DB chair student working w/ Dimitris (can be removed after October 2026)
-    senad = {
-      isNormalUser = true;
-      home = "/home/senad";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2108;
-      allowedHosts = [
-        "jamie"
-        "jack"
-        "polly"
-        "steve"
-      ];
-      openssh.authorizedKeys.keys = senadKeys;
-      expires = "2026-10-30";
-    };
-
-    # Andrei Dolmatov, BSc thesis w/ Aleksandra (can be removed after Oct 2026)
-    andrei = {
-      isNormalUser = true;
-      home = "/home/andrei";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2012;
-      allowedHosts = [
-        "jamie"
-        "jack"
-        "steve"
-      ];
-      openssh.authorizedKeys.keys = andreiKeys;
-      expires = "2026-10-31";
     };
 
     # Diego Lopez, GR w/ Aleksandra (can be removed after Feb 2027)
@@ -404,6 +308,12 @@ in
   # to avoid any permission issues
   # - Garbage collect deleted users manually one year after deletion to free the username again
   users.deletedUsers = [
+    "andrei"
+    "senad"
+    "maurice"
+    "tunc"
+    "jannik"
+    "hernan"
     "anton"
     "steve"
     "max"
