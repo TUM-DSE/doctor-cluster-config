@@ -296,7 +296,6 @@ in
     "senad"
     "maurice"
     "tunc"
-    "jannik"
     "hernan"
     "anton"
     "steve"
