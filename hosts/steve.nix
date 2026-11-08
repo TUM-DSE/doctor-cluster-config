@@ -18,6 +18,11 @@
 
   networking.hostName = "steve";
   virtualisation.libvirtd.enable = true;
+  # to do passthrough without having to sudo
+  security.pam.loginLimits = [
+	{ domain = "@kvm"; type = "soft"; item = "memlock"; value = "unlimited"; }
+  	{ domain = "@kvm"; type = "hard"; item = "memlock"; value = "unlimited"; }
+  ];
   boot.kernelModules = [ "kvm-intel" ];
 
   system.stateVersion = "22.11";
