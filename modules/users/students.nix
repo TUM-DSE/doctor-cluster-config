@@ -29,6 +29,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
   ];
 
+  senadKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
+  ];
+
   marklKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAION7iphhIKOVJ1XgdUZfjdvfxbxa8nTudbHb4QnD0nck kilianm@eris"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt8GnOlC14rFzJaTe/R8tnRwVZd+myw84GkakVn+TSH kilianm@sedna"
@@ -174,6 +178,23 @@ in
       expires = "2026-12-30";
     };
 
+    # Senad Lemes, DB chair student working w/ Dimitris (can be removed after December 2026)
+    senad = {
+      isNormalUser = true;
+      home = "/home/senad";
+      inherit extraGroups;
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2108;
+      allowedHosts = [
+        "jamie"
+        "jack"
+        "polly"
+        "steve"
+      ];
+      openssh.authorizedKeys.keys = senadKeys;
+      expires = "2026-12-31";
+    };
+
     # Diego Lopez, GR w/ Aleksandra (can be removed after Feb 2027)
     diego = {
       isNormalUser = true;
@@ -285,7 +306,6 @@ in
   # - Garbage collect deleted users manually one year after deletion to free the username again
   users.deletedUsers = [
     "andrei"
-    "senad"
     "maurice"
     "tunc"
     "hernan"
