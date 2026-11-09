@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   imports = [
     ../modules/yasmin-hardware.nix
@@ -5,6 +6,20 @@
   ];
 
   networking.hostName = "yasmin";
+
+  # The arm64 defconfig nixpkgs builds from leaves out QLogic; this is
+  # the only NIC.
+  boot.kernelPatches = [
+    {
+      name = "qlogic-nic";
+      patch = null;
+      structuredExtraConfig = with lib.kernel; {
+        NET_VENDOR_QLOGIC = yes;
+        QED = module;
+        QEDE = module;
+      };
+    }
+  ];
 
   boot.kernelParams = [
     "console=ttyS0,115200n8"
