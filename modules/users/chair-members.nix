@@ -135,6 +135,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBz7oC0k49ZIFNxupIWDkYH89RCjen7LzmF75cn33P2Z achreto@reto-ethernet.dos.cit.tum.de"
   ];
 
+  jannikKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -453,6 +457,18 @@ in
         allowedHosts = [ "all" ];
         openssh.authorizedKeys.keys = achretoKeys;
       };
+
+      jannik = {
+        isNormalUser = true;
+        home = "/home/jannik";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/bash";
+        uid = 2080;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = jannikKeys;
+      };
+
+      # reminder: new staff members should get a uid in the range 1000-1999
 
       # add staff to root account as well
       root.openssh.authorizedKeys.keys =

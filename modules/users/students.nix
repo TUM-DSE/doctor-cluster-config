@@ -6,10 +6,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDwlqdl/70dJ1ABKwLEdLB6/RDpfE4RVaB+xL3YJ1v3+ chris@kingpin"
   ];
 
-  jannikKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
-  ];
-
   florianDKeys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBXMrJs0r2uxG+LvG3gRf5hvMWlnW7x1A2klk+AfcyqTSWvVty51QaIcx9ioeJrS35Ohl9BCvwgKchCWHrHGMKCCgy5ghKZoRVPLeAa6R4lTK25p0rOu/3DkY0wm97/IVWP9GKhT0Ifyix6o9HNutHsP7s5TTVwr2ys4v1LtOareZDTtTOE44mvD9ECisVNSIcXHlnYQO8SAQ7HLJ/fZio577BXvgPVHq6OgVzypXeIYUEW1EAN/1c6pgUhIhZ0Nh38p2Owo1C84UyIdKZ6z5gS2xfi/9mXoxd71lZe68+LjKJvatfXdLI0tCNXO/aSZoIOg6l5+OYfnZPF8nqqmd D073556@WDFN34367251A"
   ];
@@ -19,21 +15,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINQXz3kK3tTLQB2aHZ2IktVLfapJhKSjxwVOK8DNPwln rr@fedora"
   ];
 
-  hernanKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMowVBAs878BvU469/2lPFGrUYHv6t68w6p1m9BKPTG6 hernanl.leon@huawei.com"
-  ];
-
   martinLiKeys = [
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABCmZLhiHvPWTbyaInI0XBqpbHi5OUdymVr42r2ganFA/7eGfsTi4BN5heBmPkHlay5g/Pl1I0YYJsEF1tdIffqtAGn8riy6BK8cJ76ABl8ZSPQdoVlOuncXzn32BrjJ2kr9BAfCV21WeC2SfpCRYj3sCWZFA2PknSoEfh0kzOTEW22Vg== mrtn@nix-nb"
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBACZkmXdEDbg/5gtbANAYQfSaFKEluiGuQpa6MCA+msQIx2lr/1M7+Lmcf3sWG3kYyYJZFZ+6+sUmUFqgeJWN6jOogGSfK/OEyY/zKdrIqcSIsvoHREhG/10VXSbGWv+MS9FjxuT4AO40FLRF5pq8cGQgUcm3khAknF4yQ6TtJQyxU4OOw== mrtn@cronus"
-  ];
-
-  mauriceKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2BTsVv0YJ48wrV0s9SL4rGJPjaj/vTGMRUExAH9Sj4 db-gitlab"
-  ];
-
-  tuncKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+deOcBdufU6Ug+T9DflHrBeQ9cBo6Yl/YjQ+22CaLsd8ZF60nAUQddwu5VXGs5gcK2IUtL9UUpuWgMhSrQHJ5K5Bh1fYQsLFmiH5TFfQAQhO9UIwlJTy8+H89R07Lbro0wWe3/eVf0sAqtlkmcnjZuGg43eJ3sMFtjcwU9w+KZs1lQhC4v/D0W264ZOs+I8FhWCWab7aZMWm7UTxJmc6aq4mcOzqNnMBQarQmjIvVIO3kfsUtyj9ZmfW5hLsF0miB1Gol+W6ZpoK44UorMJN5tUNdoT8jz4Cze4Ohe+rXDgoygvIX7uw6R9eJ4mi9zrl0itEnLHhdPs4CnltrIyAMFauotbp8S1PhUnLTGot2kjJ/0QmG+KkSDKHa8UuMqE76kpxhZ+EbqI03dpFCyl2/7VKiybNwfPyRX7P0ZwFEpoCJt5ckYPnLViNka9HvTg9rk22ofVXshNcX76BpVankSdm18rNzXj3B8Ggd3ue3+lnVzsB9Zz0hKc3njq5j1hU= batu6@Batu"
   ];
 
   jakubKeys = [
@@ -45,17 +29,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
   ];
 
-  senadKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
-  ];
-
   marklKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAION7iphhIKOVJ1XgdUZfjdvfxbxa8nTudbHb4QnD0nck kilianm@eris"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt8GnOlC14rFzJaTe/R8tnRwVZd+myw84GkakVn+TSH kilianm@sedna"
-  ];
-
-  andreiKeys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCc6kci58KP0YherG/i+yLZg5w5+EoVDSdPwp2rbEVRX2zn0ZuEruSFd1S0xR3oucXJnu7a4HlfdOn9eBJsIXr9MB2PJA0KSHUz1hN5RwpwuYO/KoWKQeKgDoHb5cydWKzrL+PsD15rs0Inq/AAHRwEELW6hQuCnuyzhC6HI4phYHgd3QZxahvMCaLz2C1Wwp3m/v0xkjG/0fjyBxyrcwNSeL/YINSNOKnXkKkZtAnSBCOPiQuHE+TpM3UedzlNHCGHRkwlTbHxpeHzB/bD5RV1oDmcnrjfHubszD7KjjkK3fRPb2TgQ8jeovwaclve2Dfh87bp1dqFOARL59wlmLVGlGi3ADkB2PiEu0zkAVjoXimRXw2J7SrOS1UvGlhbPEu7Y1PCjg6hkIZhWnxwJlOZRBLKCQf6P9wlrm/hAhvKr+rauU7tz0RlY2S5eXSBMDtQuGLWwzZDFoukDv1BLPTY0p4ya6AdryvZyMIlsIcDG45Am+rGxZcMGUNtvzda+CJhILr2P51xp6v/yZVDRNHsEhiBFEIHKleNL8/ZFZksnQ93b2kGg8VFYPb6M9RC50Vy/oNY6FxJCqzk6Q7CymXTlSSYeIWPlBekyvnOgder26hcg+nhxY0kZIlhsdjCCDaJoiu/rYXgIBW0M6yjmcH9I1l3pTISjZuN3fl5Uu2QnQ== dabokva@gmail.com"
   ];
 
   wangcKeys = [
@@ -116,22 +92,6 @@ in
       expires = "2026-12-31";
     };
 
-    # Jannik Pflieger, quantum hiwi SS25/ MSc thesis with Aleksandra and Manos
-    jannik = {
-      isNormalUser = true;
-      home = "/home/jannik";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2080;
-      allowedHosts = [
-        "jamie"
-        "graham"
-      ];
-      openssh.authorizedKeys.keys = jannikKeys;
-      xrdpAccess = false;
-      expires = "2026-07-01";
-    };
-
     # DB chair PhD working on compiler stuff. Uses the Risc V board for experiments
     # Ask Ilya before removing :pray:
     florianD = {
@@ -164,53 +124,6 @@ in
       ];
       openssh.authorizedKeys.keys = raduKeys;
       expires = "2027-05-31";
-    };
-
-    # Hernan Ponce de Leon (Collaborator with Sebastian)
-    hernan = {
-      isNormalUser = true;
-      home = "/home/hernan";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2096;
-      allowedHosts = [
-        "graham"
-        "eliza"
-      ];
-      openssh.authorizedKeys.keys = hernanKeys;
-      expires = "2026-10-31";
-    };
-
-    # Maurice Scholtes, GR student working w/ Ilya (can be removed after October 2026)
-    maurice = {
-      isNormalUser = true;
-      home = "/home/maurice";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2100;
-      allowedHosts = [
-        "irene"
-        "polly"
-        "xavier"
-      ];
-      openssh.authorizedKeys.keys = mauriceKeys;
-      expires = "2026-10-30";
-    };
-
-    # Tunc Batu Basaran (B.Sc. thesis w/ Nicolo)
-    tunc = {
-      isNormalUser = true;
-      home = "/home/tunc";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/zsh";
-      uid = 2103;
-      allowedHosts = [
-        "xavier"
-        "jamie"
-        "steve"
-      ];
-      openssh.authorizedKeys.keys = tuncKeys;
-      expires = "2026-10-30";
     };
 
     # Martin Lindbuechl, MSc student working w/ Ilya (can be removed after June 2027)
@@ -259,39 +172,6 @@ in
       ];
       openssh.authorizedKeys.keys = alexKeys;
       expires = "2026-12-30";
-    };
-
-    # Senad Lemes, DB chair student working w/ Dimitris (can be removed after October 2026)
-    senad = {
-      isNormalUser = true;
-      home = "/home/senad";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2108;
-      allowedHosts = [
-        "jamie"
-        "jack"
-        "polly"
-        "steve"
-      ];
-      openssh.authorizedKeys.keys = senadKeys;
-      expires = "2026-10-30";
-    };
-
-    # Andrei Dolmatov, BSc thesis w/ Aleksandra (can be removed after Oct 2026)
-    andrei = {
-      isNormalUser = true;
-      home = "/home/andrei";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2012;
-      allowedHosts = [
-        "jamie"
-        "jack"
-        "steve"
-      ];
-      openssh.authorizedKeys.keys = andreiKeys;
-      expires = "2026-10-31";
     };
 
     # Diego Lopez, GR w/ Aleksandra (can be removed after Feb 2027)
@@ -404,6 +284,11 @@ in
   # to avoid any permission issues
   # - Garbage collect deleted users manually one year after deletion to free the username again
   users.deletedUsers = [
+    "andrei"
+    "senad"
+    "maurice"
+    "tunc"
+    "hernan"
     "anton"
     "steve"
     "max"
