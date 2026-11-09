@@ -7,8 +7,8 @@ ssh_host_rsa_key.pub: ENC[AES256_GCM,data:VZQPtWhvQVG8X8ya77mJ1fKpdfyD0BKPtEdsXE
 tinc-key: ENC[AES256_GCM,data:KX6IPiwb58d2/KQE68cL6ClmlsumjYM130QY43nHs6LmxoqKpYSLHG9/mOh/xFyTiAZgIvdZQJKSZUnjQiBVD07JKaMQjSREQG+EQ8haTgBosG4sbYQt16IufINEdUaxpeYtFPvQYnPGWXRMzv38QFKaTwMMmNx7G0JqTCw6/E6M5qN8qpnR/TtQyF5PanYKN6I8povLIeHzH7esAo9cs6x6DkAl0EVo/f94DPKs7Iu2otKG+k2M3qCj2TRWZX5Tuf0ww68eiEg=,iv:x8wNs9+2srM5hi2YckQ7AM4gY7Wvt/3WhWjl4okusnU=,tag:/w0bp3Pgb9roUREGA6j4Eg==,type:str]
 tinc-pubkey: ENC[AES256_GCM,data:ci66ASquhyNKBgUCpYBRTDHJ1I3i3hvbkeNXlljImNWfMELQC/HHNCtwGGoflSOhubHgkCP9gMBw52VIfCMk,iv:FdgcIyjtAycGWF6tjfFBzp2MG5+4oJnNPeHs5/xXWys=,tag:3mD/ddwbvLZ371NcR357RA==,type:str]
 github-runner-token: ENC[AES256_GCM,data:xgDfjadluDF13vwAOsD4BJQFpZEPoR0f8P5Lu9M=,iv:KCIP6sPDAE+lX5QccHbdsI9Jw/p37HvlBValCyr69FA=,tag:Fl55FvfiIGThJGcVf+n2eg==,type:str]
-gitlab-runner-compiler-hw-lab: ENC[AES256_GCM,data:QAMq37SVu+ofaxwUHFryo3gb3YHoRn4zUxyl/ut4U/cZDyDD3XyvT+ZAQCWtxLkcAwumoEplkMDtdUEqRFasiJwqAal3EP4Iw6Dw3KaNQFHJ4ZNiY0NlqalnV92fJ226lJDnX609H/PShy59WvLXx+9Ezt4aYG5TJQ==,iv:G6QXWUKbJ5s+VsMthAe+zmE8+OuR9vy9w9yTQKnR8Us=,tag:AILVub1rcZiACZA/c/rJ/w==,type:str]
-gitlab-runner-compiler-hw-lab-build: ENC[AES256_GCM,data:5eRTMBWqxENVYvppLPTzaj2QOEkNYL9nowLfGejHzpGZxesgH9LmuH5FeDZwBwuT81E9h9BtdoqHGuhaRAvUElfMQgQoH52auQY0DOjWOVau1jkjtPQbmVI5b6DAK7u49xpqfOvHu/tBWycGIMe4Mf/XxlBUTB1P5w==,iv:rehNczXnj0hdlyu1ivgUNmvtopiRb28LZwJWAuJlw6g=,tag:WQ/ZpM5XQSzsU/pk9aD2vg==,type:str]
+gitlab-runner-compiler-hw-lab: ENC[AES256_GCM,data:9vTPZ+aeO0y7/m8LdgApMyJwCE4Al+0RlBHc18gLljBqK7st4XY8LAVMOAIAC6trzL0CEjvx36gtwLppn5wMmbzZZpQBOd77Knz05ekEFEv+7wx1MZ6Y9BkV4nTha58dmn4EjrW7obkkVT7eDUCWoSYGLRzmclXGVQ==,iv:YMYWeEm/IOCho1ed2o/UGdAVppNnR44YwVDMF9PAqQM=,tag:qumEqbr3J7yYV/ZJ6SayJQ==,type:str]
+gitlab-runner-compiler-hw-lab-build: ENC[AES256_GCM,data:pP6epG2XKPB/NodWtd9c4P6zmZFp870nIIvUqUTr3aulKrFtRuxfCVEd3slpFg1z3BPKRwWDt7CPVz3eAYv/K3VxOIPX6XjRqqppyIyvwBPf15wrwnt3FIhvQ100WnudckN42ctH0dq6deSbyhZ0w5+C3yDXdiueyA==,iv:y2TFns9zronRmivNWEawMdwRrZfAGuym8zaLQIg+oIQ=,tag:YvGa7qepj2Yh3WoxYRc/zA==,type:str]
 sops:
     age:
         - enc: |
@@ -200,7 +200,7 @@ sops:
             YLjFNVK1JCZAUmDd9HLwcVlgoBOScnsIPTY5E64Osa6krAHA2B17Vg==
             -----END AGE ENCRYPTED FILE-----
           recipient: age1qyhuqhu74g2nu7faydytlc3dw5lz2s3s4ddu8w3rjmv08mc6vdsq37cksf
-    lastmodified: "2026-11-05T16:08:27Z"
-    mac: ENC[AES256_GCM,data:Y/pDonixChEnUPFqTbFRo32zw9KFg3l1kazJzO6kUvuxlC5oajf/DorHhXceVOt4DpVRviFfMXFwgUpWSiXNhcov+uLIk9QgFqLlihOo6mWmYRxfSmvMS3JMhP69Vfy4EqWIAr6kaY8DLuWrBnMYeY2ZR8totJfw5haLD+u9pNc=,iv:cvAiUlNs/ynjrmbx3TWISAtzTu5gvTEmU2OXzJyUz88=,tag:feQOJu967emWGnk5oD+DSw==,type:str]
+    lastmodified: "2026-11-09T14:50:10Z"
+    mac: ENC[AES256_GCM,data:b4KlwNs20eZeoR91S0WyUQ3K253Po6/dpXwKWto1bMPswc8YYyDlxGs6nRAzpWn+NA1ELlZgNJZ9FuoU15e2DCgu00TQaSO8hrgEmw0igP6sNKhlry6oGPV2voblWMkUsqodW5HHBFvqoLoKlwlHesTsWUy06+iHLzWQcI2dJnQ=,iv:CA+7YuPMSLcyR7+aQhHZsQNFg+PdRk7983pfCJ7801Q=,tag:psDUtgTcUzNhAC9tpxWmeQ==,type:str]
     unencrypted_suffix: _unencrypted
     version: 3.13.3
