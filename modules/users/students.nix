@@ -59,8 +59,8 @@ let
   ];
 
   florianKeys = [
-    "ssh-ed25519 AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIIRNKR0dU1OVVLPrGCCWR7LkBEtcV+bvDdx3uG7/DvkpAAAACXNzaDpsb2dpbg==  sk-ssh-ed25519@openssh.com"
-    "ssh-ed25519 AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIB2L5+55IgmPP3rw5XAbbQYAM1wHyDXhah2XBFq3krzWAAAACXNzaDpsb2dpbg==  sk-ssh-ed25519@openssh.com"
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIIRNKR0dU1OVVLPrGCCWR7LkBEtcV+bvDdx3uG7/DvkpAAAACXNzaDpsb2dpbg==  sk-ssh-ed25519@openssh.com"
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIB2L5+55IgmPP3rw5XAbbQYAM1wHyDXhah2XBFq3krzWAAAACXNzaDpsb2dpbg==  sk-ssh-ed25519@openssh.com"
   ];
 
   extraGroups = [
