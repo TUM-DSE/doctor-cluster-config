@@ -22,10 +22,11 @@
         ];
         limit = 6;
         registrationFlags = [
-          "--docker-cpus 6"
+          # currently runs on jackson, which has 24 cores
+          "--docker-cpus 4"
           "--docker-memory 32g"
-          # add targeted privileges here if a task needs them, e.g.
-          # "--docker-cap-add SYS_PTRACE" or "--docker-devices /dev/kvm"
+          # task2-driver runs gem5 on KVM
+          "--docker-devices /dev/kvm"
         ];
       };
       # Project runner on `compiler-hw-lab/infra` only (tag: compiler-hw-lab-build).
