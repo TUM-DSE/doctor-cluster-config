@@ -5,13 +5,12 @@
 {
   config,
   inputs,
-  lib,
   ...
 }:
 let
   farm = import ./settings.nix;
   cert = "${farm.certs}/lb-${config.networking.hostName}.crt";
-  key = config.sops.secrets.nix-farm-lb-key.path;
+  key = "/run/credentials/envoy.service/lb-key";
 in
 {
   imports = [ inputs.nix-grpc-store.nixosModules.default ];
@@ -39,15 +38,10 @@ in
     };
   };
 
-  # sops cannot hand a secret to a DynamicUser
-  users.users.envoy = {
-    isSystemUser = true;
-    group = "envoy";
-  };
-  users.groups.envoy = { };
-  systemd.services.envoy.serviceConfig = {
-    DynamicUser = lib.mkForce false;
-    User = "envoy";
-  };
-  sops.secrets.nix-farm-lb-key.owner = "envoy";
+  # envoy watches the directory of the key for rotation and may not read
+  # /run/secrets, so the key goes through a credential.
+  sops.secrets.nix-farm-lb-key = { };
+  systemd.services.envoy.serviceConfig.LoadCredential = [
+    "lb-key:${config.sops.secrets.nix-farm-lb-key.path}"
+  ];
 }
