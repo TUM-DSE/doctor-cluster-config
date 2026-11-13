@@ -40,6 +40,22 @@ in
 
   # envoy watches the directory of the key for rotation and may not read
   # /run/secrets, so the key goes through a credential.
+  # envoy's admin listener can also shut it down, so prometheus only gets
+  # the stats page.
+  services.nginx.virtualHosts."nix-farm-metrics" = {
+    listen = [
+      {
+        addr = "[::]";
+        port = farm.lbMetricsPort;
+      }
+      {
+        addr = "0.0.0.0";
+        port = farm.lbMetricsPort;
+      }
+    ];
+    locations."= /stats/prometheus".proxyPass = "http://127.0.0.1:9901";
+  };
+
   sops.secrets.nix-farm-lb-key = { };
   systemd.services.envoy.serviceConfig.LoadCredential = [
     "lb-key:${config.sops.secrets.nix-farm-lb-key.path}"

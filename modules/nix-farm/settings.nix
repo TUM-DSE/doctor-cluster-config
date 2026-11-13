@@ -7,6 +7,9 @@
   lbName = "graham.dos.cit.tum.de";
   port = 50051;
   workerPort = 50052;
+  # Prometheus metrics of the daemons and of envoy
+  metricsPort = 9464;
+  lbMetricsPort = 9902;
   audience = "nix-farm";
   # only the certificates, so that a node does not restart with every commit
   certs = "${./certs}";

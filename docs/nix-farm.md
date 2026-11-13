@@ -102,6 +102,7 @@ no revocation.
    `inv update-sops-files`.
 3. Import `../modules/nix-farm/worker.nix` in `hosts/<host>.nix` and deploy.
    The balancer learns of the node from the scheduler.
+4. Add the host to `nix-farm` in `modules/monitoring/prometheus-targets.nix`.
 
 A node offers its own system, its `extra-platforms` and the
 `system-features` of its `nix.conf`. For a system the farm does not have
@@ -109,6 +110,7 @@ yet, also add it to `systems` in `modules/nix-farm/balancer.nix`.
 
 ## Operations
 
+- **Dashboard:** "Nix build farm" on <https://grafana.dos.cit.tum.de>.
 - **Which workers does the balancer see?** On graham:
   `curl -s localhost:9901/clusters | grep health_flags`
 - **Drain a worker:** `systemctl stop nix-grpc-daemon`. It finishes and

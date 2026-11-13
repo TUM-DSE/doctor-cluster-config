@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   # https://wiki.ito.cit.tum.de/bin/view/CIT/ITO/Docs/Guides/LDAP-Apps/
   # Anonymous bind, only reachable from CIT IP ranges. rbgOrgZug=DOS is our chair.
@@ -124,6 +129,12 @@ in
               ./fpga-dashboard/dashboard.json
               ./fpga-dashboard/switch-dashboard.json
               ./fpga-dashboard/monitoring-dashboard.json
+            ]
+            ++ [
+              {
+                name = "nix-farm.json";
+                path = "${inputs.nix-grpc-store}/deploy/helm/nix-grpc-farm/files/farm.json";
+              }
             ]
           );
           options.foldersFromFilesStructure = false;
