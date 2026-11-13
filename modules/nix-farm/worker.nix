@@ -57,10 +57,16 @@ in
   };
 
   # FPGA builds (Vivado, Vitis) use the Xilinx tools on the /share NFS mount,
-  # which the build sandbox cannot see otherwise. nixbot is not a trusted user,
-  # so the flakes' own nixConfig.extra-sandbox-paths does not apply. The "?"
-  # keeps other builds working while /share is not mounted.
-  nix.settings.extra-sandbox-paths = [ "/share/xilinx?" ];
+  # which the build sandbox cannot see otherwise, and the tools call touch and
+  # lscpu at fixed paths. The FPGA flakes list these in their nixConfig, but
+  # nixbot is not a trusted user, so that does not apply. The "?" keeps other
+  # builds working while /share is not mounted.
+  nix.settings.extra-sandbox-paths = [
+    "/share/xilinx?"
+    "/bin/touch=/run/current-system/sw/bin/touch"
+    "/bin/lscpu=/run/current-system/sw/bin/lscpu"
+    "/usr/bin/lscpu=/run/current-system/sw/bin/lscpu"
+  ];
 
   # niks3 push runs inside this unit and gets OOM-killed at the default 2G
   systemd.services.nix-grpc-daemon.serviceConfig.MemoryMax = "16G";
