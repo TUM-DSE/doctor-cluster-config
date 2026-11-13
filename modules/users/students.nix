@@ -292,6 +292,7 @@ in
       allowedHosts = [
         "ian"
         "clara"
+        "polly"
       ];
       openssh.authorizedKeys.keys = florianKeys;
       expires = "2027-05-30";
