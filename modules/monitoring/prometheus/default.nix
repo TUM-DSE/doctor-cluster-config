@@ -23,6 +23,11 @@
         ];
       }
       {
+        job_name = "nix-farm";
+        scrape_interval = "30s";
+        static_configs = (import ../prometheus-targets.nix).nix-farm;
+      }
+      {
         # node_exporter textfile metrics from fpga-dashboard/{server,switch}-collector.nix;
         # capitalized host labels are what the FPGA/switch dashboards query.
         job_name = "node";

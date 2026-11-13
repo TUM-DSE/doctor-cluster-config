@@ -25,6 +25,7 @@ in
     # the default would socket-activate the scheduler node, which then never
     # registers as a builder
     idleTimeout = null;
+    metricsListen = "[::]:${toString farm.metricsPort}";
     minFree = "50G";
     # These machines are shared with people running experiments; nix-daemon
     # would otherwise take one build per core.
