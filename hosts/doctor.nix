@@ -9,6 +9,8 @@
     ../modules/monitoring/telegraf.nix
     ../modules/monitoring/grafana.nix
     ../modules/monitoring/authelia.nix
+    ../modules/nix-farm/authelia.nix
+    ../modules/nix-farm/reverse-proxy.nix
     # disabled for now since the download is gone
     #../modules/lrz-gitlab-classroom/frontend.nix
   ];

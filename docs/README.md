@@ -104,6 +104,7 @@ Those servers (or individual devices) are sometimes used exclusively by a single
 Those serve as a github action runner for Systemprogramming + cloud systems lab.
 Graham runs the nixbot CI service (doctor reverse-proxies it; eliza is an aarch64 remote builder).
 See [nixbot.md](./nixbot.md) for documentation on how to add repositories and checks.
+nixbot builds in the [build farm](./nix-farm.md), which you can also use from your laptop.
 
 - [astrid](./hosts/astrid.md)
 - [dan](./hosts/dan.md), nfs backup

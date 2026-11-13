@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>Nix build farm</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#57606a"/>
+    </marker>
+    <style>
+      .box { fill: #f6f8fa; stroke: #57606a; stroke-width: 1.2; }
+      .client { fill: #ddf4ff; stroke: #0969da; }
+      .edge { fill: #fff8c5; stroke: #9a6700; }
+      .cache { fill: #dafbe1; stroke: #1a7f37; }
+      .name { font-weight: 600; fill: #1f2328; }
+      .role { fill: #57606a; font-size: 12px; }
+      .label { fill: #57606a; font-size: 11px; }
+      .line { stroke: #57606a; stroke-width: 1.2; fill: none; }
+      text { text-anchor: middle; }
+      .req { fill: #0969da; }
+      .out { fill: #1a7f37; }
+    </style>
+    <!-- routes the dots travel: a request in, the outputs out -->
+    <path id="user" d="M172 55 H270 M450 55 H500 V92 H548"/>
+    <path id="ci" d="M172 150 H500 V114 H548"/>
+    <path id="to-w1" d="M643 128 V200 H102 V230"/>
+    <path id="to-w2" d="M643 128 V200 H287 V230"/>
+    <path id="to-w3" d="M643 128 V200 H472 V230"/>
+    <path id="to-w4" d="M643 128 V200 H657 V230"/>
+    <path id="from-w1" d="M102 286 V316 H287 V350"/>
+    <path id="from-w2" d="M287 286 V350"/>
+    <path id="from-w3" d="M472 286 V316 H287 V350"/>
+    <path id="from-w4" d="M657 286 V316 H287 V350"/>
+    <path id="to-cache" d="M367 373 H442"/>
+  </defs>
+
+  <rect width="760" height="420" fill="#ffffff"/>
+
+  <!-- clients -->
+  <rect class="box client" x="22" y="30" width="150" height="50" rx="6"/>
+  <text class="name" x="97" y="52">laptop</text>
+  <text class="role" x="97" y="69">nix-farm</text>
+
+  <rect class="box client" x="22" y="125" width="150" height="50" rx="6"/>
+  <text class="name" x="97" y="147">nixbot</text>
+  <text class="role" x="97" y="164">CI</text>
+
+  <!-- reverse proxy -->
+  <rect class="box edge" x="270" y="30" width="180" height="50" rx="6"/>
+  <text class="name" x="360" y="52">reverse proxy</text>
+  <text class="role" x="360" y="69">nginx, Let's Encrypt</text>
+
+  <!-- balancer -->
+  <rect class="box edge" x="548" y="78" width="190" height="50" rx="6"/>
+  <text class="name" x="643" y="100">balancer</text>
+  <text class="role" x="643" y="117">envoy :50051</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M172 55 H270"/>
+  <text class="label" x="221" y="47">:443</text>
+  <text class="label" x="221" y="70">authelia token</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M450 55 H500 V92 H548"/>
+  <text class="label" x="500" y="47">gRPC</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M172 150 H500 V114 H548"/>
+  <text class="label" x="336" y="142">nixbot token, ca-cert</text>
+
+  <!-- workers -->
+  <path class="line" d="M643 128 V200"/>
+  <text class="label" x="560" y="170">:50052, mTLS (farm CA)</text>
+  <path class="line" d="M102 200 H657"/>
+  <path class="line" marker-end="url(#arrow)" d="M102 200 V230"/>
+  <path class="line" marker-end="url(#arrow)" d="M287 200 V230"/>
+  <path class="line" marker-end="url(#arrow)" d="M472 200 V230"/>
+  <path class="line" marker-end="url(#arrow)" d="M657 200 V230"/>
+
+  <rect class="box" x="22" y="230" width="160" height="56" rx="6"/>
+  <text class="name" x="102" y="254">scheduler</text>
+  <text class="role" x="102" y="272">also a builder</text>
+
+  <rect class="box" x="207" y="230" width="160" height="56" rx="6"/>
+  <text class="name" x="287" y="254">builder</text>
+  <text class="role" x="287" y="272">x86_64-linux</text>
+
+  <rect class="box" x="392" y="230" width="160" height="56" rx="6"/>
+  <text class="name" x="472" y="254">builder</text>
+  <text class="role" x="472" y="272">x86_64-linux</text>
+
+  <rect class="box" x="577" y="230" width="160" height="56" rx="6"/>
+  <text class="name" x="657" y="254">builder</text>
+  <text class="role" x="657" y="272">aarch64-linux</text>
+
+  <!-- cache -->
+  <path class="line" d="M102 286 V316"/>
+  <path class="line" d="M287 286 V316"/>
+  <path class="line" d="M472 286 V316"/>
+  <path class="line" d="M657 286 V316"/>
+  <path class="line" d="M102 316 H657"/>
+  <path class="line" marker-end="url(#arrow)" d="M287 316 V350"/>
+  <text class="label" x="330" y="337">niks3 push</text>
+
+  <rect class="box cache" x="207" y="350" width="160" height="46" rx="6"/>
+  <text class="name" x="287" y="378">niks3</text>
+
+  <rect class="box cache" x="442" y="350" width="220" height="46" rx="6"/>
+  <text class="name" x="552" y="378">binary cache</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M367 373 H442"/>
+
+  <!-- Hidden unless the viewer animates, so a static render has no stray dots. -->
+  <g visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0s"/>
+    <circle class="req" r="4"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#user"/></animateMotion></circle>
+    <circle class="req" r="4"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#ci"/></animateMotion></circle>
+    <circle class="req" r="4"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#to-w1"/></animateMotion></circle>
+    <circle class="req" r="4"><animateMotion dur="4s" begin="1s" repeatCount="indefinite"><mpath href="#to-w2"/></animateMotion></circle>
+    <circle class="req" r="4"><animateMotion dur="4s" begin="2s" repeatCount="indefinite"><mpath href="#to-w3"/></animateMotion></circle>
+    <circle class="req" r="4"><animateMotion dur="4s" begin="3s" repeatCount="indefinite"><mpath href="#to-w4"/></animateMotion></circle>
+    <circle class="out" r="4"><animateMotion dur="4s" begin="0.5s" repeatCount="indefinite"><mpath href="#from-w1"/></animateMotion></circle>
+    <circle class="out" r="4"><animateMotion dur="4s" begin="1.5s" repeatCount="indefinite"><mpath href="#from-w2"/></animateMotion></circle>
+    <circle class="out" r="4"><animateMotion dur="4s" begin="2.5s" repeatCount="indefinite"><mpath href="#from-w3"/></animateMotion></circle>
+    <circle class="out" r="4"><animateMotion dur="4s" begin="3.5s" repeatCount="indefinite"><mpath href="#from-w4"/></animateMotion></circle>
+    <circle class="out" r="4"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#to-cache"/></animateMotion></circle>
+  </g>
+</svg>

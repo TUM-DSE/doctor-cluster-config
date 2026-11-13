@@ -341,6 +341,55 @@
         "type": "github"
       }
     },
+    "nix-fast-build": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793536592,
+        "narHash": "sha256-JuLtXe5jKYkO1JF8a4uLpVp9GUO02Gsl5ALt5gkI8Gg=",
+        "owner": "Mic92",
+        "repo": "nix-fast-build",
+        "rev": "2e08947fce389638efeb5b01e5b576b2d9558951",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-fast-build",
+        "type": "github"
+      }
+    },
+    "nix-grpc-store": {
+      "inputs": {
+        "niks3": [
+          "niks3"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794562794,
+        "narHash": "sha256-0AlOIsfFXd811lvWiPAyFqS5U4G0YjZj9GOmWpbzoTk=",
+        "owner": "Mic92",
+        "repo": "nix-grpc-store",
+        "rev": "05ff255d93787fedac4688018d0b567a7e322a22",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-grpc-store",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -479,6 +528,8 @@
         "jetpack-nixos": "jetpack-nixos",
         "kartei": "kartei",
         "niks3": "niks3",
+        "nix-fast-build": "nix-fast-build",
+        "nix-grpc-store": "nix-grpc-store",
         "nix-index-database": "nix-index-database",
         "nixbot": "nixbot",
         "nixos-apple-silicon": "nixos-apple-silicon",

@@ -1,13 +1,17 @@
 {
   config,
   inputs,
-  pkgs,
   ...
 }:
+let
+  farm = import ../nix-farm/settings.nix;
+in
 {
   imports = [
     ./hostfile.nix
     ../postgresql.nix
+    ../nix-farm/worker.nix
+    ../nix-farm/balancer.nix
     inputs.nixbot.nixosModules.nixbot
   ];
 
@@ -55,15 +59,19 @@
 
     outputsPath = "/var/www/buildbot/nix-outputs/";
 
-    niks3 = {
-      enable = true;
-      serverUrl = "https://niks3.dos.cit.tum.de";
-      authTokenFile = config.sops.secrets.niks3-api-token.path;
-      package = inputs.niks3.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    # Builds run in the farm (docs/nix-farm.md), whose workers push to niks3.
+    # The balancer is on this host, so there is no detour over doctor.
+    buildStore = {
+      url = "grpc://${farm.lbName}:${toString farm.port}?ca-cert=${farm.certs}/ca.crt";
+      oidcAudience = farm.audience;
     };
+    # tokens must outlive the longest farm build
+    workloadIdentity.tokenTtl = 21600;
   };
 
-  # nixbot builds through the local nix daemon and offloads to remote builders.
+  programs.nix-grpc-store.enable = true;
+
+  # For builds through graham's own nix daemon; nixbot's go to the farm.
   nix.distributedBuilds = true;
   nix.buildMachines = [
     {
@@ -88,7 +96,6 @@
     buildbot-github-oauth-secret = { };
     buildbot-github-app-secret-key = { };
     buildbot-builder-ssh-key = { };
-    niks3-api-token.sopsFile = ../niks3/secrets.yml;
   };
 
   # nixbot's managed nginx vhost listens on port 80; doctor's reverse proxy
