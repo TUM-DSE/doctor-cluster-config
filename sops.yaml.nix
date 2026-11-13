@@ -57,12 +57,14 @@ let
       "terraform/github-permissions/secrets.enc.json$" = [ ]; # is a symlink to terraform/secrets
       "pkgs/install-iso/secrets.yml" = [ ];
       "hosts/adric.cfg.sops" = [ ];
+      # farm CA key: only needed to issue certificates (modules/nix-farm/issue-cert.sh)
+      "modules/nix-farm/ca.yml$" = [ ];
     } //
     builtins.mapAttrs (name: value: (map (x: keys.machines.${x}) value)) {
       "modules/nfs/secrets.yml$" = [ "mickey" "dan" ];
       "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
-      # graham: nixbot pushes to niks3 with the api token
-      "modules/niks3/secrets.yml$" = [ "nixcache" "graham" ];
+      # farm workers push their build outputs to niks3 with the api token
+      "modules/niks3/secrets.yml$" = [ "nixcache" "graham" "irene" "polly" "eliza" ];
       "modules/monitoring/secrets.yml$" = [ "doctor" ];
 
       "modules/users/xrdp-passwords.yml$" = [

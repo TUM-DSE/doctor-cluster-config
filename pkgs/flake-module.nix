@@ -52,6 +52,7 @@
   perSystem =
     {
       pkgs,
+      inputs',
       self',
       system,
       lib,
@@ -59,6 +60,11 @@
     }:
     {
       packages = {
+        nix-farm = pkgs.callPackage ./nix-farm/package.nix {
+          nix-fast-build = inputs'.nix-fast-build.packages.default;
+          pluginDispatcher = inputs'.nix-grpc-store.packages.plugin-dispatcher;
+        };
+
         netboot = pkgs.callPackage ../modules/netboot/netboot.nix {
           # this nixosSystem is built for x86_64 machines regardless of the host machine
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;

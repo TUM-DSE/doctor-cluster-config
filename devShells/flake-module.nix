@@ -25,6 +25,7 @@
         pkgs.sops
         pkgs.yq-go
         pkgs.cpio
+        self'.packages.nix-farm
       ] ++ pkgs.lib.optional (pkgs.stdenv.isLinux) pkgs.mkpasswd;
     };
   };

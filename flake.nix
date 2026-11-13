@@ -34,6 +34,15 @@
     niks3.inputs.nixpkgs.follows = "nixpkgs";
     niks3.inputs.treefmt-nix.follows = "treefmt-nix";
 
+    nix-grpc-store.url = "github:Mic92/nix-grpc-store";
+    nix-grpc-store.inputs.nixpkgs.follows = "nixpkgs";
+    nix-grpc-store.inputs.niks3.follows = "niks3";
+
+    nix-fast-build.url = "github:Mic92/nix-fast-build";
+    nix-fast-build.inputs.nixpkgs.follows = "nixpkgs";
+    nix-fast-build.inputs.flake-parts.follows = "flake-parts";
+    nix-fast-build.inputs.treefmt-nix.follows = "treefmt-nix";
+
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";

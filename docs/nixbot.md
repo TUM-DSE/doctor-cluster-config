@@ -2,25 +2,24 @@
 
 All machines in this repository are built by
 [nixbot](https://github.com/Mic92/nixbot), the standalone rewrite of
-buildbot-nix. Build results are uploaded to the
-[niks3](https://niks3.dos.cit.tum.de) binary cache.
+buildbot-nix. It builds in the [build farm](./nix-farm.md), whose workers
+upload the results to the [niks3](https://niks3.dos.cit.tum.de) binary cache.
 
 - **Web UI**: https://buildbot.dse.in.tum.de/
 - **Service host**: graham (runs the single `nixbot` service)
-- **Builders**: graham builds x86_64 locally via its nix daemon; eliza is the aarch64 remote builder
+- **Builders**: the [build farm](./nix-farm.md)
 - **Reverse proxy**: doctor (TLS termination → graham's nginx)
 
 Nixbot is a single NixOS service. It handles forge webhooks,
-nix-eval-jobs evaluation, builds through the local nix daemon (offloaded
-to remote builders), commit statuses, and its own web frontend.
+nix-eval-jobs evaluation, builds in the farm, commit statuses, and its own
+web frontend.
 
 ## Architecture
 
 ```
 GitHub webhook → doctor (TLS proxy) → graham (nixbot service)
-                                          → local nix daemon → builds
-                                          → eliza (aarch64 remote builder)
-                                          → niks3 upload
+                                          → build farm
+                                              → niks3 upload
 ```
 
 The status check contexts keep the `buildbot/` prefix
@@ -100,8 +99,8 @@ The doctor-cluster-config flake exposes these as `.#checks` in
 ## Supported Build Systems
 
 Configured via `buildSystems` in `modules/buildbot/nixbot.nix`:
-- `x86_64-linux` (native on graham)
-- `aarch64-linux` (remote builder on eliza)
+- `x86_64-linux`
+- `aarch64-linux`
 - `i686-linux` (32-bit x86)
 
 ## Viewing Build Logs
@@ -155,6 +154,7 @@ build is protected from garbage collection.
 ## Configuration Files
 
 - Nixbot service config: `modules/buildbot/nixbot.nix`
+- Build farm: `modules/nix-farm/`
 - Remote builder / worker user: `modules/buildbot/builder.nix`
 - Reverse proxy: `modules/buildbot/reverse-proxy.nix`
 - Host mappings: `modules/buildbot/hostfile.nix`
@@ -162,13 +162,12 @@ build is protected from garbage collection.
 ## Secrets
 
 Secrets are managed via sops. The GitHub App / webhook / builder secrets
-live in graham's default sops file (`hosts/graham.yml`); the niks3 token
-comes from `modules/niks3/secrets.yml`:
+live in graham's default sops file (`hosts/graham.yml`). The niks3 token
+belongs to the farm workers ([nix-farm.md](./nix-farm.md)):
 - `github-webhook-secret`
 - `buildbot-github-oauth-secret`
 - `buildbot-github-app-secret-key`
 - `buildbot-builder-ssh-key`
-- `niks3-api-token` (`modules/niks3/secrets.yml`)
 
 ## Further Reading
 
