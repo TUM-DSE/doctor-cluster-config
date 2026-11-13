@@ -56,6 +56,9 @@ in
     };
   };
 
+  # niks3 push runs inside this unit and gets OOM-killed at the default 2G
+  systemd.services.nix-grpc-daemon.serviceConfig.MemoryMax = "16G";
+
   sops.secrets.nix-farm-worker-key.owner = "nix-grpc-daemon";
   sops.secrets.niks3-api-token = {
     sopsFile = ../niks3/secrets.yml;
