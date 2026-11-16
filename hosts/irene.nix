@@ -7,7 +7,6 @@
     ../modules/vfio/iommu-amd.nix
     ../modules/dpdk.nix
     ../modules/amd_sev_snp.nix
-    ../modules/nix-farm/worker.nix
     ../modules/tribuchet
   ];
 
