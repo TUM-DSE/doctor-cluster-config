@@ -5,6 +5,7 @@
     ../modules/hardware/poweredge7515.nix
     ../modules/nfs/client.nix
     ../modules/buildbot/nixbot.nix
+    ../modules/tribuchet
     ../modules/dpdk.nix
     ../modules/vfio/iommu-amd.nix
     ../modules/disko-zfs.nix
