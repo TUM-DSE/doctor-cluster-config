@@ -18,9 +18,13 @@
     defaults.email = lib.mkDefault "joerg.letsencrypt@thalheim.io";
     certs."${config.networking.hostName}.r" = {
       server = config.retiolum.ca.acmeURL;
-      listenHTTP = ":80";
+      listenHTTP = lib.mkIf (!config.services.nginx.enable) ":80";
       reloadServices = [ "flakelet-agent.service" ];
     };
+  };
+  # Where nginx already owns port 80 (graham), it answers the challenge.
+  services.nginx.virtualHosts."${config.networking.hostName}.r" = lib.mkIf config.services.nginx.enable {
+    enableACME = true;
   };
   networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 80 ];
 

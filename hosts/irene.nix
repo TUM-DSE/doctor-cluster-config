@@ -8,6 +8,7 @@
     ../modules/dpdk.nix
     ../modules/amd_sev_snp.nix
     ../modules/nix-farm/worker.nix
+    ../modules/tribuchet
   ];
 
   networking.hostName = "irene";
