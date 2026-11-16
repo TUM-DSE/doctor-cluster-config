@@ -167,7 +167,6 @@ machines. Those machines also are not backed up.
     - [prometheus](https://prometheus.dos.cit.tum.de) - see [monitoring.md](./monitoring.md) for adding machines
     - [alertmanager](https://alertmanager.dos.cit.tum.de)
     - [buildbot](https://buildbot.dse.in.tum.de)
-  - doctorold (vmbhatotia43.in.tum.de, 131.159.102.4): previous monitoring VM, only forwards :80/:443 to doctor.r until the CNAMEs point to dosvm5
   - login.dos.cit.tum.de [README](../modules/jumphost/README.md): ssh jumphost
   - ls1-coffee.dse.cit.tum.de: coffee backend
   - web.dse.in.tum.de: public website

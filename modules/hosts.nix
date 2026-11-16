@@ -132,11 +132,6 @@ in
         ipv4 = "131.159.102.38";
         ipv6 = "2a09:80c0:102::38";
       };
-      # vmbhatotia43.in.tum.de, forwards to doctor until DNS is moved
-      doctorold = {
-        ipv4 = "131.159.102.4";
-        ipv6 = "2a09:80c0:102::4";
-      };
       # ruby.dos.cit.tum.de
       ruby = {
         ipv4 = "131.159.38.70";
