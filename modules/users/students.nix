@@ -297,6 +297,20 @@ in
       openssh.authorizedKeys.keys = florianKeys;
       expires = "2027-05-30";
     };
+
+    # compiler-hw-lab course students (uids 2800-2899), see ../compiler-hw-lab.
+    # Managed by Martin (WS26/27).
+    # No wheel/docker, they use rootless podman (so no inherit extraGroups).
+    # example = {
+    #   isNormalUser = true;
+    #   home = "/home/example";
+    #   extraGroups = [ "student" ];
+    #   shell = "/run/current-system/sw/bin/bash";
+    #   uid = 2800;
+    #   allowedHosts = [ "christina" ];
+    #   openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAA... example@laptop" ];
+    #   expires = "2027-01-31";
+    # };
   };
 
   # DANGER ZONE!
