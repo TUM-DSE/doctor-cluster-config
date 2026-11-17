@@ -3,6 +3,7 @@
   imports = [
     ../modules/yasmin-hardware.nix
     ../modules/nfs/client.nix
+    ../modules/nix-farm/worker.nix
   ];
 
   networking.hostName = "yasmin";
