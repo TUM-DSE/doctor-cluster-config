@@ -14,6 +14,9 @@ in
         "graham"
         "irene"
         "polly"
+        "steve"
+        "xavier"
+        "yasmin"
       ];
     }
     {
