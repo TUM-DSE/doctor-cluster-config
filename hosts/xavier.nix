@@ -5,6 +5,7 @@
     ../modules/linux-uintr.nix
 
     ../modules/intel-fpgas.nix
+    ../modules/intel-fpga-license/server.nix
     ../modules/xrdp.nix
   ];
 

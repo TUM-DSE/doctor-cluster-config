@@ -6,6 +6,8 @@
     ../modules/vfio/iommu-intel.nix
     ../modules/disko-zfs.nix
     ../modules/dpdk.nix
+    # Quartus builds with the floating licenses
+    ../modules/intel-fpga-license/relay.nix
   ];
 
   disko.rootDisk = "/dev/sdc";
