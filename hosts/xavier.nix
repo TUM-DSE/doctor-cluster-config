@@ -2,8 +2,6 @@
   imports = [
     ../modules/hardware/poweredge-r760.nix
     ../modules/nfs/client.nix
-    ../modules/linux-uintr.nix
-
     ../modules/intel-fpgas.nix
     ../modules/xrdp.nix
   ];
