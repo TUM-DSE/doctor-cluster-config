@@ -137,6 +137,7 @@ let
 
   jannikKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHcGR16x/38pzE7bidJu8Ow778pogCqN2U9h5Y6LZ8Xj jannik@jannik-ThinkPad-E15-Gen-2"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKK6oftZ6a5sh92Rhism9CV4+vWt/iIJHTSH5OdKpEeZ jannikpfliegerchair"
   ];
 
   extraGroups = [
