@@ -64,7 +64,7 @@ let
       "modules/nfs/secrets.yml$" = [ "mickey" "dan" ];
       "modules/k3s/secrets.yml$" = [ "astrid" "mickey" "dan" ];
       # farm workers push their build outputs to niks3 with the api token
-      "modules/niks3/secrets.yml$" = [ "nixcache" "graham" "irene" "polly" "eliza" "yasmin" ];
+      "modules/niks3/secrets.yml$" = [ "nixcache" "graham" "irene" "polly" "eliza" "yasmin" "steve" "xavier" ];
       "modules/monitoring/secrets.yml$" = [ "doctor" ];
 
       "modules/users/xrdp-passwords.yml$" = [
