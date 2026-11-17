@@ -3,6 +3,7 @@
 ## Software
 
 We assume version `X` of Intel Quartus Prime Pro is installed in `/share/intel-fpga/tools/X`.
+Installed versions: 20.2, 23.4, 24.1, 25.1 and 26.1.
 You probably want to use the highest version available.
 
 To use any of the Intel FPGA tools, enter an environment with the required software dependencies and environment variables:
@@ -21,16 +22,61 @@ quartus
 
 ### Install Quartus
 
-To install another version of Quartus, download [Quartus Prime Pro for Linux](https://www.intel.com/content/www/us/en/software-kit/794624/intel-quartus-prime-pro-edition-design-software-version-23-4-for-linux.html) under "Complete Download".
+Download the Quartus Prime Pro installer (`qinst-linux-<version>.run`, under "Installer") from
+Altera's download center; this needs a free Altera account. Store it in
+`/share/intel-fpga/downloads/<version>/`. The installer downloads the components without a
+login. Run it inside an FHS environment, for example fpga-nix's `mkQuartusShell`:
 
-Extract the tar file, run `./setup_pro.sh` in a graphical environment and use the graphical installer to install everything.
-Finally, copy the shell.nix file from another version to the new install location and adjust `INSTALL_DIR`.
+```sh
+sh qinst-linux-<version>.run --target qinst --noexec
+qinst/qinst.sh --cli --accept-eula \
+  --download-dir /share/intel-fpga/downloads/<version> \
+  --install-dir /share/intel-fpga/tools/<version> \
+  --components quartus,questa_fse,flexlm,agilex7,agilex5,agilex3,cyclone10gx
+```
+
+Record the downloads' checksums in `SHA1SUMS` next to them. For OFS, also install the OFS IP
+license from the FIM repository (`license/quartus-0.0-0.02iofs-linux.run`, kept in
+`/share/intel-fpga/downloads/ofs/`) with
+`--mode unattended --accept_eula 1 --installdir /share/intel-fpga/tools/<version>`.
 
 ### License
 
-Quartus Prime Pro requires a license.
 The license files are located at `/share/intel-fpga/licenses/`.
-The current license is only valid on our server rose and **will expire on the 1st of March 2025**.
+
+- **Floating licenses**, served by a FlexNet license server on xavier
+  (`modules/intel-fpga-license/server.nix`, unit `intel-fpga-license-server`).
+  Altera binds them to xavier's NIC (`58A2E12D919E`), so the server can only run there.
+  The files contain placeholders; the service writes filled-in copies to its runtime
+  directory and leaves the originals untouched.
+  - lmgrd: port 27010, alterad (Quartus): 27011, mgcld (Questa): 27012
+  - Use them with `export LM_LICENSE_FILE=27010@xavier.dos.cit.tum.de`.
+  - Check the server with
+    `/share/intel-fpga/tools/26.1/flexlm/lmutil lmstat -a -c 27010@xavier.dos.cit.tum.de`.
+- **Node-locked licenses** for adelaide (`LR-210504`, `-505`, `-508`, `-509`, `-512`, `-513`),
+  usable without the server, but only on adelaide and not in sandboxed Nix builds.
+
+The 90-day evaluation seats expire on 11 February 2027; the University bundle seats are
+permanent. The floating files contain two distinct `quartus_pro` lines, so the server
+serves 2 seats.
+
+Quartus 25.1 and newer need FlexNet 11.19.6 or newer on the server; the service uses the
+daemons from 26.1. Questa 25.1 and newer no longer ship `mgcld`, so it comes from 24.1.
+
+#### Nix builds
+
+A sandboxed build has no network, so it cannot reach the server. Hosts that import
+`modules/intel-fpga-license/relay.nix` (adelaide, the hosts with `modules/intel-fpgas.nix`
+and the nix-farm workers) expose each server port as a Unix socket in
+`/run/intel-fpga-license` and add that directory and `/share/intel-fpga/tools` to the
+sandbox. fpga-nix's `licenseRelay` (also in ofs-nix) forwards `127.0.0.1` inside the build
+to these sockets:
+
+```nix
+licenseRelay.socketDir = "/run/intel-fpga-license";
+```
+
+doctor-cluster-xilinx exports this as `quartusLicenseRelay`.
 
 ### References
 
