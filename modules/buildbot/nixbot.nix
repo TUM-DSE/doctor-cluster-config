@@ -57,6 +57,13 @@ in
       "github:pogobanane"
     ];
 
+    # Pull requests from forks by authors outside the trusted associations
+    # (owner, member, collaborator, earlier contributor) wait for an
+    # "Approve CI" click by someone with write access. Flake inputs are
+    # fetched with the quecto-ci key below, so unreviewed outside code must
+    # not run with it.
+    prApproval.enable = true;
+
     outputsPath = "/var/www/buildbot/nix-outputs/";
 
     # Builds run in the farm (docs/nix-farm.md), whose workers push to niks3.
@@ -70,6 +77,19 @@ in
   };
 
   programs.nix-grpc-store.enable = true;
+
+  # quecto-computing repositories are private and use each other as git+ssh
+  # flake inputs. Nixbot's GitHub token only covers the repository being
+  # built, so its input prefetch (which runs as the nixbot user outside the
+  # eval sandbox) reads the other repositories with the read-only quecto-ci
+  # machine user's key.
+  programs.ssh.knownHosts."github.com".publicKey =
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+  programs.ssh.extraConfig = ''
+    Match host github.com localuser nixbot
+      IdentityFile ${config.sops.secrets.quecto-ci-ssh-key.path}
+      IdentitiesOnly yes
+  '';
 
   # For builds through graham's own nix daemon; nixbot's go to the farm.
   nix.distributedBuilds = true;
@@ -96,6 +116,10 @@ in
     buildbot-github-oauth-secret = { };
     buildbot-github-app-secret-key = { };
     buildbot-builder-ssh-key = { };
+    quecto-ci-ssh-key = {
+      owner = "nixbot";
+      mode = "0400";
+    };
   };
 
   # nixbot's managed nginx vhost listens on port 80; doctor's reverse proxy
