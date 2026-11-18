@@ -32,7 +32,6 @@ let
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
-    ./modules/nginx-no-http2.nix
 
     disko.nixosModules.disko
 
@@ -122,15 +121,6 @@ in
         commonModules
         ++ [
           ./hosts/nixcache.nix
-        ];
-    };
-
-    doctorold = {
-      nixpkgs.pkgs = pkgs-x86_64-linux;
-      imports =
-        commonModules
-        ++ [
-          ./hosts/doctorold.nix
         ];
     };
 
