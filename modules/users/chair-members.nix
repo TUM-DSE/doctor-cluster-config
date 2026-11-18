@@ -73,13 +73,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOspUL7xyTeVmDpu5C6rode5SjqNPLekcQho6YRDG7gT david.schall@tum.de"
   ];
 
-  mfKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHGipyrOUVsSJNF2b944RUj1ywfdKqsgAhJW4rBbyjOPV2gx5LVLB5M9Cq71WBJIdmxOJ1slAtHhb0QI6JFjCTU= Martin Fink"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOGSE0pCqFTlMQVPNM6sPQjdb3BON7rJwWc+KrMajb8A martin@doctor"
-  ];
-
   nateKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEenzPGBeBJCMro5So/3v5AJR9w1ebybVrfSddFslbqR nathanieltornow@MacBook-Pro-4.local"
   ];
@@ -197,16 +190,6 @@ in
         uid = 1012;
         openssh.authorizedKeys.keys = atsushiKeys;
         xrdpAccess = true;
-      };
-
-      # Martin Fink
-      martin = {
-        isNormalUser = true;
-        home = "/home/martin";
-        inherit extraGroups;
-        shell = "/run/current-system/sw/bin/zsh";
-        uid = 1016;
-        openssh.authorizedKeys.keys = mfKeys;
       };
 
       # Jiyang Chen
@@ -499,7 +482,6 @@ in
     nix.settings.trusted-users = [
       "joerg"
       "harshanavkis"
-      "martin"
     ];
   };
 }
