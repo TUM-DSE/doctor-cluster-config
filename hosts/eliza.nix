@@ -5,6 +5,7 @@
     ../modules/disko-zfs.nix
     ../modules/buildbot/builder.nix
     ../modules/tribuchet
+    ../modules/nix-farm/worker.nix
   ];
 
   networking.hostName = "eliza";
