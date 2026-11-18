@@ -32,6 +32,7 @@ let
     ./modules/tinc.nix
     ./modules/sshd
     ./modules/register-flake.nix
+    ./modules/nginx-no-http2.nix
 
     disko.nixosModules.disko
 
