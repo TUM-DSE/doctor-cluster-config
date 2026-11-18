@@ -13,6 +13,13 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqbnkl4OVgJGhO/CRhPnnMCsHGAE77jnbpWMoCLniKNgqLVwPBpevfJed9gwmrUdUKnAdvKP/+EIUMydjqC1VkYVXB0oNWd372hpxOmu9lYziXwQA7m0R2b8VhKwE3KXg2kZfDq8vW35ZQ5F/jGmMwBVSRuYP2cBo0BBMlEniYhgiPlUT7TzPttx0TmSCDUCj9CaSZ3rAGbyjT7ezcFFAQQEMd0EYvSa04B12EpYNLKf1rIcMrEEOUn7pwwF1kbpSLvVeP+0FnxokxiSlKKCKNMB2igE4ahJI2XH2HMTb20Ce/NKwGU79ZwWnwtsjXJV+qoqmh5VSyzKlwfBvELLNR anatole@MSI_GX740"
   ];
 
+  mfKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINK0/PSpRypoFe8NQ1BHjCyxraIvhX/0q6OIO7DYnmyq Martin Fink"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCshvYXlVtnaApJlB5BFhfZLWXnY4/9JKdNf3PFuPV8ZKU2Ssk7uAR5O5COVKDb9HnvArF7v+eoxKFmhwGXnlEU= Martin Fink"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHGipyrOUVsSJNF2b944RUj1ywfdKqsgAhJW4rBbyjOPV2gx5LVLB5M9Cq71WBJIdmxOJ1slAtHhb0QI6JFjCTU= Martin Fink"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOGSE0pCqFTlMQVPNM6sPQjdb3BON7rJwWc+KrMajb8A martin@doctor"
+  ];
+
   thoreKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQCP93wmHUCOKn5W42KnzyBQBjltRp5RU23WbAMlgy5 TUM"
   ];
@@ -57,6 +64,16 @@ in
         openssh.authorizedKeys.keys = okelmannKeys;
       };
 
+      # Martin Fink
+      martin = {
+        isNormalUser = true;
+        home = "/home/martin";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 1016;
+        openssh.authorizedKeys.keys = mfKeys;
+      };
+
       # Thore Sommer: wants to improve monitoring
       thore = {
         isNormalUser = true;
@@ -83,13 +100,14 @@ in
       root = {
         initialHashedPassword = lib.mkIf config.users.withSops (lib.mkForce null);
         hashedPasswordFile = lib.mkIf config.users.withSops config.sops.secrets.root-password-hash.path;
-        openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys ++ thoreKeys;
+        openssh.authorizedKeys.keys = joergsKeys ++ okelmannKeys ++ mfKeys ++ thoreKeys;
       };
     };
 
     nix.settings.trusted-users = [
       "joerg"
       "okelmann"
+      "martin"
       "thore"
     ];
   };
