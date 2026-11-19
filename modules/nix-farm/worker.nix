@@ -14,7 +14,11 @@ let
   isScheduler = host == farm.lbHost;
 in
 {
-  imports = [ inputs.nix-grpc-store.nixosModules.default ];
+  imports = [
+    inputs.nix-grpc-store.nixosModules.default
+    # Quartus builds with the Intel FPGA floating licenses
+    ../intel-fpga-license/relay.nix
+  ];
 
   services.nix-grpc-daemon = {
     enable = true;

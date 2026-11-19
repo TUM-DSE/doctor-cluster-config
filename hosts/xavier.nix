@@ -3,6 +3,7 @@
     ../modules/hardware/poweredge-r760.nix
     ../modules/nfs/client.nix
     ../modules/intel-fpgas.nix
+    ../modules/intel-fpga-license/server.nix
     ../modules/xrdp.nix
     ../modules/nix-farm/worker.nix
   ];
