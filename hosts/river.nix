@@ -7,18 +7,6 @@
     ../modules/lowlatency-vm-host.nix
   ];
 
-  # eno1 is the direct low-latency link to christina; keep networkd from
-  # putting addresses on it.
-  systemd.network.networks."04-lowlat-eno1" = {
-    matchConfig.Name = "eno1";
-    networkConfig = {
-      DHCP = "no";
-      LinkLocalAddressing = "no";
-      IPv6AcceptRA = false;
-    };
-    linkConfig.RequiredForOnline = "no";
-  };
-
   boot.hugepages1GB.number = 8;
   boot.hugepages2MB.number =
     let
