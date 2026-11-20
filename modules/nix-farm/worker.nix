@@ -4,7 +4,6 @@
   config,
   inputs,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -14,10 +13,16 @@ let
   isScheduler = host == farm.lbHost;
 in
 {
-  imports = [ inputs.nix-grpc-store.nixosModules.default ];
+  imports = [
+    inputs.nix-grpc-store.nixosModules.default
+    ../flakelet.nix
+  ];
 
   services.nix-grpc-daemon = {
     enable = true;
+    # updates from the nix-grpc-store flake without a rebuild, and hosthog
+    # can take the node out of the farm with `flakelet disable`
+    flakelet.enable = true;
     listen = "[::]:${toString farm.workerPort}";
     advertise = address host;
     roles = [ "builder" ] ++ lib.optional isScheduler "scheduler";
@@ -49,7 +54,6 @@ in
     ];
     oidc.providers = import ./oidc-providers.nix;
     niks3 = {
-      package = inputs.niks3.packages.${pkgs.stdenv.hostPlatform.system}.default;
       url = farm.niks3Url;
       inherit (farm) cacheUrl;
       tokenFile = config.sops.secrets.niks3-api-token.path;
@@ -70,7 +74,10 @@ in
   ];
 
   # niks3 push runs inside this unit and gets OOM-killed at the default 2G
-  systemd.services.nix-grpc-daemon.serviceConfig.MemoryMax = "16G";
+  services.flakelets.services.nix-grpc-daemon = {
+    autoUpdate.enable = true;
+    settings.serviceConfig.MemoryMax = "16G";
+  };
 
   sops.secrets.nix-farm-worker-key.owner = "nix-grpc-daemon";
   sops.secrets.niks3-api-token = {
