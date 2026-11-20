@@ -84,7 +84,7 @@
     nixos-apple-silicon.inputs.nixpkgs.follows = "nixpkgs";
     nixos-apple-silicon.inputs.flake-compat.follows = "";
 
-    hosthog.url = "github:pogobanane/hosthog";
+    hosthog.url = "github:TUM-DSE/hosthog";
     hosthog.inputs.nixpkgs.follows = "nixpkgs";
     hosthog.inputs.flake-parts.follows = "flake-parts";
 
