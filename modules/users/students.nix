@@ -301,16 +301,30 @@ in
     # compiler-hw-lab course students (uids 2800-2899), see ../compiler-hw-lab.
     # Managed by Martin (WS26/27).
     # No wheel/docker, they use rootless podman (so no inherit extraGroups).
-    # example = {
-    #   isNormalUser = true;
-    #   home = "/home/example";
-    #   extraGroups = [ "student" ];
-    #   shell = "/run/current-system/sw/bin/bash";
-    #   uid = 2800;
-    #   allowedHosts = [ "christina" ];
-    #   openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAA... example@laptop" ];
-    #   expires = "2027-01-31";
-    # };
+    dbrauner = {
+      isNormalUser = true;
+      home = "/home/dbrauner";
+      extraGroups = [ "student" ];
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2800;
+      allowedHosts = [ "christina" ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQIPQKdvG+xvicbfTFct5cOsVe3+XSJ50arAEtTMZ7R brauner@DE-UNIT-2712"
+      ];
+      expires = "2027-01-31";
+    };
+    fkizilboga = {
+      isNormalUser = true;
+      home = "/home/fkizilboga";
+      extraGroups = [ "student" ];
+      shell = "/run/current-system/sw/bin/bash";
+      uid = 2801;
+      allowedHosts = [ "christina" ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6Ct5l5K2BEABQlKheJETG9hIGFwVk3xlQqfGuqTyf0 firatkizilboga11@gmail.com"
+      ];
+      expires = "2027-01-31";
+    };
   };
 
   # DANGER ZONE!
