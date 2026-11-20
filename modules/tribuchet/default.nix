@@ -3,12 +3,11 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 {
   imports = [
-    inputs.flakelet.nixosModules.flakelet
+    ../flakelet.nix
   ];
 
   # Agent identity for the relays on eve/eva: ACME cert for <host>.r

@@ -1,27 +1,33 @@
-# A farm node: builds what the scheduler on graham assigns and pushes the
+# A farm node: builds what the active scheduler assigns and pushes the
 # outputs to niks3 (docs/nix-farm.md).
 {
   config,
   inputs,
   lib,
-  pkgs,
   ...
 }:
 let
   farm = import ./settings.nix;
   host = config.networking.hostName;
   address = name: "${config.networking.doctorwho.hosts.${name}.ipv4}:${toString farm.workerPort}";
-  isScheduler = host == farm.lbHost;
+  isScheduler = lib.elem host farm.schedulers;
 in
 {
-  imports = [ inputs.nix-grpc-store.nixosModules.default ];
+  imports = [
+    inputs.nix-grpc-store.nixosModules.default
+    ../flakelet.nix
+  ];
 
   services.nix-grpc-daemon = {
     enable = true;
+    # updates from the nix-grpc-store flake without a rebuild, and hosthog
+    # can take the node out of the farm with `flakelet disable`
+    flakelet.enable = true;
     listen = "[::]:${toString farm.workerPort}";
     advertise = address host;
     roles = [ "builder" ] ++ lib.optional isScheduler "scheduler";
-    scheduler = if isScheduler then null else address farm.lbHost;
+    # the balancer follows whichever scheduler is active
+    scheduler = "${farm.lbName}:${toString farm.port}";
     # the default would socket-activate the scheduler node, which then never
     # registers as a builder
     idleTimeout = null;
@@ -49,7 +55,6 @@ in
     ];
     oidc.providers = import ./oidc-providers.nix;
     niks3 = {
-      package = inputs.niks3.packages.${pkgs.stdenv.hostPlatform.system}.default;
       url = farm.niks3Url;
       inherit (farm) cacheUrl;
       tokenFile = config.sops.secrets.niks3-api-token.path;
@@ -70,7 +75,10 @@ in
   ];
 
   # niks3 push runs inside this unit and gets OOM-killed at the default 2G
-  systemd.services.nix-grpc-daemon.serviceConfig.MemoryMax = "16G";
+  services.flakelets.services.nix-grpc-daemon = {
+    autoUpdate.enable = true;
+    settings.serviceConfig.MemoryMax = "16G";
+  };
 
   sops.secrets.nix-farm-worker-key.owner = "nix-grpc-daemon";
   sops.secrets.niks3-api-token = {
