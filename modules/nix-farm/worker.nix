@@ -1,4 +1,4 @@
-# A farm node: builds what the scheduler on graham assigns and pushes the
+# A farm node: builds what the active scheduler assigns and pushes the
 # outputs to niks3 (docs/nix-farm.md).
 {
   config,
@@ -10,7 +10,7 @@ let
   farm = import ./settings.nix;
   host = config.networking.hostName;
   address = name: "${config.networking.doctorwho.hosts.${name}.ipv4}:${toString farm.workerPort}";
-  isScheduler = host == farm.lbHost;
+  isScheduler = lib.elem host farm.schedulers;
 in
 {
   imports = [
@@ -26,7 +26,8 @@ in
     listen = "[::]:${toString farm.workerPort}";
     advertise = address host;
     roles = [ "builder" ] ++ lib.optional isScheduler "scheduler";
-    scheduler = if isScheduler then null else address farm.lbHost;
+    # the balancer follows whichever scheduler is active
+    scheduler = "${farm.lbName}:${toString farm.port}";
     # the default would socket-activate the scheduler node, which then never
     # registers as a builder
     idleTimeout = null;

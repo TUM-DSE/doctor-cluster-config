@@ -25,11 +25,15 @@ in
       # graham itself, through binfmt (modules/buildbot/nixbot.nix)
       "riscv64-linux"
     ];
-    scheduler = "${config.networking.doctorwho.currentHost.ipv4}:${toString farm.workerPort}";
-    # No clientCaFile: every client presents an OIDC token.
+    scheduler = map (
+      name: "${config.networking.doctorwho.hosts.${name}.ipv4}:${toString farm.workerPort}"
+    ) farm.schedulers;
     tls = {
       certFile = cert;
       keyFile = key;
+      # Only the workers present a certificate, for their session with the
+      # scheduler. Every other client has an OIDC token.
+      clientCaFile = "${farm.certs}/ca.crt";
       upstream = {
         certFile = cert;
         keyFile = key;
