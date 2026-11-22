@@ -49,9 +49,13 @@ through `NIX_CONFIG`.
 
 ![nix build farm](./nix-farm.svg)
 
-- Every node runs `nix-grpc-daemon` (`modules/nix-farm/worker.nix`). graham
-  also holds the scheduler role and the envoy balancer
-  (`modules/nix-farm/balancer.nix`).
+- Every node runs `nix-grpc-daemon` (`modules/nix-farm/worker.nix`) as a
+  flakelet. graham, eliza and polly share the scheduler role
+  (`schedulers` in `modules/nix-farm/settings.nix`): one is active, and
+  another takes over within seconds when its daemon stops, for example
+  because the machine is hogged. graham also runs the envoy balancer
+  (`modules/nix-farm/balancer.nix`), which every node reaches the active
+  scheduler through.
 - The university firewall lets nothing but ports 80 and 443 on doctor in
   from outside the chair network. So `farm.dos.cit.tum.de` is an nginx
   vhost on doctor that passes gRPC on to graham

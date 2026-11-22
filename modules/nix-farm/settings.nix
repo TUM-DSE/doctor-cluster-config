@@ -2,8 +2,14 @@
 {
   # served by doctor, the only host the university firewall lets the outside reach
   domain = "farm.dos.cit.tum.de";
-  # balancer and scheduler
   lbHost = "graham";
+  # Share the scheduler role: the daemon on any of them may be disabled for a
+  # hog (hosthog) or an update, and another one takes over.
+  schedulers = [
+    "graham"
+    "eliza"
+    "polly"
+  ];
   lbName = "graham.dos.cit.tum.de";
   port = 50051;
   workerPort = 50052;
