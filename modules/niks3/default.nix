@@ -57,6 +57,10 @@ in
     };
   };
 
+  # A farm daemon asks for thousands of narinfos at once. Each proxied
+  # request takes two connections and the default is 512.
+  services.nginx.eventsConfig = "worker_connections 16384;";
+
   services.nginx.virtualHosts."cache.dos.cit.tum.de" = {
     forceSSL = true;
     enableACME = true;
