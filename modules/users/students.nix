@@ -20,11 +20,6 @@ let
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBACZkmXdEDbg/5gtbANAYQfSaFKEluiGuQpa6MCA+msQIx2lr/1M7+Lmcf3sWG3kYyYJZFZ+6+sUmUFqgeJWN6jOogGSfK/OEyY/zKdrIqcSIsvoHREhG/10VXSbGWv+MS9FjxuT4AO40FLRF5pq8cGQgUcm3khAknF4yQ6TtJQyxU4OOw== mrtn@cronus"
   ];
 
-  alexKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvpwaPg39D9JvEtzKbCUAfYxLjSU2bCg+zCb+N0iI3P alex.bartelt@tum.de"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTtPXwCUQXXoSzTGphI5zyvgkNaPr+mUGh8begbUI8z alex.bartelt@tum.de"
-  ];
-
   senadKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCm6mZLXct96cSF6xcM1BFrNcQe6AamFk7MEPaqZ+zJ senadlg gpu access"
   ];
@@ -142,21 +137,6 @@ in
       ];
       openssh.authorizedKeys.keys = martinLiKeys;
       expires = "2027-05-31";
-    };
-
-    # Alexander Bartelt, Bsc thesis working w/ Sebastian (can be removed after October 2026)
-    alex = {
-      isNormalUser = true;
-      home = "/home/alex";
-      inherit extraGroups;
-      shell = "/run/current-system/sw/bin/bash";
-      uid = 2107;
-      allowedHosts = [
-        "graham"
-        "eliza"
-      ];
-      openssh.authorizedKeys.keys = alexKeys;
-      expires = "2026-12-30";
     };
 
     # Senad Lemes, DB chair student working w/ Dimitris (can be removed after December 2026)
@@ -331,6 +311,7 @@ in
     "samuel"
     "simonw"
     "ivanl"
+    "alex"
     "alexa"
     "alexander"
     "alexandermaslew"
